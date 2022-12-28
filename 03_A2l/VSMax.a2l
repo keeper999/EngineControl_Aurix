@@ -1,0 +1,1523 @@
+/begin MODULE  VSMax "VSMax 12.0"
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSMaxSatMaxAbsY_A "Axis description"
+      0x0 VSCtl_aVehReq VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSMaxSatMaxCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSMaxSatMinAbsY_A "Axis description"
+      0x0 VSCtl_aVehReq VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSMaxSatMinCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSMaxSatMxTra1Y_A "Axis description"
+      0x0 VSCtl_aVehReq VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehPTPotMaxCtla1_HysHi_C "Seuil haut du potentiel d acceleration pour la BVVc"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehPTPotMaxCtla1_HysLo_C "Seuil bas du potentiel d acceleration pour la BVVc"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehPotVSMaxReq_B "Bypass de VSCtl_aVehPotVSMaxReq"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_aVehReq_tiCfmSupVSMaxX_A "Axis description"
+      0x0 VSCtl_aVehPotVSMaxReq VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aVehSpdCtlGain1VSMaxX_A "Axis description"
+      0x0 VSCtl_aVehPTMax VSMAX_RL_SWORD_AXIS 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxDynStbMax_C "Acceleration vehicule max en stabilise BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxDynStbMin_C "Acceleration vehicule min en stabilise BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqMax "Gabarit acceleration RVV max"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqMin "Gabarit acceleration RVV min"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqRaw "Consigne acceleration vehicule BVV brute"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMax "Saturation max consigne acceleration vehicule BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMaxAbs "Saturation max consigne acceleration vehicule (absolu) BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReqSatMaxAbs_M "Cartographie 2D Acceleration vehicule BVV max absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSMaxReqInt VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSMaxSatMaxAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSMaxSatMxAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMaxApl "Saturation max appliquee consigne acceleration vehicule BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMaxCft "Saturation max consigne acceleration vehicule (confort) BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReqSatMaxCft_M "Cartographie 2D Acceleration vehicule BVV max confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSMaxReqInt VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSMaxSatMxCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSMaxSatMxCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMin "Saturation min consigne acceleration vehicule BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMinAbs "Saturation min consigne acceleration vehicule (absolu) BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReqSatMinAbs_M "Cartographie 2D Acceleration vehicule BVV min absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSMAX_RL_SWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSMaxReqInt VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSMaxSatMinAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSMaxSatMnAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMinApl "Saturation min appliquee consigne acceleration vehicule BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSatMinCft "Saturation min consigne acceleration vehicule (confort) BVV"
+      SWORD VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReqSatMinCft_M "Cartographie 2D Acceleration vehicule BVV min confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSMAX_RL_SWORD 10 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSMaxReqInt VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSMaxSatMinCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSMaxSatMnCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReq_B "Bypass de VSCtl_aVehVSMaxReq"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSMaxReq_DeacVSMax_B "Bypass de VSCtl_aVehVSMaxReq_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVeh_DeacVSMax_B "Bypass de VSCtl_aVeh_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 20 VSMAX_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehPotVSMax "Activation filtrage potentiel d acceleration BVV"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehVSMax "Activation filtrage derivee d acceleration BVV"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvJrkSatMnCritVSMax_C "Activation de la prise en compte du jerk critique en BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxNGear_AE_C "Activation du contrôle potentiel d acceleration en mode rapport dans l etat AE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxNGear_ANE_C "Activation du contrôle potentiel d acceleration en mode rapport dans l etat ANE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxPed_AE_C "Activation du contrôle potentiel d acceleration en mode leurage dans l etat AE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxPed_ANE_C "Activation du contrôle potentiel d acceleration en mode leurage dans l etat ANE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxTq_AE_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat AE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSMaxTq_ANE_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat ANE BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvVSMaxc "Demande d activation BVVc"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvVSMaxc_C "Activation de la BVVc"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvVSMaxf "Demande d activation BVVf"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvVSMaxp "Demande d activation BVVp"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvVSMaxs "Demande d activation BVVs"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCfVSMax "Condition desactivation configuration fonction BVV"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtl_aVehPotVSMax_B "Bypass de VSCtl_stCtl_aVehPotVSMax"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_3 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacCdnAStSatMinVSMax_C "Condition de desactivation de la prise en compte de la contrainte de continuite lors de l’initialisation du gabarit d’acceleration vehicule"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacTyreWarnVSMax_C "Desactivation de la prise en compte de l’alerte pneumatique BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDeacVSMaxp "Condition desactivations diagnostic BVVp"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDynCtlSpdVehVSMax "Dynamique contrôle vitesse vehicule BVV"
+      UBYTE VSMAX_CM_4 /* FT_enumeration1:((0=TRANSITOIRE)(1=STABILISE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bEnaDeacVSMaxReq_no2 "Activation de la demande de memorisation BVV n°2"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSMax "Demande inhibition BVV"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSMaxReq_Brk "Demande inhibition BVV GMP frein LAS"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bRec_stDeacVSMaxReq "Demande memorisation de l etat conditions desactivation BVV n°1 ou n°2"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bTyreWarnVSMax "Alertes pneumatiques BVV"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bctDefRevVSMax "Condition desactivations securitaires reversibles BVV trop eleve"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_ctDftRevVSMax "Compteur defauts reversibles BVV"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_ctTolRvDftVSMax_C "Nombre maximum de defauts reversibles BVV toleres"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_dstVehTotMes_DeacVSMax_B "Bypass de VSCtl_dstVehTotMes_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_ULONG 16777214 VSMAX_CM_6 /* km:1:0: */ 0 16777214
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehPotVSMaxReq "Consigne potentiel de jerk vehicule BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehReqDeacVSMax_B "Bypass de VSCtl_jrkVehReqDeacVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 200 VSMAX_CM_7 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxReq "Consigne de jerk BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSMaxReqSatMx1Tra_M "Cartographie 2D Jerk vehicule saturation max en transition"
+      MAP 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_7 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdAJrkVSMaxSatMxTra1X_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSMaxSatMxTra1Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMax "Jerk vehicule BVV max"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMax1Tran "Jerk vehicule saturation max en trasition BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMaxAbs "Jerk vehicule saturation acceleration max vehicule de absolu BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSMaxSatMaxAbs_M "Cartographie 2D de Jerk vehicule max de prestation BVV"
+      MAP 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_7 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdAJrkVSMaxSatMaxAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSMaxSatMaxAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMaxCrit "Jerk vehicule saturation max acceleration vehicule de critique BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMaxCvg "Jerk vehicule saturation max acceleration vehicule de convergence BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSMaxSatMaxCvg_T "Cartographie 1D de Jerk vehicule max de convergence en BVV"
+      CURVE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_7 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSMaxSatMaxCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMin "Jerk vehicule BVV min"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMinAbs "Jerk vehicule saturation min acceleration vehicule de absolu BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSMaxSatMinAbs_M "Cartographie 2D de Jerk vehicule min de prestation BVV"
+      MAP 0x0 VSMAX_RL_SWORD 100 VSMAX_CM_7 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdAJrkVSMaxSatMinAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSMaxSatMinAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSMaxSatMinCvg "Jerk vehicule saturation acceleration vehicule de convergence BVV"
+      SWORD VSMAX_CM_7 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSMaxSatMinCvg_T "Cartographie 1D de Jerk vehicule min de convergence BVV"
+      CURVE 0x0 VSMAX_RL_SWORD 100 VSMAX_CM_7 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSMaxSatMinCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jrkVeh_DeacVSMax_B "Bypass de VSCtl_jrkVeh_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 200 VSMAX_CM_7 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_jrkVeh_tiCfmSupVSMaxY_A "Consigne potentiel de jerk vehicule BVV"
+      0x0 VSCtl_jrkVehPotVSMaxReq VSMAX_RL_SWORD_AXIS 200 VSMAX_CM_7 /* m/s3:0.0078125:0: */ 8 -100 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_noGearEgd_DeacVSMax_B "Bypass de VSCtl_noGearEgd_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_SBYTE 9 VSMAX_CM_5 /* :1:0: */ -1 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_posnGBxDeacVSMax_B "Bypass de VSCtl_posnGBxDeacVSMax"
+      VALUE 0x0 VSMAX_RL_UBYTE 7 VSMAX_CM_8 /* FT_enumeration1:((0=P)(1=R)(2=N)(3=DRIVE)(4=INTERMEDIAIRE_PR_OU_NR)(5=INTERMEDIAIRE_ND)(6=MODE_MANUEL)(7=INDISPONIBLE)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccP_DeacVSMax_B "Bypass de VSCtl_rAccP_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_9 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqPotVSMax_T "Taux d application du potentiel couple BVV"
+      CURVE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_10 /* :0.0625:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdErr_rCtlPotVSMax_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqWhlPTPotVSMax_B "Bypass de VSCtl_rCtlTqWhlPTPotVSMax"
+      VALUE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_11 /* %:0.0625:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rSlop_DeacVSMax_B "Bypass de VSCtl_rSlop_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 40 VSMAX_CM_9 /* %:0.0078125:0: */ -20 20
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rSpdVehCtlVSMaxDyn "Taux application dynamique contrôle vitesse transitoire BVV"
+      UWORD VSMAX_CM_12 /* :0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_spdAJrkVSMaxSatMaxAbsX_A "Axis description"
+      0x0 VSCtl_spdVeh VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdAJrkVSMaxSatMinAbsX_A "Axis description"
+      0x0 VSCtl_spdVeh VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdAJrkVSMaxSatMxTra1X_A "Axis description"
+      0x0 VSCtl_spdVeh VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_spdCtlGain1VSMaxAVeh "Gain proportionnel de la boucle de vitesse BVV n°1"
+      UWORD VSMAX_CM_14 /* s-1:0.0078125:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain1VSMaxAVeh_M "Cartographie 2D Gain proportionnel de la boucle de vitesse BVV n°1"
+      MAP 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPTMax VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehSpdCtlGain1VSMaxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdESpdCtlGain1VSMaxY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain2VSMaxAVeh_C "Gain proportionnel de la boucle de vitesse BVV n°2"
+      VALUE 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGainVSMaxAVehPot_C "Gain proportionnel de la boucle de vitesse BVV utilise pour l’elaboration des consignes de potentiel d’acceleration"
+      VALUE 0x0 VSMAX_RL_UWORD 10 VSMAX_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSMaxSatMnAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSMaxSatMnCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSMaxSatMxAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSMaxSatMxCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdEMaxAVehP_HysHiN_C "Seuil haut d erreur de vitesse negative d activation contrôle potentiel d acceleration BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEMaxAVehP_HysHiP_C "Seuil haut d erreur de vitesse positive d activation contrôle potentiel d acceleration BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEMaxAVehP_HysLoN_C "Seuil bas d erreur de vitesse negative d activation contrôle potentiel d acceleration BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEMaxAVehP_HysLoP_C "Seuil bas d erreur de vitesse positive d activation contrôle potentiel d acceleration BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdESpdCtlGain1VSMaxY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSMaxSDyn_HysHi_C "Seuil haut d’ecart de vitesse de detection dynamique stabilisee BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSMaxSDyn_HysLo_C "Seuil bas d’ecart de vitesse de detection dynamique stabilisee BVV"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdErr_rCtlPotVSMax_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSMaxSatMaxAbsX_A "Consigne de vitesse BVV interne"
+      0x0 VSCtl_spdVehVSMaxReqInt VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSMaxSatMinAbsX_A "Consigne de vitesse BVV interne"
+      0x0 VSCtl_spdVehVSMaxReqInt VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSMaxSatMinCftX_A "Consigne de vitesse BVV interne"
+      0x0 VSCtl_spdVehVSMaxReqInt VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSMaxSatMxCftX_A "Consigne de vitesse BVV interne"
+      0x0 VSCtl_spdVehVSMaxReqInt VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_spdVehCrit "Vitesse vehicule critique"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehCritOfs_C "Offset de la consigne de vitesse BVVc"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehCrit_HysHi_C "Seuil bas de vitesse pour la BVVc"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehCrit_HysLo_C "Seuil haut de vitesse pour la BVVc"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehCrit_spdVeh_T "Vitesse critique"
+      CURVE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_spdVehCrit_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdVehE_tiCfmSdwnVSMaY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSMAX_RL_SWORD_AXIS 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMax_B "Bypass de VSCtl_spdVehErrVSMax"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxcAcvHi_C "Seuil haut d erreur de vitesse d activation de la BVVf"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxcAcvLo_C "Seuil bas d erreur de vitesse d activation de la BVVf"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxcErr_C "Seuil d erreur de vitesse d activation de la BVVc apres un defaut"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxfAcvHi_C "Seuil haut d erreur de vitesse d activation de la BVVf"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxfAcvLo_C "Seuil bas d erreur de vitesse d activation de la BVVf"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxfErr_C "Seuil d erreur de vitesse d activation de la BVVf apres un defaut"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxpAcvHi_C "Seuil haut d erreur de vitesse d activation de la BVVp"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxpAcvLo_C "Seuil bas d erreur de vitesse d activation de la BVVp"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxpErr_C "Seuil d erreur de vitesse d activation de la BVVp apres un defaut"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxsAcvHi_C "Seuil haut d erreur de vitesse d activation de la BVVs"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxsAcvLo_C "Seuil bas d erreur de vitesse d activation de la BVVs"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSMaxsErr_C "Seuil d erreur de vitesse d activation de la BVVs apres un defaut"
+      VALUE 0x0 VSMAX_RL_SWORD 510 VSMAX_CM_13 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehReqDeacVSMax_B "Bypass de VSCtl_spdVehReqDeacVSMax"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehReqVSMaxFRM_no1_C "Consigne vitesse BVV-Securite n°1"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehReqVSMaxFRM_no2_C "Consigne vitesse BVV-Securite n°2"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehReqVSMaxc "Consigne de vitesse BVVc"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehReqVSMaxf "Consigne de vitesse BVVf"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehReqVSMaxp "Consigne de vitesse BVVp"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehReqVSMaxs "Consigne de vitesse BVVs"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSMaxFixReq_C "Consigne vitesse BVV-Fixe"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehVSMaxPrmaReqPrev "Consigne de vitesse BVVp precedente"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehVSMaxReqInt "Consigne de vitesse BVV interne"
+      UWORD VSMAX_CM_13 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSMaxReq_B "Bypass de VSCtl_spdVehVSMaxReq"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVeh_DeacVSMax_B "Bypass de VSCtl_spdVeh_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_UWORD 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdVeh_spdVehCrit_A "Axis description"
+      0x0 VSCtl_spdVeh VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_tiCfmSdwnVSMaxX_A "Axis description"
+      0x0 VSCtl_spdVeh VSMAX_RL_UWORD_AXIS 255 VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_stCtl_aVehVSMax_B "Bypass de VSCtl_stCtl_aVehVSMax"
+      VALUE 0x0 VSMAX_RL_UBYTE 2 VSMAX_CM_15 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANSITION)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stDeacVSMaxReq_Brk "Etat conditions desactivation BVV frein LAS"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSMaxReq_Fct "Etat conditions desactivation BVV fonction"
+      UBYTE VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSMaxReq_Ini "Etat conditions desactivation BVV initialisation"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 31
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSMaxReq_no1_B "Bypass de VSCtl_stDeacVSMaxReq_no1"
+      VALUE 0x0 VSMAX_RL_UWORD 16383 VSMAX_CM_5 /* :1:0: */ 0 16383
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSMaxReq_no2_B "Bypass de VSCtl_stDeacVSMaxReq_no2"
+      VALUE 0x0 VSMAX_RL_UWORD 16383 VSMAX_CM_5 /* :1:0: */ 0 16383
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stEnaDeacVSMaxReqno2_C "Selection des conditions desactivation BVV n°2"
+      VALUE 0x0 VSMAX_RL_UWORD 16383 VSMAX_CM_5 /* :1:0: */ 0 16383
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stMonVSMax "Etat service BVV"
+      UBYTE VSMAX_CM_16 /* FT_enumeration1:((0=ARRET)(1=VERIF)(2=INIT)(3=NOMINAL)(4=DEFAUT_REV)(5=DEFAUT_IRREV)) */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSMaxReq1_B "Bypass de VSCtl_stRec_stDeacVSMaxReq1"
+      VALUE 0x0 VSMAX_RL_UBYTE 2 VSMAX_CM_17 /* FT_enumeration1:((0=ATTENTE)(1=CAPTURE)(2=RESET)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSMaxReq2_B "Bypass de VSCtl_stRec_stDeacVSMaxReq2"
+      VALUE 0x0 VSMAX_RL_UBYTE 2 VSMAX_CM_17 /* FT_enumeration1:((0=ATTENTE)(1=CAPTURE)(2=RESET)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stSatAVehMinVSMax "Etat saturation accel min BVV"
+      UBYTE VSMAX_CM_18 /* FT_enumeration1:((0=ARRET)(1=INIT_30)(2=NON_EFFECTIF_30)(3=EFFECTIF_30)(4=ACTIVATION_30)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stSatAVehMinVSMaxMod_C "Mode de contrôle de saturation accel min BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_19 /* FT_enumeration1:((0=INCOMPLET)(1=COMPLET)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stSatJrkVehMaxVSMax "Etat saturation jerk max BVV"
+      UBYTE VSMAX_CM_20 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF)(2=EFFECTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSatJrkVehMinVSMax "Etat saturation jerk min BVV"
+      UBYTE VSMAX_CM_20 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF)(2=EFFECTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSpdVehCritFilModClc "Mode de calcul du filtrage de la vitesse critique"
+      UBYTE VSMAX_CM_21 /* FT_enumeration1:((0=ARRET)(1=INIT_18)(2=BLOQUE_18)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSpdVehCritModClc "Mode de calcul de la vitesse critique"
+      UBYTE VSMAX_CM_22 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF_17)(2=EFFECTIF_17)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stVSMaxExtd_B "Bypass de VSCtl_stVSMaxExtd"
+      VALUE 0x0 VSMAX_RL_UBYTE 7 VSMAX_CM_23 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBEE)(3=ATTENTE)(4=ANE)(5=AE)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stVSMaxPrev "Etat regulation BVV precedent"
+      UBYTE VSMAX_CM_24 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ANE)(5=AE)(6=REPRISE)(7=DEFAUT)) */ 1 0 0 7
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stVSMaxPrev_DeacVSMax_B "Bypass de VSCtl_stVSMaxPrev_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_UBYTE 7 VSMAX_CM_25 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stVSMax_DeacVSMax_B "Bypass de VSCtl_stVSMax_DeacVSMax"
+      VALUE 0x0 VSMAX_RL_UBYTE 7 VSMAX_CM_25 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSMaxReqIni_C "Valeur initiale du temps confirmation min rapport descendant BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSMaxReqRaw1 "Temps confirmation min rapport descendant BVV brut 1"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSMaxReqRaw2 "Temps confirmation min rapport descendant BVV brut 2"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSMaxReqRaw3 "Temps confirmation min rapport descendant BVV brut 3"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSMaxReq_B "Bypass de VSCtl_tiCfmSdwnVSMaxReq"
+      VALUE 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSMaxReq_M "Valeur du temps de confirmation min rapport descendant BVV"
+      MAP 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_tiCfmSdwnVSMaxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSMAX_CM_13 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdVehE_tiCfmSdwnVSMaY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSMaxReqIni_C "Valeur initiale du temps confirmation min rapport montant BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSMaxReqRaw1 "Temps confirmation min rapport montant BVV brut 1"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSMaxReqRaw2 "Temps confirmation min rapport montant BVV brut 2"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSMaxReqRaw3 "Temps confirmation min rapport montant BVV brut 3"
+      UWORD VSMAX_CM_26 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSMaxReq_B "Bypass de VSCtl_tiCfmSupVSMaxReq"
+      VALUE 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSMaxReq_M "Valeur du temps de confirmation min rapport montant BVV"
+      MAP 0x0 VSMAX_RL_UWORD 16 VSMAX_CM_26 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPotVSMaxReq VSMAX_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehReq_tiCfmSupVSMaxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_jrkVehPotVSMaxReq VSMAX_CM_7 /* m/s3:0.0078125:0: */ 8 -100 100
+    AXIS_PTS_REF VSCtl_jrkVeh_tiCfmSupVSMaxY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_SDynCtlChgVSMax_C "Temps de confirmation detection de la dynamique stabilisee BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_rSDynCtlVSMax_C "Temps de lissage de la dynamique de contrôle de vitesse de transitoire vers stabilise"
+      VALUE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_12 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiDftRvVSMax "Filtrage rehabilitation defauts reversibles BVV"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiDftRvVSMax_C "Duree mini de la rehabilitation des defauts reversibles BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfmSDynCtlChgVSMax_C "Temps de deconfirmation detection de la dynamique stabilisee BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_rCtlTDynVSMax_C "Temps de lissage de transition de l’etat de la dynamique de contrôle de vitesse BVV de stabilise vers transitoire"
+      VALUE 0x0 VSMAX_RL_UWORD 100 VSMAX_CM_12 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilSpdVehCtlVSMaxDyn "Constante Filtrage changement dynamique contrôle vitesse BVV"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlAVehVSMax "Compteur absolu fin transition contrôle acceleration BVV"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehPotVSMaxRq_C "Valeur du filtrage numerique de la consigne potentiel de jerk vehicule BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 1 VSMAX_CM_27 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehVSMaxRq_C "Valeur du filtrage numerique de la consigne de jerk vehicule BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 1 VSMAX_CM_27 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlAVehVSMax_C "Constante filtrage transition contrôle acceleration BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSMxRq1_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant BVV n°1"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSMxRq2_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant BVV n°2"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSMaxRq1_C "Valeur du filtrage numerique du temps de confirmation min rapport montant BVV n°1"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSMaxRq2_C "Valeur du filtrage numerique du temps de confirmation min rapport montant BVV n°2"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSMaxReq1 "Temps gel informations maintenance n°1 BVV"
+      UWORD VSMAX_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSMaxReq1_C "Temps gel informations maintenance n°1 BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 65535 VSMAX_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSMaxReq2 "Temps gel informations maintenance n°2 BVV"
+      UWORD VSMAX_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSMaxReq2_C "Temps gel informations maintenance n°2 BVV"
+      VALUE 0x0 VSMAX_RL_UWORD 65535 VSMAX_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiIniVSMax "Filtrage initialisation BVV"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiTol_DynCtlVSMax_C "Temps maxi de confirmation/deconfirmation detection de la dynamique stabilisee BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiVSMaxIni_C "Duree d’initialisation de la fonction BVV"
+      VALUE 0x0 VSMAX_RL_UBYTE 255 VSMAX_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSMAX_ACTIVE_BYP_C "Bypass activation"
+      VALUE 0x0 VSMAX_RL_UBYTE 1 VSMAX_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSMax_ModuleVersion_Major_MP "VSMax_ModuleVersion_Major_MP"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSMax_ModuleVersion_Minor_MP "VSMax_ModuleVersion_Minor_MP"
+      UBYTE VSMAX_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+/begin RECORD_LAYOUT VSMAX_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSMAX_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD VSMAX_CM_1 "conversion_method"
+
+RAT_FUNC "%.4" "m/s2"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_2 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_2
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_2 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_3 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_3
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_3 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "CONTROLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_4 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_4
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_4 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "TRANSITOIRE"
+	 1 "STABILISE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_6 "conversion_method"
+
+RAT_FUNC "%.0" "km"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_7 "conversion_method"
+
+RAT_FUNC "%.3" "m/s3"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_8 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_8
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_8 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "P"
+	 1 "R"
+	 2 "N"
+	 3 "DRIVE"
+	 4 "INTERMEDIAIRE_PR_OU_NR"
+	 5 "INTERMEDIAIRE_ND"
+	 6 "MODE_MANUEL"
+	 7 "INDISPONIBLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_9 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_10 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_11 "conversion_method"
+
+RAT_FUNC "%.2" "%"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_12 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_13 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_14 "conversion_method"
+
+RAT_FUNC "%.3" "s-1"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_15 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_15
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_15 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "TRANSITION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_16 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_16
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_16 "conversion_vtab"
+
+    TAB_VERB 6
+	 0 "ARRET"
+	 1 "VERIF"
+	 2 "INIT"
+	 3 "NOMINAL"
+	 4 "DEFAUT_REV"
+	 5 "DEFAUT_IRREV"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_17 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ATTENTE"
+	 1 "CAPTURE"
+	 2 "RESET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_18 "conversion_vtab"
+
+    TAB_VERB 5
+	 0 "ARRET"
+	 1 "INIT_30"
+	 2 "NON_EFFECTIF_30"
+	 3 "EFFECTIF_30"
+	 4 "ACTIVATION_30"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_19 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_19
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_19 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "INCOMPLET"
+	 1 "COMPLET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_20 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_20
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_20 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_EFFECTIF"
+	 2 "EFFECTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_21 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_21
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_21 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "INIT_18"
+	 2 "BLOQUE_18"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_22 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_22
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_22 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_EFFECTIF_17"
+	 2 "EFFECTIF_17"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_23 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_23
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_23 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBEE"
+	 3 "ATTENTE"
+	 4 "ANE"
+	 5 "AE"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_24 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_24
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_24 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBE"
+	 3 "ATTENTE"
+	 4 "ANE"
+	 5 "AE"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_25 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSMAX_CV_25
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSMAX_CV_25 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBE"
+	 3 "ATTENTE"
+	 4 "ACTIF_NON_EFFECTIF"
+	 5 "ACTIF_EFFECTIF"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSMAX_CM_26 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSMAX_CM_27 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION VSMAX_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	VSCtl_aJrkVehVSMaxSatMaxAbsY_A
+	VSCtl_aJrkVehVSMaxSatMaxCvg_A
+	VSCtl_aJrkVehVSMaxSatMinAbsY_A
+	VSCtl_aJrkVehVSMaxSatMinCvg_A
+	VSCtl_aJrkVehVSMaxSatMxTra1Y_A
+	VSCtl_aVehPTPotMaxCtla1_HysHi_C
+	VSCtl_aVehPTPotMaxCtla1_HysLo_C
+	VSCtl_aVehPotVSMaxReq_B
+	VSCtl_aVehReq_tiCfmSupVSMaxX_A
+	VSCtl_aVehSpdCtlGain1VSMaxX_A
+	VSCtl_aVehVSMaxDynStbMax_C
+	VSCtl_aVehVSMaxDynStbMin_C
+	VSCtl_aVehVSMaxReqSatMaxAbs_M
+	VSCtl_aVehVSMaxReqSatMaxCft_M
+	VSCtl_aVehVSMaxReqSatMinAbs_M
+	VSCtl_aVehVSMaxReqSatMinCft_M
+	VSCtl_aVehVSMaxReq_B
+	VSCtl_aVehVSMaxReq_DeacVSMax_B
+	VSCtl_aVeh_DeacVSMax_B
+	VSCtl_bAcvJrkSatMnCritVSMax_C
+	VSCtl_bAcvPotVSMaxNGear_AE_C
+	VSCtl_bAcvPotVSMaxNGear_ANE_C
+	VSCtl_bAcvPotVSMaxPed_AE_C
+	VSCtl_bAcvPotVSMaxPed_ANE_C
+	VSCtl_bAcvPotVSMaxTq_AE_C
+	VSCtl_bAcvPotVSMaxTq_ANE_C
+	VSCtl_bAcvVSMaxc_C
+	VSCtl_bCtl_aVehPotVSMax_B
+	VSCtl_bDeacCdnAStSatMinVSMax_C
+	VSCtl_bDeacTyreWarnVSMax_C
+	VSCtl_ctTolRvDftVSMax_C
+	VSCtl_dstVehTotMes_DeacVSMax_B
+	VSCtl_jrkVehReqDeacVSMax_B
+	VSCtl_jrkVehVSMaxReqSatMx1Tra_M
+	VSCtl_jrkVehVSMaxSatMaxAbs_M
+	VSCtl_jrkVehVSMaxSatMaxCvg_T
+	VSCtl_jrkVehVSMaxSatMinAbs_M
+	VSCtl_jrkVehVSMaxSatMinCvg_T
+	VSCtl_jrkVeh_DeacVSMax_B
+	VSCtl_jrkVeh_tiCfmSupVSMaxY_A
+	VSCtl_noGearEgd_DeacVSMax_B
+	VSCtl_posnGBxDeacVSMax_B
+	VSCtl_rAccP_DeacVSMax_B
+	VSCtl_rCtlTqPotVSMax_T
+	VSCtl_rCtlTqWhlPTPotVSMax_B
+	VSCtl_rSlop_DeacVSMax_B
+	VSCtl_spdAJrkVSMaxSatMaxAbsX_A
+	VSCtl_spdAJrkVSMaxSatMinAbsX_A
+	VSCtl_spdAJrkVSMaxSatMxTra1X_A
+	VSCtl_spdCtlGain1VSMaxAVeh_M
+	VSCtl_spdCtlGain2VSMaxAVeh_C
+	VSCtl_spdCtlGainVSMaxAVehPot_C
+	VSCtl_spdEAVehVSMaxSatMnAbsY_A
+	VSCtl_spdEAVehVSMaxSatMnCftY_A
+	VSCtl_spdEAVehVSMaxSatMxAbsY_A
+	VSCtl_spdEAVehVSMaxSatMxCftY_A
+	VSCtl_spdEMaxAVehP_HysHiN_C
+	VSCtl_spdEMaxAVehP_HysHiP_C
+	VSCtl_spdEMaxAVehP_HysLoN_C
+	VSCtl_spdEMaxAVehP_HysLoP_C
+	VSCtl_spdESpdCtlGain1VSMaxY_A
+	VSCtl_spdErrVSMaxSDyn_HysHi_C
+	VSCtl_spdErrVSMaxSDyn_HysLo_C
+	VSCtl_spdErr_rCtlPotVSMax_A
+	VSCtl_spdRAVehVSMaxSatMaxAbsX_A
+	VSCtl_spdRAVehVSMaxSatMinAbsX_A
+	VSCtl_spdRAVehVSMaxSatMinCftX_A
+	VSCtl_spdRAVehVSMaxSatMxCftX_A
+	VSCtl_spdVehCritOfs_C
+	VSCtl_spdVehCrit_HysHi_C
+	VSCtl_spdVehCrit_HysLo_C
+	VSCtl_spdVehCrit_spdVeh_T
+	VSCtl_spdVehE_tiCfmSdwnVSMaY_A
+	VSCtl_spdVehErrVSMax_B
+	VSCtl_spdVehErrVSMaxcAcvHi_C
+	VSCtl_spdVehErrVSMaxcAcvLo_C
+	VSCtl_spdVehErrVSMaxcErr_C
+	VSCtl_spdVehErrVSMaxfAcvHi_C
+	VSCtl_spdVehErrVSMaxfAcvLo_C
+	VSCtl_spdVehErrVSMaxfErr_C
+	VSCtl_spdVehErrVSMaxpAcvHi_C
+	VSCtl_spdVehErrVSMaxpAcvLo_C
+	VSCtl_spdVehErrVSMaxpErr_C
+	VSCtl_spdVehErrVSMaxsAcvHi_C
+	VSCtl_spdVehErrVSMaxsAcvLo_C
+	VSCtl_spdVehErrVSMaxsErr_C
+	VSCtl_spdVehReqDeacVSMax_B
+	VSCtl_spdVehReqVSMaxFRM_no1_C
+	VSCtl_spdVehReqVSMaxFRM_no2_C
+	VSCtl_spdVehVSMaxFixReq_C
+	VSCtl_spdVehVSMaxReq_B
+	VSCtl_spdVeh_DeacVSMax_B
+	VSCtl_spdVeh_spdVehCrit_A
+	VSCtl_spdVeh_tiCfmSdwnVSMaxX_A
+	VSCtl_stCtl_aVehVSMax_B
+	VSCtl_stDeacVSMaxReq_no1_B
+	VSCtl_stDeacVSMaxReq_no2_B
+	VSCtl_stEnaDeacVSMaxReqno2_C
+	VSCtl_stRec_stDeacVSMaxReq1_B
+	VSCtl_stRec_stDeacVSMaxReq2_B
+	VSCtl_stSatAVehMinVSMaxMod_C
+	VSCtl_stVSMaxExtd_B
+	VSCtl_stVSMaxPrev_DeacVSMax_B
+	VSCtl_stVSMax_DeacVSMax_B
+	VSCtl_tiCfmSdwnVSMaxReqIni_C
+	VSCtl_tiCfmSdwnVSMaxReq_B
+	VSCtl_tiCfmSdwnVSMaxReq_M
+	VSCtl_tiCfmSupVSMaxReqIni_C
+	VSCtl_tiCfmSupVSMaxReq_B
+	VSCtl_tiCfmSupVSMaxReq_M
+	VSCtl_tiCfm_SDynCtlChgVSMax_C
+	VSCtl_tiCfm_rSDynCtlVSMax_C
+	VSCtl_tiDftRvVSMax_C
+	VSCtl_tiDiCfmSDynCtlChgVSMax_C
+	VSCtl_tiDiCfm_rCtlTDynVSMax_C
+	VSCtl_tiFil_jrkVehPotVSMaxRq_C
+	VSCtl_tiFil_jrkVehVSMaxRq_C
+	VSCtl_tiFil_stCtlAVehVSMax_C
+	VSCtl_tiFil_tiCfmSdwnVSMxRq1_C
+	VSCtl_tiFil_tiCfmSdwnVSMxRq2_C
+	VSCtl_tiFil_tiCfmSupVSMaxRq1_C
+	VSCtl_tiFil_tiCfmSupVSMaxRq2_C
+	VSCtl_tiHld_stDeacVSMaxReq1_C
+	VSCtl_tiHld_stDeacVSMaxReq2_C
+	VSCtl_tiTol_DynCtlVSMax_C
+	VSCtl_tiVSMaxIni_C
+	VSMAX_ACTIVE_BYP_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	VSCtl_aVehVSMaxReqMax
+	VSCtl_aVehVSMaxReqMin
+	VSCtl_aVehVSMaxReqRaw
+	VSCtl_aVehVSMaxReqSatMax
+	VSCtl_aVehVSMaxReqSatMaxAbs
+	VSCtl_aVehVSMaxReqSatMaxApl
+	VSCtl_aVehVSMaxReqSatMaxCft
+	VSCtl_aVehVSMaxReqSatMin
+	VSCtl_aVehVSMaxReqSatMinAbs
+	VSCtl_aVehVSMaxReqSatMinApl
+	VSCtl_aVehVSMaxReqSatMinCft
+	VSCtl_bAcvFil_aVehPotVSMax
+	VSCtl_bAcvFil_aVehVSMax
+	VSCtl_bAcvVSMaxc
+	VSCtl_bAcvVSMaxf
+	VSCtl_bAcvVSMaxp
+	VSCtl_bAcvVSMaxs
+	VSCtl_bCfVSMax
+	VSCtl_bDeacVSMaxp
+	VSCtl_bDynCtlSpdVehVSMax
+	VSCtl_bEnaDeacVSMaxReq_no2
+	VSCtl_bInhVSMax
+	VSCtl_bInhVSMaxReq_Brk
+	VSCtl_bRec_stDeacVSMaxReq
+	VSCtl_bTyreWarnVSMax
+	VSCtl_bctDefRevVSMax
+	VSCtl_ctDftRevVSMax
+	VSCtl_jrkVehPotVSMaxReq
+	VSCtl_jrkVehVSMaxReq
+	VSCtl_jrkVehVSMaxSatMax
+	VSCtl_jrkVehVSMaxSatMax1Tran
+	VSCtl_jrkVehVSMaxSatMaxAbs
+	VSCtl_jrkVehVSMaxSatMaxCrit
+	VSCtl_jrkVehVSMaxSatMaxCvg
+	VSCtl_jrkVehVSMaxSatMin
+	VSCtl_jrkVehVSMaxSatMinAbs
+	VSCtl_jrkVehVSMaxSatMinCvg
+	VSCtl_rSpdVehCtlVSMaxDyn
+	VSCtl_spdCtlGain1VSMaxAVeh
+	VSCtl_spdVehCrit
+	VSCtl_spdVehReqVSMaxc
+	VSCtl_spdVehReqVSMaxf
+	VSCtl_spdVehReqVSMaxp
+	VSCtl_spdVehReqVSMaxs
+	VSCtl_spdVehVSMaxPrmaReqPrev
+	VSCtl_spdVehVSMaxReqInt
+	VSCtl_stDeacVSMaxReq_Brk
+	VSCtl_stDeacVSMaxReq_Fct
+	VSCtl_stDeacVSMaxReq_Ini
+	VSCtl_stMonVSMax
+	VSCtl_stSatAVehMinVSMax
+	VSCtl_stSatJrkVehMaxVSMax
+	VSCtl_stSatJrkVehMinVSMax
+	VSCtl_stSpdVehCritFilModClc
+	VSCtl_stSpdVehCritModClc
+	VSCtl_stVSMaxPrev
+	VSCtl_tiCfmSdwnVSMaxReqRaw1
+	VSCtl_tiCfmSdwnVSMaxReqRaw2
+	VSCtl_tiCfmSdwnVSMaxReqRaw3
+	VSCtl_tiCfmSupVSMaxReqRaw1
+	VSCtl_tiCfmSupVSMaxReqRaw2
+	VSCtl_tiCfmSupVSMaxReqRaw3
+	VSCtl_tiDftRvVSMax
+	VSCtl_tiFilSpdVehCtlVSMaxDyn
+	VSCtl_tiFilStCtlAVehVSMax
+	VSCtl_tiHld_stDeacVSMaxReq1
+	VSCtl_tiHld_stDeacVSMaxReq2
+	VSCtl_tiIniVSMax
+	VSMax_ModuleVersion_Major_MP
+	VSMax_ModuleVersion_Minor_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE VSMax ------------------------------------*/

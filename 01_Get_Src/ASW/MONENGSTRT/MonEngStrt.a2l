@@ -1,0 +1,829 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : MonEngStrt                                              */
+/* !Description     : Surveillance du démarrage                               */
+/*                                                                            */
+/* !Module          : MonEngStrt                                              */
+/*                                                                            */
+/* !File            : MonEngStrt.a2l                                          */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed Sep 11 09:00:08 2013                              */
+/*   Model name       : MonEngStrt_AUTOCODE.mdl                               */
+/*   Model version    : 1.201                                                 */
+/*   Root subsystem   : /MonEngStrt                                           */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/ENGST/MONENGSTRT/MonEngStrt.a2v $*/
+/* $Revision::   1.3                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   16 Sep 2013 $*/
+/******************************************************************************/
+
+/begin MODULE MonEngStrt  "MonEngStrt"
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT MonEngStrt_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_tiStrtLim_T
+    /* Long Identifier        */      "Table des seuils de temps pour activer le défaut « Temps de démarrage long » en fonction de la température d’eau"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      MonEngStrt_CM_1
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      30000.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      MonEngStrt_CM_2
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      150.0
+      AXIS_PTS_REF                    EngSt_bkptTcoStrt_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      EngSt_bkptTcoStrt_A
+    /* Long Identifier        */      "Table de point d’appui en température d’eau"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      MonEngStrt_RL_Lookup1D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_2
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      150.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_tiSyncLim_T
+    /* Long Identifier        */      "Temps de synchronisation moteur"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      MonEngStrt_CM_1
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      3000.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      MonEngStrt_CM_2
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      150.0
+      AXIS_PTS_REF                    EngSt_bkptTcoStrt_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_tiPFuMinLim_T
+    /* Long Identifier        */      "Seuils de temps pour activer le défaut « Temps de démarrage long » en fonction de la température d’eau"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      MonEngStrt_CM_1
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      3000.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      MonEngStrt_CM_2
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      150.0
+      AXIS_PTS_REF                    EngSt_bkptTcoStrt_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_nEngPFuLim_C
+    /* Long Identifier        */      "Seul de régime d'activation du défaut \"pression rail insuffisante au démarrage\""
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_nEngSyncLim_C
+    /* Long Identifier        */      "Seul de régime d'activation du défaut \"Temps de synchronisation moteur long\""
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_nEngUnlockADCLim_C
+    /* Long Identifier        */      "Seul de régime d'activation du défaut \"Temps de déverrouillage ADC long\""
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_uBattPFuLim_C
+    /* Long Identifier        */      "Seuil de tension batterue au key-on pour l'activation du défaut \"pression rail inssufissante au démarrage\""
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      24.15
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_uBattSyncLim_C
+    /* Long Identifier        */      "Seuil de tension batterue au key-on pour l'activation du défaut \"temps de synchronisation moteur long\""
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      24.15
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_uBattThdCmdCrk_C
+    /* Long Identifier        */      "Seuil de tension représentatif de la commande du démarreur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      24.15
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_tiUnlockADCLim_C
+    /* Long Identifier        */      "Seuil de temps pour activer le défaut « Temps de déverrouillage ADC long »"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_1
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      3000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      MONENGSTRT_u8Inhib
+    /* Long Identifier        */      "inhibition of module MONENGSTRT"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_bStrtDiagCf_C
+    /* Long Identifier        */      "Booléen de sélection de la stratégie de surveillance du démarrage en fonction du projet"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngSt_volFuInitMin_C
+    /* Long Identifier        */      "Seuil de niveau carburant pour déterminer un niveau mini carburant au roulage précédent"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      MonEngStrt_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      MonEngStrt_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      127.5
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_uBattInit
+    /* Long identifier        */      "Tension batterie au Key On"
+    /* Data type              */      UWORD
+    /* Conversion method      */      MonEngStrt_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      24.15
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_tiDlySync
+    /* Long identifier        */      "Temps de synchronisation moteur"
+    /* Data type              */      UWORD
+    /* Conversion method      */      MonEngStrt_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      3000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_tiDlyStrt
+    /* Long identifier        */      "Temps global de démarrage"
+    /* Data type              */      UWORD
+    /* Conversion method      */      MonEngStrt_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      30000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_tiDlyUnlockADC
+    /* Long identifier        */      "Temps de déverrouillage ADC (Anti Démarrage Codé)"
+    /* Data type              */      UWORD
+    /* Conversion method      */      MonEngStrt_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      3000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_tiDlyPFuMin
+    /* Long identifier        */      "Temps de montée en pression rail"
+    /* Data type              */      UWORD
+    /* Conversion method      */      MonEngStrt_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      3000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonWaitORngEngSt
+    /* Long identifier        */      "Diagnostic des défauts liés à la surveillance du démarrage en attente"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bAcvStrtDiag
+    /* Long identifier        */      "Condition d'activation du diagnostic des défauts liés à la surveillance du démarrage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bDgoORngStrtEngSt
+    /* Long identifier        */      "Résultat du diagnostic temps de démarrage trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bDgoORngUnlockEngSt
+    /* Long identifier        */      "Résultat du diagnostic temps de déverrouillage trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bDgoORngPFuEngSt
+    /* Long identifier        */      "Résultat du diagnostic temps de montée en pression du rail trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bDgoORngSyncEngSt
+    /* Long identifier        */      "Résultat du diagnostic temps de synchronisation trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonRunORngPFuEngSt
+    /* Long identifier        */      "Booléen d'activation du diagnostic fonctionnel montée en pression du rail au démarrage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonRunORngSyncEngSt
+    /* Long identifier        */      "Booléen d'activation du diagnostic fonctionnel temps de synchronisation trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonRunORngStrtEngSt
+    /* Long identifier        */      "Booléen d'activation du diagnostic fonctionnel temps de démarrage trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonRunORngUnlockEngSt
+    /* Long identifier        */      "Booléen d'activation du diagnostic fonctionnel temps de déverrouillage ADC trop long"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bFuLvlOK
+    /* Long identifier        */      "Booléen indiquant que le niveau carburant sur le roulage en cours et sur le roulage précédent n'est pas mini"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bMonEngStrtEnd
+    /* Long identifier        */      "booléen indiquant la fin des diagnostics des défauts liés à la surveillance du démarrage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bCmdCranking
+    /* Long identifier        */      "Commande du démarreur"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_bStrtDiagCf
+    /* Long identifier        */      "Booléen indiquant la stratégie de surveillance du démarrage à appliquer en fonction du projet"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_volFuInit
+    /* Long identifier        */      "Niveau carburant au roulage précédent"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      127.5
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngSt_stMonEngStrt
+    /* Long identifier        */      "Etat de la surveillance du démarrage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      MonEngStrt_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      255.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_1
+    /* Long identifier        */      "Q = V/10.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "ms"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 10.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_2
+    /* Long identifier        */      "Q = (V+50.000000000000)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1.000000000000 50.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_4
+    /* Long identifier        */      "Q = V*42.401656314700"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "V"
+    /* Coefficients           */      COEFFS 0 42.401656314700 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_5
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "s.u."
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF MonEngStrt_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      MonEngStrt_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_7
+    /* Long identifier        */      "Q = V*2.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "L"
+    /* Coefficients           */      COEFFS 0 2.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      MonEngStrt_CM_8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "etat"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin FUNCTION MonEngStrt
+    "PTS_DOC_5489216.01"
+    
+    /begin LOC_MEASUREMENT
+      EngSt_bAcvStrtDiag
+      EngSt_bCmdCranking
+      EngSt_bDgoORngPFuEngSt
+      EngSt_bDgoORngStrtEngSt
+      EngSt_bDgoORngSyncEngSt
+      EngSt_bDgoORngUnlockEngSt
+      EngSt_bFuLvlOK
+      EngSt_bMonEngStrtEnd
+      EngSt_bMonRunORngPFuEngSt
+      EngSt_bMonRunORngStrtEngSt
+      EngSt_bMonRunORngSyncEngSt
+      EngSt_bMonRunORngUnlockEngSt
+      EngSt_bMonWaitORngEngSt
+      EngSt_stMonEngStrt
+      EngSt_tiDlyPFuMin
+      EngSt_tiDlyStrt
+      EngSt_tiDlyUnlockADC
+      EngSt_uBattInit
+      EngSt_volFuInit
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      EngSt_bStrtDiagCf
+      EngSt_tiDlySync
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      EngSt_bStrtDiagCf_C
+      EngSt_bkptTcoStrt_A
+      EngSt_nEngPFuLim_C
+      EngSt_nEngSyncLim_C
+      EngSt_nEngUnlockADCLim_C
+      EngSt_tiPFuMinLim_T
+      EngSt_tiStrtLim_T
+      EngSt_tiSyncLim_T
+      EngSt_tiUnlockADCLim_C
+      EngSt_uBattPFuLim_C
+      EngSt_uBattSyncLim_C
+      EngSt_uBattThdCmdCrk_C
+      EngSt_volFuInitMin_C
+      MONENGSTRT_u8Inhib
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/

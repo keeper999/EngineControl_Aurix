@@ -1,0 +1,18 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_bGetFRM|A|(argin uint16 u16channel)boolean;|1|HEADER|1|NONE||||0|0|0|0|
+GDGAR_tenuGetStDgo|A|func_GDGAR_tenuGetStDgo|API.6|HEADER|1|NONE||||0|0|0|0|Value of the GDU states
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft,argin boolean bDgo,argin boolean bMonRun,argin boolean Ns_bMonWait);|5|HEADER|1|NONE||||0|0|0|0|
+Gear_EveRst_NeutPosnAcq|C|();|SCH.1|NEUTPOSNACQ|1|PTS_DOC_6533527||||0|0|0|0|Evénement reset
+Gear_SdlFast_NeutPosnAcq|C|();|SCH.2|NEUTPOSNACQ|1|PTS_DOC_6533527||||0|0|0|0|Moniteur rapide de la fonction Gear
+NeutPosnAcq_SdlSfty_SftyLvl2|B|();|SCH.3|NEUTPOSNACQ|1|PTS_DOC_6533527||||0|0|0|0|Evènement de calcul des fonctions safety de niveau 2.
+NEUTPOSNACQ_vidbDgoORngCalcn|D|();|FCT1.8|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet de détecter une fréquence du signal capteur de position point mort hors gabarit.
+NEUTPOSNACQ_vidbDgoScgCalcn|D|();|FCT1.7|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet de détecter un court-circuit au plus du capteur de position point mort.
+NEUTPOSNACQ_vidbDgoScpCalcn|D|();|FCT1.6|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet de détecter un court circuit à la masse du capteur de position point mort.
+NEUTPOSNACQ_vidBneutNom|C|();|FCT2.1|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|En mode nominal, le booléen de position point mort est issu d’un hystérésis sur la valeur du RCO du signal du capteur
+NEUTPOSNACQ_vidInitialization|B|();|FCT1.1|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet d’initialiser l’information « boîte de vitesse au point mort » au réveil calculateur lorsque le capteur n’est pas encore fonctionnel.
+NEUTPOSNACQ_vidInitOutput|B|();|FCT1.2|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet l'initialisation des sorties.
+NEUTPOSNACQ_vidNeutPosnAcq|D|();|FCT1.4|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc met à la disposition du LDA le rapport cyclique du signal délivré par le capteur de position point mort. Le calcul du rapport cyclique de ce signal est effectué par le LDB.
+NEUTPOSNACQ_vidNeutPosnDiag|D|();|FCT1.5|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce bloc permet de vérifier si les conditions de chaque diagnostic sont satisfaites et le cas échéant d’autoriser la détection d’une éventuelle défaillance.
+NEUTPOSNACQ_vidNeutPosnTreat|C|();|FCT1.9|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Ce  bloc  décrit  la  consolidation  du  booléen  position  point mort  en  fonction  des  résultats  des  diagnostics  du capteur.
+NEUTPOSNACQ_vidOS|C|();|FCT1.3|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Le démultiplexage de  l’évènement Gear_SdlFast_NeutPosnAcq est autorisé si et seulement si  le véhicule est équipé d’une boîte de vitesse manuelle et de la fonctionnalité STOP & START.
+NEUTPOSNACQ_vidSafetyLevel2|B|();|FCT2.2|NEUTPOSNACQ|0|PTS_DOC_6533527||||0|0|0|0|Cette fonction permet d’effectuer une stratégie safety de niveau 2 sur le signal du capteur de point mort haut.

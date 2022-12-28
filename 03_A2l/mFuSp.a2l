@@ -1,0 +1,917 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : mFuSp                                                   */
+/* !Description     : INJECTION MASS PER CYLINDER                             */
+/*                                                                            */
+/* !Module          : mFuSp                                                   */
+/*                                                                            */
+/* !File            : mFuSp.a2l                                               */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed Jul 17 12:40:01 2013                              */
+/*   Model name       : mFuSp_AUTOCODE.mdl                                    */
+/*   Model version    : 1.274                                                 */
+/*   Root subsystem   : /mFuSp                                                */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/mFuSp/5-SOFT-LIV/mFuSp.a2v  $*/
+/* $Revision::   1.9                                                         $*/
+/* $Author::   adelvare                               $$Date::   19 Jul 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   mFuSp
+    /*   LongIdentifier */   "mFuSp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuSpETB_M
+       /*   LongIdentifier */   "Cartographie de masse de consigne en mode banc"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mETBFuMassSlewRate_C
+       /*   LongIdentifier */   "Slew rate de la consigne de masse en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mETBFuMass_C
+       /*   LongIdentifier */   "Consigne de masse en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuMax_C
+       /*   LongIdentifier */   "Masse d'essence maximale que le système peut injecter"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuMin_C
+       /*   LongIdentifier */   "Masse d'essence minimale que le systeme peut injecter"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjCmpETB_C
+       /*   LongIdentifier */   "Valeur de la compensation en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facStoichBasGas_C
+       /*   LongIdentifier */   "Coefficient stoechiométrique pour un gaz pauvre"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facStoichFlex1_C
+       /*   LongIdentifier */   "Stoichiometric coefficient for Flex Fuel 1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facStoichFlex2_C
+       /*   LongIdentifier */   "Coefficient stoechiometrique pour le Flex Fuel 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facStoichGsl_C
+       /*   LongIdentifier */   "Coefficient stoechiometrique pour du Gsl"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facStoichRichGas_C
+       /*   LongIdentifier */   "Coefficient stoechiometrique pour un gaz riche"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noETBSelMassFuSp_C
+       /*   LongIdentifier */   "Selection du mode banc pour la consigne de masse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   MFUSP_u8Inhib
+       /*   LongIdentifier */   "Inhibtion of module mFuSp"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvETBFuMass_C
+       /*   LongIdentifier */   "Activation du mode banc en masse carburant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhCorRichETBFuMass_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la prise en compte de la régulation de richesse en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   Ext_pDsThrMesSIY_A
+       /*   LongIdentifier */   "Table de points d'appui en mode banc pour la pression collecteur mesurée"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   Ext_nEngX_A
+       /*   LongIdentifier */   "Engine speed axis for ETB mode"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSp_CM_3
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuSp
+       /*   LongIdentifier     */   "Vecteur des masses d'essence à injecter avant coupure d'injection"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjCmp
+       /*   LongIdentifier     */   "Vecteur (n injections) des compensations"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuReq_MP
+       /*   LongIdentifier     */   "Vecteur des masses d'essence requises avant compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuReqCmp_MP
+       /*   LongIdentifier     */   "Vecteur des masses d'essence requises avant prise en compte de la purge canister"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuRawTmp_MP
+       /*   LongIdentifier     */   "Vecteur de masse à injecter avant saturation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facStoichFlex_MP
+       /*   LongIdentifier     */   "Coefficient stoechiométrique pour du Flex Fuel"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9999694824218750E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facStoichGas_MP
+       /*   LongIdentifier     */   "Coefficient sotechiometrique pour du Gaz"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9999694824218750E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facStoich
+       /*   LongIdentifier     */   "Vecteur des coefficients stoechiometriques"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9999694824218750E+001
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mAirPred
+       /*   LongIdentifier     */   "Vecteur des masses d'air pour la calcul des masses d'essence"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuSp_CM_19
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   7.8118807983398444E+000
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuSpCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des masses à injecter"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuSp
+       /*   LongIdentifier     */   "Consigne de masse d'essence pour le prochain cylindre"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuSpCylPrev
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des masses à injecter au pas précédent"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mCanPurg
+       /*   LongIdentifier     */   "Vecteur de masses issues de la purge canister"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjCmpCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindre) des compensations"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjCmpCylPrev
+       /*   LongIdentifier     */   "Vecteur (n cylindre) des compensations au pas précédent"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuSp_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bFuSpCylNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse à injecter au prochain cylindre en admission est nulle"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuSp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_1
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_2
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_4
+       /*   LongIdentifier */   "Q = V*4000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_5
+       /*   LongIdentifier */   "Q = V*3276.8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 3276.8 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            mFuSp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_8
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_9
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_12
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_13
+       /*   LongIdentifier */   "Q = V*4096"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4096 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_14
+       /*   LongIdentifier */   "Q = V*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 65536 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_15
+       /*   LongIdentifier */   "Q = V*4369.06666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4369.06666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_16
+       /*   LongIdentifier */   "Q = V*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_17
+       /*   LongIdentifier */   "Q = V*1310.72"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1310.72 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_18
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSp_CM_19
+       /*   LongIdentifier */   "Q = V/1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 1 0 0 0 1000
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   mFuSp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   mFuSp
+       /*   LongIdentifier */   "PTS_DOC_5060285_v05"
+
+       /begin DEF_CHARACTERISTIC
+          Ext_nEngX_A
+          Ext_pDsThrMesSIY_A
+          InjSys_bAcvETBFuMass_C
+          InjSys_bInhCorRichETBFuMass_C
+          InjSys_facInjCmpETB_C
+          InjSys_facStoichBasGas_C
+          InjSys_facStoichFlex1_C
+          InjSys_facStoichFlex2_C
+          InjSys_facStoichGsl_C
+          InjSys_facStoichRichGas_C
+          InjSys_mETBFuMassSlewRate_C
+          InjSys_mETBFuMass_C
+          InjSys_mFuMax_C
+          InjSys_mFuMin_C
+          InjSys_mFuSpETB_M
+          InjSys_noETBSelMassFuSp_C
+          MFUSP_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bFuSpCylNull
+          InjSys_facStoichFlex_MP
+          InjSys_facStoichGas_MP
+          InjSys_prm_facInjCmp
+          InjSys_prm_facInjCmpCylPrev
+          InjSys_prm_facStoich
+          InjSys_prm_mAirPred
+          InjSys_prm_mFuRawTmp_MP
+          InjSys_prm_mFuReqCmp_MP
+          InjSys_prm_mFuReq_MP
+          InjSys_prm_mFuSp
+          InjSys_prm_mFuSpCylPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_mFuSp
+          InjSys_prm_facInjCmpCyl
+          InjSys_prm_mCanPurg
+          InjSys_prm_mFuSpCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

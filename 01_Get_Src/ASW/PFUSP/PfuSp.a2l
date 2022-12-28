@@ -1,0 +1,2131 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : pFuSp                                                   */
+/* !Description     : pFuSp : Fuel Pressure Set Point                         */
+/*                                                                            */
+/* !Module          : pFuSp                                                   */
+/*                                                                            */
+/* !File            : pFuSp.a2l                                               */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Dec 20 19:22:07 2012                              */
+/*   Model name       : pFuSp_AUTOCODE.mdl                                    */
+/*   Model version    : 1.341                                                 */
+/*   Root subsystem   : /pFuSp                                                */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/PFUSP/pFuSp.a2v           $*/
+/* $Revision::   1.6                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   07 Jan 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   pFuSp
+    /*   LongIdentifier */   "pFuSp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuSp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpETB_M
+       /*   LongIdentifier */   "Cartographie de pression en mode banc"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal1_M
+       /*   LongIdentifier */   "Cartographie 1 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal1Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal1X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal2_M
+       /*   LongIdentifier */   "Calibration 2 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal2Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal2X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal3_M
+       /*   LongIdentifier */   "Calibration 3 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal3Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal3X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal4_M
+       /*   LongIdentifier */   "Calibration 4 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal4Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal4X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal5_M
+       /*   LongIdentifier */   "Calibration 5 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal5Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal5X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal6_M
+       /*   LongIdentifier */   "Calibration 6 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal6Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal6X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal7_M
+       /*   LongIdentifier */   "Calibration 7 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal7Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal7X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal8_M
+       /*   LongIdentifier */   "Calibration 8 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal8Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal8X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal9_M
+       /*   LongIdentifier */   "Calibration 9 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal9Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal9X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal10_M
+       /*   LongIdentifier */   "Cartographie 10 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal10Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal10X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal11_M
+       /*   LongIdentifier */   "Cartographie 11 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal11Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal11X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal12_M
+       /*   LongIdentifier */   "Cartographie 12 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal12Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal12X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal13_M
+       /*   LongIdentifier */   "Cartographie 13 pour la consigne de pression"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal13Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal13X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_nMaxGrdLdSat_C
+       /*   LongIdentifier */   "Gradient maximal en régime moteur durant la saturation en remplissage en air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuDifMaxRailDcha_C
+       /*   LongIdentifier */   "Seuil maximum de la différence entre la pression rail mesurée et la consigne pour l'activation de la coupure pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal14_C
+       /*   LongIdentifier */   "Calibration 14 pour la consigne de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpCal15_C
+       /*   LongIdentifier */   "Calibration 15 pour la consigne de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpETBSlewRate_C
+       /*   LongIdentifier */   "Slew rate pour la consigne de pression en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuSpETB_C
+       /*   LongIdentifier */   "Consigne de pression en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pPresDifLowHys_C
+       /*   LongIdentifier */   "Condition sur le bas de l'hystérésys pour l'évaluation de la robustesse de la consigne de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pPresDifMaxInj_T
+       /*   LongIdentifier */   "Calibration sur la robustesse de la consigne de pression"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_1
+          /*   MaxAxisPoints  */   10
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pPresDifMaxInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tqMaxNegGrdDcha_C
+       /*   LongIdentifier */   "Gradient négatif de couple maximal acceptable avant coupure préventive de la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_6
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tqMaxPosGrdDcha_C
+       /*   LongIdentifier */   "Gradient positif de couple maximal acceptable avant coupure préventive de la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_6
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuMinRailDcha_C
+       /*   LongIdentifier */   "Seuil de pression minimum pour l'autorisation de la désactivation de la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.0E+007
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facPresDifMaxInj_T
+       /*   LongIdentifier */   "Facteur du seuil de pression pour l'activation de la décharge du rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.2749805450439450E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   pFuSp_CM_12
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facPresDifMaxInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModPfuSatMax_C
+       /*   LongIdentifier */   "Index mode pour la saturation maximale de la pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModPfuSatMin_C
+       /*   LongIdentifier */   "Index mode pour la saturation minimale de la pression carburant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxTiPerSplEve_C
+       /*   LongIdentifier */   "Index de temps passé entre 2 évènements spill (0: temps passé = 1 TDC; temps passé = 2 TDC)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noETBSelpFuSp_C
+       /*   LongIdentifier */   "Selection du mode banc moteur pour la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_stManAirLdMinSat_C
+       /*   LongIdentifier */   "Etat du mode manuel pour la stratégie de saturation minimale du remplissage en air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_stManInhInjCutOff_C
+       /*   LongIdentifier */   "Etat du mode manuel de l'inhibition de la coupure injection pour la décharge rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_stManSpcInjMod_C
+       /*   LongIdentifier */   "Etat du mode manuel pour la stratégie de gestion du mode d'injection spécifique"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFUSP_u8Inhib
+       /*   LongIdentifier */   "Inhibtion of module PFUSP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvAirLdMinSatDcha_C
+       /*   LongIdentifier */   "Booléen d'activation de la stratégie de saturation minimale du remplissage d'air en cas d'interdiction de la coupure injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvAirLdMinSat_C
+       /*   LongIdentifier */   "Booléen d'activation du mode manuel pour la saturation minimale du remlissage en air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvETBpFuSp_C
+       /*   LongIdentifier */   "Booléen d'activation du mode banc pour la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvMonMisfSpcInjMod_C
+       /*   LongIdentifier */   "Booléen d'activation le la stratégie de surveillance du misfire"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvPmpCutTqLimEM_C
+       /*   LongIdentifier */   "Booléen d'activation de la condition sur le couple pour désactiver la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvSpcInjMod_C
+       /*   LongIdentifier */   "Booléen d'activation du mode manuel pour le choix du mode d'injection spécifique"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAuthAirLdMinSat_C
+       /*   LongIdentifier */   "Booléen d'autorisation de la stratégie de saturation minimale du remplissage en air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhDifFuRailDCha_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la coupure pompe HP en cas de pression rail mesurée supérieure à la consigne"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhInjCutOff_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la coupure injection pour la décharge du rail en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiDlyAcvSpcInjMod_C
+       /*   LongIdentifier */   "Délai avant nouvelle requête de mode spécifique de combustion après une inhibition"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   125.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiPmpCutOffTqLimEM_C
+       /*   LongIdentifier */   "Delai sur la désactivation de de la coupure pompe HP liée à la demande de couple"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_14
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   12.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_pPresDifMaxInj_A
+       /*   LongIdentifier */   "Table des points d'appui pour la calibration sur la robustesse de la consigne de pression"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuSp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_1
+       /*   MaxAxisPoints  */   10
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facPresDifMaxInj_A
+       /*   LongIdentifier */   "Table de points d'appui en température d'eau moteur pour le facteur du seuil d'activation de la décharge du rail"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuSp_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuSp_CM_12
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiTDCPmp
+       /*   LongIdentifier */   "Temps entre 2 PMHs de la pompe"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpBas1ModTar
+       /*   LongIdentifier */   "Consigne de pression pour le mode cible en base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpBas2ModCur
+       /*   LongIdentifier */   "Consigne de pression pour le mode courant en base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpBas2ModTar
+       /*   LongIdentifier */   "Consigne de pression pour le mode cible en base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpBas1ModCur
+       /*   LongIdentifier */   "Consigne de pression pour le mode courant en base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpModCur_MP
+       /*   LongIdentifier */   "Mode courant de consigne de pression carburant"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpModTar_MP
+       /*   LongIdentifier */   "Mode cible de consigne de pression carburant"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TqLimEM_tqLimEMPrec
+       /*   LongIdentifier */   "Valeur précédente du couple conducteur limité envoyé à l'agrément préventif"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuSp_CM_20
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSp
+       /*   LongIdentifier */   "Fuel pressure set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_pFuSpCal
+       /*   LongIdentifier */   "Vecteur calibration pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 15 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal15
+       /*   LongIdentifier */   "Calibration 15 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal14
+       /*   LongIdentifier */   "Calibration 14 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal13
+       /*   LongIdentifier */   "Calibration 13 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal12
+       /*   LongIdentifier */   "Calibration 12 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal11
+       /*   LongIdentifier */   "Calibration 11 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal10
+       /*   LongIdentifier */   "Calibration 10 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal9
+       /*   LongIdentifier */   "Calibration 9 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal8
+       /*   LongIdentifier */   "Calibration 8 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal7
+       /*   LongIdentifier */   "Calibration 7 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal6
+       /*   LongIdentifier */   "Calibration 6 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal5
+       /*   LongIdentifier */   "Calibration 5 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal4
+       /*   LongIdentifier */   "Calibration 4 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal3
+       /*   LongIdentifier */   "Calibration 3 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal2
+       /*   LongIdentifier */   "Fuel pressure set point calibration 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuSpCal1
+       /*   LongIdentifier */   "Calibration 1 pour la consigne de pression"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvAirLdMinSat
+       /*   LongIdentifier */   "Activation de la saturation minimale du remplissage en air du rail de décharge"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvSpcInjMod
+       /*   LongIdentifier */   "Booléen d'activation du mode d'injection spécifique pour la décharge rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInjSpNotAccu
+       /*   LongIdentifier */   "Boolean for not accurate injection set points because of injection pressure deviation"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvCllRailDcha
+       /*   LongIdentifier */   "Activation de la structure couple en boucle fermée pour la décharge du rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bHPPmpCutOff
+       /*   LongIdentifier */   "Demande de l'injection pour coupure de la pompe HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bCanPurgCutOff
+       /*   LongIdentifier */   "Demande de l'injection pour coupure de la purge du canister"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhInjCutOffPFuDcha
+       /*   LongIdentifier */   "Booléen d'inhibition de la coupure injection pour la décharge du rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhSpcInjMod
+       /*   LongIdentifier */   "Booléen d'inhibition de la requete de mode de combustion spécifique pour la décharge rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhAirLdMinSat
+       /*   LongIdentifier */   "Booléen d'inhibition de la stratégie de saturation minimale du remplissage d'air"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bAcvPfuSpCal
+       /*   LongIdentifier */   "Vecteur des booléens d'activation des calibrations pour la consigne de pression"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 15 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal1
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 1 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal2
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 2 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal11
+       /*   LongIdentifier */   "Activation Boolean for fuel pressure calibration 11"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal12
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 12 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal13
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 13 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal14
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 14 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal15
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 14 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal3
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 3 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal4
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 3 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal5
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 5 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal6
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 6 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal7
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 7 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal8
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 8 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal9
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 9 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvPfuSpCal10
+       /*   LongIdentifier */   "Booléen d'activation de la calibration 10 pour la pression carburant"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvSpcInjModTmp
+       /*   LongIdentifier */   "Booléen d'activation temporaire du mode de combustion spécifique pour la décharge du rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvAirLdMinSatTmp
+       /*   LongIdentifier */   "Booléen d'activation temporaire de la stratégie de saturation minimale du remplissage en air"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhInjCutOffTmp
+       /*   LongIdentifier */   "Booléen temporaire d'inhibition de la coupure injection pour la décharge du rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   pFuSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_1
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_2
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_4
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_6
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "N.m"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_7
+       /*   LongIdentifier */   "Q = V/10000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 10000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_8
+       /*   LongIdentifier */   "Q = V*5140.07843137"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 5140.07843137 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            pFuSp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_12
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_13
+       /*   LongIdentifier */   "Q = V*2"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 2 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_14
+       /*   LongIdentifier */   "Q = V*10"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_15
+       /*   LongIdentifier */   "Q = V*1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_16
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_17
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_18
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_19
+       /*   LongIdentifier */   "Q = V*100000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 100000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuSp_CM_20
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "N.m"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   pFuSp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   pFuSp
+       /*   LongIdentifier */   "V02NT1104340.003"
+
+       /begin DEF_CHARACTERISTIC
+          InjSys_bAcvAirLdMinSatDcha_C
+          InjSys_bAcvAirLdMinSat_C
+          InjSys_bAcvETBpFuSp_C
+          InjSys_bAcvMonMisfSpcInjMod_C
+          InjSys_bAcvPmpCutTqLimEM_C
+          InjSys_bAcvSpcInjMod_C
+          InjSys_bAuthAirLdMinSat_C
+          InjSys_bInhDifFuRailDCha_C
+          InjSys_bInhInjCutOff_C
+          InjSys_facPresDifMaxInj_T
+          InjSys_idxModPfuSatMax_C
+          InjSys_idxModPfuSatMin_C
+          InjSys_idxTiPerSplEve_C
+          InjSys_nMaxGrdLdSat_C
+          InjSys_noETBSelpFuSp_C
+          InjSys_pFuDifMaxRailDcha_C
+          InjSys_pFuMinRailDcha_C
+          InjSys_pFuSpCal10_M
+          InjSys_pFuSpCal11_M
+          InjSys_pFuSpCal12_M
+          InjSys_pFuSpCal13_M
+          InjSys_pFuSpCal14_C
+          InjSys_pFuSpCal15_C
+          InjSys_pFuSpCal1_M
+          InjSys_pFuSpCal2_M
+          InjSys_pFuSpCal3_M
+          InjSys_pFuSpCal4_M
+          InjSys_pFuSpCal5_M
+          InjSys_pFuSpCal6_M
+          InjSys_pFuSpCal7_M
+          InjSys_pFuSpCal8_M
+          InjSys_pFuSpCal9_M
+          InjSys_pFuSpETBSlewRate_C
+          InjSys_pFuSpETB_C
+          InjSys_pFuSpETB_M
+          InjSys_pPresDifLowHys_C
+          InjSys_pPresDifMaxInj_A
+          InjSys_pPresDifMaxInj_T
+          InjSys_stManAirLdMinSat_C
+          InjSys_stManInhInjCutOff_C
+          InjSys_stManSpcInjMod_C
+          InjSys_tCo_facPresDifMaxInj_A
+          InjSys_tiDlyAcvSpcInjMod_C
+          InjSys_tiPmpCutOffTqLimEM_C
+          InjSys_tqMaxNegGrdDcha_C
+          InjSys_tqMaxPosGrdDcha_C
+          PFUSP_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bAcvAirLdMinSatTmp
+          InjSys_bAcvPfuSpCal1
+          InjSys_bAcvPfuSpCal10
+          InjSys_bAcvPfuSpCal11
+          InjSys_bAcvPfuSpCal12
+          InjSys_bAcvPfuSpCal13
+          InjSys_bAcvPfuSpCal14
+          InjSys_bAcvPfuSpCal15
+          InjSys_bAcvPfuSpCal2
+          InjSys_bAcvPfuSpCal3
+          InjSys_bAcvPfuSpCal4
+          InjSys_bAcvPfuSpCal5
+          InjSys_bAcvPfuSpCal6
+          InjSys_bAcvPfuSpCal7
+          InjSys_bAcvPfuSpCal8
+          InjSys_bAcvPfuSpCal9
+          InjSys_bAcvSpcInjModTmp
+          InjSys_bInhAirLdMinSat
+          InjSys_bInhInjCutOffTmp
+          InjSys_bInhSpcInjMod
+          InjSys_pFuSpBas1ModCur
+          InjSys_pFuSpBas1ModTar
+          InjSys_pFuSpBas2ModCur
+          InjSys_pFuSpBas2ModTar
+          InjSys_pFuSpCal1
+          InjSys_pFuSpCal10
+          InjSys_pFuSpCal11
+          InjSys_pFuSpCal12
+          InjSys_pFuSpCal13
+          InjSys_pFuSpCal14
+          InjSys_pFuSpCal15
+          InjSys_pFuSpCal2
+          InjSys_pFuSpCal3
+          InjSys_pFuSpCal4
+          InjSys_pFuSpCal5
+          InjSys_pFuSpCal6
+          InjSys_pFuSpCal7
+          InjSys_pFuSpCal8
+          InjSys_pFuSpCal9
+          InjSys_pFuSpModCur_MP
+          InjSys_pFuSpModTar_MP
+          InjSys_prm_bAcvPfuSpCal
+          InjSys_prm_pFuSpCal
+          InjSys_tiTDCPmp
+          TqLimEM_tqLimEMPrec
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvAirLdMinSat
+          InjSys_bAcvCllRailDcha
+          InjSys_bAcvSpcInjMod
+          InjSys_bCanPurgCutOff
+          InjSys_bHPPmpCutOff
+          InjSys_bInhInjCutOffPFuDcha
+          InjSys_bInjSpNotAccu
+          InjSys_pFuSp
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

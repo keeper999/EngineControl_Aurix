@@ -1,0 +1,3070 @@
+/begin MODULE  PFilFast "PFilFast 14.0"
+
+    /begin CHARACTERISTIC CoCha_bInhEGR_B "Bypass de CoCha_bInhEGR"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bRstAOS_B "Bypass de CoCha_bRstAOS"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bTqAccuReq_B "Bypass de CoCha_bTqAccuReq"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bTqDynReq_B "Bypass de CoCha_bTqDynReq"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bTqReqASR_B "Bypass de CoCha_bTqReqASR"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bTqReqMSR_B "Bypass de CoCha_bTqReqMSR"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqEfcLimTqMaxDyn_B "Bypass de CoCha_tqEfcLimTqMaxDyn"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqEfcLim_B "Bypass de CoCha_tqEfcLim"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqEfcReq_B "Bypass de CoCha_tqEfcReq"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoCha_tqMax_MP "Couple maximum entre couple MSR et la proctection différentielle"
+      SWORD PFILFAST_CM_3 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoCha_tqMin_MP "Couple minimum entre couple ASR et couple avant traitement"
+      SWORD PFILFAST_CM_3 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC PFILFAST_ACTIVE_BYP_C "Bypass"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT PFilFast_ModuleVersion_Major_MP "PFilFast_ModuleVersion_Major_MP"
+      UBYTE PFILFAST_CM_4 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PFilFast_ModuleVersion_Minor_MP "PFilFast_ModuleVersion_Minor_MP"
+      UBYTE PFILFAST_CM_4 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_Ext_tAir_ACLoss_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 140 PFILFAST_CM_5 /* deg C:1:0: */ 5 -40 100
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_PrmCf1_1 "TqSys_PrmCf1[0]"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 128
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf1_2 "TqSys_PrmCf1[1]"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf1_3 "TqSys_PrmCf1[2]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf1_4 "TqSys_PrmCf1[3]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf1_5 "TqSys_PrmCf1[4]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf1_6 "TqSys_PrmCf1[5]"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 128
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_1 "TqSys_PrmCf2[0]"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 128
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_2 "TqSys_PrmCf2[1]"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_3 "TqSys_PrmCf2[2]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_4 "TqSys_PrmCf2[3]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_5 "TqSys_PrmCf2[4]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_PrmCf2_6 "TqSys_PrmCf2[5]"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 128
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceAcv "Indique l activation de l acceleration"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcceClrCrossAOSIt_B "Bypass de TqSys_bAcceClrCrossAOSIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcceDetAOSIt_B "Bypass de TqSys_bAcceDetAOSIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcceDi "Booleen issu des conditions de desactivation de la fonction."
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceReq "Boolen de detection de l accel, pris en compte dans la bascule RS de l acceleration"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceReq_MP "Boolen de detection de l accel, pris en compte dans la bascule RS de l acceleration"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcvCllIt_B "Bypass de TqSys_bAcvCllIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcvFrzAccP_C "Permet d activer le figeage de la position pédale pendant la traversée des jeux"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcvUHFrz "Désactivation de la demande de figeage du couple UH"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcvUHFrzOff "Désactivation de la demande de figeage du couple UH"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcvUHFrzOff_C "Activation de la fonction UH en mode ouvert BVA"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcvUHFrz_C "Activation de la fonction Demande de figeage UH"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bClrCrossAcce_B "Bypass de TqSys_bClrCrossAcce"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bClrCrossOff "Indique la sortie de la phase de traversée des jeux"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bClrCrossOn "Indique l’entrée dans la phase de traversée des jeux"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDeceAcvIt_B "Bypass de TqSys_bDeceAcvIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bDeceAcvRaw "Booléen de détéction de l’accélération brute"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDeceAcvTqMax "Booleen d’activation de la demande de passage du couple non filtre sur le couple max"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDeceDetAOSIt_B "Bypass de TqSys_bDeceDetAOSIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bDeceReq_MP "Boolen de détéction de la decel pris en compte dans la bascule RS de la décélération"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDeceTqAir_C "Booleen d’activation de la strategie de debouclage en deceleration"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDeceTyp_C "Booleen de choix du couple utilise pour l’initialisation des parametres de la decel."
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDetClrCrossAcv_C "Booléen de prise en compte des jeux automatiques"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bDiDrivFilCfReq "Demande de désactivation du filtrage issue de la configuration"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDiDrivFilReq_B "Bypass de TqSys_bDiDrivFilReq"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDiDrivFil_C "Permet de désactiver la stratégie"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bDrivFilTakeOff "Indique si le véhicule n est plus en phase de décollage"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bPha2Acv "Indique l activation pour la transition entre la phase 00 et la phase 0 en acceleration"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bPha2Acv_C "Permet d activer la phase 2 en acceleration"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bPha3PhyAcv "Booléen d activation de la phase 3 physique"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bPha3PhyAcv_C "Permet d activer la prise en compte du Pha3Phy lorsque l on mape la phase 3 en fonction de la pédale"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bPha4Acv "Booléen d activation de la phase 4 via le seuil d entrée dans les jeux"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bPha4Acv_C "Permet d activer la phase 4 sur le seuil d activation Pha3Thd"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bPha5Acv_Acce "Indique l activation de l acceleration en phase 5 (Phase 1 de l acceleration)"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bPha5Acv_C "Si vrai, une phase stabilisee sans filtrage est suivie de la phase 5 (sinon phase 7)"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bPha5Acv_Dece "Indique l activation de la deceleration en phase 5 (Phase 1 de l acceleration)"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bPha5Acv_Dece_C "Si vrai, une acceleration suivant une deceleration commence par la phase 5 (sinon phase 7)"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bThdCllAcv "Booleen d activation de la phase 4"
+      UBYTE PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bThdCllAcv_C "Permet d’utiliser le flag externe pour la gestion de passage de jeux"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqCkDrivFilLimSel_C "Permet de limiterle couple non filtre avant filtrage"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqMaxAcv_C "Booleen d’utilisation du couple max"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bUHFrzReq_B "Bypass de TqSys_bUHFrzReq"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bnoGearDeceAcv_C "Permet de choisir pour la deceleration entre le rapport de boite courant et le rapport de boite a l activation de la deceleration"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facGainDiDrivFil "Coefficient utilisé dans la phase de désactivation"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facGainDiDrivFil_M "Coefficient du filtre passe-bas pendant la phase de désactivation du filtrage"
+      MAP 0x0 PFILFAST_RL_UWORD 1 PFILFAST_CM_6 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_nEng_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facGainPha "Coefficient de la phase 0 d acceleration"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facGainPha3 "Coefficient de la phase 0 d acceleration"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facGainPha5 "Coefficient de la phase 1 d acceleration"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facMinPha3 "Coefficient minimum de la phase 0 en accélération"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facMinPha3_C "Valeur minimum du coefficient de la phase 3 en accélération"
+      VALUE 0x0 PFILFAST_RL_UBYTE 0.9 PFILFAST_CM_6 /* :0.0078125:0: */ 0.1 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facMinPhaConv "Coefficient minimum de la phase 4 en accélération"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facMinPhaConv_C "Valeur minimum du coefficient de la phase de convergence sur le couple conducteur en accélération"
+      VALUE 0x0 PFILFAST_RL_UBYTE 0.9 PFILFAST_CM_6 /* :0.0078125:0: */ 0.1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha10Cf1_TypSpt_T "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 1 pour le mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha10Cf1_Typ_T "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 1 en fonction du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha10Cf2_TypSpt_T "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 2 pour le mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha10Cf2_Typ_T "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 2 en fonction du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPha3Cf1 "Coefficient de la phase 0 d accélérations en configuration 1"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf1_Bas_M "Coefficient nominal de la phase 3 en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 1 PFILFAST_CM_6 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf1_rAccP_M "Facteur d échelle pour le coefficient de la phase 3 en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf1_tCo_M "Facteur d échelle pour le coefficient de la phase 3 en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPha3Cf2 "Coefficient de la phase 0 d accélération en configuration 2"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf2_Bas_M "Coefficient nominal de la phase 3 en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 1 PFILFAST_CM_6 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf2_rAccP_M "Facteur d échelle pour le coefficient de la phase 3 en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3Cf2_tCo_M "Facteur d échelle pour le coefficient de la phase 3 en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3ThdCf2_rAccPSpt_T "Facteur d echelle pour le coefficient de la phase 3 en acceleration en configuration 2 en fonction de la position pedale en mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3ThdCf2_rAccP_T "Facteur d echelle pour le coefficient de la phase 3 en acceleration en configuration 2 en fonction de la position pedale"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3_TqThdCf1Spt_M "Correction du seuil de couple de la phase 3 en configuration 1 en fonction de la position pédale en mode sport"
+      MAP 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha3_TqThdCf1_M "Correction du seuil de couple de la phase 3 en configuration 1 en fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4Cf1_rAccP_M "Facteur d échelle pour la rampe de la phase 4 en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4Cf1_tCo_M "Facteur d échelle pour la rampe de la phase 4 en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4Cf2_rAccP_M "Facteur d échelle pour la rampe de la phase 4 en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4_TqThdCf1Spt_T "Facteur d echelle pour la duree de la phase 4 en acceleration en configuration 1 en fonction d un seuil de couple en mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4_TqThdCf1_T "Facteur d echelle pour la duree de la phase 4 en acceleration en configuration 1 en fonction d un seuil de couple"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4_TqThdCf2Spt_T "Facteur d echelle pour la duree de la phase 4 en acceleration en configuration 2 en fonction d un seuil de couple en mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha4_TqThdCf2_T "Facteur d echelle pour la duree de la phase 4 en acceleration en configuration 2 en fonction d un seuil de couple"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPha5Cf1 "Coefficient de la phase 1 d accélération en configuration 1"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf1_Bas_M "Coefficient nominal de la phase 5 en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 15.998 PFILFAST_CM_9 /* :0.000244140625:0: */ 0 15.998
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf1_rAccP_M "Facteur d échelle pour le coefficient de la phase 5 en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf1_tCo_M "Facteur d échelle pour le coefficient de la phase 5 en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPha5Cf2 "Coefficient de la phase 1 d accélération en configuration 2"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf2_Bas_M "Coefficient nominal de la phase 5 en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 15.9997 PFILFAST_CM_9 /* :0.000244140625:0: */ 0 15.9997
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf2_rAccP_M "Facteur d échelle pour le coefficient de la phase 5 en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha5Cf2_tCo_M "Facteur d échelle pour le coefficient de la phase 5 en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha6Cf1_rAccP_M "Facteur d échelle pour la rampe de la phase 6 en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha6Cf1_tCo_M "Facteur d échelle pour la rampe de la phase 6 en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha6Cf2_rAccP_M "Facteur d échelle pour la rampe de la phase 6 en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha6Cf2_tCo_M "Facteur d échelle pour la rampe de la phase 6 en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha7Cf1_rAccP_M "Facteur d échelle pour la rampe de la phase 7 en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha7Cf1_tCo_M "Facteur d échelle pour la rampe de la phase 7 en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha7Cf2_rAccP_M "Facteur d échelle pour la rampe de la phase 7 en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha7Cf2_tCo_M "Facteur d échelle pour la rampe de la phase 7 en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha8_TqThdCf1TypSpt_T "Facteur d échelle pour la durée de la phase 8 en décélération en configuration 1 en fonction d un seuil de couple en mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha8_TqThdCf1Typ_T "Facteur d échelle pour la durée de la phase 8 en décélération en configuration 1 en fonction d un seuil de couple et du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha8_TqThdCf2TypSpt_T "Facteur d échelle pour la durée de la phase 8 en décélération en configuration 2 en fonction d un seuil de couple en mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha8_TqThdCf2Typ_T "Facteur d échelle pour la durée de la phase 8 en décélération en configuration 2 en fonction d un seuil de couple et du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf1_ACLoss_T "Facteur d échelle pour la durée de la phase9 en décélération en configuration 1 en fonction du couple clim"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 5 -40 100
+    AXIS_PTS_REF TqSys_Ext_tAir_ACLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf1_TypSpt_T "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 1 pour le mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf1_Typ_T "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 1 en fonction du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf2_Ext_tAir_T "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 2en en fonction de la température d air"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 5 -40 100
+    AXIS_PTS_REF TqSys_Ext_tAir_ACLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf2_TypSpt_T "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 2 pour le mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPha9Cf2_Typ_T "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 2 en fonction du type de boite de vitesse"
+      CURVE 0x0 PFILFAST_RL_SWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ -1 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPhaCf1 "Gain du filtre de la phase 4 de l’accélération en config 1"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPhaCf2 "Gain du filtre de la phase 4 de l’accélération en config 2"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf1_Bas_M "Coefficient nominal de la phase de convergence sur le couple conducteur en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 1 PFILFAST_CM_6 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf1_rAccP_M "Facteur d échelle pour le coefficient de la phase de convergence sur le couple conducteur en accélération en configuration 1 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf1_tCo_M "Facteur d échelle pour le coefficient de la phase de convergence sur le couple conducteur en accélération en configuration 1 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf2_Bas_M "Coefficient nominal de la phase de convergence sur le couple conducteur en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 1 PFILFAST_CM_6 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf2_rAccP_M "Facteur d échelle pour le coefficient de la phase de convergence sur le couple conducteur en accélération en configuration 2 fonction de la position pédale"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPhaConvCf2_tCo_M "Facteur d échelle pour le coefficient de la phase de convergence sur le couple conducteur en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facPrmCf1_1 "TqSys_facPrmCf1[0]"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf1_2 "TqSys_facPrmCf1[1]"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf1_3 "TqSys_facPrmCf1[2]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf1_4 "TqSys_facPrmCf1[3]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf1_5 "TqSys_facPrmCf1[4]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf1_6 "TqSys_facPrmCf1[5]"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_1 "TqSys_facPrmCf2[0]"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_2 "TqSys_facPrmCf2[1]"
+      ULONG PFILFAST_CM_7 /* :1.52587890625e-005:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_3 "TqSys_facPrmCf2[2]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_4 "TqSys_facPrmCf2[3]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_5 "TqSys_facPrmCf2[4]"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facPrmCf2_6 "TqSys_facPrmCf2[5]"
+      UBYTE PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facSacDeceCf1 "Coefficients de ponderation en configuration 1 et 3 pondere en deceleration"
+      SWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 -0.99 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facSca1AcceCf1_M "Ponderation 1 en configurations 1 et 3 en acceleration fonction du regime moteur et du rapport de boite"
+      MAP 0x0 PFILFAST_RL_SWORD 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_nEng_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facSca2AcceCf1_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 16000 PFILFAST_CM_10 /* RPM:0.25:0: */ 10 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facSca2AcceCf1_M "Ponderation 2 en configurations 1 et 3 en acceleration fonction du regime moteur et du rapport de boite"
+      MAP 0x0 PFILFAST_RL_SWORD 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 10 -8000 8000
+    AXIS_PTS_REF TqSys_facSca2AcceCf1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facScaAcceCf1 "Coefficients de pondération en configuration 1 et 4 pondéré en accélération"
+      SWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 -0.99 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaAcceCf2 "Coefficients de pondération en configuration 2 et 4 pondéré en accélération"
+      SWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 -0.99 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaAcceSpt "Coefficients de pondération en mode sport pondéré en accélération"
+      SWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 -0.99 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facScaAcceSptTyp_T "Ponderation de l acceleration en fonction du type de mode sport"
+      CURVE 0x0 PFILFAST_RL_SWORD 2.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAcceSpt_M "Ponderation de l acceleration en mode sport"
+      MAP 0x0 PFILFAST_RL_SWORD 2.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaCf2_Tq_M "Ponderation en configurations 2 et 4 fonction du couple et du regime"
+      MAP 0x0 PFILFAST_RL_SWORD 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_2 /* N.m:0.0625:0: */ 10 -2000 2000
+    AXIS_PTS_REF TqSys_tq_facScaCf2_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_nEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facScaCf2_aEng_A "Axis description"
+      0x0 TqSys_nDif_nEngNTrb PFILFAST_RL_SWORD_AXIS 16000 PFILFAST_CM_11 /* :0.25:0: */ 10 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facScaCf2_aEng_M "Ponderation en configurations 2 et 4 fonction de l acceleration et du delta entre le regime arbra primaire et le regime moteur"
+      MAP 0x0 PFILFAST_RL_SWORD 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 3
+    /begin AXIS_DESCR
+      COM_AXIS TreatTenms_nCkGrdFil PFILFAST_CM_12 /* rpm/s:0.25:0: */ 10 -8000 8000
+    AXIS_PTS_REF TqSys_facScaCf2_aTrb_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_nDif_nEngNTrb PFILFAST_CM_11 /* :0.25:0: */ 10 -8000 8000
+    AXIS_PTS_REF TqSys_facScaCf2_aEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facScaCf2_aTrb_A "Axis description"
+      0x0 TreatTenms_nCkGrdFil PFILFAST_RL_SWORD_AXIS 16000 PFILFAST_CM_12 /* rpm/s:0.25:0: */ 10 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facScaDeceCf1_M "Ponderation en configurations 1 et 3 en deceleration fonction du regime moteur et du rapport de boite"
+      MAP 0x0 PFILFAST_RL_SWORD 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facScaDeceSpt "Coefficients de ponderation en mode sport pondere en deceleration"
+      SWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 -0.99 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facScaDeceSpt_M "Ponderation de la deceleration en mode sport"
+      MAP 0x0 PFILFAST_RL_SWORD 2.99 PFILFAST_CM_6 /* :0.0078125:0: */ -0.99 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facScaPha3Cf1 "Facteur de modulation du filtrage pour la phase 3 en configuration 1"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facScaPha3Cf1_C "Pondération supplémentaire pour la phase 3 en accélération en configurations 1"
+      VALUE 0x0 PFILFAST_RL_UWORD 2 PFILFAST_CM_6 /* :0.0078125:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facScaPha3Cf1_MP "Facteur de modulation du filtrage pour la phase 3 en configuration 1 (point de mesure)"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaPha3Cf2 "Facteur de modulation du filtrage pour la phase 3 en configuration 2 (point de mesure)"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facScaPha3Cf2_C "Pondération supplémentaire pour la phase 3 en accélération en configurations 2"
+      VALUE 0x0 PFILFAST_RL_UWORD 2 PFILFAST_CM_6 /* :0.0078125:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facScaPha3Cf2_MP "Facteur de modulation du filtrage pour la phase 3 en configuration 2 (point de mesure)"
+      UWORD PFILFAST_CM_6 /* :0.0078125:0: */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha10Cf1 "Durée pondérée de la phase 2 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha10Cf2 "Durée pondérée de la phase 2 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha11Cf1 "Durée pondérée de la phase 3 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha11Cf2 "Durée pondérée de la phase 3 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha9Cf1 "Durée pondérée de la phase 1 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facScaTiDlyPha9Cf2 "Durée pondérée de la phase 1 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facSlopPha4Cf2_tCo_M "Facteur d échelle pour la rampe de la phase 4 en accélération en configuration 2 fonction de la température d eau"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha10Cf1_nEng_M "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha10Cf2_nEng_M "Facteur d échelle pour la durée de la phase 10 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha11Cf1_nEng_M "Facteur d échelle pour la durée de la phase 11 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha11Cf1_tCo_T "Facteur d échelle pour la durée de la phase 11 en décélération en configuration 1 en fonction de la température d eau"
+      CURVE 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo2_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha11Cf2_nEng_M "Facteur d échelle pour la durée de la phase 11 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha11Cf2_tCo_T "Facteur d échelle pour la durée de la phase 11 en décélération en configuration 2 en fonction de la température d eau"
+      CURVE 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    AXIS_PTS_REF TqSys_tCo2_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha9Cf1_nEng_M "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTiPha9Cf2_nEng_M "Facteur d échelle pour la durée de la phase 9 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_6 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_idxTqAccuY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 9 PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nDif_nEngNTrb_B "Bypass de TqSys_nDif_nEngNTrb"
+      VALUE 0x0 PFILFAST_RL_SWORD 16000 PFILFAST_CM_14 /* rpm:0.25:0: */ -8000 8000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nEng1_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_nEng3_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nEngDeceIni_B "Bypass de TqSys_nEngDeceIni"
+      VALUE 0x0 PFILFAST_RL_UWORD 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nEng_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_10 /* RPM:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_nTrb "Regime de l arbre primaire de la boite de vitesse utilise dans la strategie"
+      UWORD PFILFAST_CM_10 /* RPM:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_nTrbHys_C "Difference minimum pour activer la ponderation en configurations 2 et 4"
+      VALUE 0x0 PFILFAST_RL_UWORD 8000 PFILFAST_CM_10 /* RPM:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noCylCutAuthHi_T "Nombre de cylindres autorisés à couper par la fonction au dessus d’un couple calibrable."
+      CURVE 0x0 PFILFAST_RL_SWORD 7 PFILFAST_CM_4 /* :1:0: */ -1 6
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil PFILFAST_CM_14 /* rpm:0.25:0: */ 6 0 8000
+    AXIS_PTS_REF TqSys_noCylCutAuth_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noCylCutAuthIt_B "Bypass de TqSys_noCylCutAuthIt"
+      VALUE 0x0 PFILFAST_RL_SBYTE 7 PFILFAST_CM_4 /* :1:0: */ -1 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noCylCutAuthLo_T "Nombre de cylindres autorisés à couper par la fonction en dessous d’un couple calibrable."
+      CURVE 0x0 PFILFAST_RL_SWORD 7 PFILFAST_CM_4 /* :1:0: */ -1 6
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil PFILFAST_CM_14 /* rpm:0.25:0: */ 6 0 8000
+    AXIS_PTS_REF TqSys_noCylCutAuth_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_noCylCutAuth_A "Axis description"
+      0x0 Eng_nCkFil PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 6 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_noGearCordDrivFil_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8 PFILFAST_CM_4 /* :1:0: */ 9 0 8
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_noGearCordDrivFil_B "Bypass de TqSys_noGearCordDrivFil"
+      VALUE 0x0 PFILFAST_RL_UBYTE 6 PFILFAST_CM_4 /* :1:0: */ 0 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noGearCordDrivFil_T "Vecteur du rapport de boite limité à 8"
+      CURVE 0x0 PFILFAST_RL_UWORD 6 PFILFAST_CM_4 /* :1:0: */ 0 6
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGearCordDrivFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_noGearDeceIniIt "Rapport de boite a l activation de la deceleration"
+      UBYTE PFILFAST_CM_4 /* :1:0: */ 1 0 0 6
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_noGearDece_B "Bypass de TqSys_noGearDece"
+      VALUE 0x0 PFILFAST_RL_UBYTE 6 PFILFAST_CM_4 /* :1:0: */ 0 6
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_noGear_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 6 PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_rAccPEngFrz "Position pédale figée pendant la traversée des jeux"
+      UWORD PFILFAST_CM_15 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_rAccPEngRstDeceThd_C "Seuil de position pedale pour la desactivation de la deceleration"
+      VALUE 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_15 /* %:0.0078125:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rAccPThdAsrOff_C "Seuil de position pedale pour l initialisation de couple apres regulation ASR"
+      VALUE 0x0 PFILFAST_RL_UWORD 100 PFILFAST_CM_15 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rAccPThdTqCll_C "Seuil de position pedale pour autoriser le debouclage en decel"
+      VALUE 0x0 PFILFAST_RL_UWORD 3 PFILFAST_CM_15 /* %:0.0078125:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_rAccP_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 100 PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_spdVehHys_bTkOff_C "Valeur de vitesse véhicule pour hysteresis"
+      VALUE 0x0 PFILFAST_RL_UWORD 500 PFILFAST_CM_16 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_stDrivFilCf "Indique si le véhicule n est plus en phase de décollage"
+      UBYTE PFILFAST_CM_17 /* FT_enumeration1:((0=CONF_0)(1=CONF_1)(2=CONF_2)(3=CONF_3)(4=CONF_4)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_stDrivFilCfPha_B "Bypass de TqSys_stDrivFilCfPha"
+      VALUE 0x0 PFILFAST_RL_UBYTE 4 PFILFAST_CM_17 /* FT_enumeration1:((0=CONF_0)(1=CONF_1)(2=CONF_2)(3=CONF_3)(4=CONF_4)) */ 0 4
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_stDrivFilPhaIt_B "Bypass de TqSys_stDrivFilPhaIt"
+      VALUE 0x0 PFILFAST_RL_UBYTE 15 PFILFAST_CM_18 /* FT_enumeration1:((0=FILTRAGE_DESACTIVE)(1=FILTRAGE_INACTIF)(2=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_2_SAUT_DEBUE_DU_FILTRAGE)(3=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_3_1ER_ORDRE)(4=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_4_PENTE_DE_TRAVERSEE_DES_JEUX)(5=FILTRAGE_EN_ACCEL_ZONE_5_FORME_PARABOLIQUE)(6=FILTRAGE_EN_ACCEL_ZONE_6_LIMITATION_DE_LA_PARABOLE)(7=FILTRAGE_EN_ACCEL_ZONE_7_PENTE_AU_DESSUS_DES_JEUX)(8=FILTRAGE_EN_DECEL_ZONE_8_SAUT_DE_DEBUT_DE_FILTRAGE)(9=FILTRAGE_EN_DECEL_ZONE_9_PREMIERE_PENTE)(10=FILTRAGE_EN_DECEL_ZONE_10_2ND_PENTE_POUR_LA_TRAVERSEE_DES_JEUX)(11=FILTRAGE_EN_DECEL_ZONE_11_3EME_PENTE)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RESERVE_15)) */ 0 15
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tCo1_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 254 PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tCo2_A "Axis description"
+      0x0 Ext_tCoMes PFILFAST_RL_SWORD_AXIS 254 PFILFAST_CM_5 /* deg C:1:0: */ 8 -40 214
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_thdDiRAccP_C "Seuil de desactivation de l agrement"
+      VALUE 0x0 PFILFAST_RL_UWORD 100 PFILFAST_CM_15 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiASROff_C "Temporisation pour l initialisation du couple en sortie de regulation ASR"
+      VALUE 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_19 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiAcceDetAOS_C "Temporisation pour synchronisation 10ms/PMH de l etat acceleration curatif"
+      VALUE 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_20 /* s:0.001:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tiAcceTranCllX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tiAcceTranCllY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 6 PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tiAcceTranCll_M "Durée de transition Débouclage/Bouclage de la structure couple en phase d‘accélération"
+      MAP 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_19 /* s:0.01:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tiAcceTranCllX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tiAcceTranCllY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tiDeceTranCllX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tiDeceTranCllY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 6 PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tiDeceTranCll_M "Durée de transition Débouclage/Bouclage de la structure couple en phase de décélération"
+      MAP 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_19 /* s:0.01:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tiDeceTranCllX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tiDeceTranCllY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiDiPrev_C "Temporisation pour desactivation du preventif sur un pied leve"
+      VALUE 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_19 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tiDlyAcceClrCross_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tiDlyAcceClrCross_M "Durée du passage des jeux"
+      MAP 0x0 PFILFAST_RL_UWORD 60 PFILFAST_CM_19 /* s:0.01:0: */ 0 60
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tiDlyAcceClrCross_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha10 "Durée de la phase 2 de décélération"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha10Cf1 "Durée de la phase 2 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha10Cf1_Bas_M "Durée nominale de la phase 10 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha10Cf1_MP "Durée de la phase 2 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha10Cf2 "Durée de la phase 2 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha10Cf2_Bas_M "Durée nominale de la phase 10 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha10Cf2_MP "Durée de la phase 2 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha11 "Durée de la phase 3 de décélération"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha11Cf1 "Durée de la phase 3 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha11Cf1_Bas_M "Durée nominale de la phase 11 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha11Cf1_MP "Durée de la phase 3 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha11Cf2 "Durée de la phase 3 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha11Cf2_Bas_M "Durée nominale de la phase 11 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha11Cf2_MP "Durée de la phase 3 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha9 "Durée de la phase 1 de décélération"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha9Cf1 "Durée de la phase 1 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha9Cf1_Bas_M "Durée nominale de la phase 9 en décélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha9Cf1_MP "Durée de la phase 1 de décélération en configuration 1"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiDlyPha9Cf2 "Durée de la phase 1 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyPha9Cf2_Bas_M "Durée nominale de la phase 9 en décélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_UWORD 4000 PFILFAST_CM_13 /* ms:10:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyPha9Cf2_MP "Durée de la phase 1 de décélération en configuration 2"
+      UWORD PFILFAST_CM_13 /* ms:10:0: */ 1 0 0 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiFilTqACLoss_C "Constante de temps de filtrage du couple clim"
+      VALUE 0x0 PFILFAST_RL_UBYTE 1 PFILFAST_CM_21 /* :0.1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiTranCllIt_B "Bypass de TqSys_tiTranCllIt"
+      VALUE 0x0 PFILFAST_RL_UWORD 5 PFILFAST_CM_19 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqACLossFil "Couple filtré prélevé par le compresseur de climatisation"
+      UWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqACLossFil_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 500 PFILFAST_CM_3 /* Nm:0.0625:0: */ 8 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqAcceIncCll_M "Incrément de couple pour la transition Débouclage/Bouclage de la structure couple"
+      MAP 0x0 PFILFAST_RL_UWORD 2000 PFILFAST_CM_2 /* N.m:0.0625:0: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tiAcceTranCllX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tiAcceTranCllY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkDeceIniIt_B "Bypass de TqSys_tqCkDeceIniIt"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkDrivFilMax_C "Valeur maximum du couple filtre"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_3 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkDrivFilMin_C "Valeur minimum du couple filtre"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_3 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkDrivFilRaw "Valeur precedente du couple filtre avec une haute resolution"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkDrivFilRawPrev "Valeur precedente du couple filtre avec une haute resolution"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkDrivNotFil "Couple non filtré après limitation pour motorisation essence"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkDrivNotFilAcce "Couple non filtre apres limitation pour motorisation essence en acceleration"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkDrivNotFilGsl "Couple non filtre apres limitation pour motorisation essence"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkEfcDiff "Différence entre le couple non filtré et le couple filtré"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkEfcDiff2 "Différence entre le couple non filtré et le couple filtré (idem TqSys_tqCkEfcDiff pour 2ème calcul)"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcFil_B "Bypass de TqSys_tqCkEfcFil"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCylCutAuthHi_C "Seuil de couple pour basculer sur la cartographie TqSys_noCylCutAuthLHigh_T"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCylCutAuthLo_C "Seuil de couple pour basculer sur la cartographie TqSys_noCylCutAuthLow_T"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeceIncCll_M "Incrément de couple pour la transition Débouclage/Bouclage de la structure couple"
+      MAP 0x0 PFILFAST_RL_UWORD 2000 PFILFAST_CM_2 /* N.m:0.0625:0: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tiDeceTranCllX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tiDeceTranCllY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaAcceAOS_C "Couple pour déclarer l’accélération"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaDeceAOS_C "Couple pour déclarer la décélération"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaHighAcceAOS_C "Couple pour déclarer l’accélération quand la consigne est supérieure à un seuil absolu"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaHighDeceAOS_C "Couple pour déclarer la décélération quand la consigne est supérieure à un seuil absolu"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqDeltaMaxDiAcceX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 8000 PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqDeltaMaxDiAcceY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 6 PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqDeltaMaxDiAcce_M "Delta minimum entre le couple non filtre et le couple filtre pour desactiver l acceleration"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_14 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_tqDeltaMaxDiAcceX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqDeltaMaxDiAcceY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqDeltaMinAcce "Delta de couple activant le preventif en phase d’acceleration en dessous d’un seuil calibrable."
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqDeltaMinAcce_M "Delta minimum entre le couple non filtre et le couple filtre pour activer l acceleration"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaMinDece_M "Delta minimum entre le couple non filtre et le couple filtre pour activer la deceleration"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaOfsAcce_C "Offset minimum ajoute au delta minimum de couple pour l activation de l acceleration si le couple est superieur au seuil des jeux"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqFilDifMin "Constante nécessaire pour éviter les erreurs d arrondi"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqFilDifMin_C "Constante nécessaire pour éviter les erreurs d arrondi"
+      VALUE 0x0 PFILFAST_RL_SLONG 4000 PFILFAST_CM_22 /* Nm:0.00048828125:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqFil_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 4000 PFILFAST_CM_3 /* Nm:0.0625:0: */ 12 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqIncCllIt_B "Bypass de TqSys_tqIncCllIt"
+      VALUE 0x0 PFILFAST_RL_UWORD 2000 PFILFAST_CM_23 /* N.m/s:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsCkDrivFilTqMax_C "Offset sur le EngLim_tqCkDrivFil pour le reset de la condition TqSys_bDeceAcvTqMax."
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsClrCross_C "Offset de couple sur la valeur des jeux"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsDeceMax_C "Offset sur le couple EngLim_tqCkDrivFil pour activer la demande de passage TqSys_tqCkDrivUnfil de sur le couple EngLim_tqCkDrivFil ."
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsHighTq_C "Offset sur le couple pour la detection de la deceleration quand le couple filtre est passe au dessus d un seuil"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqOfsPha3Thd "Offset de couple pour la convergence de la phase 0 en acceleration"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqOfsPha3_T "Offset de couple sur la phase 3"
+      CURVE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsRstDece_C "Offset de couple de pertes pour desactivation de la deceleration"
+      VALUE 0x0 PFILFAST_RL_UBYTE 0.1875 PFILFAST_CM_2 /* N.m:0.0625:0: */ 0 0.1875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsThdCll_C "Offset sur le seuil de couple pour l’application du filtre preventif."
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_24 /* N.m:1:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha10 "Rampe de la phase 2 de décélération"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqSlopPha11 "Rampe de la phase 3 de décélération"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqSlopPha4 "Valeur de l’increment de couple correspondant a la rampe 01 (traversee des jeux)"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqSlopPha4Cf1 "Valeur de l’incrénement de couple dans la phase 01 en config 1"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha4Cf1_Bas_M "Rampe nominale de la phase 4 en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha4Cf2 "Valeur de l’incrénement de couple dans la phase 01 en config 2"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha4Cf2_Bas_M "Rampe nominale de la phase 4 en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha6 "Rampe de la phase 2 d acceleration"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqSlopPha6Cf1 "Rampe de la phase 2 d accélération en configuration 1"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha6Cf1_Bas_M "Rampe nominale de la phase 6 en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha6Cf2 "Rampe de la phase 2 d accélération en configuration 2"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha6Cf2_Bas_M "Rampe nominale de la phase 6 en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha7 "Rampe de la phase 3 d acceleration"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqSlopPha7Cf1 "Rampe de la phase 3 d accélération en configuration 1"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha7Cf1_Bas_M "Rampe nominale de la phase 7 en accélération en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha7Cf2 "Rampe de la phase 3 d accélération en configuration 2"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqSlopPha7Cf2_Bas_M "Rampe nominale de la phase 7 en accélération en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqSlopPha9 "Rampe de la phase 1 de décélération"
+      SLONG PFILFAST_CM_8 /* N.m:0.00048828125:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdASROff_C "Seuil de couple pour l initialisation de couple apres regulation ASR"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_3 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqThdCllAcvX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ 7 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqThdCllAcvY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_UWORD_AXIS 6 PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqThdCllAcv_M "Seuil de couple pour l’application du filtre preventif."
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_2 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqSys_tqThdCllAcvX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqThdCllAcvY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdDeceUHFrz "Condition sur Seuil de couple en decel pour activer la demande de figeage (mode ouvert BVA)"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdDeceUHFrzOff "Condition sur Seuil de couple en decel pour activer la demande de figeage (tout mode sauf mode ouvert BVA)"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdDeceUHFrzOff_C "Condition sur Seuil de couple en decel pour activer la demande de figeage (tout mode sauf mode ouvert BVA)"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdDeceUHFrz_C "Condition sur Seuil de couple en decel pour activer la demande de figeage (mode ouvert BVA)"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdDeltaAcceAOS_C "Seuil de couple définissant le couple de détéction de l accélération"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdDeltaDeceAOS_C "Seuil de couple définissant le couple de détéction de la décélération"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdOfsPha8Cf1 "Offset ajouté au seuil en décélération en configurations 1 et 3 pondéré"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqThdOfsPha8Cf1_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 3.99 PFILFAST_CM_6 /* :0.0078125:0: */ 11 -0.99 3
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqThdOfsPha8Cf1_T "Offset en configurations 1 et 3 en deceleration fonction du regime moteur et du rapport de boite"
+      CURVE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_6 /* :0.0078125:0: */ 11 -0.99 3
+    AXIS_PTS_REF TqSys_tqThdOfsPha8Cf1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha10 "Seuil de couple pour la transition phase 2 à phase 3 en décélération"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdPha10Cf1 "Seuil de couple pour la phase 2 en décélération in configuration 1"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha10Cf1_Bas_M "Calibration nominale du seuil de couple de la phase 10 en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha10Cf2 "Seuil de couple pour la phase 2 en décélération in configuration 2"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha10Cf2_Bas_M "Calibration nominale du seuil de couple de la phase 10 en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha2 "Seuil de couple pour la transition phase 00 a phase 0 en acceleration"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha2_M "Calibration nominale du seuil de couple de la phase 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_nEng_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha3Cf1 "Seuil de couple pour la phase 0 en acceleration en configuration 1"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf1_Accu_M "Correction du seuil de couple de la phase 3 en configuration 1 en fonction de l indice de precision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf1_Bas_M "Calibration nominale du seuil de couple de la phase 3 en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf1_Driv_M "Correction du seuil de couple de la phase 3 en configuration 1 en fonction de la manoeuvrabilite"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha3Cf2 "Seuil de couple pour la phase 0 en acceleration en configuration 2"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf2_Accu_M "Correction du seuil de couple de la phase 3 en configuration 2 en fonction de l indice de precision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf2_Bas_M "Calibration nominale du seuil de couple de la phase 3 en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3Cf2_Driv_M "Correction du seuil de couple de la phase 3 en configuration 2 en fonction de la manoeuvrabilite"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3It_B "Bypass de TqSys_tqThdPha3It"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha3Phy "Seuil de couple physique pour l entrée dans la zone des jeux"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdPha4 "Seuil de couple pour la transition phase 01 a phase 1 en acceleration"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdPha4Cf1 "Seuil de couple pour la transition phase 01 a phase 1 en acceleration en configuration 1"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha4Cf1_Bas_M "Calibration nominale du seuil de couple de la phase 4 en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha4Cf2 "Seuil de couple pour la transition phase 01 a phase 1 en acceleration en configuration 2"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha4Cf2_Bas_M "Calibration nominale du seuil de couple de la phase 4 en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha8 "Seuil de couple pour la transition phase 0 à phase 1 en décélération"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdPha8Cf1 "Seuil de couple pour la transition phase 0 à phase 1 en décélération in configuration 1"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf1_Accu_M "Correction du seuil de couple de la phase 8 en configuration 1 en fonction de l indice de précision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf1_Bas_M "Calibration nominale du seuil de couple de la phase 8 en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf1_Typ_M "Correction du seuil de couple de la phase 8 en configuration 1 en fonction du type de boite de vitesse"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha8Cf2 "Seuil de couple pour la transition phase 0 à phase 1 en décélération in configuration 2"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf2_Accu_M "Correction du seuil de couple de la phase 8 en configuration 2 en fonction de l indice de précision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf2_Bas_M "Calibration nominale du seuil de couple de la phase 8 en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha8Cf2_Typ_M "Correction du seuil de couple de la phase 8 en configuration 2 en fonction du type de boite de vitesse"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha9 "Seuil de couple pour la transition phase 1 à phase 2 en décélération"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqThdPha9Cf1 "Seuil de couple pour la transition phase 1 à phase 2 en décélération in configuration 1"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf1_ACLoss_M "Correction du seuil de couple de la phase 9 en configuration 1 en fonction du couple clim"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 8 0 500
+    AXIS_PTS_REF TqSys_tqACLossFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf1_Accu_M "Correction du seuil de couple de la phase 9 en configuration 1 en fonction de l indice de précision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf1_Bas_M "Calibration nominale du seuil de couple de la phase 9 en configuration 1"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf1_Typ_M "Correction du seuil de couple de la phase 9 en configuration 1 en fonction du type de boite de vitesse"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqThdPha9Cf2 "Seuil de couple pour la transition phase 1 à phase 2 en décélération in configuration 2"
+      SWORD PFILFAST_CM_2 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf2_ACLoss_M "Correction du seuil de couple de la phase 9 en configuration 2 en fonction du couple clim"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_3 /* Nm:0.0625:0: */ 8 0 500
+    AXIS_PTS_REF TqSys_tqACLossFil_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf2_Accu_M "Correction du seuil de couple de la phase 9 en configuration 2 en fonction de l indice de précision"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqSys_idxTqAccuY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng1_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf2_Bas_M "Calibration nominale du seuil de couple de la phase 9 en configuration 2"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdPha9Cf2_Typ_M "Correction du seuil de couple de la phase 9 en configuration 2 en fonction du type de boite de vitesse"
+      MAP 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_10 /* RPM:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng3_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdTqLimEM_C "Seuil de couple pour continuite du couple en sortie de regulation ASR"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_3 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThd_tqDeltaMinDece_C "Seuil de couple au dela duquel le delta minimum de couple doit être plus grand pour activer la deceleration"
+      VALUE 0x0 PFILFAST_RL_SWORD 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tq_facScaCf2_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILFAST_RL_SWORD_AXIS 4000 PFILFAST_CM_2 /* N.m:0.0625:0: */ 10 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC Tq_spdVehThd_bTkOff_T "Seuil de vitesse véhicule sous lequel on est en décollage"
+      CURVE 0x0 PFILFAST_RL_UWORD 500 PFILFAST_CM_16 /* km/h:0.0078125:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILFAST_CM_4 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_noGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT PFILFAST_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILFAST_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD PFILFAST_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF PFILFAST_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB PFILFAST_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD PFILFAST_CM_2 "conversion_method"
+
+RAT_FUNC "%.2" "N.m"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_3 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_4 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_6 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_7 "conversion_method"
+
+RAT_FUNC "%.5" "-"
+COEFFS 0 65536 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_8 "conversion_method"
+
+RAT_FUNC "%.4" "N.m"
+COEFFS 0 2048 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_9 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 4096 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_10 "conversion_method"
+
+RAT_FUNC "%.1" "RPM"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_11 "conversion_method"
+
+RAT_FUNC "%.1" "-"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_12 "conversion_method"
+
+RAT_FUNC "%.1" "rpm/s"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_13 "conversion_method"
+
+RAT_FUNC "%.0" "ms"
+COEFFS 0 0.1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_14 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_15 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_16 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF PFILFAST_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB PFILFAST_CV_17 "conversion_vtab"
+
+    TAB_VERB 5
+	 0 "CONF_0"
+	 1 "CONF_1"
+	 2 "CONF_2"
+	 3 "CONF_3"
+	 4 "CONF_4"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD PFILFAST_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF PFILFAST_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB PFILFAST_CV_18 "conversion_vtab"
+
+    TAB_VERB 16
+	 0 "FILTRAGE_DESACTIVE"
+	 1 "FILTRAGE_INACTIF"
+	 2 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_2_SAUT_DEBUE_DU_FILTRAGE"
+	 3 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_3_1ER_ORDRE"
+	 4 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_4_PENTE_DE_TRAVERSEE_DES_JEUX"
+	 5 "FILTRAGE_EN_ACCEL_ZONE_5_FORME_PARABOLIQUE"
+	 6 "FILTRAGE_EN_ACCEL_ZONE_6_LIMITATION_DE_LA_PARABOLE"
+	 7 "FILTRAGE_EN_ACCEL_ZONE_7_PENTE_AU_DESSUS_DES_JEUX"
+	 8 "FILTRAGE_EN_DECEL_ZONE_8_SAUT_DE_DEBUT_DE_FILTRAGE"
+	 9 "FILTRAGE_EN_DECEL_ZONE_9_PREMIERE_PENTE"
+	 10 "FILTRAGE_EN_DECEL_ZONE_10_2ND_PENTE_POUR_LA_TRAVERSEE_DES_JEUX"
+	 11 "FILTRAGE_EN_DECEL_ZONE_11_3EME_PENTE"
+	 12 "RESERVE_12"
+	 13 "RESERVE_13"
+	 14 "RESERVE_14"
+	 15 "RESERVE_15"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD PFILFAST_CM_19 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_20 "conversion_method"
+
+RAT_FUNC "%.3" "s"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_21 "conversion_method"
+
+RAT_FUNC "%.1" "-"
+COEFFS 0 10 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_22 "conversion_method"
+
+RAT_FUNC "%.4" "Nm"
+COEFFS 0 2048 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_23 "conversion_method"
+
+RAT_FUNC "%.2" "N.m/s"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILFAST_CM_24 "conversion_method"
+
+RAT_FUNC "%.0" "N.m"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION PFILFAST_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	CoCha_bInhEGR_B
+	CoCha_bRstAOS_B
+	CoCha_bTqAccuReq_B
+	CoCha_bTqDynReq_B
+	CoCha_bTqReqASR_B
+	CoCha_bTqReqMSR_B
+	CoCha_tqEfcLimTqMaxDyn_B
+	CoCha_tqEfcLim_B
+	CoCha_tqEfcReq_B
+	PFILFAST_ACTIVE_BYP_C
+	TqSys_Ext_tAir_ACLoss_A
+	TqSys_bAcceClrCrossAOSIt_B
+	TqSys_bAcceDetAOSIt_B
+	TqSys_bAcvCllIt_B
+	TqSys_bAcvFrzAccP_C
+	TqSys_bAcvUHFrzOff_C
+	TqSys_bAcvUHFrz_C
+	TqSys_bClrCrossAcce_B
+	TqSys_bDeceAcvIt_B
+	TqSys_bDeceDetAOSIt_B
+	TqSys_bDeceTqAir_C
+	TqSys_bDeceTyp_C
+	TqSys_bDetClrCrossAcv_C
+	TqSys_bDiDrivFilReq_B
+	TqSys_bDiDrivFil_C
+	TqSys_bPha2Acv_C
+	TqSys_bPha3PhyAcv_C
+	TqSys_bPha4Acv_C
+	TqSys_bPha5Acv_C
+	TqSys_bPha5Acv_Dece_C
+	TqSys_bThdCllAcv_C
+	TqSys_bTqCkDrivFilLimSel_C
+	TqSys_bTqMaxAcv_C
+	TqSys_bUHFrzReq_B
+	TqSys_bnoGearDeceAcv_C
+	TqSys_facGainDiDrivFil_M
+	TqSys_facMinPha3_C
+	TqSys_facMinPhaConv_C
+	TqSys_facPha10Cf1_TypSpt_T
+	TqSys_facPha10Cf1_Typ_T
+	TqSys_facPha10Cf2_TypSpt_T
+	TqSys_facPha10Cf2_Typ_T
+	TqSys_facPha3Cf1_Bas_M
+	TqSys_facPha3Cf1_rAccP_M
+	TqSys_facPha3Cf1_tCo_M
+	TqSys_facPha3Cf2_Bas_M
+	TqSys_facPha3Cf2_rAccP_M
+	TqSys_facPha3Cf2_tCo_M
+	TqSys_facPha3ThdCf2_rAccPSpt_T
+	TqSys_facPha3ThdCf2_rAccP_T
+	TqSys_facPha3_TqThdCf1Spt_M
+	TqSys_facPha3_TqThdCf1_M
+	TqSys_facPha4Cf1_rAccP_M
+	TqSys_facPha4Cf1_tCo_M
+	TqSys_facPha4Cf2_rAccP_M
+	TqSys_facPha4_TqThdCf1Spt_T
+	TqSys_facPha4_TqThdCf1_T
+	TqSys_facPha4_TqThdCf2Spt_T
+	TqSys_facPha4_TqThdCf2_T
+	TqSys_facPha5Cf1_Bas_M
+	TqSys_facPha5Cf1_rAccP_M
+	TqSys_facPha5Cf1_tCo_M
+	TqSys_facPha5Cf2_Bas_M
+	TqSys_facPha5Cf2_rAccP_M
+	TqSys_facPha5Cf2_tCo_M
+	TqSys_facPha6Cf1_rAccP_M
+	TqSys_facPha6Cf1_tCo_M
+	TqSys_facPha6Cf2_rAccP_M
+	TqSys_facPha6Cf2_tCo_M
+	TqSys_facPha7Cf1_rAccP_M
+	TqSys_facPha7Cf1_tCo_M
+	TqSys_facPha7Cf2_rAccP_M
+	TqSys_facPha7Cf2_tCo_M
+	TqSys_facPha8_TqThdCf1TypSpt_T
+	TqSys_facPha8_TqThdCf1Typ_T
+	TqSys_facPha8_TqThdCf2TypSpt_T
+	TqSys_facPha8_TqThdCf2Typ_T
+	TqSys_facPha9Cf1_ACLoss_T
+	TqSys_facPha9Cf1_TypSpt_T
+	TqSys_facPha9Cf1_Typ_T
+	TqSys_facPha9Cf2_Ext_tAir_T
+	TqSys_facPha9Cf2_TypSpt_T
+	TqSys_facPha9Cf2_Typ_T
+	TqSys_facPhaConvCf1_Bas_M
+	TqSys_facPhaConvCf1_rAccP_M
+	TqSys_facPhaConvCf1_tCo_M
+	TqSys_facPhaConvCf2_Bas_M
+	TqSys_facPhaConvCf2_rAccP_M
+	TqSys_facPhaConvCf2_tCo_M
+	TqSys_facSca1AcceCf1_M
+	TqSys_facSca2AcceCf1_A
+	TqSys_facSca2AcceCf1_M
+	TqSys_facScaAcceSptTyp_T
+	TqSys_facScaAcceSpt_M
+	TqSys_facScaCf2_Tq_M
+	TqSys_facScaCf2_aEng_A
+	TqSys_facScaCf2_aEng_M
+	TqSys_facScaCf2_aTrb_A
+	TqSys_facScaDeceCf1_M
+	TqSys_facScaDeceSpt_M
+	TqSys_facScaPha3Cf1_C
+	TqSys_facScaPha3Cf2_C
+	TqSys_facSlopPha4Cf2_tCo_M
+	TqSys_facTiPha10Cf1_nEng_M
+	TqSys_facTiPha10Cf2_nEng_M
+	TqSys_facTiPha11Cf1_nEng_M
+	TqSys_facTiPha11Cf1_tCo_T
+	TqSys_facTiPha11Cf2_nEng_M
+	TqSys_facTiPha11Cf2_tCo_T
+	TqSys_facTiPha9Cf1_nEng_M
+	TqSys_facTiPha9Cf2_nEng_M
+	TqSys_idxTqAccuY_A
+	TqSys_nDif_nEngNTrb_B
+	TqSys_nEng1_A
+	TqSys_nEng3_A
+	TqSys_nEngDeceIni_B
+	TqSys_nEng_A
+	TqSys_nTrbHys_C
+	TqSys_noCylCutAuthHi_T
+	TqSys_noCylCutAuthIt_B
+	TqSys_noCylCutAuthLo_T
+	TqSys_noCylCutAuth_A
+	TqSys_noGearCordDrivFil_A
+	TqSys_noGearCordDrivFil_B
+	TqSys_noGearCordDrivFil_T
+	TqSys_noGearDece_B
+	TqSys_noGear_A
+	TqSys_rAccPEngRstDeceThd_C
+	TqSys_rAccPThdAsrOff_C
+	TqSys_rAccPThdTqCll_C
+	TqSys_rAccP_A
+	TqSys_spdVehHys_bTkOff_C
+	TqSys_stDrivFilCfPha_B
+	TqSys_stDrivFilPhaIt_B
+	TqSys_tCo1_A
+	TqSys_tCo2_A
+	TqSys_thdDiRAccP_C
+	TqSys_tiASROff_C
+	TqSys_tiAcceDetAOS_C
+	TqSys_tiAcceTranCllX_A
+	TqSys_tiAcceTranCllY_A
+	TqSys_tiAcceTranCll_M
+	TqSys_tiDeceTranCllX_A
+	TqSys_tiDeceTranCllY_A
+	TqSys_tiDeceTranCll_M
+	TqSys_tiDiPrev_C
+	TqSys_tiDlyAcceClrCross_A
+	TqSys_tiDlyAcceClrCross_M
+	TqSys_tiDlyPha10Cf1_Bas_M
+	TqSys_tiDlyPha10Cf2_Bas_M
+	TqSys_tiDlyPha11Cf1_Bas_M
+	TqSys_tiDlyPha11Cf2_Bas_M
+	TqSys_tiDlyPha9Cf1_Bas_M
+	TqSys_tiDlyPha9Cf2_Bas_M
+	TqSys_tiFilTqACLoss_C
+	TqSys_tiTranCllIt_B
+	TqSys_tqACLossFil_A
+	TqSys_tqAcceIncCll_M
+	TqSys_tqCkDeceIniIt_B
+	TqSys_tqCkDrivFilMax_C
+	TqSys_tqCkDrivFilMin_C
+	TqSys_tqCkEfcFil_B
+	TqSys_tqCylCutAuthHi_C
+	TqSys_tqCylCutAuthLo_C
+	TqSys_tqDeceIncCll_M
+	TqSys_tqDeltaAcceAOS_C
+	TqSys_tqDeltaDeceAOS_C
+	TqSys_tqDeltaHighAcceAOS_C
+	TqSys_tqDeltaHighDeceAOS_C
+	TqSys_tqDeltaMaxDiAcceX_A
+	TqSys_tqDeltaMaxDiAcceY_A
+	TqSys_tqDeltaMaxDiAcce_M
+	TqSys_tqDeltaMinAcce_M
+	TqSys_tqDeltaMinDece_M
+	TqSys_tqDeltaOfsAcce_C
+	TqSys_tqFilDifMin_C
+	TqSys_tqFil_A
+	TqSys_tqIncCllIt_B
+	TqSys_tqOfsCkDrivFilTqMax_C
+	TqSys_tqOfsClrCross_C
+	TqSys_tqOfsDeceMax_C
+	TqSys_tqOfsHighTq_C
+	TqSys_tqOfsPha3_T
+	TqSys_tqOfsRstDece_C
+	TqSys_tqOfsThdCll_C
+	TqSys_tqSlopPha4Cf1_Bas_M
+	TqSys_tqSlopPha4Cf2_Bas_M
+	TqSys_tqSlopPha6Cf1_Bas_M
+	TqSys_tqSlopPha6Cf2_Bas_M
+	TqSys_tqSlopPha7Cf1_Bas_M
+	TqSys_tqSlopPha7Cf2_Bas_M
+	TqSys_tqThdASROff_C
+	TqSys_tqThdCllAcvX_A
+	TqSys_tqThdCllAcvY_A
+	TqSys_tqThdCllAcv_M
+	TqSys_tqThdDeceUHFrzOff_C
+	TqSys_tqThdDeceUHFrz_C
+	TqSys_tqThdDeltaAcceAOS_C
+	TqSys_tqThdDeltaDeceAOS_C
+	TqSys_tqThdOfsPha8Cf1_A
+	TqSys_tqThdOfsPha8Cf1_T
+	TqSys_tqThdPha10Cf1_Bas_M
+	TqSys_tqThdPha10Cf2_Bas_M
+	TqSys_tqThdPha2_M
+	TqSys_tqThdPha3Cf1_Accu_M
+	TqSys_tqThdPha3Cf1_Bas_M
+	TqSys_tqThdPha3Cf1_Driv_M
+	TqSys_tqThdPha3Cf2_Accu_M
+	TqSys_tqThdPha3Cf2_Bas_M
+	TqSys_tqThdPha3Cf2_Driv_M
+	TqSys_tqThdPha3It_B
+	TqSys_tqThdPha4Cf1_Bas_M
+	TqSys_tqThdPha4Cf2_Bas_M
+	TqSys_tqThdPha8Cf1_Accu_M
+	TqSys_tqThdPha8Cf1_Bas_M
+	TqSys_tqThdPha8Cf1_Typ_M
+	TqSys_tqThdPha8Cf2_Accu_M
+	TqSys_tqThdPha8Cf2_Bas_M
+	TqSys_tqThdPha8Cf2_Typ_M
+	TqSys_tqThdPha9Cf1_ACLoss_M
+	TqSys_tqThdPha9Cf1_Accu_M
+	TqSys_tqThdPha9Cf1_Bas_M
+	TqSys_tqThdPha9Cf1_Typ_M
+	TqSys_tqThdPha9Cf2_ACLoss_M
+	TqSys_tqThdPha9Cf2_Accu_M
+	TqSys_tqThdPha9Cf2_Bas_M
+	TqSys_tqThdPha9Cf2_Typ_M
+	TqSys_tqThdTqLimEM_C
+	TqSys_tqThd_tqDeltaMinDece_C
+	TqSys_tq_facScaCf2_A
+	Tq_spdVehThd_bTkOff_T
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CoCha_tqMax_MP
+	CoCha_tqMin_MP
+	PFilFast_ModuleVersion_Major_MP
+	PFilFast_ModuleVersion_Minor_MP
+	TqSys_PrmCf1_1
+	TqSys_PrmCf1_2
+	TqSys_PrmCf1_3
+	TqSys_PrmCf1_4
+	TqSys_PrmCf1_5
+	TqSys_PrmCf1_6
+	TqSys_PrmCf2_1
+	TqSys_PrmCf2_2
+	TqSys_PrmCf2_3
+	TqSys_PrmCf2_4
+	TqSys_PrmCf2_5
+	TqSys_PrmCf2_6
+	TqSys_bAcceAcv
+	TqSys_bAcceDi
+	TqSys_bAcceReq
+	TqSys_bAcceReq_MP
+	TqSys_bAcvUHFrz
+	TqSys_bAcvUHFrzOff
+	TqSys_bClrCrossOff
+	TqSys_bClrCrossOn
+	TqSys_bDeceAcvRaw
+	TqSys_bDeceAcvTqMax
+	TqSys_bDeceReq_MP
+	TqSys_bDiDrivFilCfReq
+	TqSys_bDrivFilTakeOff
+	TqSys_bPha2Acv
+	TqSys_bPha3PhyAcv
+	TqSys_bPha4Acv
+	TqSys_bPha5Acv_Acce
+	TqSys_bPha5Acv_Dece
+	TqSys_bThdCllAcv
+	TqSys_facGainDiDrivFil
+	TqSys_facGainPha
+	TqSys_facGainPha3
+	TqSys_facGainPha5
+	TqSys_facMinPha3
+	TqSys_facMinPhaConv
+	TqSys_facPha3Cf1
+	TqSys_facPha3Cf2
+	TqSys_facPha5Cf1
+	TqSys_facPha5Cf2
+	TqSys_facPhaCf1
+	TqSys_facPhaCf2
+	TqSys_facPrmCf1_1
+	TqSys_facPrmCf1_2
+	TqSys_facPrmCf1_3
+	TqSys_facPrmCf1_4
+	TqSys_facPrmCf1_5
+	TqSys_facPrmCf1_6
+	TqSys_facPrmCf2_1
+	TqSys_facPrmCf2_2
+	TqSys_facPrmCf2_3
+	TqSys_facPrmCf2_4
+	TqSys_facPrmCf2_5
+	TqSys_facPrmCf2_6
+	TqSys_facSacDeceCf1
+	TqSys_facScaAcceCf1
+	TqSys_facScaAcceCf2
+	TqSys_facScaAcceSpt
+	TqSys_facScaDeceSpt
+	TqSys_facScaPha3Cf1
+	TqSys_facScaPha3Cf1_MP
+	TqSys_facScaPha3Cf2
+	TqSys_facScaPha3Cf2_MP
+	TqSys_facScaTiDlyPha10Cf1
+	TqSys_facScaTiDlyPha10Cf2
+	TqSys_facScaTiDlyPha11Cf1
+	TqSys_facScaTiDlyPha11Cf2
+	TqSys_facScaTiDlyPha9Cf1
+	TqSys_facScaTiDlyPha9Cf2
+	TqSys_nTrb
+	TqSys_noGearDeceIniIt
+	TqSys_rAccPEngFrz
+	TqSys_stDrivFilCf
+	TqSys_tiDlyPha10
+	TqSys_tiDlyPha10Cf1
+	TqSys_tiDlyPha10Cf1_MP
+	TqSys_tiDlyPha10Cf2
+	TqSys_tiDlyPha10Cf2_MP
+	TqSys_tiDlyPha11
+	TqSys_tiDlyPha11Cf1
+	TqSys_tiDlyPha11Cf1_MP
+	TqSys_tiDlyPha11Cf2
+	TqSys_tiDlyPha11Cf2_MP
+	TqSys_tiDlyPha9
+	TqSys_tiDlyPha9Cf1
+	TqSys_tiDlyPha9Cf1_MP
+	TqSys_tiDlyPha9Cf2
+	TqSys_tiDlyPha9Cf2_MP
+	TqSys_tqACLossFil
+	TqSys_tqCkDrivFilRaw
+	TqSys_tqCkDrivFilRawPrev
+	TqSys_tqCkDrivNotFil
+	TqSys_tqCkDrivNotFilAcce
+	TqSys_tqCkDrivNotFilGsl
+	TqSys_tqCkEfcDiff
+	TqSys_tqCkEfcDiff2
+	TqSys_tqDeltaMinAcce
+	TqSys_tqFilDifMin
+	TqSys_tqOfsPha3Thd
+	TqSys_tqSlopPha10
+	TqSys_tqSlopPha11
+	TqSys_tqSlopPha4
+	TqSys_tqSlopPha4Cf1
+	TqSys_tqSlopPha4Cf2
+	TqSys_tqSlopPha6
+	TqSys_tqSlopPha6Cf1
+	TqSys_tqSlopPha6Cf2
+	TqSys_tqSlopPha7
+	TqSys_tqSlopPha7Cf1
+	TqSys_tqSlopPha7Cf2
+	TqSys_tqSlopPha9
+	TqSys_tqThdDeceUHFrz
+	TqSys_tqThdDeceUHFrzOff
+	TqSys_tqThdOfsPha8Cf1
+	TqSys_tqThdPha10
+	TqSys_tqThdPha10Cf1
+	TqSys_tqThdPha10Cf2
+	TqSys_tqThdPha2
+	TqSys_tqThdPha3Cf1
+	TqSys_tqThdPha3Cf2
+	TqSys_tqThdPha3Phy
+	TqSys_tqThdPha4
+	TqSys_tqThdPha4Cf1
+	TqSys_tqThdPha4Cf2
+	TqSys_tqThdPha8
+	TqSys_tqThdPha8Cf1
+	TqSys_tqThdPha8Cf2
+	TqSys_tqThdPha9
+	TqSys_tqThdPha9Cf1
+	TqSys_tqThdPha9Cf2
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE PFilFast ------------------------------------*/

@@ -1,0 +1,24 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+ENGRUNST_vidCutOffInputMngt|D|();|FCT1.6|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|La coupure d’injection est autorisée qu'au dessus d'un seuil de température après un délai suivant le démarrage et lorsqu’un un délai calibré est écoulé suite à une régulation ESP de type MSR lors d’une coupure d’injection pied levé.|
+ENGRUNST_vidDelayTimeout|B|();|FCT1.5|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|A la transition de l’automate Vehicle_active_state de l’état CRANKING à RUNNING, on initialise le compteur Pl_fco_entry_delay_timeout.|
+ENGRUNST_vidDiag|B|();|FCT2.1|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Lorsque le compteur de temps cumulé passé en sur-régime est supérieur à un seuil calibrable et que l’on a switché sur la carto EngSt_EngSpdLimHiThdMecProt_M pour le calcul du régime seuil d’activation de la fonction sur-régime.|
+ENGRUNST_vidEngrunst|K|();|FCT1.7|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|L'injection de carburant est coupée lors des décélérations et les prises de régime pédale en position pied levé avec pour objectifs.|
+ENGRUNST_vidEngrunStInterface|C|();|FCT1.9|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Cette fonction décrit l'interfaçage des variables Manage_isc_closed_loop et Ext_bIdlAcv avec le flag moteur sous contrôle du régulateur et consigne ralenti active, ainsi que l'interfaçage de Ext_stEngrun avec Engine_running_state|
+ENGRUNST_vidFcoMainConditions|F|();|FCT1.3|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Cette condition nécessaire à l'autorisation de la coupure injection (ERUN_ENGINE_OVERRUN_FCO) quelque soit l'état d'origine.|
+ENGRUNST_vidFullLoadEntryDelay|D|();|FCT1.2|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Le passage en FULL_LOAD est effectué sur des conditions évaluées en NORMAL_RUNNING ou en ENGINE_OVERSPEED_FCO, avec un délai d’entrée géré dans ce module.|
+ENGRUNST_vidInit|C|();|FCT1.4|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Le compteur Esp_cut_off_allowed_count est initialisé à zéro au reset.|
+ENGRUNST_vidInitOutput|H|();|FCT1.1|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Fonction d'initialisation des variables produites par la spec.|
+ENGRUNST_vidKeyOnCalc|C|();|FCT1.10|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Au Key-On on vient lire la valeur du compteur de temps cumulé passé en sur-régime et on vérifie si il est supérieur au seuil défini par calibration.|
+ENGRUNST_vidOverpeedFcoCondEntry|G|();|FCT1.8|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Le passage à VRAI de FRM_bEngSpdLimHiIntv entraine une limitation du régime moteur, calibrable en fonction du rapport de boite filtré. Le passage à VRAI de FRM_bEngSpdLimLoIntv entraine une limitation sévère du régime moteur.|
+ENGRUNST_vidRstAcvTrqLim|B|();|FCT2.2|ENGRUNST|0|PTS_DOC_5489080||||0|0|0|0|Lorsque la limitation du sur-régime par la couple est effective, la demande d’activation par le couple doit être réinitialisée à 0, mais la stratégie doit rester activée tant que EngSt_bEntryOVERSPEED_FCO = 1.|
+EngSt_EveCrTR_EngrunSt|C|();|SCH.3|ENGRUNST|1|PTS_DOC_5489080||||0|0|0|0|Evénement CRANKING vers RUNNING.|
+EngSt_EveEORF_EngrunSt|A|();|5|HEADER|1|NONE||||0|0|0|0|Transition ERUN_ENGINE_OVERRUN_FCO vers ERUN_NORMAL_RUNNING|
+EngSt_EveKOn_EngrunSt|B|();|SCH.4|ENGRUNST|1|PTS_DOC_5489080||||0|0|0|0|Evénement clef Off_On|
+EngSt_EveNTFL_EngrunSt|A|();|3|HEADER|1|NONE||||0|0|0|0|Fonction permettant le passage de l'état ERUN_NORMAL_RUNNING vers ERUN_FULL_LOAD|
+EngSt_EveRst_EngrunSt|E|();|SCH.1|ENGRUNST|1|PTS_DOC_5489080||||0|0|0|0|évenement reset.|
+EngSt_EveTOSR_EngrunSt|A|();|4|HEADER|1|NONE||||0|0|0|0|Fonction permettant l'entrée en ERUN_ENGINE_OVERRUN_FCO ou ERUN_ENGINE_OVERSPEED_FCO|
+EngSt_SdlFast_EngrunSt|F|();|SCH.2|ENGRUNST|1|PTS_DOC_5489080||||0|0|0|0|Moniteur Rapide de la fonction EngSt.|
+GDGAR_bGetFRM|B|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0|Fonction permettant la production des variables d'entrée FRM_bInhEngrunStFullLd et FRM_bLimEngrunStEngSpd dans ce spec.|
+GDGAR_tenuGetStDgo|A|func_GDGAR_tenuGetStDgo|7|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU|
+SWFAIL_vidSoftwareErrorHook|B|();|1|HEADER|1|NONE||||0|0|0|0|erreur logiciel.|

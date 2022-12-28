@@ -1,0 +1,14 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|B|(argin uint16 u16channel)boolean;|3|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|B|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+Strtr_EveRst_IfCmdDiag|C|();|SCH.1|STRTRCMDDIAG|1|PTS_DOC_6528767||||0|0|0|0|Fonction d'accroche à l'événement reset du calculateur|
+Strtr_SdlMid_IfCmdDiag|D|();|SCH.2|STRTRCMDDIAG|1|PTS_DOC_6528767||||0|0|0|0|Fonction d'accroche à l'événement Strtr_SdlMid_IfCmdDiag|
+STRTRCMDDIAG_vidCmdStrtrRly|D|();|FCT1.1|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Le pilotage de la Dml doit être Low Side Tout Ou Rien (TOR)|
+STRTRCMDDIAG_vidCondResetTempo|D|();|FCT1.7|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Fonction d'initialisation du trigger du bloc reset_tempo|
+STRTRCMDDIAG_vidDiagBlockedStEna|B|();|FCT1.8|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Le défaut Démarreur bloqué est détecté quand il n’y a pas de défaut sur le capteur régime et au démarrage, sur commande démarreur, il y a absence du signal régime .|
+STRTRCMDDIAG_vidDiagBlockedStrtr|G|();|FCT1.4|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Le défaut Démarreur bloqué est détecté quand il n’y a pas de défaut sur le capteur régime et au démarrage, sur commande démarreur, il y a absence du signal régime|
+STRTRCMDDIAG_vidDiagElec|C|();|FCT1.3|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Trois types de diagnostic de pannes sont traités: panne circuit ouvert/panne Court-circuit à la masse/panne Court-circuit à la batterie|
+STRTRCMDDIAG_vidDiagStrtrRly|F|();|FCT1.2|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Ce bloc permet de faire les diagnostics électriques liés au DML (court-circuit à l’alimentation, court-circuit à la masse, circuit ouvert) ainsi que le diagnostic lié au défaut blocage du démarreur.|
+STRTRCMDDIAG_vidIni|B|();|FCT1.9|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|L’initialisation de la variable Dml_diag_cmd_blocage_sta_count  avec Dml_diag_blocage_sta_delay|
+STRTRCMDDIAG_vidResetTempo|E|();|FCT1.5|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|La tempo Dml_diag_blocage_sta_count est réinitialisée quand: 1) la commande n’est pas active. 2) le moteur est non tournant alors que la commande est active.|
+STRTRCMDDIAG_vidRunTempo|E|();|FCT1.6|STRTRCMDDIAG|0|PTS_DOC_6528767||||0|0|0|0|Ce bloc permet de calculer de Dml_diag_blocage_sta_count qui est décrémentée tant que la commande de démarrage est active.|

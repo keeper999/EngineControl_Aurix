@@ -1,0 +1,632 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : RblPvt                                                  */
+/* !Description     : RUMBLE PREVENTION                                       */
+/*                                                                            */
+/* !Module          : RblPvt                                                  */
+/*                                                                            */
+/* !File            : RblPvt.a2l                                              */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Dec 13 15:30:24 2012                              */
+/*   Model name       : RblPvt_AUTOCODE.mdl                                   */
+/*   Model version    : 1.23                                                  */
+/*   Root subsystem   : /RblPvt                                               */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/RblPvt/5-SOFT-LIV/RblPvt.a2v$*/
+/* $Revision::   1.0                                                         $*/
+/* $Author::   adelvare                               $$Date::   14 Dec 2012 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   RblPvt
+    /*   LongIdentifier */   "RblPvt Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   RblPvt_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctRblIrvLdLimPvtHiThd_C
+       /*   LongIdentifier */   "seuil haut de compteur d'encrassement moteur pour rumble preventif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctRbllrvLdLimPvtLoThd_C
+       /*   LongIdentifier */   "seuil bas de compteur d'encrassement moteur pour rumble preventif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctToilRblIrvLdLimHiThd_C
+       /*   LongIdentifier */   "seuil haut de compteur d'encrassement moteur fonction de Thuile pour rumble preventif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctToilRbllrvLdLimLoThd_C
+       /*   LongIdentifier */   "seuil bas de compteur d'encrassement moteur fonction de Thuile pour rumble preventif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_tOilMesHi_C
+       /*   LongIdentifier */   "Température d'huile seuil haut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_4
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_tOilMesLo_C
+       /*   LongIdentifier */   "Température d'huile seuil bas"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_4
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   RBLPVT_u8Inhib
+       /*   LongIdentifier */   "RBLPVT_u8Inhib let the user inhib RblPvt"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotRblPvtInc_M
+       /*   LongIdentifier */   "carto d'incrément compteur d'encrassement moteur"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_6
+       /*   LowerLimit     */   -10.0
+       /*   UpperLimit     */   10.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             KnkMgt_pDsThrMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotRblPvtToilH_M
+       /*   LongIdentifier */   "compteur d'encrassement moteur pour rumble preventif (huile chaude)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_6
+       /*   LowerLimit     */   -10.0
+       /*   UpperLimit     */   10.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotRblPvtToilL_M
+       /*   LongIdentifier */   "compteur d'encrassement moteur pour rumble preventif (huile froide)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   RblPvt_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_6
+       /*   LowerLimit     */   -10.0
+       /*   UpperLimit     */   10.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   RblPvt_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_pDsThrMes_A
+       /*   LongIdentifier */   "points d'appui en pression collecteur mesurée"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   RblPvt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   RblPvt_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_facCtRblToil
+       /*   LongIdentifier */   "facteur d'interpolation dépendant de Thuile"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   RblPvt_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_ctTotRblToil
+       /*   LongIdentifier */   "compteur d'encrassement moteur fonction de Thuile pour rumble preventif"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   RblPvt_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_ctTotRblPvtInc
+       /*   LongIdentifier */   "compteur d'encrassement moteur pour rumble preventif"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   RblPvt_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvIrvLdLimRblPvtReq
+       /*   LongIdentifier */   "Booléen de demande de limitation du remplissage réversible/irréversible pour rumble préventif"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   RblPvt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvIrvLdLimToilReq
+       /*   LongIdentifier */   "Booléen de demande de limitation du remplissage réversible/irréversible pour rumble préventif (Thuile)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   RblPvt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_2
+       /*   LongIdentifier */   "Q = V*16384"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "[-]"
+       COEFFS                   0 16384 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_3
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_4
+       /*   LongIdentifier */   "Q = V*10"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_5
+       /*   LongIdentifier */   "Q = V*8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "tr/min"
+       COEFFS                   0 8 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_6
+       /*   LongIdentifier */   "Q = (V+10)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 10 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_7
+       /*   LongIdentifier */   "Q = V*16384"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 16384 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_9
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   RblPvt_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            RblPvt_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   RblPvt_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   RblPvt
+       /*   LongIdentifier */   "V02NT1205315.001"
+
+       /begin DEF_CHARACTERISTIC
+          KnkMgt_ctRblIrvLdLimPvtHiThd_C
+          KnkMgt_ctRbllrvLdLimPvtLoThd_C
+          KnkMgt_ctToilRblIrvLdLimHiThd_C
+          KnkMgt_ctToilRbllrvLdLimLoThd_C
+          KnkMgt_ctTotRblPvtInc_M
+          KnkMgt_ctTotRblPvtToilH_M
+          KnkMgt_ctTotRblPvtToilL_M
+          KnkMgt_pDsThrMes_A
+          KnkMgt_tOilMesHi_C
+          KnkMgt_tOilMesLo_C
+          RBLPVT_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          KnkMgt_ctTotRblPvtInc
+          KnkMgt_ctTotRblToil
+          KnkMgt_facCtRblToil
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          KnkMgt_bAcvIrvLdLimRblPvtReq
+          KnkMgt_bAcvIrvLdLimToilReq
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,24 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDU_tenuGetStDgo|B|Func_GDU_tenuGetStDgo|01.1|HEADER|1|NONE||||0|0|0|0|Fonction d'API permettant de retourner l'état de l'automate du GDU.   Elle verifie avant de retourner l'état si l'index passé en paramètre est bien dans la plage de définition de taille du tableau (taille max definie)|
+GOBD_tenuGetStDgo|A|funct_get_gobd_state|10|HEADER|1|NONE||||0|0|0|0||
+MEM_vidClasFrfInit|B|(argin uint16 u16IdxDft, argin uint32* au32Frf);|1|HEADER|1|HEADER||||0|0|0|0||
+MEM_vidF01_DTCRec|G|();|FCT1.02|MEM|0|PTS_DOC_5447179||||0|0|0|0|Tant que le compteur de défauts unitaires apparus successivement n’a pas atteint sa valeur maximale et que la classe de calibration associée l’autorise, le DTC du défaut concerné monte à sa valeur générique associé, autrement il prend la valeur 0xFFFF.|
+MEM_vidF01_FrzData|I|(argin uint16 u16IdxDft);|FCT1.03|MEM|0|PTS_DOC_5447179||||0|0|0|0|Cette fonction permet de figer de manière temporaire (uniquement en RAM) les paramètres constituants la Freeze frame et ce, quelque soit le défaut (à condition que la classe associé l’autorise).|
+MEM_vidF01_Init|H|();|FCT1.01|MEM|0|PTS_DOC_5447179||||0|0|0|0|Effacement de tous les DTC|
+MEM_vidF02_StoreDataFrf|G|(argin uint16 u16IdxDft);|FCT1.04|MEM|0|PTS_DOC_5447179||||0|0|0|0|Enregistrement des données suivant le rang|
+MEM_vidF04_RstnoRnkFrf|I|(argin uint16 u16IdxDft);|FCT1.05|MEM|0|PTS_DOC_5447179||||0|0|0|0|Libération du contexte anciennement associé au défaut et effacement du rang de Freeze Frame du défaut concerné|
+MEM_vidF04_StoreFrfObd|G|(argin uint16 u16IdxDft);|FCT1.08|MEM|0|PTS_DOC_5447179||||0|0|0|0|Fonction appelée sur événement CALL_StObdRecTypCc_NameVar|
+MEM_vidF06_RstDftMng|H|();|FCT1.06|MEM|0|PTS_DOC_5447179||||0|0|0|0|Effacement des défauts standards|
+MEM_vidF07_RstDftObdMng|H|();|FCT1.07|MEM|0|PTS_DOC_5447179||||0|0|0|0|Effacement des défauts OBD|
+MEM_vidF08_StoreData|F|();|FCT1.09|MEM|0|PTS_DOC_5447179||||0|0|0|0|Enregistrement à la volée sur Eeprom|
+MEM_vidMngEveCDThUp|C|(argin uint16 u16IdxDft);|API.05|MEM|1|PTS_DOC_5447179||||0|0|0|0|Evenement GDU notifiant le franchissement du seuil|
+MEM_vidMngEveDftClr|F|(argin uint16 u16IdxDft);|API.02|MEM|1|PTS_DOC_5447179||||0|0|0|0|Evenement effacement des paramètres défauts enregistrés|
+MEM_vidMngEveFrfRec|C|(argin uint16 u16IdxDft);|API.04|MEM|1|PTS_DOC_5447179||||0|0|0|0|Evènement moment de mémorisation de la Freeze Frame|
+MEM_vidMngEveInit|B|();|API.01|MEM|1|PTS_DOC_5447179||||0|0|0|0|Effacement de tous les DTC|
+MEM_vidMngEveKeyOn|F|();|SCH.01|MEM|1|PTS_DOC_5447179||||0|0|0|0|Evénement clé ON / OFF ou réveil principal de l'ECU|
+MEM_vidMngEveRstDft|B|();|SCH.03|MEM|1|PTS_DOC_5447179||||0|0|0|0|Requête d'effacement des défauts avec l'outil APV|
+MEM_vidMngEveRstDftCal|C|();|API.03|MEM|1|PTS_DOC_5447179||||0|0|0|0|Demande d'effacement Manuel des défauts|
+MEM_vidMngEveRstDftObd|C|();|SCH.02|MEM|1|PTS_DOC_5447179||||0|0|0|0|Demande d'effacement des défauts OBD par le ScanTool|
+MEM_vidMngEveStObdRec|B|(argin uint16 u16IdxDft);|API.06|MEM|1|PTS_DOC_5447179||||0|0|0|0|Evènement entrée du Gestionnaire OBD dans l'état GOBD_ST_ENREGISTRE|
+NVMSRV_vidWrite|A|(argin NVMSRV_tudtObjectList udtObject, argin boolean bMode);|1|HEADER|1|HEADER||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|B|();|0|HEADER|1|HEADER||||0|0|0|0|HEADER|

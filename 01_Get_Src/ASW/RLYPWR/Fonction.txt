@@ -1,0 +1,32 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+RlyPwr_EveKOf_Mng|G|();|SCH.6|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Evénement associé au passage de clef OFF à clef ON.|
+RlyPwr_EveKOn_Mng|H|();|SCH.3|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Evénement associé au passage de clef OFF à clef ON|
+RlyPwr_EveRst_Mng|I|();|SCH.1|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Evénement reset du calculateur|
+RlyPwr_EveStTR_Mng|H|();|SCH.2|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant|
+RlyPwr_SdlFast_Mng|K|();|SCH.4|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Moniteur rapide du relais de puissance (actionneurs)|
+RlyPwr_SdlMid_Mng|C|();|SCH.7|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Moniteur moyen pour la fonction configuration moteur.|
+RlyPwr_SdlSlow_Mng|E|();|SCH.5|RLYPWR|1|PTS_DOC_5137464||||0|0|0|0|Moniteur lent de la fonction RlyPwr|
+RLYPWR_vidFinMaintRelPrinp|C|();|FCT2.8|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Cette fonction indique que le delai de maintien de la fermeture du relay pricipal est terminé.|
+RLYPWR_vidInitbEndDiag|E|();|FCT1.2|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Fonction d'initialisation.|
+RLYPWR_vidInitbPwrLong|E|();|FCT1.8|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Le booléen EcuSt_bPwrlLong est réinitialisé sur transition clé off /clé on pour éviter que le relais actionneur soit commandé en ouverture et en continu dans le cas où on revient d’un power-latch très long à POWER_ON sans réinitialisé le calculateur|
+RLYPWR_vidInitOutput|I|();|FCT1.1|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Fonction d'initialisation de l'automate|
+RLYPWR_vidInitTempo|E|();|FCT2.5|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|La temporisation RlyPwr_tiWaitAcvModEcoBatt est réinitialisée sur transition clé on/clé off|
+RLYPWR_vidInitWaitAcvModEcoBatt|E|();|FCT2.1|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Attente du mode d'activation|
+RLYPWR_vidInitWaitPwrlEnd|E|();|FCT2.3|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Condition sur la durée du Power-Latch|
+RLYPWR_vidPrevEcuStPwrlLong|B|();|FCT2.9|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Le booléen EcuSt_bPwrlLong est réinitialisé sur transition clef off clef on|
+RLYPWR_vidRlyMngHldReq|C|();|FCT2.7|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Cette fonction sert à demander un maintien du réveil UCE.|
+RLYPWR_vidRlyPwrActrTst|H|();|FCT1.7|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|En cas de test actionneur sur le relais de puissance (PwrRly_btstInProgress = 1), on applique la commande spécifique au test (PwrRly_bActrTstCmd).|
+RLYPWR_vidRlyPwrAcvCond|F|();|FCT1.3|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Le relais de puissance se ferme soit dès l'entrée en réveil principal, soit dès que la commande de la pompe à essence est demandée soit dès qu'une session de diagnostic est requise. Il est réouvert si KEY ON et moteur non tournant après un certain temps.|
+RLYPWR_vidRlyPwrAcvModEcoBatt|K|();|FCT1.10|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Afin de limiter la consommation électrique batterie au sein du véhicule, le relais est ouvert au bout d'une certaine durée, dans le cas où le client entre dans la voiture, met le contact, mais ne démarre pas.|
+RLYPWR_vidRlyPwrCtlMng|Q|();|FCT1.6|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Conditions d'ouverture et de fermeture du relais.|
+RLYPWR_vidRlyPwrDiagActif|C|();|FCT1.4|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Dés l’ouverture d’une session de diagnostique,  le relais de puissance doit être fermé. A la fin de la session de diag, le relais de puissance s’ouvre au bout d’une temporisation (RlyPwr_tiAftEndDiag).|
+RLYPWR_vidRlyPwrDiagInh|A|();|FCT3.1|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Afin d’éviter une remontée de défauts circuit ouvert à l'ouverture du relais actionneurs, le booléen EcuSt_bInhDiagOcCmdActr désactive ces diag lorsqu’on ouvre le relais.|
+RLYPWR_vidRlyPwrDiagNotInh|A|();|FCT3.2|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Afin d’éviter une remontée de défauts circuit ouvert à la fermeture du relais actionneurs, le booléen EcuSt_bInhDiagOcCmdActr maintien la désactivation pendant une temporisation calibrable après sa fermeture.|
+RLYPWR_vidRlyPwrEcoBatt|I|();|FCT1.9|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Ouverture du relais au bout d'un certain temps si son maintien en position fermée n'est pas justifié.|
+RLYPWR_vidRlyPwrMngDiagNotInh|A|();|FCT3.3|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Permet d’éviter une remontée de défauts circuit ouvert à la fermeture et ouverture du relais actionneurs|
+RLYPWR_vidRlyPwrTestPwrlLong|K|();|FCT1.5|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Condition sur la durée du Power-Latch|
+RLYPWR_vidWaitAcvModEcoBatt|G|();|FCT2.2|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Attente du mode d'activation|
+RLYPWR_vidWaitAcvModEcoBattCalib|F|();|FCT2.6|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Si la calibration RlyPwr_bModEcoBatt_Inh_C qui permet d’inhiber la stratégie d’économie batterie est égale à 1 il faut mettre la variable RlyPwr_bAcvModEcoBatt à 1|
+RLYPWR_vidWaitPwrlEnd|G|();|FCT2.4|RLYPWR|0|PTS_DOC_5137464||||0|0|0|0|Attente de la fin de l'action du relais|
+SWFAIL_vidSoftwareErrorHook|B|();|1|HEADER|1|NONE||||0|0|0|0||

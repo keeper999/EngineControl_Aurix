@@ -1,0 +1,2300 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : facFuTran                                               */
+/* !Description     : FACFUTRAN : INJECTED FUEL MASS CORRECTION FACTOR DURING LOAD TRANSIENT*/
+/*                                                                            */
+/* !Module          : facFuTran                                               */
+/*                                                                            */
+/* !File            : facFuTran.a2l                                           */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Mon May 19 23:02:25 2014                              */
+/*   Model name       : facFuTran_AUTOCODE.mdl                                */
+/*   Model version    : 1.640                                                 */
+/*   Root subsystem   : /facFuTran                                            */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/FACFUTRAN/facFuTran.a2v   $*/
+/* $Revision::   1.12                                                        $*/
+/* $Author::   etsasson                               $$Date::   02 Jun 2014 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   facFuTran
+    /*   LongIdentifier */   "facFuTran Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   facFuTran_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noCmbRmpTranAcc_M
+       /*   LongIdentifier */   "Map defining the number of combustions to reach correction factor maximum value in positive transient"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_1
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   256.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noCmbRmpTranDec_M
+       /*   LongIdentifier */   "Map defining the number of combustions to reach correction factor maximum value in negative transient"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_1
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   256.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rDetDecTranLoThr_T
+       /*   LongIdentifier */   "Table defining the low threshold value for negative transient detection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_4
+       /*   LowerLimit     */   -1.0
+       /*   UpperLimit     */   -0.00390625
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rDetDecTranHiThr_T
+       /*   LongIdentifier */   "Table defining the high threshold value for negative transient detection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_4
+       /*   LowerLimit     */   -1.0
+       /*   UpperLimit     */   -0.00390625
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal1_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal1_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal2_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal2_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal3_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal3_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal4_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 4"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal4_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 4"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal5_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 5"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal5_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 5"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranAccCal6_M
+       /*   LongIdentifier */   "Positive transient compensation set point calibration 6"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facTranDecCal6_M
+       /*   LongIdentifier */   "Negative transient compensation set point calibration 6"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirInjSpTranY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_nMaxAcvWf_C
+       /*   LongIdentifier */   "Engine speed threshold for wall film compensation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorAst_M
+       /*   LongIdentifier */   "Map defining the correction factor in after-start"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_7
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ctNbCmbAst_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoStrtMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorExtCd_M
+       /*   LongIdentifier */   "Map defining the correction factor for temperature conditions"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.5999755859375000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_14
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   200.0
+          AXIS_PTS_REF             InjSys_tAirExtMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FACFUTRAN_u8Inhib
+       /*   LongIdentifier */   "Inhibtion of module FACFUTRAN"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModInjTranSatMax_C
+       /*   LongIdentifier */   "Max Saturation of the mode index for transient compensation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_7
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModInjTranSatMin_C
+       /*   LongIdentifier */   "Min Saturation of the mode index for transient compensation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_7
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noClcnAftrReInjThr_C
+       /*   LongIdentifier */   "Number of function calls after a natural re-injection for facFuTran activation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvFISAWupAdp_C
+       /*   LongIdentifier */   "Activation boolean of FISA warm up factor in facFuTran"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvWfModTran_C
+       /*   LongIdentifier */   "Activation boolean of wall film compensation during mode transition"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvWfResuTran_C
+       /*   LongIdentifier */   "Activation boolean of wall film compensation strategy after cut-off"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvfacFuTranClcn_C
+       /*   LongIdentifier */   "Activation boolean of facFuTran strategy"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhReInjCond_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la prise en compte de la re-injection naturelle pour l'activation de facFuTran"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bSelVarInjSys_C
+       /*   LongIdentifier */   "Booléen de sélection de la masse air filtrée pour le calcul"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rGainFilAccCmp_M
+       /*   LongIdentifier */   "Map defining the filter gain during positive air load transient"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_10
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rGainFilDecCmp_M
+       /*   LongIdentifier */   "Map defining the filter gain during negative air load transient"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_10
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpTranX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiDlyAcvWfSTT_C
+       /*   LongIdentifier */   "Wall film activation delay for STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   25.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiDlyAcvWf_C
+       /*   LongIdentifier */   "Wall film activation delay"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   25.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rDetAccTranHiThr_T
+       /*   LongIdentifier */   "Table defining the high threshold value for positive transient detection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.99609375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rDetAccTranLoThr_T
+       /*   LongIdentifier */   "Table defining the low threshold value for positive transient detection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.99609375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facDetAccTranHiThr_M
+       /*   LongIdentifier */   "Table defining the factor on the high threshold value for positive transient detection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.9375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirPredInjSp_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSp_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facDetDecTranLoThr_M
+       /*   LongIdentifier */   "Table defining the factor on the low threshold value for negative transient detection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   facFuTran_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.9375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7.8118807983398441E-003
+          AXIS_PTS_REF             InjSys_mAirPredInjSp_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   facFuTran_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSp_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCoMes_A
+       /*   LongIdentifier */   "water temperature axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEngInjSpTranX_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAirInjSpTranY_A
+       /*   LongIdentifier */   "Air mass axis for facFuTran set point calibration"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ctNbCmbAst_A
+       /*   LongIdentifier */   "Combustions number in after-start axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_7
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4095.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCoStrtMes_A
+       /*   LongIdentifier */   "Table de points d'appui de la température d'eau moteur au démarrage"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tAirExtMes_A
+       /*   LongIdentifier */   "Ambient air temp axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_14
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAirPredInjSp_A
+       /*   LongIdentifier */   "Air mass axis for facFuTran set point calibration"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEngInjSp_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   facFuTran_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   facFuTran_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranCmpPrevRmp
+       /*   LongIdentifier     */   "Previous injected fuel mass correction factor in load transient during ramping before its scaling"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_rMAirPredMAirCor
+       /*   LongIdentifier     */   "Ratio between predicted air mass and corrected air mass at the intake valve closing"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0
+       /*   UpperLimit         */   9.9996948242187500E-001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranCmpRawRmp
+       /*   LongIdentifier     */   "Injected fuel mass correction factor in load transient during ramping before its scaling"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranCmpRmp
+       /*   LongIdentifier     */   "Injected fuel mass correction factor in load transient during ramping"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranCmpIni
+       /*   LongIdentifier     */   "Initial injected fuel mass correction factor during load transient"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpModTar_MP
+       /*   LongIdentifier     */   "Target mode transient compensation factor"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpModCur_MP
+       /*   LongIdentifier     */   "Current mode transient compensation factor"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSp
+       /*   LongIdentifier     */   "Injected fuel mass correction factor during load transient set point"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpBas1ModCur
+       /*   LongIdentifier     */   "Injection transient factor set point for current mode Base 1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpBas2ModCur
+       /*   LongIdentifier     */   "Injection transient factor set point for current mode Base 2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpBas1ModTar
+       /*   LongIdentifier     */   "Injection transient factor set point for target mode Base 1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranSpBas2ModTar
+       /*   LongIdentifier     */   "Injection transient factor set point for target mode Base 2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facTranSpCal
+       /*   LongIdentifier     */   "Calibration array for transient compensation set point"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facTranAccSpCal
+       /*   LongIdentifier     */   "Calibration array for positive transient compensation set point"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facTranDecSpCal
+       /*   LongIdentifier     */   "Calibration array for negative transient compensation set point"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal6
+       /*   LongIdentifier     */   "injection positive transient set point calibration 6"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal6
+       /*   LongIdentifier     */   "injection negative transient set point calibration 6"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal5
+       /*   LongIdentifier     */   "injection positive transient set point calibration 5"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal5
+       /*   LongIdentifier     */   "injection negative transient set point calibration 5"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal4
+       /*   LongIdentifier     */   "injection positive transient set point calibration 4"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal4
+       /*   LongIdentifier     */   "injection negative transient set point calibration 4"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal3
+       /*   LongIdentifier     */   "injection positive transient set point calibration 3"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal3
+       /*   LongIdentifier     */   "injection negative transient set point calibration 3"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal2
+       /*   LongIdentifier     */   "injection positive transient set point calibration 2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal2
+       /*   LongIdentifier     */   "injection negative transient set point calibration 2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranAccSpCal1
+       /*   LongIdentifier     */   "injection positive transient set point calibration 1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranDecSpCal1
+       /*   LongIdentifier     */   "injection negative transient set point calibration 1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facBasModCurInjTran
+       /*   LongIdentifier     */   "Current mode interpolation factor for transient compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facBasModTarInjTran
+       /*   LongIdentifier     */   "Target mode interpolation factor for transient compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranModInjTran
+       /*   LongIdentifier     */   "Mode interpolation factor for injection transient"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facTranCmpCylRaw
+       /*   LongIdentifier     */   "Vecteur (n cylindre) brute de compensation film fluide"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   facFuTran_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facTranCmpCylPrev
+       /*   LongIdentifier     */   "Cylinder array of transient fuel mass correction factor of previous step"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   facFuTran_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTranCmp
+       /*   LongIdentifier     */   "Injected fuel mass correction factor during load transient"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   facFuTran_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.5999755859375000E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_ctNbCmbTran
+       /*   LongIdentifier     */   "counter of combustions in transient"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_idxBas1ModCurInjTran
+       /*   LongIdentifier     */   "Calibration index for Base 1 current mode for transient compensation set point"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   32.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_idxBas2ModCurInjTran
+       /*   LongIdentifier     */   "Calibration index for Base 2 current mode for transient compensation set point"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   32.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_idxBas1ModTarInjTran
+       /*   LongIdentifier     */   "Calibration index for Base 1 target mode for transient compensation set point"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   32.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_idxBas2ModTarInjTran
+       /*   LongIdentifier     */   "Calibration index for Base 2 target mode for transient compensation set point"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   32.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvWfCmp
+       /*   LongIdentifier     */   "Activation boolean of wall film compensation strategy"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetAccTran
+       /*   LongIdentifier     */   "Detection boolean of positive air mass transient"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetDecTran
+       /*   LongIdentifier     */   "Detection boolean of negative air mass transient"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetAccTranTmp
+       /*   LongIdentifier     */   "Temporary value of the detection boolean of positive air mass transient"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetDecTranTmp
+       /*   LongIdentifier     */   "Temporary value of the detection boolean of negative air mass transient"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bRstDetAccTran
+       /*   LongIdentifier     */   "Reset request of detection of positive air mass transient on Injection event"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bRstDetDecTran
+       /*   LongIdentifier     */   "Reset request of detection of negative air mass transient on Injection event"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetRmpTran
+       /*   LongIdentifier     */   "Detection boolean of correction factor ramping"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal1
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 1"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal2
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 2"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal3
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 3"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal4
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 4"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal5
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 5"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvInjTranSpCal6
+       /*   LongIdentifier     */   "Activation Boolean for transient compensation calibration 6"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_bAcvInjTranSpCal
+       /*   LongIdentifier     */   "Boolean activation array for transient compensation calibrations"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetAcvWfCmp
+       /*   LongIdentifier     */   "Booléen indiquant un front montant d'activation de la fonction film fluide"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_noCmbRmpTran
+       /*   LongIdentifier     */   "Number of combustion to reach correction factor maximum value"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   256.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_noClcnAfterReInj
+       /*   LongIdentifier     */   "Number of function calls remaining after a natural re-injection for facFuTran activation"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bAcvWfCmpSet_MP
+       /*   LongIdentifier     */   "Activation boolean of wall film compensation's bascule"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   facFuTran_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_1
+       /*   LongIdentifier */   "Q = (V-1)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_2
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_4
+       /*   LongIdentifier */   "Q = (V+1)*256"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 256 256 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_5
+       /*   LongIdentifier */   "Q = V*4096"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4096 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_6
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            facFuTran_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_10
+       /*   LongIdentifier */   "Q = V*1.28"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1.28 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_11
+       /*   LongIdentifier */   "Q = V*10"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_12
+       /*   LongIdentifier */   "Q = V*256"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 256 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_13
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_14
+       /*   LongIdentifier */   "Q = (V+50)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 50 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_15
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_16
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_17
+       /*   LongIdentifier */   "Q = V*1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_18
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_19
+       /*   LongIdentifier */   "Q = V*4369.06666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4369.06666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   facFuTran_CM_20
+       /*   LongIdentifier */   "Q = V*134217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 134217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   facFuTran_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   facFuTran
+       /*   LongIdentifier */   "PTS_DOC_5464905.010"
+
+       /begin DEF_CHARACTERISTIC
+          FACFUTRAN_u8Inhib
+          InjSys_bAcvFISAWupAdp_C
+          InjSys_bAcvWfModTran_C
+          InjSys_bAcvWfResuTran_C
+          InjSys_bAcvfacFuTranClcn_C
+          InjSys_bInhReInjCond_C
+          InjSys_bSelVarInjSys_C
+          InjSys_ctNbCmbAst_A
+          InjSys_facCorAst_M
+          InjSys_facCorExtCd_M
+          InjSys_facDetAccTranHiThr_M
+          InjSys_facDetDecTranLoThr_M
+          InjSys_facTranAccCal1_M
+          InjSys_facTranAccCal2_M
+          InjSys_facTranAccCal3_M
+          InjSys_facTranAccCal4_M
+          InjSys_facTranAccCal5_M
+          InjSys_facTranAccCal6_M
+          InjSys_facTranDecCal1_M
+          InjSys_facTranDecCal2_M
+          InjSys_facTranDecCal3_M
+          InjSys_facTranDecCal4_M
+          InjSys_facTranDecCal5_M
+          InjSys_facTranDecCal6_M
+          InjSys_idxModInjTranSatMax_C
+          InjSys_idxModInjTranSatMin_C
+          InjSys_mAirInjSpTranY_A
+          InjSys_mAirPredInjSp_A
+          InjSys_nEngInjSpTranX_A
+          InjSys_nEngInjSp_A
+          InjSys_nMaxAcvWf_C
+          InjSys_noClcnAftrReInjThr_C
+          InjSys_noCmbRmpTranAcc_M
+          InjSys_noCmbRmpTranDec_M
+          InjSys_rDetAccTranHiThr_T
+          InjSys_rDetAccTranLoThr_T
+          InjSys_rDetDecTranHiThr_T
+          InjSys_rDetDecTranLoThr_T
+          InjSys_rGainFilAccCmp_M
+          InjSys_rGainFilDecCmp_M
+          InjSys_tAirExtMes_A
+          InjSys_tCoMes_A
+          InjSys_tCoStrtMes_A
+          InjSys_tiDlyAcvWfSTT_C
+          InjSys_tiDlyAcvWf_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bAcvInjTranSpCal1
+          InjSys_bAcvInjTranSpCal2
+          InjSys_bAcvInjTranSpCal3
+          InjSys_bAcvInjTranSpCal4
+          InjSys_bAcvInjTranSpCal5
+          InjSys_bAcvInjTranSpCal6
+          InjSys_bAcvWfCmpSet_MP
+          InjSys_bDetAccTran
+          InjSys_bDetAccTranTmp
+          InjSys_bDetAcvWfCmp
+          InjSys_bDetDecTran
+          InjSys_bDetDecTranTmp
+          InjSys_bDetRmpTran
+          InjSys_bRstDetAccTran
+          InjSys_bRstDetDecTran
+          InjSys_ctNbCmbTran
+          InjSys_facBasModCurInjTran
+          InjSys_facBasModTarInjTran
+          InjSys_facTranAccSpCal1
+          InjSys_facTranAccSpCal2
+          InjSys_facTranAccSpCal3
+          InjSys_facTranAccSpCal4
+          InjSys_facTranAccSpCal5
+          InjSys_facTranAccSpCal6
+          InjSys_facTranCmp
+          InjSys_facTranCmpIni
+          InjSys_facTranCmpPrevRmp
+          InjSys_facTranCmpRawRmp
+          InjSys_facTranCmpRmp
+          InjSys_facTranDecSpCal1
+          InjSys_facTranDecSpCal2
+          InjSys_facTranDecSpCal3
+          InjSys_facTranDecSpCal4
+          InjSys_facTranDecSpCal5
+          InjSys_facTranDecSpCal6
+          InjSys_facTranModInjTran
+          InjSys_facTranSp
+          InjSys_facTranSpBas1ModCur
+          InjSys_facTranSpBas1ModTar
+          InjSys_facTranSpBas2ModCur
+          InjSys_facTranSpBas2ModTar
+          InjSys_facTranSpModCur_MP
+          InjSys_facTranSpModTar_MP
+          InjSys_idxBas1ModCurInjTran
+          InjSys_idxBas1ModTarInjTran
+          InjSys_idxBas2ModCurInjTran
+          InjSys_idxBas2ModTarInjTran
+          InjSys_noClcnAfterReInj
+          InjSys_noCmbRmpTran
+          InjSys_prm_bAcvInjTranSpCal
+          InjSys_prm_facTranAccSpCal
+          InjSys_prm_facTranCmpCylPrev
+          InjSys_prm_facTranDecSpCal
+          InjSys_prm_facTranSpCal
+          InjSys_rMAirPredMAirCor
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvWfCmp
+          InjSys_prm_facTranCmpCylRaw
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

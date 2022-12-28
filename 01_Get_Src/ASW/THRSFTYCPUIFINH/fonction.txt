@@ -1,0 +1,25 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|5|HEADER|1|NONE||||0|0|0|0||
+MCWDG_bReadInhibitState|B|func_MCWDG_bReadInhibitState|2|HEADER|1|NONE||||0|0|0|0||
+MCWDG_vidForceInhibit|A|();|3|HEADER|1|NONE||||0|0|0|0||
+MCWDG_vidInhibitDisableRequest|A|();|4|HEADER|1|NONE||||0|0|0|0||
+MCWDG_vidStartInhibitState|A|(argin uint8 u8McwInhPin);|0x07|HEADER|1|NONE||||0|0|0|0||
+MCWDG_vidStopInhibitState|A|(argin uint8 u8McwInhPin);|0x08|HEADER|1|NONE||||0|0|0|0||
+Thr_EveChkLih_MngServo|A|();|6|HEADER|1|NONE||||0|0|0|0||
+Thr_EveRst_IfInhThrCpuSfty|F|();|SCH.1|THRSFTYCPUIFINH|1|PTS_DOC_5060895||||0|0|0|0|Evènement Reset de la fonction Thr.|
+Thr_EveTestAbort_IfInhThrCpuSfty|B|();|SCH.3|THRSFTYCPUIFINH|1|PTS_DOC_5060895||||0|0|0|0|Evènement d'abandon des tests fonctionnels d'inhibition|
+Thr_EveTestEnd_IfInhThrCpuSfty|B|();|SCH.4|THRSFTYCPUIFINH|1|PTS_DOC_5060895||||0|0|0|0|Evènement de fin des tests fonctionnels d'inhibition|
+Thr_SdlFast_IfInhThrCpuSfty|F|();|SCH.2|THRSFTYCPUIFINH|1|PTS_DOC_5060895||||0|0|0|0|Moniteur rapide de la fonction papillon.|
+THRSFTYCPUIFINH_vidBswAbortcount|B|();|FCT2.2|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|cette fonction permet de compter le nombre d’abandon (Abort) par le basic software lors des tests d’inhibit safety.|
+THRSFTYCPUIFINH_vidFuncGenerator|D|();|FCT1.8|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Génération de l'événement Thr_EveChkLih_MngServo.|
+THRSFTYCPUIFINH_vidInit|C|();|FCT1.1|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Initialisation des sorties|
+THRSFTYCPUIFINH_vidInitOutput|I|();|FCT1.2|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Initialisation des variables internes du module THRSFTYCPUIFINH.|
+THRSFTYCPUIFINH_vidMcwdgInhTest1|G|();|FCT1.4|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Le defaut "ReadPinEnaThr_Cpu" correspond à une incohérence au niveau de la relecture par le MCP du statut de la PIN DI2 (ou EN)  (valeur attentue durant le test EN=MCWDG_bMCW_INHIBIT_ACTIVE1 pour couper le papillon).|
+THRSFTYCPUIFINH_vidMcwdgInhTest2|H|();|FCT1.5|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Le defaut “ InhThr_cpuSfty” correspond à une incohérence au niveau de la relecture par le MCP de la position papillon( valeur attentue durant le test = position de Limp Home).|
+THRSFTYCPUIFINH_vidMcwdgInhThr|A|();|FCT2.3|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Durant la durée du test 1 on vérifie si le Pin d’inhibition du MCW est différent de l’état inhibition.Le cas échéant on monte le défaut Thr_bDgoReadPinInhThr_Cpu.|
+THRSFTYCPUIFINH_vidMcwIhBswTstEd|B|();|FCT1.9|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Sortie du booléen sur événement de fin de test envoyé par le basic software.|
+THRSFTYCPUIFINH_vidMcwInhApiMngt|J|();|FCT1.6|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|L’appel à l’API "MCWDG_vidStartInhibitState" permet de demander au LDB de  désactiver le pont H en imposant « ENA » du Mcw à 0.L’appel à l’API "MCWDG_vidStopInhibitState" permet de réactiver le pont en  H à la fin du test.|
+THRSFTYCPUIFINH_vidMcwInhTstEnd|C|();|FCT1.10|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Calcul de la variable Thr_bEndTestInh_CpuSfty|
+THRSFTYCPUIFINH_vidOldStructMang|E|();|FCT1.7|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|Ce block gère la compatibilité avec une architecture précédente.|
+THRSFTYCPUIFINH_vidReadMcwInhib|D|();|FCT1.3|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|L’appel à l’API MCWDG_bReadInhibitState retourne la valeur de l’ inhibition status du microcontrolleur watchdog ( PIN DI2( ou EN)).|
+THRSFTYCPUIFINH_vidRnitBswAbtcnt|B|();|FCT2.1|THRSFTYCPUIFINH|0|PTS_DOC_5060895||||0|0|0|0|cette fonction permet de réinitialiser le compteur d’abandon (Abort).|

@@ -1,0 +1,1228 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : mFuSpCrk                                                */
+/* !Description     : INJECTED FUEL MASS SET POINT DURING CRANKING            */
+/*                                                                            */
+/* !Module          : mFuSpCrk                                                */
+/*                                                                            */
+/* !File            : mFuSpCrk.a2l                                            */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Sun Jun 02 16:30:57 2013                              */
+/*   Model name       : mFuSpCrk_AUTOCODE.mdl                                 */
+/*   Model version    : 1.387                                                 */
+/*   Root subsystem   : /mFuSpCrk                                             */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/MFUSPCRK/mFuSpCrk.a2v     $*/
+/* $Revision::   1.8                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   03 Jul 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   mFuSpCrk
+    /*   LongIdentifier */   "mFuSpCrk Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuSpCrk_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorMassFuRstrtSTT_M
+       /*   LongIdentifier */   "Cartographie de gain sur la masse de carburant au redémarrage STT en fonction de la température d'eau et du temps depuis calage"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_1
+       /*   LowerLimit     */   0.390625
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   864000.0
+          AXIS_PTS_REF             EOM_tiEngStopRst_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorMassFuRstrt_M
+       /*   LongIdentifier */   "Cartographie de gain sur la masse de carburant au redémarrage classique en fonction de la température d'eau et du temps depuis calage"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_1
+       /*   LowerLimit     */   0.390625
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   864000.0
+          AXIS_PTS_REF             InjSys_tiEngStop_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuReqCrkst_M
+       /*   LongIdentifier */   "Cartographie de masse de carburant à injecter en démarrage classique en fonction du régime et de la température d'eau"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuReqCrkSTTst_M
+       /*   LongIdentifier */   "Cartographie de masse de carburant à injecter en démarrage STT en fonction du régime et de la température d'eau"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuReqCrkMinst_M
+       /*   LongIdentifier */   "Cartographie de masse de carburant minimale à injecter en démarrage classique en fonction de la pression rail et de la température d'eau"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuReqCrkMinSTTst_M
+       /*   LongIdentifier */   "Cartographie de masse de carburant minimale à injecter en démarrage STT en fonction de la pression rail et de la température d'eau"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rFilGainMassFust_T
+       /*   LongIdentifier */   "Cartographie en température d'eau du gain passe bas sur la masse d'essence à injecter en démarrage classique"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   99.609375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rFilGainMassFuSTTst_T
+       /*   LongIdentifier */   "Cartographie en température d'eau du gain passe bas sur la masse d'essence à injecter en démarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   99.609375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctTDCThdAcvDecSTTst_T
+       /*   LongIdentifier */   "Cartographie du nombre de PMH avant décrémentation de la masse injectée en démarrage STTen fonction de la température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctTDCThdAcvDecst_T
+       /*   LongIdentifier */   "Cartographie du nombre de PMH avant décrémentation de la masse injectée en démarrage classique en fonction de la température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuCrkActrTstHPPmp_C
+       /*   LongIdentifier */   "Masse de carburant à injecter lors d'un test actionneur pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuDecStepSTTst_C
+       /*   LongIdentifier */   "Pas de décroissance de la masse de carburant à injecter en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_12
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999991E+005
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mFuDecStepst_C
+       /*   LongIdentifier */   "Pas de décroissance de la masse de carburant à injecter en démarrage classique"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_12
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999991E+005
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bCorRstrtSTT_pAirExt_T
+       /*   LongIdentifier */   "Influence de la pression atmosphérique sur la correction du temps d'injection en redémarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             InjSys_pAirExt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   MFUSPCRK_u8Inhib
+       /*   LongIdentifier */   "Inhibition of module MFUSPCRK"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhFISAAntiFlood_C
+       /*   LongIdentifier */   "Booléen d'inhibtion du correctif du FISA dans le calcul du correctif de la masse en cas de dénoyage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhFISACalcMFu_C
+       /*   LongIdentifier */   "Booléen d'inhibtion du correctif du FISA dans le calcul de la masse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bSelSdlClcnMassFuCrk_C
+       /*   LongIdentifier */   "Type de calcul de la masse sous démarreur (Synchrone / asynchrone)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_FacMaxCorRstrtSTT_C
+       /*   LongIdentifier */   "Valeur max du gain permettant de correction de la masse pour limiter les émissions polluantes liées aux redémarrages STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_17
+       /*   LowerLimit     */   0.78125
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_FacMinCorRstrtSTT_C
+       /*   LongIdentifier */   "Valeur min du gain permettant de correction de la masse pour limiter les émissions polluantes liées aux redémarrages STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_17
+       /*   LowerLimit     */   0.78125
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_FacCorRstrtSTT_cntTDC_T
+       /*   LongIdentifier */   "Influence du nombre d'injection réalisé en phase CRANKING sur la correction du temps d'injection en redémarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_14
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   50.0
+          AXIS_PTS_REF             InjSys_ctTDCStrt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_FacCorRstrtSTT_mO2Cat_T
+       /*   LongIdentifier */   "Influence de la masse d'O2 stockée dans le catalyseur sur la correction du temps d'injection en redémarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_11
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   6553.5
+          AXIS_PTS_REF             InjSys_mO2Cat_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_FacCorRstrtSTT_nEng_tCo_M
+       /*   LongIdentifier */   "Facteur correctif sur le temps d'injection en phase CRANKING sur les redémarrages STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorpAirMassFu_T
+       /*   LongIdentifier */   "Table du correctif sur la masse à injecter en démarrage fonction de la pression air ambiante"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_19
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             InjSys_pAirExt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorpFuMassFu_T
+       /*   LongIdentifier */   "Table du correctif sur la masse à injecter en démarrage fonction de la pression rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_19
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   mFuSpCrk_CM_9
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             Ext_pFuRailMesRef2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   EOM_tiEngStopRst_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps écoulé depuis le dernier calage moteur avec reset"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   864000.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tiEngStop_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps écoulé depuis le dernier calage moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   864000.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_pAirExt_A
+       /*   LongIdentifier */   "Table de points d'appuis en pression air ambiente"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_10
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ctTDCStrt_A
+       /*   LongIdentifier */   "Table de points d'appuie pour le Compteur du nombre total de PMH en phase CRANKING"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_14
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mO2Cat_A
+       /*   LongIdentifier */   "Table de points d'appui pour la Masse d'oxygène stockée dans le catalyseur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_11
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6553.5
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   Ext_pFuRailMesRef2_A
+       /*   LongIdentifier */   "Table de points d'appuis en pression rail mesurée pour le démarrage"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   mFuSpCrk_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuSpCrk_CM_9
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuReqCrkMin
+       /*   LongIdentifier */   "Masse minimale de carburant à injecter au démarrage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   mFuSpCrk_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuReqCrkMinPrev
+       /*   LongIdentifier */   "Masse minimale de carburant à injecter au démarrage du pas précédent"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   mFuSpCrk_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facCorMassFuRstrt
+       /*   LongIdentifier */   "Gain permettant de diminuer la masse de carburant à injecter lors d'un redémarrage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   mFuSpCrk_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.390625
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_ctTDCThdAcvDecMassFu
+       /*   LongIdentifier */   "Nombre de PMH avant décrémentation de la masse injectée au démarrage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   mFuSpCrk_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuCrkSp
+       /*   LongIdentifier */   "Consigne de masse de carburant sous démarreur"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuCrkSpPrev
+       /*   LongIdentifier */   "Consigne de masse de carburant sous démarreur du pas précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   mFuSpCrk_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuFacCorRstrtSTT
+       /*   LongIdentifier */   "Gain permettant de correction de la masse pour limiter les émissions polluantes liées aux redémarrages STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   mFuSpCrk_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.78125
+       /*   UpperLimit     */   200.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_1
+       /*   LongIdentifier */   "Q = (V-0.390625)*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_2
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_4
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_6
+       /*   LongIdentifier */   "Q = V*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_9
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_10
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_11
+       /*   LongIdentifier */   "Q = V*10"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_12
+       /*   LongIdentifier */   "Q = V/3.2"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 3.2
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_13
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bool"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_14
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "PMH"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_15
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            mFuSpCrk_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_17
+       /*   LongIdentifier */   "Q = (V-0.78125)*1.28"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1.28 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_18
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s.u."
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_19
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_20
+       /*   LongIdentifier */   "Q = V/32"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 32
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_21
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_22
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_23
+       /*   LongIdentifier */   "Q = V/8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_24
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuSpCrk_CM_25
+       /*   LongIdentifier */   "Q = V/100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1 0 0 0 100
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   mFuSpCrk_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   mFuSpCrk
+       /*   LongIdentifier */   "V02NT1101977.03"
+
+       /begin DEF_CHARACTERISTIC
+          EOM_tiEngStopRst_A
+          InjSys_tiEngStop_A
+          Ext_pFuRailMesRef2_A
+          InjSys_FacCorRstrtSTT_cntTDC_T
+          InjSys_FacCorRstrtSTT_mO2Cat_T
+          InjSys_FacCorRstrtSTT_nEng_tCo_M
+          InjSys_FacMaxCorRstrtSTT_C
+          InjSys_FacMinCorRstrtSTT_C
+          InjSys_bCorRstrtSTT_pAirExt_T
+          InjSys_bInhFISAAntiFlood_C
+          InjSys_bInhFISACalcMFu_C
+          InjSys_bSelSdlClcnMassFuCrk_C
+          InjSys_ctTDCStrt_A
+          InjSys_ctTDCThdAcvDecSTTst_T
+          InjSys_ctTDCThdAcvDecst_T
+          InjSys_facCorMassFuRstrtSTT_M
+          InjSys_facCorMassFuRstrt_M
+          InjSys_facCorpAirMassFu_T
+          InjSys_facCorpFuMassFu_T
+          InjSys_mFuCrkActrTstHPPmp_C
+          InjSys_mFuDecStepSTTst_C
+          InjSys_mFuDecStepst_C
+          InjSys_mFuReqCrkMinSTTst_M
+          InjSys_mFuReqCrkMinst_M
+          InjSys_mFuReqCrkSTTst_M
+          InjSys_mFuReqCrkst_M
+          InjSys_mO2Cat_A
+          InjSys_pAirExt_A
+          InjSys_rFilGainMassFuSTTst_T
+          InjSys_rFilGainMassFust_T
+          MFUSPCRK_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_ctTDCThdAcvDecMassFu
+          InjSys_facCorMassFuRstrt
+          InjSys_mFuCrkSpPrev
+          InjSys_mFuFacCorRstrtSTT
+          InjSys_mFuReqCrkMin
+          InjSys_mFuReqCrkMinPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_mFuCrkSp
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,23 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Wg_EveRst_WgCmdSp|D|();|SCH.1|WGCMDSP|1|PTS_DOC_5070689||||0|0|0|0|Event reset|
+Wg_SdlMid_WgCmdSp|D|();|SCH.2|WGCMDSP|1|PTS_DOC_5070689||||0|0|0|0|Middle schedule of the wastegate function|
+WgCmdSp_vidCdnApplAdpv|D|();|FCT1.10|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module checks the different conditions required to apply the adaptive part of the PWM command.|
+WgCmdSp_vidCdnOpenLoop|B|();|FCT1.8|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module checks the absolutely required conditions to applying any PWM command (even for open loop command)|
+WgCmdSp_vidCdnServoCmd|D|();|FCT1.9|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module checks the conditions to satisfy when applying the PWM closed loop part|
+WgCmdSp_vidClcAdpv|E|();|FCT2.7|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The adaptive part is saturated thanks to minimum and maximum adjustable thresholds.|
+WgCmdSp_vidClcElm_A|D|();|FCT2.4|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The adaptive part is computed by filtering the integral part every at the end of the down counter. Its value is stored in EEPROM momory in order to be able to detect any damage (soiling, excessive ageing…) of the solenoid valve or of the Wastegate.|
+WgCmdSp_vidClcElm_D|E|();|FCT2.9|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The main aim of the derivative part is preventing the supercharging pressure setpoint from overshooting. If the  first derivative of the raw feedback error is too significant a correction is computed.|
+WgCmdSp_vidClcElm_I|E|();|FCT2.8|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The computation of the integral part is preceded by a detection of saturation; this detection avoids the integral part from increasing when the valve is next to its thrusts.|
+WgCmdSp_vidClcElm_P|E|();|FCT2.3|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The computation of the proportional part is not null until the boost pressure is regulated. This part is the boost pressure error multiplied by a gain; however, the error is considered as null inside an adjustable dead zone.|
+WgCmdSp_vidClcOfsAlti|B|();|FCT1.5|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The pressure offset due to altitude variations concerns the pressure inputs of the strategy lead to the supercharging pressure feedback control.|
+WgCmdSp_vidClcPID|B|();|FCT2.2|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|A four-part correction is added to the open loop PWM command|
+WgCmdSp_vidClcPwmOpenLoop|F|();|FCT1.6|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The open loop PWM setpoint is estimated from a map, considering the engine speed and the manifold pressure setpoint adjusted to take in account the variation of atmospheric pressure.|
+WgCmdSp_vidClcPwmOpenLoopCmd|B|();|FCT1.4|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module computes the PWM open loop setpoint, which is also filtered for the Wastegate feedback.|
+WgCmdSp_vidClcPwmWg|C|();|FCT1.1|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The computation of the PWM setpoint|
+WgCmdSp_vidFmtAdpv|D|();|FCT2.6|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module computes a lay-out of the integral part before computing the adaptive part. It enables the integral part to converge (thanks to the adaptive part) to a setpoint value comprised in a dead zone.|
+WgCmdSp_vidInit|F|();|FCT2.1|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module set the initial values of some variables, to be updated on Reset event of the ECU.|
+WgCmdSp_vidMemrSdl|D|();|FCT2.5|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module enables the strategy to update the integral part at the end of the down counter Wg_ctDownSampleTiClcAdpv.|
+WgCmdSp_vidSumElmPIDA|F|();|FCT2.10|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The final PWM command is issued from the boost pressure regulation.|
+WgCmdSp_vidTranDetnClcErr|D|();|FCT1.3|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The pressure feedback error is computed considering the setpoint and the measure of the supercharging pressure.|
+WgCmdSp_vidWgServoCdn|B|();|FCT1.7|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|This module check three Wastegate working conditions, used to compute different parts of the PWM command|
+WgCmdSp_vidWgSysMng|B|();|FCT1.2|WGCMDSP|0|PTS_DOC_5070689||||0|0|0|0|The computation of the main parameters applying to  the wastegate regulation|

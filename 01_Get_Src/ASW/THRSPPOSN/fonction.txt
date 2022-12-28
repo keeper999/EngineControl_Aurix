@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|20|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+Thr_EveOplCllEna_ThrSpPosn|B|();|SCH.3|THRSPPOSN|1|PTS_DOC_6095099||||0|0|0|0|Evenement de passage d'une commande en boucle ouverte à une commande en boucle ferme du papillon|
+Thr_EveRst_SpPosn|D|();|SCH.1|THRSPPOSN|1|PTS_DOC_6095099||||0|0|0|0|Evénement reset du calculateur.|
+Thr_SdlMid_SpPosn|B|();|SCH.2|THRSPPOSN|1|PTS_DOC_6095099||||0|0|0|0|Moniteur moyen pour la fonction papillon|
+THRSPPOSN_vidComputeDtcThrPos|G|();|FCT1.2|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Si un défaut de niveau 3 est issu de la sécurité de fonctionnement, l’objectif de section efficace papillon est limité, ainsi que sa vitesse d’ouverture, afin de limiter les performances moteurs.|
+THRSPPOSN_vidComputeDtcThrPosRef|H|();|FCT1.3|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|En mode banc manuel, l’ouverture du papillon est donnée par une calibration spécifique, sinon on limite la pente des modifications en fonction des caractéristiques mécanique du boîtier papillon.|
+THRSPPOSN_vidCounter|A|();|FCT1.10|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Fonction qui compte le nombre d'autorisation de fermeture complète du papillon|
+THRSPPOSN_vidDeadBandLH|E|();|FCT1.4|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|En cours de fonctionnement, le Limp-home se déplace (en fonction de la température, Afin de s’affranchir de ses variations, ce module définit une zone interdite pour la consigne de position papillon centrée autour de la valeur apprise du Limp-home.|
+THRSPPOSN_vidDiffEstimation|E|();|FCT1.7|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Ce bloc permet de calculer la valeur absolue de l’écart entre l’ancienne valeur et la nouvelle, à chaque transition.|
+THRSPPOSN_vidInitOutput|C|();|FCT1.1|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Fonction d'initialisation des sorties.|
+THRSPPOSN_vidInitThrottleRef|E|();|FCT1.5|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Lors d’un reset du calculateur ou d’un passage de la commande en boucle ouverte à la commande en boucle fermée (front descendant de Tpac_open_loop_control), la consigne relative de position papillon est initialisée à la position mesurée.|
+THRSPPOSN_vidStopEngineCase|B|();|FCT1.9|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|la fonction présente  les conditions pour passer en fermeture complète du papillon|
+THRSPPOSN_vidSwitchingTransients|E|();|FCT1.8|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|Ce bloc permet de limiter la « fenêtre » d’application du « slew_rate » sur la valeur utilisée|
+THRSPPOSN_vidSwitchMgtMcut|E|();|FCT1.6|THRSPPOSN|0|PTS_DOC_6095099||||0|0|0|0|En cas de détection de micro-coupure, la consigne relative de position papillon prend la valeur de la position « mesurée », si Throttle_pos_ref_freeze_manu_inh = 0, avec une pente de variation limitée (filtrage de type « slew-rate ».|

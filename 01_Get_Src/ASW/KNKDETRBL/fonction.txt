@@ -1,0 +1,24 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0||
+KnkDetRbl_vidAutoriseDetectRbl|I|();|FCT1.7|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The calculation done when KnkTreat_EveRbl_KnkDetRbl is triggered and KnkRbl_noCyl is lower or equal to 4|
+KnkDetRbl_vidCalcBruitMoyenRbl|E|();|FCT2.8|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|In every PMH, this process must be executed after the treatment of detection of the rumble so that the value Bruit_moyen_rbl_cyl is not perturbed.|
+KnkDetRbl_vidCalcFactFiltrageN|C|();|FCT1.4|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|When the transient is detected, a boolean ( Knk_n_rbl_dyn_filt_det_uavb0) is raised so that the gain of dynamic filtering are applied|
+KnkDetRbl_vidCalcFactFiltrLoad|D|();|FCT1.5|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The detection of the transients of load is calculated on sched Mid. If a transient of regime was before detected (Knk_n_rbl_dyn_filt_det), the dynamic filtering is automatically applied.|
+KnkDetRbl_vidCyl1_rbl|F|();|FCT2.1|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|calculate the value of Knk_det_rbl_gain_cyl1_regime from the map Knk_det_rbl_gain_cyl1_n_map|
+KnkDetRbl_vidCyl2_rbl|F|();|FCT2.4|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|calculate the value of Knk_det_rbl_gain_cyl2_regime from the map Knk_det_rbl_gain_cyl2_n_map|
+KnkDetRbl_vidCyl3_rbl|F|();|FCT2.2|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|calculate the value of Knk_det_rbl_gain_cyl3_regime from the map Knk_det_rbl_gain_cyl3_n_map|
+KnkDetRbl_vidCyl4_rbl|F|();|FCT2.3|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|calculate the value of Knk_det_rbl_gain_cyl4_regime from the map Knk_det_rbl_gain_cyl4_n_map|
+KnkDetRbl_vidDetection_index|E|();|FCT2.7|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|allows to find the index of the value of the table which is superior at the threshold of detection of the rumble. If none of the elements of the table is upper at the threshold of detection, the rumble detection is put in zero, the index at 16|
+KnkDetRbl_vidDetection_rumble|K|();|FCT2.6|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The threshold of maximal immediate noise is defined by a gain and an offset on the average noise calculated previously|
+KNKDETRBL_vidInit|C|();|FCT1.1|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|At the initialization, the counter Knk_rbl_dyn_filt_counter is initialized at zero|
+KnkDetRbl_vidInitOutput|K|();|FCT1.3|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|At the initialization, the counter Knk_rbl_dyn_filt_counter is initialized at zero|
+KnkDetRbl_vidKnkDetRblGainRegime|E|();|FCT1.8|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|According to KnkRbl_noCyl, only the mapping of the concerned cylinder is estimated. The case " default " of the switch is treated upstream to the block by a test on the border max of KnkRbl_noCyl.|
+KNKDETRBL_vidReinitTacheSynchRbl|H|();|FCT1.2|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The variable Bruit_moyen_rbl is initialized in its maximal value on event TOURNANT_SYNCHRO. The variables Detection_rbl and Degradation_etat_rblA are initialized at 0.|
+KnkDetRbl_vidTache_rumble|D|();|FCT1.6|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The calculations are authorized only if the detection is authorized and if KnkRbl_noCyl is lower or equal to 4|
+KnkDetRbl_vidTraitmntsDetectRrbl|D|();|FCT2.5|KNKDETRBL|0|PTS_DOC_5068340||||0|0|0|0|The calculation of the average noise will be executed after the detection of the rumble. You should not adapt the average noise in the same way in case of presence of rumble or presence of strong clanking.|
+KnkTreat_EveCkSnOn_KnkDetRbl|E|();|SCH.2|KNKDETRBL|1|PTS_DOC_5068340||||0|0|0|0|Tache tournant synchro (démarrage, calage perte de synchro)|
+KnkTreat_EveRbl_KnkDetRbl|F|();|SCH.3|KNKDETRBL|1|PTS_DOC_5068340||||0|0|0|0|Tâche rumble|
+KnkTreat_EveRst_KnkDetRbl|G|();|SCH.1|KNKDETRBL|1|PTS_DOC_5068340||||0|0|0|0|tache reset|
+KnkTreat_SdlMid_KnkDetRbl|F|();|SCH.5|KNKDETRBL|1|PTS_DOC_5068340||||0|0|0|0|Moniteur moyen|
+KnkTreat_SdlSlow_KnkDetRbl|F|();|SCH.4|KNKDETRBL|1|PTS_DOC_5068340||||0|0|0|0|Moniteur lent|
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||

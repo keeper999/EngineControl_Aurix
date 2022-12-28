@@ -1,0 +1,807 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : TqCkEngLimCord                                          */
+/* !Description     : SAFETY TMS : GERER LE BOUCLAGE                          */
+/*                                                                            */
+/* !Module          : TqCkEngLimCord                                          */
+/*                                                                            */
+/* !File            : TqCkEngLimCord.a2l                                      */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Tue Jun 19 17:16:01 2012                              */
+/*   Model name       : TqCkEngLimCord_AUTOCODE.mdl                           */
+/*   Model version    : 1.173                                                 */
+/*   Root subsystem   : /TqCkEngLimCord                                       */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBPSA/LOG/REF/MOD_VEMS/TMS/TQCKENGLIMCORD_CA/TqCk$*/
+/* $Revision::   1.0                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   27 Jun 2012 $*/
+/******************************************************************************/
+
+/begin MODULE TqCkEngLimCord  "TqCkEngLimCord Software Component"
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT TqCkEngLimCord_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqOplThd_T
+    /* Long Identifier        */      "tolérance sur le couple autorisé en débouclé"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_1
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      TqCkEngLimCord_CM_2
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      8000.0
+      AXIS_PTS_REF                    SftyMgt_nEngOplThdX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      SftyMgt_nEngOplThdX_A
+    /* Long Identifier        */      "axe pour tolérance sur le couple autorisé en débouclé"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      TqCkEngLimCord_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_2
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8000.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqDifHighForc_C
+    /* Long Identifier        */      "Seuil haut sur l'écart consigne d'air/couple réalisé autorisé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_3
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqMaxAntiOsc_C
+    /* Long Identifier        */      "couple curatif max autorisé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_3
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqOfsAgIgMin_C
+    /* Long Identifier        */      "offset pour défaut sur le delta entre le couple réalisable à AA Min et la consigne de couple AA"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_3
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqHiResThr_C
+    /* Long Identifier        */      "seuil haut de demande de bouclage des réserves"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tqLoResThr_C
+    /* Long Identifier        */      "seuil bas de demande de débouclage des réserves"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiDftTqIdcAgIgMin_C
+    /* Long Identifier        */      "temps de débounce du défaut sur le delta entre le couple réalisable à AA Min et la consigne de couple AA"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      100.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_noTqReqChaASR_C
+    /* Long Identifier        */      "valeur ASR actif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_noTqReqChaMSR_C
+    /* Long Identifier        */      "valeur MSR actif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      TQCKENGLIMCORD_u8Inhib
+    /* Long Identifier        */      "Calibration d'inhibition du module TqckEngLimCord"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_bInhDftAOS_C
+    /* Long Identifier        */      "booléen de paramétrage de l'inhibition du défaut AOS"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_bInhDftAgIgMin_C
+    /* Long Identifier        */      "booléen de paramétrage de l'inhibition du défaut sur le delta entre le couple réalisable à AA Min et la consigne de couple AA"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_bInhDftCll_C
+    /* Long Identifier        */      "booléen de parametrage de l'inhibition du défaut sur le non bouclage par l'applicatif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_bInhDftIdcAir_C
+    /* Long Identifier        */      "booléen de paramétrage de l'inhibition du défaut sur la consigne couple en Air"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiAcvForcCll_C
+    /* Long Identifier        */      "durée avant application de la demande de forçage bouclage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiDeacForcCll_C
+    /* Long Identifier        */      "durée de maintient de la demande de forçage du bouclage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiDftCll_C
+    /* Long Identifier        */      "temps de débounce du défaut sur le non bouclage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiDftIdcAir_C
+    /* Long Identifier        */      "temps de débounce du défaut sur la consigne couple en Air"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiDftTqAntiOscMon_C
+    /* Long Identifier        */      "temps de débounce du défaut AOS"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiTqDifCfm_C
+    /* Long Identifier        */      "durée de confirmation sur l'écart de couple pour demander un forçage du bouclage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      SftyMgt_tiTranCll_C
+    /* Long Identifier        */      "durée de transition de l'état débouclé vers l'état bouclé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      TqCkEngLimCord_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      TqCkEngLimCord_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_tqCkEngLimCord
+    /* Long identifier        */      "Couple (CMI) coordonné avec prise en compte des limitations safety, consigne de ralenti et bouclage/débouclage"
+    /* Data type              */      SWORD
+    /* Conversion method      */      TqCkEngLimCord_CM_3
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -2000.0
+    /* Upper limit            */      2000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_tqIdcEngLimCordIgMin
+    /* Long identifier        */      "couple coordonné AOS avec AA Min"
+    /* Data type              */      SWORD
+    /* Conversion method      */      TqCkEngLimCord_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -2000.0
+    /* Upper limit            */      2000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_tqCkAntiOscCord
+    /* Long identifier        */      "couple coordonné entre le couple bouclage/débouclage et l'AOS"
+    /* Data type              */      SWORD
+    /* Conversion method      */      TqCkEngLimCord_CM_3
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -2000.0
+    /* Upper limit            */      2000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_tqCkEngLimCordRaw
+    /* Long identifier        */      "couple coordonné bouclage / débouclage"
+    /* Data type              */      SWORD
+    /* Conversion method      */      TqCkEngLimCord_CM_3
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -2000.0
+    /* Upper limit            */      2000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDgoTqCord
+    /* Long identifier        */      "Flag défaut de la synthèse bouclage/débouclage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDgoAgIgMin_MP
+    /* Long identifier        */      "défaut avance min Confirmé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDgoAOS_MP
+    /* Long identifier        */      "Point de mesure défaut validé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDgoIdcAir_MP
+    /* Long identifier        */      "Point de mesure défaut validé débouclé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDgoCll_MP
+    /* Long identifier        */      "Measuring point: defaut bouclage apres antirebond"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDftIdcAir
+    /* Long identifier        */      "booléen de défaut sur la consigne couple branche Air"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDftAgIgMin
+    /* Long identifier        */      "booléen de défaut sur le delta couple réalisable AA Min et consigne AA non débouncé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDftAOS
+    /* Long identifier        */      "booléen de défaut sur le couple AOS non debouncé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bAcvCllRaw_MP
+    /* Long identifier        */      "Measuring Point : Demande de bouclage brute sans prise en compte du transitoire"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      SftyMgt_bDftCll
+    /* Long identifier        */      "défaut sur non bouclage"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      TqCkEngLimCord_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_1
+    /* Long identifier        */      "Q = (V+2000)*16"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Nm"
+    /* Coefficients           */      COEFFS 0 16 32000 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_2
+    /* Long identifier        */      "Q = V*4"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "rpm"
+    /* Coefficients           */      COEFFS 0 4 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_3
+    /* Long identifier        */      "Q = V*16"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "N.m"
+    /* Coefficients           */      COEFFS 0 16 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_4
+    /* Long identifier        */      "Q = V*25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 25 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_5
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_6
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "su"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF TqCkEngLimCord_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      TqCkEngLimCord_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TqCkEngLimCord_CM_8
+    /* Long identifier        */      "Q = V*16"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Nm"
+    /* Coefficients           */      COEFFS 0 16 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION TqCkEngLimCord
+    "CSCT_CGMT09_2641_2.4"
+    
+    /begin LOC_MEASUREMENT
+      SftyMgt_bAcvCllRaw_MP
+      SftyMgt_bDftAOS
+      SftyMgt_bDftAgIgMin
+      SftyMgt_bDftCll
+      SftyMgt_bDftIdcAir
+      SftyMgt_bDgoAOS_MP
+      SftyMgt_bDgoAgIgMin_MP
+      SftyMgt_bDgoCll_MP
+      SftyMgt_bDgoIdcAir_MP
+      SftyMgt_tqCkAntiOscCord
+      SftyMgt_tqCkEngLimCordRaw
+      SftyMgt_tqIdcEngLimCordIgMin
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      SftyMgt_bDgoTqCord
+      SftyMgt_tqCkEngLimCord
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      SftyMgt_bInhDftAOS_C
+      SftyMgt_bInhDftAgIgMin_C
+      SftyMgt_bInhDftCll_C
+      SftyMgt_bInhDftIdcAir_C
+      SftyMgt_nEngOplThdX_A
+      SftyMgt_noTqReqChaASR_C
+      SftyMgt_noTqReqChaMSR_C
+      SftyMgt_tiAcvForcCll_C
+      SftyMgt_tiDeacForcCll_C
+      SftyMgt_tiDftCll_C
+      SftyMgt_tiDftIdcAir_C
+      SftyMgt_tiDftTqAntiOscMon_C
+      SftyMgt_tiDftTqIdcAgIgMin_C
+      SftyMgt_tiTqDifCfm_C
+      SftyMgt_tiTranCll_C
+      SftyMgt_tqDifHighForc_C
+      SftyMgt_tqHiResThr_C
+      SftyMgt_tqLoResThr_C
+      SftyMgt_tqMaxAntiOsc_C
+      SftyMgt_tqOfsAgIgMin_C
+      SftyMgt_tqOplThd_T
+      TQCKENGLIMCORD_u8Inhib
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/

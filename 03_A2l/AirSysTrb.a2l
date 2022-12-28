@@ -1,0 +1,864 @@
+/begin MODULE AirSysTrb  "AirSysTrb Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X  1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1  FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AirSysTrb_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      AirSys_facFilGainUsThrPres_T
+    /* Long Identifier        */      "Cartographie de gain de filtrage de la consigne de pression de suralimentation "
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AirSysTrb_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AirSysTrb_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngRef2_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      AirSys_facFilGainTrbMod_T
+    /* Long Identifier        */      "Cartographie de gain de filtrage des autres consignes de suralimentation "
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AirSysTrb_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AirSysTrb_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngRef2_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      Air_pLossCAC_T
+    /* Long Identifier        */      "Cartographie des pertes de charge aux bornes du RAS"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AirSysTrb_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Air_mfAirRef1_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      Air_pLossAirFil_T
+    /* Long Identifier        */      "Cartographie des pertes de charge dues au filtre à air"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AirSysTrb_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Air_mfAirRef1_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      AirSys_rAirPresThr_T
+    /* Long Identifier        */      "Table de points dappui du rapport Psural consigne / Pcol consigne"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AirSysTrb_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.9998779296875000E+000
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AirSysTrb_CM_6
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      6.2499046325683587E-002
+      AXIS_PTS_REF                    AirSys_facRatPresThrClcn_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      AirSys_facRatPresThrClcn_A
+    /* Long Identifier        */      "Table de points dappui de coefficients de débits"
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AirSysTrb_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_6
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.2499046325683587E-002
+  /end AXIS_PTS
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_mfAirThrReqFil_B
+    /* Long Identifier        */      "Consigne de débit dair à travers le papillon filtrée Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pDsCmprReqFil_B
+    /* Long Identifier        */      "Consigne de pression aval compresseur filtrée Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pLossAirThrMax_C
+    /* Long Identifier        */      "Pertes de charge maximales aux bornes du papillon lorsquil est plein ouvert"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pUsCmprReqFil_B
+    /* Long Identifier        */      "Consigne de pression amont compresseur filtrée Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pUsThrReqFil_B
+    /* Long Identifier        */      "Consigne de pression de suralimentation filtrée Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pUsThrReq_B
+    /* Long Identifier        */      "Consigne de pression de suralimentation brute Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pDifDsCmprUsThrReq_B
+    /* Long Identifier        */      "Pertes de charge filtrées à travers le RAS Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_8
+    /* Lower Limit            */      -262144.0
+    /* Upper Limit            */      262136.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pGrdUsThrHiThd_C
+    /* Long Identifier        */      "Seuil haut du gradient de consigne de pression de suralimentation "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      -262144.0
+    /* Upper Limit            */      262136.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pGrdUsThrInhFrzThd_C
+    /* Long Identifier        */      "Seuil de gradient de consigne de pression de suralimentation permettant linhibition du gel des consignes "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      -262144.0
+    /* Upper Limit            */      262136.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_pGrdUsThrLoThd_C
+    /* Long Identifier        */      "Seuil bas du gradient de consigne de pression de suralimentation "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_3
+    /* Lower Limit            */      -262144.0
+    /* Upper Limit            */      262136.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_tiDlyDetAccPNull_C
+    /* Long Identifier        */      "Durée de maintien de la condition 'lacher de pied' pour la détection de pied levé "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.9998779296875000E+000
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_tiDlyDetPGrdUsThr_C
+    /* Long Identifier        */      "Durée de maintien de la condition 'chute de la consigne de pression de suralimentation' pour la détection de pied levé "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.9998779296875000E+000
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_tiDlyFrz_C
+    /* Long Identifier        */      "Durée de maintien de la condition du lacher de pied "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.9998779296875000E+000
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AIRSYSTRB_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_bAcvFrzMod_B
+    /* Long Identifier        */      "Booléen dactivation du gel des consignes Dim = 1x1  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_bAcvFrzMod_C
+    /* Long Identifier        */      "Booléen dactivation de la stratégie de gel des consignes "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_bAcvStraLimSurgeFrz_C
+    /* Long Identifier        */      "Booléen de sortie immédiate du gel des consignes lors dutilisation de la DVS "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      AirSys_bDetMT_C
+    /* Long Identifier        */      "Booléen de détection de boîte de vitesse manuelle, ou manuelle pilotée "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AirSysTrb_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AirSysTrb_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysTrb_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysTrb_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysTrb_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysTrb_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysTrb_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysTrb_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_pDsCmprReq_IRV_MP
+    /* Long identifier        */      "Consigne de pression en aval du compresseur Dim = 1x1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_pUsCmprReq_IRV_MP
+    /* Long identifier        */      "Consigne de pression en amont du compresseur Dim = 1x1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_pUsCmprReqFilPrev
+    /* Long identifier        */      "Valeur précédente de la consigne de pression amont compresseur filtrée "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_pDsCmprReqFilPrev
+    /* Long identifier        */      "Valeur précédente de la consigne de pression aval compresseur filtrée "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_mfAirThrReqFilPrev
+    /* Long identifier        */      "Valeur précédente de la consigne de débit dair à travers le papillon filtrée "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_12
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_pUsThrReqFilPrev
+    /* Long identifier        */      "Valeur précédente de la consigne de pression de suralimentation filtrée "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AirSysTrb_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_facRatPresThrClcn_MP
+    /* Long identifier        */      "Variable intermédiaire du débit surfacique pour le calcul de la perte de charge"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AirSysTrb_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.2499046325683587E-002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirSys_bInhFrzMod_MP
+    /* Long identifier        */      "Détection de sortie de gel des consignes "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AirSysTrb_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_1
+    /* Long identifier        */      "Q = V*65536.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Rpm"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_3
+    /* Long identifier        */      "Q = V/8.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 8.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_4
+    /* Long identifier        */      "Q = V*65536.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/s"
+    /* Coefficients           */      COEFFS 0 65536.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_5
+    /* Long identifier        */      "Q = V*8192.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 8192.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_6
+    /* Long identifier        */      "Q = V*1048576.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s/m.K^0.5"
+    /* Coefficients           */      COEFFS 0 1048576.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_7
+    /* Long identifier        */      "Q = V*65536.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_8
+    /* Long identifier        */      "Q = V/8.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 8.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_9
+    /* Long identifier        */      "Q = V*8192.000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 8192.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF AirSysTrb_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      AirSysTrb_CV_Boolean
+    /* Long identifier        */      "0=FALSE, 1=TRUE"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_11
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysTrb_CM_12
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/s"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+  
+  /begin FUNCTION AirSysTrb_FCT_AirSysTrb
+    "CHARACTERISTIC and MEASUREMENT of AirSysTrb Software Component"
+    
+    /begin LOC_MEASUREMENT
+      AirSysTrb_ModuleVersion_Major_MP 
+      AirSysTrb_ModuleVersion_Minor_MP 
+      AirSysTrb_ModuleVersion_Patch_MP 
+      AirSys_bInhFrzMod_MP
+      AirSys_facRatPresThrClcn_MP
+      AirSys_mfAirThrReqFilPrev
+      AirSys_pDsCmprReqFilPrev
+      AirSys_pDsCmprReq_IRV_MP
+      AirSys_pUsCmprReqFilPrev
+      AirSys_pUsCmprReq_IRV_MP
+      AirSys_pUsThrReqFilPrev
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      AIRSYSTRB_ACTIVE_BYP_C
+      AirSys_bAcvFrzMod_B
+      AirSys_bAcvFrzMod_C
+      AirSys_bAcvStraLimSurgeFrz_C
+      AirSys_bDetMT_C
+      AirSys_facFilGainTrbMod_T
+      AirSys_facFilGainUsThrPres_T
+      AirSys_facRatPresThrClcn_A
+      AirSys_mfAirThrReqFil_B
+      AirSys_pDifDsCmprUsThrReq_B
+      AirSys_pDsCmprReqFil_B
+      AirSys_pGrdUsThrHiThd_C
+      AirSys_pGrdUsThrInhFrzThd_C
+      AirSys_pGrdUsThrLoThd_C
+      AirSys_pLossAirThrMax_C
+      AirSys_pUsCmprReqFil_B
+      AirSys_pUsThrReqFil_B
+      AirSys_pUsThrReq_B
+      AirSys_rAirPresThr_T
+      AirSys_tiDlyDetAccPNull_C
+      AirSys_tiDlyDetPGrdUsThr_C
+      AirSys_tiDlyFrz_C
+      Air_pLossAirFil_T
+      Air_pLossCAC_T
+    /end DEF_CHARACTERISTIC
+    
+  /end FUNCTION
+  
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+
+/* ------------------------------ END OF MODULE AirSysTrb ------------------------------------*/

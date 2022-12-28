@@ -1,0 +1,14 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+CTLPMPREQ_vidCmd|B|();|FCT1.4|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|Controlling the solenoid valve consists of: 1. Absolute value of the setpoint and filtering the battery voltage, 2. Correction of the duty cycle and limitation between 0 and 100pc, 3.Sending the duty cycle to BSW, 4. Filtering the current in the solenoid.|
+CTLPMPREQ_vidCmdAbs|C|();|FCT1.5|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The main function of this block is obtaining the absolute value of application setpoint and filtering the battery voltage.|
+CTLPMPREQ_vidCmdAndDiagEnable|C|();|FCT1.3|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The stategy consists of the two major functions: 1. Calculation of the oil pump solenoid valve controlling, 2. Oil pump solenoid diagnosis. Command and diagnosis could be inhibited using the boolean "Ctrl_bOilPmpCmd".|
+CTLPMPREQ_vidCmdApp|E|();|FCT1.7|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The oil pump solenoid valve load (PWM frequency and duty cycle) is transmitted through the basic layer via the PWDHAL service.|
+CTLPMPREQ_vidCmdCor|D|();|FCT1.6|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The duty cycle of oil pump solenoid valve is corrected and bounded between 0 and 100 per cent.|
+CTLPMPREQ_vidDiag|C|();|FCT1.9|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The input Boolean Ctrl_bOilPmpCmd activates the diagnosis of solenoid strategy.|
+CTLPMPREQ_vidDrvCur|B|();|FCT1.8|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The acquisition sends information to the current application Ext_iMesOilPmp by using  low pass first order filter of  Ext_iBrutMesOilPmp.|
+CTLPMPREQ_vidInit|B|();|FCT1.1|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|The outputs variables are initialized on ECU reset.|
+CTLPMPREQ_vidInitOutput|C|();|FCT1.2|CTLPMPREQ|0|PTS_DOC_6851410||||0|0|0|0|This function initializes the internal data of the module.|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|API.2|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|API.1|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+OilSysHw_EveRst_CtlPmpReq|D|();|SCH.1|CTLPMPREQ|1|PTS_DOC_6851410||||0|0|0|0|Event reset calculator.|
+OilSysHw_SdlFast_CtlPmpReq|D|();|SCH.2|CTLPMPREQ|1|PTS_DOC_6851410||||0|0|0|0|Quick Service Monitor of OilSysHw.|

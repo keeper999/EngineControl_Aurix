@@ -1,0 +1,25 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|17|HEADER|1|NONE||||0|0|0|0||
+NVMSRV_vidWrite|B|(argin NVMSRV_tudtObjectList udtObject, argin boolean bMode);|0x01|HEADER|1|NONE||||0|0|0|0||
+Srv_EveErrTeleWr_TeleSrv|B|();|API.1|TELECODAGE|1|PTS_DOC_5074365||||0|0|0|0|Evénément mauvaise écriture du télécodage en eeprom|
+Srv_EveRst_TeleSrv|F|();|SCH.1|TELECODAGE|1|PTS_DOC_5074365||||0|0|0|0|Evénement reset du calculateur|
+Srv_EveSa_TeleSrv|D|();|SCH.3|TELECODAGE|1|PTS_DOC_5074365||||0|0|0|0|Runnable des fonctions de Security Access|
+Srv_EveTele_TeleSrv|F|();|SCH.4|TELECODAGE|1|PTS_DOC_5074365||||0|0|0|0|Runnable de la fonction de télécodage|
+Srv_SdlFast_TeleSrv|F|();|SCH.2|TELECODAGE|1|PTS_DOC_5074365||||0|0|0|0|Moniteur rapide de la fonction service|
+SUPSRV_u16ReadAppliKey|A|func_SUPSRV_u16ReadAppliKey|0x01|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||
+TELECODAGE_NVMSRV_vidInit|E|();|FCT2.1|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|A l’initialisation, on vient lire toutes les données enregistrées en EEPROM. Dans le cas d’une première mise sous tension (et pour toutes les autres mises sous tension avant le premier télécodage), on utilise les valeurs par défaut.|
+TELECODAGE_vidAddHeatConfVerif|C|();|FCT1.10|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Chauffage Additionnel|
+TELECODAGE_vidAlternConfVerif|C|();|FCT1.8|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Classe Alternateur|
+TELECODAGE_vidCarConfVerif|C|();|FCT1.9|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Carosserie|
+TELECODAGE_vidDataVerification|H|();|FCT1.4|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Calcul de la sortie Srv_bDaVld|
+TELECODAGE_vidFricConfVerif|C|();|FCT1.5|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Fric|
+TELECODAGE_vidGearBoxConfVerif|C|();|FCT1.7|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Boite de vitesse|
+TELECODAGE_vidInfoWrite|E|();|FCT2.3|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|A l’entrée de l’état SRV_TELEECU_WRITE, les informations ayant été confirmées, elles peuvent être prises en compte.|
+TELECODAGE_vidInitDftBeforeTel|F|();|FCT1.2|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|A l’initialisation, on vient lire toutes les données enregistrées en EEPROM. Dans le cas d’une première mise sous tension (et pour toutes les autres mises sous tension avant le premier télécodage), on utilise les valeurs par défaut.|
+TELECODAGE_vidInitOutput|E|();|FCT1.1|TELECODAGE|0|PTS_DOC_5074365||||0|1|0|0|Initialisation des sorties|
+TELECODAGE_vidPressClimConfVerif|C|();|FCT1.6|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Le calculateur effectue la vérification de l'équations logique suivante : configuration possible OU configuration programmée = configuration programmée, pour la variante Pression Clim|
+TELECODAGE_vidReInit|E|();|FCT2.5|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|En cas de mauvaise écriture en eeprom l’ensemble des données de télécodage reprennent les valeurs par défauts, le nombre de télécodage est aussi réinitalisé à zéro ce qui permet de monter la panne telecodage.|
+TELECODAGE_vidVarCodDftMng|E|();|FCT1.3|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Un défaut de télécodage est enregistré tant qu’aucun télécodage n’a été réalisé.|
+TELECODAGE_vidVarCodMng|G|();|FCT2.2|TELECODAGE|0|PTS_DOC_5074365||||0|1|0|0|A  l’initialisation,  l’état SRV_TELEECU_IDLE est activé en attendant de déterminer s’il est nécessaire d’utiliser les  processus  de  protection  en  écriture  (si  au  moins  un télécodage  a  déjà  été  réalisé)  ou  non.|
+TELECODAGE_vidWrite|I|();|FCT2.4|TELECODAGE|0|PTS_DOC_5074365||||0|0|0|0|Les informations reçues sont prises en compte dans le calculateur. Le compteur du nombre de télécodage est incrémenté de 1.|

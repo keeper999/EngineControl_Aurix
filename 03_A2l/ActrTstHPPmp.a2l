@@ -1,0 +1,772 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : ActrTstHPPmp                                            */
+/* !Description     : ACTRTSTHPPmp- HP PUMP ACTUATOR TEST                     */
+/*                                                                            */
+/* !Module          : ActrTstHPPmp                                            */
+/*                                                                            */
+/* !File            : ActrTstHPPmp.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Tue Mar 05 11:01:47 2013                              */
+/*   Model name       : ActrTstHPPmp_AUTOCODE.mdl                             */
+/*   Model version    : 1.89                                                  */
+/*   Root subsystem   : /ActrTstHPPmp                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/PFUCTL/ACTRTSTHPPMP/ActrTstHPPmp$*/
+/* $Revision::   1.1                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   08 Mar 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   ActrTstHPPmp
+    /*   LongIdentifier */   "ActrTstHPPmp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   ActrTstHPPmp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_Tempo2_C
+       /*   LongIdentifier */   "Temporisation max calibrable pour la phase 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_TempoMax_C
+       /*   LongIdentifier */   "Durée max calibrable autorisée pour le test actionneur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase1_C
+       /*   LongIdentifier */   "Temporisation max calibrable pour la phase 0"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_pRailPerPmp_C
+       /*   LongIdentifier */   "Valeur max de la moyenne de la pression sur un coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_pRailPresDif2_C
+       /*   LongIdentifier */   "Calibration pour la différence de pression durant la phase 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_pRailSpThdHi_C
+       /*   LongIdentifier */   "Seuil haut de la pression rail durant la phase 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_pRailSpThdLo_C
+       /*   LongIdentifier */   "Seuil bas de la pression rail durant la phase 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_pRailSpThd_C
+       /*   LongIdentifier */   "Seuil de pression pour l'entrée en test actionneur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_agWdReq_C
+       /*   LongIdentifier */   "Calibration de l'angle pour la pompe HP lors du test actionneur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ACTRTSTHPPMP_u8Inhib
+       /*   LongIdentifier */   "inhibition of module ActrTstHPPmp"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   ActrTstHPPmp_ctRstActTst_C
+       /*   LongIdentifier */   "Valeur de la temporisation qui permet de retarder le passage de l'état ACTRTEST_END à l'état INIT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   ActrTstHPPmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   ActrTstHPPmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pRailPerPmp
+       /*   LongIdentifier */   "Moyenne de la pression sur un coup de pompe"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   ActrTstHPPmp_CM_6
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase1
+       /*   LongIdentifier */   "Temporisation pour la phase 1"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pRailPresDif2
+       /*   LongIdentifier */   "Différence de pression durant la phase 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_agWdPmpCmdReq
+       /*   LongIdentifier */   "Requête d'angle pour la pompe HP lors du test actionneur"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_stActrTst
+       /*   LongIdentifier */   "Etat de l'automate du test actionneur"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bActrTstCmpl
+       /*   LongIdentifier */   "Test actionneur pompe HP réalisé sans interruption"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bActrTstInProgs
+       /*   LongIdentifier */   "Booléen indiquant qu'un test actionneur pompe HP est en cours"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bInjAuthReq
+       /*   LongIdentifier */   "Booléen de requête d'autorisation d'injection durant le test actionneur"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bItActrTstReq
+       /*   LongIdentifier */   "Booléen d'interruption du test actionneur"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bPrailLeak
+       /*   LongIdentifier */   "Boolean d'activation du diagnostic de fuite"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_bPrailPresIncFail
+       /*   LongIdentifier */   "Booléen de diagnostic d'une montée en pression"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase0
+       /*   LongIdentifier */   "Temporisation pour la phase 0"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase3
+       /*   LongIdentifier */   "Temporisation pour la phase 3"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase2
+       /*   LongIdentifier */   "Temporisation pour la phase 2"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_Tempo_Phase1Bis
+       /*   LongIdentifier */   "Temporisation pour la phase 1 bis"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   ActrTstHPPmp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   655.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pFuRailMesEnd1
+       /*   LongIdentifier */   "Pression rail à la fin de la phase 1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pFuRailMesBeg1
+       /*   LongIdentifier */   "Pression rail au début de la phase 1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pRailPresDiff
+       /*   LongIdentifier */   "Différence de pression lors de la phase 1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pFuRailMesBeg2
+       /*   LongIdentifier */   "Pression rail au début de la phase 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_pFuRailMesEnd2
+       /*   LongIdentifier */   "Pression rail à la fin de la phase 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   ActrTstHPPmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   ActrTstHPPmp_ctRstActTst
+       /*   LongIdentifier */   "Temporisation qui permet de retarder le passage de l'état ACTRTEST_END à l'état INIT"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   ActrTstHPPmp_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_2
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_3
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°vil"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            ActrTstHPPmp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_6
+       /*   LongIdentifier */   "Q = V*100000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 100000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   ActrTstHPPmp_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   ActrTstHPPmp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   ActrTstHPPmp
+       /*   LongIdentifier */   "PTS_DOC_5075814.001"
+
+       /begin DEF_CHARACTERISTIC
+          ACTRTSTHPPMP_u8Inhib
+          ActrTstHPPmp_Tempo2_C
+          ActrTstHPPmp_TempoMax_C
+          ActrTstHPPmp_Tempo_Phase1_C
+          ActrTstHPPmp_agWdReq_C
+          ActrTstHPPmp_ctRstActTst_C
+          ActrTstHPPmp_pRailPerPmp_C
+          ActrTstHPPmp_pRailPresDif2_C
+          ActrTstHPPmp_pRailSpThdHi_C
+          ActrTstHPPmp_pRailSpThdLo_C
+          ActrTstHPPmp_pRailSpThd_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          ActrTstHPPmp_Tempo_Phase0
+          ActrTstHPPmp_Tempo_Phase1
+          ActrTstHPPmp_Tempo_Phase1Bis
+          ActrTstHPPmp_Tempo_Phase2
+          ActrTstHPPmp_Tempo_Phase3
+          ActrTstHPPmp_ctRstActTst
+          ActrTstHPPmp_pFuRailMesBeg1
+          ActrTstHPPmp_pFuRailMesBeg2
+          ActrTstHPPmp_pFuRailMesEnd1
+          ActrTstHPPmp_pFuRailMesEnd2
+          ActrTstHPPmp_pRailPerPmp
+          ActrTstHPPmp_pRailPresDif2
+          ActrTstHPPmp_pRailPresDiff
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          ActrTstHPPmp_agWdPmpCmdReq
+          ActrTstHPPmp_bActrTstCmpl
+          ActrTstHPPmp_bActrTstInProgs
+          ActrTstHPPmp_bInjAuthReq
+          ActrTstHPPmp_bItActrTstReq
+          ActrTstHPPmp_bPrailLeak
+          ActrTstHPPmp_bPrailPresIncFail
+          ActrTstHPPmp_stActrTst
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

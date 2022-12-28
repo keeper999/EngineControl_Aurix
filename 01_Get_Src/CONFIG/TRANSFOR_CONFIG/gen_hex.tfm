@@ -1,0 +1,41 @@
+# Opening .hex software file => Buf#1
+open /file_name:%SOFT_TRF%.hex /buf_dest:1
+
+# Get only expected code areas: 0x80000000 to 0x80400000 => Buf#2
+extract /buf_src:1 /buf_dest:2 /addr_src:80000000 /size:00400000
+
+# Opening BDDs and extracting the version => Buf#3
+get_hf3 /path:.\ /buf_dest:3 /bdtype:bd3
+
+# Saving Buf#3 in Calibs.hex
+#save /buf_src:3 /file_name:Calibs.hex /format:h86 /seg:xtnd
+
+# Setting with 0x00 (flash erasing value is 0x00 on this micro-controller) => Buf#4 @80000000[00400000]
+fill_buf /buf_dest:4 /addr_src:80000000 /size:00400000 /pattern:00
+
+# Software and calibration concatenation
+# Buf#4 + Buf#2 + Buf#3 => Buf#5
+cat /buf_list:4,2,3 /buf_dest:5 /overlap
+
+# TMS software checksum computation
+checksum /buf_src:5
+         /chk:SUM8 /addr_src:%DEBUT_TMS_CODE% /size:%TAILLE_TMS_CODE% /addr_dest:%CHECKSUM_TMS_CODE%
+
+# TMS calibration checksum computation
+checksum /buf_src:5
+         /chk:SUM8 /addr_src:%DEBUT_TMS_CALIB% /size:%TAILLE_TMS_CALIB% /addr_dest:%CHECKSUM_TMS_CALIB%
+
+# Software checksum computation on 1st Zone and accumulate
+checksum /buf_src:5
+         /chk:SUM8 /addr_src:%CODE_A_START_ADDRESS% /size:%CODE_A_SIZE% /accumulate
+
+# Software checksum computation on 2nd Zone and add to accumulated
+checksum /buf_src:5
+         /chk:SUM8 /addr_src:%CODE_B_START_ADDRESS% /size:%CODE_B_SIZE% /addr_dest:%CHECKSUM_CODE%
+
+# Calibration checksum computation
+checksum /buf_src:5
+         /chk:SUM8 /addr_src:%CALIB_START_ADDRESS% /size:%CALIB_SIZE% /addr_dest:%CHECKSUM_CALIB%
+
+# Creation of .hex file with software + calibration
+save /buf_src:5 /file_name:%SOFT_TRF%_CCK.hex /format:h86 /seg:xtnd

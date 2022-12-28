@@ -1,0 +1,1437 @@
+﻿/begin MODULE
+    EngLim /* Name */ 
+    "EngLim v11.1" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        EngLim_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        EngLim_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        EngLim_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcStatLimIt_B /* Name */ 
+        "Couple de limitation statique CME Dim = 1x1" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_SWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_EQ_RES_0_0625 /* Conversion */ 
+        -2000 /* LowerLimit */ 
+        2000 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_stLim_B /* Name */ 
+        "Etat de la fonction de limitation" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_Table_out7 /* Conversion */ 
+        1 /* LowerLimit */ 
+        6 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_bAcvCll_B /* Name */ 
+        "Booléen de demande de bouclage" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTranCll_B /* Name */ 
+        "Temporisation max de transition pour le bouclage limitations" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_EQ_RES_0_01 /* Conversion */ 
+        0 /* LowerLimit */ 
+        5 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcInrtLim_B /* Name */ 
+        "CME de limitation marche arrière marche avant" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_SWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_EQ_RES_0_0625 /* Conversion */ 
+        -2000 /* LowerLimit */ 
+        2000 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqIncCll_B /* Name */ 
+        "Incrément de la transition de bouclage demandé par les limitations" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_EQ_RES_0_0625_a /* Conversion */ 
+        0 /* LowerLimit */ 
+        2000 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ENGLIM_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module EngLim" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EngLim_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_Byp_EQ_RES_0_0625 /* Name */ 
+        "Phys = Num * 2^-4" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%7.4" /* Format */ 
+        "N.m" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_Byp_Table_out7 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF EngLim_CV_CONV_TAB_Table_out7 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_Byp_EQ_RES_0_01 /* Name */ 
+        "Phys = Num * 0.01" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%5.2" /* Format */ 
+        "s" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_Byp_EQ_RES_0_0625_a /* Name */ 
+        "Phys = Num * 2^-4" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%7.4" /* Format */ 
+        "N.m/s" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "-"                              /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        EngLim_CV_CONV_TAB_Table_out7 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        6 /* NumberValuePairs */ 
+        1 /* InVal */ 
+        "Etat non Limité" /* OutVal */ 
+        2 /* InVal */ 
+        "Etat limité Mar" /* OutVal */ 
+        3 /* InVal */ 
+        "Etat Transition en Vitesse_Mar" /* OutVal */ 
+        4 /* InVal */ 
+        "Etat Transition Temporelle_Mar" /* OutVal */ 
+        5 /* InVal */ 
+        "Etat limité Mav" /* OutVal */ 
+        6 /* InVal */ 
+        "Etat Transition Temporelle_Mav" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_UWORD_COL_DIRECT     /* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_SWORD_COL_DIRECT     /* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin FUNCTION 
+        EngLim_FCT_BYP    /* Name */ 
+        " Fonction regroupant les bypass des sorties " /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EngLim_tqCkEfcStatLimIt_B /* Identifier */ 
+            EngLim_stLim_B /* Identifier */ 
+            EngLim_bAcvCll_B /* Identifier */ 
+            EngLim_tiTranCll_B /* Identifier */ 
+            EngLim_tqCkEfcInrtLim_B /* Identifier */ 
+            EngLim_tqIncCll_B /* Identifier */ 
+            ENGLIM_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTranStatLimDft_C	/* Name */ 
+        "Temps de transition du couple limité en cas de défaut"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_061928_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcStatLimAMT_M	/* Name */ 
+        "Carto de couple effectif de limitation BVMP"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_061928_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcStatLimAT_M	/* Name */ 
+        "Carto de couple effectif de limitation BVA"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_061928_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcStatLimDft_T	/* Name */ 
+        "Carto de couple effectif de limitation dans le cas où l'information rapport de boite n'est pas disponible."	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_061928_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcStatLimMT_M	/* Name */ 
+        "Carto de couple effectif de limitation BVM"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_061928_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_061928_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tqCkEfcStatLimY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        EngLim_tqCkEfcStatLimX_A	/* Name */ 
+        "Point d'appuis en régime commun à tous les cartographies"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EngLim_RL_061928_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_EQ_LSB_0_25	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EngLim_tqCkEfcStatLimY_A	/* Name */ 
+        "Point d'appuis en rapport de boite commun à tous les cartographies"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EngLim_RL_061928_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_061928_VOID_SCALING	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -1	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_061928_EQ_LSB_0_01	/* Name */ 
+        "EngLim_CM_061928_EQ_LSB_0_01"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_061928_EQ_LSB_0_0625	/* Name */ 
+        "EngLim_CM_061928_EQ_LSB_0_0625"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_061928_EQ_LSB_0_25	/* Name */ 
+        "EngLim_CM_061928_EQ_LSB_0_25"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_061928_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EngLim_FCT_061928_SEngLim4_MSW	/* Name */ 
+        "EngLim_FCT_061928_SEngLim4_MSW"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EngLim_tiTranStatLimDft_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EngLim_FCT_061928_TqSys_Sdl10ms_EngLimStat_fct	/* Name */ 
+        "EngLim_FCT_061928_TqSys_Sdl10ms_EngLimStat_fct"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EngLim_tiTranStatLimDft_C	/* Identifier */ 
+            EngLim_tqCkEfcStatLimAMT_M	/* Identifier */ 
+            EngLim_tqCkEfcStatLimX_A	/* Identifier */ 
+            EngLim_tqCkEfcStatLimY_A	/* Identifier */ 
+            EngLim_tqCkEfcStatLimAT_M	/* Identifier */ 
+            EngLim_tqCkEfcStatLimDft_T	/* Identifier */ 
+            EngLim_tqCkEfcStatLimMT_M	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin SUB_FUNCTION 
+            EngLim_FCT_061928_SEngLim4_MSW	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+   /begin RECORD_LAYOUT 
+        EngLim_RL_061928_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_061928_SBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_061928_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_061928_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_bCluStDft_C	/* Name */ 
+        "Valeur de EngLim_bCluFil en cas de défaut de l'information embrayage et à l'initialisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_bManEna_C	/* Name */ 
+        "Flag de présence BVM et d'inhibition de la fonction"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_bNotRvsLim_C	/* Name */ 
+        "Bit de configuration d'inhibition de la limitation en marche avant"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_bRvsStDft_C	/* Name */ 
+        "Valeur de EngLim_RvsStFil en cas de défaut de l'information marche arrière et à l'initialisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_nIdlHys_C	/* Name */ 
+        "Seuil de régime calibrable par rapport à la consigne de ralenti"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_spdVehDft_C	/* Name */ 
+        "Valeur de recouvrement de la vitesse vehicule en cas de défaut"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_spdVehHysLoNotRvs_C	/* Name */ 
+        "Hystérésis  sur seuil de vitesse véhicule EngLim_spdVehLoNotRvs_C"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_spdVehHysLoRvs_C	/* Name */ 
+        "Hystérésis  sur seuil de vitesse véhicule EngLim_spdVehLoRvs_C"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_spdVehLoNotRvs_C	/* Name */ 
+        "Seuil de vitesse bas de limitation en marche avant"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_spdVehLoRvs_C	/* Name */ 
+        "Seuil de vitesse bas de limitation en marche arrière"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_stTranNotRvs_C	/* Name */ 
+        "Flag de configuration pour le choix de la transition de l'état de limitation de couple vers l'état non limité :"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING_b	/* Conversion */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_stTranRvs_C	/* Name */ 
+        "Flag de configuration pour le choix de la transition de l'état de limitation de couple vers l'état non limité :"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_VOID_SCALING_b	/* Conversion */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiCluOff_C	/* Name */ 
+        "Temporisation de confirmation du passage de l'information Ext_bCluPedPrss de 1 à 0"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiCluOffNotRvs_C	/* Name */ 
+        "Temporisation de confirmation de passage à 0 du switch embrayage dans la condition de transition de l'état de limitation marche avant vers l'état de transition temporelle marche avant"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiCluOffRvs_C	/* Name */ 
+        "Temporisation de confirmation de passage à 0 du switch embrayage dans la condition de transition de l'état de limitation marche arrière vers l'état de transition temporelle marche arrière"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiCluOn_C	/* Name */ 
+        "Temporisation de confirmation du passage de l'information Ext_bCluPedPrss de 0 à 1"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiRvsStOff_C	/* Name */ 
+        "Temporisation de confirmation du passage de l'information Ext_bRvs de 1 à 0"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiRvsStOn_C	/* Name */ 
+        "Temporisation de confirmation du passage de l'information Ext_bRvs de 0 à 1"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTqCkEfcNotRvsCfm_C	/* Name */ 
+        "Temporisation de confirmation pour condition TqSys_tqCkEfcFil >= EngLim_tqCkEfcNotRvs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTqCkEfcRvsCfm_C	/* Name */ 
+        "Temporisation de confirmation pour condition TqSys_tqCkEfcFil >= EngLim_tqCkEfcRvs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTranNotRvs_C	/* Name */ 
+        "Durée de la transition temporelle de l'état de limitation marche avant de vers l'état non limité"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tiTranRvs_C	/* Name */ 
+        "Durée de la transition temporelle de l'état de limitation marche arrière de vers l'état non limité"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcDft_C	/* Name */ 
+        "Seuil de couple  CME quand la température d'eau est en défaut"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcInRtMax_C	/* Name */ 
+        "Couple maxi de limitation dans l'état non limité"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcMaxHiNotRvs_T	/* Name */ 
+        "Vecteur de valeurs de couple de limitation, fonction du régime moteur en marche avant.  De manière à calibrer finement le régime de limitation pour éviter les pompages, les breakpoints de régimes sont spécifiques à la fonction"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_nEngTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcMaxHiRvs_T	/* Name */ 
+        "Vecteur de valeurs de couple de limitation, fonction du régime moteur en marche arrière. De manière à calibrer finement le régime de limitation pour éviter les pompages, les breakpoints de régimes sont spécifiques à la fonction"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_nEngTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcMaxLoNotRvs_T	/* Name */ 
+        "Vecteur de valeurs de couple de limitation, fonction du régime moteur en marche avant. De manière à calibrer finement le régime de limitation pour éviter les pompages, les breakpoints de régimes sont spécifiques à la fonction"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_nEngTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcMaxLoRvs_T	/* Name */ 
+        "Vecteur de valeurs de couple de limitation, fonction du régime moteur en marche arrière. De manière à calibrer finement le régime de limitation pour éviter les pompages, les breakpoints de régimes sont spécifiques à la fonction"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_nEngTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcNotRvs_T	/* Name */ 
+        "Vecteur de seuil de CME fonction de la température d'eau, pour condition de transition de l'état Limité marche avant vers un état de transition"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25_d	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tCoMesTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EngLim_tqCkEfcRvs_T	/* Name */ 
+        "Vecteur de seuil de CME fonction de la température d'eau, pour condition de transition de l'état Limité marche arrière vers un état de transition"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EngLim_CM_062193_EQ_LSB_0_25_d	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF EngLim_tCoMesTqLim_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        EngLim_nEngTqLim_A	/* Name */ 
+        "Vecteur de points d'appui en régime pour la cartographie de couple"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EngLim_RL_062193_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_25	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EngLim_tCoMesTqLim_A	/* Name */ 
+        "Points d'appui en température d'eau"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EngLim_RL_062193_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EngLim_CM_062193_EQ_LSB_0_25_d	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+ 
+
+    /begin MEASUREMENT 
+        EngLim_bCluFil	/* Name */ 
+        "Booléen indiquant l'état d'embrayage :"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bEndTTranNotRvs	/* Name */ 
+        "Flag de fin de transition temporelle en marche avant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bEndTTranRvs	/* Name */ 
+        "Flag de fin de transition temporelle en marche arrière"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bEndVehSpdTranRvs	/* Name */ 
+        "Flag de fin de transition en vitesse en marche arrière"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bIdl	/* Name */ 
+        "Flag de detection de seuil de régime ralenti"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bLimNotRvs	/* Name */ 
+        "Condition MAV"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bLimRvs	/* Name */ 
+        "Condition limitation MAR"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bNotRvsLim	/* Name */ 
+        "Bit de configuration d'inhibition de la limitation en MAV"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bNotRvsTiTran	/* Name */ 
+        "Bit de configuration d'inhibition de la transition temporelle en MAV"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bNotRvsTTran	/* Name */ 
+        "Condition correspondant à l'activation de la transition  de l'état de limitation marche avant vers l'état de transition temporelle marche avant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bRvsFil	/* Name */ 
+        "Flag indiquant si la marche arrière est engagée ou non(Si Information Marche Arrière disponible sur le CAN)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bRvsLim	/* Name */ 
+        "Condition correspondant à l'activation de l'état de limitation en MAR"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bRvsTiTran	/* Name */ 
+        "Bit de configuration d'inhibition de la transition temporelle en MAR"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bRvsTTran	/* Name */ 
+        "Condition correspondant à l'activation de  la transition de l'état de limitation marche arrière vers l'état de transition temporelle marche arrière"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bRvsVehSpdTran	/* Name */ 
+        "Condition correspondant à l'activation de la transition entre l'état de limitation marche arrière vers l'état de transition en vitesse"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bTqCkNotRvs	/* Name */ 
+        "Condition de seuil de couple pour transition de l'état de limitation marche avant vers l'état non limité"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_bTqCkRvs	/* Name */ 
+        "Condition de seuil de couple pour transition de l'état de limitation marche arrière vers l'état non limité"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EngLim_CM_062193_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_spdVehFil	/* Name */ 
+        "Vitesse Véhicule avec une valeur par défaut en mode défaut"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcMaxHiNotRvs	/* Name */ 
+        "Couple moteur effectif maximum haut en MAV"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcMaxHiRvs	/* Name */ 
+        "Couple moteur effectif maximum haut en MAR"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcMaxLoNotRvs	/* Name */ 
+        "Couple moteur effectif maximum bas en MAV"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcMaxLoRvs	/* Name */ 
+        "Couple moteur effectif maximum bas en MAR"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcNotRvs	/* Name */ 
+        "Couple moteur effectif en MAV"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkEfcRvs	/* Name */ 
+        "Couple moteur effectif en MAR"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkMaxNotRvsTTran	/* Name */ 
+        "Couple de limitation en MAV"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkMaxRvsTTran	/* Name */ 
+        "Couple de limitation en MAR en transition temporelle"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EngLim_tqCkMaxRvsVehTran	/* Name */ 
+        "Couple de limitation en MAR en transition par la vitesse"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_0078125	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_0078125"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_01	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_01"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_01_c	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_01_c"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_0625	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_0625"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_1	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_25	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_25"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_EQ_LSB_0_25_d	/* Name */ 
+        "EngLim_CM_062193_EQ_LSB_0_25_d"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EngLim_CM_062193_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EngLim_FCT_062193_SEngLim109_MSW	/* Name */ 
+        "EngLim_FCT_062193_SEngLim109_MSW"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            EngLim_tqCkMaxNotRvsTTran	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+ 
+ 
+    /begin FUNCTION 
+        EngLim_FCT_062193_SEngLim86_MSW	/* Name */ 
+        "EngLim_FCT_062193_SEngLim86_MSW"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            EngLim_tqCkMaxRvsTTran	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+
+    /begin FUNCTION
+        EngLim_FCT_VersionModule          /* Name */
+        "Fonction regroupant Constantes de la version du Module " /* LongIdentifier */
+        /begin LOC_MEASUREMENT
+            EngLim_ModuleVersion_Major_MP      /* Identifier */
+            EngLim_ModuleVersion_Minor_MP      /* Identifier */
+        /end LOC_MEASUREMENT
+    /end FUNCTION
+ 
+    /begin FUNCTION 
+        EngLim_FCT_062193_TqSys_Sdl10ms_TqLimFwdRvs_fct	/* Name */ 
+        "EngLim_FCT_062193_TqSys_Sdl10ms_TqLimFwdRvs_fct"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EngLim_tqCkEfcInRtMax_C	/* Identifier */ 
+            EngLim_tiTranNotRvs_C	/* Identifier */ 
+            EngLim_tiTranRvs_C	/* Identifier */ 
+            EngLim_spdVehHysLoRvs_C	/* Identifier */ 
+            EngLim_spdVehLoRvs_C	/* Identifier */ 
+            EngLim_spdVehHysLoNotRvs_C	/* Identifier */ 
+            EngLim_spdVehLoNotRvs_C	/* Identifier */ 
+            EngLim_stTranNotRvs_C	/* Identifier */ 
+            EngLim_tiCluOffNotRvs_C	/* Identifier */ 
+            EngLim_bManEna_C	/* Identifier */ 
+            EngLim_bNotRvsLim_C	/* Identifier */ 
+            EngLim_stTranRvs_C	/* Identifier */ 
+            EngLim_tiCluOffRvs_C	/* Identifier */ 
+            EngLim_tiTqCkEfcNotRvsCfm_C	/* Identifier */ 
+            EngLim_tiTqCkEfcRvsCfm_C	/* Identifier */ 
+            EngLim_tqCkEfcMaxHiNotRvs_T	/* Identifier */ 
+            EngLim_nEngTqLim_A	/* Identifier */ 
+            EngLim_tqCkEfcMaxHiRvs_T	/* Identifier */ 
+            EngLim_tqCkEfcMaxLoNotRvs_T	/* Identifier */ 
+            EngLim_tqCkEfcMaxLoRvs_T	/* Identifier */ 
+            EngLim_nIdlHys_C	/* Identifier */ 
+            EngLim_tqCkEfcDft_C	/* Identifier */ 
+            EngLim_tqCkEfcNotRvs_T	/* Identifier */ 
+            EngLim_tCoMesTqLim_A	/* Identifier */ 
+            EngLim_tqCkEfcRvs_T	/* Identifier */ 
+            EngLim_spdVehDft_C	/* Identifier */ 
+            EngLim_bCluStDft_C	/* Identifier */ 
+            EngLim_tiCluOff_C	/* Identifier */ 
+            EngLim_tiCluOn_C	/* Identifier */ 
+            EngLim_bRvsStDft_C	/* Identifier */ 
+            EngLim_tiRvsStOff_C	/* Identifier */ 
+            EngLim_tiRvsStOn_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EngLim_bCluFil	/* Identifier */ 
+            EngLim_bRvsFil	/* Identifier */ 
+            EngLim_spdVehFil	/* Identifier */ 
+            EngLim_tqCkEfcMaxLoNotRvs	/* Identifier */ 
+            EngLim_tqCkEfcMaxLoRvs	/* Identifier */ 
+            EngLim_tqCkMaxRvsVehTran	/* Identifier */ 
+            EngLim_bEndTTranNotRvs	/* Identifier */ 
+            EngLim_bNotRvsTiTran	/* Identifier */ 
+            EngLim_tqCkEfcMaxHiNotRvs	/* Identifier */ 
+            EngLim_bEndTTranRvs	/* Identifier */ 
+            EngLim_bRvsTiTran	/* Identifier */ 
+            EngLim_tqCkEfcMaxHiRvs	/* Identifier */ 
+            EngLim_bEndVehSpdTranRvs	/* Identifier */ 
+            EngLim_bIdl	/* Identifier */ 
+            EngLim_bLimNotRvs	/* Identifier */ 
+            EngLim_bLimRvs	/* Identifier */ 
+            EngLim_bNotRvsLim	/* Identifier */ 
+            EngLim_bNotRvsTTran	/* Identifier */ 
+            EngLim_bRvsLim	/* Identifier */ 
+            EngLim_bRvsTTran	/* Identifier */ 
+            EngLim_bRvsVehSpdTran	/* Identifier */ 
+            EngLim_bTqCkNotRvs	/* Identifier */ 
+            EngLim_bTqCkRvs	/* Identifier */ 
+            EngLim_tqCkEfcNotRvs	/* Identifier */ 
+            EngLim_tqCkEfcRvs	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            EngLim_FCT_062193_SEngLim109_MSW	/* Identifier */ 
+            EngLim_FCT_062193_SEngLim86_MSW	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_062193_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_062193_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_062193_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_062193_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EngLim_RL_062193_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE EngLim ------------------------------------*/

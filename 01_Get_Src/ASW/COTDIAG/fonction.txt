@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+CoT_EveCrTR_FctDiagCoT|A|();|SCH.3|COTDIAG|1|V02 NT 09 00859||||0|0|0|0|Evènement Crank To Run.
+CoT_EveRst_FctDiagCoT|A|();|SCH.2|COTDIAG|1|V02 NT 09 00859||||0|0|0|0|Evènement reset de l'ECU
+CoT_SdlSlow_FctDiagCoT|A|();|SCH.4|COTDIAG|1|V02 NT 09 00859||||0|0|0|0|Moniteur lent
+COTDIAG_vidCalcDgoIndicator|C|();|FCT1.8|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Fonction qui calcule CoT_bDgoWup_tCoMes et CoT_bDgoTrck_tCoMes.
+COTDIAG_vidCalcMonRunIndicator|C|();|FCT1.7|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Fonction qui calcule CoT_bMonRunWup_tCoMes et CoT_bMonRunTrck_tCoMes.
+COTDIAG_vidEntryInit|A|();|SCH.1|COTDIAG|1|V02 NT 09 00859||||0|0|0|0|Fonction d'accroche au moniteur RESET.
+COTDIAG_vidFunctDiagCoTemp|A|();|FCT1.3|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Cette fonction spécifie les diagnostics fonctionnels de la température d’eau moteur. Les calculs sont réalisés à récurrence temporelle lente.
+COTDIAG_vidFunctDiagCoTempInit|E|();|FCT1.2|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Cette fonction permet d’initialiser les variables au reset de l’ECU (CoT_EveRst_FctDiagCoT) et sur événement démarrage moteur (CoT_EveCrTR_FctDiagCoT).
+COTDIAG_vidInitOutput|A|();|FCT1.1|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Fonction d'initialisation des variables produites dans le module.
+COTDIAG_vidInjCutoffTimeCalc|A|();|FCT1.4|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Cette fonction calcule le temps cumulé de fonctionnement en mode coupure d’injection (Injector_cut_off_counter) et active un booléen (Flag_delay_injection) lorsque le compteur dépasse un seuil.
+COTDIAG_vidTrackerCoTempCalc|B|();|FCT1.5|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Cette fonction calcule  la  variable  suiveur  de  température  d’eau (Temperature_eau_tracker_value).
+COTDIAG_vidWarmUpTestEnd|A|();|FCT1.6|COTDIAG|0|V02 NT 09 00859||||0|0|0|0|Cette fonction Active le booléen (Warmup_test_complete)  indiquant que  le Diagnostic  de la cohérence température d’eau au démarrage est terminé.
+GDGAR_bGetFRM|A|(argin uint16 u16channel)boolean;|2|HEADER|1|NONE||||0|0|0|0|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|

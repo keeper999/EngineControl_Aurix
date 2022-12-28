@@ -1,0 +1,574 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : agPmpRefPFuM                                            */
+/* !Description     : agPmpRefPFuM – CALCULATION OF THE ANGULAR REFERENCES FOR THE PUMP STROKES*/
+/*                                                                            */
+/* !Module          : agPmpRefPFuM                                            */
+/*                                                                            */
+/* !File            : agPmpRefPFuM.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Sep 12 10:58:54 2013                              */
+/*   Model name       : agPmpRefPFuM_AUTOCODE.mdl                             */
+/*   Model version    : 1.77                                                  */
+/*   Root subsystem   : /agPmpRefPFuM                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/agPmpRefPFuM/5-SOFT-LIV/agPm$*/
+/* $Revision::   1.2                                                         $*/
+/* $Author::   adelvare                               $$Date::   12 Sep 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   agPmpRefPFuM
+    /*   LongIdentifier */   "agPmpRefPFuM Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   agPmpRefPFuM_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agDlyPmpStk_T
+       /*   LongIdentifier */   "Durée angulaire entre la consigne et le début du coup de pompe dans le rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   agPmpRefPFuM_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             FuSysM_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agBtwTDCRef_C
+       /*   LongIdentifier */   "Angle entre deux TDC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agPerPmpRef_C
+       /*   LongIdentifier */   "Durée angulaire entre deux PMH successifs de la pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agConvSplRefEveInj_C
+       /*   LongIdentifier */   "Angle pour la conversion des angles de la pompe  dans le référentiel angulaire de l'événement d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_1
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AGPMPREFPFUM_u8Inhib
+       /*   LongIdentifier */   "inhibition of module agPmpRefPFuM"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_ctTDCRefPmpCmd_C
+       /*   LongIdentifier */   "Calibration indiquant le TDC de reference pour le premier coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_noTDCBtwPmpStk_C
+       /*   LongIdentifier */   "Calibration indiquant le nombre de TDC entre les coups de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   5.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_bCfPmpOneTDCStk_C
+       /*   LongIdentifier */   "Booléen indiquant qu'un coup de pompe à lieu pour chaque TDC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   agPmpRefPFuM_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_nEng_A
+       /*   LongIdentifier */   "Table de points d'appuis en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   agPmpRefPFuM_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   agPmpRefPFuM_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_mFuPmpStk2Req
+       /*   LongIdentifier     */   "Masse totale carburant introduite lors du deuxième coup de pompe"
+       /*   Datatype           */   SLONG
+       /*   Conversion         */   agPmpRefPFuM_CM_9
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -7812.5
+       /*   UpperLimit         */   7812.5
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_mFuPmpStk1Req
+       /*   LongIdentifier     */   "Masse totale carburant introduite lors du premier coup de pompe"
+       /*   Datatype           */   SLONG
+       /*   Conversion         */   agPmpRefPFuM_CM_9
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -7812.5
+       /*   UpperLimit         */   7812.5
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_agBegPmpStk2Ref
+       /*   LongIdentifier     */   "Phasage du début du coup de pompe 2 dans le rail dans le référentiel angulaire de l'évènement d'injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   agPmpRefPFuM_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -720.0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_agEndPmpStk2Ref
+       /*   LongIdentifier     */   "Phasage de la fin du coup de pompe 2 dans le rail dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   agPmpRefPFuM_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -720.0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_agBegPmpStk1Ref
+       /*   LongIdentifier     */   "Phasage du début du coup de pompe 1 dans le rail dans le référentiel angulaire de l'évènement d'injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   agPmpRefPFuM_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -720.0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_agEndPmpStk1Ref
+       /*   LongIdentifier     */   "Phasage de la fin du coup de pompe 1 dans le rail dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   agPmpRefPFuM_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -720.0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   FuSysM_bAcvPmpCmdTDCCur
+       /*   LongIdentifier     */   "Booléen indiquant si un coup de pompe a lieu sur ce TDC"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   agPmpRefPFuM_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_1
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            agPmpRefPFuM_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "PMH"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_7
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   agPmpRefPFuM_CM_9
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   agPmpRefPFuM_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   agPmpRefPFuM
+       /*   LongIdentifier */   "V01NT1008000.001"
+
+       /begin DEF_CHARACTERISTIC
+          AGPMPREFPFUM_u8Inhib
+          FuSysM_agBtwTDCRef_C
+          FuSysM_agConvSplRefEveInj_C
+          FuSysM_agDlyPmpStk_T
+          FuSysM_agPerPmpRef_C
+          FuSysM_bCfPmpOneTDCStk_C
+          FuSysM_ctTDCRefPmpCmd_C
+          FuSysM_nEng_A
+          FuSysM_noTDCBtwPmpStk_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          FuSysM_bAcvPmpCmdTDCCur
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          FuSysM_agBegPmpStk1Ref
+          FuSysM_agBegPmpStk2Ref
+          FuSysM_agEndPmpStk1Ref
+          FuSysM_agEndPmpStk2Ref
+          FuSysM_mFuPmpStk1Req
+          FuSysM_mFuPmpStk2Req
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

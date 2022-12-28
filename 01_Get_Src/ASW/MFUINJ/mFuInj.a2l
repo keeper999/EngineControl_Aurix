@@ -1,0 +1,778 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : mFuInj                                                  */
+/* !Description     : INJECTION MASS PER INJECTION                            */
+/*                                                                            */
+/* !Module          : mFuInj                                                  */
+/*                                                                            */
+/* !File            : mFuInj.a2l                                              */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Jul 18 15:02:19 2013                              */
+/*   Model name       : mFuInj_AUTOCODE.mdl                                   */
+/*   Model version    : 1.302                                                 */
+/*   Root subsystem   : /mFuInj                                               */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/mFuInj/5-SOFT-LIV/mFuInj.a2v$*/
+/* $Revision::   1.8                                                         $*/
+/* $Author::   adelvare                               $$Date::   29 Jul 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   mFuInj
+    /*   LongIdentifier */   "mFuInj Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   mFuInj_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   MFUINJ_u8Inhib
+       /*   LongIdentifier */   "inhibition of module mFuInj"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuInj_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuInj_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvInjPatcond_C
+       /*   LongIdentifier */   "Booléen d'acitvation de la prise en compte du changement de schema d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   mFuInj_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   mFuInj_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH1Req
+       /*   LongIdentifier     */   "Vecteur de masse carburant pour l'injection H1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH2Req
+       /*   LongIdentifier     */   "Vecteur de masse carburant pour l'injection H2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS1Req
+       /*   LongIdentifier     */   "Vecteur de masse carburant pour l'injection S1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS2Req
+       /*   LongIdentifier     */   "Vecteur de masse carburant pour l'injection S2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuInjH1CrkReq
+       /*   LongIdentifier     */   "Masse de carburant pour l'injection H1 en cranking"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuInjH2CrkReq
+       /*   LongIdentifier     */   "Masse de carburant pour l'injection H2 en cranking"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuInjS1CrkReq
+       /*   LongIdentifier     */   "Masse de carburant pour l'injection S1 en cranking"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuInjS2CrkReq
+       /*   LongIdentifier     */   "Masse de carburant pour l'injection S2 en cranking"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   mFuInj_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_mFuReq
+       /*   LongIdentifier     */   "Masse de carburant à injecter dans le cycle en cours"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   mFuInj_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   0.00048828125
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH1ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) de la consigne de masse de carburant à injecter pour l'injection H1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.8827379941940308E-004
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH2ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) de la consigne de masse de carburant à injecter pour l'injection H2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.8827379941940308E-004
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS1ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) de la consigne de masse de carburant à injecter pour l'injection S1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS2ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) de la consigne de masse de carburant à injecter pour l'injection S2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH1ReqCylPre
+       /*   LongIdentifier     */   "Vecteur cylindre de masse carburant par cylindre pour l'injection H1 (Prev.)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjH2ReqCylPre
+       /*   LongIdentifier     */   "Vecteur cylindre de masse carburant par cylindre pour l'injection H2 (Prev.)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS1ReqCylPre
+       /*   LongIdentifier     */   "Vecteur cylindre de masse carburant par cylindre pour l'injection S1 (Prev.)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_mFuInjS2ReqCylPre
+       /*   LongIdentifier     */   "Vecteur cylindre de masse carburant par cylindre pour l'injection S2 (Prev.)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   mFuInj_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_noCylmFuInjCrk
+       /*   LongIdentifier     */   "Numéro du cylindre pour le calcul de la masse à injecter par injection sous démarreur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   6.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bMFuH1SpNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse de H1 est nulle sur le prochain cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bMFuH2SpNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse de H2 est nulle sur le prochain cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bMFuS1SpNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse de S1 est nulle sur le prochain cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bMFuS2SpNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse de S2 est nulle sur le prochain cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bMufInjTotNull
+       /*   LongIdentifier     */   "Booléen indiquant que la masse totale est nulle sur le prochain cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bInjPatCond
+       /*   LongIdentifier     */   "Booléen indiquant le changement de schéma d'injection"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bInhFrstInjSTTInCyl
+       /*   LongIdentifier     */   "Booléen d'inhibition de la première injection en redémarrage STT sur le cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bEngStall
+       /*   LongIdentifier     */   "Moteur non tournant"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bInhFrstInjSTTCmprCyl
+       /*   LongIdentifier     */   "Booléen d'inhibition de la première injection en redémarrage STT sur le cylindre en compression"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bInhSTTSync
+       /*   LongIdentifier     */   "Booleen permettant d'adapter la synchronisation pour les re-départs en STT"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   mFuInj_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            mFuInj_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_5
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_6
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_7
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   mFuInj_CM_8
+       /*   LongIdentifier */   "Q = V*134217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 134217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   mFuInj_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   mFuInj
+       /*   LongIdentifier */   "PTS_DOC_5141464 _v04"
+
+       /begin DEF_CHARACTERISTIC
+          InjSys_bAcvInjPatcond_C
+          MFUINJ_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bEngStall
+          InjSys_bInhFrstInjSTTCmprCyl
+          InjSys_bInhFrstInjSTTInCyl
+          InjSys_bInhSTTSync
+          InjSys_bInjPatCond
+          InjSys_bMFuH1SpNull
+          InjSys_bMFuH2SpNull
+          InjSys_bMFuS1SpNull
+          InjSys_bMFuS2SpNull
+          InjSys_bMufInjTotNull
+          InjSys_mFuInjH1CrkReq
+          InjSys_mFuInjH2CrkReq
+          InjSys_mFuInjS1CrkReq
+          InjSys_mFuInjS2CrkReq
+          InjSys_noCylmFuInjCrk
+          InjSys_prm_mFuInjH1Req
+          InjSys_prm_mFuInjH1ReqCylPre
+          InjSys_prm_mFuInjH2Req
+          InjSys_prm_mFuInjH2ReqCylPre
+          InjSys_prm_mFuInjS1Req
+          InjSys_prm_mFuInjS1ReqCylPre
+          InjSys_prm_mFuInjS2Req
+          InjSys_prm_mFuInjS2ReqCylPre
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_mFuReq
+          InjSys_prm_mFuInjH1ReqCyl
+          InjSys_prm_mFuInjH2ReqCyl
+          InjSys_prm_mFuInjS1ReqCyl
+          InjSys_prm_mFuInjS2ReqCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

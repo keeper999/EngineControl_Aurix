@@ -1,0 +1,976 @@
+/begin MODULE
+    TraBVx_Gasoline	/* Name */ 
+    "-"	/* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-"	/* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR  
+ 
+    /begin MOD_COMMON 
+        "-"	/* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 1 
+        ALIGNMENT_LONG 1 
+        ALIGNMENT_FLOAT32_IEEE 1 
+        ALIGNMENT_FLOAT64_IEEE 1 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON  
+ 
+    /begin CHARACTERISTIC 
+        CoPt_bAcvTqIdlTqAirDrv_C	/* Name */ 
+        "Prise en compte du couple de ralenti dans le couple potentiel après traitement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facTqAirIdlFil_C	/* Name */ 
+        "Facteur de filtrage du couple de ralenti branche lente"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facTqCnvTqAirDrv_C	/* Name */ 
+        "Facteur de prise en compte du couple convertisseur dans le couple potentiel après traitement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tiAcvTqMaxFilAir_C	/* Name */ 
+        "Temps d'activation du couple max calculé sur la branche lente"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tiDeacTqMaxFilAir_C	/* Name */ 
+        "Temps de désactivation du couple max calculé sur la branche lente"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin MEASUREMENT 
+        CoCha_tqEfcAirReqCord	/* Name */ 
+        "Couple sur la branche Air en sortie de la coordination du couple lent pour l ESP coordonné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqEfcAirIdlFil	/* Name */ 
+        "Couple de ralenti filtré branche lente"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqEfcFilUnlimAir	/* Name */ 
+        "Couple filtré non limité branche lente"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqCha_tqAirTqDecReqCord	/* Name */ 
+        "Couple ASR sur la branche Air  coordonné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqCha_tqAirTqIncReqCord	/* Name */ 
+        "Couple MSR sur la branche Air  coordonné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqLimEM_tqLimEMCordAir	/* Name */ 
+        "Couple conducteur limité envoyé à l agrément préventif coordonné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqSys_tqCkEfcAirFilCord	/* Name */ 
+        "Couple filtré branche lente coordonné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_01	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_030_CM_Ess_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        TraBVx_030_FCT_Ess_S0303_01246	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            CoPt_bAcvTqIdlTqAirDrv_C	/* Identifier */ 
+            CoPt_facTqCnvTqAirDrv_C	/* Identifier */ 
+            CoPt_facTqAirIdlFil_C	/* Identifier */ 
+            CoPt_tiAcvTqMaxFilAir_C	/* Identifier */ 
+            CoPt_tiDeacTqMaxFilAir_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            CoCha_tqEfcAirReqCord	/* Identifier */ 
+            TqCha_tqAirTqDecReqCord	/* Identifier */ 
+            TqCha_tqAirTqIncReqCord	/* Identifier */ 
+            TqLimEM_tqLimEMCordAir	/* Identifier */ 
+            TqSys_tqCkEfcAirFilCord	/* Identifier */ 
+            CoPt_tqEfcAirIdlFil	/* Identifier */ 
+            CoPt_tqEfcFilUnlimAir	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TraBVx_030_FCT_Ess_TraBVx_030_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            TraBVx_030_FCT_Ess_S0303_01246	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_030_RL_Ess_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_bAcvNCrossAirAuth_C	/* Name */ 
+        "Activation de la limitation sur la branche air"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_bAcvNCrossAirNbGear_T	/* Name */ 
+        "Activation de la limitation sur la branche air fonction du rapport"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNCrossAir_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facDeacNCrossAir_M	/* Name */ 
+        "Facteur de désactivation du croisement de régime hors SIP"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nEngNCrossAirX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_rAccPNCrossAirY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facDeacNCrossAirSIP_M	/* Name */ 
+        "Facteur de désactivation du croisement de régime en SIP"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nEngNCrossAirX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_rAccPNCrossAirY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facFilTqIdcNReg_C	/* Name */ 
+        "Facteur de filtrage du couple de régulation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facTqAirNReg0_M	/* Name */ 
+        "Pondération de la réserve de couple en relance type 0"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_016_CM_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nEngNRegX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_nErrNReg	/* InputQuantity */ 
+            TraBVx_016_CM_EQ_LSB_1	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nErrNRegY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facTqAirNReg1_M	/* Name */ 
+        "Pondération de la réserve de couple en relance type 1"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_016_CM_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nEngNRegX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_nErrNReg	/* InputQuantity */ 
+            TraBVx_016_CM_EQ_LSB_1	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nErrNRegY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_facTqLimNCrossAir_M	/* Name */ 
+        "Pondération de la limitation de couple"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNCrossAirX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_nEngNCrossAirY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_nDeltaAcvAir_C	/* Name */ 
+        "Delta de régime pour l'activation de la fonction"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_nDeltaDeacAir_C	/* Name */ 
+        "Delta de régime pour la désactivation de la fonction"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_rAccPMaxDeacAir_C	/* Name */ 
+        "Position pédale pour désactiver la stratégie"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_rAccPMinAcvAir_C	/* Name */ 
+        "Position pédale pour activer la stratégie"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_stFacTqAirNReg_T	/* Name */ 
+        "Type de pondération de la réserve en relance"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            4	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noTypPID_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tqDeacNCrossAir_T	/* Name */ 
+        "Step de couple de désactivation du croisement de régime hors SIP"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNCrossAirX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tqDeacNCrossAirSIP_T	/* Name */ 
+        "Step de couple de désactivation du croisement de régime en SIP"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNCrossAirX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tqIdcReqNRegAir_M	/* Name */ 
+        "Couple air en régulation de régime"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_016_CM_VOID_SCALING_b	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNRegX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_tqIdcNRegFil	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_tqIdcNRegY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tqLimNCrossAir_M	/* Name */ 
+        "Couple de limitation en croisement de régime"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_noGearNCrossAirX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+            11	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_rAccPNCrossAirY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        CoPt_tqOfsLimNCrossAir_T	/* Name */ 
+        "Offset sur le couple de limitation"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            1	/* LowerLimit */ 
+            10	/* UpperLimit */ 
+            AXIS_PTS_REF CoPt_idxTqAccuAir_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        CoPt_idxTqAccuAir_A	/* Name */ 
+        "Breakpoint en indice de précision de couple"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        1	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_nEngNCrossAirX_A	/* Name */ 
+        "Breakpoint en régime"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_nEngNCrossAirY_A	/* Name */ 
+        "Breakpoint en régime"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_noGearNCrossAir_A	/* Name */ 
+        "Breakpoint en rapport de boite"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -1	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_noGearNCrossAirX_A	/* Name */ 
+        "Breakpoint en rapport de boite"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -1	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_noTypPID_A	/* Name */ 
+        "Breakpoint en type de régulation"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        4	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_rAccPNCrossAirY_A	/* Name */ 
+        "Breakpoint en position pédale"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Conversion */ 
+        11	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        CoPt_tqIdcNRegY_A	/* Name */ 
+        "Breakpoint en couple de régulation"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        CoPt_tqIdcNRegFil	/* InputQuantity */ 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        11	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        CoPt_bAcvLimNCrossAir	/* Name */ 
+        "Activation de la limitation en croisement de régimes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqIdcAirNReg	/* Name */ 
+        "Couple de régulation de régime boite pour la branche lente"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqIdcLimNCrossAir	/* Name */ 
+        "Couple de limitation de la branche air pour le croisement de régimes"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqIdcNRegFil	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        CoPt_tqStepDeacNCross	/* Name */ 
+        "Rampe de couple à la désactivation de la limitation"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_b	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0078125_d	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_0_0625_a	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TraBVx_Gasoline_TraBVx_032_CM_Ess_VOID_SCALING_c	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        TraBVx_032_FCT_Ess_S03216_F05_Reg_regime_air	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            CoPt_facTqAirNReg0_M	/* Identifier */ 
+            CoPt_nEngNRegX_A	/* Identifier */ 
+            CoPt_nErrNRegY_A	/* Identifier */ 
+            CoPt_facTqAirNReg1_M	/* Identifier */ 
+            CoPt_stFacTqAirNReg_T	/* Identifier */ 
+            CoPt_noTypPID_A	/* Identifier */ 
+            CoPt_tqIdcReqNRegAir_M	/* Identifier */ 
+            CoPt_noGearNRegX_A	/* Identifier */ 
+            CoPt_tqIdcNRegY_A	/* Identifier */ 
+            CoPt_facFilTqIdcNReg_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            CoPt_tqIdcAirNReg	/* Identifier */ 
+            CoPt_tqIdcNRegFil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TraBVx_032_FCT_Ess_S0323_01247	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            CoPt_tqIdcAirNReg	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TraBVx_032_FCT_Ess_S0324_01248	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            CoPt_facDeacNCrossAirSIP_M	/* Identifier */ 
+            CoPt_nEngNCrossAirX_A	/* Identifier */ 
+            CoPt_rAccPNCrossAirY_A	/* Identifier */ 
+            CoPt_facDeacNCrossAir_M	/* Identifier */ 
+            CoPt_tqDeacNCrossAirSIP_T	/* Identifier */ 
+            CoPt_noGearNCrossAirX_A	/* Identifier */ 
+            CoPt_tqDeacNCrossAir_T	/* Identifier */ 
+            CoPt_bAcvNCrossAirAuth_C	/* Identifier */ 
+            CoPt_bAcvNCrossAirNbGear_T	/* Identifier */ 
+            CoPt_noGearNCrossAir_A	/* Identifier */ 
+            CoPt_nDeltaAcvAir_C	/* Identifier */ 
+            CoPt_nDeltaDeacAir_C	/* Identifier */ 
+            CoPt_rAccPMaxDeacAir_C	/* Identifier */ 
+            CoPt_rAccPMinAcvAir_C	/* Identifier */ 
+            CoPt_facTqLimNCrossAir_M	/* Identifier */ 
+            CoPt_nEngNCrossAirY_A	/* Identifier */ 
+            CoPt_tqLimNCrossAir_M	/* Identifier */ 
+            CoPt_tqOfsLimNCrossAir_T	/* Identifier */ 
+            CoPt_idxTqAccuAir_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            CoPt_bAcvLimNCrossAir	/* Identifier */ 
+            CoPt_tqIdcLimNCrossAir	/* Identifier */ 
+            CoPt_tqStepDeacNCross	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TraBVx_032_FCT_Ess_TraBVx_032_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            CoPt_tqIdcAirNReg	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TraBVx_032_FCT_Ess_S03216_F05_Reg_regime_air	/* Identifier */ 
+            TraBVx_032_FCT_Ess_S0324_01248	/* Identifier */ 
+            TraBVx_032_FCT_Ess_S0323_01247	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TraBVx_Gasoline_TraBVx_032_RL_Ess_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE
+
+/* ------------------------------ END OF MODULE TraBVx_Gasoline ------------------------------------*/

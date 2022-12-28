@@ -1,0 +1,2739 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : rInjSp                                                  */
+/* !Description     : INJECTION MASS RATIO SET POINTS                         */
+/*                                                                            */
+/* !Module          : rInjSp                                                  */
+/*                                                                            */
+/* !File            : rInjSp.a2l                                              */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Sun Jan 13 20:30:13 2013                              */
+/*   Model name       : rInjSp_AUTOCODE.mdl                                   */
+/*   Model version    : 1.181                                                 */
+/*   Root subsystem   : /rInjSp                                               */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/rInjSp/5-SOFT-LIV/rInjSp.a2v$*/
+/* $Revision::   1.4                                                         $*/
+/* $Author::   adelvare                               $$Date::   16 Jan 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   rInjSp
+    /*   LongIdentifier */   "rInjSp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   rInjSp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3SpETB_M
+       /*   LongIdentifier */   "map for ETB injection 3 ratio set point"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2SpETB_M
+       /*   LongIdentifier */   "map for ETB injection 2 ratio set point"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noInjPatETB_M
+       /*   LongIdentifier */   "map for ETB injection pattern set point"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal1_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal1Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal1X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal2_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal2Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal2X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal3_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal3Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal3X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal4_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 4"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal4Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal4X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal5_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 5"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal5Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal5X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal6_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 6"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal6Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal6X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal7_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 7"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal7Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal7X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal8_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 8"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal8Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal8X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal9_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 9"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal9Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal9X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal10_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 10"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal10Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal10X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal11_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 11"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal11Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal11X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3Cal12_M
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 12"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal12Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal12X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal1_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal1Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal1X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal2_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal2Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal2X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal3_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal3Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal3X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal4_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 4"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal4Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal4X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal5_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 5"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal5Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal5X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal6_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 6"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal6Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal6X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal7_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 7"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal7Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal7X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal8_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 8"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal8Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal8X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal9_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 9"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal9Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal9X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal10_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 10"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal10Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal10X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal11_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 11"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal11Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal11X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2Cal12_M
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 12"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_5
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpCal12Y_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   rInjSp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEngInjSpCal12X_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2SpCal13_C
+       /*   LongIdentifier */   "Injection 2 ratio set point calibration 13"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2SpETB_C
+       /*   LongIdentifier */   "Injection 2 ratio set point for engine test bench"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3SpCal13_C
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 13"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3SpETB_C
+       /*   LongIdentifier */   "Injection 3 ratio set point for engine test bench"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInjM1Min_C
+       /*   LongIdentifier */   "Minimum allowed injection ratio to activate the injection 1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModRatInjSatMax_C
+       /*   LongIdentifier */   "Max Saturation of the mode index for injection ratio"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_idxModRatInjSatMin_C
+       /*   LongIdentifier */   "Min Saturation of the mode index for injection ratio"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   32.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noETBSelnoInjPat_C
+       /*   LongIdentifier */   "Selection of engine test bench mode for injection pattern set point"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noETBSelrInj2Sp_C
+       /*   LongIdentifier */   "Selection of engine test bench mode for first injection 2 ratio set point"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noETBSelrInj3Sp_C
+       /*   LongIdentifier */   "Selection of engine test bench mode for injection 3 ratio set point"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noInjPatETB_C
+       /*   LongIdentifier */   "Injection pattern set point for engine test bench"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   RINJSP_u8Inhib
+       /*   LongIdentifier */   "Calibration d'inhibition du module rInjSp."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvETBrInjSp_C
+       /*   LongIdentifier */   "Activation boolean for injection ratio engine test bench mode"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   rInjSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj31Tmp_MP
+       /*   LongIdentifier */   "Temporary 3rd injection ratio with 1st injection canceled"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj21Tmp_MP
+       /*   LongIdentifier */   "Temporary 2nd injection ratio with 1st injection canceled"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpModCur_MP
+       /*   LongIdentifier */   "Current mode injection 2 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpModTar_MP
+       /*   LongIdentifier */   "Target mode injection 2 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2Tmp
+       /*   LongIdentifier */   "Temporary injection 2 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpBas1ModCur
+       /*   LongIdentifier */   "injection 2 ratio set point for current mode Base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpBas2ModCur
+       /*   LongIdentifier */   "injection 2 ratio set point for current mode Base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpBas1ModTar
+       /*   LongIdentifier */   "injection 2 ratio set point for target mode Base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpBas2ModTar
+       /*   LongIdentifier */   "injection 2 ratio set point for target mode Base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpModTar_MP
+       /*   LongIdentifier */   "Target mode injection 3 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpModCur_MP
+       /*   LongIdentifier */   "Current mode injection 3 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3Tmp
+       /*   LongIdentifier */   "Temporary injection 3 ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpBas1ModCur
+       /*   LongIdentifier */   "Injection 3 ratio set point for current mode Base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpBas2ModCur
+       /*   LongIdentifier */   "Injection 3 ratio set point for current mode Base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpBas1ModTar
+       /*   LongIdentifier */   "Injection 3 ratio set point for target mode Base 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpBas2ModTar
+       /*   LongIdentifier */   "Injection 3 ratio set point for target mode Base 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpETBTmp_MP
+       /*   LongIdentifier */   "Engine test bench injection 2 temporary ratio"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   rInjSp_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj1Sp
+       /*   LongIdentifier */   "Fuel mass ratio for injection 1 set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2Sp
+       /*   LongIdentifier */   "Fuel mass ratio for injection 2 set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3Sp
+       /*   LongIdentifier */   "Fuel mass ratio for injection 3 set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2TmpSat
+       /*   LongIdentifier */   "Saturation of temporary injection 2 ratio"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj1TmpSat
+       /*   LongIdentifier */   "Saturation of temporary injection 1 ratio"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3TmpSat
+       /*   LongIdentifier */   "Saturation of temporary injection 3 ratio"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInj2SpCal
+       /*   LongIdentifier */   "Calibration array for injection 2 ratio set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 13 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal13
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 13"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal12
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 12"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal11
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 11"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal10
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 10"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal9
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 9"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal8
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 8"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal7
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 7"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal6
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 6"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal5
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 5"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal4
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 4"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal3
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 3"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal2
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2SpCal1
+       /*   LongIdentifier */   "injection 2 ratio set point calibration 1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInj3SpCal
+       /*   LongIdentifier */   "Calibration array for injection 3 ratio set point"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 13 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal13
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 13"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal12
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 12"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal11
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 11"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal10
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 10"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal9
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 9"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal8
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 8"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal7
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 7"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal6
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 6"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal5
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 5"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal4
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 4"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal3
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 3"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal2
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3SpCal1
+       /*   LongIdentifier */   "Injection 3 ratio set point calibration 1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   rInjSp_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noInjPat
+       /*   LongIdentifier */   "Injection pattern number (zero based)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noInjPatTmp1_MP
+       /*   LongIdentifier */   "First temporary injection pattern number"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noInjPatTmp2_MP
+       /*   LongIdentifier */   "Second temporary injection pattern number"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjPat0
+       /*   LongIdentifier */   "Activation Boolean of injection 0 (simple injection)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjPat1
+       /*   LongIdentifier */   "Activation Boolean of injection 1 (split injection)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjPat2
+       /*   LongIdentifier */   "Activation Boolean of injection 2 (double injection)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjPat3
+       /*   LongIdentifier */   "Activation Boolean of injection 3 (triple injection)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInj1Acv
+       /*   LongIdentifier */   "Active injection 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj31_MP
+       /*   LongIdentifier */   "Activation boolean for 1st injection cancellation and split on 3rd injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj21_MP
+       /*   LongIdentifier */   "Activation boolean for 1st injection cancellation and split on 2nd injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bTestInjPat2_MP
+       /*   LongIdentifier */   "Boolean Test of injection pattern 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal1
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal2
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal11
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 11"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal12
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 12"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal13
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 13"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal3
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 3"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal4
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 4"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal5
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 5"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal6
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 6"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal7
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 7"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal8
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 8"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal9
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 9"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj2SpCal10
+       /*   LongIdentifier */   "Activation Boolean for injection 2 ratio calibration 10"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bAcvRatInj2SpCal
+       /*   LongIdentifier */   "Boolean activation array for injection 2 ratio calibrations"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 13 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal1
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal2
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal11
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 11"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal12
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 12"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal13
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 13"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal3
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 3"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal4
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 4"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal5
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 5"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal6
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 6"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal7
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 7"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal8
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 8"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal9
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 9"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvRatInj3SpCal10
+       /*   LongIdentifier */   "Activation Boolean for injection 3 ratio calibration 10"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bAcvRatInj3SpCal
+       /*   LongIdentifier */   "Boolean activation array for injection 3 ratio calibrations"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 13 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facInjRemain
+       /*   LongIdentifier */   "Remain injection factor"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   rInjSp_CM_11
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_1
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_2
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_5
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            rInjSp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_9
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_10
+       /*   LongIdentifier */   "Q = V/100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1 0 0 0 100
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   rInjSp_CM_11
+       /*   LongIdentifier */   "Q = V*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   rInjSp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   rInjSp
+       /*   LongIdentifier */   "PTS_DOC_5009687.01"
+
+       /begin DEF_CHARACTERISTIC
+          InjSys_bAcvETBrInjSp_C
+          InjSys_idxModRatInjSatMax_C
+          InjSys_idxModRatInjSatMin_C
+          InjSys_noETBSelnoInjPat_C
+          InjSys_noETBSelrInj2Sp_C
+          InjSys_noETBSelrInj3Sp_C
+          InjSys_noInjPatETB_C
+          InjSys_noInjPatETB_M
+          InjSys_rInj2Cal10_M
+          InjSys_rInj2Cal11_M
+          InjSys_rInj2Cal12_M
+          InjSys_rInj2Cal1_M
+          InjSys_rInj2Cal2_M
+          InjSys_rInj2Cal3_M
+          InjSys_rInj2Cal4_M
+          InjSys_rInj2Cal5_M
+          InjSys_rInj2Cal6_M
+          InjSys_rInj2Cal7_M
+          InjSys_rInj2Cal8_M
+          InjSys_rInj2Cal9_M
+          InjSys_rInj2SpCal13_C
+          InjSys_rInj2SpETB_C
+          InjSys_rInj2SpETB_M
+          InjSys_rInj3Cal10_M
+          InjSys_rInj3Cal11_M
+          InjSys_rInj3Cal12_M
+          InjSys_rInj3Cal1_M
+          InjSys_rInj3Cal2_M
+          InjSys_rInj3Cal3_M
+          InjSys_rInj3Cal4_M
+          InjSys_rInj3Cal5_M
+          InjSys_rInj3Cal6_M
+          InjSys_rInj3Cal7_M
+          InjSys_rInj3Cal8_M
+          InjSys_rInj3Cal9_M
+          InjSys_rInj3SpCal13_C
+          InjSys_rInj3SpETB_C
+          InjSys_rInj3SpETB_M
+          InjSys_rInjM1Min_C
+          RINJSP_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bAcvRatInj21_MP
+          InjSys_bAcvRatInj2SpCal1
+          InjSys_bAcvRatInj2SpCal10
+          InjSys_bAcvRatInj2SpCal11
+          InjSys_bAcvRatInj2SpCal12
+          InjSys_bAcvRatInj2SpCal13
+          InjSys_bAcvRatInj2SpCal2
+          InjSys_bAcvRatInj2SpCal3
+          InjSys_bAcvRatInj2SpCal4
+          InjSys_bAcvRatInj2SpCal5
+          InjSys_bAcvRatInj2SpCal6
+          InjSys_bAcvRatInj2SpCal7
+          InjSys_bAcvRatInj2SpCal8
+          InjSys_bAcvRatInj2SpCal9
+          InjSys_bAcvRatInj31_MP
+          InjSys_bAcvRatInj3SpCal1
+          InjSys_bAcvRatInj3SpCal10
+          InjSys_bAcvRatInj3SpCal11
+          InjSys_bAcvRatInj3SpCal12
+          InjSys_bAcvRatInj3SpCal13
+          InjSys_bAcvRatInj3SpCal2
+          InjSys_bAcvRatInj3SpCal3
+          InjSys_bAcvRatInj3SpCal4
+          InjSys_bAcvRatInj3SpCal5
+          InjSys_bAcvRatInj3SpCal6
+          InjSys_bAcvRatInj3SpCal7
+          InjSys_bAcvRatInj3SpCal8
+          InjSys_bAcvRatInj3SpCal9
+          InjSys_bInj1Acv
+          InjSys_bTestInjPat2_MP
+          InjSys_facInjRemain
+          InjSys_noInjPatTmp1_MP
+          InjSys_noInjPatTmp2_MP
+          InjSys_prm_bAcvRatInj2SpCal
+          InjSys_prm_bAcvRatInj3SpCal
+          InjSys_prm_rInj2SpCal
+          InjSys_prm_rInj3SpCal
+          InjSys_rInj1TmpSat
+          InjSys_rInj21Tmp_MP
+          InjSys_rInj2SpBas1ModCur
+          InjSys_rInj2SpBas1ModTar
+          InjSys_rInj2SpBas2ModCur
+          InjSys_rInj2SpBas2ModTar
+          InjSys_rInj2SpCal1
+          InjSys_rInj2SpCal10
+          InjSys_rInj2SpCal11
+          InjSys_rInj2SpCal12
+          InjSys_rInj2SpCal13
+          InjSys_rInj2SpCal2
+          InjSys_rInj2SpCal3
+          InjSys_rInj2SpCal4
+          InjSys_rInj2SpCal5
+          InjSys_rInj2SpCal6
+          InjSys_rInj2SpCal7
+          InjSys_rInj2SpCal8
+          InjSys_rInj2SpCal9
+          InjSys_rInj2SpETBTmp_MP
+          InjSys_rInj2SpModCur_MP
+          InjSys_rInj2SpModTar_MP
+          InjSys_rInj2Tmp
+          InjSys_rInj2TmpSat
+          InjSys_rInj31Tmp_MP
+          InjSys_rInj3SpBas1ModCur
+          InjSys_rInj3SpBas1ModTar
+          InjSys_rInj3SpBas2ModCur
+          InjSys_rInj3SpBas2ModTar
+          InjSys_rInj3SpCal1
+          InjSys_rInj3SpCal10
+          InjSys_rInj3SpCal11
+          InjSys_rInj3SpCal12
+          InjSys_rInj3SpCal13
+          InjSys_rInj3SpCal2
+          InjSys_rInj3SpCal3
+          InjSys_rInj3SpCal4
+          InjSys_rInj3SpCal5
+          InjSys_rInj3SpCal6
+          InjSys_rInj3SpCal7
+          InjSys_rInj3SpCal8
+          InjSys_rInj3SpCal9
+          InjSys_rInj3SpModCur_MP
+          InjSys_rInj3SpModTar_MP
+          InjSys_rInj3Tmp
+          InjSys_rInj3TmpSat
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvInjPat0
+          InjSys_bAcvInjPat1
+          InjSys_bAcvInjPat2
+          InjSys_bAcvInjPat3
+          InjSys_noInjPat
+          InjSys_rInj1Sp
+          InjSys_rInj2Sp
+          InjSys_rInj3Sp
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

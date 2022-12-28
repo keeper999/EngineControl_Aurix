@@ -1,0 +1,18 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+FuAcq_EveInj_PFuAcq|D|();|SCH.4|PFUACQ|1|PTS_DOC_6851391||||0|0|0|0|INJ task for the rail pressure acquisition|
+FuAcq_EveRst_PFuAcq|D|();|SCH.1|PFUACQ|1|PTS_DOC_6851391||||0|0|0|0|Reset event|
+FuAcq_EveSpl_PFuAcq|D|();|SCH.3|PFUACQ|1|PTS_DOC_6851391||||0|0|0|0|Spill event|
+FuAcq_SdlFast_PFuAcq|E|();|SCH.2|PFUACQ|1|PTS_DOC_6851391||||0|0|0|0|Fast monitor for rail pressure acquisition|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|3|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0||
+PFUACQ_vidCoherencyDiagnosis|B|();|FCT2.1|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|The raw voltage sent by the rail pressure sensor is compared to a high and a low thresholds. If this voltage is not included between these two thresholds, a failure flag is sent.|
+PFUACQ_vidElectrical_Diagnosis|E|();|FCT1.6|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|The raw voltage sent by the rail pressure sensor is compared to a high and a low thresholds. If this voltage is not included between these two thresholds, a failure flag is sent.|
+PFUACQ_vidInit|C|();|FCT1.2|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|All rail pressure information are initialized to atmospheric pressure.|
+PFUACQ_vidInitOutputs|D|();|FCT1.1|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|output's initialization|
+PFUACQ_vidInj|E|();|FCT1.3|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|The rail pressure is realized on SdlFast if the engine is not running or at INJ event when the engine is running. The voltage sent by the sensor is normalized and converted in pressure|
+PFUACQ_vidPrevEveInjPressureVal|C|();|FCT1.9|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|We calculate the previous value of the rail pressure at INJ event and on SdlFast if the engine is not running.|
+PFUACQ_vidPrevRailSplPressureVal|C|();|FCT1.10|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|We calculate the previous value of the rail pressure at « spill event » and on SdlFast if the engine is not synchronized.|
+PFUACQ_vidRailInjPressureTreat|D|();|FCT1.7|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|When there is no failure, the strategy sends the measured and filtered value.  If a failure is detected on the rail pressure information, the acquisition is frozen. The pressure value return by the strategy is the last correct value.|
+PFUACQ_vidRailPressureDiagnosis|F|();|FCT1.5|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|The rail pressure sensor is realized if there is no confirmed failure on the rail pressure.|
+PFUACQ_vidRailSplPressureTreat|D|();|FCT1.8|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|When there is no failure, the strategy sends the measured and filtered value.  If a failure is detected on the rail pressure information, the acquisition is frozen. The pressure value return by the strategy is the last correct value.|
+PFUACQ_vidSpill|E|();|FCT1.4|PFUACQ|0|PTS_DOC_6851391||||0|0|0|0|The rail pressure is realized on SdlFast if the engine is not synchronized or at “spill event” when the engine is synchronized. The voltage sent by the sensor is normalized and converted in pressure|

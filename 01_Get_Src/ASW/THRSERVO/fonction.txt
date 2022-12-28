@@ -1,0 +1,45 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|V01 NT 06 02985||||0|0|0|0||
+Thr_EveClcnServo_Servo|B|();|SCH.3|THRSERVO|1|V02 NT 08 04514||||0|0|0|0|Evenement de calcul de l'asservissement papillon motorisé (front montant du signal PWM de commande)|
+Thr_EveRst_Servo|B|();|SCH.1|THRSERVO|1|V02 NT 08 04514||||0|0|0|0|Evénement reset du calculateur|
+Thr_SdlMid_Servo|B|();|SCH.2|THRSERVO|1|V02 NT 08 04514||||0|0|0|0|Moniteur moyen pour le papillon|
+THRSERVO_vidAdjustVelocity|B|();|FCT2.1|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Le calcul de la dérivée est basé sur la taille estimée de la fenêtre. Les coefficients utilisés pour le calcul de la dérivée sont basés sur la méthode du "Best-fit-FOAW"|
+THRSERVO_vidBatteryVoltageGain|B|();|FCT3.9|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Calcul du gain sur la tension de commande fonction de la tension batterie.|
+THRSERVO_vidCompGloblAttenuation|B|();|FCT3.5|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Calcul du gain d'atténuation autour de la position limp home.|
+THRSERVO_vidCompStateFeedbackCtl|D|();|FCT2.10|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système réalise le calcul du produit scalaire [K1 K2 K3]*[x1 x2 x3] , où K1, K2 et K3 sont les gains du retour d’état respectivement appliqués à la position (état x1), à la vitesse (état x2) et au courant (état x3).|
+THRSERVO_vidComputeCtrlVoltage|C|();|FCT3.6|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Calcul de la commande de l'actionneur PAPMOT.|
+THRSERVO_vidComputeCtrlVoltLin|C|();|FCT3.3|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système spécifie le calcul de la partie linéaire de la commande (Tpac_control_voltage_lin) qui  correspond à la différence entre le terme intégral (Tpac_integral_output) et le retour d’état (Tpac_state_feedback_control).|
+THRSERVO_vidComputeCurrent|B|();|FCT2.8|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|estimation de l’état non mesuré du système (calcul du courant)|
+THRSERVO_vidComputeCurrentCall|A|();|FCT2.7|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Cette fonction définit les conditions d'appel de la fonction qui estime le courant circulant dans le papillon.|
+THRSERVO_vidComputeFeedForward|A|();|FCT3.4|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce module décrit l'activation ou la désactivation de la stratégie de compensation des  frottements secs.|
+THRSERVO_vidComputeFrictCompens|C|();|FCT4.5|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce module calcul la valeur du feedforward à appliquer sur la commande afin de compenser les frottements secs. Cette compensation est réalisée en considérant le couple de frottements secs comme une tension.|
+THRSERVO_vidComputeInitTasks|A|();|FCT1.2|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système réalise les tâches d’initialisation de la stratégie de pilotage du papillon motorisé.|
+THRSERVO_vidComputeInnerLoop|A|();|FCT1.6|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système réalise le calcul de la boucle interne de la loi de commande|
+THRSERVO_vidComputeIntegrOutput|E|();|FCT3.2|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système produit la valeur du terme intégral de la stratégie de contrôle par retour d’état (Tpac_integral_output).|
+THRSERVO_vidComputeOutterLoop|A|();|FCT3.1|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système spécifie le traitement de la boucle externe de la stratégie|
+THRSERVO_vidComputePhysicalState|B|();|FCT1.7|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Estimation de l’état non mesuré du système (calcul de la vitesse du papillon, calcul du courant), du couple ressort et de sa dérivée (en vue du calcul du feedforward)|
+THRSERVO_vidComputePositionError|B|();|FCT3.8|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système spécifie le calcul de l’erreur de position (Tpac_position_error) entre la consigne de position (Tpac_throttle_position_reference) et la position (Ssm_raw_filt_throttle_position).|
+THRSERVO_vidComputeVelocity|A|();|FCT1.8|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système calcule l’estimation de la vitesse du papillon motorisé (Tpac_estimated_velocity) par dérivation numérique de la position (Ssm_raw_filt_throttle_position)|
+THRSERVO_vidControlSwitchMode|C|();|FCT3.7|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Calcul de l'RCO du PWM de commande papillon en sortie de l'asservissement générique JCAE|
+THRSERVO_vidDecTempo|B|();|FCT1.5|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce sous-système décrémente la temporisation d’initialisation de la stratégie de contrôle|
+THRSERVO_vidFiltCompensFeedBack|B|();|FCT4.7|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc applique un filtrage de la consigne de feedforward. L'idée est de compenser les effets induits par le retour d'état en courant.|
+THRSERVO_vidFiltering|B|();|FCT4.6|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc applique un filtrage de la consigne de feedforward.|
+THRSERVO_vidFrictConstCounter|B|();|FCT4.3|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc décompte des temporisation avant l'activation ou la désactivation de la stratégie de compensation des frottements secs.|
+THRSERVO_vidFrictionCompensation|B|();|FCT4.1|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Stratégie de compensation des  frottements secs.|
+THRSERVO_vidFrictionDetection|C|();|FCT4.2|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc défini la détection d’accrochage du papillon dû à des frottements secs.|
+THRSERVO_vidInitControlVariables|C|();|FCT1.3|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|initialisation des variables des algorithmes de l’asservissement|
+THRSERVO_vidInitOutput|D|();|FCT1.1|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Fonction d'initialisation|
+THRSERVO_vidInitTempo|A|();|FCT1.4|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|initialisation d’une temporisation durant laquelle le calcul d’estimation du courant est inhibé|
+THRSERVO_vidIntegInitOnSetGainIO|C|();|FCT5.4|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc réinitialise le terme intégral pour garantir la continuité de la commande, lors d’un changement de gains.|
+THRSERVO_vidManageLimpHome|C|();|FCT2.9|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|La stratégie de franchissement du limp-home consiste à adapter les 4 gains du retour d’état à l’intérieur d’une zone calibrable autour du limp-home.|
+THRSERVO_vidManagerThrottleState|A|();|FCT5.1|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Stateflow qui définit l’état de l’asservissement papillon selon la position de ce dernier et gère les événements relatifs à la commutation des gains fortsou faibles.|
+THRSERVO_vidMedianFilter|B|();|FCT2.6|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Les entrées du filtre médian sont les trois dernières valeurs de la vitesse.  La sortie du filtre médian est la valeur non extrême des trois entrées. Un gain de retard permet de filtrer les valeurs de la vitesse pour éviter de trop brusques variations.|
+THRSERVO_vidSetControlGainsIn|A|();|FCT5.3|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc positionnne les gains du retour d’état sur les valeurs fortes (dans la  zone "limp-home")|
+THRSERVO_vidSetControlGainsOut|A|();|FCT5.2|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Ce bloc positionnne  les gains du  retour d’état  sur  les valeurs  faibles  (en  dehors de la zone "limp-home")|
+THRSERVO_vidSetFrictStatus|B|();|FCT4.4|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Automate de la stratégie de frottements secs.|
+THRSERVO_vidSetWindowSize|C|();|FCT1.10|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|L'algorithme utilisé pour déterminer la taille de la fenêtre se base sur la dispersion des positions autour d'une valeur moyenne estimée de la dérivée et sur l'amplitude des variations de la position.|
+THRSERVO_vidUpdatePositionValues|B|();|FCT1.9|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|Mise à jour des valeurs retardées de la position papillon utilisées dans l'algorithme de détermination de la taille de la fenêtre|
+THRSERVO_vidVelocityWindow1|B|();|FCT2.2|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|calcul de la vitesse du rotor estimée avec une fenêtre de taille 1|
+THRSERVO_vidVelocityWindow2|B|();|FCT2.3|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|calcul de la vitesse du rotor estimée avec une fenêtre de taille 2|
+THRSERVO_vidVelocityWindow3|B|();|FCT2.4|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|calcul de la vitesse du rotor estimée avec une fenêtre de taille 3|
+THRSERVO_vidVelocityWindow4|B|();|FCT2.5|THRSERVO|0|V02 NT 08 04514||||0|0|0|0|calcul de la vitesse du rotor estimée avec une fenêtre de taille 4|

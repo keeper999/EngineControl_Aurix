@@ -1,0 +1,37 @@
+### Dimension HEADER
+# %PCMS_HEADER_SUBSTITUTION_START:%
+# %PID:%
+# %PCMS_HEADER_SUBSTITUTION_END:%
+
+### PVCS HEADER
+# $Archive::   I:/Projets/EB_DT_6_2/LOG/ASW/Ref/Main/CompilOptions.H$
+# $Revision::   1.0                                                 $
+# $Author::   ynicaise                                              $
+# $Date::   10 Oct 2014 14:44:52                                    $
+
+# Warning : Don't rename _C_OBJ_LIST_COMPILER_OPTION and _ASM_OBJ_LIST_COMPILER_OPTION keyword
+
+# C options (only this 3 options: LOCAL_CEXTRA, LOCAL_CWARN and LOCAL_COPTS must be appear)
+_C_OBJ_LIST_COMPILER_OPTION : LOCAL_CEXTRA := \
+  -fno-common \
+  -freorder-blocks \
+  -freorder-functions \
+  -fshort-double \
+  -fshort-enums \
+  -fthread-jumps \
+  -ftree-dce \
+  -gstrict-dwarf \
+  -mno-version-info
+
+_C_OBJ_LIST_COMPILER_OPTION : LOCAL_CWARN := \
+  -W \
+  -Wall
+
+_C_OBJ_LIST_COMPILER_OPTION : LOCAL_COPTS := \
+  -nostartfiles \
+  -nostdlib \
+  -O2
+
+# Assembler options (only this option: LOCAL_ASMFLAGS must be appear)
+_ASM_OBJ_LIST_COMPILER_OPTION : LOCAL_ASMFLAGS := \
+	--gdwarf-2

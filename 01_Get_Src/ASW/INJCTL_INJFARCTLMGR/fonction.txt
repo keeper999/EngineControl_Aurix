@@ -1,0 +1,29 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(uint16 u16Channel)boolean;|1|HEADER|1|NONE||||0|0|0|0||
+InjCtl_EveCrTR_FarCtlMgr|C|();|SCH.3|INJCTL_INJFARCTLMGR|1|PTS_DOC_5147287||||0|0|0|0|Evènement de CRANKING vers RUNNING|
+InjCtl_EveFbDisab_FarCtlMgr|B|();|12|HEADER|1|PTS_DOC_5147287||||0|0|0|0||
+InjCtl_EveFbEnad_FarCtlMgr|B|();|3|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' activation de la régulation de richesse|
+InjCtl_EveFbForSafEnad_FarCtlMgr|B|();|4|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' activation de la régulation spécifique au diag IAE|
+InjCtl_EveIniClsdLoop_FarCtlMgr|B|();|5|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' initialisation de la régulation de richesse en boucle fermée|
+InjCtl_EveIniFbClcn_FarCtlMgr|B|();|6|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' initialisation du calcul du  bouclage|
+InjCtl_EveIniFbPrm_FarCtlMgr|B|();|7|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' initialisation des paramètres de bouclage|
+InjCtl_EveMonrFbCdn_FarCtlMgr|B|();|10|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement de contrôle des conditions de bouclage.|
+InjCtl_EveReIniFbSaf_FarCtlMgr|B|();|8|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement d' initialisation du bouclage spécifique à l' IAE|
+InjCtl_EveRst_FarCtlMgr|C|();|SCH.1|INJCTL_INJFARCTLMGR|1|PTS_DOC_5147287||||0|0|0|0|Evènement de Reset du calculateur|
+InjCtl_EveRstLbdFb_FarCtlMgr|B|();|9|HEADER|1|PTS_DOC_5147287||||0|0|0|0|Evènement de Reset du correcteur de richesse de la régulation de richesse|
+InjCtl_EveRTSt_FarCtlMgr|C|();|SCH.2|INJCTL_INJFARCTLMGR|1|PTS_DOC_5147287||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant|
+INJCTL_INJFARCTLMGR_vidDecDelay|C|();|FCT1.4|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Ce bloc décrémente le délai d’activation de la régulation de richesse de la valeur du pas de InjCtl_SampleTiSlow_SC.|
+INJCTL_INJFARCTLMGR_vidDiagCata|D|();|FCT1.9|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Ce bloc permet d’évaluer les conditions d’autorisation du diagnostic catalyseur intrusif.|
+INJCTL_INJFARCTLMGR_vidFdRegCnd|B|();|FCT2.2|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Cette fonction permet de gérer les conditions de bouclage/ débouclage de la régulation de richesse pour une configuration utilisant les module FAR fournit par PSA ou les moteurs de type injection directe.|
+INJCTL_INJFARCTLMGR_vidFdRichCnd|B|();|FCT2.1|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Cette fonction permet de gérer les conditions de bouclage/ débouclage de la régulation de richesse pour une configuration utilisant les modules FAR Valéo en injection indirecte.|
+INJCTL_INJFARCTLMGR_vidFSM|J|();|FCT1.5|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Ce bloc permet de gérer les conditions de régulation, en modifiant l’état de la variable : Monitor_feedback_conds_state.|
+INJCTL_INJFARCTLMGR_vidGlobalCnd|C|();|FCT2.3|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Cette fonction permet de désactiver le bouclage,lorsque un diagnostic intrusif pour la sonde aval est demandé, pour permettre l’utilisation du créneau de richesse.|
+INJCTL_INJFARCTLMGR_vidInit|C|();|FCT1.1|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Le bouclage de la richesse est désactivé lors d’un calage moteur ou lors de l’initialisation du calculateur. Alors, "Lambda_cond_for_adaptation = 0"|
+INJCTL_INJFARCTLMGR_vidInitDelay|F|();|FCT1.3|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|A froid, l’objectif de richesse visé n’est plus unitaire mais légèrement supérieur. Par conséquent, il est nécessaire de laisser la régulation de richesse inactive pendant un délai fonction de la température d’eau.|
+INJCTL_INJFARCTLMGR_vidInitFdbk|C|();|FCT1.2|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Initialise l'automate Monitor_feedback_conds_state.|
+INJCTL_INJFARCTLMGR_vidMontrCond|H|();|FCT1.8|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Le système de régulation par feedback de la sonde ne fonctionne qu' à richesse 1. Toute consigne de richesse différente ne peut être régulée. Cependant, l' objectif de richesse à atteindre est calibrable avec hystérésis.|
+INJCTL_INJFARCTLMGR_vidResetCond|D|();|FCT1.7|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Ce bloc permet de réinitialiser les compteurs de validation avant débouclage.|
+INJCTL_INJFARCTLMGR_vidSetThresh|C|();|FCT1.6|INJCTL_INJFARCTLMGR|0|PTS_DOC_5147287||||0|0|0|0|Lors d’un démarrage, le seuil de température d’eau à atteindre peut être adapté à 3 fonctionnements différents. En fonction de la température de l’eau au démarrage, un offset est appliqué au seuil de température.|
+InjCtl_SdlFast_FarCtlMgr|C|();|SCH.4|INJCTL_INJFARCTLMGR|1|PTS_DOC_5147287||||0|0|0|0|Moniteur rapide de la fonction régulation de richesse|
+InjCtl_SdlSlow_FarCtlMgr|C|();|SCH.5|INJCTL_INJFARCTLMGR|1|PTS_DOC_5147287||||0|0|0|0|Moniteur lent de la fonction régulation de richesse|
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||

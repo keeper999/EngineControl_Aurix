@@ -1,0 +1,1156 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjSysMgrCrk                                            */
+/* !Description     : InjSysMgrCrk : Start manager                            */
+/*                                                                            */
+/* !Module          : InjSysMgrCrk                                            */
+/*                                                                            */
+/* !File            : InjSysMgrCrk.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed May 01 18:07:07 2013                              */
+/*   Model name       : InjSysMgrCrk_AUTOCODE.mdl                             */
+/*   Model version    : 1.204                                                 */
+/*   Root subsystem   : /InjSysMgrCrk                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/INJSYSMGRCRK/InjSysMgrCrk.$*/
+/* $Revision::   1.5                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   14 May 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjSysMgrCrk
+    /*   LongIdentifier */   "InjSysMgrCrk Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysMgrCrk_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAuthHPStSTT_T
+       /*   LongIdentifier */   "Cartographie d'autorisation de démarrage HP en redémarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   233.0
+          /*   UpperLimit     */   488.0
+          AXIS_PTS_REF             InjSys_tFuHPSt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAuthHPSt_T
+       /*   LongIdentifier */   "Cartographie d'autorisation de démarrage HP"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   233.0
+          /*   UpperLimit     */   488.0
+          AXIS_PTS_REF             InjSys_tFuHPSt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctTDCThdAcvInjHPstSTT_T
+       /*   LongIdentifier */   "Cartographie du seuil du nombre de PMH avant abandon du démarrage HP pour le premier démarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModHSTT_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection homogène\" en fonction de la température d'eau pour un démarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModSSTT_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection stratifiée\" en fonction de la température d'eau pour un démarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModSplSTT_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection fractionnée\" en fonction de la température d'eau pour un démarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctTDCThdAcvInjHPRstrt_T
+       /*   LongIdentifier */   "Cartographie du seuil du nombre de PMH avant abandon du démarrage HP pour un redémarrage"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctTDCThdAcvInjHPst_T
+       /*   LongIdentifier */   "Cartographie du seuil du nombre de PMH avant abandon du démarrage HP pour le premier démarrage"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModH_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection homogène\" en fonction de la température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModS_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection stratifiée\" en fonction de la température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThdAcvInjModSpl_T
+       /*   LongIdentifier */   "Table du seuil de pression rail afin d'autoriser l'injection en mode \"injection fractionnée\" en fonction de la température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysMgrCrk_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuRailLoThdInhHPst_C
+       /*   LongIdentifier */   "Seuil bas de pression dans le rail afin d'inhiber le démarrage HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuThAcvInjLPSt_C
+       /*   LongIdentifier */   "Seuil de pression dans le rail à atteindre afin d'autoriser l'injection (en basse pression)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJSYSMGRCRK_u8Inhib
+       /*   LongIdentifier */   "INJSYSMGRCRK_u8Inhib let the user inhib InjSysMgrCrk"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhETBHPst_C
+       /*   LongIdentifier */   "Booléen d'inhibition du démarrage HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhTFuelCondForHPStrt_C
+       /*   LongIdentifier */   "Booléen d'inhibition manuelle de la prise en compte de la température carburant pour les démarrages HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvHPstSTT_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le démarrage HP en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvHPst_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le démarrage HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSplLPSTT_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection fractionnée\" en démarrage STT basse pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSplstLP_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection fractionnée\" en BP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSplstSTT_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection fractionnée\" en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSplst_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection fractionnée\""
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSstSTT_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection stratifiée\" en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoHiThdAcvModSst_C
+       /*   LongIdentifier */   "Seuil haut sur la température d'eau pour autoriser le mode \"injection stratifiée\""
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvHPstSTT_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le démarrage HP en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvHPst_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le démarrage HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSplLPSTT_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection fractionnée\" en démarrage STT basse pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSplstLP_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection fractionnée\" en mode basse pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSplstSTT_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection fractionnée\" en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSplst_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection fractionnée\""
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSstSTT_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection stratifiée\" en démarrage STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tCoLoThdAcvModSst_C
+       /*   LongIdentifier */   "Seuil bas sur la température d'eau pour autoriser le mode \"injection stratifiée\""
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysMgrCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_4
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tFuHPSt_A
+       /*   LongIdentifier */   "Table de points d'appui en température carburant dans le rail"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSysMgrCrk_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysMgrCrk_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   233.0
+       /*   UpperLimit     */   488.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuThdAcvInjHPst
+       /*   LongIdentifier */   "Seuil de pression dans le rail à atteindre afin d'autoriser l'injection"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysMgrCrk_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_ctTDCThdAcvInjHPst
+       /*   LongIdentifier */   "Compteur du nombre de PMH avant abandon du démarrage HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_ctTDCThdAcvInjHPPrev
+       /*   LongIdentifier */   "Compteur du nombre de PMH avant abandon du démarrage HP au pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModSst
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection stratifiée\""
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhInjHPst
+       /*   LongIdentifier */   "Booléen d'inhibition de l'injection lors d'un démarrage HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bInhInjHPstCyl
+       /*   LongIdentifier */   "Vecteur cylindre de booléens pour la gestion de l'inhibition de l'injection en démarrage HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAuthHPst
+       /*   LongIdentifier */   "Booléen indiquant que les conditions de démarrage HP sont réunies"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPFuThdInjHPst
+       /*   LongIdentifier */   "Booléen indiquant que la pression dans le rail de carburant est inférieure au seuil d'activation de l'injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModH
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection homogène\""
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModSplst
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection fractionnée\""
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvHPst
+       /*   LongIdentifier */   "Booléen d'activation du démarrage HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAgStopNoInhHP
+       /*   LongIdentifier */   "Booléen indicant la non inhibition de l'injection après détection de l'arrêt du moteur dans des intervalles angulaire précis"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bInhInjHPCylPrev
+       /*   LongIdentifier */   "Vecteur cylindre de booléens pour la gestion de l'inhibition de l'injection en démarrage HP du pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPFuThdInjHPstPrev
+       /*   LongIdentifier */   "Booléen indiquant que la pression dans le rail de carburant est inférieure au seuil d'activation de l'injection au pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModHprev
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection homogène\" du pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModSplstPrev
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection fractionnée\" du pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvInjModSstPrev
+       /*   LongIdentifier */   "Booléen d'activation du mode \"injection stratifiée\" du pas précédent"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDisaHPst
+       /*   LongIdentifier */   "Booléen de désactivation du démarrage HP après décrémentation totale du compteur de PMH"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysMgrCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bool"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_2
+       /*   LongIdentifier */   "Q = (V-233)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "K"
+       COEFFS                   0 1 -233 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_4
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_5
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjSysMgrCrk_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   ""
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysMgrCrk_CM_9
+       /*   LongIdentifier */   "Q = V/6"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 1 0 0 0 6
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjSysMgrCrk_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjSysMgrCrk
+       /*   LongIdentifier */   "PTS_DOC_5189648.02"
+
+       /begin DEF_CHARACTERISTIC
+          INJSYSMGRCRK_u8Inhib
+          InjSys_bAuthHPStSTT_T
+          InjSys_bAuthHPSt_T
+          InjSys_bInhETBHPst_C
+          InjSys_bInhTFuelCondForHPStrt_C
+          InjSys_ctTDCThdAcvInjHPRstrt_T
+          InjSys_ctTDCThdAcvInjHPstSTT_T
+          InjSys_ctTDCThdAcvInjHPst_T
+          InjSys_pFuRailLoThdInhHPst_C
+          InjSys_pFuThAcvInjLPSt_C
+          InjSys_pFuThdAcvInjModHSTT_T
+          InjSys_pFuThdAcvInjModH_T
+          InjSys_pFuThdAcvInjModSSTT_T
+          InjSys_pFuThdAcvInjModS_T
+          InjSys_pFuThdAcvInjModSplSTT_T
+          InjSys_pFuThdAcvInjModSpl_T
+          InjSys_tCoHiThdAcvHPstSTT_C
+          InjSys_tCoHiThdAcvHPst_C
+          InjSys_tCoHiThdAcvModSplLPSTT_C
+          InjSys_tCoHiThdAcvModSplstLP_C
+          InjSys_tCoHiThdAcvModSplstSTT_C
+          InjSys_tCoHiThdAcvModSplst_C
+          InjSys_tCoHiThdAcvModSstSTT_C
+          InjSys_tCoHiThdAcvModSst_C
+          InjSys_tCoLoThdAcvHPstSTT_C
+          InjSys_tCoLoThdAcvHPst_C
+          InjSys_tCoLoThdAcvModSplLPSTT_C
+          InjSys_tCoLoThdAcvModSplstLP_C
+          InjSys_tCoLoThdAcvModSplstSTT_C
+          InjSys_tCoLoThdAcvModSplst_C
+          InjSys_tCoLoThdAcvModSstSTT_C
+          InjSys_tCoLoThdAcvModSst_C
+          InjSys_tFuHPSt_A
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bAcvInjModHprev
+          InjSys_bAcvInjModSplstPrev
+          InjSys_bAcvInjModSstPrev
+          InjSys_bAgStopNoInhHP
+          InjSys_bAuthHPst
+          InjSys_bDetPFuThdInjHPstPrev
+          InjSys_bDisaHPst
+          InjSys_ctTDCThdAcvInjHPPrev
+          InjSys_prm_bInhInjHPCylPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvHPst
+          InjSys_bAcvInjModH
+          InjSys_bAcvInjModSplst
+          InjSys_bAcvInjModSst
+          InjSys_bDetPFuThdInjHPst
+          InjSys_bInhInjHPst
+          InjSys_ctTDCThdAcvInjHPst
+          InjSys_pFuThdAcvInjHPst
+          InjSys_prm_bInhInjHPstCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|1|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+Oil_Eve14TDC_OilPropPresAcq|D|();|SCH.3|OILPROPPRESACQ|1|PTS_DOC_6978050||||0|0|0|0|Evénement d'appel de tâche "quart de PMH" du CMM.|
+Oil_EveRst_OilPropPresAcq|G|();|SCH.1|OILPROPPRESACQ|1|PTS_DOC_6978050||||0|0|0|0|ECU Event Reset|
+Oil_SdlFast_OilPropPresAcq|G|();|SCH.2|OILPROPPRESACQ|1|PTS_DOC_6978050||||0|0|0|0|Fast scheduler.|
+OILPROPPRESACQ_vidInitialization|E|();|FCT1.2|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|The Output variable Ext_pOilMes is initialized with zero at event reset.|
+OILPROPPRESACQ_vidInitOilPrsFilt|A|();|FCT2.3|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Fonction d'initialisation relative au bloc _Oil_Pressure_Filtering|
+OILPROPPRESACQ_vidInitOutput|F|();|FCT1.1|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Output's initialization|
+OILPROPPRESACQ_vidInitPrsAcqMean|A|();|FCT2.2|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Fonction d'initialisation relative au bloc Oil_Presure_Acquisition_Mean|
+OILPROPPRESACQ_vidOilAcqCond|D|();|FCT1.4|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|This function gives different conditions to activate oil pressure acquisition.|
+OILPROPPRESACQ_vidOilDiag|E|();|FCT1.10|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Electrical diagnosis on the ADC output voltage is done to check for: Short circuit to ground or Short circuit to supply.|
+OILPROPPRESACQ_vidOilPresAcqMean|C|();|FCT2.1|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|cette focntcion calcule la valeur moyenne de la tension proportionnelle de pression d'huile.|
+OILPROPPRESACQ_vidOilPresFilter|C|();|FCT1.8|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|cette fonction calcule le tension de pression d'huile.|
+OILPROPPRESACQ_vidOilPresInfoAcq|D|();|FCT1.9|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|The normalized ADC output voltage is converted into pressure using the table Oil_upOilMesLnr_T and clamped  between Oil_pMin_SC and Oil_pMax_SCto produce Ext_pOilMesRaw_bornee.|
+OILPROPPRESACQ_vidOilPresMesAcq|E|();|FCT1.7|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|The oil pressure after treatement is calculated in the 3 cases : When there is no electrical faults concerning the oil pressure sensor,If an electrical fault was detected and If a fault was confirmed.|
+OILPROPPRESACQ_vidOilPressDiag|D|();|FCT1.5|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|The diagnosis is authorized if there is no electrical failure on the sensor.|
+OILPROPPRESACQ_vidOilPressTreat|F|();|FCT1.6|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Treatment and detection of the oil pressure sensor.|
+OILPROPPRESACQ_vidOilSdlFastEna|F|();|FCT1.3|OILPROPPRESACQ|0|PTS_DOC_6978050||||0|0|0|0|Fonction d'activation de l'événement  Oil_SdlFast_OilPropPresAcq|

@@ -1,0 +1,1765 @@
+﻿   /begin MODULE FISA "FISA Software Component"
+      /begin IF_DATA ASAP1B_CCP
+         /begin SOURCE
+            "4 ms"
+            0
+            0
+            DISPLAY_IDENTIFIER "4 ms"
+            /begin QP_BLOB
+               1
+               LENGTH 6
+               CAN_ID_FIXED 0x102
+               RASTER 2
+            /end QP_BLOB
+         /end SOURCE
+         /begin SOURCE
+            "256 ms"
+            0
+            0
+            DISPLAY_IDENTIFIER "256 ms"
+            /begin QP_BLOB
+               2
+               LENGTH 6
+               CAN_ID_FIXED 0x104
+               RASTER 3
+            /end QP_BLOB
+         /end SOURCE
+         /begin SOURCE
+            "Synchro PMH"
+            0
+            0
+            DISPLAY_IDENTIFIER "PMH"
+            /begin QP_BLOB
+               0
+               LENGTH 6
+               CAN_ID_FIXED 0x103
+               RASTER 1
+            /end QP_BLOB
+         /end SOURCE
+         /begin RASTER
+            "Timer 4 ms"
+            "4 ms"
+            2
+            3
+            4
+         /end RASTER
+         /begin RASTER
+            "Timer 256 ms"
+            "256 ms"
+            3
+            3
+            256
+         /end RASTER
+         /begin RASTER
+            "Synchro PMH"
+            "PMH"
+            1
+            103
+            1
+         /end RASTER
+         /begin TP_BLOB
+            0x0201
+            0x0202
+            0x100
+            0x101
+            0x0039
+            1
+            STORE_SUPPORTED
+            BAUDRATE   1000000
+            SAMPLE_POINT   80
+            SAMPLE_RATE   1
+            BTL_CYCLES 20
+            SJW   3
+            SYNC_EDGE 0
+            /begin CHECKSUM_PARAM
+               0x8001
+               0x00000200
+               CHECKSUM_CALCULATION ACTIVE_PAGE
+            /end CHECKSUM_PARAM
+            /begin DEFINED_PAGES
+               2
+               "Page de travail"
+               0x0000
+               0x000F3000
+               0x0000D000
+               RAM
+               FLASH_BACK
+               RAM_INIT_BY_ECU
+            /end DEFINED_PAGES
+            OPTIONAL_CMD 0x0C
+            OPTIONAL_CMD 0x0D
+            OPTIONAL_CMD 0x0E
+            OPTIONAL_CMD 0x23
+            OPTIONAL_CMD 0x10
+            OPTIONAL_CMD 0x18
+            OPTIONAL_CMD 0x22
+         /end TP_BLOB
+      /end IF_DATA
+      /begin MOD_PAR "CCP"
+         USER "FISA"
+         ECU "FISA"
+         /begin MEMORY_SEGMENT
+            CODE1 "Program-Part1"
+            CODE
+            FLASH
+            INTERN
+            0x0000 0x8000
+            -1 -1 -1 -1 -1
+         /end MEMORY_SEGMENT
+         /begin MEMORY_SEGMENT
+            CODE2 "Program-Part2"
+            CODE
+            FLASH
+            INTERN
+            0x18000 0x68000
+            -1 -1 -1 -1 -1
+         /end MEMORY_SEGMENT
+         /begin MEMORY_SEGMENT
+            CODE3 "Program-Part3"
+            CODE
+            FLASH
+            INTERN
+            0x80000 0x3000
+            -1 -1 -1 -1 -1
+         /end MEMORY_SEGMENT
+         /begin MEMORY_SEGMENT
+            DATA1 "Reference-Page1"
+            DATA
+            FLASH
+            EXTERN
+            0x83000 0xD000
+            -1 -1 -1 -1 -1
+            /begin IF_DATA ASAP1B_CCP
+               ADDRESS_MAPPING 0x83000 0xF3000 0xD000
+            /end IF_DATA
+         /end MEMORY_SEGMENT
+         /begin MEMORY_SEGMENT
+            CODE4 "Program-Part4"
+            CODE
+            FLASH
+            INTERN
+            0x90000 0x10000
+            -1 -1 -1 -1 -1
+         /end MEMORY_SEGMENT
+         /begin MEMORY_SEGMENT
+            CODE5 "Program-Part5"
+            CODE
+            FLASH
+            INTERN
+            0xA0000 0x40000
+            -1 -1 -1 -1 -1
+         /end MEMORY_SEGMENT
+      /end MOD_PAR
+      /begin MOD_COMMON "-"
+         DEPOSIT ABSOLUTE
+         ALIGNMENT_BYTE  1
+         ALIGNMENT_WORD  2
+         ALIGNMENT_LONG  2
+         ALIGNMENT_FLOAT32_IEEE  4
+         ALIGNMENT_FLOAT64_IEEE  8
+         BYTE_ORDER MSB_FIRST
+      /end MOD_COMMON
+      /begin AXIS_PTS FISA_facNEng1_A
+         "Vecteur daxe X en quotient de gradient de régime pour les pas dadaptation"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_SWORD_VEMS
+         655.35
+         FISA_CM_F_0v01_p0_3
+         9
+         -327.68
+         327.67
+         DISPLAY_IDENTIFIER FISA_facNEng1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_nEngRal1_A
+         "Vecteur daxe X en consigne de régime ralenti statique de la carto de régime de fin danalyse du gradient"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_UWORD_VEMS
+         65535
+         FISA_CM_F_1_p0_9
+         6
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nEngRal1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_nEngRef1_A
+         "Vecteur daxe X en régime des cartos de gradient de régime cible"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_UWORD_VEMS
+         65535
+         FISA_CM_I_10
+         13
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nEngRef1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_noInj1_A
+         "Vecteur daxe en nombre de combustions"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_UWORD_VEMS
+         65535
+         FISA_CM_F_1_p0_7
+         13
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_noInj1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_pAirExtMes1_A
+         "Vecteur daxe Y en pression ambiante de la carto de régime de fin danalyse du gradient"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_UWORD_VEMS
+         65535
+         FISA_CM_F_1_p0_5
+         4
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_pAirExtMes1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_tCoMes1_A
+         "Vecteur daxe en Teau n°2 pour FISA_noIgMsk_T"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_SWORD_VEMS
+         65535
+         FISA_CM_F_1_p0_2
+         12
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_tCoMes1_A
+      /end AXIS_PTS
+      /begin AXIS_PTS FISA_tCoMes2_A
+         "Vecteur daxe en Teau n°2 pour toutes les autres courbes indexées en Teau au sein du superviseur"
+         0x0
+         NO_INPUT_QUANTITY
+         FISA_RL_AXIS_PTS_X_SWORD_VEMS
+         254
+         FISA_CM_F_1_p0_2
+         12
+         -40
+         214
+         DISPLAY_IDENTIFIER FISA_tCoMes2_A
+      /end AXIS_PTS
+      /begin CHARACTERISTIC FISA_bAcvAFRegWin_C
+         "FISA_bAcvAFRegWin_C"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAcvAFRegWin_C
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bAcvGrdWin_C
+         "Booléen dactivation de lanalyse du gradient de régime au démarrage"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAcvGrdWin_C
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bAcvInstWin_T
+         "Booléen dactivation de lanalyse des instabilités de régime en après démarrage"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAcvInstWin_T
+         BIT_MASK 0x01
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -32768
+            32767
+            AXIS_PTS_REF FISA_tCoMes1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bAFRegWin_BypC
+         "BYPASS"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAFRegWin_BypC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bAuthSave_BypC
+         "bypass"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAuthSave_BypC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bGrdWin_BypC
+         "bypass"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bGrdWin_BypC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bInstWin_BypC
+         "BYPASS"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bInstWin_BypC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_bRstAdpDone_BypC
+         "BYPASS"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bRstAdpDone_BypC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facAdp_BypC
+         "BYPASS"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_F_0v0078125_p0_15
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_facAdp_BypC
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facAFReg_C
+         "Incrément par PMH pour le delta de coefficient de qualité carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         6.5535
+         FISA_CM_F_0v0001_p0_4
+         0
+         6.5535
+         DISPLAY_IDENTIFIER FISA_facAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facAFRegMax_T
+         "Borne MAX autorisée pour le FR pour détection de sous-richesse"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         655.35
+         FISA_CM_F_0v01_p0_3
+         0
+         655.35
+         DISPLAY_IDENTIFIER FISA_facAFRegMax_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facAFRegMin_T
+         "Borne MIN autorisée pour le FR pour détection de sur-richesse"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         655.35
+         FISA_CM_F_0v01_p0_3
+         0
+         655.35
+         DISPLAY_IDENTIFIER FISA_facAFRegMin_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facAltiRef_T
+         "Facteur correctif pour les prises de régime en altitude"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facAltiRef_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_5
+            4
+            0
+            65535
+            AXIS_PTS_REF FISA_pAirExtMes1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facDecCorMax_C
+         "Décrément MAX autorisé par la fonction dobservation de la déviation du FR"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDecCorMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facDecInst_C
+         "Décrément unitaire de la fonction danalyse des instabilités de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDecInst_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facDecInstMax_C
+         "Décrément MAX autorisé par la fonction danalyse des instabilités de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDecInstMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facDecMax_C
+         "Décrément MAX autorisé par la fonction danalyse du gradient de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDecMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facIncCorMax_C
+         "Incrément MAX autorisé par la fonction dobservation de la déviation du FR"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facIncCorMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facIncInst_C
+         "Incrément unitaire de la fonction danalyse des instabilités de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facIncInst_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facIncInstMax_C
+         "Incrément MAX autorisé par la fonction danalyse des instabilités de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facIncInstMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facIncMax_C
+         "Incrément MAX autorisé par la fonction danalyse du gradient de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facIncMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facInstMax_T
+         "Valeur maximale acceptable pour lindice de stabilité"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65.535
+         FISA_CM_F_0v001_p0_6
+         0
+         65.535
+         DISPLAY_IDENTIFIER FISA_facInstMax_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facPoor_C
+         "Limite pauvre du coefficient de qualité carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_F_0v01_p0_3
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_facPoor_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facRich_C
+         "Limite riche du coefficient de qualité carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_F_0v01_p0_3
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_facRich_C
+      /end CHARACTERISTIC
+       /begin CHARACTERISTIC FISA_facSatLo_C
+         "Limite pauvre du coefficient de qualité carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_F_0v01_p0_3
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_facSatLo_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facSatHi_C
+         "Limite riche du coefficient de qualité carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_F_0v01_p0_3
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_facSatHi_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facRstMax_T
+         "Coefficient de qualité carburant de reset maxi pour la réinitialisation après détection de plein"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facRstMax_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facDecIni_T
+         "Initial value subraction map of the fuel quality coefficient"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facDecIni_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facStepAdp_M
+         "Pas dadaptation"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_SBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facStepAdp_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_0v01_p0_3
+            9
+            -327.68
+            327.67
+            AXIS_PTS_REF FISA_facNEng1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_facStrtGain_M
+         "Coefficient de pondération des pas dadaptation sur le nombre de combustions écoulées"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         2.55
+         FISA_CM_F_0v01_p0_3
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facStrtGain_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_7
+            13
+            0
+            65535
+            AXIS_PTS_REF FISA_noInj1_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_INTEGRATION_TESTS_SC
+         "BYPASS"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         1
+         FISA_CM_Bool_ON_OFF
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_INTEGRATION_TESTS_SC
+         BIT_MASK 0x01
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nEngThdDeac_C
+         "seuil de désactivation"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nEngThdDeac_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMax_M
+         "FISA_nMax_M"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_9
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMax_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_9
+            6
+            0
+            65535
+            AXIS_PTS_REF FISA_nEngRal1_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_5
+            4
+            0
+            65535
+            AXIS_PTS_REF FISA_pAirExtMes1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMaxHighAFReg_C
+         "Régime moteur maxi pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMaxHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMaxLowAFReg_C
+         "Régime moteur maxi pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMaxLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMinCrk_stCluOff_T
+         "Carto de régime mini embrayé fonction de la Teau"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMinCrk_stCluOff_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMinCrk_stCluOn_T
+         "Carto de régime mini débrayé fonction de la Teau"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMinCrk_stCluOn_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMinHighAFReg_C
+         "Régime moteur mini pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMinHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nMinLowAFReg_C
+         "Régime moteur mini pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         65535
+         FISA_CM_F_1_p0_7
+         0
+         65535
+         DISPLAY_IDENTIFIER FISA_nMinLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_noIgMsk_T
+         "Carto de nombre de PMHs après synchro masqués pour débuter lanalyse dicriminante sur le gradient de régime"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         255
+         FISA_CM_F_1_p0_8
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_noIgMsk_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_noInjStopAdp_T
+         "Carto de nombre de combustions maxi pour lobservation de la prise de régime"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         255
+         FISA_CM_F_1_p0_8
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_noInjStopAdp_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_noInstMax_C
+         "Seuil MAX du compteur dinstabilités"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         255
+         FISA_CM_F_1_p0_8
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_noInstMax_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_noInstMin_C
+         "Seuil MIN du compteur dinstabilités pour décrément du delta de coefficient de qualité carburant issu de lobservation des instabilités de régime"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         255
+         FISA_CM_F_1_p0_8
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_noInstMin_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_noTDCInstAvr_C
+         "Nombre de PMHs pour le calcul de la moyenne glissante de lindice de stabilité"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         255
+         FISA_CM_F_1_p0_8
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_noTDCInstAvr_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nRefAT_M
+         "Gradient de régime de référence en BVA"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         7500
+         FISA_CM_I_10
+         0
+         7500
+         DISPLAY_IDENTIFIER FISA_nRefAT_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_I_10
+            13
+            0
+            65535
+            AXIS_PTS_REF FISA_nEngRef1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nRefMT_stCluOff_M
+         "Gradient de régime de référence en BVM embrayé"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_I_10
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_nRefMT_stCluOff_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_I_10
+            13
+            0
+            65535
+            AXIS_PTS_REF FISA_nEngRef1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_nRefMT_stCluOn_M
+         "Gradient de régime de référence en BVM débrayé"
+         MAP
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_I_10
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_nRefMT_stCluOn_M
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_I_10
+            13
+            0
+            65535
+            AXIS_PTS_REF FISA_nEngRef1_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAccPMaxHighAFReg_C
+         "Charge pédale maxi pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         511.9921875
+         FISA_CM_F_0v0078125_p0_11
+         0
+         511.9921875
+         DISPLAY_IDENTIFIER FISA_rAccPMaxHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAccPMaxLowAFReg_C
+         "Charge pédale maxi pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         511.9921875
+         FISA_CM_F_0v0078125_p0_11
+         0
+         511.9921875
+         DISPLAY_IDENTIFIER FISA_rAccPMaxLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAccPMinHighAFReg_C
+         "Charge pédale mini pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         511.9921875
+         FISA_CM_F_0v0078125_p0_11
+         0
+         511.9921875
+         DISPLAY_IDENTIFIER FISA_rAccPMinHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAccPMinLowAFReg_C
+         "Charge pédale mini pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         511.9921875
+         FISA_CM_F_0v0078125_p0_11
+         0
+         511.9921875
+         DISPLAY_IDENTIFIER FISA_rAccPMinLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAirLdMaxHighAFReg_C
+         "Remplissage moteur relatif maxi pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         4095.9375
+         FISA_CM_F_0v0625_p0_12
+         0
+         4095.9375
+         DISPLAY_IDENTIFIER FISA_rAirLdMaxHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAirLdMaxLowAFReg_C
+         "Remplissage moteur relatif maxi pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         4095.9375
+         FISA_CM_F_0v0625_p0_12
+         0
+         4095.9375
+         DISPLAY_IDENTIFIER FISA_rAirLdMaxLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAirLdMinHighAFReg_C
+         "Remplissage moteur relatif mini pour observation du FR : hystérésis haut"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         4095.9375
+         FISA_CM_F_0v0625_p0_12
+         0
+         4095.9375
+         DISPLAY_IDENTIFIER FISA_rAirLdMinHighAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_rAirLdMinLowAFReg_C
+         "Remplissage moteur relatif mini pour observation du FR : hystérésis bas"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         4095.9375
+         FISA_CM_F_0v0625_p0_12
+         0
+         4095.9375
+         DISPLAY_IDENTIFIER FISA_rAirLdMinLowAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_spdMaxAdp_C
+         "Vitesse véhicule maxi pour ladaptation carburant (détection démarrage à la poussette)"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         511.9921875
+         FISA_CM_F_0v0078125_p0_13
+         0
+         511.9921875
+         DISPLAY_IDENTIFIER FISA_spdMaxAdp_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tiAFRegChk_T
+         "Carto de temps dobservation de la déviation du facteur de régulation de richesse"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         6553.5
+         FISA_CM_F_0v1_p0_14
+         0
+         6553.5
+         DISPLAY_IDENTIFIER FISA_tiAFRegChk_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tiInstChk_C
+         "Période dobservation des instabilités de régime avant reset du compteur dinstabilités"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         655.35
+         FISA_CM_F_0v01_p0_15
+         0
+         655.35
+         DISPLAY_IDENTIFIER FISA_tiInstChk_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tiInstChkEnd_T
+         "Carto de temps dobservation des instabilités de régime"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         6553.5
+         FISA_CM_F_0v1_p0_14
+         0
+         6553.5
+         DISPLAY_IDENTIFIER FISA_tiInstChkEnd_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tiStrtAFReg_C
+         "Tempo après lentrée en régulation de richesse pour autoriser lobservation de la déviation du FR"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_UBYTE
+         25.5
+         FISA_CM_F_0v1_p0_14
+         0
+         25.5
+         DISPLAY_IDENTIFIER FISA_tiStrtAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tiStrtInstChk_T
+         "Carto de tempo après la fin de lanalyse discriminante sur le gradient de régime pour activer lobservation des instabilités de régime"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         6553.5
+         FISA_CM_F_0v1_p0_14
+         0
+         6553.5
+         DISPLAY_IDENTIFIER FISA_tiStrtInstChk_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tMaxAdp_C
+         "Température deau maxi pour ladaptation carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_F_1_p0_2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_tMaxAdp_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tMaxAFReg_C
+         "Température deau maxi pour observation du FR"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_F_1_p0_2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_tMaxAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tMinAdp_C
+         "Température deau mini pour ladaptation carburant"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_F_1_p0_2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_tMinAdp_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_tMinAFReg_C
+         "Température deau mini pour observation du FR"
+         VALUE
+         0x0
+         FISA_RL_DATA_RECORD_SWORD
+         65535
+         FISA_CM_F_1_p0_2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_tMinAFReg_C
+      /end CHARACTERISTIC
+      /begin CHARACTERISTIC FISA_uMinGdStrt_T
+         "Carto de tension batterie mini fonction de la Teau"
+         CURVE
+         0x0
+         FISA_RL_DATA_RECORD_UWORD
+         655.35
+         FISA_CM_F_0v01_p0_16
+         0
+         655.35
+         DISPLAY_IDENTIFIER FISA_uMinGdStrt_T
+         /begin AXIS_DESCR
+            COM_AXIS
+            NO_INPUT_QUANTITY
+            FISA_CM_F_1_p0_2
+            12
+            -40
+            214
+            AXIS_PTS_REF FISA_tCoMes2_A
+         /end AXIS_DESCR
+      /end CHARACTERISTIC
+ 
+      
+      /begin CHARACTERISTIC
+        /* Name                   */   FISA_sNV_Z1_CST_8BIT_1_r.FISA_facAdp_NV
+        /* Long Identifier        */   "Ancienne valeur apprise du coefficient de qualité carburant"
+        /* Type                   */   VALUE
+        /* Memory Address         */   0x0
+        /* Record Layout          */   FISA_RL_DATA_RECORD_UBYTE
+        /* Maximum Difference     */   0
+        /* Conversion Method      */   FISA_CM_F_0v0078125_p0_15
+        /* Lower Limit            */   0
+        /* Upper Limit            */   1
+      /end CHARACTERISTIC
+   
+      
+      /begin MEASUREMENT
+        /* Name                   */   FISA_sNV_Z1_CST_8BIT_1.FISA_facAdp_NV
+        /* Long identifier        */   "Ancienne valeur apprise du coefficient de qualité carburant"
+        /* Data type              */   UBYTE
+        /* Conversion method      */   FISA_CM_F_0v0078125_p0_15
+        /* Resolution (Not used)  */   1
+        /* Accuracy (Not used)    */   2
+        /* Lower limit            */   0
+        /* Upper limit            */   1
+         DISPLAY_IDENTIFIER FISA_sNV_Z1_CST_8BIT_1.FISA_facAdp_NV
+         ECU_ADDRESS                       0x0
+      /end MEASUREMENT
+      
+      /begin MEASUREMENT 
+         /* Name                   */      FISA_ModuleVersion_Major_MP 
+         /* Long identifier        */      "Major version number" 
+         /* Data type              */      UBYTE 
+         /* Conversion method      */      FISA_CM_Version 
+         /* Resolution (Not used)  */      0 
+         /* Accuracy (Not used)    */      0 
+         /* Lower limit            */      0 
+         /* Upper limit            */      255 
+         ECU_ADDRESS                       0x0 
+      /end MEASUREMENT 
+
+      /begin MEASUREMENT 
+         /* Name                   */      FISA_ModuleVersion_Minor_MP 
+         /* Long identifier        */      "Minor version number" 
+         /* Data type              */      UBYTE 
+         /* Conversion method      */      FISA_CM_Version 
+         /* Resolution (Not used)  */      0 
+         /* Accuracy (Not used)    */      0 
+         /* Lower limit            */      0 
+         /* Upper limit            */      255 
+         ECU_ADDRESS                       0x0 
+      /end MEASUREMENT 
+    
+      /begin MEASUREMENT 
+         /* Name                   */      FISA_ModuleVersion_Patch_MP 
+         /* Long identifier        */      "Patch version number" 
+         /* Data type              */      UBYTE 
+         /* Conversion method      */      FISA_CM_Version 
+         /* Resolution (Not used)  */      0 
+         /* Accuracy (Not used)    */      0 
+         /* Lower limit            */      0 
+         /* Upper limit            */      255 
+         ECU_ADDRESS                       0x0 
+      /end MEASUREMENT 
+
+      
+      
+      /begin MEASUREMENT FISA_bAuthClc
+         "FISA_bAuthClc"
+         UBYTE
+         FISA_CM_Bool_ON_OFF
+         1
+         2
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bAuthClc
+         BIT_MASK 0x01
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_bRstInstCnt_MP
+         "FISA_bRstInstCnt_MP"
+         UBYTE
+         FISA_CM_Bool_ON_OFF
+         1
+         2
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bRstInstCnt_MP
+         BIT_MASK 0x01
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_bRstInstTmp_MP
+         "FISA_bRstInstTmp_MP"
+         UBYTE
+         FISA_CM_Bool_ON_OFF
+         1
+         2
+         0
+         1
+         DISPLAY_IDENTIFIER FISA_bRstInstTmp_MP
+         BIT_MASK 0x01
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_ctInst_MP
+         "FISA_ctInst_MP"
+         SWORD
+         FISA_CM_I_1
+         1
+         2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_ctInst_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facDif_MP
+         "FISA_facDif_MP"
+         UBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facDif_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facDifAFReg
+         "FISA_facDifAFReg"
+         SBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDifAFReg
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facDifAst
+         "FISA_facDifAst"
+         SBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDifAst
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facDifStrt
+         "FISA_facDifStrt"
+         SBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facDifStrt
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facIni_MP
+         "FISA_facIni_MP"
+         UBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facIni_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facNStrt_MP
+         "FISA_facNStrt_MP"
+         SWORD
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -327.68
+         327.67
+         DISPLAY_IDENTIFIER FISA_facNStrt_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facStabAvr_MP
+         "FISA_facStabAvr_MP"
+         UWORD
+         FISA_CM_F_0v001_p0_6
+         1
+         2
+         0
+         65.535
+         DISPLAY_IDENTIFIER FISA_facStabAvr_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facStepAdp_MP
+         "FISA_facStepAdp_MP"
+         SBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_facStepAdp_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_StepAdp_MP
+         "FISA_StepAdp_MP"
+         SBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         -1.28
+         1.27
+         DISPLAY_IDENTIFIER FISA_StepAdp_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_facStrtGain_MP
+         "FISA_facStrtGain_MP"
+         UBYTE
+         FISA_CM_F_0v01_p0_3
+         1
+         2
+         0
+         2.55
+         DISPLAY_IDENTIFIER FISA_facStrtGain_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_idxTypFac
+         "FISA_idxTypFac"
+         UBYTE
+         FISA_CM_F_1_p0_8
+         1
+         2
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_idxTypFac
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_idxTypIni
+         "FISA_idxTypIni"
+         UBYTE
+         FISA_CM_F_1_p0_8
+         1
+         2
+         0
+         255
+         DISPLAY_IDENTIFIER FISA_idxTypIni
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_nDifBurns_MP
+         "FISA_nDifBurns_MP"
+         SWORD
+         FISA_CM_I_1
+         1
+         2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_nDifBurns_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      /begin MEASUREMENT FISA_nDifEng_MP
+         "FISA_nDifEng_MP"
+         SWORD
+         FISA_CM_I_1
+         1
+         2
+         -32768
+         32767
+         DISPLAY_IDENTIFIER FISA_nDifEng_MP
+         ECU_ADDRESS 0x0
+      /end MEASUREMENT
+      
+      /begin COMPU_METHOD
+        /* Name of CompuMethod    */      FISA_CM_Version
+        /* Long identifier        */      "Q = V"
+        /* Conversion Type        */      RAT_FUNC
+        /* Format                 */      "%0.6"
+        /* Units                  */      "-"
+        /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_Bool_ON_OFF
+         "Conversion function FISA_CM_Bool_ON_OFF"
+         TAB_VERB
+         "%8.4"
+         "."
+         COMPU_TAB_REF FISA_CV__CNV_TAB_COMPU_VTAB1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v0001_p0_4
+         "Conversion function FISA_CM_F_0v0001_p0_4"
+         RAT_FUNC
+         "%9.4"
+         "-"
+         COEFFS 0 1 0 0 0 1.000000000000000e-004
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v001_p0_6
+         "Conversion function FISA_CM_F_0v001_p0_6"
+         RAT_FUNC
+         "%9.3"
+         "-"
+         COEFFS 0 1 0 0 0 1.000000000000000e-003
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v0078125_p0_11
+         "Conversion function FISA_CM_F_0v0078125_p0_11"
+         RAT_FUNC
+         "%9.3"
+         "%"
+         COEFFS 0 1 0 0 0 7.812500000000000e-003
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v0078125_p0_13
+         "Conversion function FISA_CM_F_0v0078125_p0_13"
+         RAT_FUNC
+         "%9.3"
+         "Km/h"
+         COEFFS 0 1 0 0 0 7.812500000000000e-003
+      /end COMPU_METHOD
+        /begin COMPU_METHOD FISA_CM_F_0v0078125_p0_15
+         "Conversion function FISA_CM_F_0v0078125_p0_15"
+         RAT_FUNC
+         "%9.3"
+         "-"
+         COEFFS 0 1 0 0 0 7.812500000000000e-003
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v01_p0_15
+         "Conversion function FISA_CM_F_0v01_p0_15"
+         RAT_FUNC
+         "%9.2"
+         "s"
+         COEFFS 0 1 0 0 0 1.000000000000000e-002
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v01_p0_16
+         "Conversion function FISA_CM_F_0v01_p0_16"
+         RAT_FUNC
+         "%9.2"
+         "Trsmn"
+         COEFFS 0 1 0 0 0 1.000000000000000e-002
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v01_p0_3
+         "Conversion function FISA_CM_F_0v01_p0_3"
+         RAT_FUNC
+         "%9.2"
+         "-"
+         COEFFS 0 1 0 0 0 1.000000000000000e-002
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v0625_p0_12
+         "Conversion function FISA_CM_F_0v0625_p0_12"
+         RAT_FUNC
+         "%9.2"
+         "%"
+         COEFFS 0 1 0 0 0 6.250000000000000e-002
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_0v1_p0_14
+         "Conversion function FISA_CM_F_0v1_p0_14"
+         RAT_FUNC
+         "%9.2"
+         "s"
+         COEFFS 0 1 0 0 0 0.1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_1_p0_2
+         "Conversion function FISA_CM_F_1_p0_2"
+         RAT_FUNC
+         "%9.2"
+         "°C"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_1_p0_5
+         "Conversion function FISA_CM_F_1_p0_5"
+         RAT_FUNC
+         "%9.2"
+         "mbars"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_1_p0_7
+         "Conversion function FISA_CM_F_1_p0_7"
+         RAT_FUNC
+         "%9.2"
+         "Trs/mn"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_1_p0_8
+         "Conversion function FISA_CM_F_1_p0_8"
+         RAT_FUNC
+         "%9.2"
+         "-"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_F_1_p0_9
+         "Conversion function FISA_CM_F_1_p0_9"
+         RAT_FUNC
+         "%9.2"
+         "Trsmn"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_I_1
+         "Conversion function FISA_CM_I_1"
+         RAT_FUNC
+         "%9.2"
+         "-"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_METHOD FISA_CM_I_10
+         "Conversion function FISA_CM_I_10"
+         RAT_FUNC
+         "%9.2"
+         "Trs/mn"
+         COEFFS 0 1 0 0 0 1
+      /end COMPU_METHOD
+      /begin COMPU_VTAB FISA_CV__CNV_TAB_COMPU_VTAB1
+         "Conversion table _CNV_TAB_COMPU_VTAB1"
+         TAB_VERB
+         2
+         0 "OFF"
+         1 "ON"
+      /end COMPU_VTAB
+      /begin FUNCTION FISA_FCT_FICHES
+         "Group FISA_FCT_FICHES"
+      /end FUNCTION
+      /begin FUNCTION FISA_FCT_FISA
+         "Group FISA_FCT_FISA"
+         /begin DEF_CHARACTERISTIC
+            FISA_sNV_Z1_CST_8BIT_1_r.FISA_facAdp_NV
+            FISA_bAcvAFRegWin_C
+            FISA_bAcvGrdWin_C
+            FISA_bAcvInstWin_T
+            FISA_bAFRegWin_BypC
+            FISA_bAuthSave_BypC
+            FISA_bGrdWin_BypC
+            FISA_bInstWin_BypC
+            FISA_bRstAdpDone_BypC
+            FISA_facAdp_BypC
+            FISA_facAFReg_C
+            FISA_facAFRegMax_T
+            FISA_facAFRegMin_T
+            FISA_facAltiRef_T
+            FISA_facDecCorMax_C
+            FISA_facDecInst_C
+            FISA_facDecInstMax_C
+            FISA_facDecMax_C
+            FISA_facIncCorMax_C
+            FISA_facIncInst_C
+            FISA_facIncInstMax_C
+            FISA_facIncMax_C
+            FISA_facInstMax_T
+            FISA_facNEng1_A
+            FISA_facPoor_C
+            FISA_facRich_C
+            FISA_facSatLo_C
+            FISA_facSatHi_C
+            FISA_facRstMax_T
+            FISA_facDecIni_T
+            FISA_facStepAdp_M
+            FISA_facStrtGain_M
+            FISA_INTEGRATION_TESTS_SC
+            FISA_nEngRal1_A
+            FISA_nEngRef1_A
+            FISA_nEngThdDeac_C
+            FISA_nMax_M
+            FISA_nMaxHighAFReg_C
+            FISA_nMaxLowAFReg_C
+            FISA_nMinCrk_stCluOff_T
+            FISA_nMinCrk_stCluOn_T
+            FISA_nMinHighAFReg_C
+            FISA_nMinLowAFReg_C
+            FISA_noIgMsk_T
+            FISA_noInj1_A
+            FISA_noInjStopAdp_T
+            FISA_noInstMax_C
+            FISA_noInstMin_C
+            FISA_noTDCInstAvr_C
+            FISA_nRefAT_M
+            FISA_nRefMT_stCluOff_M
+            FISA_nRefMT_stCluOn_M
+            FISA_pAirExtMes1_A
+            FISA_rAccPMaxHighAFReg_C
+            FISA_rAccPMaxLowAFReg_C
+            FISA_rAccPMinHighAFReg_C
+            FISA_rAccPMinLowAFReg_C
+            FISA_rAirLdMaxHighAFReg_C
+            FISA_rAirLdMaxLowAFReg_C
+            FISA_rAirLdMinHighAFReg_C
+            FISA_rAirLdMinLowAFReg_C
+            FISA_spdMaxAdp_C
+            FISA_tCoMes1_A
+            FISA_tCoMes2_A
+            FISA_tiAFRegChk_T
+            FISA_tiInstChk_C
+            FISA_tiInstChkEnd_T
+            FISA_tiStrtAFReg_C
+            FISA_tiStrtInstChk_T
+            FISA_tMaxAdp_C
+            FISA_tMaxAFReg_C
+            FISA_tMinAdp_C
+            FISA_tMinAFReg_C
+            FISA_uMinGdStrt_T
+         /end DEF_CHARACTERISTIC
+         /begin OUT_MEASUREMENT
+            FISA_ModuleVersion_Major_MP
+            FISA_ModuleVersion_Minor_MP
+            FISA_ModuleVersion_Patch_MP
+            FISA_bAuthClc
+            FISA_bRstInstCnt_MP
+            FISA_bRstInstTmp_MP
+            FISA_ctInst_MP
+            FISA_sNV_Z1_CST_8BIT_1.FISA_facAdp_NV
+            FISA_facDif_MP
+            FISA_facDifAFReg
+            FISA_facDifAst
+            FISA_facDifStrt
+            FISA_facIni_MP
+            FISA_facNStrt_MP
+            FISA_facStabAvr_MP
+            FISA_facStepAdp_MP
+            FISA_StepAdp_MP
+            FISA_facStrtGain_MP
+            FISA_idxTypFac
+            FISA_idxTypIni
+            FISA_nDifBurns_MP
+            FISA_nDifEng_MP
+         /end OUT_MEASUREMENT
+      /end FUNCTION
+      /begin FUNCTION FISA_FCT_FONCTIONS
+         "Group FISA_FCT_FONCTIONS"
+         /begin SUB_FUNCTION
+            FISA_FCT_FISA
+         /end SUB_FUNCTION
+      /end FUNCTION
+      /begin RECORD_LAYOUT FISA_RL_AXIS_PTS_X_SWORD_VEMS
+         AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+      /end RECORD_LAYOUT
+      /begin RECORD_LAYOUT FISA_RL_AXIS_PTS_X_UWORD_VEMS
+         AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+      /end RECORD_LAYOUT
+      /begin RECORD_LAYOUT FISA_RL_DATA_RECORD_SBYTE
+         FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+      /end RECORD_LAYOUT
+      /begin RECORD_LAYOUT FISA_RL_DATA_RECORD_SWORD
+         FNC_VALUES 1 SWORD ROW_DIR DIRECT
+      /end RECORD_LAYOUT
+      /begin RECORD_LAYOUT FISA_RL_DATA_RECORD_UBYTE
+         FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+      /end RECORD_LAYOUT
+      /begin RECORD_LAYOUT FISA_RL_DATA_RECORD_UWORD
+         FNC_VALUES 1 UWORD ROW_DIR DIRECT
+      /end RECORD_LAYOUT
+   /end MODULE
+
+/* ------------------------------ END OF MODULE FISA ------------------------------------*/

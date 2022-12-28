@@ -1,0 +1,843 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : FuSysExtLeakDiag                                        */
+/* !Description     : Functional diagnosis of external leak on Fuel System    */
+/*                                                                            */
+/* !Module          : FuSysExtLeakDiag                                        */
+/*                                                                            */
+/* !File            : FuSysExtLeakDiag.a2l                                    */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Tue Dec 17 15:22:53 2013                              */
+/*   Model name       : FuSysExtLeakDiag_AUTOCODE.mdl                         */
+/*   Model version    : 1.349                                                 */
+/*   Root subsystem   : /FuSysExtLeakDiag                                     */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FU/FUSYSEXTLEAKDIAG/FuSysExtLeak$*/
+/* $Revision::   1.5                                                         $*/
+/* $Author::   etsasson                               $$Date::   19 Dec 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   FuSysExtLeakDiag
+    /*   LongIdentifier */   "FuSysExtLeakDiag Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   FuSysExtLeakDiag_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailDifExtLeakThd_C
+       /*   LongIdentifier */   "Sueil sur le terme intégral pour pour la détection d'un défaut fuite external"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_LONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_1
+       /*   LowerLimit     */   -256.0
+       /*   UpperLimit     */   2.5599999988079074E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_mFuReqDiff_C
+       /*   LongIdentifier */   "Différence de consigne de masse à injecter"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   488.28125
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_tiTransPFuReq_C
+       /*   LongIdentifier */   "Calibration de la durée de la chute de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_nEngMinLeakEngRunDiag_C
+       /*   LongIdentifier */   "Engine speed min threshold for external diag activation in running"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailExtLeakMinThd_C
+       /*   LongIdentifier */   "Seuil de pression rail minimale pour l'activation du diagnostic fuite externe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailGrdExtLkEngRunOfsThd_C
+       /*   LongIdentifier */   "Offset de gradient de pression pour le calcul du seuil du diagnostic fuite externe moteur tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailGrdExtLkEngStallThd_T
+       /*   LongIdentifier */   "Carto 1D du seuil du gradient de pression sur la chute de pression pour le diagnostic de fuite externe moteurnon tournant"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   FuSysExtLeakDiag_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             Fu_pFuRailExtLeakEngStallMem_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuReqDiff_C
+       /*   LongIdentifier */   "Différence de consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_tiPFuRailExtLeakEngRunDly_C
+       /*   LongIdentifier */   "Temporisation pour regarder le gradient de pression rail lorsque le moteur est tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_tiPFuRailExtLeakEngStallDly_C
+       /*   LongIdentifier */   "Temporisation pour regarder le gradient de pression rail lorsque le moteur est non tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FUSYSEXTLEAKDIAG_u8Inhib
+       /*   LongIdentifier */   "Calibration Inhibition of module FuSysExtLeakDiag"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_bAcvExtLeakEngRunDiag_C
+       /*   LongIdentifier */   "Booléen d'activation du diagnostic de fuite externe moteur tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_bAcvExtLeakEngStallDiag_C
+       /*   LongIdentifier */   "Booléen d'activation du diagnostic de fuite externe moteur non tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailGrdExtLkEngRunGThd_C
+       /*   LongIdentifier */   "Gain du gradient de pression sur la chute de pression pour le calcul du seuil du diagnostic fuite externe moteur tournant"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   Fu_pFuRailExtLeakEngStallMem_A
+       /*   LongIdentifier */   "Vecteur de point d'appui de la pression rail mémorisée à l'activation du diagnostic moteur non tournant"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   FuSysExtLeakDiag_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   FuSysExtLeakDiag_CM_5
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiTransPFuReqDly
+       /*   LongIdentifier     */   "Durée de la chute de pression"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   FuSysExtLeakDiag_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqDiff
+       /*   LongIdentifier     */   "Différence de consigne de pression rail"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailGrdExtLeakEngStall
+       /*   LongIdentifier     */   "Gradient de pression sur la chute de pression pour le diagnostic fuite externe moteur non tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailExtLeakEngStallMem
+       /*   LongIdentifier     */   "Pression rail mémorisée à l'activation du diagnostic moteur non tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailGrdExtLeakEngRun
+       /*   LongIdentifier     */   "Gradient de pression sur la chute de pression pour le diagnostic fuite externe moteur tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailExtLeakEngRunMem
+       /*   LongIdentifier     */   "Pression rail mémorisée à l'activation du diagnostic moteur tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiPFuRailExtLeakEngStallDly
+       /*   LongIdentifier     */   "Temporisation pour regarder le gradient de pression rail lorsque le moteur est non tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiPFuRailExtLeakEngRunDly
+       /*   LongIdentifier     */   "Temporisation pour regarder le gradient de pression rail lorsque le moteur est tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiPFuRailExtLeakEngRunDlyIn
+       /*   LongIdentifier     */   "Initialisation de la temporisation pour regarder le gradient de pression rail lorsque le moteur est tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiPFuRailExtLeakEngStallDlyIn
+       /*   LongIdentifier     */   "Initialisation de la temporisation pour regarder le gradient de pression rail lorsque le moteur est non tournant"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   FuSysExtLeakDiag_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bStrtDiagExtLeakEngRun
+       /*   LongIdentifier     */   "Booléen indiquant le démarrage du diagnostic de fuite externe moteur tournant"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bActrTstInjr
+       /*   LongIdentifier     */   "Boolean indicating that an actuator test on one injector is occuring"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bStrtDiagExtLeakEngStall
+       /*   LongIdentifier     */   "Booléen indiquant le démarrage du diagnostic de fuite externe moteur non tournant"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvExtLeakEngStallDiag
+       /*   LongIdentifier     */   "Booléen d'activation du diagnostic de fuite externe moteur non tournant"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bMonRunExtLeak_FuSys
+       /*   LongIdentifier     */   "Activation du diagnostic de fuite externe sur le fuel system"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bDgoExtLeak_FuSys
+       /*   LongIdentifier     */   "Résultat du diagnostic fuite externe sur le fuel system"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bStabMFuReq
+       /*   LongIdentifier     */   "Booléen de stabilité de la consigne de masse à injecter"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bStabPFuReq
+       /*   LongIdentifier     */   "Booléen de stabilité de la pression"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvExtLeakEngRunDiag
+       /*   LongIdentifier     */   "Booléen d'activation du diagnostic de fuite externe moteur tournant"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   FuSysExtLeakDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_1
+       /*   LongIdentifier */   "Q = V*8388608"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 8388608 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_2
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_3
+       /*   LongIdentifier */   "Q = V*1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_5
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_6
+       /*   LongIdentifier */   "Q = V*10"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 10 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            FuSysExtLeakDiag_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_9
+       /*   LongIdentifier */   "Q = V*255"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 255 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_10
+       /*   LongIdentifier */   "Q = V*134217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 134217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   FuSysExtLeakDiag_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   FuSysExtLeakDiag_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   FuSysExtLeakDiag
+       /*   LongIdentifier */   "PTS_DOC_5304538.004"
+
+       /begin DEF_CHARACTERISTIC
+          FUSYSEXTLEAKDIAG_u8Inhib
+          Fu_bAcvExtLeakEngRunDiag_C
+          Fu_bAcvExtLeakEngStallDiag_C
+          Fu_mFuReqDiff_C
+          Fu_nEngMinLeakEngRunDiag_C
+          Fu_pFuRailDifExtLeakThd_C
+          Fu_pFuRailExtLeakEngStallMem_A
+          Fu_pFuRailExtLeakMinThd_C
+          Fu_pFuRailGrdExtLkEngRunGThd_C
+          Fu_pFuRailGrdExtLkEngRunOfsThd_C
+          Fu_pFuRailGrdExtLkEngStallThd_T
+          Fu_pFuReqDiff_C
+          Fu_tiPFuRailExtLeakEngRunDly_C
+          Fu_tiPFuRailExtLeakEngStallDly_C
+          Fu_tiTransPFuReq_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Fu_bActrTstInjr
+          Fu_bAcvExtLeakEngRunDiag
+          Fu_bAcvExtLeakEngStallDiag
+          Fu_bDgoExtLeak_FuSys
+          Fu_bMonRunExtLeak_FuSys
+          Fu_bStabMFuReq
+          Fu_bStabPFuReq
+          Fu_bStrtDiagExtLeakEngRun
+          Fu_bStrtDiagExtLeakEngStall
+          Fu_pFuRailExtLeakEngRunMem
+          Fu_pFuRailExtLeakEngStallMem
+          Fu_pFuRailGrdExtLeakEngRun
+          Fu_pFuRailGrdExtLeakEngStall
+          Fu_pFuReqDiff
+          Fu_tiPFuRailExtLeakEngRunDly
+          Fu_tiPFuRailExtLeakEngRunDlyIn
+          Fu_tiPFuRailExtLeakEngStallDly
+          Fu_tiPFuRailExtLeakEngStallDlyIn
+          Fu_tiTransPFuReqDly
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,37 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+ActivateTask|A|(argin uint8 Taskid);|2|HEADER|1|NONE||||0|0|0|0||
+EcuSt_EveFrstKOn_Wku|A|();|4|HEADER|1|NONE||||0|0|0|0||
+EcuSt_EveIni_Wku|A|();|SCH.6|WKU|1|PTS_DOC_6765172||||0|0|0|0|Reset pour déclenchement du premier Key ON|
+EcuSt_EvePtlWku_Wku|C|();|3|HEADER|1|NONE||||0|0|0|0|Evénement correspondant au reveil partiel activé|
+EcuSt_EveRst_Wku|G|();|SCH.1|WKU|1|PTS_DOC_6765172||||0|0|0|0|Fonction Reset|
+EcuSt_EveRxn432_Wku|G|();|SCH.2|WKU|1|PTS_DOC_6765172||||0|0|0|0|Fonction ordonnanceur des taches actives sur evenement EcuSt_EveRxnFrame432_Wku|
+EcuSt_SdlFast_Wku|H|();|SCH.4|WKU|1|PTS_DOC_6765172||||0|0|0|0|Englobe les fonctions appelées à la récurence de EcuSt_SdlFast_Wku|
+EcuSt_SdlMid_Wku|G|();|SCH.3|WKU|1|PTS_DOC_6765172||||0|0|0|0|Englobe les fonctions activés sur le moniteur fixe EcuSt_SdlMid_Wku|
+EcuSt_SdlSlow_Wku|F|();|SCH.5|WKU|1|PTS_DOC_6765172||||0|0|0|0|Moniteur lent de la fonction EcuSt|
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|4|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean bDiagStWait);|1|HEADER|1|NONE||||0|0|0|0||
+WKU_vidAPCFirstKeyOn|A|();|FCT3.5|WKU|0|PTS_DOC_6765172||||0|0|0|0|Generation of a Key ON at the end of initialization in the case of +APC application.|
+WKU_vidBlcPartWkADCAntCase|G|();|FCT2.3|WKU|0|PTS_DOC_6765172||||0|0|0|0|Cas réveil partiel bloqué anticipation ADC|
+WKU_vidBlcPartWkEngOilMesPrep|G|();|FCT2.5|WKU|0|PTS_DOC_6765172||||0|0|0|0|Cas réveil partiel bloqué préparation mesures huile moteur|
+WKU_vidBlcPartWkEngPostVent|G|();|FCT2.6|WKU|0|PTS_DOC_6765172||||0|0|0|0|Cas réveil partiel bloqué préparation post-ventilation moteur|
+WKU_vidBlcPartWkEngStartPrep|H|();|FCT2.4|WKU|0|PTS_DOC_6765172||||0|0|0|0|Cas réveil partiel bloqué préparation démarrage moteur|
+WKU_vidBlocPartWkEngOilMeas|G|();|FCT1.7|WKU|0|PTS_DOC_6765172||||0|0|0|0|Mise à jour des variables liées au réveil partiel pour mesure du niveau d'huile|
+WKU_vidCaseRcdSignalEqual0|C|();|FCT3.4|WKU|0|PTS_DOC_6765172||||0|0|0|0|the value of Boolean Clef_de_contact_ss_coh and counter Rcd_tempo_boot_count whenRCD signal is equal to 0.|
+WKU_vidCaseRcdSignalEqual1|C|();|FCT3.3|WKU|0|PTS_DOC_6765172||||0|0|0|0|the value of Boolean Clef_de_contact_ss_coh and counter Rcd_tempo_boot_count when RCD signal is equal to 1.|
+WKU_vidElectronicIntegration|E|();|FCT3.1|WKU|0|PTS_DOC_6765172||||0|0|0|0|Intégration Electronique|
+WKU_vidForcMainWkAtReqDiag|G|();|FCT2.9|WKU|0|PTS_DOC_6765172||||0|0|0|0|Forçage réveil principal sur requête diagnostic|
+WKU_vidFrameMonitoring|J|();|FCT1.3|WKU|0|PTS_DOC_6765172||||0|0|0|0|Sur moniteur fixe EcuSt_SdlMid_Wku, on calcule le nombre de trames reçues, qui doit être de 1 ou 2 trames (trame 50 ms). Si ce n'est pas le cas, la panne d'absence de trame est comptée avant d'appeler le mode dégradé correspondant|
+WKU_vidFrameReception|J|();|FCT1.2|WKU|0|PTS_DOC_6765172||||0|0|0|0|Réception de la trame 432H|
+WKU_vidInitWku|I|();|FCT1.1|WKU|0|PTS_DOC_6765172||||0|0|0|0|Au reset, on différencie le cas d'une gestion +APC ou RCD afin que le calculateur ne reste pas verrouillé.|
+WKU_vidInterface|E|();|FCT3.2|WKU|0|PTS_DOC_6765172||||0|0|0|0|Affectation de valeurs aux sorties selon la valeur du boolean indiquant l'integration du composant RCD.|
+WKU_vidMainGradToPass|H|();|FCT2.7|WKU|0|PTS_DOC_6765172||||0|0|0|0|Sortie du réveil principal dégradé vers la phase transitoire|
+WKU_vidMainWkCohDmdWku|F|();|FCT2.1|WKU|0|PTS_DOC_6765172||||0|0|0|0|Reveil principal du contrôle de cohérence des demandes RCD|
+WKU_vidMainWkIncoh|J|();|FCT2.2|WKU|0|PTS_DOC_6765172||||0|0|0|0|Contrôle de cohérence entre Clef_de_contact et Rcd_signal|
+WKU_vidMainWkPassCANOutOfOrd|J|();|FCT2.8|WKU|0|PTS_DOC_6765172||||0|0|0|0|Passage en réveil principal en cas de CAN hors service|
+WKU_vidMainWku|G|();|FCT1.9|WKU|0|PTS_DOC_6765172||||0|0|0|0|Mise à jour des variables liées au réveil principal|
+WKU_vidMgmtCntPowerOnDefault|G|();|FCT1.10|WKU|0|PTS_DOC_6765172||||0|0|0|0|Gérer le compteur de passage en POWER_ON_DEFAULT|
+WKU_vidPartWkADCAnticip|G|();|FCT1.5|WKU|0|PTS_DOC_6765172||||0|0|0|0|Mise à jour des variables liées au réveil partiel anticipation ADC. En cas de réveils partiels multiples le CMM effectue l'ensemble des réveils partiels activés.|
+WKU_vidPartWkEngPostVent|G|();|FCT1.8|WKU|0|PTS_DOC_6765172||||0|0|0|0|Mise à jour des variables liées au réveil partiel pour post-ventilation moteur|
+WKU_vidPartWkEngStartPrep|H|();|FCT1.6|WKU|0|PTS_DOC_6765172||||0|0|0|0|Mise à jour des variables liées au réveil partiel préparation moteur|
+WKU_vidRstRcdCount|D|();|FCT2.10|WKU|0|PTS_DOC_6765172||||0|0|0|0|Ré-initialisation de Rcd_bascule_vers_principal_count sur l'événement Clef_off_on|
+WKU_vidTimerFlow|G|();|FCT1.4|WKU|0|PTS_DOC_6765172||||0|0|0|0|Ecoulement du timer Rcd_tempo_boot_count pour que le comptage des pannes FRM_bAcvPwrOnDftModRVRxn432 et FRM_bAcvDft_EcuSt_CohBsi soit possible.|

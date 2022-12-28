@@ -1,0 +1,2408 @@
+﻿/begin MODULE
+    /*   Name           */   AirSysAir
+    /*   LongIdentifier */   "AirSysAir Software Component"
+
+    /begin MOD_PAR
+       /*   Comment          */   "-"
+    /end MOD_PAR
+
+    /begin MOD_COMMON
+       /*   Comment                */   "-"
+       BYTE_ORDER                       MSB_FIRST
+    /end MOD_COMMON
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   AirSysAir_RL_Lookup1D_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tiDmpDec_T
+       /*   LongIdentifier */   "temps de retour au coefficient de filtrage de 1"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535998474121095E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEngDec_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tiTqDec_T
+       /*   LongIdentifier */   "temps de retour à la consigne de surface brute saturée"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535998474121095E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEngDec_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mAirEngIntCor_B
+       /*   LongIdentifier */   "Action intégrale sur la masse dair pompée par cylindre (Non Visualisable) \\\\ Integration of the one-cylinder pumped air mass Dim  1x1 (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_3
+       /*   LowerLimit     */   -0.0019531
+       /*   UpperLimit     */   1.9530999990905050E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_facCfe_T
+       /*   LongIdentifier */   "Cartographie du Cfe papillon"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.2499046325683587E-002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_9
+          /*   MaxAxisPoints  */   22
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   9.9998474121093750E-001
+          AXIS_PTS_REF             Air_rAirPres_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tiAcvDlyDmp_C
+       /*   LongIdentifier */   "Temps dactivation de la stratégie de filtrage surface efficace papillon via activation de la DV"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535998474121095E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tiSampleFastThr_C
+       /*   LongIdentifier */   "sample time de la stratégie papillon (0.01s)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535998474121095E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mAirEngCylMaxReq_C
+       /*   LongIdentifier */   "Valeur maxi de lobjectif de masse dair pompée pour protection moteur en coupure dinjection \\\\ Maximal value of the pumped air mass to protect the engine during a cutoff"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mAirEngCylReq_tqEng_B
+       /*   LongIdentifier */   "Objectif de masse dair pompée par cylindre sans correction \\\\ Air mass pumped per cylinder objective without any correction Dim  1x1 (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mAirEngCylThdReq_C
+       /*   LongIdentifier */   "Seuil de stabilité de la consigne de masse dair pompée \\\\ Stability threshold of the pumped air mass setting"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mAirEngCylThd_C
+       /*   LongIdentifier */   "Seuil en masse dair permettant de définir lactivation de la stratégie de limite de pompage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mEngAirThd_C
+       /*   LongIdentifier */   "Seuil de stabilité de la masse dair pompée pour MBF \\\\ Stability threshold of the pumped air mass for MBF"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+    /end CHARACTERISTIC
+
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rMaxThrPosn_T
+       /*   LongIdentifier */   "Table de valeur de la position du papillon qui stoppe l'intégrateur en pleine charge\\\\ Throttle valve position value which cancels the integrator at full load"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   10
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rMinThrPosn_C
+       /*   LongIdentifier */   "Valeur de la position du papillon qui stoppe lintégrateur \\\\ Throttle valve position value which cancels the integrator"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rOpThrReqMaxOfs_C
+       /*   LongIdentifier */   "Offset de position butée haute du papillon pour le seuil bas de lhystérésis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rAirLdReq_B
+       /*   LongIdentifier */   "Objectif de charge en air Dim  1x1 (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_facFilArEfcThr_C
+       /*   LongIdentifier */   "Facteur de filtrage de la consigne de surface papillon brute"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_faciMassIntCorRef1_T
+       /*   LongIdentifier */   "Table de coefficient de la correction intégrale pour le correcteur PI en zone atmophérique"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_19
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -0.003906
+          /*   UpperLimit     */   3.9058807983398439E-003
+          AXIS_PTS_REF             AirSys_mEngAirErr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_prm_mfAirThrReq_B
+       /*   LongIdentifier */   "Vecteur dobjectifs de débit au niveau du papillon avec et sans correction PI (en mode richesse fixée) Dim  1x2 (Bypass)"
+       /*   Type           */   VAL_BLK
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+       MATRIX_DIM               2 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tqLoThd_T
+       /*   LongIdentifier */   "Table de couple permettant lactivation de la stratégie de filtrage via le seuil de couple"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_11
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEngTq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tqOfsHiThd_C
+       /*   LongIdentifier */   "Hysteresis de couple permettant lactivation de la stratégie de filtrage via le seuil de couple"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_11
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_facpMassIntCorRef1_M
+       /*   LongIdentifier */   "Cartographie gain proportionnel du correcteur PI sur la masse d'air objective en zone atmophérique"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_19
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -0.003906
+          /*   UpperLimit     */   3.9058807983398439E-003
+          AXIS_PTS_REF             AirSys_mEngAirErr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   10
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pCllThrHyst_C
+       /*   LongIdentifier */   "Seuil hystérésis de pression pour le figeage du ratio de pression avec overshoot"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pCllThrThd_C
+       /*   LongIdentifier */   "Seuil dovershoot de pression au-dessus duquel on contrôle le papillon en boucle fermée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pFilInhHiThd_C
+       /*   LongIdentifier */   "Seuil haut d'inhibition du filtrage de ratio de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pFilInhLoThd_C
+       /*   LongIdentifier */   "Seuil bas d'inhibition du filtrage de ratio de pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pNoiseNegThd_C
+       /*   LongIdentifier */   "Seuil de bruit sur le gradient négatif de consigne de pression collecteur."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_pNoiseThd_C
+       /*   LongIdentifier */   "Seuil de bruit sur la consigne de pression collecteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_prm_pInMnfReq_B
+       /*   LongIdentifier */   "Vecteur dobjectifs de pression collecteur avec et sans correction PI Dim  1x2 (Bypass)"
+       /*   Type           */   VAL_BLK
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       MATRIX_DIM               2 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_arEfcThrMax_C
+       /*   LongIdentifier */   "Surface efficace maxi du papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_14
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_arThrReq_B
+       /*   LongIdentifier */   "Consigne de section efficace papillon (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552242E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_facArEfcThrFil_M
+       /*   LongIdentifier */   "Facteur de filtrage de la consigne de surface papillon saturée ou filtrée"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_14
+          /*   MaxAxisPoints  */   6
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   3.9061903953552250E-003
+          AXIS_PTS_REF             AirSys_arEfcThrReqTqY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEngArFilGainX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_facFilGain_M
+       /*   LongIdentifier */   "Cartographie secondaire du gain de filtrage du ratio de pression papillon"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_16
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   1.5258789062500000E-005
+          /*   UpperLimit     */   1.0
+          AXIS_PTS_REF             AirSys_rAirPresCorFilGainY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_2
+          /*   MaxAxisPoints  */   10
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             AirSys_nEngFilGainX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rAirPresFilGain_M
+       /*   LongIdentifier */   "Cartographie principale du gain de filtrage du ratio de pression de consigne papillon"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_16
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   1.5258789062500000E-005
+          /*   UpperLimit     */   1.0
+          AXIS_PTS_REF             AirSys_rAirPresCorFilGainY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_16
+          /*   MaxAxisPoints  */   10
+          /*   LowerLimit     */   1.5258789062500000E-005
+          /*   UpperLimit     */   1.0
+          AXIS_PTS_REF             AirSys_rAirPresRawFilGainX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rAirPresFilGain_T
+       /*   LongIdentifier */   "Cartographie du gain variable du filtrage du ratio de pression du CFE"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_16
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   1.5258789062500000E-005
+          /*   UpperLimit     */   1.0
+          AXIS_PTS_REF             AirSys_rAirPresFilGain_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_tiDlyAftEgrFoul_C
+       /*   LongIdentifier */   "Délai après létat EGR_PREVENT_FOULING avant autorisation de lintégrateur \\\\ Delay after the EGR_PREVENT_FOULING state, before the integrator authorization"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   32.7675
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mfFuStmMax_T
+       /*   LongIdentifier */   "Table de débit de blow-by maximum"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_18
+       /*   LowerLimit     */   -0.00711066
+       /*   UpperLimit     */   7.1104349999999992E-003
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   AirSysAir_CM_10
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   9.9998474121093750E-001
+          AXIS_PTS_REF             AirSys_mfAirThrReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mEngAirIntCorMin_C
+       /*   LongIdentifier */   "Correction intégrale minimale sur la masse dair pompée par cylindre \\\\ Minimal integral correction on the air mass pumped per cylinder"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_20
+       /*   LowerLimit     */   -1.9454956054687500E-003
+       /*   UpperLimit     */   0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rFrzHiThd_C
+       /*   LongIdentifier */   "Seuil haut du figeage du ratio à autour de Patmo"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_21
+       /*   LowerLimit     */   -0.25
+       /*   UpperLimit     */   2.4999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rFrzLoThd_C
+       /*   LongIdentifier */   "Seuil bas du figeage du ratio à autour de Patmo"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_21
+       /*   LowerLimit     */   -0.25
+       /*   UpperLimit     */   2.4999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AIRSYSAIR_ACTIVE_BYP_C
+       /*   LongIdentifier */   "Calibration de Bypass."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bActStraLimSurge_B
+       /*   LongIdentifier */   "Booléen dactivation de la stratégie de limite de pompage. Dim = 1x1  Bypass"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvDeceThrCtl_C
+       /*   LongIdentifier */   "Booléen d'activation de la stratégie de contrôle de la décélération par le papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvDlyThr2_C
+       /*   LongIdentifier */   "Booleen dactivation du choix de pas de retard 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvDlyThr_C
+       /*   LongIdentifier */   "Booleen dactivation du choix de pas de retard"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvFilArEfcThr_C
+       /*   LongIdentifier */   "Booléen dactivation de lutilisation de la consigne de surface papillon filtrée en entrée du coefficient de filtrage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvFilAr_C
+       /*   LongIdentifier */   "Boolean dactivation de la stratégie de filtrage de la consigne de surface papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvInhCfeFilDmp_C
+       /*   LongIdentifier */   "Boolean dactivation de la possibilité dihnibition du filtrage cfe du à la stratégie de filtrage de la consigne de surface papillon via DV"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvInhCfeFilTq_C
+       /*   LongIdentifier */   "Boolean dactivation de la possibilité dihnibition du filtrage cfe du à la stratégie de filtrage de la consigne de surface papillon via seuil de couple"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvStraTqReq_C
+       /*   LongIdentifier */   "Boolean dactivation de la stratégie de filtrage de la consigne de surface papillon via seulement DV"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvTqReqASR_C
+       /*   LongIdentifier */   "Boolean dactivation de la condition sur de déclenchement de lESP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bAcvTqReq_C
+       /*   LongIdentifier */   "Booleen dactivation de la stratégie de boucle SC du au filtrage de la consigne de section papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bArMaxInh_C
+       /*   LongIdentifier */   "Booléen dinhibition du maximum pris entre les sections efficaces en et hors structure couple."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bFilGain_C
+       /*   LongIdentifier */   "Booléen de choix de la stratégie de filtrage papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bInhFilRat_C
+       /*   LongIdentifier */   "Booléen dinhibition de la stratégie de filtrage du ratio de pression (débouclage structure couple)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bInhFullLdCtl_C
+       /*   LongIdentifier */   "Booléen dinhibition du PI dans la zone de pleine ouverture du papillon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bInhPIIdl_C
+       /*   LongIdentifier */   "Booléen dinhibition du calcul du PI du correcteur dair au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bInhPILimSurge_C
+       /*   LongIdentifier */   "Booléen dinhibition de la stratégie de limitation de pompage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bInhPiAirEngCor_B
+       /*   LongIdentifier */   "Inhibition du terme Intégrateur pour le régulateur de masse dair pompée \\\\ Inhibition of the integrator term for the pumped air mass regulator Dim  1x1 (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bPresTrb_C
+       /*   LongIdentifier */   "Booléen de présence d'un système de suralimentation en air du moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bSelClcMod_pDsThrReq_C
+       /*   LongIdentifier */   "Flag permettant de prendre en compte la pente et offset corrigés ou de consigne"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bSelMAirEngCylReq_C
+       /*   LongIdentifier */   "Booléen permettant de choisir la consigne de masse dair utilisée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_bSelMaxThrPosn_C
+       /*   LongIdentifier */   "Booléen de choix de position maximum du papillon pour inhibition du régulateur de charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_mEngAirIntCorMax_C
+       /*   LongIdentifier */   "Correction intégrale maximale sur la masse dair pompée par cylindre \\\\ Maximal integral correction on the air mass pumped per cylinder"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_20
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9454956054687500E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rFrzPres_C
+       /*   LongIdentifier */   "Valeur du ratio figé"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_23
+       /*   LowerLimit     */   0.00390625
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   AirSys_rAirPresMaxDif_C
+       /*   LongIdentifier */   "Différence max entre le ratio de pression brute et filtré"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   AirSysAir_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_24
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.99609375
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_nEngDec_A
+       /*   LongIdentifier */   "Table de régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_nEng_A
+       /*   LongIdentifier */   "Table de régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_2
+       /*   MaxAxisPoints  */   10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_mEngAirErr_A
+       /*   LongIdentifier */   "Table équirépartie de lerreur entre masse dair pompée consigne et masse dair pompée MBF \\\\ Breakpoints table of the error between the pumped air mass setting and the MBF pumped air mass"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_19
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -0.003906
+       /*   UpperLimit     */   3.9058807983398439E-003
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_nEngTq_A
+       /*   LongIdentifier */   "Table de régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_arEfcThrReqTqY_A
+       /*   LongIdentifier */   "Table de section efficace papillon"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_14
+       /*   MaxAxisPoints  */   6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_nEngArFilGainX_A
+       /*   LongIdentifier */   "Table de régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_rAirPresCorFilGainY_A
+       /*   LongIdentifier */   "Point d'appuis en ratio de pression courant des cartographies de gain de filtrage papillon"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   MaxAxisPoints  */   12
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_nEngFilGainX_A
+       /*   LongIdentifier */   "Point d'appuis en régime moteur de la cartographie secondaire de filtrage papillon"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_2
+       /*   MaxAxisPoints  */   10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_rAirPresRawFilGainX_A
+       /*   LongIdentifier */   "Point d'appuis en ratio de pression de consigne de la cartographie principale du gain de filtrage papillon"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   MaxAxisPoints  */   10
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_rAirPresFilGain_A
+       /*   LongIdentifier */   "Table de point dappui en ratio de pression pour le gain de filtrage"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   AirSys_mfAirThrReq_A
+       /*   LongIdentifier */   "Table de débit de consigne papillon"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   AirSysAir_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   AirSysAir_CM_10
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+    /end AXIS_PTS
+
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysAir_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysAir_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysAir_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysAir_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AirSysAir_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AirSysAir_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_facArEfcThrFilGain
+       /*   LongIdentifier */   "Facteur de filtrage de section efficace"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_facAcvTq
+       /*   LongIdentifier */   "Facteur dactivation de la stratégie de filtrage de la consigne de surface via stratégie seuil couple"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_facAcvDmp
+       /*   LongIdentifier */   "Facteur dactivation de la stratégie de filtrage de la consigne de surface via stratégie DV"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqDmpSysFil
+       /*   LongIdentifier */   "Consigne de section efficace papillon filtrée dûe à lactivation de la DV"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqTqSysFil
+       /*   LongIdentifier */   "Consigne de section efficace papillon en structure couple brute Filtrée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqTqSysRaw
+       /*   LongIdentifier */   "Consigne de section efficace papillon en structure couple brute"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mfAirThrReq_arThr
+       /*   LongIdentifier */   "Objectif de débit surfacique d'air passant par le papillon"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   511.9921875
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_pInMnfReq_tqEng
+       /*   LongIdentifier */   "Objectif de pression collecteur sans correction PI"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_pInMnfReq
+       /*   LongIdentifier */   "Objectif de pression collecteur avec correction PI"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresReqFil
+       /*   LongIdentifier */   "Rapport entre la pression collecteur objectif et la pression amont du papillon filtrée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rFilGainPresRat
+       /*   LongIdentifier */   "Valeur du gain de filtrage du ratio de pression"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresFinal
+       /*   LongIdentifier */   "Valeur du ratio de pression pour déterminer le gain de filtrage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_pInMnfOplReq
+       /*   LongIdentifier */   "Consigne de pression collecteur utilisée pour le débouclage du papillon"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresRaw
+       /*   LongIdentifier */   "Valeur brute du ratio de pression pour déterminer le gain de filtrage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresReqNoFil
+       /*   LongIdentifier */   "Rapport entre la pression collecteur objectif et la pression amont du papillon non filtrée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mAirEngIntCorPrev
+       /*   LongIdentifier */   "Action intégrale précédente sur la masse d'air pompée par cylindre"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -0.0019531
+       /*   UpperLimit     */   1.9530999990905050E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mEngAirCorOfs
+       /*   LongIdentifier */   "Correction sur lobjectif de masse dair pompée \\\\ Correction on the pumped air mass objective"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -0.003906
+       /*   UpperLimit     */   3.9058807983398439E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mAirEngPropCor
+       /*   LongIdentifier */   "Correction du terme proportionnel sur lobjectif de masse dair pompée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -0.003906
+       /*   UpperLimit     */   3.9058807983398439E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mEngAirErr
+       /*   LongIdentifier */   "Erreur sur la masse dair pompée par cylindre \\\\ Error on the air mass pumped per cylinder"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -0.003906
+       /*   UpperLimit     */   3.9058807983398439E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mAirEngSelReq
+       /*   LongIdentifier */   "Masse dair de consigne arbitrée entre la volonté conducteur et la limite de pompage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   AirSysAir_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_prm_mAirEngReq_MP
+       /*   LongIdentifier */   "Vecteur dobjectifs de masse dair pompée par cylindre avec et sans correction PI"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_prm_mAirCylReq_IRV_MP
+       /*   LongIdentifier */   "Vecteur dobjectifs de masse de gaz pompée par cylindre avec et sans correction PI Dim  1x2 (IRV_MP)"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mAirEngCorReq_IRV_MP
+       /*   LongIdentifier */   "Objectif de masse dair pompée par cylindre corrigé \\\\ Air mass pumped per cylinder corrected objective Dim  1x1 (IRV_MP)"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqTqSysSat
+       /*   LongIdentifier */   "Consigne de section efficace papillon en structure couple brute Saturée"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_14
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqTqSys_IRV_MP
+       /*   LongIdentifier */   "Consigne de section efficace papillon en structure couple Dim  1x1 (IRV_MP)"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_15
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552242E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresReqPrev
+       /*   LongIdentifier */   "Valeur prévu du rapport entre la pression collecteur objectif et la pression amont du papillon."
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresCor_MP
+       /*   LongIdentifier */   "Valeur du ratio de pression corrigée"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPres_MP
+       /*   LongIdentifier */   "Valeur du ratio de pression de consigne brute"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresInter_MP
+       /*   LongIdentifier */   "Valeur précédente ou actuelle du ratio de pression de consigne brute pour déterminer le gain de filtrage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_rAirPresReq_IRV_MP
+       /*   LongIdentifier */   "Rapport entre la pression collecteur objectif et la pression amont du papillon (IRV_MP)"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_tiDlyAftEgrFoulPrev
+       /*   LongIdentifier */   "Temporisation précédente après l'état EGR_PREVENT_FOULING avant autorisation de l'intégrateur"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   32.7675
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_tiDlyAftEgrFoul_IRV_MP
+       /*   LongIdentifier */   "Temporisation après létat EGR_PREVENT_FOULING avant autorisation de lintégrateur \\\\ Waiting after the EGR_PREVENT_FOULING state,before the integrator authorization (IRV_MP)"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   32.7675
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bThrEff_MP
+       /*   LongIdentifier */   "Flag dactivation du gestionnaire de la section efficace du papillon"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bAcvDmp
+       /*   LongIdentifier */   "Booleen dactivation de la stratégie de filtrage de la consigne de surface via stratégie DV"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bAcvTq
+       /*   LongIdentifier */   "Booleen dactivation de la stratégie de filtrage de la consigne de surface via stratégie seuil de couple"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bAcvDmpRaw_MP
+       /*   LongIdentifier */   "Booleen dactivation de la stratégie de filtrage de la consigne de surface via stratégie DV (sans condition defaut)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bAcvTqRaw_MP
+       /*   LongIdentifier */   "Booleen dactivation de la stratégie de filtrage de la consigne de surface via stratégie seuil de couple (sans condition defaut)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhCfeFil
+       /*   LongIdentifier */   "Booléen d'inhibition du filtrage de CFE"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhTrbAirPresRatCtl
+       /*   LongIdentifier */   "Booléen de sélection du ratio de pression utilisé pour la section papillon de consigne"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPILimSurge
+       /*   LongIdentifier */   "Booléen dinhibition du PI lorsque la limitation de pompage est active"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPIEgrFoul
+       /*   LongIdentifier */   "Booléen dinhibition du PI pendant un décrassage de la vanne EGR"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPITranLdDet
+       /*   LongIdentifier */   "Booléen dinhibition du PI sur transitoire de charge"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPIThrLim
+       /*   LongIdentifier */   "Booléen dinhibition du PI lorsque le papillon est proche de ses butées"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPIAccPMin
+       /*   LongIdentifier */   "Booléen dinhibition du PI en pleine charge en condition de débouclage de structure couple et en levée de pied"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bInhPIStructAirOpl
+       /*   LongIdentifier */   "Booléen dinhibition du PI en structure couple débouclée"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_bActStraLimSurgeDmpSw
+       /*   LongIdentifier */   "Booléen dactivation de la demande de bouclage SC issu de la stratégie de limite de pompage."
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   AirSysAir_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_mAirEngCylSurgeLimReq_MP
+       /*   LongIdentifier */   "Masse dair de consigne limitant le pompage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.8118807983398441E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_facCfe_MP
+       /*   LongIdentifier */   "Variable intermédiaire pour le calcul du flux surfacique objectif"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.062499
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrTq_MP
+       /*   LongIdentifier */   "Point de mesure de la consigne de section efficace papillon selon letat du gestionnaire de la section efficace"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552242E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_arEfcThrReqDmpSys_MP
+       /*   LongIdentifier */   "Consigne de section efficace papillon dûe à lactivation de la DV"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_14
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.9061903953552250E-003
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   AirSys_facArEfcThrFilGain_MP
+       /*   LongIdentifier */   "Facteur de filtrage de la stratégie de filtrage de la consigne de surface"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   AirSysAir_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AirSysAir_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_1
+       /*   LongIdentifier */   "Q = V*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 65536 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_3
+       /*   LongIdentifier */   "Q = (V+0.0019531)*1.09951162778e+012"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 1.09951162778e+012 2147456160.21 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_4
+       /*   LongIdentifier */   "Q = V*1048576"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s/m.K^0.5"
+       COEFFS                   0 1048576 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_5
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_6
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg/cyl/cycle"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_7
+       /*   LongIdentifier */   "Q = V*1024"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1024 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_8
+       /*   LongIdentifier */   "Q = V*16384"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 16384 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_9
+       /*   LongIdentifier */   "Q = V*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 65536 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_10
+       /*   LongIdentifier */   "Q = V*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg/s"
+       COEFFS                   0 65536 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_11
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "N.m"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_12
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_13
+       /*   LongIdentifier */   "Q = V/8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_14
+       /*   LongIdentifier */   "Q = V*16777216"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "m^2"
+       COEFFS                   0 16777216 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_15
+       /*   LongIdentifier */   "Q = V*16777216"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "m²"
+       COEFFS                   0 16777216 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_16
+       /*   LongIdentifier */   "Q = (V-1.52587890625e-005)*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 65536 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_17
+       /*   LongIdentifier */   "Q = V*2000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 2000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_18
+       /*   LongIdentifier */   "Q = (V+0.00711066)*4608294.93088"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg/s"
+       COEFFS                   0 4608294.93088 32768.0184332 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_19
+       /*   LongIdentifier */   "Q = (V+0.003906)*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 32768 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_20
+       /*   LongIdentifier */   "Q = V*131072"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 131072 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_21
+       /*   LongIdentifier */   "Q = (V+0.25)*131072"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 131072 32768 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "-"
+       COMPU_TAB_REF            AirSysAir_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_23
+       /*   LongIdentifier */   "Q = (V-0.00390625)*256"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 256 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_24
+       /*   LongIdentifier */   "Q = V*256"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 256 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_25
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_26
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "m^2"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_27
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg/s/m^2"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_28
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_29
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   AirSysAir_CM_30
+       /*   LongIdentifier */   "Q = V*16777216"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "m2"
+       COEFFS                   0 16777216 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   AirSysAir_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   AirSysAir_FCT_AirSysAir
+       /*   LongIdentifier */   "CHARACTERISTIC and MEASUREMENT of AirSysAir Software Component"
+
+       /begin DEF_CHARACTERISTIC
+          AIRSYSAIR_ACTIVE_BYP_C
+          AirSys_arEfcThrMax_C
+          AirSys_arEfcThrReqTqY_A
+          AirSys_arThrReq_B
+          AirSys_bActStraLimSurge_B
+          AirSys_bAcvDeceThrCtl_C
+          AirSys_bAcvDlyThr2_C
+          AirSys_bAcvDlyThr_C
+          AirSys_bAcvFilArEfcThr_C
+          AirSys_bAcvFilAr_C
+          AirSys_bAcvInhCfeFilDmp_C
+          AirSys_bAcvInhCfeFilTq_C
+          AirSys_bAcvStraTqReq_C
+          AirSys_bAcvTqReqASR_C
+          AirSys_bAcvTqReq_C
+          AirSys_bArMaxInh_C
+          AirSys_bFilGain_C
+          AirSys_bInhFilRat_C
+          AirSys_bInhFullLdCtl_C
+          AirSys_bInhPIIdl_C
+          AirSys_bInhPILimSurge_C
+          AirSys_bInhPiAirEngCor_B
+          AirSys_bPresTrb_C
+          AirSys_bSelClcMod_pDsThrReq_C
+          AirSys_bSelMAirEngCylReq_C
+          AirSys_bSelMaxThrPosn_C
+          AirSys_facArEfcThrFil_M
+          AirSys_facCfe_T
+          AirSys_facFilArEfcThr_C
+          AirSys_facFilGain_M
+          AirSys_faciMassIntCorRef1_T
+          AirSys_facpMassIntCorRef1_M
+          AirSys_mAirEngCylMaxReq_C
+          AirSys_mAirEngCylReq_tqEng_B
+          AirSys_mAirEngCylThdReq_C
+          AirSys_mAirEngCylThd_C
+          AirSys_mAirEngIntCor_B
+          AirSys_mEngAirErr_A
+          AirSys_mEngAirIntCorMax_C
+          AirSys_mEngAirIntCorMin_C
+          AirSys_mEngAirThd_C
+          AirSys_mfAirThrReq_A
+          AirSys_mfFuStmMax_T
+          AirSys_nEngArFilGainX_A
+          AirSys_nEngDec_A
+          AirSys_nEngFilGainX_A
+          AirSys_nEngTq_A
+          AirSys_nEng_A
+          AirSys_pCllThrHyst_C
+          AirSys_pCllThrThd_C
+          AirSys_pFilInhHiThd_C
+          AirSys_pFilInhLoThd_C
+          AirSys_pNoiseNegThd_C
+          AirSys_pNoiseThd_C
+          AirSys_prm_mfAirThrReq_B
+          AirSys_prm_pInMnfReq_B
+          AirSys_rAirLdReq_B
+          AirSys_rAirPresCorFilGainY_A
+          AirSys_rAirPresFilGain_A
+          AirSys_rAirPresFilGain_M
+          AirSys_rAirPresFilGain_T
+          AirSys_rAirPresMaxDif_C
+          AirSys_rAirPresRawFilGainX_A
+          AirSys_rFrzHiThd_C
+          AirSys_rFrzLoThd_C
+          AirSys_rFrzPres_C
+          AirSys_rMaxThrPosn_T
+          AirSys_rMinThrPosn_C
+          AirSys_rOpThrReqMaxOfs_C
+          AirSys_tiAcvDlyDmp_C
+          AirSys_tiDlyAftEgrFoul_C
+          AirSys_tiDmpDec_T
+          AirSys_tiSampleFastThr_C
+          AirSys_tiTqDec_T
+          AirSys_tqLoThd_T
+          AirSys_tqOfsHiThd_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+      AirSysAir_ModuleVersion_Major_MP 
+      AirSysAir_ModuleVersion_Minor_MP 
+      AirSysAir_ModuleVersion_Patch_MP 
+          AirSys_arEfcThrReqDmpSysFil
+          AirSys_arEfcThrReqDmpSys_MP
+          AirSys_arEfcThrReqTqSysFil
+          AirSys_arEfcThrReqTqSysRaw
+          AirSys_arEfcThrReqTqSysSat
+          AirSys_arEfcThrReqTqSys_IRV_MP
+          AirSys_arEfcThrTq_MP
+          AirSys_bActStraLimSurgeDmpSw
+          AirSys_bAcvDmp
+          AirSys_bAcvDmpRaw_MP
+          AirSys_bAcvTq
+          AirSys_bAcvTqRaw_MP
+          AirSys_bInhCfeFil
+          AirSys_bInhPIAccPMin
+          AirSys_bInhPIEgrFoul
+          AirSys_bInhPILimSurge
+          AirSys_bInhPIStructAirOpl
+          AirSys_bInhPIThrLim
+          AirSys_bInhPITranLdDet
+          AirSys_bInhTrbAirPresRatCtl
+          AirSys_bThrEff_MP
+          AirSys_facAcvDmp
+          AirSys_facAcvTq
+          AirSys_facArEfcThrFilGain
+          AirSys_facArEfcThrFilGain_MP
+          AirSys_facCfe_MP
+          AirSys_mAirEngCorReq_IRV_MP
+          AirSys_mAirEngCylSurgeLimReq_MP
+          AirSys_mAirEngIntCorPrev
+          AirSys_mAirEngPropCor
+          AirSys_mAirEngSelReq
+          AirSys_mEngAirCorOfs
+          AirSys_mEngAirErr
+          AirSys_mfAirThrReq_arThr
+          AirSys_pInMnfOplReq
+          AirSys_pInMnfReq
+          AirSys_pInMnfReq_tqEng
+          AirSys_prm_mAirCylReq_IRV_MP
+          AirSys_prm_mAirEngReq_MP
+          AirSys_rAirPresCor_MP
+          AirSys_rAirPresFinal
+          AirSys_rAirPresInter_MP
+          AirSys_rAirPresRaw
+          AirSys_rAirPresReqFil
+          AirSys_rAirPresReqNoFil
+          AirSys_rAirPresReqPrev
+          AirSys_rAirPresReq_IRV_MP
+          AirSys_rAirPres_MP
+          AirSys_rFilGainPresRat
+          AirSys_tiDlyAftEgrFoulPrev
+          AirSys_tiDlyAftEgrFoul_IRV_MP
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE
+
+/* ------------------------------ END OF MODULE AirSysAir ------------------------------------*/

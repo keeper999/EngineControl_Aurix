@@ -1,0 +1,1101 @@
+/begin MODULE
+    PnmAct /* Name */
+    "PnmAct" /* LongIdentifier */
+
+    /begin A2ML
+        block "IF_DATA" taggedunion if_data {
+        };
+    /end A2ML
+
+    /begin MOD_PAR
+        "-" /* Comment */
+        NO_OF_INTERFACES 0
+    /end MOD_PAR
+
+    /begin MOD_COMMON
+        "-" /* Comment */
+        ALIGNMENT_BYTE 1
+        ALIGNMENT_WORD 2
+        ALIGNMENT_LONG 4
+        ALIGNMENT_FLOAT32_IEEE 4
+        ALIGNMENT_FLOAT64_IEEE 4
+        DEPOSIT ABSOLUTE
+    /end MOD_COMMON
+
+
+    /begin MEASUREMENT
+        PnmAct_ModuleVersion_Major_MP              /* Name */
+        "Version Majeure du module"         /* LongIdentifier */
+        UBYTE                       /* Datatype */
+        PnmAct_CM_VOID_SCALING_VersionModule   /* Conversion */
+        1                           /* Resolution */
+        100                         /* Accuracy */
+        0                           /* LowerLimit */
+        255                         /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_ModuleVersion_Minor_MP              /* Name */
+        "Version Mineure du module"         /* LongIdentifier */
+        UBYTE                       /* Datatype */
+        PnmAct_CM_VOID_SCALING_VersionModule   /* Conversion */
+        1                           /* Resolution */
+        100                         /* Accuracy */
+        0                           /* LowerLimit */
+        255                         /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOCorReq_B /* Name */
+        "Correction dynamique du RCO à appliquer" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        PnmAct_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        PnmAct_CM_Byp_EQ_RES_0_000030517578125 /* Conversion */
+        -0.999969482421875 /* LowerLimit */
+        0.999969482421875 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rOpTrbActEstim_B /* Name */
+        "Estimation de la position de la wastegate" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        PnmAct_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        PnmAct_CM_Byp_EQ_RES_1_52587890625em05 /* Conversion */
+        0 /* LowerLimit */
+        0.999984741210938 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PNMACT_ACTIVE_BYP_C /* Name */
+        "Bypass du Module PnmAct" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        PnmAct_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        PnmAct_CM_Byp_VOID_SCALING /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin COMPU_METHOD
+        PnmAct_CM_Byp_EQ_RES_0_000030517578125 /* Name */
+        "Phys = Num * 2^-15" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%18.15" /* Format */
+        "-" /* Unit */
+        COEFFS 0 1 0 0 0 0.000030517578125
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_CM_Byp_EQ_RES_1_52587890625em05 /* Name */
+        "Phys = Num * 2^-16" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%18.15" /* Format */
+        "-" /* Unit */
+        COEFFS 0 1 0 0 0 1.52587890625E-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_CM_Byp_VOID_SCALING /* Name */
+        "Phys = Num" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_CM_VOID_SCALING_VersionModule       /* Name */
+        "Methode de Conversion de la Version Module"          /* LongIdentifier */
+        RAT_FUNC                        /* ConversionType */
+        "%3.0"                          /* Format */
+        "-"                        /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        PnmAct_FCT_Byp    /* Name */
+        "PnmAct_FCT_Byp"    /* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            PnmAct_rRCOCorReq_B /* Identifier */
+            PnmAct_rOpTrbActEstim_B /* Identifier */
+            PNMACT_ACTIVE_BYP_C /* Identifier */
+        /end DEF_CHARACTERISTIC
+    /end FUNCTION
+
+    /begin FUNCTION
+        PnmAct_FCT_NVM    /* Name */
+        "PnmAct_FCT_NVM"    /* LongIdentifier */
+    /end FUNCTION
+
+    /begin FUNCTION
+        PnmAct_FCT_VersionModule          /* Name */
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */
+        /begin LOC_MEASUREMENT
+            PnmAct_ModuleVersion_Major_MP      /* Identifier */
+            PnmAct_ModuleVersion_Minor_MP      /* Identifier */
+        /end LOC_MEASUREMENT
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        PnmAct_RL_UBYTE_COL_DIRECT    /* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_RL_UWORD_COL_DIRECT     /* Name */
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_RL_SWORD_COL_DIRECT     /* Name */
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+
+    /begin CHARACTERISTIC
+        PnmAct_bSelPresAirExt_C	/* Name */
+        "Booléen de choix entre une mise à l'air de l'EV à pression atmosphérique ou à la pression aval filtre à air."	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_VOID_SCALING	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_bTrbActCf_C	/* Name */
+        "Choix du type de dépression consigne utilisée (positive ou negative)"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_VOID_SCALING	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_FacdGain_C	/* Name */
+        "Coefficient D du régulateur de Pdif"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_5_8207660913467407em11	/* Conversion */
+        0	/* LowerLimit */
+        3.8146390579640865e-06	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_facFilGainTrbAct_C	/* Name */
+        "Facteur de filtrage de la position actionneur"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_0_00390625	/* Conversion */
+        0	/* LowerLimit */
+        0.99609375	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_FaciGain_C	/* Name */
+        "Coefficient I du régulateur de Pdif"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */
+        0	/* LowerLimit */
+        0.00048827379941940308	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_FacpGain_C	/* Name */
+        "Coefficient P du régulateur de Pdif"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_ULONG_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_5_8207660913467407em11	/* Conversion */
+        0	/* LowerLimit */
+        0.0039061903953552246	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_mfAirIn_M	/* Name */
+        "Cartographie du débit de remplissage"	/* LongIdentifier */
+        MAP	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_7_62939453125em06	/* Conversion */
+        0	/* LowerLimit */
+        0.49999237060546875	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8	/* Conversion */
+            8	/* MaxAxisPoints */
+            0	/* LowerLimit */
+            524280	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pAirExt_A
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+            10	/* MaxAxisPoints */
+            1.52587890625e-05	/* LowerLimit */
+            1	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_rPresExtTrbAct_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_mfAirInDB_M	/* Name */
+        "Cartographie du débit de fuite"	/* LongIdentifier */
+        MAP	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_5_9604644775390625em08	/* Conversion */
+        0	/* LowerLimit */
+        0.0039061903953552246	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8	/* Conversion */
+            8	/* MaxAxisPoints */
+            0	/* LowerLimit */
+            524280	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pAirExt_A
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+            10	/* MaxAxisPoints */
+            1.52587890625e-05	/* LowerLimit */
+            1	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_rPresExtTrbAct_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_mfAirInMin_C	/* Name */
+        "Débit de remplissage maximum"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_SLONG_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_2_3283064365386963em10	/* Conversion */
+        -0.125	/* LowerLimit */
+        -1.9073486328125e-06	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_mfAirOut_M	/* Name */
+        "Cartographie du débit de vidange"	/* LongIdentifier */
+        MAP	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_9_5367431640625em07_d	/* Conversion */
+        0	/* LowerLimit */
+        0.062499046325683594	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+            9	/* MaxAxisPoints */
+            -262140	/* LowerLimit */
+            262140	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pDifTrbActEstim2_A
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+            10	/* MaxAxisPoints */
+            1.52587890625e-05	/* LowerLimit */
+            1	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_rPresVacTrbAct_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_mfAirOutMax_C	/* Name */
+        "Débit de vidange maximum"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_9_5367431640625em07_d	/* Conversion */
+        0	/* LowerLimit */
+        0.062499046325683594	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_pDifTrbEstimMin_C	/* Name */
+        "dépression minimum au niveau de la membrane de la wastegate "	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_SWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+        -262140	/* LowerLimit */
+        262140	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_pVacRef_C	/* Name */
+        "Pression absolue en sortie de la pompe à vide"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_SWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+        -262140	/* LowerLimit */
+        262140	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rOpTrbActEstim_M	/* Name */
+        "Cartographie de la position relative de la wastegate"	/* LongIdentifier */
+        MAP	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+            16	/* MaxAxisPoints */
+            -262140	/* LowerLimit */
+            262140	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pDifTrbEstim_A
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+            16	/* MaxAxisPoints */
+            -262140	/* LowerLimit */
+            262140	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pDifTrbActEstim_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCO_M	/* Name */
+        "Cartographie du RCO statique"	/* LongIdentifier */
+        MAP	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+            9	/* MaxAxisPoints */
+            -262140	/* LowerLimit */
+            262140	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pDifTrbActEstim2_A
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8	/* Conversion */
+            8	/* MaxAxisPoints */
+            0	/* LowerLimit */
+            524280	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pAirExt_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOCorMax_C	/* Name */
+        "Correction de RCO maximale"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_SWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_3_0517578125em05	/* Conversion */
+        -0.999969482421875	/* LowerLimit */
+        0.999969482421875	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOCorMin_C	/* Name */
+        "Correction de RCO minimale"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_SWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_3_0517578125em05	/* Conversion */
+        -0.999969482421875	/* LowerLimit */
+        0.999969482421875	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCODB_T	/* Name */
+        "Table de la taille de zone morte (en négatif)"	/* LongIdentifier */
+        CURVE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_m0_9999847412109375	/* Conversion */
+        -0.9999847412109375	/* LowerLimit */
+        0	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+            9	/* MaxAxisPoints */
+            -262140	/* LowerLimit */
+            262140	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_pDifTrbActEstim2_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOHiThd_C	/* Name */
+        "Seuil supérieur pour inhibition de l'intégrateur"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Conversion */
+        0	/* LowerLimit */
+        0.9999847412109375	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOLoThd_C	/* Name */
+        "Seuil inférieur pour inhibition de l'intégrateur"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Conversion */
+        0	/* LowerLimit */
+        0.9999847412109375	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOMax_C	/* Name */
+        "RCO maximum"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Conversion */
+        0	/* LowerLimit */
+        0.9999847412109375	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_rRCOMin_C	/* Name */
+        "RCO minimum"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Conversion */
+        0	/* LowerLimit */
+        0.9999847412109375	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        PnmAct_volPnmAct_T	/* Name */
+        "Table du volume de poumon"	/* LongIdentifier */
+        CURVE	/* Type */
+        0x0 /* Address */
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_4901161193847656em08	/* Conversion */
+        1.490116119384765625e-08	/* LowerLimit */
+        0.00097654759883880615	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+            16	/* MaxAxisPoints */
+            1.52587890625e-05	/* LowerLimit */
+            1	/* UpperLimit */
+            AXIS_PTS_REF PnmAct_rOpTrbActEstim_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+        PnmAct_pAirExt_A	/* Name */
+        "Table de points d'appui en pression atmosphérique"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8	/* Conversion */
+        8	/* MaxAxisPoints */
+        0	/* LowerLimit */
+        524280	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_pDifTrbActEstim_A	/* Name */
+        "Table de points d'appui en différence de pression au niveau de l'actionneur pneumatique de la wastegate pour le calcul de la position actionneur"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_SWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+        16	/* MaxAxisPoints */
+        -262140	/* LowerLimit */
+        262140	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_pDifTrbActEstim2_A	/* Name */
+        "Table de points d'appui en différence de pression au niveau de l'actionneur pneumatique de la wastegate"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_SWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+        9	/* MaxAxisPoints */
+        -262140	/* LowerLimit */
+        262140	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_pDifTrbEstim_A	/* Name */
+        "Table de points d'appui en différence de pression au niveau de la soupape de la wastegate utilisée pour le calcul de la consigne de dépression au niveau de la membrane"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_SWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Conversion */
+        16	/* MaxAxisPoints */
+        -262140	/* LowerLimit */
+        262140	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_rOpTrbActEstim_A	/* Name */
+        "Table de points d'appui en position relative de la wastegate"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+        16	/* MaxAxisPoints */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_rPresExtTrbAct_A	/* Name */
+        "Table de points d'appui en ratio de pression entre la pression atmosphérique et la pression appliquée à la membrane"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+        10	/* MaxAxisPoints */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        PnmAct_rPresVacTrbAct_A	/* Name */
+        "Table de points d'appui en ratio de pression entre la pression en sortie de pompe à vide et la pression appliquée à la membrane"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        PnmAct_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Conversion */
+        10	/* MaxAxisPoints */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+        PnmAct_bDB_MP	/* Name */
+        "Booléen de passage en zone morte"	/* LongIdentifier */
+        UBYTE	/* Datatype */
+        PnmAct_002_CM_VOID_SCALING	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_bInhICtl_MP	/* Name */
+        "Booléen d'inhibition du terme intégrateur"	/* LongIdentifier */
+        UBYTE	/* Datatype */
+        PnmAct_002_CM_VOID_SCALING	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_mfAirIn_MP	/* Name */
+        "débit de remplissage"	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_2_3283064365386963em10	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -0.5	/* LowerLimit */
+        0.49999999976716936	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_mfAirInRaw_MP	/* Name */
+        "débit de remplissage avant arbitrage"	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_2_3283064365386963em10	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -0.5	/* LowerLimit */
+        0.49999999976716936	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_mfAirOut_MP	/* Name */
+        "débit de vidange"	/* LongIdentifier */
+        ULONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_1_4551915228366852em11	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        0	/* LowerLimit */
+        0.062499999985448085	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_mfAirOutRaw_MP	/* Name */
+        "débit de vidange avant arbitrage"	/* LongIdentifier */
+        ULONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_1_4551915228366852em11	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        0	/* LowerLimit */
+        0.062499999985448085	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_mfAirTot_MP	/* Name */
+        "Débit total à l'EV"	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_1_1641532182693481em10	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -0.25	/* LowerLimit */
+        0.24999999988358468	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_pDeltaPnmAct_MP	/* Name */
+        "Variation de dépression"	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_0_0078125	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -16777216	/* LowerLimit */
+        16777215.9921875	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_pDifErr_MP	/* Name */
+        "Erreur de dépression"	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_8_OFF_4	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -524288	/* LowerLimit */
+        524288	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_rOpTrbAct_MP	/* Name */
+        "Levée estimée de la wastegate"	/* LongIdentifier */
+        UWORD	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05_c	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        1.52587890625e-05	/* LowerLimit */
+        1	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_rRCOdCor_MP	/* Name */
+        "terme dérivé de la correction dynamique du RCO "	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_3_0517578125em05_a	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -65536	/* LowerLimit */
+        65535.999969482422	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_rRCOiCor_MP	/* Name */
+        "terme intégral de la correction dynamique du RCO "	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_2_384185791015625em07	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -0.999969482421875	/* LowerLimit */
+        0.999969482421875	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_rRCOpCor_MP	/* Name */
+        "terme proportionnel de la correction dynamique du RCO "	/* LongIdentifier */
+        SLONG	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_9_5367431640625em07	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        -2048	/* LowerLimit */
+        2047.9999990463257	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        PnmAct_rRCOReqPrev_MP	/* Name */
+        "RCO du pas de calcul précédent"	/* LongIdentifier */
+        UWORD	/* Datatype */
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Conversion */
+        1	/* Resolution */
+        100	/* Accuracy */
+        0	/* LowerLimit */
+        0.9999847412109375	/* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_0_00390625	/* Name */
+        "PnmAct_002_CM_EQ_LSB_0_00390625"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%9.8"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 0.00390625
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_0_0078125	/* Name */
+        "PnmAct_002_CM_EQ_LSB_0_0078125"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.7"	/* Format */
+        "Pa"	/* Unit */
+        COEFFS 0 1 0 0 0 0.0078125
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_1641532182693481em10	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_1641532182693481em10"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1.1641532182693481e-10
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_4551915228366852em11	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_4551915228366852em11"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1.4551915228366852e-11
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_4901161193847656em08	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_4901161193847656em08"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1.4901161193847656e-08
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_52587890625em05"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1.52587890625e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 -1.52587890625e-05 0 0 1.52587890625e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05_c	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_1_52587890625em05_c"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 -1.52587890625e-05 0 0 1.52587890625e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_m0_9999847412109375	/* Name */
+        "PnmAct_002_CM_EQ_LSB_1_52587890625em05_OFF_m0_9999847412109375"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%17.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0.9999847412109375 0 0 1.52587890625e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_2_3283064365386963em10	/* Name */
+        "PnmAct_002_CM_EQ_LSB_2_3283064365386963em10"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%15.14"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 2.3283064365386963e-10
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_2_384185791015625em07	/* Name */
+        "PnmAct_002_CM_EQ_LSB_2_384185791015625em07"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%18.14"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 2.384185791015625e-07
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_3_0517578125em05	/* Name */
+        "PnmAct_002_CM_EQ_LSB_3_0517578125em05"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 3.0517578125e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_3_0517578125em05_a	/* Name */
+        "PnmAct_002_CM_EQ_LSB_3_0517578125em05_a"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%21.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 3.0517578125e-05
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_5_8207660913467407em11	/* Name */
+        "PnmAct_002_CM_EQ_LSB_5_8207660913467407em11"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 5.8207660913467407e-11
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_5_9604644775390625em08	/* Name */
+        "PnmAct_002_CM_EQ_LSB_5_9604644775390625em08"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 5.9604644775390625e-08
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_7_4505805969238281em09	/* Name */
+        "PnmAct_002_CM_EQ_LSB_7_4505805969238281em09"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%15.14"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 7.4505805969238281e-09
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_7_62939453125em06	/* Name */
+        "PnmAct_002_CM_EQ_LSB_7_62939453125em06"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 7.62939453125e-06
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_8	/* Name */
+        "PnmAct_002_CM_EQ_LSB_8"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%6.0"	/* Format */
+        "Pa"	/* Unit */
+        COEFFS 0 1 0 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_8_OFF_4	/* Name */
+        "PnmAct_002_CM_EQ_LSB_8_OFF_4"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%11.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 -4 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_8_OFF_4_b	/* Name */
+        "PnmAct_002_CM_EQ_LSB_8_OFF_4_b"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%6.0"	/* Format */
+        "Pa"	/* Unit */
+        COEFFS 0 1 -4 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_9_5367431640625em07	/* Name */
+        "PnmAct_002_CM_EQ_LSB_9_5367431640625em07"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%20.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 9.5367431640625e-07
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_EQ_LSB_9_5367431640625em07_d	/* Name */
+        "PnmAct_002_CM_EQ_LSB_9_5367431640625em07_d"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%16.15"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 9.5367431640625e-07
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        PnmAct_002_CM_VOID_SCALING	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%1.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        PnmAct_002_FCT_PnmAct_002_TEV_fct	/* Name */
+        "PnmAct_002_FCT_PnmAct_002_TEV_fct"	/* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            PnmAct_bTrbActCf_C	/* Identifier */
+            PnmAct_FacdGain_C	/* Identifier */
+            PnmAct_FaciGain_C	/* Identifier */
+            PnmAct_FacpGain_C	/* Identifier */
+            PnmAct_rRCOCorMax_C	/* Identifier */
+            PnmAct_rRCOCorMin_C	/* Identifier */
+            PnmAct_rRCOHiThd_C	/* Identifier */
+            PnmAct_rRCOLoThd_C	/* Identifier */
+            PnmAct_pAirExt_A	/* Identifier */
+            PnmAct_pDifTrbActEstim2_A	/* Identifier */
+            PnmAct_rPresExtTrbAct_A	/* Identifier */
+            PnmAct_facFilGainTrbAct_C	/* Identifier */
+            PnmAct_rOpTrbActEstim_M	/* Identifier */
+            PnmAct_pDifTrbEstim_A	/* Identifier */
+            PnmAct_pDifTrbActEstim_A	/* Identifier */
+            PnmAct_pDifTrbEstimMin_C	/* Identifier */
+            PnmAct_volPnmAct_T	/* Identifier */
+            PnmAct_rOpTrbActEstim_A	/* Identifier */
+            PnmAct_mfAirInDB_M	/* Identifier */
+            PnmAct_mfAirInMin_C	/* Identifier */
+            PnmAct_mfAirIn_M	/* Identifier */
+            PnmAct_rRCODB_T	/* Identifier */
+            PnmAct_mfAirOutMax_C	/* Identifier */
+            PnmAct_mfAirOut_M	/* Identifier */
+            PnmAct_rPresVacTrbAct_A	/* Identifier */
+            PnmAct_bSelPresAirExt_C	/* Identifier */
+            PnmAct_pVacRef_C	/* Identifier */
+            PnmAct_rRCO_M	/* Identifier */
+            PnmAct_rRCOMax_C	/* Identifier */
+            PnmAct_rRCOMin_C	/* Identifier */
+        /end DEF_CHARACTERISTIC
+        /begin LOC_MEASUREMENT
+            PnmAct_pDifErr_MP	/* Identifier */
+            PnmAct_bInhICtl_MP	/* Identifier */
+            PnmAct_rRCOpCor_MP	/* Identifier */
+            PnmAct_rRCOdCor_MP	/* Identifier */
+            PnmAct_rRCOReqPrev_MP	/* Identifier */
+            PnmAct_rRCOiCor_MP	/* Identifier */
+            PnmAct_rOpTrbAct_MP	/* Identifier */
+            PnmAct_mfAirTot_MP	/* Identifier */
+            PnmAct_pDeltaPnmAct_MP	/* Identifier */
+            PnmAct_mfAirInRaw_MP	/* Identifier */
+            PnmAct_bDB_MP	/* Identifier */
+            PnmAct_mfAirIn_MP	/* Identifier */
+            PnmAct_mfAirOutRaw_MP	/* Identifier */
+            PnmAct_mfAirOut_MP	/* Identifier */
+        /end LOC_MEASUREMENT
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_SLONG_COL_DIRECT	/* Name */
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_SWORD_COL_DIRECT	/* Name */
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_SWORD_X_INCR_DIRECT	/* Name */
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_UBYTE_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_ULONG_COL_DIRECT	/* Name */
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_UWORD_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        PnmAct_002_RL_UWORD_X_INCR_DIRECT	/* Name */
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+/end MODULE 
+
+/* ------------------------------ END OF MODULE PnmAct ------------------------------------*/

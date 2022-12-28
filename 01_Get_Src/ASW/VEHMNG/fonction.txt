@@ -1,0 +1,17 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_bGetFRM|A|(argin uint16 u16Channel)boolean;|1|HEADER|1|NONE||||0|0|0|0|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|
+VEHMNG_vidCanTranSpeedManagement|D|();|FCT1.4|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|La vitesse doit, pour le RCD, être nominalement lue sur la trame 38D.
+VEHMNG_vidClcDistTraveledViaCAN|A|();|FCT1.7|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Calcul de la distance Distance_parcourue.
+VEHMNG_vidClcDistTraveledViaWire|A|();|FCT1.9|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Calcul de Distance_parcourue
+VEHMNG_vidCmmTranSpeedManagement|C|();|FCT1.5|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|La vitesse véhicule est l’image de la vitesse filaire calculée par le CMM.On ne peut s'y trouver que si le véhicule est équipé d'un capteur filaire et que l'ABS/ESP ne sont pas disponibles.
+VEHMNG_vidDistTraveledViaCAN|C|();|FCT1.8|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|La distance_parcourue_prev est rafraîchie en permanence tandis que lors des variations de FRM_bInhClcnDstCovered, le flux Distance_parcourue est figé durant un pas de calcul afin de garantir au pas suivant que les 2 variables sont dans le même référentiel
+VEHMNG_vidDistTraveledViaWire|B|();|FCT1.10|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Calcul de Distance_parcourue par le capteur filaire
+VEHMNG_vidVehDstClcMng|K|();|FCT2.1|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|La distance parcourue depuis le dernier clé ON  est visualisable sous ADES par la variable Distance_parcourue_hectometre. Si l’on ne dispose pas de cette information en interne CMM, on prend l’information disponible sur le CAN.
+VEHMNG_vidVehicleSpeedFiltered|A|();|FCT1.6|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Filtrage de la vitesse vehicule
+VEHMNG_vidVehSdpMngInit|J|();|FCT1.1|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Initialisation de la stratégie
+VEHMNG_vidVehSpdInformation|B|();|FCT1.2|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|Pour le RCD la vitesse doit nominalement être lue sur la trame 38D en cas d'absence de cette trame.
+VEHMNG_vidVehSpdMngCanCmm|A|();|FCT1.3|VEHMNG|0|V02 NT 08 05610||||0|0|0|0|La vitesse doit, pour le RCD, être nominalement lue sur la trame 38D.
+VehSpd_EveRst_VehMng|A|();|SCH.1|VEHMNG|1|V02 NT 08 05610||||0|0|0|0|Evénement Reset du calculateur
+VehSpd_SdlFast_VehMng|E|();|SCH.2|VEHMNG|1|V02 NT 08 05610||||0|0|0|0|Moniteur rapide de la fonction VehSpd.
+VehSpd_SdlMid_VehMng|C|();|SCH.3|VEHMNG|1|V02 NT 08 05610||||0|0|0|0|Moniteur moyen de la fonction VehSpd.

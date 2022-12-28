@@ -1,0 +1,636 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : IfEOMInjSp                                              */
+/* !Description     : CALCUL DES MASSES D ESSENCE À INJECTER                  */
+/*                                                                            */
+/* !Module          : IfEOMInjSp                                              */
+/*                                                                            */
+/* !File            : IfEOMInjSp.a2l                                          */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Fri Jun 01 12:04:59 2012                              */
+/*   Model name       : IfEOMInjSp_AUTOCODE.mdl                               */
+/*   Model version    : 1.102                                                 */
+/*   Root subsystem   : /IfEOMInjSp                                           */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/IfEOMInjSp/5-SOFT-LIV/IfEOMI$*/
+/* $Revision::   1.1                                                         $*/
+/* $Author::   adelvare                               $$Date::   01 Jun 2012 $*/
+/******************************************************************************/
+
+
+/begin MODULE IfEOMInjSp  "IfEOMInjSp Software Component"
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT IfEOMInjSp_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_nEngDBInjSp_C
+    /* Long Identifier        */      "Backlash dead band for engine speed "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      IfEOMInjSp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      IfEOMInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_mAirDBInjSp_C
+    /* Long Identifier        */      "Backlash dead band for air filling "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      IfEOMInjSp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      IfEOMInjSp_CM_2
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IfEOMInjSp_u8Inhib
+    /* Long Identifier        */      "Calibration d'inhibtion du module IfEOMInjSp"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      IfEOMInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      IfEOMInjSp_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_nEngInjSp
+    /* Long identifier        */      "Filtered engine speed (Backlash) "
+    /* Data type              */      UWORD
+    /* Conversion method      */      IfEOMInjSp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7500.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_mAirPredInjSp
+    /* Long identifier        */      "Filtered air mass (Backlash) "
+    /* Data type              */      UWORD
+    /* Conversion method      */      IfEOMInjSp_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      7.8118807983398444E+000
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModCurAgInj
+    /* Long identifier        */      "Calibration index for Base 1 current mode for injection phasing set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModCurPfuSp
+    /* Long identifier        */      "Calibration index for Base 1 current mode for fuel pressure set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModCurRatInj
+    /* Long identifier        */      "Calibration index for Base 1 current mode for injection ratio set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModTarAgInj
+    /* Long identifier        */      "Calibration index for Base 1 target mode for injection phasing set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModTarPfuSp
+    /* Long identifier        */      "Calibration index for Base 1 target mode for fuel pressure set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas1ModTarRatInj
+    /* Long identifier        */      "Calibration index for Base 1 target mode for injection ratio set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModCurAgInj
+    /* Long identifier        */      "Calibration index for Base 2 current mode for injection phasing set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModCurPfuSp
+    /* Long identifier        */      "Calibration index for Base 2 current mode for fuel pressure set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModCurRatInj
+    /* Long identifier        */      "Calibration index for Base 2 current mode for injection ratio set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModTarAgInj
+    /* Long identifier        */      "Calibration index for Base 2 target mode for injection phasing set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModTarPfuSp
+    /* Long identifier        */      "Calibration index for Base 2 target mode for fuel pressure set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_idxBas2ModTarRatInj
+    /* Long identifier        */      "Calibration index for Base 2 target mode for injection ratio set point "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      32.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModCurAgInj
+    /* Long identifier        */      "Current mode interpolation factor for injection phasing "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModCurPfuSp
+    /* Long identifier        */      "Current mode interpolation factor for fuel pressure "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModCurRatInj
+    /* Long identifier        */      "Current mode interpolation factor for injection ratio "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModTarAgInj
+    /* Long identifier        */      "Target mode interpolation factor for injection phasing "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModTarPfuSp
+    /* Long identifier        */      "Target mode interpolation factor for fuel pressure "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facBasModTarRatInj
+    /* Long identifier        */      "Target mode interpolation factor for injection ratio "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facTranModAgInj
+    /* Long identifier        */      "Mode interpolation factor for injection phasing "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facTranModPfuSp
+    /* Long identifier        */      "Mode interpolation factor for fuel pressure "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_facTranModRatInj
+    /* Long identifier        */      "Mode interpolation factor for injection ratio "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      IfEOMInjSp_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      IfEOMInjSp_CM_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "RPM"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      IfEOMInjSp_CM_2
+    /* Long identifier        */      "Q = V*8389.14490527"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "g"
+    /* Coefficients           */      COEFFS 0 8389.14490527 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      IfEOMInjSp_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "su"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      IfEOMInjSp_CM_4
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      IfEOMInjSp_CM_5
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION IfEOMInjSp
+    "V01NT1006120.001"
+    
+ 
+    /begin OUT_MEASUREMENT
+      InjSys_facBasModCurAgInj
+      InjSys_facBasModCurPfuSp
+      InjSys_facBasModCurRatInj
+      InjSys_facBasModTarAgInj
+      InjSys_facBasModTarPfuSp
+      InjSys_facBasModTarRatInj
+      InjSys_facTranModAgInj
+      InjSys_facTranModPfuSp
+      InjSys_facTranModRatInj
+      InjSys_idxBas1ModCurAgInj
+      InjSys_idxBas1ModCurPfuSp
+      InjSys_idxBas1ModCurRatInj
+      InjSys_idxBas1ModTarAgInj
+      InjSys_idxBas1ModTarPfuSp
+      InjSys_idxBas1ModTarRatInj
+      InjSys_idxBas2ModCurAgInj
+      InjSys_idxBas2ModCurPfuSp
+      InjSys_idxBas2ModCurRatInj
+      InjSys_idxBas2ModTarAgInj
+      InjSys_idxBas2ModTarPfuSp
+      InjSys_idxBas2ModTarRatInj
+      InjSys_mAirPredInjSp
+      InjSys_nEngInjSp
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      IfEOMInjSp_u8Inhib
+      InjSys_mAirDBInjSp_C
+      InjSys_nEngDBInjSp_C
+    /end DEF_CHARACTERISTIC
+    
+  /end FUNCTION
+  
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+

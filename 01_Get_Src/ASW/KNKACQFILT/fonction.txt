@@ -1,0 +1,29 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+KNKACQFILT_vidCheckCondition|B|();|FCT2.4|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Production activation condition of block 03_Definition_knk_windows|
+KNKACQFILT_vidConfigParamInit|E|();|FCT1.2|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Dans le souci de rendre la spécification générique, nous avons dupliqué le bloc d’initialisation des APIs pour la détection de cliquetis et la détection de rumble.|
+KNKACQFILT_vidDefKnkWindows|G|();|FCT1.9|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Nous allons considérer ces 2 cas de figure:Détection de cliquetis autorisée et détection de rumble autorisée et détection de cliquetis autorisée et détection de rumble non autorisée.|
+KNKACQFILT_vidFilterEnergyCalc|F|();|FCT1.4|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Ce bloc est divisé en trois sous-blocs :01_CalcParamFilt calcule,  SignalSampleFilter et 03_Lecture_energie_cliquetis.|
+KNKACQFILT_vidInitializationRbl|E|();|FCT1.3|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Au reset calculateur, plusieurs paramètres sont envoyés au LdB via KNWHAL APIs KNWHAL_vidWriteAntiAliasingFreq, KNWHAL_vidWriteSamplePeriod, KNWHAL_vidSetSampleTblPrms et KNWHAL_vidSetSamplingWinIdxTbl.|
+KNKACQFILT_vidInitOutput|G|();|FCT1.1|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Fonction d'initialisation des sorties.|
+KNKACQFILT_vidInterfaceBSW|B|();|FCT2.3|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Fonction d'interfacage BSW.|
+KNKACQFILT_vidKnkMesWin|B|();|FCT2.2|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|cette fonction détermine le nombre et le vecteur de fenetres disponibles pour l'acquisition de signal  cliquetis/rumble|
+KNKACQFILT_vidOfsInjrNKnkcalc|B|();|FCT2.5|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Ce bloc calcule la valeur à retrancher dans le bruit instantané cliquetis lorsque le début des injections tombe dans la fenêtre cliquetis.|
+KNKACQFILT_vidOfsPmpHPNKnkcalc|C|();|FCT2.1|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|Ce bloc calcule la valeur à retrancher dans le bruit instantané cliquetis lorsque la commande de la pompe HP tombe dans la fenêtre cliquetis.|
+KNKACQFILT_vidReadingKnkEnergy|G|();|FCT1.8|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|La somme des échantillons filtrés durant la fenêtre somme_clq est récupérée puis rangée dans l’ordre physique des cylindres dans la variable Somme_clq_cyl.|
+KNKACQFILT_vidReadingRblEnergy|F|();|FCT1.7|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|La somme des échantillons filtrés durant la fenêtre somme_rbl est récupérée puis rangée dans l’ordre physique des cylindres dans la variable Somme_rbl_cyl.|
+KNKACQFILT_vidReadKnkRblEnergy|F|();|FCT1.6|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|03_Lecture_energie_cliquetis récupère les sommes de cliquetis/rumble et les range dans une matrice en fonction de numéro de cylindre.|
+KNKACQFILT_vidSigConvGainCalc|C|();|FCT1.10|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|fonction de de correspondance entre le numéro de gain et la valeur de gain physique|
+KNKACQFILT_vidSignalSampleFilter|F|();|FCT1.5|KNKACQFILT|0|PTS_DOC_5066552||||0|0|0|0|SignalSampleFilter est une s-function servant de filtre passe bande.|
+KnkTreat_EveCkSnOn_KnkAcqFilt|F|();|SCH.5|KNKACQFILT|1|PTS_DOC_5066552||||0|0|0|0|Traitement temporel pour lancer le premier évènement Knk|
+KnkTreat_EveKnk_KnkAcqFiltFst|E|();|SCH.2|KNKACQFILT|1|PTS_DOC_5066552||||0|0|0|0|Tâche de calcul du niveau de cliquetis pour le cylindre en cours.|
+KnkTreat_EveKnk_KnkAcqFiltLst|F|();|SCH.3|KNKACQFILT|1|PTS_DOC_5066552||||0|0|0|0|Tâche de calcul du niveau de cliquetis pour le cylindre en cours.|
+KnkTreat_EveRst_KnkAcqFilt|E|();|SCH.1|KNKACQFILT|1|PTS_DOC_5066552||||0|0|0|0|Evénement reset du calculateur.|
+KnkTreat_SdlFast_KnkAcqFilt|F|();|SCH.4|KNKACQFILT|1|PTS_DOC_5066552||||0|0|0|0|Traitement temporel pour lancer le premier évènement Knk.|
+KNWHAL_udtSamplingWinTrigger|D|func_KNWHAL_udtSamplingWinTrigger|0x05|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_udtSetSamplingWinPrms|D|func_KNWHAL_udtSetSamplWinPrms|0x06|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_udtWriteInputStageGain|A|func_KNWHAL_udtWriteInputStageGain|0x01|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_vidSetSampleTblPrms|D|(argio uint16 *pau16SampleTbl,argin uint32 u32SampleTblMaxSize);|0x04|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_vidSetSamplingWinIdxTbl|D|(argio uint32 *pau32SamplingWinIdxTbl);|0x02|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_vidWriteAntiAliasingFreq|D|(argin uint16 u16Frequency);|0x01|HEADER|1|NONE||||0|0|0|0||
+KNWHAL_vidWriteSamplePeriod|D|(argin uint16 u16SamplePeriod);|0x03|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|D|();|1|HEADER|1|NONE||||0|0|0|0||

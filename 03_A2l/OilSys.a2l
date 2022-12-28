@@ -1,0 +1,4021 @@
+﻿/begin MODULE
+    OilSys /* Name */ 
+    "-" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        OilSys_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        OilSys_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        OilSys_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilReq_B /* Name */ 
+        "Consigne de pression calculée - valeur de pression désirée Dim = 1x1" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        OilSys_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        20000 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpReq_B /* Name */ 
+        "RCO de commande final, envoyé à l'EV pompe à huile Dim = 1x1" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        OilSys_CM_Byp_EQ_RES_0_1 /* Conversion */ 
+        0 /* LowerLimit */ 
+        100 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_stCtlTyp_B /* Name */ 
+        "Type de contrôleur sélectionné pour la régulation" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        OilSys_CM_Byp_Table_out417 /* Conversion */ 
+        0 /* LowerLimit */ 
+        7 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OILSYS_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module OilSys" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        OilSys_CM_Byp_VOID_SCALING_a /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "mbar" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_Byp_EQ_RES_0_1 /* Name */ 
+        "Phys = Num * 0,1" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%4.1" /* Format */ 
+        "%" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_Byp_Table_out417 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF OilSys_CV_CONV_TAB_Table_out417 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_Byp_VOID_SCALING_a /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "-"                              /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        OilSys_CV_CONV_TAB_Table_out417 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        8 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "cylindrée maximale;" /* OutVal */ 
+        1 /* InVal */ 
+        "régulation on-off;" /* OutVal */ 
+        2 /* InVal */ 
+        "régulation proportionnelle;" /* OutVal */ 
+        3 /* InVal */ 
+        "contrôle manuel de l'EV (par calib)" /* OutVal */ 
+        4 /* InVal */ 
+        "mode gymnasticage" /* OutVal */ 
+        5 /* InVal */ 
+        "réservé" /* OutVal */ 
+        6 /* InVal */ 
+        "réservé" /* OutVal */ 
+        7 /* InVal */ 
+        "réservé" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_Byp    /* Name */ 
+        "OilSys_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilReq_B /* Identifier */ 
+            OilSys_rCtlPmpReq_B /* Identifier */ 
+            OilSys_stCtlTyp_B /* Identifier */ 
+            OILSYS_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            OilSys_ModuleVersion_Major_MP      /* Identifier */ 
+            OilSys_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_UWORD_COL_DIRECT     /* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_agCkMinUnlockClsExVlv_C	/* Name */ 
+        "Consigne minimale de l'angle vilebrequin de fermeture soupape échappement référence 0 ( à 1 mm de levée) de déblocage déphaseur(s) échappement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_75	/* Conversion */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_agCkMinUnlockOpInVlv_C	/* Name */ 
+        "Consigne minimale de l'angle vilebrequin de fermeture soupape échappement référence 0 ( à 1 mm de levée) de déblocage déphaseur(s) échappement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_75	/* Conversion */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_aPresOilMax_C	/* Name */ 
+        "Valeur d'accélération maximale de la poursuite"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_u	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10000000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_aVehLatMax_C	/* Name */ 
+        "Seuil limite d'accélération latérale pour désactivation de la régulation de pression"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_28	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bAcvCorCmVlv_C	/* Name */ 
+        "Flag d'activation des corrections dynamique sur les déplacements des vanos"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bAcvCorEngSpd_C	/* Name */ 
+        "Flag d'activation des corrections dynamique sur les variations de régime"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bAcvOilReqMan_C	/* Name */ 
+        "Switch d'utilisation d'un consigne de pression calculée par cartographie à partir du régime et de la température, ou déterminée par calibration"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bClCtlTyp_C	/* Name */ 
+        "Flag d'activation manuelle du régulateur proportionnel"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bClCtlTypManSel_C	/* Name */ 
+        "Switch de sélection sur l'activation du régulateur, automatique ou manuelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bCmdNorm_C	/* Name */ 
+        "Flag de désactivation du normage de la commande généré par le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bDeacAdjSpStrt_C	/* Name */ 
+        "Flag de désactivation de l'ajustement de consigne au démarrage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bDeacRatCtlPmpStrt_C	/* Name */ 
+        "Flag de désactivation de l'ajustement de consigne de RCO au démarrage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bMapCtlForc_C	/* Name */ 
+        "Switch de passage en régulation proportionnelle forcée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bPmpMaxVolForc_C	/* Name */ 
+        "Switch de forçage de passage en cylindrée maximum"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bPmpOnOffCtlForc_C	/* Name */ 
+        "Switch de passage en régulation 2 positions (on-off)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bPresAirRef_C	/* Name */ 
+        "Switch sur l'utilisation de la valeur de pression atmosphérique mesurée ou de la valeur fixée par calibration"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bPresOilReqStra_C	/* Name */ 
+        "Calibration permettant l'utilisation d'une autre stratégie pour le basculement entre la cartographie faible / forte charge"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING__2_	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bTCoMes_C	/* Name */ 
+        "Switch par calibration ou par reconfiguration de la température d'huile vers la température d'eau"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_bVlvCtlForc_C	/* Name */ 
+        "Flag de pilotage direct de l'électrovanne par calibration"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facBattVoltRat_T	/* Name */ 
+        "Coefficient de correction de la commande générée par le régulateur en fonction de la tension batterie disponible"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            32	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_uBatt_facBattVolt_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facCmdBoost_C	/* Name */ 
+        "Valeur du gain utilisé pour le boost de la poursuite dans le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facD_M	/* Name */ 
+        "Valeur du gain Kd du régulateur"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_001	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_facDX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_facDY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facDamp_C	/* Name */ 
+        "Coefficient d'amortissement (zeta) du régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_v	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facDampResp_T	/* Name */ 
+        "Abaque amortissement pour le calcul d'une trajectoire du second ordre"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_1_z	/* Conversion */ 
+        0	/* LowerLimit */ 
+        50	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+            14	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            5	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_facDampResp_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facEngSpdGrdGainFil_C	/* Name */ 
+        "Valeur du gain pour le filtre sur les variations de régime moteur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_24	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facFilMes_C	/* Name */ 
+        "Coefficient de filtrage sur la mesure de pression en entrée du régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_v	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facFilReq_C	/* Name */ 
+        "Coefficient de filtrage sur la consigne de pression en entrée du régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_v	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facI_M	/* Name */ 
+        "Valeur du gain Ki du régulateur"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_s	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_facIX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_25	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_facIY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facISatMax_C	/* Name */ 
+        "Coefficient de limite de la partie intégrale du régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_q	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facISatMin_C	/* Name */ 
+        "Coefficient de limite de la partie intégrale du régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_q	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facLimHiCmd_C	/* Name */ 
+        "Valeur de butée haute pour la normalisation de la commande générée par le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facLimLoCmd_C	/* Name */ 
+        "Valeur de butée basse pour la normalisation de la commande générée par le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facLpfOilReqOsc_C	/* Name */ 
+        "Coefficient de filtrage sur la consigne pour identifier un step de consigne."	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_facP_M	/* Name */ 
+        "Valeur du gain Kp du régulateur"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_facPX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_125_r	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_facPY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_grdPresOilReqMax_C	/* Name */ 
+        "Saturation trajectoire de vitesse maximum du système piloté"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0625_x	/* Conversion */ 
+        1	/* LowerLimit */ 
+        3000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_grdPresOilReqMin_C	/* Name */ 
+        "Saturation trajectoire de vitesse minimale du système piloté"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0625_x	/* Conversion */ 
+        -3000	/* LowerLimit */ 
+        -1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_nEngLimStrt_C	/* Name */ 
+        "Limite de régime à partir duquel on considère le moteur démarré ou en phase de démarrage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_noRatDynMax_C	/* Name */ 
+        "Seuil de détection de dynamique importante de la mesure de pression par rapport à la consigne"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_nPmpOnOffHi_T	/* Name */ 
+        "Valeur de régime seuil de passage de l'état On (pression basse) vers l'état Off (pression haute)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_nPmpOnOffHi_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_nPmpOnOffLo_T	/* Name */ 
+        "Valeur de régime seuil de passage de l'état Off (pression haute) vers l'état On (pression basse)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_nPmpOnOffLo_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_nTogLim_C	/* Name */ 
+        "Limite de régime pour l'activation du mode de déblocage EV (dangereux à haut régime)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pAirExtRef_C	/* Name */ 
+        "Valeur de pression d'air extérieur donnée par calibration (normalement:1 bar)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_c	/* Conversion */ 
+        500	/* LowerLimit */ 
+        1500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pDeltaPresMesFrz_C	/* Name */ 
+        "Delta de pression figée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pLimHiMes_C	/* Name */ 
+        "Valeur de butée haute pour la normalisation de la mesure de pression pour le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_16	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pLimHiReq_C	/* Name */ 
+        "Valeur de butée haute pour la normalisation de la consigne de pression pour le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_16	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pLimLoMes_C	/* Name */ 
+        "Valeur de butée basse pour la normalisation de la mesure de pression pour le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_16	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pLimLoReq_C	/* Name */ 
+        "Valeur de butée basse pour la normalisation de la consigne de pression pour le régulateur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_16	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pNbDynThd_C	/* Name */ 
+        "Seuil à partir duquel on considère que la variation de consigne est suffisamment importante pour ne plus être en conditions statiques"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_f	/* Conversion */ 
+        0	/* LowerLimit */ 
+        250	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilDifLimMax_C	/* Name */ 
+        "Limite d'alerte d'ecart de boucle positif"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilDifLimMin_C	/* Name */ 
+        "Limite d'alerte d'ecart de boucle negatif"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilLimMaxHi_T	/* Name */ 
+        "Limite maximale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilLimMaxHi_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilLimMaxLo_T	/* Name */ 
+        "Limite maximale de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilLimMaxLo_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilLimMinHi_T	/* Name */ 
+        "Limite minimale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilLimMinHi_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilLimMinLo_T	/* Name */ 
+        "Limite minimum de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilLimMinLo_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilReqCtl_M	/* Name */ 
+        "Consigne de pression d'huile à vide"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilReqCtlX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOilReqCtlY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilReqCtlLd_M	/* Name */ 
+        "Consigne de pression d'huile en pleine charge"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilReqCtlLdX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOilReqCtlLdY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilReqMan_C	/* Name */ 
+        "Valeur de pression cible si régulation proportionnelle en mode consigne manuelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOilReqStrt_M	/* Name */ 
+        "Consigne de pression d'huile au démarrage si stratégie activée"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOilReqStrtX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOilReqStrtY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOnOffDiagHiThd_T	/* Name */ 
+        "Valeur du seuil de surveillance de l'état haut du mode on-off (si Pmes < seuil --> risque pbm pompe bloquée sur état bas)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOnOffDiagHi_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOnOffDiagLoThd_T	/* Name */ 
+        "Valeur du seuil de surveillance de l'état bas du mode on-off (si Pmes > seuil --> risque pbm pompe bloquée sur état haut)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOnOffDiagLo_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_pOscDetThd_M	/* Name */ 
+        "Cartographie de seuil d'amplitude critique avant alerte de détection d'oscillations"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_pOscDetThdX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_pOscDetThdY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlAddClsExVlv_T	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos échappement"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_0625_25	/* Conversion */ 
+            15	/* MaxAxisPoints */ 
+            -96	/* LowerLimit */ 
+            96	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_agCk_rCtlAddClsExVlv_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlAddEngSpd_M	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction des variations de régime et du régime courant"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_rCtlAddEngSpdX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_26	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_grdEng_rCtlAddSpdY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlAddOpInVlv_T	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos admission"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_0625_25	/* Conversion */ 
+            15	/* MaxAxisPoints */ 
+            -96	/* LowerLimit */ 
+            96	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_agCk_rCtlAddOpInVlv_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlCmdSatMax_C	/* Name */ 
+        "Valeur de saturation max du ratio de commande envoyé à l'électrovanne"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlCmdSatMin_C	/* Name */ 
+        "Valeur de saturation min du ratio de commande envoyé à l'électrovanne"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlOnOffCmdThd_C	/* Name */ 
+        "Valeur du seuil de RCO entre niveaux hauts et bas pour surveillance du mode on-off"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpOnOffHi_C	/* Name */ 
+        "Ratio de commande envoyé à l'électrovanne en mode Off (pression haute)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpOnOffLo_C	/* Name */ 
+        "Ratio de commande envoyé à l'électrovanne en mode On (pression basse)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpReqMan_C	/* Name */ 
+        "Valeur du ratio de commande envoyé à l'électrovanne en mode manuel"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpStrt_M	/* Name */ 
+        "Commande de RCO au démarrage si stratégie activée"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_1_l	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_rCtlPmpStrtX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_25	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_rCtlPmpStrtY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlPmpVolMaxCmd_C	/* Name */ 
+        "Valeur correspondant à la mise en cylindrée maximale de la pompe"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlTogMax_C	/* Name */ 
+        "Valeur de RCO haute du mode de gymnasticage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rCtlTogMin_C	/* Name */ 
+        "Valeur de RCO basse du mode de gymnasticage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rLdHi_T	/* Name */ 
+        "Seuil de basculement sur la cartographie de pression cible de pleine charge (faible charge --> pleine charge)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5_27	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            500	/* LowerLimit */ 
+            1500	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_pAirExtMes_rTqIdcHi_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_rLdLo_T	/* Name */ 
+        "Seuil de basculement sur la cartographie de pression cible de faible charge (pleine charge --> faible charge)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_5_27	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            500	/* LowerLimit */ 
+            1500	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_pAirExtMes_rTqIdcLo_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiAcvTogMod_C	/* Name */ 
+        "Temps de gymnasticage à chaque tentative de déblocage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyAcvDiagAbs_T	/* Name */ 
+        "Temporisation pour le diag Phuile mini (fonction de la température d'huile)"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_03125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1800	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_tiDlyAcvDiagAbs_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyAcvDiagDftReg_C	/* Name */ 
+        "Délai avant l'activation des diagnostic d'écart de boucle (après passage en mode piloté)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyAcvDiagOnOff_C	/* Name */ 
+        "Délai avant l'activation du diagnostic du mode ON-OFF"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyAcvDiagReg_C	/* Name */ 
+        "Délai avant activation des diagnostics en mode régulé"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyDeacInhDiagReg_C	/* Name */ 
+        "Délai avant arrêt d'inhibition des diagnostics à cause d'un changement de consigne"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyInhOilPmpCtl_T	/* Name */ 
+        "Délai d'inhibition de toute régulation au démarrage"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_y	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_0_01_29	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_tiDlyInhPmpCtl_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyPresMesFrz_C	/* Name */ 
+        "Délai de figeage minimum avant de considérer que la mesure du capteur de pression est figée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyTogMod_C	/* Name */ 
+        "Délai de protection avant réactivation possible du mode d'anti-sticking"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3600	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiDlyVldPosnCmVlv_C	/* Name */ 
+        "Délai de confirmation de la position bloquée du ou des déphaseurs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_y	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiFctPer_C	/* Name */ 
+        "Valeur de la période d'appel de la fonction (20 ms)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiPerTog_C	/* Name */ 
+        "Valeur de la période de gymnasticage de l'EV en cas de blocage (multiple de la période d'échantillonage!!)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tiResp_M	/* Name */ 
+        "Valeur du temps de réponse cible du système piloté déterminé en fonction des capacités du système"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_y	/* Conversion */ 
+        0.05	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_nEng_tiRespX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            OilSys_tOil	/* InputQuantity */ 
+            OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF OilSys_tOil_tiRespY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tOilSysDft_C	/* Name */ 
+        "Valeur de température indicative fixe en cas de défaut sur la température d'huile et la température d'eau"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_25	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tOilSysLim_C	/* Name */ 
+        "Limite de température d'huile en-dessous de laquelle tout pilotage est inhibé"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        OilSys_tOilSysLimProp_C	/* Name */ 
+        "Limite de température d'huile en-dessous de laquelle la régulation proportionnelle est désactivé (passage en mode on-off)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        OilSys_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        OilSys_agCk_rCtlAddClsExVlv_A	/* Name */ 
+        "Axe de delta de valeur entre consigne et position du vanos échappement pour la valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos échappement"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0625_25	/* Conversion */ 
+        15	/* MaxAxisPoints */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_agCk_rCtlAddOpInVlv_A	/* Name */ 
+        "Axe de delta de valeur entre consigne et position du vanos admission pour la valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos admission"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0625_25	/* Conversion */ 
+        15	/* MaxAxisPoints */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_facDampResp_A	/* Name */ 
+        "Axe d'amortissement relatif pour abaque amortissement pour le calcul d'une trajectoire du second ordre"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        14	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_grdEng_rCtlAddSpdY_A	/* Name */ 
+        "Axe de gradient de régime moteur pour la valeur de RCO additionnel de correction dynamique en fonction des variations de régime et du régime courant"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_26	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_facDX_A	/* Name */ 
+        "Axe de régime moteur pour la valeur du gain Kd du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_facIX_A	/* Name */ 
+        "Axe de régime moteur pour la valeur du gain Ki du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_facPX_A	/* Name */ 
+        "Axe de régime moteur pour la valeur du gain Kp du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilLimMaxHi_A	/* Name */ 
+        "Axe de régime pour la limite maximale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilLimMaxLo_A	/* Name */ 
+        "Axe de régime pour la limite maximale de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilLimMinHi_A	/* Name */ 
+        "Axe de régime pour la limite minimale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilLimMinLo_A	/* Name */ 
+        "Axe de régime pour la limite minimale de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilReqCtlLdX_A	/* Name */ 
+        "Axe de régime moteur pour la consigne de pression d'huile en pleine charge"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilReqCtlX_A	/* Name */ 
+        "Axe de régime moteur pour la consigne de pression d'huile à vide"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOilReqStrtX_A	/* Name */ 
+        "Axe de régime moteur pour la consigne de pression d'huile au démarrage si stratégie activée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_pOscDetThdX_A	/* Name */ 
+        "Axe de régime pour le seuil d'amplitude critique avant alerte de détection d'oscillations"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_rCtlAddEngSpdX_A	/* Name */ 
+        "Axe de régime moteur pour la valeur de RCO additionnel de correction dynamique en fonction des variations de régime et du régime courant"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_rCtlPmpStrtX_A	/* Name */ 
+        "Axe de régime moteur pour la commande de RCO au démarrage si stratégie activée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_nEng_tiRespX_A	/* Name */ 
+        "Axe de régime moteur pour la valeur du temps de réponse cible du système piloté"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_pAirExtMes_rTqIdcHi_A	/* Name */ 
+        "Axe de pression atmosphérique pour le seuil de basculement sur la cartographie de pression cible de pleine charge (faible charge --> pleine charge)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        500	/* LowerLimit */ 
+        1500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_pAirExtMes_rTqIdcLo_A	/* Name */ 
+        "Axe de pression atmosphérique pour le seuil de basculement sur la cartographie de pression cible de faible charge (pleine charge --> faible charge)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        500	/* LowerLimit */ 
+        1500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_facDY_A	/* Name */ 
+        "Axe de température d'huile pour la valeur du gain Kd du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_facIY_A	/* Name */ 
+        "Axe de température d'huile pour la valeur du gain Ki du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_25	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_facPY_A	/* Name */ 
+        "Axe de température d'huile la valeur du gain Kp du régulateur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_125_r	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_nPmpOnOffHi_A	/* Name */ 
+        "Axe de température d'huile pour la valeur de régime seuil de passage de l'état On (pression basse) vers l'état Off (pression haute)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_nPmpOnOffLo_A	/* Name */ 
+        "Axe de température d'huile pour la valeur de régime seuil de passage de l'état Off (pression haute) vers l'état On (pression basse)"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOilReqCtlLdY_A	/* Name */ 
+        "Axe de température d'huile pour la consigne de pression d'huile en pleine charge"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOilReqCtlY_A	/* Name */ 
+        "Axe de température d'huile pour la consigne de pression d'huile à vide"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOilReqStrtY_A	/* Name */ 
+        "Axe de température d'huile pour la consigne de pression d'huile au démarrage si stratégie activée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOnOffDiagHi_A	/* Name */ 
+        "Axe de température d'huile pour la valeur du seuil de surveillance de l'état haut du mode on-off"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOnOffDiagLo_A	/* Name */ 
+        "Axe de température d'huile pour la valeur du seuil de surveillance de l'état bas du mode on-off "	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_pOscDetThdY_A	/* Name */ 
+        "Axe de températures le seuil d'amplitude critique avant alerte de détection d'oscillations"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_rCtlPmpStrtY_A	/* Name */ 
+        "Axe de température d'huile pour la commande de RCO au démarrage si stratégie activée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_25	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_tiDlyAcvDiagAbs_A	/* Name */ 
+        "Axe de températures d'huile permettant de gérer l'activation du diag Phuile mini"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_tiDlyInhPmpCtl_A	/* Name */ 
+        "Axe de températures d'huile pour le délai d'inhibition de toute régulation au démarrage"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_01_29	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_tOil_tiRespY_A	/* Name */ 
+        "Axe de température d'huile pour la valeur du temps de réponse cible du système piloté"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        OilSys_tOil	/* InputQuantity */ 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_1_e	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        OilSys_uBatt_facBattVolt_A	/* Name */ 
+        "Axe de tension batterie pour le coefficient de correction de la commande générée par le régulateur "	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        OilSys_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        OilSys_aPresOilReqRaw_MP	/* Name */ 
+        "Trajectoire d'accélération sans limitation"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0078125_u	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -16777216	/* LowerLimit */ 
+        16777215.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bAcvModTog	/* Name */ 
+        "Flag d'activation du mode de gymnasticage de l'électrovanne en cas de détection d'oscillations"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bDgoDftOsc	/* Name */ 
+        "Flag de défaut, oscillations détectées"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bInhDiagDftReg	/* Name */ 
+        "Flag d'inhibition des diagnostics sur la régulation lors d'un changement de consigne de pression"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bMonRunDftReg	/* Name */ 
+        "Activation des diagnostics sur le mode piloté"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bPmpMaxVolForcStrt_MP	/* Name */ 
+        "Demande de mise en cylindrée maximale de la pompe"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bRstOscDet	/* Name */ 
+        "Flag de remise à zero des integrateurs lorsque les diagnostics du mode régulé ne sont pas actifs"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bRstReg_MP	/* Name */ 
+        "Reset trajectoire de pression"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bUnlockCmVlv	/* Name */ 
+        "Flag de déblocage déphaseur(s) prenant en compte un timer de confirmation de la position bloquée du ou des déphaseurs"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_bUnlockCmVlv_MP	/* Name */ 
+        "Flag de déblocage déphaseur(s)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facBattVoltRat_MP	/* Name */ 
+        "Coefficient de correction de la commande générée par le régulateur en fonction de la tension batterie disponible"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3.99993896484375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facD_MP	/* Name */ 
+        "gain"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_001_t	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        65.535	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facDampResp_MP	/* Name */ 
+        "Amortissement pour le calcul d'une trajectoire du second ordre"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_1_z	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        6553.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facI_MP	/* Name */ 
+        "Valeur du gain Ki du régulateur"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0078125_s	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facNum_MP	/* Name */ 
+        "Couple consigne de la boucle d'air générique après saturation"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_03125_30	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2047.96875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facP_MP	/* Name */ 
+        "Valeur du gain Kp du régulateur"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_facResp_MP	/* Name */ 
+        "Amortissement trajectoire de pression"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_015625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1023.984375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_grdPresOilMes	/* Name */ 
+        "Gradient sur la pression d'huile mesurée"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_3_814697265625em06_o	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -8192	/* LowerLimit */ 
+        8191.9999961853027	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_grdPresOilReq_MP	/* Name */ 
+        "Trajectoire de vitesse sans limitation"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_1_9073486328125em06	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -3000	/* LowerLimit */ 
+        3000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_grdPresOilReqLim	/* Name */ 
+        "Gradient sur la consigne de pression d'huile"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_3_814697265625em06_p	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -3000	/* LowerLimit */ 
+        3000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_nPmpOnOffHi_MP	/* Name */ 
+        "Valeur de régime seuil de passage de l'état \"On\" (pression basse) vers l'état \"Off\" (pression haute)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8191.875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_nPmpOnOffLo_MP	/* Name */ 
+        "Valeur de régime seuil de passage de l'état \"Off\" (pression haute) vers l'état \"On\" (pression basse)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8191.875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pAirExtMes	/* Name */ 
+        "Pression atmosphérique corrigée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilDelta_MP	/* Name */ 
+        "Quotient pour s'assurer que les erreurs se compensent"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_VOID_SCALING_d	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilErrMaxAbs_MP	/* Name */ 
+        "Erreur maximum absolue vue depuis l'activation du diagnostic"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_VOID_SCALING_d	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilLimMaxHi_MP	/* Name */ 
+        "Limite maximale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilLimMaxLo_MP	/* Name */ 
+        "Limite maximale de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilLimMesFrz_MP	/* Name */ 
+        "Delta de pression figée"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_1_52587890625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilLimMinHi_MP	/* Name */ 
+        "Limite minimale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilLimMinLo_MP	/* Name */ 
+        "Limite minimum de pression d'huile (seuil bas d'hysteresis)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilMes	/* Name */ 
+        "Pression d'huile"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        OilSys_CM_EQ_LSB_3_814697265625em06	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        16383.999996185303	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilReqCtl_MP	/* Name */ 
+        "Consigne de pression d'huile à vide"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilReqCtlLd_MP	/* Name */ 
+        "Consigne de pression d'huile en pleine charge"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilReqDelta_MP	/* Name */ 
+        "Delta consigne de pression d'huile"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_VOID_SCALING_d	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOilReqStrt_MP	/* Name */ 
+        "Consigne de pression au démarrage si stratégie activée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOnOffDiagHiThd_MP	/* Name */ 
+        "Valeur du seuil de surveillance de l'état haut du mode on-off (si Pmes < seuil --> risque pbm pompe bloquée sur état bas)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOnOffDiagLoThd_MP	/* Name */ 
+        "Valeur du seuil de surveillance de l'état bas du mode on-off (si Pmes > seuil --> risque pbm pompe bloquée sur état haut)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        32767.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_pOscDetThd_MP	/* Name */ 
+        "Seuil d'amplitude critique avant alerte de détection d'oscillations"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlAddClsExVlv_MP	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos échappement"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlAddEngSpd_MP	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction des variations de régime et du régime courant"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlAddOpInVlv_MP	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos admission"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlCorDyn	/* Name */ 
+        "Valeur de RCO additionnelle dû aux corrections dynamiques apportées à la consigne (fonction des mouvements vanos)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpOnOff	/* Name */ 
+        "Valeur de RCO du pilotage \"on-off\"-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING_k	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpProp	/* Name */ 
+        "RCO de commande issu du régulateur corrigé en fonction de la tension batterie (après convertion)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_01	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        655.35	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpPropCnv	/* Name */ 
+        "RCO de commande issu du régulateur converti sur la plage de variation correcte"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        127.998046875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpPropDRaw_MP	/* Name */ 
+        "RCO de commande issu du régulateur - action dérivée"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -128	/* LowerLimit */ 
+        127.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpPropIRaw_MP	/* Name */ 
+        "RCO de commande issu du régulateur - action intégrale"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -128	/* LowerLimit */ 
+        127.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpPropPRaw_MP	/* Name */ 
+        "RCO de commande issu du régulateur - action proportionnelle"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -128	/* LowerLimit */ 
+        127.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpPropRaw	/* Name */ 
+        "RCO de commande brut calculé par le régulateur"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -128	/* LowerLimit */ 
+        127.99609375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlPmpStrt_MP	/* Name */ 
+        "Valeur du gain Ki du régulateur"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_1_m	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rCtlTogMod_MP	/* Name */ 
+        "Valeur de RCO en mode de gymnasticage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        OilSys_CM_VOID_SCALING_k	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rLdHi_MP	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos admission"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        4095.9375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rLdLo_MP	/* Name */ 
+        "Valeur de RCO additionnel de correction dynamique en fonction de l'erreur de position du vanos admission"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        4095.9375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rLdNorm	/* Name */ 
+        "Valeur de couple normée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        127.998046875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilMesFil	/* Name */ 
+        "Pression d'huile mesurée normée, après filtrage"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilMesNorm	/* Name */ 
+        "Pression d'huile mesurée normée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        4095.9375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilReqFil	/* Name */ 
+        "Consigne de pression d'huile normée, après filtrage"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilReqLim	/* Name */ 
+        "Poursuite de la consigne (trajectoire générée par le régulateur pour suivre les variations de consigne)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilReqLimBoost	/* Name */ 
+        "Poursuite de la consigne avec boost de commande pour décollage."	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        127.998046875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_rPresOilReqNorm	/* Name */ 
+        "Consigne de pression d'huile normée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        4095.9375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_tiDlyAcvDiagAbs_MP	/* Name */ 
+        "Limite maximale de pression d'huile (seuil haut d'hysteresis)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1800	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_tiDlyInhOilPmpCtl_MP	/* Name */ 
+        "Délai d'inhibition de toute régulation au démarrage"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_01_y	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        655.35	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_tiResp_MP	/* Name */ 
+        "Valeur du temps de réponse cible du système piloté déterminé en fonction des capacités du système"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_01_y	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        655.35	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        OilSys_tOil	/* Name */ 
+        "Température d'huile mesurée"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        OilSys_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -256	/* LowerLimit */ 
+        255.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_001	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.3"	/* Format */ 
+        "S"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_001_t	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.3"	/* Format */ 
+        "1/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_001953125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.9"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001953125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_00390625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.8"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.00390625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125_b	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125_n	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "V"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125_s	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "1/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125_u	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.7"	/* Format */ 
+        "%/s^2"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0078125_v	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_01	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_01_24	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_01_29	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_01_g	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_01_y	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_015625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.6"	/* Format */ 
+        "1/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.015625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_03125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_03125_30	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_03125_h	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0625_25	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "°Ck"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_0625_x	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%14.4"	/* Format */ 
+        "%/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_1_l	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_1_m	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "1/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_1_z	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.3"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_125_r	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.3"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_25	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_5	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.1"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_5_27	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.1"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_0_75	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "°Ck"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.75 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_26	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_28	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "m/s^2"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_52587890625em05	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%21.15"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1.52587890625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_9073486328125em06	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%20.15"	/* Format */ 
+        "%/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1.9073486328125e-06 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_a	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_c	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_e	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_f	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_j	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_1_q	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_16	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.0"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 16 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_3_814697265625em06	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%21.15"	/* Format */ 
+        "mbar"	/* Unit */ 
+        COEFFS 0 1 0 0 0 3.814697265625e-06 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_3_814697265625em06_o	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%20.15"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 3.814697265625e-06 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_3_814697265625em06_p	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%20.15"	/* Format */ 
+        "%/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 3.814697265625e-06 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_EQ_LSB_6_103515625em05	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 6.103515625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_VOID_SCALING__2_	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_VOID_SCALING_d	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        OilSys_CM_VOID_SCALING_k	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_OilSys_002_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys2_F01_P__e_pompe_a_huile	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys105_F01__pression_absolu	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pDeltaPresMesFrz_C	/* Identifier */ 
+            OilSys_tiDlyPresMesFrz_C	/* Identifier */ 
+            OilSys_tiFctPer_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pAirExtMes	/* Identifier */ 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_pOilLimMesFrz_MP	/* Identifier */ 
+            OilSys_tiDlyAcvDiagAbs_MP	/* Identifier */ 
+            OilSys_pOilLimMinHi_MP	/* Identifier */ 
+            OilSys_pOilLimMinLo_MP	/* Identifier */ 
+            OilSys_pOilLimMaxHi_MP	/* Identifier */ 
+            OilSys_pOilLimMaxLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys115_Oil__DlyAcvDiagAbs_T	/* Identifier */ 
+            OilSys_FCT_SOilSys114_Oil___pOilLimMinLo_T	/* Identifier */ 
+            OilSys_FCT_SOilSys113_Oil___pOilLimMinHi_T	/* Identifier */ 
+            OilSys_FCT_SOilSys112_Oil___pOilLimMaxLo_T	/* Identifier */ 
+            OilSys_FCT_SOilSys111_Oil___pOilLimMaxHi_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys106_F02__nce_mode_on_off	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlOnOffCmdThd_C	/* Identifier */ 
+            OilSys_tiDlyAcvDiagOnOff_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pAirExtMes	/* Identifier */ 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys124_Oil__nOffDiagLoThd_T	/* Identifier */ 
+            OilSys_FCT_SOilSys123_Oil__nOffDiagHiThd_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys111_Oil___pOilLimMaxHi_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilLimMaxHi_T	/* Identifier */ 
+            OilSys_nEng_pOilLimMaxHi_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilLimMaxHi_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys112_Oil___pOilLimMaxLo_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilLimMaxLo_T	/* Identifier */ 
+            OilSys_nEng_pOilLimMaxLo_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilLimMaxLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys113_Oil___pOilLimMinHi_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilLimMinHi_T	/* Identifier */ 
+            OilSys_nEng_pOilLimMinHi_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilLimMinHi_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys114_Oil___pOilLimMinLo_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilLimMinLo_T	/* Identifier */ 
+            OilSys_nEng_pOilLimMinLo_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilLimMinLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys115_Oil__DlyAcvDiagAbs_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_tiDlyAcvDiagAbs_T	/* Identifier */ 
+            OilSys_tOil_tiDlyAcvDiagAbs_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tiDlyAcvDiagAbs_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys123_Oil__nOffDiagHiThd_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOnOffDiagHiThd_T	/* Identifier */ 
+            OilSys_tOil_pOnOffDiagHi_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOnOffDiagHiThd_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys124_Oil__nOffDiagLoThd_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOnOffDiagLoThd_T	/* Identifier */ 
+            OilSys_tOil_pOnOffDiagLo_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOnOffDiagLoThd_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys14_OilS__yInhOilPmpCtl_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_tiDlyInhOilPmpCtl_T	/* Identifier */ 
+            OilSys_tOil_tiDlyInhPmpCtl_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tiDlyInhOilPmpCtl_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys142_OilSys_pOscDetThd_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOscDetThd_M	/* Identifier */ 
+            OilSys_nEng_pOscDetThdX_A	/* Identifier */ 
+            OilSys_tOil_pOscDetThdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_pOscDetThd_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys2_F01_P__e_pompe_a_huile	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys9_F07_Diagnostics	/* Identifier */ 
+            OilSys_FCT_SOilSys8_F06_coordinateur	/* Identifier */ 
+            OilSys_FCT_SOilSys7_F05_c__e_proportionnel	/* Identifier */ 
+            OilSys_FCT_SOilSys6_F04_controle_on_off	/* Identifier */ 
+            OilSys_FCT_SOilSys5_F03_mode_pilotage_pmp	/* Identifier */ 
+            OilSys_FCT_SOilSys4_F02_conversions	/* Identifier */ 
+            OilSys_FCT_SOilSys3_F01_selection_T_huile	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys23_OilSys_nPmpOnOffHi_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_nPmpOnOffHi_T	/* Identifier */ 
+            OilSys_tOil_nPmpOnOffHi_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_nPmpOnOffHi_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys24_OilSys_nPmpOnOffLo_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_nPmpOnOffLo_T	/* Identifier */ 
+            OilSys_tOil_nPmpOnOffLo_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_nPmpOnOffLo_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys27_F02___nsigne_pression	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_bAcvOilReqMan_C	/* Identifier */ 
+            OilSys_bDeacRatCtlPmpStrt_C	/* Identifier */ 
+            OilSys_bPresAirRef_C	/* Identifier */ 
+            OilSys_pAirExtRef_C	/* Identifier */ 
+            OilSys_pOilReqMan_C	/* Identifier */ 
+            OilSys_bPresOilReqStra_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_bUnlockCmVlv	/* Identifier */ 
+            OilSys_pAirExtMes	/* Identifier */ 
+            OilSys_rLdNorm	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_rLdHi_MP	/* Identifier */ 
+            OilSys_rLdLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys37_OilSys_rLdLo_T	/* Identifier */ 
+            OilSys_FCT_SOilSys36_OilSys_rLdHi_T	/* Identifier */ 
+            OilSys_FCT_SOilSys35_OilSys_pOilReqStrt_M	/* Identifier */ 
+            OilSys_FCT_SOilSys34_OilSys_pOilReqCtl_M	/* Identifier */ 
+            OilSys_FCT_SOilSys33_OilSys_pOilReqCtlLd_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys28_F03___r_proportionnel	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_bCmdNorm_C	/* Identifier */ 
+            OilSys_facLimHiCmd_C	/* Identifier */ 
+            OilSys_facLimLoCmd_C	/* Identifier */ 
+            OilSys_facISatMax_C	/* Identifier */ 
+            OilSys_facISatMin_C	/* Identifier */ 
+            OilSys_tiFctPer_C	/* Identifier */ 
+            OilSys_aPresOilMax_C	/* Identifier */ 
+            OilSys_bClCtlTypManSel_C	/* Identifier */ 
+            OilSys_bClCtlTyp_C	/* Identifier */ 
+            OilSys_facCmdBoost_C	/* Identifier */ 
+            OilSys_facDamp_C	/* Identifier */ 
+            OilSys_grdPresOilReqMax_C	/* Identifier */ 
+            OilSys_grdPresOilReqMin_C	/* Identifier */ 
+            OilSys_facFilMes_C	/* Identifier */ 
+            OilSys_facFilReq_C	/* Identifier */ 
+            OilSys_pLimHiMes_C	/* Identifier */ 
+            OilSys_pLimHiReq_C	/* Identifier */ 
+            OilSys_pLimLoMes_C	/* Identifier */ 
+            OilSys_pLimLoReq_C	/* Identifier */ 
+            OilSys_bAcvCorCmVlv_C	/* Identifier */ 
+            OilSys_bAcvCorEngSpd_C	/* Identifier */ 
+            OilSys_facEngSpdGrdGainFil_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_rCtlPmpPropCnv	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_rCtlPmpPropRaw	/* Identifier */ 
+            OilSys_grdPresOilMes	/* Identifier */ 
+            OilSys_grdPresOilReqLim	/* Identifier */ 
+            OilSys_rCtlCorDyn	/* Identifier */ 
+            OilSys_rPresOilMesFil	/* Identifier */ 
+            OilSys_rPresOilMesNorm	/* Identifier */ 
+            OilSys_rPresOilReqFil	/* Identifier */ 
+            OilSys_rPresOilReqLim	/* Identifier */ 
+            OilSys_rPresOilReqNorm	/* Identifier */ 
+            OilSys_rPresOilReqLimBoost	/* Identifier */ 
+            OilSys_rCtlPmpPropDRaw_MP	/* Identifier */ 
+            OilSys_rCtlPmpPropPRaw_MP	/* Identifier */ 
+            OilSys_rCtlPmpPropIRaw_MP	/* Identifier */ 
+            OilSys_facResp_MP	/* Identifier */ 
+            OilSys_aPresOilReqRaw_MP	/* Identifier */ 
+            OilSys_grdPresOilReq_MP	/* Identifier */ 
+            OilSys_bRstReg_MP	/* Identifier */ 
+            OilSys_tiResp_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys81_OilSys_facP_M	/* Identifier */ 
+            OilSys_FCT_SOilSys80_OilSys_facI_M	/* Identifier */ 
+            OilSys_FCT_SOilSys79_OilSys_facD_M	/* Identifier */ 
+            OilSys_FCT_SOilSys69_OilSys_tiResp_M	/* Identifier */ 
+            OilSys_FCT_SOilSys68_OilSys_facDampResp_T	/* Identifier */ 
+            OilSys_FCT_SOilSys45_OilS__CtlAddOpInVlv_T	/* Identifier */ 
+            OilSys_FCT_SOilSys44_OilS__rCtlAddEngSpd_M	/* Identifier */ 
+            OilSys_FCT_SOilSys43_OilS__tlAddClsExVlv_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys29_F04___ul_consigne_RCO	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_bDeacRatCtlPmpStrt_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_bUnlockCmVlv	/* Identifier */ 
+            OilSys_rCtlPmpProp	/* Identifier */ 
+            OilSys_rCtlPmpPropCnv	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys89_OilSys_rCtlPmpStrt_M	/* Identifier */ 
+            OilSys_FCT_SOilSys88_OilS__acBattVoltRat_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys3_F01_selection_T_huile	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_bTCoMes_C	/* Identifier */ 
+            OilSys_tOilSysDft_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys33_OilSys_pOilReqCtlLd_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilReqCtlLd_M	/* Identifier */ 
+            OilSys_nEng_pOilReqCtlLdX_A	/* Identifier */ 
+            OilSys_tOil_pOilReqCtlLdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_pOilReqCtlLd_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys34_OilSys_pOilReqCtl_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilReqCtl_M	/* Identifier */ 
+            OilSys_nEng_pOilReqCtlX_A	/* Identifier */ 
+            OilSys_tOil_pOilReqCtlY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_pOilReqCtl_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys35_OilSys_pOilReqStrt_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_pOilReqStrt_M	/* Identifier */ 
+            OilSys_nEng_pOilReqStrtX_A	/* Identifier */ 
+            OilSys_tOil_pOilReqStrtY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_pOilReqStrt_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys36_OilSys_rLdHi_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rLdHi_T	/* Identifier */ 
+            OilSys_pAirExtMes_rTqIdcHi_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rLdHi_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys37_OilSys_rLdLo_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rLdLo_T	/* Identifier */ 
+            OilSys_pAirExtMes_rTqIdcLo_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rLdLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys4_F02_conversions	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_rLdNorm	/* Identifier */ 
+            OilSys_facNum_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys43_OilS__tlAddClsExVlv_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlAddClsExVlv_T	/* Identifier */ 
+            OilSys_agCk_rCtlAddClsExVlv_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rCtlAddClsExVlv_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys44_OilS__rCtlAddEngSpd_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlAddEngSpd_M	/* Identifier */ 
+            OilSys_nEng_rCtlAddEngSpdX_A	/* Identifier */ 
+            OilSys_grdEng_rCtlAddSpdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rCtlAddEngSpd_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys45_OilS__CtlAddOpInVlv_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlAddOpInVlv_T	/* Identifier */ 
+            OilSys_agCk_rCtlAddOpInVlv_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rCtlAddOpInVlv_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys5_F03_mode_pilotage_pmp	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_aVehLatMax_C	/* Identifier */ 
+            OilSys_bAcvOilReqMan_C	/* Identifier */ 
+            OilSys_bDeacAdjSpStrt_C	/* Identifier */ 
+            OilSys_bMapCtlForc_C	/* Identifier */ 
+            OilSys_bPmpMaxVolForc_C	/* Identifier */ 
+            OilSys_bPmpOnOffCtlForc_C	/* Identifier */ 
+            OilSys_bVlvCtlForc_C	/* Identifier */ 
+            OilSys_nEngLimStrt_C	/* Identifier */ 
+            OilSys_tOilSysLimProp_C	/* Identifier */ 
+            OilSys_tOilSysLim_C	/* Identifier */ 
+            OilSys_tiFctPer_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_bPmpMaxVolForcStrt_MP	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_tiDlyInhOilPmpCtl_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys14_OilS__yInhOilPmpCtl_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys6_F04_controle_on_off	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlPmpOnOffHi_C	/* Identifier */ 
+            OilSys_rCtlPmpOnOffLo_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rCtlPmpOnOff	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_nPmpOnOffHi_MP	/* Identifier */ 
+            OilSys_nPmpOnOffLo_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys24_OilSys_nPmpOnOffLo_T	/* Identifier */ 
+            OilSys_FCT_SOilSys23_OilSys_nPmpOnOffHi_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys68_OilSys_facDampResp_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_facDampResp_T	/* Identifier */ 
+            OilSys_facDampResp_A	/* Identifier */ 
+            OilSys_facDamp_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_facDampResp_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys69_OilSys_tiResp_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_tiResp_M	/* Identifier */ 
+            OilSys_nEng_tiRespX_A	/* Identifier */ 
+            OilSys_tOil_tiRespY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_tiResp_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys7_F05_c__e_proportionnel	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_agCkMinUnlockClsExVlv_C	/* Identifier */ 
+            OilSys_agCkMinUnlockOpInVlv_C	/* Identifier */ 
+            OilSys_tiDlyVldPosnCmVlv_C	/* Identifier */ 
+            OilSys_tiFctPer_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_pAirExtMes	/* Identifier */ 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_rCtlPmpProp	/* Identifier */ 
+            OilSys_rLdNorm	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_bUnlockCmVlv_MP	/* Identifier */ 
+            OilSys_bUnlockCmVlv	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys29_F04___ul_consigne_RCO	/* Identifier */ 
+            OilSys_FCT_SOilSys28_F03___r_proportionnel	/* Identifier */ 
+            OilSys_FCT_SOilSys27_F02___nsigne_pression	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys79_OilSys_facD_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_facD_M	/* Identifier */ 
+            OilSys_nEng_facDX_A	/* Identifier */ 
+            OilSys_tOil_facDY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_facD_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys8_F06_coordinateur	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlCmdSatMax_C	/* Identifier */ 
+            OilSys_rCtlCmdSatMin_C	/* Identifier */ 
+            OilSys_rCtlPmpReqMan_C	/* Identifier */ 
+            OilSys_rCtlPmpVolMaxCmd_C	/* Identifier */ 
+            OilSys_rCtlTogMax_C	/* Identifier */ 
+            OilSys_rCtlTogMin_C	/* Identifier */ 
+            OilSys_tiFctPer_C	/* Identifier */ 
+            OilSys_tiPerTog_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_rCtlPmpOnOff	/* Identifier */ 
+            OilSys_rCtlPmpProp	/* Identifier */ 
+            OilSys_rCtlTogMod_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys80_OilSys_facI_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_facI_M	/* Identifier */ 
+            OilSys_nEng_facIX_A	/* Identifier */ 
+            OilSys_tOil_facIY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_facI_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys81_OilSys_facP_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_facP_M	/* Identifier */ 
+            OilSys_nEng_facPX_A	/* Identifier */ 
+            OilSys_tOil_facPY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_facP_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys88_OilS__acBattVoltRat_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_facBattVoltRat_T	/* Identifier */ 
+            OilSys_uBatt_facBattVolt_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_facBattVoltRat_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys89_OilSys_rCtlPmpStrt_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_rCtlPmpStrt_M	/* Identifier */ 
+            OilSys_nEng_rCtlPmpStrtX_A	/* Identifier */ 
+            OilSys_tOil_rCtlPmpStrtY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_rCtlPmpStrt_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        OilSys_FCT_SOilSys9_F07_Diagnostics	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            OilSys_nTogLim_C	/* Identifier */ 
+            OilSys_tiAcvTogMod_C	/* Identifier */ 
+            OilSys_tiDlyTogMod_C	/* Identifier */ 
+            OilSys_noRatDynMax_C	/* Identifier */ 
+            OilSys_pOilDifLimMax_C	/* Identifier */ 
+            OilSys_pOilDifLimMin_C	/* Identifier */ 
+            OilSys_facLpfOilReqOsc_C	/* Identifier */ 
+            OilSys_pNbDynThd_C	/* Identifier */ 
+            OilSys_tiDlyAcvDiagDftReg_C	/* Identifier */ 
+            OilSys_tiDlyAcvDiagReg_C	/* Identifier */ 
+            OilSys_tiDlyDeacInhDiagReg_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            OilSys_bAcvModTog	/* Identifier */ 
+            OilSys_pAirExtMes	/* Identifier */ 
+            OilSys_pOilMes	/* Identifier */ 
+            OilSys_tOil	/* Identifier */ 
+            OilSys_bDgoDftOsc	/* Identifier */ 
+            OilSys_bMonRunDftReg	/* Identifier */ 
+            OilSys_bInhDiagDftReg	/* Identifier */ 
+            OilSys_bRstOscDet	/* Identifier */ 
+            OilSys_pOilDelta_MP	/* Identifier */ 
+            OilSys_pOilErrMaxAbs_MP	/* Identifier */ 
+            OilSys_pOilReqDelta_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            OilSys_FCT_SOilSys142_OilSys_pOscDetThd_M	/* Identifier */ 
+            OilSys_FCT_SOilSys106_F02__nce_mode_on_off	/* Identifier */ 
+            OilSys_FCT_SOilSys105_F01__pression_absolu	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_SBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_SLONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_ULONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        OilSys_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE OilSys ------------------------------------*/

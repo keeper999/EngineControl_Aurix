@@ -1,0 +1,1758 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : pFuM                                                    */
+/* !Description     : FUEL PRESSURE MODEL                                     */
+/*                                                                            */
+/* !Module          : pFuM                                                    */
+/*                                                                            */
+/* !File            : pFuM.a2l                                                */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Jul 19 09:11:42 2012                              */
+/*   Model name       : pFuM_AUTOCODE.mdl                                     */
+/*   Model version    : 1.1272                                                */
+/*   Root subsystem   : /pFuM                                                 */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/pFuM/5-SOFT-LIV/pFuM.a2v    $*/
+/* $Revision::   1.7                                                         $*/
+/* $Author::   adelvare                               $$Date::   19 Jul 2012 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   pFuM
+    /*   LongIdentifier */   "pFuM Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   pFuM_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_facCnvMassFuPFu_M
+       /*   LongIdentifier */   "Cartographie de facteur de conversion masse de carburant injectée (ou pompée) en écart de pression rail"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.9998779296875000E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_2
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   233.0
+          /*   UpperLimit        */   488.0
+          AXIS_PTS_REF                FuSysM_tFu_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_3
+          /*   MaxAxisPoints     */   16
+          /*   LowerLimit        */   0.0
+          /*   UpperLimit        */   5.1199218750000006E+002
+          AXIS_PTS_REF                FuSysM_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agDlyInj_T
+       /*   LongIdentifier */   "Durée angulaire réprésentant le délai entre la consigne et le début de l'injection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_5
+          /*   MaxAxisPoints     */   16
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   7500.0
+          AXIS_PTS_REF                FuSysM_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_rMassPmp_M
+       /*   LongIdentifier */   "Ratio de masse pompée en fonction du positionnement du début du coup de pompe"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_6
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   1.0
+          AXIS_PTS_REF                FuSysM_rAgPmp_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_5
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   7500.0
+          AXIS_PTS_REF                FuSysM_nEng_mOvlpPmp_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_facCorMassEndPmpStk_T
+       /*   LongIdentifier */   "Facteur de correction de la masse pompée en fonction du positionnement de la fin du coup de pompe"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_6
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   1.0
+          AXIS_PTS_REF                FuSysM_rAgInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_facCorMassBegPmpStk_T
+       /*   LongIdentifier */   "Facteur de correction de la masse pompée en fonction du positionnement du début du coup de pompe"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_6
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   1.0
+          AXIS_PTS_REF                FuSysM_rAgInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_rMassInj_T
+       /*   LongIdentifier */   "Cartographie du ratio de masse injectée fonction du ratio angulaire d'injection considéré"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute         */   COM_AXIS
+          /*   InputQuantity     */   NO_INPUT_QUANTITY
+          /*   Conversion        */   pFuM_CM_6
+          /*   MaxAxisPoints     */   9
+          /*   LowerLimit        */   0
+          /*   UpperLimit        */   1.0
+          AXIS_PTS_REF                FuSysM_rAgInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_pFuMin_C
+       /*   LongIdentifier */   "Valeur minimale de la pression dans le rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_3
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agConvInjHRef_C
+       /*   LongIdentifier */   "Angle permettant la conversion des angles des injections H1 et H2 dans le référentiel angulaire ayant origine l'événement d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agConvInjSRef_C
+       /*   LongIdentifier */   "Angle permettant la conversion des angles des injections S1 et S2 dans le référentiel angulaire ayant origine l'événement d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_agPerInjRef_C
+       /*   LongIdentifier */   "Durée angulaire entre deux PMHs admission"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_rMassPFuMeanEstim_C
+       /*   LongIdentifier */   "Fractionnement de perte de masse pour l'estimation de la pression rail au cours de l'injection (0.5 pour le milieu de l'injection)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFUM_u8Inhib
+       /*   LongIdentifier */   "Calibration d'inhibition du module pFuM"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_bAcvPFuMdl_C
+       /*   LongIdentifier */   "Booléen d'activation du modèle de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   FuSysM_rFilGainPFuMdl_C
+       /*   LongIdentifier */   "Gain du filtre pour estimation de la pression dans le rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   pFuM_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_10
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   99.609375
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_tFu_A
+       /*   LongIdentifier */   "Table de breakpoints pour la Température carburant dans le rail"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuM_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   233.0
+       /*   UpperLimit     */   488.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_pFuRailMes_A
+       /*   LongIdentifier */   "Table de points d'appui pour la Prail mesurée"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuM_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_3
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_rAgPmp_A
+       /*   LongIdentifier */   "Table de point d'appui en ratio de phasage pour le calcul de la masse pompée entre deux événements angulaires"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuM_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_nEng_mOvlpPmp_A
+       /*   LongIdentifier */   "Table de points d'appuis en régime moteur pour le recouvrement avec le coup de pompe"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuM_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_5
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   FuSysM_rAgInj_A
+       /*   LongIdentifier */   "Table de point d'appui en ratio de phasage pour le calcul des masses injectées entre deux événements angulaires"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   pFuM_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   pFuM_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH1
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjS1
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH2
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjS2
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH1Prev
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection H1 au cycle pécédent"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH2Prev
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection H2 au cycle pécédent"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH1Nxt
+       /*   LongIdentifier */   "Consigne de masse de carburant en injection H1 au prochain cycle"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_mFuReqInjH2Nxt
+       /*   LongIdentifier */   "Consigne de carburant en injection H2 au prochain cycle"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH1Ref
+       /*   LongIdentifier */   "Phasage du début de l'injection H1 dans le référentiel du PMB admission"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH1Ref
+       /*   LongIdentifier */   "Phasage de fin de l'injection H1 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH2Ref
+       /*   LongIdentifier */   "Phasage du début de l'injection H2 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH2Ref
+       /*   LongIdentifier */   "Phasage de fin de l'injection H2 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjS1Ref
+       /*   LongIdentifier */   "Phasage du début de l'injection S1 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjS1Ref
+       /*   LongIdentifier */   "Phasage de fin de l'injection S1 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjS2Ref
+       /*   LongIdentifier */   "Phasage du début de l'injection S2 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjS2Ref
+       /*   LongIdentifier */   "Phasage de fin de l'injection S2 dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH1RefPrev
+       /*   LongIdentifier */   "Phasage du début de l'injection H1 au cycle précédent dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH1RefPrev
+       /*   LongIdentifier */   "Phasage de fin de l'injection H1 du cycle précédent dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH2RefPrev
+       /*   LongIdentifier */   "Phasage du début de l'injection H2 au cycle précédent dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH2RefPrev
+       /*   LongIdentifier */   "Phasage de fin de l'injection H2 du cycle précédent dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH1RefNxt
+       /*   LongIdentifier */   "Phasage du début de l'injection H1 du prochain cycle dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH1RefNxt
+       /*   LongIdentifier */   "Phasage de la fin de l'injection H1 du prochain cycle dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agBegInjH2RefNxt
+       /*   LongIdentifier */   "Phasage du début de l'injection H2 du prochain cycle dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_agEndInjH2RefNxt
+       /*   LongIdentifier */   "Phasage de la fin de l'injection H2 du prochain cycle dans le référentiel angulaire de l'évènement injection"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjH1Prev
+       /*   LongIdentifier */   "Valeur précédente de l'estimation de la pression rail moyenne au cours de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjS1Prev
+       /*   LongIdentifier */   "Valeur précédente de l'estimation de la pression rail moyenne au cours de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjH2Prev
+       /*   LongIdentifier */   "Valeur précédente de l'estimation de la pression rail moyenne au cours de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjS2Prev
+       /*   LongIdentifier */   "Valeur précédente de l'estimation de la pression rail moyenne au cours de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac1CorMassPmpInjH2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 1 sur la masse des coups de pompe injectée pendant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac2CorMassPmpInjH2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 2 sur la masse des coups de pompe injectée pendant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpOvlpH2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail durant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjOvlpH2
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées pendant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpBegH2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail avant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjBegH2
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées avant l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimBegH2
+       /*   LongIdentifier */   "Estimation de la pression rail au début de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpBegS2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail avant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjBegS2
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées avant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac1CorMassPmpInjS2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 1 sur la masse des coups de pompe injectée pendant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac2CorMassPmpInjS2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 2 sur la masse des coups de pompe injectée pendant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpOvlpS2
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail durant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjOvlpS2
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées pendant l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   488.28125
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimBegS2
+       /*   LongIdentifier */   "Estimation de la pression dans le rail au début de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpBegS1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail avant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjBegS1
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées avant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac1CorMassPmpInjS1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 1 sur la masse des coups de pompe injectée pendant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac2CorMassPmpInjS1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 2 sur la masse des coups de pompe injectée pendant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpOvlpS1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail durant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjOvlpS1
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées pendant l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimBegS1
+       /*   LongIdentifier */   "Estimation de la pression dans le rail au début de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac1CorMassPmpInjH1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 1 sur la masse des coups de pompe injectée pendant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_fac2CorMassPmpInjH1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) du facteur de correction 2 sur la masse des coups de pompe injectée pendant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_12
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpOvlpH1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail durant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjOvlpH1
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées pendant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuPmpBegH1
+       /*   LongIdentifier */   "Vecteur (n coups de pompe) des masses de carburant injectées par les coups de pompe dans le rail avant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_mFuInjBegH1
+       /*   LongIdentifier */   "Vecteur (n injections) des masses de carburant débitées avant l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimBegH1
+       /*   LongIdentifier */   "Estimation de la pression rail au début de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   pFuM_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjH1
+       /*   LongIdentifier */   "Estimation de la pression rail moyenne au cours de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjS1
+       /*   LongIdentifier */   "Estimation de la pression rail moyenne au cours de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjH2
+       /*   LongIdentifier */   "Estimation de la pression rail moyenne au cours de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_pFuEstimInjS2
+       /*   LongIdentifier */   "Estimation de la pression rail moyenne au cours de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimInjH1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimInjH2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimInjS1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimInjS2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimH1CylPrev
+       /*   LongIdentifier */   "Valeur précédente du vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimH2CylPrev
+       /*   LongIdentifier */   "Valeur précédente du vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimS1CylPrev
+       /*   LongIdentifier */   "Valeur précédente du vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_prm_pFuEstimS2CylPrev
+       /*   LongIdentifier */   "Valeur précédente du vecteur (n cylindres) d'estimation de la pression rail moyenne au cours de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   FuSysM_facCnvMassFuPFu
+       /*   LongIdentifier */   "Facteur de conversion masse de carburant injectée (ou pompée) en écart de pression rail"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   pFuM_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.9998779296875000E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_1
+       /*   LongIdentifier */   "Q = V*81920"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "bar/mg"
+       COEFFS                   0 81920 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_2
+       /*   LongIdentifier */   "Q = (V-233)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "K"
+       COEFFS                   0 1 -233 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_3
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_4
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_6
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_7
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            pFuM_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_10
+       /*   LongIdentifier */   "Q = V*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_12
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_13
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_14
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_15
+       /*   LongIdentifier */   "Q = V*134217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "kg"
+       COEFFS                   0 134217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_16
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_17
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   pFuM_CM_18
+       /*   LongIdentifier */   "Q = V*100000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "bar"
+       COEFFS                   0 100000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   pFuM_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   pFuM
+       /*   LongIdentifier */   "V02NT1202018.001"
+
+       /begin DEF_CHARACTERISTIC
+          FuSysM_agConvInjHRef_C
+          FuSysM_agConvInjSRef_C
+          FuSysM_agDlyInj_T
+          FuSysM_agPerInjRef_C
+          FuSysM_bAcvPFuMdl_C
+          FuSysM_facCnvMassFuPFu_M
+          FuSysM_facCorMassBegPmpStk_T
+          FuSysM_facCorMassEndPmpStk_T
+          FuSysM_nEng_mOvlpPmp_A
+          FuSysM_pFuMin_C
+          FuSysM_pFuRailMes_A
+          FuSysM_rAgInj_A
+          FuSysM_rAgPmp_A
+          FuSysM_rFilGainPFuMdl_C
+          FuSysM_rMassInj_T
+          FuSysM_rMassPFuMeanEstim_C
+          FuSysM_rMassPmp_M
+          FuSysM_tFu_A
+          PFUM_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          FuSysM_agBegInjH1Ref
+          FuSysM_agBegInjH1RefNxt
+          FuSysM_agBegInjH1RefPrev
+          FuSysM_agBegInjH2Ref
+          FuSysM_agBegInjH2RefNxt
+          FuSysM_agBegInjH2RefPrev
+          FuSysM_agBegInjS1Ref
+          FuSysM_agBegInjS2Ref
+          FuSysM_agEndInjH1Ref
+          FuSysM_agEndInjH1RefNxt
+          FuSysM_agEndInjH1RefPrev
+          FuSysM_agEndInjH2Ref
+          FuSysM_agEndInjH2RefNxt
+          FuSysM_agEndInjH2RefPrev
+          FuSysM_agEndInjS1Ref
+          FuSysM_agEndInjS2Ref
+          FuSysM_mFuReqInjH1
+          FuSysM_mFuReqInjH1Nxt
+          FuSysM_mFuReqInjH1Prev
+          FuSysM_mFuReqInjH2
+          FuSysM_mFuReqInjH2Nxt
+          FuSysM_mFuReqInjH2Prev
+          FuSysM_mFuReqInjS1
+          FuSysM_mFuReqInjS2
+          FuSysM_pFuEstimBegH1
+          FuSysM_pFuEstimBegH2
+          FuSysM_pFuEstimBegS1
+          FuSysM_pFuEstimBegS2
+          FuSysM_pFuEstimInjH1Prev
+          FuSysM_pFuEstimInjH2Prev
+          FuSysM_pFuEstimInjS1Prev
+          FuSysM_pFuEstimInjS2Prev
+          FuSysM_prm_fac1CorMassPmpInjH1
+          FuSysM_prm_fac1CorMassPmpInjH2
+          FuSysM_prm_fac1CorMassPmpInjS1
+          FuSysM_prm_fac1CorMassPmpInjS2
+          FuSysM_prm_fac2CorMassPmpInjH1
+          FuSysM_prm_fac2CorMassPmpInjH2
+          FuSysM_prm_fac2CorMassPmpInjS1
+          FuSysM_prm_fac2CorMassPmpInjS2
+          FuSysM_prm_mFuInjBegH1
+          FuSysM_prm_mFuInjBegH2
+          FuSysM_prm_mFuInjBegS1
+          FuSysM_prm_mFuInjBegS2
+          FuSysM_prm_mFuInjOvlpH1
+          FuSysM_prm_mFuInjOvlpH2
+          FuSysM_prm_mFuInjOvlpS1
+          FuSysM_prm_mFuInjOvlpS2
+          FuSysM_prm_mFuPmpBegH1
+          FuSysM_prm_mFuPmpBegH2
+          FuSysM_prm_mFuPmpBegS1
+          FuSysM_prm_mFuPmpBegS2
+          FuSysM_prm_mFuPmpOvlpH1
+          FuSysM_prm_mFuPmpOvlpH2
+          FuSysM_prm_mFuPmpOvlpS1
+          FuSysM_prm_mFuPmpOvlpS2
+          FuSysM_prm_pFuEstimH1CylPrev
+          FuSysM_prm_pFuEstimH2CylPrev
+          FuSysM_prm_pFuEstimS1CylPrev
+          FuSysM_prm_pFuEstimS2CylPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          FuSysM_facCnvMassFuPFu
+          FuSysM_pFuEstimInjH1
+          FuSysM_pFuEstimInjH2
+          FuSysM_pFuEstimInjS1
+          FuSysM_pFuEstimInjS2
+          FuSysM_prm_pFuEstimInjH1Cyl
+          FuSysM_prm_pFuEstimInjH2Cyl
+          FuSysM_prm_pFuEstimInjS1Cyl
+          FuSysM_prm_pFuEstimInjS2Cyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,18 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+AVRMISFCNT_vidCntMisfPerCycleCyl|B|();|FCT1.5|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|In this function, for a duration of a driving cycle, the number of occurred misfires corresponding to each cylinder is calculated.|
+AVRMISFCNT_vidEWMA_MisfireCalc|B|();|FCT2.2|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0| In this part, an exponential weighting moving average of misfires occurring is calculated for each cylinder for the last driving cycles.|
+AVRMISFCNT_vidInitCntMisf|A|();|FCT1.2|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|Before starting the engine (ECU On but engine stalled), the counter is set to the value saved in EEPROM.|
+AVRMISFCNT_vidInitOutput|B|();|FCT1.1|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|Fonction d'initialisation des variables de sorties.|
+AVRMISFCNT_vidMisfCntCyl_1|B|();|FCT1.7|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|The number of occurred misfires during the current driving cycle is calculated for the cylinder 1.|
+AVRMISFCNT_vidMisfCntCyl_2|B|();|FCT1.8|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|The number of occurred misfires during the current driving cycle is calculated for the cylinder 2.|
+AVRMISFCNT_vidMisfCntCyl_3|B|();|FCT1.9|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|The number of occurred misfires during the current driving cycle is calculated for the cylinder 3.|
+AVRMISFCNT_vidMisfCntCyl_4|B|();|FCT1.10|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|The number of occurred misfires during the current driving cycle is calculated for the cylinder 4.|
+AVRMISFCNT_vidMisfDetectPerCyl|B|();|FCT1.6|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|This function insures assignment of  detected misfire to the corresponding cylinder in order to increment the misfire counters.|
+AVRMISFCNT_vidNumMisfirePerCycle|B|();|FCT2.1|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0|The total number of detected misfires during the current cycle is refreshed every misfire.|
+AVRMISFCNT_vidReinit_Cnt_Misf|A|();|FCT1.4|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0| When a new driving cycle starts (CRANK To Run), the counter is set to zero.|
+AVRMISFCNT_vidRstEWMAMisfireMod4|A|();|FCT1.3|AVRMISFCNT|0|V02 NT 11 05583||||0|0|0|0| Default erase by “mode 04” sets the EWMA to 0.|
+Misf_EveCrTR_AvrMisfCnt|A|();|SCH.4|AVRMISFCNT|1|V02 NT 11 05583||||0|0|0|0|Event CRANK To RUN for misfire function|
+Misf_EveKOf_AvrMisfCnt|B|();|SCH.3|AVRMISFCNT|1|V02 NT 11 05583||||0|0|0|0|Event key On_Off|
+Misf_EveMisf_AvrMisfCnt|B|();|SCH.2|AVRMISFCNT|1|V02 NT 11 05583||||0|0|0|0|Software Interruption event of the misfire acquisition window end.|
+Misf_EveRst_AvrMisfCnt|B|();|SCH.1|AVRMISFCNT|1|V02 NT 11 05583||||0|0|0|0|ECU Reset event|
+Misf_EveRstDftObd_AvrMisfCnt|A|();|SCH.5|AVRMISFCNT|1|V02 NT 11 05583||||0|0|0|0|Event reset of defaults by the "mode 04"|

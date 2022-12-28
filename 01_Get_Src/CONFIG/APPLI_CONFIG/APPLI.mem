@@ -1,0 +1,900 @@
+/* Default linker script, for normal executables */
+OUTPUT_FORMAT("elf32-tricore")
+OUTPUT_ARCH(tricore)
+ENTRY(STARTUP_START)
+
+__TRICORE_DERIVATE_MEMORY_MAP__ = 0x290;
+
+/* LCF_CSA0_SIZE shall be consistent with CSA_CPU0_SIZE in APPLI_StackSize.h */
+LCF_CSA0_SIZE      = 8k;
+/* LCF_USTACK0_SIZE shall be consistent with USTACK_CPU0_SIZE in APPLI_StackSize.h */
+LCF_USTACK0_SIZE   = 8k;
+
+/* LCF_CSA1_SIZE shall be consistent with CSA_CPU1_SIZE in APPLI_StackSize.h */
+LCF_CSA1_SIZE      = 8k;
+/* LCF_USTACK1_SIZE shall be consistent with USTACK_CPU1_SIZE in APPLI_StackSize.h */
+LCF_USTACK1_SIZE   = 8k;
+
+/* LCF_CSA2_SIZE shall be consistent with CSA_CPU2_SIZE in APPLI_StackSize.h */
+LCF_CSA2_SIZE      = 8k;
+/* LCF_USTACK2_SIZE shall be consistent with USTACK_CPU2_SIZE in APPLI_StackSize.h */
+LCF_USTACK2_SIZE   = 8k;
+
+LCF_HEAP_SIZE      = 2k;
+
+LCF_DSPR2_START    = 0x50000000;
+LCF_DSPR2_SIZE     = 240k;
+
+LCF_DSPR1_START    = 0x60000000;
+LCF_DSPR1_SIZE     = 240k;
+
+LCF_DSPR0_START    = 0x70000000;
+LCF_DSPR0_SIZE     = 120k;
+
+LCF_CSA2_OFFSET    = (LCF_DSPR2_SIZE     - 1k  - LCF_CSA2_SIZE);
+LCF_USTACK2_OFFSET    = (LCF_CSA2_OFFSET    - 512 - LCF_USTACK2_SIZE);
+LCF_STACKZONE2_OFFSET = (LCF_USTACK2_OFFSET - 512);
+LCF_HEAP2_OFFSET      = (LCF_STACKZONE2_OFFSET - LCF_HEAP_SIZE);
+
+LCF_CSA1_OFFSET    = (LCF_DSPR1_SIZE     - 1k  - LCF_CSA1_SIZE);
+LCF_USTACK1_OFFSET    = (LCF_CSA1_OFFSET    - 512 - LCF_USTACK1_SIZE);
+LCF_STACKZONE1_OFFSET = (LCF_USTACK1_OFFSET - 512);
+LCF_HEAP1_OFFSET      = (LCF_STACKZONE1_OFFSET - LCF_HEAP_SIZE);
+
+LCF_CSA0_OFFSET    = (LCF_DSPR0_SIZE     - 1k  - LCF_CSA0_SIZE);
+LCF_USTACK0_OFFSET    = (LCF_CSA0_OFFSET    - 512 - LCF_USTACK0_SIZE);
+LCF_STACKZONE0_OFFSET = (LCF_USTACK0_OFFSET - 512);
+LCF_HEAP0_OFFSET      = (LCF_STACKZONE0_OFFSET - LCF_HEAP_SIZE);
+
+LCF_CKS_CAL        = 0x80040060;
+LCF_CALIB_BEG      = 0x80040084;
+
+LCF_INTVEC0_START  = 0x800C0000;
+LCF_TRAPVEC_START   = 0x800C6000;
+LCF_APPLVECT_START = 0x800C6120;
+LCF_CKS_LOG        = 0x800C6520;
+LCF_VER_LDB        = 0x800C6524;
+LCF_CKS_TMS_LOG    = 0x800C652C;
+LCF_TMS_CODE_BEG   = 0x800C6530;
+LCF_CODE_COPY_CALIB = 0x803FD600;	/* END OF PFLASH1 - to change when PF3 will be used  SIZE = 10.752K */
+
+RESET = 0x80000020;
+
+MEMORY
+{
+   dsram2_local (w!xp): org = 0xd0000000, len = 222K /*full length is 240K but 18K are reserved for stack zone*/
+   dsram2 (w!xp): org = 0x50000000, len = 222K /*full length is 240K but 18K are reserved for stack zone*/
+   stackzone2_local (w!xp): org = 0xd0037800, len = 18K
+   stackzone2 (w!xp): org = 0x50037800, len = 18K
+   psram2 (w!xp): org = 0x50100000, len = 24K
+
+   dsram1_local (w!xp): org = 0xd0000000, len = 222K /*full length is 240K but 18K are reserved for stack zone*/
+   dsram1 (w!xp): org = 0x60000000, len = 222K /*full length is 240K but 18K are reserved for stack zone*/
+   stackzone1_local (w!xp): org = 0xd0037800, len = 18K
+   stackzone1 (w!xp): org = 0x60037800, len = 18K
+   psram1 (w!xp): org = 0x60100000, len = 24K
+
+   dsram0_local (w!xp): org = 0xd0000000, len = 102K /*full length is 120K but 18K are reserved for stack zone*/
+   dsram0 (w!xp): org = 0x70000000, len = 102K /*full length is 120K but 18K are reserved for stack zone*/
+   stackzone0_local (w!xp): org = 0xd0019800, len = 18K
+   stackzone0 (w!xp): org = 0x70019800, len = 18K
+   psram0 (w!xp): org = 0x70100000, len = 24K
+
+   psram_local (w!xp): org = 0xc0000000, len = 24K
+
+   pfls (rx!p): org = 0x80000000, len = 4M
+   pfls_nc (rx!p): org = 0xa0000000, len = 4M
+
+   dfls0 (rx!p): org = 0xaf000000, len = 384K
+
+   lmuram (w!xp): org = 0x90000000, len = 32K
+   lmuram_nc (w!xp): org = 0xb0000000, len = 32K
+
+   edmem (w!xp): org = 0x9f000000, len = 1M
+   edmem_nc (w!xp): org = 0xbf000000, len = 1M
+}
+
+/* map local memory address to a global address */ 
+REGION_MAP( CPU0 , ORIGIN(dsram0_local), LENGTH(dsram0_local), ORIGIN(dsram0))
+REGION_MAP( CPU1 , ORIGIN(dsram1_local), LENGTH(dsram1_local), ORIGIN(dsram1))
+REGION_MAP( CPU2 , ORIGIN(dsram2_local), LENGTH(dsram2_local), ORIGIN(dsram2))
+
+/*Un comment one of the below statements to enable CpuX DMI RAM to hold global variables*/
+/*REGION_ALIAS( default_ram , dsram0)*/
+REGION_ALIAS( default_ram , dsram1)
+/*REGION_ALIAS( default_ram , dsram2)*/
+
+CORE_ID = GLOBAL ;
+
+SECTIONS
+{
+   /*This section is always required as Boot mode header 0 address absolutely restricted at address 0x80000000*/
+   .bmhd_0 (0x80000000) : FLAGS(arl)
+   {
+      BootModeHeader0 = .;
+      KEEP (*(.bmhd_0))
+   } > pfls
+
+   /*This section is always required as user start address absolutely restricted at address 0x80000020*/
+   .startup (0x80000020) : FLAGS(rxl)
+   {
+      BootModeIndex = .;
+      . = ALIGN(8);
+      KEEP (*(.start))
+      . = ALIGN(8);
+   } > pfls =0x800
+
+   /*This section is always required as Boot mode header 1 address absolutely restricted at address 0x80020000*/
+   .bmhd_1 (0x80020000) : FLAGS(arl)
+   {
+      BootModeIndex = .;
+      KEEP (*(.bmhd_1))
+   } > pfls
+
+/******************************************************************************/
+/* Calibration area                                                           */
+/******************************************************************************/
+   CKS_CAL (LCF_CKS_CAL) : FLAGS(arl)
+   {
+      KEEP(*(CKS_CAL));
+      . = ALIGN(4);
+   } > pfls
+
+   .calib (LCF_CALIB_BEG) : FLAGS(arl)
+   {
+      PROVIDE(__CALIB_BEGIN = .);
+      KEEP(*(CALIB_BEG));
+      . = ALIGN(4);
+      KEEP(*(CKS_TMS_CAL));
+      . = ALIGN(4);
+      KEEP(*(TMS_CALIB_BEG));
+      KEEP(*(TMS_CALIB));
+      . = ALIGN(4);
+      KEEP(*(TMS_CALIB_END));
+      KEEP(*(.calib));
+      KEEP(*(.calib.*));
+      KEEP(*(CALIB)); /* optional, artifact from Renesas mapping */
+      . = ALIGN(8);
+      PROVIDE(__CALIB_END = .);
+   } > pfls
+
+   .calib_cpu0  : FLAGS(arl)
+   {
+      PROVIDE(__CALIB_CPU0_BEGIN = .);
+      KEEP(*(.calib_cpu0));
+      KEEP(*(.calib_cpu0.*));
+      . = ALIGN(8);
+      PROVIDE(__CALIB_CPU0_END = .);
+   } > pfls
+
+   .calib_cpu1  : FLAGS(arl)
+   {
+      PROVIDE(__CALIB_CPU1_BEGIN = .);
+      KEEP(*(.calib_cpu1));
+      KEEP(*(.calib_cpu1.*));
+      . = ALIGN(8);
+      PROVIDE(__CALIB_CPU1_END = .);
+   } > pfls
+
+   .calib_cpu2  : FLAGS(arl)
+   {
+      PROVIDE(__CALIB_CPU2_BEGIN = .);
+      KEEP(*(.calib_cpu2));
+      KEEP(*(.calib_cpu2.*));
+      . = ALIGN(4);
+      KEEP(*(CALIB_END));
+      . = ALIGN(8);
+      PROVIDE(__CALIB_CPU2_END = .);
+   } > pfls
+
+
+/******************************************************************************/
+/* Eeprom area                                                                */
+/******************************************************************************/
+   .eeprom  : FLAGS(axl)
+   {
+      *(.eeprom)
+      *(.eeprom.*)
+      *(EEPROM) /* optional, artifact from Renesas mapping */
+      . = ALIGN(8);
+   } > dfls0
+
+
+/******************************************************************************/
+/* Interrupts vector table                                                    */
+/******************************************************************************/
+
+   .inttab.osinterrupts (LCF_INTVEC0_START + 0x0) : FLAGS(axl)
+   {
+      KEEP(*(.inttab.osinterrupts));
+      KEEP(*(.inttab.osinterrupts.*));
+   }
+   
+   __INTTAB_CPU0 = LCF_INTVEC0_START;
+   __INTTAB_CPU1 = LCF_INTVEC0_START + 0x2000;
+   __INTTAB_CPU2 = LCF_INTVEC0_START + 0x4000;
+ 
+
+/******************************************************************************/
+/* Traps vector table                                                         */
+/******************************************************************************/
+   .traptab_tc (LCF_TRAPVEC_START) :
+   {
+      PROVIDE(__TRAPTAB = .);
+      KEEP (*(.traptab));
+      PROVIDE(__TRAPTAB_END = .);
+   } > pfls
+
+   .applvect (LCF_APPLVECT_START):
+   {
+      KEEP (*(APPLVECT));
+   } > pfls
+/******************************************************************************/
+/* CODE, CONSTANT DATA area                                                   */
+/******************************************************************************/
+
+   CKS_LOG (LCF_CKS_LOG) : FLAGS(arl)
+   {
+      KEEP(*(CKS_LOG));
+      . = ALIGN(4);
+   } > pfls
+
+   VER_LDB (LCF_VER_LDB) : FLAGS(arl)
+   {
+      KEEP(*(VER_LDB));
+      . = ALIGN(4);
+   } > pfls
+
+   CKS_TMS_LOG (LCF_CKS_TMS_LOG) : FLAGS(arl)
+   {
+      KEEP(*(CKS_TMS_LOG));
+      . = ALIGN(4);
+   } > pfls
+
+
+   TMS_CODE_BEG (LCF_TMS_CODE_BEG) : FLAGS(arl)
+   {
+      . = ALIGN(4);
+      KEEP(*(TMS_CODE_BEG));
+   } > pfls
+
+   TMS_CODE : FLAGS(axl)
+   {
+      *(TMS_CODE)
+   } > pfls
+
+   TMS_CODE_END : FLAGS(arl)
+   {
+      . = ALIGN(4);
+      KEEP(*(TMS_CODE_END));
+   } > pfls
+
+   .zrodata : FLAGS(arl)
+   {
+      *(.zrodata)
+      *(.zrodata.*)
+   } > pfls
+
+   .sdata2 : FLAGS(arsl)
+   {
+      *(.srodata)
+      *(.srodata.*)
+   } > pfls
+
+   _SMALL_DATA2_ = SIZEOF(CORE_SEC(.sdata2)) ? ADDR(CORE_SEC(.sdata2)) + 32k : (ADDR(CORE_SEC(.sdata2)) & 0xF0000000) + 32k ;
+   __A1_MEM = _SMALL_DATA2_;
+
+   .rodata : FLAGS(arl)
+   {
+      *(.rodata)
+      *(.rodata.*)
+      *(.gnu.linkonce.r.*)
+      /*
+      * Create the clear and copy tables that tell the startup code
+      * which memory areas to clear and to copy, respectively.
+      */
+      . = ALIGN(4) ;
+      PROVIDE(__clear_table = .) ;
+      LONG(0 + ADDR(.CPU2.zbss));             LONG(SIZEOF(.CPU2.zbss));
+      LONG(0 + ADDR(.CPU2.bss));              LONG(SIZEOF(.CPU2.bss));
+      LONG(0 + ADDR(.CPU1.zbss));             LONG(SIZEOF(.CPU1.zbss));
+      LONG(0 + ADDR(.CPU1.bss));              LONG(SIZEOF(.CPU1.bss));
+      LONG(0 + ADDR(.CPU0.zbss));             LONG(SIZEOF(.CPU0.zbss));
+      LONG(0 + ADDR(.CPU0.bss));              LONG(SIZEOF(.CPU0.bss));
+      LONG(0 + ADDR(.zbss));                  LONG(SIZEOF(.zbss));
+      LONG(0 + ADDR(.sbss));                  LONG(SIZEOF(.sbss));
+      LONG(0 + ADDR(.bss));                   LONG(SIZEOF(.bss));
+      LONG(0 + ADDR(.sbss4));                 LONG(SIZEOF(.sbss4));
+      LONG(-1);                               LONG(-1);
+      PROVIDE(__copy_table = .) ;
+      LONG(LOADADDR(.CPU2.zdata));            LONG(0 + ADDR(.CPU2.zdata));            LONG(SIZEOF(.CPU2.zdata));
+      LONG(LOADADDR(.CPU2.data));             LONG(0 + ADDR(.CPU2.data));             LONG(SIZEOF(.CPU2.data));
+      LONG(LOADADDR(.CPU1.zdata));            LONG(0 + ADDR(.CPU1.zdata));            LONG(SIZEOF(.CPU1.zdata));
+      LONG(LOADADDR(.CPU1.data));             LONG(0 + ADDR(.CPU1.data));             LONG(SIZEOF(.CPU1.data));
+      LONG(LOADADDR(.CPU0.zdata));            LONG(0 + ADDR(.CPU0.zdata));            LONG(SIZEOF(.CPU0.zdata));
+      LONG(LOADADDR(.CPU0.data));             LONG(0 + ADDR(.CPU0.data));             LONG(SIZEOF(.CPU0.data));
+      LONG(LOADADDR(.zdata));                 LONG(0 + ADDR(.zdata));                 LONG(SIZEOF(.zdata));
+      LONG(LOADADDR(.sdata));                 LONG(0 + ADDR(.sdata));                 LONG(SIZEOF(.sdata));
+      LONG(LOADADDR(.data));                  LONG(0 + ADDR(.data));                  LONG(SIZEOF(.data));
+      LONG(LOADADDR(.sdata4));                LONG(0 + ADDR(.sdata4));                LONG(SIZEOF(.sdata4));
+      LONG(LOADADDR(.code_cached_cpu2));      LONG(0 + ADDR(.code_cached_cpu2));      LONG(SIZEOF(.code_cached_cpu2));
+      LONG(LOADADDR(.code_cached_cpu1));      LONG(0 + ADDR(.code_cached_cpu1));      LONG(SIZEOF(.code_cached_cpu1));
+      LONG(LOADADDR(.code_cached_cpu0));      LONG(0 + ADDR(.code_cached_cpu0));      LONG(SIZEOF(.code_cached_cpu0));
+      LONG(LOADADDR(.CPU1.endless_loop));     LONG(0 + ADDR(.CPU1.endless_loop));     LONG(SIZEOF(.CPU1.endless_loop)); 
+      LONG(LOADADDR(.CPU2.endless_loop));     LONG(0 + ADDR(.CPU2.endless_loop));     LONG(SIZEOF(.CPU2.endless_loop)); 
+      LONG(-1);                               LONG(-1);                               LONG(-1);
+      PROVIDE(__power_on_clear_table = .) ;
+      LONG(0 + ADDR(.CPU2.power_on_cleared)); LONG(SIZEOF(.CPU2.power_on_cleared));
+      LONG(0 + ADDR(.CPU1.power_on_cleared)); LONG(SIZEOF(.CPU1.power_on_cleared));
+      LONG(0 + ADDR(.CPU0.power_on_cleared)); LONG(SIZEOF(.CPU0.power_on_cleared));
+      LONG(0 + ADDR(.power_on_cleared));      LONG(SIZEOF(.power_on_cleared));
+      LONG(-1);                               LONG(-1);
+      PROVIDE(__power_on_copy_table = .) ;
+      LONG(LOADADDR(.CPU2.power_on_init));    LONG(0 + ADDR(.CPU2.power_on_init)); LONG(SIZEOF(.CPU2.power_on_init));
+      LONG(LOADADDR(.CPU1.power_on_init));    LONG(0 + ADDR(.CPU1.power_on_init)); LONG(SIZEOF(.CPU1.power_on_init));
+      LONG(LOADADDR(.CPU0.power_on_init));    LONG(0 + ADDR(.CPU0.power_on_init)); LONG(SIZEOF(.CPU0.power_on_init));
+      LONG(LOADADDR(.power_on_init));         LONG(0 + ADDR(.power_on_init));      LONG(SIZEOF(.power_on_init));
+      LONG(-1);                                LONG(-1);                            LONG(-1);
+      . = ALIGN(8);
+   } > pfls
+
+   .text  : FLAGS(axl)
+   {
+     *(.text)
+     *(.text.*)
+     *(.gnu.linkonce.t.*)
+     *(.gnu.warning)        /* .gnu.warning sections are handled specially by elf32.em. */
+     . = ALIGN(8);
+   } > pfls
+
+   .code  : FLAGS(axl)
+   {
+      *(.code)
+      *(.code.*)
+      *(CODE) /* optional, artifact from Renesas mapping */
+      . = ALIGN(8);
+   } > pfls
+
+   .const  : FLAGS(arl)
+   {
+      KEEP(*(.const));
+      KEEP(*(.const.*));
+      KEEP(*(CONST)); /* optional, artifact from Renesas mapping */
+      . = ALIGN(8);
+   } > pfls
+   
+   .code_cpu0  : FLAGS(axl)
+   {
+      *(.code_cpu0)
+      *(.code_cpu0.*)
+      . = ALIGN(8);
+   } > pfls
+
+   .code_cached_cpu0  : FLAGS(axl)
+   {
+      *(.code_cached_cpu0)
+      *(.code_cached_cpu0.*)
+      . = ALIGN(8);
+   } > psram0 AT> pfls
+
+   .const_cpu0  : FLAGS(arl)
+   {
+      KEEP(*(.const_cpu0));
+      KEEP(*(.const_cpu0.*));
+      . = ALIGN(8);
+   } > pfls
+
+   .code_cpu1  : FLAGS(axl)
+   {
+      *(.code_cpu1)
+      *(.code_cpu1.*)
+      . = ALIGN(8);
+   } > pfls
+
+   .code_cached_cpu1  : FLAGS(axl)
+   {
+      *(.code_cached_cpu1)
+      *(.code_cached_cpu1.*)
+      . = ALIGN(8);
+   } > psram1 AT> pfls
+
+   .const_cpu1  : FLAGS(arl)
+   {
+      KEEP(*(.const_cpu1));
+      KEEP(*(.const_cpu1.*));
+      . = ALIGN(8);
+   } > pfls
+
+   .code_cpu2  : FLAGS(axl)
+   {
+      *(.code_cpu2)
+      *(.code_cpu2.*)
+      . = ALIGN(8);
+   } > pfls
+
+   .code_cached_cpu2  : FLAGS(axl)
+   {
+      *(.code_cached_cpu2)
+      *(.code_cached_cpu2.*)
+      . = ALIGN(8);
+   } > psram2 AT> pfls
+
+   .const_cpu2  : FLAGS(arl)
+   {
+      KEEP(*(.const_cpu2));
+      KEEP(*(.const_cpu2.*));
+      . = ALIGN(8);
+   } > pfls
+   
+   .code_copy_calib (LCF_CODE_COPY_CALIB) : FLAGS(axl)
+   {
+      . = ALIGN(8);
+      KEEP(*(.code_copy_calib));
+      KEEP(*(.code_copy_calib.*));
+      . = ALIGN(8);
+   } > pfls
+   .const_copy_calib : FLAGS(arl)
+   {
+      . = ALIGN(8);
+      KEEP(*(.const_copy_calib));
+      KEEP(*(.const_copy_calib.*));
+      . = ALIGN(8);
+   } > pfls
+}
+
+
+/******************************************************************************/
+/* RAM area                                                                   */
+/******************************************************************************/
+
+/*Near data sections*/
+
+CORE_ID = CPU2 ;
+
+SECTIONS
+{
+   CORE_SEC(.zdata) (LCF_DSPR2_START): FLAGS(awzl)
+   {
+      . = ALIGN(4) ;
+      *(.zdata_cpu2)
+      *(.zdata_cpu2.*)
+      . = ALIGN(4) ;
+    } > dsram2 AT> pfls
+    
+    CORE_SEC(.zbss) (NOLOAD): FLAGS(awz)
+   {
+      . = ALIGN(4) ;
+      *(.zbss_cpu2)
+      *(.zbss_cpu2.*)
+   } > dsram2
+
+}
+
+CORE_ID = CPU1;
+
+SECTIONS
+{
+   CORE_SEC(.zdata) (LCF_DSPR1_START): FLAGS(awzl)
+   {
+      . = ALIGN(4) ;
+      *(.zdata_cpu1)
+      *(.zdata_cpu1.*)
+      . = ALIGN(4) ;
+   } > dsram1 AT> pfls
+
+    CORE_SEC(.zbss): FLAGS(awz)
+   {
+      . = ALIGN(4) ;
+      *(.zbss_cpu1)
+      *(.zbss_cpu1.*)
+   } > dsram1
+}
+
+CORE_ID = CPU0;
+
+SECTIONS
+{
+   CORE_SEC(.zdata) (LCF_DSPR0_START): FLAGS(awzl)
+   {
+      . = ALIGN(4) ;
+      *(.zdata_cpu0)
+      *(.zdata_cpu0.*)
+      . = ALIGN(4) ;
+   } > dsram0 AT> pfls
+
+   CORE_SEC(.zbss) (NOLOAD): FLAGS(awz)
+   {
+      . = ALIGN(4) ;
+      *(.zbss_cpu0)
+      *(.zbss_cpu0.*)
+   } > dsram0
+}
+
+CORE_ID = CPU1;
+
+SECTIONS
+{
+   CORE_SEC(.endless_loop): FLAGS(ax)
+   {
+      *(.rtmcld_endless_loop_cpu1)
+      *(.rtmcld_endless_loop_cpu1.*)
+      . = ALIGN(8);
+   } > psram1 AT> pfls
+}
+
+CORE_ID = CPU2 ;
+
+SECTIONS
+{
+   CORE_SEC(.endless_loop): FLAGS(ax)
+   {
+      *(.rtmcld_endless_loop)
+      *(.rtmcld_endless_loop.*)
+      . = ALIGN(8);
+   } > psram2 AT> pfls
+}
+
+/*RAM sections without cpu sufix will go to default ram defined above with REGION_ALIAS*/
+
+CORE_ID = GLOBAL;
+
+SECTIONS
+{
+   CORE_SEC(.zdata) : FLAGS(awzl)
+   {
+      . = ALIGN(4) ;
+      *(.zdata)
+      *(.zdata.*)
+      *(.gnu.linkonce.z.*)
+      . = ALIGN(4) ;
+   } > default_ram AT> pfls
+
+   CORE_SEC(.zbss) (NOLOAD) : FLAGS(awz)
+   {
+      . = ALIGN(4) ;
+      *(.zbss)
+      *(.zbss.*)
+      *(.bbss)
+      *(.bbss.*)
+      *(.gnu.linkonce.zb.*)
+   } > default_ram
+
+   CORE_SEC(.sdata) : FLAGS(awsl)
+   {
+      . = ALIGN(4) ;
+      *(.sdata)
+      *(.sdata.*)
+      . = ALIGN(4) ;
+   } > default_ram AT> pfls
+   _SMALL_DATA_ = SIZEOF(CORE_SEC(.sdata)) ? ADDR(CORE_SEC(.sdata)) + 32k : (ADDR(CORE_SEC(.sdata)) & 0xF0000000) + 32k ;
+   __A0_MEM = _SMALL_DATA_;
+   
+   CORE_SEC(.sbss) (NOLOAD): FLAGS(aws)
+   {
+      . = ALIGN(4) ;
+      *(.sbss)
+      *(.sbss.*)
+   } > default_ram
+
+   CORE_SEC(.uncleared) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.uncleared)
+       *(.uncleared.*)   
+   } > default_ram AT> pfls
+
+   CORE_SEC(.data) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.data)
+      *(.data.*)
+      *(.gnu.linkonce.d.*)
+      . = ALIGN(4) ;
+   } > default_ram AT> pfls
+
+   CORE_SEC(.power_on_init) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_init)
+       *(.power_on_init.*)
+      . = ALIGN(4) ;
+   } > default_ram AT> pfls
+
+   CORE_SEC(.bss) (NOLOAD) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.bss)
+      *(.bss.*)
+      *(.gnu.linkonce.b.*)
+   } > default_ram
+
+   CORE_SEC(.power_on_cleared) (NOLOAD) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_cleared)
+       *(.power_on_cleared.*)
+   } > default_ram
+   
+   .heap  : FLAGS(aw)
+   {
+      . = ALIGN(8);
+      __HEAP = .;
+      __HEAP_END = . + LCF_HEAP_SIZE;
+   } > default_ram
+}
+
+CORE_ID = CPU2 ;
+
+SECTIONS
+{
+   CORE_SEC(.uncleared) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.uncleared_cpu2)
+       *(.uncleared_cpu2.*)   
+   } > dsram2
+
+   CORE_SEC(.data) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.data_cpu2)
+      *(.data_cpu2.*)
+      . = ALIGN(4) ;
+   } > dsram2 AT> pfls
+
+   CORE_SEC(.power_on_init) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_init_cpu2)
+       *(.power_on_init_cpu2.*)
+      . = ALIGN(4) ;
+   } > dsram2 AT> pfls
+   
+   CORE_SEC(.bss) (NOLOAD): FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.bss_cpu2)
+      *(.bss_cpu2.*)
+} > dsram2
+   
+   CORE_SEC(.power_on_cleared) (NOLOAD) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_cleared_cpu2)
+      *(.power_on_cleared_cpu2.*)
+   } > dsram2
+}
+
+CORE_ID = CPU1;
+
+SECTIONS
+{
+   CORE_SEC(.uncleared) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.uncleared_cpu1)
+       *(.uncleared_cpu1.*)   
+   } > dsram1
+
+   CORE_SEC(.data) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.data_cpu1)
+      *(.data_cpu1.*)
+      . = ALIGN(4) ;
+   } > dsram1 AT> pfls
+
+   CORE_SEC(.power_on_init) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_init_cpu1)
+       *(.power_on_init_cpu1.*)
+      . = ALIGN(4) ;
+   } > dsram1 AT> pfls
+   
+   CORE_SEC(.bss) (NOLOAD): FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.bss_cpu1)
+      *(.bss_cpu1.*)
+   } > dsram1
+   
+   CORE_SEC(.power_on_cleared) (NOLOAD) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_cleared_cpu1)
+      *(.power_on_cleared_cpu1.*)
+   } > dsram1
+}
+
+CORE_ID = CPU0;
+
+SECTIONS
+{
+   CORE_SEC(.uncleared) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.uncleared_cpu0)
+       *(.uncleared_cpu0.*)   
+   } > dsram0
+
+   CORE_SEC(.data) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.data_cpu0)
+      *(.data_cpu0.*)
+      . = ALIGN(4) ;
+   } > dsram0 AT> pfls
+
+   CORE_SEC(.power_on_init) : FLAGS(awl)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_init_cpu0)
+       *(.power_on_init_cpu0.*)
+      . = ALIGN(4) ;
+   } > dsram0 AT> pfls
+   
+   CORE_SEC(.bss) (NOLOAD): FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.bss_cpu0)
+      *(.bss_cpu0.*)
+   } > dsram0
+   
+   CORE_SEC(.power_on_cleared) (NOLOAD) : FLAGS(aw)
+   {
+      . = ALIGN(4) ;
+      *(.power_on_cleared_cpu0)
+      *(.power_on_cleared_cpu0.*)
+   } > dsram0
+}
+
+
+/******************************************************************************/
+/* Stacks area                                                                */
+/******************************************************************************/
+
+CORE_ID = CPU2;
+
+SECTIONS
+{
+   CORE_SEC(.ustack) (LCF_DSPR2_START + LCF_USTACK2_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__USTACK2_END = .);
+      KEEP (*(.stack_cpu2))
+      KEEP (*(.ustack_cpu2))
+      PROVIDE(__USTACK2 = LCF_DSPR2_START + LCF_USTACK2_OFFSET + LCF_USTACK2_SIZE);
+      PROVIDE(__ISTACK2 = LCF_DSPR2_START + LCF_USTACK2_OFFSET + LCF_USTACK2_SIZE);/* UStack and IStack are shared stacks */
+   } > stackzone2
+
+   CORE_SEC(.csa) (LCF_DSPR2_START + LCF_CSA2_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__CSA2 = .);
+      KEEP (*(.csa_cpu2))
+      PROVIDE(__CSA2_END = LCF_DSPR2_START + LCF_CSA2_OFFSET + LCF_CSA2_SIZE);
+   } > stackzone2
+}
+
+CORE_ID = CPU1;
+
+SECTIONS
+{
+   CORE_SEC(.ustack) (LCF_DSPR1_START + LCF_USTACK1_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__USTACK1_END = .);
+      KEEP (*(.stack_cpu1))
+      KEEP (*(.ustack_cpu1))
+      PROVIDE(__USTACK1 = LCF_DSPR1_START + LCF_USTACK1_OFFSET + LCF_USTACK1_SIZE);
+      PROVIDE(__ISTACK1 = LCF_DSPR1_START + LCF_USTACK1_OFFSET + LCF_USTACK1_SIZE);/* UStack and IStack are shared stacks */
+   } > stackzone1
+
+   CORE_SEC(.csa) (LCF_DSPR1_START + LCF_CSA1_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__CSA1 = .);
+      KEEP (*(.csa_cpu1))
+      PROVIDE(__CSA1_END = LCF_DSPR1_START + LCF_CSA1_OFFSET + LCF_CSA1_SIZE);
+   } > stackzone1
+}
+
+CORE_ID = CPU0;
+
+SECTIONS
+{
+   CORE_SEC(.ustack) (LCF_DSPR0_START + LCF_USTACK0_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__USTACK0_END = .);
+      KEEP (*(.stack_cpu0))
+      KEEP (*(.ustack_cpu0))
+      PROVIDE(__USTACK0 = LCF_DSPR0_START + LCF_USTACK0_OFFSET + LCF_USTACK0_SIZE);
+      PROVIDE(__ISTACK0 = LCF_DSPR0_START + LCF_USTACK0_OFFSET + LCF_USTACK0_SIZE);/* UStack and IStack are shared stacks */
+   } > stackzone0
+
+   CORE_SEC(.csa) (LCF_DSPR0_START + LCF_CSA0_OFFSET): FLAGS(aw)
+   {
+      PROVIDE(__CSA0 = .);
+      KEEP (*(.csa_cpu0))
+      PROVIDE(__CSA0_END = LCF_DSPR0_START + LCF_CSA0_OFFSET + LCF_CSA0_SIZE);
+   } > stackzone0
+}
+
+
+/******************************************************************************/
+/* Miscellaneous                                                              */
+/******************************************************************************/
+
+CORE_ID = GLOBAL;
+
+SECTIONS
+{
+   CORE_SEC(.sdata3) : FLAGS(arsl)
+   {
+      *(.rodata_a8)
+      *(.rodata_a8.*)
+   } > pfls
+
+   _SMALL_DATA3_ = SIZEOF(CORE_SEC(.sdata3)) ? ADDR(CORE_SEC(.sdata3)) + 32k : (ADDR(CORE_SEC(.sdata3)) & 0xF0000000) + 32k ;
+   __A8_MEM = _SMALL_DATA3_;
+
+   .sdata4 :
+   {
+      *(.lmudata)
+      *(.lmudata.*)
+   } > lmuram AT> pfls
+
+   .sbss4 :
+   {
+      *(.lmubss)
+      *(.lmubss.*)
+   } > lmuram
+
+   _SMALL_DATA4_ = SIZEOF(CORE_SEC(.sdata4)) ? ADDR(CORE_SEC(.sdata4)) + 32k : (ADDR(CORE_SEC(.sdata4)) & 0xF0000000) + 32k ;
+   __A9_MEM = _SMALL_DATA4_;
+
+   /*
+    * DWARF debug sections.
+    * Symbols in the DWARF debugging sections are relative to the
+    * beginning of the section, so we begin them at 0.
+    */
+   /*
+    * DWARF 1
+    */
+   .comment         0 : { *(.comment) }
+   .debug           0 : { *(.debug) }
+   .line            0 : { *(.line) }
+   /*
+    * GNU DWARF 1 extensions
+    */
+   .debug_srcinfo   0 : { *(.debug_srcinfo) }
+   .debug_sfnames   0 : { *(.debug_sfnames) }
+   /*
+    * DWARF 1.1 and DWARF 2
+    */
+   .debug_aranges   0 : { *(.debug_aranges) }
+   .debug_pubnames  0 : { *(.debug_pubnames) }
+   /*
+    * DWARF 2
+    */
+   .debug_info      0 : { *(.debug_info) }
+   .debug_abbrev    0 : { *(.debug_abbrev) }
+   .debug_line      0 : { *(.debug_line) }
+   .debug_frame     0 : { *(.debug_frame) }
+   .debug_str       0 : { *(.debug_str) }
+   .debug_loc       0 : { *(.debug_loc) }
+   .debug_macinfo   0 : { *(.debug_macinfo) }
+   .debug_ranges    0 : { *(.debug_ranges) }
+   /*
+    * SGI/MIPS DWARF 2 extensions
+    */
+   .debug_weaknames 0 : { *(.debug_weaknames) }
+   .debug_funcnames 0 : { *(.debug_funcnames) }
+   .debug_typenames 0 : { *(.debug_typenames) }
+   .debug_varnames  0 : { *(.debug_varnames) }
+   /*
+    * Optional sections that may only appear when relocating.
+    */
+   /*
+    * Optional sections that may appear regardless of relocating.
+    */
+   .version_info    0 : { *(.version_info) }
+   .boffs           0 : { KEEP (*(.boffs)) }
+}

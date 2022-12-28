@@ -1,0 +1,1070 @@
+/begin MODULE
+    DfwCtl	/* Name */ 
+    "-"	/* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-"	/* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR  
+ 
+    /begin MOD_COMMON 
+        "-"	/* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 1 
+        ALIGNMENT_LONG 1 
+        ALIGNMENT_FLOAT32_IEEE 1 
+        ALIGNMENT_FLOAT64_IEEE 1 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON  
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_bAntOscDetProtAuth_C	/* Name */ 
+        "Anticipated resonance detection authorization flag"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_facProtAcv_M	/* Name */ 
+        "Protection activation factor map"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        /begin AXIS_DESCR
+            FIX_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            DfwCtl_CM_EQ_LSB_1_OFF_0	/* Conversion */
+            3	/* MaxAxisPoints */
+            0	/* LowerLimit */
+            3	/* UpperLimit */
+            FIX_AXIS_PAR_DIST 0 1 3
+        /end AXIS_DESCR
+        /begin AXIS_DESCR
+            FIX_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            DfwCtl_CM_EQ_LSB_1_OFF_0	/* Conversion */
+            4	/* MaxAxisPoints */
+            0	/* LowerLimit */
+            4	/* UpperLimit */
+            FIX_AXIS_PAR_DIST 0 1 4
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_facTauNEngClc_C	/* Name */ 
+        "Filter factor for dedicated engine speed calculation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_facTauNEngFastClc_C	/* Name */ 
+        "Filter factor for dedicated fast engine speed calculation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_facTauOscDet_C	/* Name */ 
+        "Filter factor for resonance detection calculation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nDifOscDetThd_tCo_T	/* Name */ 
+        "Engine speed difference threshold for resonance detection according to engine coolant temperature "	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_5_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            DfwCtl_CM_EQ_LSB_1_e	/* Conversion */ 
+            3	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF DfwCtl_tCo_nDifOscDetThd_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nDifOscDetThdVehRun_C	/* Name */ 
+        "Engine speed difference threshold for resonance detection according if the vehicle runs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_5_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nEngMaxAntOscDet_C	/* Name */ 
+        "Maximum engine speed to detect anticipated resonance"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_8	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2504	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nEngMaxStraAcv_C	/* Name */ 
+        "Maximum engine speed for strategy activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_10	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nEngMinOscDetDeac_C	/* Name */ 
+        "Minimum engine speed to deactivate resonance detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_10	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nEngMinVehRunDet_C	/* Name */ 
+        "Minimum engine speed for running vehicle detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_10	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nFastMinAntOscDet_C	/* Name */ 
+        "Minimum fast engine speed to detect anticipated resonance"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_nFastMinOscDetDeac_C	/* Name */ 
+        "Minimum fast engine speed to deactivate resonance detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_rCluHiPedPrssAcv_C	/* Name */ 
+        "High threshold to detect clutch pedal is pressed"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_rCluLoPedPrssAcv_C	/* Name */ 
+        "Low threshold to detect clutch pedal is  not pressed"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_spdVehMinVehRunDet_C	/* Name */ 
+        "Minimum vehicle speed for running vehicle detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        120	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_spdVehMinVehRunDetDeac_C	/* Name */ 
+        "Minimum vehicle speed for running vehicle detection deactivation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        120	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_tiDlyAntOscDet_C	/* Name */ 
+        "Delay time during anticipated detection is possible if engine speed is lower than a threshold"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_tiDlyDirRotCkDet_C	/* Name */ 
+        "Delay time between two direction rotation crankshaft changes"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_01_f	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2.5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_tiDlyMaxWaitDrv_C	/* Name */ 
+        "Waiting driver delay time to release clutch pedal"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_tiDlyOscDetCfm_C	/* Name */ 
+        "Delay time to confirm resonance detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_tiInhInjProtAcv_C	/* Name */ 
+        "Delay time to cut off the injection during anticipated resonance detection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        DfwCtl_tCo_nDifOscDetThd_A	/* Name */ 
+        "Engine coolant temperature axis for \"DfwCtl_nDifOscDetThd_tCo_T\"-"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        DfwCtl_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        DfwCtl_CM_EQ_LSB_1_e	/* Conversion */ 
+        3	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end AXIS_PTS 
+  
+    /begin MEASUREMENT 
+        DfwCtl_bAcvLimTqIdlRaw	/* Name */ 
+        "Limitation torque request raw activation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bAntOscDet	/* Name */ 
+        "Anticipated resonance detection flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bCluPedPrss	/* Name */ 
+        "Clutch pedal press activation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bCluPedPrssRise	/* Name */ 
+        "Clutch pedal press rising edge activation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bDiagProtAdp	/* Name */ 
+        "DFW protection diagnosis raw result"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bDiagRunProtAdp	/* Name */ 
+        "DFW protection diagnosis raw activation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bInhInjProtDfwRaw	/* Name */ 
+        "Cut off injection request raw activation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bOscDet	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bOscDetDeac	/* Name */ 
+        "Resonance detection deactivation flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bOscDetRaw_MP	/* Name */ 
+        "Resonance detection raw flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bOverOscDet	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bStraAcv	/* Name */ 
+        "Activation strategy flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bStraAcvIni	/* Name */ 
+        "Initialization activation strategy flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_bVehRunDet	/* Name */ 
+        "Running vehicle detection flag"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nDifAbsFilHi_MP	/* Name */ 
+        "High absolute engine speed difference filtered"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nDifAbsFilLo_MP	/* Name */ 
+        "Low absolute engine speed difference filtered"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nDifAbsHi_MP	/* Name */ 
+        "High absolute engine speed difference"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nDifAbsLo_MP	/* Name */ 
+        "Low absolute engine speed difference"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nEngFil	/* Name */ 
+        "Dedicated engine speed"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_nEngFilFast	/* Name */ 
+        "Dedicated fast engine speed"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_sNV_Z1_CST_16BIT.DfwCtl_prm_noOscDetProtAcv_NV	/* Name */ 
+        "Aggravated and all resonances detection saved number"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        65535	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 2 1 1
+			DISPLAY_IDENTIFIER DfwCtl_prm_noOscDetProtAcv_NV
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_stProtDfw	/* Name */ 
+        "DFW Protection state"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        DfwCtl_CM_Default_Table_2	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_tiDlyWaitDrv	/* Name */ 
+        "DFW Protection state"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        DfwCtl_CM_EQ_LSB_0_01	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_Default_Table_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        TAB_VERB	/* ConversionType */ 
+        "%12.6"	/* Format */ 
+        "-"	/* Unit */ 
+        COMPU_TAB_REF DfwCtl_CV_CONV_TAB_Default_Table_2 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_001953125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.9"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001953125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_00390625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.8"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.00390625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD
+	
+	/begin COMPU_METHOD
+        DfwCtl_CM_EQ_LSB_1_OFF_0	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%8"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_01	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_01_f	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_5	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.1"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_0_5_d	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.1"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_1_c	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_1_e	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_10	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 10 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_EQ_LSB_8	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 8 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_VOID_SCALING_a	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        DfwCtl_CV_CONV_TAB_Default_Table_2	/* Name */ 
+        "Conversion table"	/* LongIdentifier */ 
+        TAB_VERB	/* ConversionType */ 
+        4	/* NumberValuePairs */ 
+        0	/* InVal */ 
+        "Nominal"	/* OutVal */ 
+        1	/* InVal */ 
+        "Oscillations"	/* OutVal */ 
+        2	/* InVal */ 
+        "Clutch_pedal_press_and_oscillations"	/* OutVal */ 
+        3	/* InVal */ 
+        "reserved"	/* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_DfwCtl_002_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            DfwCtl_FCT_SDfwCtl2_F0	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_SDfwCtl2_F0	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DfwCtl_nEngMaxStraAcv_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            DfwCtl_bAcvLimTqIdlRaw	/* Identifier */ 
+            DfwCtl_bDiagProtAdp	/* Identifier */ 
+            DfwCtl_bDiagRunProtAdp	/* Identifier */ 
+            DfwCtl_bInhInjProtDfwRaw	/* Identifier */ 
+            DfwCtl_bStraAcv	/* Identifier */ 
+            DfwCtl_bStraAcvIni	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            DfwCtl_FCT_SDfwCtl4_F02_D__heel_protection	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_SDfwCtl31_DfwC__OscDetThd_tCo_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DfwCtl_nDifOscDetThd_tCo_T	/* Identifier */ 
+            DfwCtl_tCo_nDifOscDetThd_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_SDfwCtl4_F02_D__heel_protection	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DfwCtl_bAntOscDetProtAuth_C	/* Identifier */ 
+            DfwCtl_tiInhInjProtAcv_C	/* Identifier */ 
+            DfwCtl_tiDlyMaxWaitDrv_C	/* Identifier */ 
+            DfwCtl_nEngMaxAntOscDet_C	/* Identifier */ 
+            DfwCtl_nFastMinAntOscDet_C	/* Identifier */ 
+            DfwCtl_tiDlyAntOscDet_C	/* Identifier */ 
+            DfwCtl_nEngMinVehRunDet_C	/* Identifier */ 
+            DfwCtl_spdVehMinVehRunDetDeac_C	/* Identifier */ 
+            DfwCtl_spdVehMinVehRunDet_C	/* Identifier */ 
+            DfwCtl_facTauOscDet_C	/* Identifier */ 
+            DfwCtl_nDifOscDetThdVehRun_C	/* Identifier */ 
+            DfwCtl_tiDlyOscDetCfm_C	/* Identifier */ 
+            DfwCtl_nEngMinOscDetDeac_C	/* Identifier */ 
+            DfwCtl_nFastMinOscDetDeac_C	/* Identifier */ 
+            DfwCtl_rCluHiPedPrssAcv_C	/* Identifier */ 
+            DfwCtl_rCluLoPedPrssAcv_C	/* Identifier */ 
+            DfwCtl_tiDlyDirRotCkDet_C	/* Identifier */ 
+            DfwCtl_facTauNEngClc_C	/* Identifier */ 
+            DfwCtl_facTauNEngFastClc_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            DfwCtl_bAcvLimTqIdlRaw	/* Identifier */ 
+            DfwCtl_bDiagProtAdp	/* Identifier */ 
+            DfwCtl_bDiagRunProtAdp	/* Identifier */ 
+            DfwCtl_bInhInjProtDfwRaw	/* Identifier */ 
+            DfwCtl_bStraAcvIni	/* Identifier */ 
+            DfwCtl_bOscDet	/* Identifier */ 
+            DfwCtl_bOverOscDet	/* Identifier */ 
+            DfwCtl_sNV_Z1_CST_16BIT.DfwCtl_prm_noOscDetProtAcv_NV	/* Identifier */ 
+            DfwCtl_bAntOscDet	/* Identifier */ 
+            DfwCtl_bCluPedPrss	/* Identifier */ 
+            DfwCtl_bCluPedPrssRise	/* Identifier */ 
+            DfwCtl_bOscDetDeac	/* Identifier */ 
+            DfwCtl_bVehRunDet	/* Identifier */ 
+            DfwCtl_stProtDfw	/* Identifier */ 
+            DfwCtl_tiDlyWaitDrv	/* Identifier */ 
+            DfwCtl_nEngFil	/* Identifier */ 
+            DfwCtl_nEngFilFast	/* Identifier */ 
+            DfwCtl_nDifAbsLo_MP	/* Identifier */ 
+            DfwCtl_nDifAbsHi_MP	/* Identifier */ 
+            DfwCtl_nDifAbsFilLo_MP	/* Identifier */ 
+            DfwCtl_nDifAbsFilHi_MP	/* Identifier */ 
+            DfwCtl_bOscDetRaw_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            DfwCtl_FCT_SDfwCtl50_DfwCtl_facProtAcv_M	/* Identifier */ 
+            DfwCtl_FCT_SDfwCtl31_DfwC__OscDetThd_tCo_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_SDfwCtl50_DfwCtl_facProtAcv_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DfwCtl_facProtAcv_M	/* Identifier */  
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            DfwCtl_stProtDfw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        DfwCtl_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        DfwCtl_RL_UBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        DfwCtl_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DfwCtl_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        DfwCtl_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_bAcvLimTqIdl_B /* Name */ 
+        "Limitation torque request activation flag" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        DfwCtl_CM_Byp_Table_out43 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_bInhInjProtDfw_B /* Name */ 
+        "Cut off injection request activation flag" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        DfwCtl_CM_Byp_Table_out44 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_noOverOscDetProtAcv_B /* Name */ 
+        "Aggravated resonance detection number" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        DfwCtl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        65535 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DfwCtl_noProtAdp_B /* Name */ 
+        "Resonance detection number" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        DfwCtl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        65535 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DFWCTL_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module DfwCtl" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        DfwCtl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        DfwCtl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_Byp_Table_out43 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF DfwCtl_CV_CONV_TAB_Table_out43 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_Byp_Table_out44 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF DfwCtl_CV_CONV_TAB_Table_out44 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        DfwCtl_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "-"                              /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        DfwCtl_CV_CONV_TAB_Table_out43 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        2 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "No activation" /* OutVal */ 
+        1 /* InVal */ 
+        "Activation" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin COMPU_VTAB 
+        DfwCtl_CV_CONV_TAB_Table_out44 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        2 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "No activation" /* OutVal */ 
+        1 /* InVal */ 
+        "Activation" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_Byp    /* Name */ 
+        "DfwCtl_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DfwCtl_bAcvLimTqIdl_B /* Identifier */ 
+            DfwCtl_bInhInjProtDfw_B /* Identifier */ 
+            DfwCtl_noOverOscDetProtAcv_B /* Identifier */ 
+            DfwCtl_noProtAdp_B /* Identifier */ 
+            DFWCTL_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        DfwCtl_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            DfwCtl_ModuleVersion_Major_MP      /* Identifier */ 
+            DfwCtl_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        DfwCtl_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        DfwCtl_RL_UWORD_COL_DIRECT     /* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE DfwCtl ------------------------------------*/

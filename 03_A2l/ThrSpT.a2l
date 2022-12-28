@@ -1,0 +1,578 @@
+﻿/begin MODULE ThrSpT  "ThrSpT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ThrSpT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ThrSys_rOpThrReq_B
+    /* Long Identifier        */      "Consigne de position corrigée boîtier papillon motorisé Dim = 1x1 (Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ThrSys_tiDlyStabSign_mAirInt_C
+    /* Long Identifier        */      "Durée de stabilité avant adaptation."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      65.535
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ThrSys_arMaxSpdAdpThr_C
+    /* Long Identifier        */      "Adaptatif papillon maximum"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_5
+    /* Lower Limit            */      -0.000128
+    /* Upper Limit            */      1.2799609374999999E-004
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ThrSys_arMinSpdAdpThr_C
+    /* Long Identifier        */      "Adaptatif papillon minimum."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_5
+    /* Lower Limit            */      -0.000128
+    /* Upper Limit            */      1.2799609374999999E-004
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ThrSys_arStepSpdAdpThr_C
+    /* Long Identifier        */      "Incrément de section pour ladaptation de la section efficace papillon"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609374999998E-004
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      THRSPT_ACTIVE_BYP_C
+    /* Long Identifier        */      "calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ThrSpT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ThrSpT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      ThrSpT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      ThrSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      ThrSpT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      ThrSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      ThrSpT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      ThrSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_arOpEffThrOfs
+    /* Long identifier        */      "Offset de section issu de ladaptatif lent"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      ThrSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -0.001953125
+    /* Upper limit            */      1.9530653953552240E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_arSpdAdpThr_IRV_MP
+    /* Long Identifier        */      "-"
+    /* Data type              */      SLONG
+    /* Conversion method      */      ThrSpT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -0.000128
+    /* Upper limit            */      1.2799609374999999E-004
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_rOpThrNom
+    /* Long identifier        */      "Position papillon calculée à partir de la cartographie nominale et de laire efficace"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_tiStabSign_mIntPrev
+    /* Long identifier        */      "Compteur du délai de stabilité  avant adaptation au pas précédent"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      65.535
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_tiStabSign_mAirInt
+    /* Long identifier        */      "Compteur du délai de stabilité avant adaptation"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      65.535
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_bAdpThrSign_mIntPrev
+    /* Long identifier        */      "Signe de lintégrateur pour ladaptation de la section efficace au pas précédent"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ThrSpT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_bAdpThrSign_mAirInt
+    /* Long identifier        */      "Signe de lintégrateur pour ladaptation de la section efficace"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ThrSpT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_bAcvSpdAdpThr
+    /* Long identifier        */      "Booléen dactivation de ladaptation rapide de la section papillon"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ThrSpT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_arThrCor_MP
+    /* Long identifier        */      "Aire efficace moins les offset rapide, offset lent et le biais"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9061903953552242E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_rOpThrNomSat_MP
+    /* Long identifier        */      "Point de mesure de la position papillon calculée à partir de la cartographie nominale et de laire efficace saturée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_rOpThrNomRef2_MP
+    /* Long identifier        */      "Point de mesure de la position papillon calculée à partir de la cartographie nominale et de laire efficace Ref2"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ThrSys_rOpThrNomRef3_MP
+    /* Long identifier        */      "Point de mesure de la position papillon calculée à partir de la cartographie nominale et de laire efficace Ref3"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ThrSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_1
+    /* Long identifier        */      "Q = V*1024"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1024 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_2
+    /* Long identifier        */      "Q = V*16777216"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m2"
+    /* Coefficients           */      COEFFS 0 16777216 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_3
+    /* Long identifier        */      "Q = V*1024"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 1024 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_4
+    /* Long identifier        */      "Q = V*1000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 1000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_5
+    /* Long identifier        */      "Q = V*256000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²"
+    /* Coefficients           */      COEFFS 0 256000000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF ThrSpT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      ThrSpT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_7
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_8
+    /* Long identifier        */      "Q = V*268435456"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²"
+    /* Coefficients           */      COEFFS 0 268435456 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ThrSpT_CM_9
+    /* Long identifier        */      "Q = V*16777216"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²"
+    /* Coefficients           */      COEFFS 0 16777216 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION ThrSpT_FCT_ThrSpT
+    "CHARACTERISTIC and MEASUREMENT of ThrSpT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      ThrSpT_ModuleVersion_Major_MP 
+      ThrSpT_ModuleVersion_Minor_MP 
+      ThrSpT_ModuleVersion_Patch_MP 
+      ThrSys_arOpEffThrOfs
+      ThrSys_arSpdAdpThr_IRV_MP
+      ThrSys_arThrCor_MP
+      ThrSys_bAcvSpdAdpThr
+      ThrSys_bAdpThrSign_mAirInt
+      ThrSys_bAdpThrSign_mIntPrev
+      ThrSys_rOpThrNom
+      ThrSys_rOpThrNomRef2_MP
+      ThrSys_rOpThrNomRef3_MP
+      ThrSys_rOpThrNomSat_MP
+      ThrSys_tiStabSign_mAirInt
+      ThrSys_tiStabSign_mIntPrev
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      THRSPT_ACTIVE_BYP_C
+      ThrSys_arMaxSpdAdpThr_C
+      ThrSys_arMinSpdAdpThr_C
+      ThrSys_arStepSpdAdpThr_C
+      ThrSys_rOpThrReq_B
+      ThrSys_tiDlyStabSign_mAirInt_C
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+/* ------------------------------ END OF MODULE ThrSpT ------------------------------------*/

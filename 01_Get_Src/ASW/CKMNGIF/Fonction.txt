@@ -1,0 +1,35 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+CKMNGIF_vidAcqui_duree_dent|A|();|FCT1.6|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|La durée dent est utilisée pour le calcul des angles de phasage des injections. Elle est calculée sur événement PMH, moteur  calé vers moteur tournant ou sur moteur synchro.
+CKMNGIF_vidBdcTreatment|B|();|FCT3.5|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction qui déclenche le  calcul du régime moteur au PMB .
+CKMNGIF_vidCalcBdcEngSpd|D|();|FCT3.6|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction de calcul du régime moteur au PMB
+CKMNGIF_vidCountPmh|C|();|FCT2.3|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Le compteur_de_pmh est incrémenté à chaque événement PMH.
+CKMNGIF_vidDiagEngFail|E|();|FCT3.1|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction de diagnostic de deux pannes sur le régime moteur : Panne Régime trop haut et Panne  Accélération  trop  forte
+CKMNGIF_vidEnginePeriodFind|H|();|FCT2.5|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Le LdB fournit au LdA le compteur de PMH phasé et modulo le nombre de cylindres
+CKMNGIF_vidEnginePeriodMeasure|F|();|FCT2.4|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Le LdA récupère du LdB la valeur de la période moteur tous les événements PMH. dans le cas du 1er PMH, le LdB évalue la période moteur à partir de la durée dent.
+CKMNGIF_vidEngineRotDetection|B|();|FCT1.4|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Mettre la variable Sync_bRotDetEng à 1
+CKMNGIF_vidEngineRotNoDetection|B|();|FCT1.5|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Mettre la variable Sync_bRotDetEng à 0
+CKMNGIF_vidEngineSpeedCalc|H|();|FCT2.7|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|A chaque point mort haut combustion, l'applicatif réceptionne la période moteur qui est  convertie ensuite en régime moteur.
+CKMNGIF_vidEngineSpeedDerivCalc|B|();|FCT2.9|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Cette fonction permet de calculer Engine_speed_derivate et Ext_aEng
+CKMNGIF_vidFiltEngineSpeedCalc|C|();|FCT2.8|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction qui produit le régime moteur filtré
+CKMNGIF_vidInitOutput|I|();|FCT1.1|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|La recherche de la singularité de la roue dentée par le composant LDB CRKHAL doit être activée au reset
+CKMNGIF_vidNoExCyl|G|();|FCT3.4|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Ce bloc permet de produire, à récurrence temporelle et moteur synchronisé, les informations « numéro du cylindre en phase d’échappement » et « numéro du prochain cylindre en phase d’échappement ».
+CKMNGIF_vidPeriodeCyl|F|();|FCT2.6|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction qui permet de fournir le numéro du cylindre en phase de compression et admission
+CKMNGIF_vidPhaseCylEch|C|();|FCT3.2|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction permettant  d'obtenir la position angulaire du vilebrequin
+CKMNGIF_vidRunToStall|F|();|FCT1.2|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Initialisation des sorties sur passage de l'etat tournant cale
+CKMNGIF_vidStallToRun|D|();|FCT1.3|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Initialisation des sorties sur passage de l'etat cale tournant
+CKMNGIF_vidSynchroFound|G|();|FCT2.1|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction qui permet la reconnaissance  tardive  d'un  calage moteur  par  la  clé
+CKMNGIF_vidTDCTreatment|D|();|FCT2.2|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Fonction de traitement PMH
+CKMNGIF_vidToothCylEch|F|();|FCT3.3|CKMNGIF|0|PTS_DOC_6884590||||0|0|0|0|Une fois le moteur synchronisé, le LdA fait un appel au LdB via l’API CRKHAL pour obtenir la position angulaire du vilebrequin dont la référence (0 °Vil) est pour  rappel à l’événement PMH du cylindre 1
+GDGAR_vidGdu|A|(argin uint16 indexDefaut, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|
+SWFAIL_vidSoftwareErrorHook|A|();|0x1C|HEADER|1|NONE||||0|0|0|0|
+Sync_EveBDC_CkMngIf|E|();|SCH1.8|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_EveBDC_CkMngIf
+Sync_EveCkOf_CkMngIf|D|();|SCH2.1|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Détection fin de rotation moteur
+Sync_EveCkOn_CkMngIf|D|();|SCH2.2|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Détection rotation moteur
+Sync_EveCkSnOn_CkMngIf|H|();|SCH1.5|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_EveCkSnOn_CkMngIf
+Sync_EveRst_CkMngIf|E|();|SCH1.1|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction reset calculateur
+Sync_EveRTSt_CkMngIf|E|();|SCH1.2|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_EveRTSt_CkMngIf
+Sync_EveStTR_CkMngIf|E|();|SCH1.3|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_EveStTR_CkMngIf
+Sync_EveTDC_CkMngIf|G|();|SCH1.6|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_EveTDC_CkMngIf
+Sync_EveTDC_CkMngIf3|A|();|SCH1.9|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Interruption PMH après calcul durée dent
+Sync_SdlFast_CkMngIf|E|();|SCH1.7|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_SdlFast_CkMngIf
+Sync_SdlMid_CkMngIf|F|();|SCH1.4|CKMNGIF|1|PTS_DOC_6884590||||0|0|0|0|Fonction d'accroche à l'evenement Sync_SdlMid_CkMngIf

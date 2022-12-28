@@ -1,0 +1,3590 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjAstWupCmp                                            */
+/* !Description     : InjAstWupCmp : INJECTION CORRECTION IN AFTER START AND WARM UP */
+/*                                                                            */
+/* !Module          : InjAstWupCmp                                            */
+/*                                                                            */
+/* !File            : InjAstWupCmp.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Mon Feb 18 18:51:55 2013                              */
+/*   Model name       : InjAstWupCmp_AUTOCODE.mdl                             */
+/*   Model version    : 1.510                                                 */
+/*   Root subsystem   : /InjAstWupCmp                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/InjAstWupCmp/5-SOFT-LIV/InjA$*/
+/* $Revision::   1.11                                                        $*/
+/* $Author::   adelvare                               $$Date::   20 Feb 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjAstWupCmp
+    /*   LongIdentifier */   "InjAstWupCmp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjAstWupCmp_RL_Lookup2D_X_SWORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj0_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 0"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj1_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj2_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj3_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstTWCHeatHi_M
+       /*   LongIdentifier */   "Map: After start correction for high catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstTWCHeatLo_M
+       /*   LongIdentifier */   "Map: After start compensation for low catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj0Autn_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 0 (Autonomous restart)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj3Autn_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 3 (Autonomous restart)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj1Autn_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 1 (Autonomous restart)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj2Autn_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 2 (Autonomous restart)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstAutnCorVVT_M
+       /*   LongIdentifier */   "Afterstart (autonomous re-start) valve overlap correction map"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_13
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -96.0
+          /*   UpperLimit     */   95.25
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_14
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -192.0
+          /*   UpperLimit     */   190.5
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj0Autn_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 0 (redémarrage autonome)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj0STT_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 0 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj0_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 0"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj1Autn_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 1 (redémarrage autonome)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj1STT_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 1 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj1_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj2Autn_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 2 (redémarrage autonome)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj2STT_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 2 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj2_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj3Autn_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 3 (redémarrage autonome)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj3STT_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 3 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorInj3_M
+       /*   LongIdentifier */   "Cartographie de compensation d'après départ pour le schéma d'injection 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorTWCHeatHi_M
+       /*   LongIdentifier */   "Map: After start correction for high catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstCorTWCHeatLo_M
+       /*   LongIdentifier */   "Map: After start correction for low catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facAstCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facAstCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj0STT_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 0 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj1STT_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 1 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj2STT_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 2 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstInj3STT_M
+       /*   LongIdentifier */   "Map: After start compensation for injection pattern 3 (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   4095.0
+          AXIS_PTS_REF             InjSys_ct_facAstInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstSTTCorVVT_M
+       /*   LongIdentifier */   "Afterstart (re-start) valve overlap correction map"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_13
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -96.0
+          /*   UpperLimit     */   95.25
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_14
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -192.0
+          /*   UpperLimit     */   190.5
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstStrtCorVVT_M
+       /*   LongIdentifier */   "Afterstart (nominal start) valve overlap correction map"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_13
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -96.0
+          /*   UpperLimit     */   95.25
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_14
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -192.0
+          /*   UpperLimit     */   190.5
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstTiEngStopAutn_M
+       /*   LongIdentifier */   "Map: After start compensation correction for stop duration (Autonomous restart)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstTiEngStopY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   864000.0
+          AXIS_PTS_REF             InjSys_ti_facAstTiEngStopX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstTiEngStopSTT_M
+       /*   LongIdentifier */   "Map: After start compensation correction for stop duration (STT)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstTiEngStopY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   864000.0
+          AXIS_PTS_REF             InjSys_ti_facAstTiEngStopX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facAstTiEngStop_M
+       /*   LongIdentifier */   "Map: After start compensation correction for stop duration"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facAstTiEngStopY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_4
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   864000.0
+          AXIS_PTS_REF             InjSys_ti_facAstTiEngStopX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorRichNAirLd_M
+       /*   LongIdentifier */   "Map: Engine speed / Air load for richness correction at low temperatures"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_8
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             InjSys_rCorRichNAirLdY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_5
+          /*   MaxAxisPoints  */   18
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nCorRichX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorRichNTAir_M
+       /*   LongIdentifier */   "Map: Engine speed / Air temperature for richness correction at low temperatures"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_9
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -256.0
+          /*   UpperLimit     */   255.9921875
+          AXIS_PTS_REF             InjSys_tDifCorNTAirY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_5
+          /*   MaxAxisPoints  */   18
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nCorRichX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facCorRichTAir_T
+       /*   LongIdentifier */   "Table: Air temperature for richness correction at low temperatures"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_9
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -256.0
+          /*   UpperLimit     */   255.9921875
+          AXIS_PTS_REF             InjSys_tDifCorNTAirY_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facHotStrtCorAutn_T
+       /*   LongIdentifier */   "Map: After start compensation correction for hot start (Autonomous restart)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_12
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   200.0
+          AXIS_PTS_REF             InjSys_tAir_facHotStrtCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facHotStrtCorSTT_T
+       /*   LongIdentifier */   "Map: After start compensation correction for hot start (STT)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_12
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   200.0
+          AXIS_PTS_REF             InjSys_tAir_facHotStrtCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facHotStrtCor_T
+       /*   LongIdentifier */   "Map: After start compensation correction for hot start"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_12
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   200.0
+          AXIS_PTS_REF             InjSys_tAir_facHotStrtCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorAirT_T
+       /*   LongIdentifier */   "Warm up ambiant air correction table"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_12
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   200.0
+          AXIS_PTS_REF             InjSys_tAir_facWupCorAirT_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorInj0_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 0"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorInj1_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorInj2_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorInj3_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorTWCHeatHi_M
+       /*   LongIdentifier */   "Map: Warm Up correction for high catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorTWCHeatLo_M
+       /*   LongIdentifier */   "Map: Warm Up correction for low catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facWupCorInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_6
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facWupCorInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupCorVVT_M
+       /*   LongIdentifier */   "Warm up valve overlap correction map"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_13
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -96.0
+          /*   UpperLimit     */   95.25
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_14
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -192.0
+          /*   UpperLimit     */   190.5
+          AXIS_PTS_REF             InjSys_agCk_facCorVVTX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupInj0_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 0"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupInj1_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 1"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupInj2_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 2"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupInj3_M
+       /*   LongIdentifier */   "Map: Warm up compensation correction for injection pattern 3"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupTWCHeatHi_M
+       /*   LongIdentifier */   "Map: Warm up compensation for high catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facWupTWCHeatLo_M
+       /*   LongIdentifier */   "Map: Warm Up compensation for low catalyst heating"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjAstWupCmp_CM_3
+          /*   MaxAxisPoints  */   12
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facWupInjX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJASTWUPCMP_u8Inhib
+       /*   LongIdentifier */   "inhibition of module InjAstWupCmp"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvInjAstWupCmp_C
+       /*   LongIdentifier */   "Booléen d'activation des correction après départ et warm up"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvStrtCor_C
+       /*   LongIdentifier */   "Booléen d'activation de la fonction"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tAcvStrtCor_C
+       /*   LongIdentifier */   "Temperature threshold for function activation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_3
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiTauDeacStrtCor_C
+       /*   LongIdentifier */   "Time constant for function deactivation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjAstWupCmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ct_facAstInjY_A
+       /*   LongIdentifier */   "Table de points d'appui en compensation en après départ sur les Y"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4095.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facAstInjX_A
+       /*   LongIdentifier */   "After start compensation X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_3
+       /*   MaxAxisPoints  */   12
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_agCk_facCorVVTY_A
+       /*   LongIdentifier */   "Warm up valve overlap correction Y axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_BYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_13
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -96.0
+       /*   UpperLimit     */   95.25
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_agCk_facCorVVTX_A
+       /*   LongIdentifier */   "Warm up valve overlap correction X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_BYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_14
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -192.0
+       /*   UpperLimit     */   190.5
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAir_facAstCorInjY_A
+       /*   LongIdentifier */   "After start compensation correction Y axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_7
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEng_facAstCorInjX_A
+       /*   LongIdentifier */   "After start compensation correction X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_6
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facAstTiEngStopY_A
+       /*   LongIdentifier */   "After start compensation correction for stop duration Y axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_3
+       /*   MaxAxisPoints  */   12
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ti_facAstTiEngStopX_A
+       /*   LongIdentifier */   "After start compensation correction for stop duration X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_4
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   864000.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_rCorRichNAirLdY_A
+       /*   LongIdentifier */   "Air load axis for richness correction at low temperatures"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_8
+       /*   MaxAxisPoints  */   12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nCorRichX_A
+       /*   LongIdentifier */   "Engine speed axis for richness correction at low temperatures"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_5
+       /*   MaxAxisPoints  */   18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tDifCorNTAirY_A
+       /*   LongIdentifier */   "Air temperature axis for richness correction at low temperatures"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_9
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -256.0
+       /*   UpperLimit     */   255.9921875
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tAir_facHotStrtCor_A
+       /*   LongIdentifier */   "After start compensation correction for hot start : axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_12
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tAir_facWupCorAirT_A
+       /*   LongIdentifier */   "Warm up ambiant air correction axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_12
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAir_facWupCorInjY_A
+       /*   LongIdentifier */   "Warm up compensation correction Y axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_7
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEng_facWupCorInjX_A
+       /*   LongIdentifier */   "Warm up compensation correction X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_6
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facWupInjY_A
+       /*   LongIdentifier */   "Warm up compensation correction Y axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_3
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facWupInjX_A
+       /*   LongIdentifier */   "Warm up compensation correction X axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjAstWupCmp_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjAstWupCmp_CM_3
+       /*   MaxAxisPoints  */   12
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agCkPosnVlvOvlp
+       /*   LongIdentifier */   "Position angulaire du croisement VVT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -96.0
+       /*   UpperLimit     */   95.25
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agCkVlvOvlp
+       /*   LongIdentifier */   "Durée angulaire du croisement VVT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -192.0
+       /*   UpperLimit     */   190.5
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorInj0_MP
+       /*   LongIdentifier */   "Warm up compensation correction for injection pattern 0"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupInj0_MP
+       /*   LongIdentifier */   "Warm up compensation for injection pattern 0"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupInj1_MP
+       /*   LongIdentifier */   "Warm up compensation for injection pattern 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupInj2_MP
+       /*   LongIdentifier */   "Warm up compensation for injection pattern 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupInj3_MP
+       /*   LongIdentifier */   "Warm up compensation for injection pattern 3"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorInj3_MP
+       /*   LongIdentifier */   "Warm up compensation correction for injection pattern 3"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorInj1_MP
+       /*   LongIdentifier */   "Warm up compensation correction for injection pattern 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorInj2_MP
+       /*   LongIdentifier */   "Warm up compensation correction for injection pattern 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorTWCHeatHi_MP
+       /*   LongIdentifier */   "Warm Up correction for high catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorTWCHeatLo_MP
+       /*   LongIdentifier */   "Warm Up correction for low catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupTWCHeatHi_MP
+       /*   LongIdentifier */   "Warm Up compensation for high catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupTWCHeatLo_MP
+       /*   LongIdentifier */   "Warm Up compensation for low catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorAirT_MP
+       /*   LongIdentifier */   "Warm up ambiant temperature correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorVVT_MP
+       /*   LongIdentifier */   "Warm up valve overlap correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorRaw_MP
+       /*   LongIdentifier */   "Warm up correction calculation step"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWupCorTWCHeat_MP
+       /*   LongIdentifier */   "Warm Up compensation for catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facWup
+       /*   LongIdentifier */   "Warm up factor"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facStrtCorGsl
+       /*   LongIdentifier */   "Injection start correction (gasoline fuel)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facCorRichTAir_MP
+       /*   LongIdentifier */   "Air temperature correction at low temperatures"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facCorRichNTAir_MP
+       /*   LongIdentifier */   "Engine speed / air temperature correction at low temperatures"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facCorRichNAirLd_MP
+       /*   LongIdentifier */   "Engine speed / air load correction at low temperatures"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facStrtCorRaw_MP
+       /*   LongIdentifier */   "Raw start correction compensation factor"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facCorRichCold_MP
+       /*   LongIdentifier */   "Richness correction factor at low temperatures"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facStrtCor
+       /*   LongIdentifier */   "Injection start correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAst
+       /*   LongIdentifier */   "Facteur en après démarrage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj0Autn_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 0 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj0Autn_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 0 (redémarrage autonome)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj3Autn_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 3 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj1Autn_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 1 (redémarrage autonome)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj2Autn_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 2 (redémarrage autonome)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj3Autn_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 3 (Redémarrage autonome)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj1Autn_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 1 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj2Autn_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 2 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facHotStrtCorAutn_MP
+       /*   LongIdentifier */   "After start compensation correction for hot start (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstTiStopAutn_MP
+       /*   LongIdentifier */   "After start compensation correction for stop duration (autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstAutnCorVVT_MP
+       /*   LongIdentifier */   "Afterstart (autonomous re-start) valve overlap correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw1Autn_MP
+       /*   LongIdentifier */   "After start correction calculation step 1 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw2Autn_MP
+       /*   LongIdentifier */   "After start correction calculation step 2 (Autonomous restart)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstAutn
+       /*   LongIdentifier */   "Facteur en après démarrage (redémarrage autonome)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj0STT_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 0 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj1STT_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 1 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj2STT_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 2 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj3STT_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 3 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj0STT_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 0 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj1STT_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 1 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj2STT_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 2 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj3STT_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 3 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facHotStrtCorSTT_MP
+       /*   LongIdentifier */   "After start compensation correction for hot start (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstTiEngStopSTT_MP
+       /*   LongIdentifier */   "After start compensation correction for stop duration (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstSTTCorVVT_MP
+       /*   LongIdentifier */   "Afterstart (re-start) valve overlap correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw1STT_MP
+       /*   LongIdentifier */   "After start correction calculation step 1 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw2STT_MP
+       /*   LongIdentifier */   "After start correction calculation step 2 (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstSTT
+       /*   LongIdentifier */   "After start factor (STT)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj0_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 0"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj1_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorTWCHeatHi_MP
+       /*   LongIdentifier */   "After start correction for high catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorTWCHeatLo_MP
+       /*   LongIdentifier */   "After start correction for low catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj2_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstInj3_MP
+       /*   LongIdentifier */   "After start compensation for injection pattern 3"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstTWCHeatHi_MP
+       /*   LongIdentifier */   "After start compensation for high catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstTWCHeatLo_MP
+       /*   LongIdentifier */   "After start compensation for low catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj0_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 0"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj1_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj2_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorInj3_MP
+       /*   LongIdentifier */   "Compensation d'après départ pour le schéma d'injection 3"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facHotStrtCor_MP
+       /*   LongIdentifier */   "After start compensation correction for hot start"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstTiEngStop_MP
+       /*   LongIdentifier */   "After start compensation correction for stop duration"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstStrtCorVVT_MP
+       /*   LongIdentifier */   "Afterstart (nominal start) valve overlap correction"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw1Strt_MP
+       /*   LongIdentifier */   "After start correction calculation step 1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorTWCHeat_MP
+       /*   LongIdentifier */   "After start compensation for catalyst heating"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstCorRaw2Strt_MP
+       /*   LongIdentifier */   "After start correction calculation step 2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facAstStrt
+       /*   LongIdentifier */   "After start factor (first start)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiEngStopRstSTT
+       /*   LongIdentifier */   "Durée d’arrêt moteur en prenant en compte les interruptions STOP STT"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   InjAstWupCmp_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   864000.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_ctNbCmbAst
+       /*   LongIdentifier */   "Compteur de nombre de combustions en après départ"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjAstWupCmp_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4095.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   EngM_mAirPred_InjAstWupCmp
+       /*   LongIdentifier */   "Masse d'air pompée prédite dans le prochain cylindre en phase d'admission"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjAstWupCmp_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_facStrtCorCyl
+       /*   LongIdentifier */   "Vecteur (n cylindre) pour le facteur de correction en démarrage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjAstWupCmp_CM_17
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_stAcvAst
+       /*   LongIdentifier */   "Type of after start correction"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjAstWupCmp_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvStrtCor
+       /*   LongIdentifier */   "Booléen d'activation de la correction au démarrage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjAstWupCmp_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_1
+       /*   LongIdentifier */   "Q = V*4369.06666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 4369.06666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_3
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_7
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_8
+       /*   LongIdentifier */   "Q = V*16384"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 16384 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_9
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "K"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s.u."
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjAstWupCmp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_12
+       /*   LongIdentifier */   "Q = (V+50)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 50 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_13
+       /*   LongIdentifier */   "Q = V*1.33333333333"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1.33333333333 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_14
+       /*   LongIdentifier */   "Q = V/1.5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1 0 0 0 1.5
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_15
+       /*   LongIdentifier */   "Q = V*85.3333333333"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 85.3333333333 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_16
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_17
+       /*   LongIdentifier */   "Q = V*4096"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 4096 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjAstWupCmp_CM_18
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjAstWupCmp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjAstWupCmp
+       /*   LongIdentifier */   "PTS_DOC_5038663.03"
+
+       /begin DEF_CHARACTERISTIC
+          INJASTWUPCMP_u8Inhib
+          InjSys_agCk_facCorVVTX_A
+          InjSys_agCk_facCorVVTY_A
+          InjSys_bAcvInjAstWupCmp_C
+          InjSys_bAcvStrtCor_C
+          InjSys_ct_facAstInjY_A
+          InjSys_facAstAutnCorVVT_M
+          InjSys_facAstCorInj0Autn_M
+          InjSys_facAstCorInj0STT_M
+          InjSys_facAstCorInj0_M
+          InjSys_facAstCorInj1Autn_M
+          InjSys_facAstCorInj1STT_M
+          InjSys_facAstCorInj1_M
+          InjSys_facAstCorInj2Autn_M
+          InjSys_facAstCorInj2STT_M
+          InjSys_facAstCorInj2_M
+          InjSys_facAstCorInj3Autn_M
+          InjSys_facAstCorInj3STT_M
+          InjSys_facAstCorInj3_M
+          InjSys_facAstCorTWCHeatHi_M
+          InjSys_facAstCorTWCHeatLo_M
+          InjSys_facAstInj0Autn_M
+          InjSys_facAstInj0STT_M
+          InjSys_facAstInj0_M
+          InjSys_facAstInj1Autn_M
+          InjSys_facAstInj1STT_M
+          InjSys_facAstInj1_M
+          InjSys_facAstInj2Autn_M
+          InjSys_facAstInj2STT_M
+          InjSys_facAstInj2_M
+          InjSys_facAstInj3Autn_M
+          InjSys_facAstInj3STT_M
+          InjSys_facAstInj3_M
+          InjSys_facAstSTTCorVVT_M
+          InjSys_facAstStrtCorVVT_M
+          InjSys_facAstTWCHeatHi_M
+          InjSys_facAstTWCHeatLo_M
+          InjSys_facAstTiEngStopAutn_M
+          InjSys_facAstTiEngStopSTT_M
+          InjSys_facAstTiEngStop_M
+          InjSys_facCorRichNAirLd_M
+          InjSys_facCorRichNTAir_M
+          InjSys_facCorRichTAir_T
+          InjSys_facHotStrtCorAutn_T
+          InjSys_facHotStrtCorSTT_T
+          InjSys_facHotStrtCor_T
+          InjSys_facWupCorAirT_T
+          InjSys_facWupCorInj0_M
+          InjSys_facWupCorInj1_M
+          InjSys_facWupCorInj2_M
+          InjSys_facWupCorInj3_M
+          InjSys_facWupCorTWCHeatHi_M
+          InjSys_facWupCorTWCHeatLo_M
+          InjSys_facWupCorVVT_M
+          InjSys_facWupInj0_M
+          InjSys_facWupInj1_M
+          InjSys_facWupInj2_M
+          InjSys_facWupInj3_M
+          InjSys_facWupTWCHeatHi_M
+          InjSys_facWupTWCHeatLo_M
+          InjSys_mAir_facAstCorInjY_A
+          InjSys_mAir_facWupCorInjY_A
+          InjSys_nCorRichX_A
+          InjSys_nEng_facAstCorInjX_A
+          InjSys_nEng_facWupCorInjX_A
+          InjSys_rCorRichNAirLdY_A
+          InjSys_tAcvStrtCor_C
+          InjSys_tAir_facHotStrtCor_A
+          InjSys_tAir_facWupCorAirT_A
+          InjSys_tCo_facAstInjX_A
+          InjSys_tCo_facAstTiEngStopY_A
+          InjSys_tCo_facWupInjX_A
+          InjSys_tCo_facWupInjY_A
+          InjSys_tDifCorNTAirY_A
+          InjSys_tiTauDeacStrtCor_C
+          InjSys_ti_facAstTiEngStopX_A
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          EngM_mAirPred_InjAstWupCmp
+          InjSys_agCkPosnVlvOvlp
+          InjSys_agCkVlvOvlp
+          InjSys_facAst
+          InjSys_facAstAutn
+          InjSys_facAstAutnCorVVT_MP
+          InjSys_facAstCorInj0Autn_MP
+          InjSys_facAstCorInj0STT_MP
+          InjSys_facAstCorInj0_MP
+          InjSys_facAstCorInj1Autn_MP
+          InjSys_facAstCorInj1STT_MP
+          InjSys_facAstCorInj1_MP
+          InjSys_facAstCorInj2Autn_MP
+          InjSys_facAstCorInj2STT_MP
+          InjSys_facAstCorInj2_MP
+          InjSys_facAstCorInj3Autn_MP
+          InjSys_facAstCorInj3STT_MP
+          InjSys_facAstCorInj3_MP
+          InjSys_facAstCorRaw1Autn_MP
+          InjSys_facAstCorRaw1STT_MP
+          InjSys_facAstCorRaw1Strt_MP
+          InjSys_facAstCorRaw2Autn_MP
+          InjSys_facAstCorRaw2STT_MP
+          InjSys_facAstCorRaw2Strt_MP
+          InjSys_facAstCorTWCHeatHi_MP
+          InjSys_facAstCorTWCHeatLo_MP
+          InjSys_facAstCorTWCHeat_MP
+          InjSys_facAstInj0Autn_MP
+          InjSys_facAstInj0STT_MP
+          InjSys_facAstInj0_MP
+          InjSys_facAstInj1Autn_MP
+          InjSys_facAstInj1STT_MP
+          InjSys_facAstInj1_MP
+          InjSys_facAstInj2Autn_MP
+          InjSys_facAstInj2STT_MP
+          InjSys_facAstInj2_MP
+          InjSys_facAstInj3Autn_MP
+          InjSys_facAstInj3STT_MP
+          InjSys_facAstInj3_MP
+          InjSys_facAstSTT
+          InjSys_facAstSTTCorVVT_MP
+          InjSys_facAstStrt
+          InjSys_facAstStrtCorVVT_MP
+          InjSys_facAstTWCHeatHi_MP
+          InjSys_facAstTWCHeatLo_MP
+          InjSys_facAstTiEngStopSTT_MP
+          InjSys_facAstTiEngStop_MP
+          InjSys_facAstTiStopAutn_MP
+          InjSys_facCorRichCold_MP
+          InjSys_facCorRichNAirLd_MP
+          InjSys_facCorRichNTAir_MP
+          InjSys_facCorRichTAir_MP
+          InjSys_facHotStrtCorAutn_MP
+          InjSys_facHotStrtCorSTT_MP
+          InjSys_facHotStrtCor_MP
+          InjSys_facStrtCor
+          InjSys_facStrtCorGsl
+          InjSys_facStrtCorRaw_MP
+          InjSys_facWup
+          InjSys_facWupCorAirT_MP
+          InjSys_facWupCorInj0_MP
+          InjSys_facWupCorInj1_MP
+          InjSys_facWupCorInj2_MP
+          InjSys_facWupCorInj3_MP
+          InjSys_facWupCorRaw_MP
+          InjSys_facWupCorTWCHeatHi_MP
+          InjSys_facWupCorTWCHeatLo_MP
+          InjSys_facWupCorTWCHeat_MP
+          InjSys_facWupCorVVT_MP
+          InjSys_facWupInj0_MP
+          InjSys_facWupInj1_MP
+          InjSys_facWupInj2_MP
+          InjSys_facWupInj3_MP
+          InjSys_facWupTWCHeatHi_MP
+          InjSys_facWupTWCHeatLo_MP
+          InjSys_stAcvAst
+          InjSys_tiEngStopRstSTT
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvStrtCor
+          InjSys_ctNbCmbAst
+          InjSys_prm_facStrtCorCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

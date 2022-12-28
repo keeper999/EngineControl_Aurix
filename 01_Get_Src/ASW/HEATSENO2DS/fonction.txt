@@ -1,0 +1,27 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|4|HEADER|1|NONE||||0|0|0|0||
+HeatSenO2_EveCrTR_DsMgr|A|();|SCH.5|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Evénement de détection le passage de cranking to running|
+HeatSenO2_EveRst_DsMgr|D|();|SCH.1|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Evènement reset du calculateur|
+HeatSenO2_EveRTSt_DsMgr|A|();|SCH.6|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Evenement de détection le passage de l'état running vers stall|
+HeatSenO2_EveStTCr_DsMgr|A|();|SCH.4|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Evenement de détection  du passage de  l'état stall vers cranking|
+HeatSenO2_SdlFast_DsMgr|D|();|SCH.2|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Moniteur rapide pour le module chauffage sonde O2|
+HeatSenO2_SdlMid_DsMgr|E|();|SCH.3|HEATSENO2DS|1|PTS_DOC_5421274||||0|0|0|0|Moniteur moyen pour le module chauffage sonde O2|
+HEATSENO2DS_vidDetDewPt|G|();|FCT1.4|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Détermination du passage du  du point de rosée en fonction de la durée du chauffage de protection|
+HEATSENO2DS_vidDetDewPtRev|C|();|FCT1.3|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Déterminer si le point de rosée a été franchi à l'envers depuis la fin du dernie rarrêt moteur|
+HEATSENO2DS_vidDlyDewPt|C|();|FCT1.5|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lorsque le point de rosée est considéré comme franchi, un compteur s’active afin de connaître depuis combien de temps le point de rosée est franchi et est entretenu par les gaz d’échappements|
+HEATSENO2DS_vidDlyDewTranOkStall|C|();|FCT1.6|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Durée pendant laquelle la sonde à oxygène a été chauffée par les gaz d’échappements depuis le franchissement du point de rosée|
+HEATSENO2DS_vidInitOutput|F|();|FCT1.1|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Initialisation des variables au reset|
+HEATSENO2DS_vidLsDsDetRTStall|A|();|FCT2.8|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lors de la détection du passage de l’état moteur « Running » vers Stall, la variable est mise à 1|
+HEATSENO2DS_vidLsDsDetRTStallint|A|();|FCT2.7|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lors de la détection d’un passage de l’état moteur stall vers cranking ou d’état moteur cranking vers running, la variable est mise à zéro|
+HEATSENO2DS_vidLsDsDewPt|G|();|FCT1.2|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Détection du passage du point de rosée pour la sonde aval|
+HEATSENO2DS_vidLsDsMgrHeatState|J|();|FCT1.10|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Cette fonction contient l’automate de gestion des phases de chauffage de la sonde O2 aval|
+HEATSENO2DS_vidMgrFastTran|H|();|FCT1.7|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Cette transition consiste a réfugier le chauffage sonde dans un mode dégradé dans le  cas d'une surtension batterie.|
+HEATSENO2DS_vidMgrMidTran|F|();|FCT1.8|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Calcul de toutes les transitions ayant un chauffage non nul et détermination du délai avant réautorisation du chauffage maximal|
+HEATSENO2DS_vidMgrSlowTran|D|();|FCT1.9|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lorsque le chauffage réduit reste activé trop longtemps, on passe en chauffage coupé  afin de réduire la consommation électrique|
+HEATSENO2DS_vidTranAToCOrAToE|H|();|FCT2.1|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lorsque le l’automate se trouve en phase de chauffage coupé, il peut activer le chauffa ge de protection si la sonde est considérée froide ou activer le chauffage modulé si la sonde est considérée chaude|
+HEATSENO2DS_vidTranC1toC2|C|();|FCT2.6|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|La phase C est composée par la sous phase C1 qui est un boost de préchauffage de la sonde aval rapidement et la sous phase C2 qui est un intensif de préchauffage de la sonde aval maintenu pour la rapidité et la protection du préchauffage de la sonde aval.|
+HEATSENO2DS_vidTranCToD|D|();|FCT2.2|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|La transition de la phase de chauffage de protection (phase C) vers la phase de chauffage maximal (phase D) est autorisée lorsque le chauffage de protection est terminé|
+HEATSENO2DS_vidTranCToEOrDToE|F|();|FCT2.3|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Le chauffage modulé consiste à appliquer un chauffage en fonction du débit de gaz et de la température des gaz d'échappements|
+HEATSENO2DS_vidTranEToF|E|();|FCT2.4|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lors d'une phase stop STT on passe de la phase E modulation de chauffe à la phase F chauffe réduite|
+HEATSENO2DS_vidTranFToA|D|();|FCT2.5|HEATSENO2DS|0|PTS_DOC_5421274||||0|0|0|0|Lorsque le chauffage réduit reste activé trop longtemps on passe en chauffage coupé afin de réduire la consommation électrique|
+SWFAIL_vidSoftwareErrorHook|A|();|3|HEADER|1|NONE||||0|0|0|0||

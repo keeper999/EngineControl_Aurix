@@ -1,0 +1,14 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_bGetFRM|A|func_GDGAR_bGetFRM|2|HEADER|1|NONE||||0|0|0|0|API FRM_bGetFRM
+GDGAR_vidGdu|B|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0|
+IgCmd_EveICD_IgCoilDiag|A|();|SCH.1|IGCOILDIAG|1|PTS_DOC_6719446||||0|0|0|0|Evénement de diagnostique du driver des bobines d'allumage
+IgCmd_SdlFast_IgCoilDiag|A|();|SCH.2|IGCOILDIAG|1|PTS_DOC_6719446||||0|0|0|0|Moniteur rapide de la fonction diagnostic IgCmd
+IgCmd_SdlMid_IgCoilDiag|A|();|SCH.3|IGCOILDIAG|1|PTS_DOC_6719446||||0|0|0|0|Moniteur moyen de la fonction diagnostic IgCmd
+IGCOILDIAG_vidCalcIcdDiagEnabled|C|();|FCT1.1|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|A haut régime ou faible tension batterie, il devient impossible de diagnostiquer un court-circuit ouvert sur les bobines.
+IGCOILDIAG_vidCallDiagICD|B|();|FCT1.2|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Il est inutile de prendre en compte la condition sur Code_test_action ni celle Srv_stActrTstStatus puisque les tests actionneurs n’ont lieu que lorsque le moteur est arrêté (pas de PMB).
+IGCOILDIAG_vidCallDiagSdlFast|B|();|FCT1.3|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|call the diagnosis function depending on IgCmd_bCallDiagTyp_C, Srv_stActrTstStatus and Code_test_action.
+IGCOILDIAG_vidDiagBob1|B|();|FCT1.5|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Fonction du diagnostic du bobine 1
+IGCOILDIAG_vidDiagBob2|B|();|FCT1.6|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Fonction du diagnostic du bobine 2
+IGCOILDIAG_vidDiagBob3|B|();|FCT1.7|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Fonction du diagnostic du bobine 3
+IGCOILDIAG_vidDiagBob4|B|();|FCT1.8|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Fonction du diagnostic du bobine 4. La génération des événements CALL_GduOc_IgCoil4Cmd et CALL_GduScp_IgCoil4Cmd doit se faire après l’appel de l’API DgoHALRead.
+IGCOILDIAG_vidDiagnostic|B|();|FCT1.4|IGCOILDIAG|0|PTS_DOC_6719446||||0|0|0|0|Pour garder la transversalité 3 cylindres/4 cylindres, l'appel au diagnostic se fera pour tous les cylindres à chaque PMB. Les diagnostics non réalisés seront couverts par les _bMonRun à 0

@@ -1,0 +1,2223 @@
+/begin MODULE  VSReg "VSReg 12.0"
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSRegSatMaxAbs_A "Axis description"
+      0x0 VSCtl_aVehReq VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSRegSatMaxCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSRegSatMinAbs_A "Axis description"
+      0x0 VSCtl_aVehReq VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSRegSatMinCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSRegSatMnTran_A "Axis description"
+      0x0 VSCtl_aVehReq VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_aVehAccRefVSReg "Acceleration vehicule de reference de la surveillance d acceleration RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehDeceRefVSReg "Acceleration vehicule de reference de la surveillance de deceleration RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehErrMaxAccMonVSReg_C "Seuil de variation d’acceleration vehicule de detection d acceleration incoherente"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehErrMaxDeceMonVSReg_C "Seuil de variation d’acceleration vehicule de detection de deceleration incoherente"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMax1MonVSReg_HysHi_C "Seuil de detection d’une acceleration vehicule max incoherente (seuil GMP) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMax1MonVSReg_HysLo_C "Seuil de detection d’une acceleration vehicule coherente (seuil GMP) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMax2MonVSReg_HysHi_C "Seuil de detection d’une acceleration vehicule coherente (seuil absolu) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMax2MonVSReg_HysLo_C "Seuil de detection d’une acceleration vehicule incoherente (seuil absolu) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMaxSpdVehVSRegReq_C "Acceleration max RVV de la consigne de vitesse vehicule"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMin1MonVSReg_HysHi_C "Seuil de detection d’une acceleration vehicule incoherente (seuil GMP)"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMin1MonVSReg_HysLo_C "Seuil de detection d’une acceleration vehicule coherente (seuil GMP) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMin2MonVSReg_HysHi_C "Seuil de detection d’une acceleration vehicule coherente (seuil absolu)"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMin2MonVSReg_HysLo_C "Seuil de detection d’une acceleration vehicule incoherente (seuil absolu) RVV"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMinSpdVehVSRegReq_C "Acceleration min RVV de la consigne de vitesse vehicule"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehPotOftVSRegReq_M "Offset du potentiel d acceleration vehicule RVV brute"
+      MAP 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spd_aVehPotOftVSRegReqX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_aVehPotOftVSRegRqY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehPotVSRegReqOft "Offset du potentiel d acceleration vehicule RVV brute"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotVSRegReqRaw "Consigne de potentiel d acceleration vehicule RVV brute"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehPotVSRegReq_B "Bypass de VSCtl_aVehPotVSRegReq"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_aVehRq_tiCfmSupStVSRegX_A "Axis description"
+      0x0 VSCtl_aVehPotVSRegReq VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aVehRq_tiCfmSupTrVSRegX_A "Axis description"
+      0x0 VSCtl_aVehPotVSRegReq VSREG_RL_SWORD_AXIS 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegDynStbMax_C "Acceleration vehicule max en stabilise RVV"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegDynStbMin_C "Acceleration vehicule min en stabilise RVV"
+      VALUE 0x0 VSREG_RL_SWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqMax "Gabarit acceleration RVV max"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqMin "Gabarit acceleration RVV min"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqRaw "Consigne acceleration vehicule RVV brute"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMax "Saturation max consigne acceleration vehicule RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMaxAbs "Saturation max consigne acceleration vehicule RVV (absolu)"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReqSatMaxAbs_M "Cartographie 2D acceleration vehicule RVV max absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSREG_RL_UWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSRegReqFil VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSRegSatMaxAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSRegSatMxAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMaxApl "Saturation max appliquee consigne acceleration vehicule RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMaxCft "Saturation max consigne acceleration vehicule RVV (confort)"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReqSatMaxCft_M "Cartographie 2D Acceleration vehicule RVV max confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSREG_RL_UWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSRegReqFil VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSRegSatMxCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSRegSatMxCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMin "Saturation min consigne acceleration vehicule RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMinAbs "Saturation min consigne acceleration vehicule RVV(absolu)"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReqSatMinAbs_M "Cartographie 2D Acceleration vehicule RVV min absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSREG_RL_SWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSRegReqFil VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSRegSatMinAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSRegSatMnAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMinApl "Saturation min appliquee consigne acceleration vehicule RVV"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSatMinCft "Saturation min consigne acceleration vehicule RVV (confort)"
+      SWORD VSREG_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReqSatMinCft_M "Cartographie 2D Acceleration vehicule RVV min confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSREG_RL_SWORD 10 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSRegReqFil VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSRegSatMinCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSRegSatMnCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReq_B "Bypass de VSCtl_aVehVSRegReq"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSRegReq_DeacVSReg_B "Bypass de VSCtl_aVehVSRegReq_DeacVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVeh_DeacVSReg_B "Bypass de VSCtl_aVeh_DeacVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 20 VSREG_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bABSRegVSReg "Condition desactivation RVV regulation ABS"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bASRRegVSReg "Condition desactivation RVV regulation ASR en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAccVehMaxVSReg "Condition desactivation RVV acceleration vehicule max incoherente"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAccVehMinVSReg "Condition desactivation RVV acceleration vehicule min incoherente"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAccVehVSReg "Condition desactivation RVV acceleration vehicule incoherente"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvCtlAVehVSReg "Activation contrôle acceleration RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFilSpdVehVSReg "Activation filtrage consigne vitesse RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehPotVSReg "Activation filtrage potentiel d acceleration RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehVSReg "Activation filtrage derivee d acceleration RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvInitAVehVSReg_C "Activation de la procedure de l’initialisation de la consigne d’acceleration vehicule"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvJrkSatMnCritVSReg_C "Activation de la prise en compte du jerk critique en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvMonAVehVSReg "Activation surveillance accelerations RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvMonAVehVSReg_C "Activation de la surveillance de l’acceleration vehicule RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegNGear_AE_C "Activation du controle potentiel d acceleration en mode rapport dans l etat AE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegNGear_ANE_C "Activation du controle potentiel d acceleration en mode rapport dans l etat ANE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegNGear_REP_C "Activation du controle potentiel d acceleration en mode rapport dans l etat reprise RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegPed_AE_C "Activation du controle potentiel d acceleration en mode leurage dans l etat AE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegPed_ANE_C "Activation du controle potentiel d acceleration en mode leurage dans l etat ANE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegPed_REP_C "Activation du controle potentiel d acceleration en mode leurage dans l etat reprise RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegTq_AE_C "Activation du controle potentiel d acceleration en mode couple dans l etat AE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegTq_ANE_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat ANE RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSRegTq_REP_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat reprise RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvRegVSCtlReq "Condition desactivation RVV activation fonction"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg1_pt1 "Condition desactivation RVV disponibilite couple roue GMP 1 numero 1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg1_pt2 "Condition desactivation RVV disponibilite couple roue GMP 2 numero 1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg2_pt1 "Condition desactivation RVV disponibilite couple roue GMP 1 numero 2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg2_pt2 "Condition desactivation RVV disponibilite couple roue GMP 2 numero 2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg3_pt1 "Condition desactivation RVV disponibilite couple roue GMP 1 numero 3"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTVSReg3_pt2 "Condition desactivation RVV disponibilite couple roue GMP 2 numero 3"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bBrkAutoVSReg "Condition desactivation RVV freinage automatique en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bBrkDynVSReg "Condition desactivation RVV freinage dynamique en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bBrkPedPrssVSReg "Condition desactivation RVV appui pedale frein en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCfVSReg "Condition desactivation configuration fonction RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCluPedPrssVSReg_pt2 "Condition desactivation RVV appui pedale embrayage"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtl_aVehPotVSReg_B "Bypass de VSCtl_bCtl_aVehPotVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_3 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bCtlaTqPTPrevVSReg "Pilotabilite couple GMP memorise RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDeacAccPDrvOvrdVSReg_C "Condition de desactivation de la prise en compte de la position pedale deccelerateur dans l’elaboration de la reprise acceleration"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacImpDetVSReg_C "Desactivation de la detection des increments/decrements impulsionnels RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacORng_nTqVSReg_pt1_C "Desactivation de la condition sur ou sous regime GMP"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacSatMaxSpdVehVSReg_C "Desactivation de la saturation de la consigne de vitesse RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacStSatAVehMinVSReg_C "Condition de desactivation de la prise en compte de la contrainte de continuite lors de l’initialisation du gabarit d’acceleration vehicule RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacTyreWarnVSReg_C "Desactivation de la condition de desactivation alertes pneumatiques RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDeacVSRegHab "Condition desactivation RVV flux contrôle commande habitacle incoherents"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDeacbNoGVSRegrConvTra_C "Desactivation anticipation plage rapport par le TCC RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDeceVehVSReg "Condition desactivation RVV deceleration vehicule incoherente"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDirMoveVehVSReg_pt1 "Condition desactivation RVV sens deplacement vehicule"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdVSReg_aVeh_no2 "Reprise acceleration RVV 2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDrvOvrdVSReg_spdVeh_B "Bypass de VSCtl_bDrvOvrdVSReg_spdVeh"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDynCtlSpdVehVSReg "Dynamique contrôle vitesse vehicule RVV"
+      UBYTE VSREG_CM_4 /* FT_enumeration1:((0=TRANSITOIRE)(1=STABILISE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bESPRegVSReg "Condition desactivation RVV regulation ESP en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bEnaDeacVSRegReq_no2 "Activation de la demande de memorisation RVV n°2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq "Demande desactivation rapide RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq_Brk "Demande desactivation rapide RVV frein LAS"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq_Veh "Demande desactivation rapide RVV vehicule"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq_pt "Demande desactivation rapide RVV GMP"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq_pt1 "Demande desactivation rapide RVV GMP n°1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bFastDeacVSRegReq_pt2 "Demande desactivation rapide RVV GMP n°2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bGearCtlVSReg_pt2 "Condition desactivation RVV pilotage rapport indisponible"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhFilSpdVehVSRegReq "Inhibition filtrage consigne vitesse RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq "Demande inhibition RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq_Brk "Demande inhibition RVV GMP frein LAS"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq_Veh "Demande inhibition RVV vehicule"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq_pt "Demande inhibition RVV GMP"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq_pt1 "Demande inhibition RVV GMP n°1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSRegReq_pt2 "Demande inhibition RVV GMP n°2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bModRegVSCtlReq "Condition desactivation RVV selection habitacle"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bNEngMaxVSReg "Condition desactivation RVV regime moteur max"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bNEngMinVSReg_no1 "Condition desactivation RVV regime moteur min 1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bNEngMinVSReg_no2 "Condition desactivation RVV regime moteur min 2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bNoGearEgdChgVSReg_pt2 "Condition desactivation RVV changement de rapport"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bNoGearVSReg_pt2 "Condition desactivation RVV rapport engage"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bORng_nTqVSReg_pt1 "Condition desactivation RVV sur ou sous regime GMP"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bPosnGBxLevVSReg_pt1 "Condition desactivation RVV position levier selection non autorisee GMP n°1"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bPosnGBxLevVSReg_pt2 "Condition desactivation RVV position levier selection non autorisee GMP n°2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bPrkBrkVSReg "Condition desactivation RVV serrage frein a main en cours"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bRec_stDeacVSRegReq "Demande memorisation de l etat conditions desactivation RVV n°1 ou n°2"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bSpdVehDrvOvrdVSReg "Condition desactivation RVV reprise survitesse"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bSpdVehMaxVSReg "Condition desactivation RVV vitesse vehicule max"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bSpdVehMinVSReg "Condition desactivation RVV vitesse vehicule min"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bStEngVSReg "Condition desactivation RVV etat moteur"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bTyreWarnVSReg "Condition desactivation alertes pneumatiques RVV"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bVehCollWarnVSReg "Condition desactivation RVV alerte choc vehicule"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bWhlSlipVSReg "Condition desactivation RVV niveau glissement"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bctDefRevVSReg "Condition desactivations securitaires reversibles RVV trop eleve"
+      UBYTE VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_ctDftRevVSReg "Compteur defauts reversibles RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_ctTolRvDftVSReg_C "Nombre maximum de defauts reversibles toleres"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_dstVehTotMes_DeacVSReg_B "Bypass de VSCtl_dstVehTotMes_DeacVSReg"
+      VALUE 0x0 VSREG_RL_ULONG 16777214 VSREG_CM_6 /* km:1:0: */ 0 16777214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_grdRatConvTraHiVSReg_C "Seuil haut du gradiant du TCC pour l activation de la RVV"
+      VALUE 0x0 VSREG_RL_SWORD 8000 VSREG_CM_7 /* :0.5:0: */ -4000 4000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_grdRatConvTraLoVSReg_C "Seuil bas du gradiant du TCC pour l activation de la RVV"
+      VALUE 0x0 VSREG_RL_SWORD 8000 VSREG_CM_7 /* :0.5:0: */ -4000 4000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehMaxAccVSReg_HysHi_C "Seuil bas de detection d’un jerk vehicule max"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehMaxAccVSReg_HysLo_C "Seuil haut de detection d’un jerk vehicule max"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehMinDeceVSReg_HysHi_C "Seuil haut de detection d’un jerk vehicule min"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehMinDeceVSReg_HysLo_C "Seuil bas de detection d’un jerk vehicule min"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehPotVSRegReq "Consigne potentiel de jerk vehicule RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehReqDeacVSReg_B "Bypass de VSCtl_jrkVehReqDeacVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegReq "Consigne de jerk vehicule RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMax "Jerk vehicule RVV max"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMaxAbs "Jerk vehicule saturation acceleration max vehicule de absolu RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSRegSatMaxAbs_T "Cartographie 1D de Jerk vehicule max de prestation RVV"
+      CURVE 0x0 VSREG_RL_UWORD 100 VSREG_CM_8 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSRegSatMaxAbs_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMaxCvg "Jerk vehicule saturation max acceleration vehicule de convergence RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSRegSatMaxCvg_T "Cartographie 1D de Jerk vehicule max de convergence en RVV"
+      CURVE 0x0 VSREG_RL_UWORD 100 VSREG_CM_8 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSRegSatMaxCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMin "Jerk vehicule RVV min"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMinAbs "Jerk vehicule saturation min acceleration vehicule de absolu RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSRegSatMinAbs_T "Cartographie 1D de Jerk vehicule min de prestation RVV"
+      CURVE 0x0 VSREG_RL_SWORD 100 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSRegSatMinAbs_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMinCrit "Jerk vehicule transition RVV dynamique critique"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMinCvg "Jerk vehicule saturation acceleration vehicule de convergence RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSRegSatMinCvg_T "Cartographie 1D de Jerk vehicule min de convergence RVV"
+      CURVE 0x0 VSREG_RL_SWORD 100 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSRegSatMinCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSRegSatMinTran "Jerk vehicule saturation acceleration vehicule de transition RVV"
+      SWORD VSREG_CM_8 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSRegSatMnTran_T "Cartographie 1D de Jerk vehicule min de prestation RVV"
+      CURVE 0x0 VSREG_RL_SWORD 100 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSREG_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSRegSatMnTran_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jrkVeh_DeacVSReg_B "Bypass de VSCtl_jrkVeh_DeacVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_jrkVeh_tiCfmSupStVSRegY_A "Consigne potentiel de jerk vehicule RVV"
+      0x0 VSCtl_jrkVehPotVSRegReq VSREG_RL_SWORD_AXIS 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ 8 -100 100
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_jrkVeh_tiCfmSupTrVSRegY_A "Consigne potentiel de jerk vehicule RVV"
+      0x0 VSCtl_jrkVehPotVSRegReq VSREG_RL_SWORD_AXIS 200 VSREG_CM_8 /* m/s3:0.0078125:0: */ 8 -100 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_nEngErrVSreg_HysHi_C "Seuil haut de regime moteur en dessus duquel la regulation autour du regime ralenti en RVV n est plus detecte"
+      VALUE 0x0 VSREG_RL_SLONG 20000 VSREG_CM_9 /* rpm:0.0078125:0: */ -10000 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nEngErrVSreg_HysLo_C "Seuil bas de regime moteur en dessous duquel la regulation autour du regime ralenti en RVV est detecte"
+      VALUE 0x0 VSREG_RL_SLONG 20000 VSREG_CM_9 /* rpm:0.0078125:0: */ -10000 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nEngMaxVSReg_HysHi_C "Seuil haut de regime moteur maxi interdisant l’activation de la RVV"
+      VALUE 0x0 VSREG_RL_ULONG 10000 VSREG_CM_9 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nEngMaxVSReg_HysLo_C "Seuil bas de regime moteur maxi autorisant l’activation de la RVV"
+      VALUE 0x0 VSREG_RL_ULONG 10000 VSREG_CM_9 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nEngMin1VSReg_HysHi_C "Seuil bas de regime moteur min 1"
+      VALUE 0x0 VSREG_RL_ULONG 10000 VSREG_CM_9 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nEngMin1VSReg_HysLo_C "Seuil haut de regime moteur min 1"
+      VALUE 0x0 VSREG_RL_ULONG 10000 VSREG_CM_9 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noAMTGearMaxVSReg_C "Rapport BVMP max autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noAMTGearMinVSReg_C "Rapport BVMP min autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noATGearMaxVSReg_C "Rapport BVA max autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noATGearMinVSReg_C "Rapport BVA min autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearEgd_DeacVSReg_B "Bypass de VSCtl_noGearEgd_DeacVSReg"
+      VALUE 0x0 VSREG_RL_SBYTE 9 VSREG_CM_5 /* :1:0: */ -1 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noMTGearMaxVSReg_C "Rapport BVM max autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noMTGearMinVSReg_C "Rapport BVM min autorise en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 8 VSREG_CM_5 /* :1:0: */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_posnGBxDeacVSReg_B "Bypass de VSCtl_posnGBxDeacVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 7 VSREG_CM_10 /* FT_enumeration1:((0=P)(1=R)(2=N)(3=DRIVE)(4=INTERMEDIAIRE_PR_OU_NR)(5=INTERMEDIAIRE_ND)(6=MODE_MANUEL)(7=INDISPONIBLE)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPOvrdVSReg_HysHi_C "Seuil haut de position pedale d’accelerateur au dessus duquel la reprise acceleration RVV est detectee"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPOvrdVSReg_HysLo_C "Seuil bas de position pedale d’accelerateur en dessous duquel la reprise acceleration RVV n’est plus detectee"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccP_DeacVSReg_B "Bypass de VSCtl_rAccP_DeacVSReg"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTraHiVSReg_C "Seuil haut du TCC pour l activation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 19.9921875 VSREG_CM_12 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTraLoVSReg_C "Seuil bas du TCC pour l activation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 19.9921875 VSREG_CM_12 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqWhlPTPotVSReg_B "Bypass de VSCtl_rCtlTqWhlPTPotVSReg"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_13 /* %:0.0625:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqWhlPotVSReg_T "Taux d application du potentiel couple en reprise vitesse RVV"
+      CURVE 0x0 VSREG_RL_UWORD 100 VSREG_CM_13 /* %:0.0625:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdErr_rCtlPotVSReg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rSlop_DeacVSReg_B "Bypass de VSCtl_rSlop_DeacVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 40 VSREG_CM_11 /* %:0.0078125:0: */ -20 20
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rSpdVehCtlVSRegDyn "Taux application dynamique contrôle vitesse transitoire RVV"
+      UWORD VSREG_CM_11 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rWhlSlip1VSReg_HysHi_C "Seuil haut de glissement 1 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rWhlSlip1VSReg_HysLo_C "Seuil bas de glissement 1 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rWhlSlip2VSReg_HysHi_C "Seuil haut de glissement 2 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rWhlSlip2VSReg_HysLo_C "Seuil bas de glissement 2 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_11 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain1VSRegAVeh_C "Gain proportionnel de consigne d’acceleration vehicule de la boucle de vitesse RVV en dynamique transitoire"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain2VSRegAVeh_C "Gain proportionnel de consigne d’acceleration vehicule de la boucle de vitesse RVV en dynamique stabilisee"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGainVSRegAVehPot_C "Gain proportionnel de consigne de potentiel d’acceleration vehicule de la boucle de vitesse RVV"
+      VALUE 0x0 VSREG_RL_UWORD 10 VSREG_CM_14 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSRegSatMnAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSRegSatMnCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSRegSatMxAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSRegSatMxCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdERegAVehP_HysHiN_C "Seuil haut d erreur de vitesse negative d activation controle potentiel d acceleration RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdERegAVehP_HysHiP_C "Seuil haut d erreur de vitesse positive d activation controle potentiel d acceleration RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdERegAVehP_HysLoN_C "Seuil bas d erreur de vitesse negative d activation controle potentiel d acceleration RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdERegAVehP_HysLoP_C "Seuil bas d erreur de vitesse positive d activation controle potentiel d acceleration RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdE_aVehPotOftVSRegRqY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdE_tiCfmSdwnStVSRegY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdE_tiCfmSdwnTrVSRegY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdErrOvrdVSReg_Hi1_C "Seuil haut de sur-vitesse provoquant la desactivation temporisee de RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrOvrdVSReg_HysHi_C "Seuil haut d’ecart de vitesse de detection reprise vitesse en RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrOvrdVSReg_HysLo_C "Seuil bas d’ecart de vitesse de deconfirmation detection reprise vitesse en RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrOvrdVSReg_Lo1_C "Seuil bas de sur-vitesse provoquant la desactivation temporisee de RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrOvrdVSReg_Thd2_C "Seuil absolu de sur-vitesse provoquant la desactivation de RVV"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSRegSDyn_HysHi_C "Seuil haut d’ecart de vitesse de deconfirmation detection dynamique stabilisee RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSRegSDyn_HysLo_C "Seuil bas d’ecart de vitesse de detection dynamique stabilisee RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdErr_rCtlPotVSReg_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSREG_RL_SWORD_AXIS 510 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSRegSatMaxAbsX_A "Consigne vitesse vehicule RVV filtee"
+      0x0 VSCtl_spdVehVSRegReqFil VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSRegSatMinAbsX_A "Consigne vitesse vehicule RVV filtee"
+      0x0 VSCtl_spdVehVSRegReqFil VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSRegSatMinCftX_A "Consigne vitesse vehicule RVV filtee"
+      0x0 VSCtl_spdVehVSRegReqFil VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSRegSatMxCftX_A "Consigne vitesse vehicule RVV filtee"
+      0x0 VSCtl_spdVehVSRegReqFil VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_spdVehErrVSRegRaw "Erreur de vitesse RVV brut"
+      SWORD VSREG_CM_15 /* km/h:0.0078125:0: */ 1 0 -255 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSReg_B "Bypass de VSCtl_spdVehErrVSReg"
+      VALUE 0x0 VSREG_RL_SWORD 510 VSREG_CM_15 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehMaxVSReg_HysHi_C "Seuil haut de vitesse maxi provoquant la desactivation de RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehMaxVSReg_HysLo_C "Seuil bas de vitesse maxi conditionnant l’activation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehMin1VSReg_HysLo_C "Seuil bas de vitesse mini 1 provoquant la desactivation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehMin2VSReg_HysLo_C "Seuil bas de vitesse mini 2 provoquant la desactivation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehMinVSReg_HysHi_C "Seuil haut de vitesse mini conditionnant l’activation de la RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehReqDeacVSReg_B "Bypass de VSCtl_spdVehReqDeacVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_16 /* km/h:1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehVSRegReqFil "Consigne vitesse vehicule RVV filtee"
+      UWORD VSREG_CM_15 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehVSRegReqFilRaw "Consigne vitesse vehicule RVV filtee brut"
+      UWORD VSREG_CM_15 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegReqImp_C "Increment/decrement impulsionnel de la consigne de vitesse RVV"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehVSRegReqPrev "Consigne vitesse RVV memorisee"
+      UWORD VSREG_CM_15 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no1_C "Consigne de vitesse RVV max en rapport 1"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no2_C "Consigne de vitesse RVV max en rapport 2"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no3_C "Consigne de vitesse RVV max en rapport 3"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no4_C "Consigne de vitesse RVV max en rapport 4"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no5_C "Consigne de vitesse RVV max en rapport 5"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no6_C "Consigne de vitesse RVV max en rapport 6"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no7_C "Consigne de vitesse RVV max en rapport 7"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSRegSatMax_no8_C "Consigne de vitesse RVV max en rapport 8"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVeh_DeacVSReg_B "Bypass de VSCtl_spdVeh_DeacVSReg"
+      VALUE 0x0 VSREG_RL_UWORD 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdVeh_tiCfmSdwnStVSRgX_A "Axis description"
+      0x0 VSCtl_spdVeh VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_tiCfmSdwnTrVSRgX_A "Axis description"
+      0x0 VSCtl_spdVeh VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spd_aVehPotOftVSRegReqX_A "Axis description"
+      0x0 VSCtl_spdVeh VSREG_RL_UWORD_AXIS 255 VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_stCtlAVehVSRegPrev "Etat contrôle acceleration RVV memorise"
+      UBYTE VSREG_CM_17 /* FT_enumeration1:((1=CONTROLE)(2=TRANSITION)(0=ARRET)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stCtl_aVehVSReg_B "Bypass de VSCtl_stCtl_aVehVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 2 VSREG_CM_18 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANSITION)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSRegReqHi_no1_B "Bypass de VSCtl_stDeacVSRegReqHi_no1"
+      VALUE 0x0 VSREG_RL_ULONG 2097151 VSREG_CM_5 /* :1:0: */ 0 2097151
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSRegReqHi_no2_B "Bypass de VSCtl_stDeacVSRegReqHi_no2"
+      VALUE 0x0 VSREG_RL_ULONG 2097151 VSREG_CM_5 /* :1:0: */ 0 2097151
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSRegReqLo_no1_B "Bypass de VSCtl_stDeacVSRegReqLo_no1"
+      VALUE 0x0 VSREG_RL_ULONG 67108863 VSREG_CM_5 /* :1:0: */ 0 67108863
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSRegReqLo_no2_B "Bypass de VSCtl_stDeacVSRegReqLo_no2"
+      VALUE 0x0 VSREG_RL_ULONG 67108863 VSREG_CM_5 /* :1:0: */ 0 67108863
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_Brk "Etat conditions desactivation RVV frein LAS"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 511
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_Fct "Etat conditions desactivation RVV fonction"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 7
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_Ini "Etat conditions desactivation RVV initialisation"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 63
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_Veh "Etat conditions desactivation RVV vehicule"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_pt "Etat conditions desactivation RVV GMP"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 16383
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_pt1 "Etat conditions desactivation RVV GMP n°1"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 16383
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSRegReq_pt2 "Etat conditions desactivation RVV GMP n°2"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 16383
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stEnaDeacVSRegReqno2Hi_C "Selection des conditions desactivation RVV n°2 (partie haute"
+      VALUE 0x0 VSREG_RL_ULONG 2097151 VSREG_CM_5 /* :1:0: */ 0 2097151
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stEnaDeacVSRegReqno2Lo_C "Selection des conditions desactivation RVV n°2 (partie basse)"
+      VALUE 0x0 VSREG_RL_ULONG 67108863 VSREG_CM_5 /* :1:0: */ 0 67108863
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stFilSpdVehVSReg "Etat filtrage consigne vitesse RVV"
+      UBYTE VSREG_CM_19 /* FT_enumeration1:((0=ARRET)(1=NON_FILTREE)(2=FILTREE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stMonVSReg "Etat service RVV"
+      UBYTE VSREG_CM_20 /* FT_enumeration1:((0=ARRET)(1=VERIF)(2=INIT)(3=NOMINAL)(4=DEFAUT_REV)(5=DEFAUT_IRREV)) */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSRegReq1_B "Bypass de VSCtl_stRec_stDeacVSRegReq1"
+      VALUE 0x0 VSREG_RL_UBYTE 2 VSREG_CM_21 /* FT_enumeration1:((0=ATTENTE)(1=CAPTURE)(2=RESET)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSRegReq2_B "Bypass de VSCtl_stRec_stDeacVSRegReq2"
+      VALUE 0x0 VSREG_RL_UBYTE 2 VSREG_CM_21 /* FT_enumeration1:((0=ATTENTE)(1=CAPTURE)(2=RESET)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stRegVSRegPrev_VSReg "Etat regulation RVV memorise"
+      UBYTE VSREG_CM_22 /* FT_enumeration1:((5=AE)(2=INHIBEE)(7=DEFAUT)(3=ATTENTE)(4=ANE)(6=REPRISE)(0=ARRET)(1=INITIALISATION)) */ 1 0 0 7
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSatAVehMinVSReg "Etat saturation accel min RVV"
+      UBYTE VSREG_CM_23 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF_29)(2=EFFECTIF_29)(3=ACTIVATION_29)) */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stSatAVehMinVSRegMod_C "Mode de contrôle de saturation accel min RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_24 /* FT_enumeration1:((1=COMPLET)(0=INCOMPLET)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stSatJrkVehMinVSReg "Etat saturation jerk min RVV"
+      UBYTE VSREG_CM_25 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF)(2=EFFECTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSatMaxSpdVehVSReg "Mode contrôle de la saturation de la consigne de vitesse RVV"
+      UBYTE VSREG_CM_3 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stVSRegExtd_B "Bypass de VSCtl_stVSRegExtd"
+      VALUE 0x0 VSREG_RL_UBYTE 7 VSREG_CM_26 /* FT_enumeration1:((0=ARRET)(1=INIT)(2=INHIBEE)(3=ATTENTE)(4=ANE)(5=AE)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stVSRegPrev_DeacVSReg_B "Bypass de VSCtl_stVSRegPrev_DeacVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 7 VSREG_CM_27 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stVSReg_DeacVSReg_B "Bypass de VSCtl_stVSReg_DeacVSReg"
+      VALUE 0x0 VSREG_RL_UBYTE 7 VSREG_CM_27 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiAcv_MonVSReg_C "Duree mini avant l’activation de la surveillance des decelerations en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiAcv_nEngMin2VSReg_C "Duree mini avant l’activation de la detection de regulation autour du regime ralenti en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnStVSRegReq_M "Temps de confirmation min changement de rapport descendant en stablilise"
+      MAP 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_tiCfmSdwnStVSRgX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_tiCfmSdwnStVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnTrVSRegReq_M "Temps de confirmation min changement de rapport descendant en transitoire"
+      MAP 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSREG_CM_15 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_tiCfmSdwnTrVSRgX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSREG_CM_15 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_tiCfmSdwnTrVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSRegReqIni_C "Valeur initiale du temps confirmation min rapport descendant RVV"
+      VALUE 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSRegReqRaw1 "Temps confirmation min rapport descendant RVV brut 1"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSRegReqRaw2 "Temps confirmation min rapport descendant RVV brut 2"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSRegReqRaw3 "Temps confirmation min rapport descendant RVV brut 3"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSRegReq_B "Bypass de VSCtl_tiCfmSdwnVSRegReq"
+      VALUE 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupStVSRegReq_M "Temps de confirmation min changement de rapport montant en stablilise"
+      MAP 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPotVSRegReq VSREG_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehRq_tiCfmSupStVSRegX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_jrkVehPotVSRegReq VSREG_CM_8 /* m/s3:0.0078125:0: */ 8 -100 100
+    AXIS_PTS_REF VSCtl_jrkVeh_tiCfmSupStVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupTrVSRegReq_M "Temps de confirmation min changement de rapport montant en transitoire"
+      MAP 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPotVSRegReq VSREG_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehRq_tiCfmSupTrVSRegX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_jrkVehPotVSRegReq VSREG_CM_8 /* m/s3:0.0078125:0: */ 8 -100 100
+    AXIS_PTS_REF VSCtl_jrkVeh_tiCfmSupTrVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSRegReqIni_C "Valeur initiale du temps confirmation min rapport montant RVV"
+      VALUE 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSRegReqRaw1 "Temps confirmation min rapport montant RVV brut 1"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSRegReqRaw2 "Temps confirmation min rapport montant RVV brut 2"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSRegReqRaw3 "Temps confirmation min rapport montant RVV brut 3"
+      UWORD VSREG_CM_28 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSRegReq_B "Bypass de VSCtl_tiCfmSupVSRegReq"
+      VALUE 0x0 VSREG_RL_UWORD 16 VSREG_CM_28 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_SDynCtlChgVSReg_C "Temps de confirmation detection de la dynamique stabilisee RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_bABSRegVSReg_C "Temps de confirmation detection regulations ABS en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_bASRRegVSReg_C "Temps de confirmation detection regulations ASR en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_bESPRegVSReg_C "Temps de confirmation detection regulations ESP en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_nEngMin2VSReg_C "Temps de confirmation detection d une regulation autour du regime ralenti en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_rSDynCtlVSReg_C "Temps de lissage de la dynamique de contrôle de vitesse de transitoire vers stabilise"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_12 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDftRvVSReg_C "Duree mini de la rehabilitation des defauts reversibles RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfmSDynCtlChgVSReg_C "Temps de deconfirmation detection de la dynamique stabilisee RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_bABSRegVSReg_C "Temps de deconfirmation detection regulations ABS en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_bASRRegVSReg_C "Temps de deconfirmation detection regulations ASR en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_bESPRegVSReg_C "Temps de deconfirmation detection regulations ESP en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_nEngMin2VSReg_C "Temps de deconfirmation detection regulation autour du regime ralenti en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_rCtlTDynVSReg_C "Temps de lissage de transition de l’etat de la dynamique de contrôle de vitesse RVV de stabilise vers transitoire"
+      VALUE 0x0 VSREG_RL_UWORD 100 VSREG_CM_12 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilABSRegVSReg "Constante filtrage regulation ABS RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilASRRegVSReg "Constante filtrage regulation ASR RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilDftRvVSReg "Constante filtrage rehabilitation defauts reversibles RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilDrvOvrdVSReg "Temps de confirmation de la survitesse n°1 RVV"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilESPRegVSReg "Constante filtrage regulation ESP RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilIniVSReg "Constante filtrage initialisation RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilMonAVehVSReg "Constante filtrage surveillance decelerations RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilNoGearVSReg "Temps de confirmation plage rapport engage RVV"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFilNoGearVSReg_C "Temps max de confirmation de la plage de rapport RVV"
+      VALUE 0x0 VSREG_RL_UWORD 65535 VSREG_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilSpdVehCtlVSRegDyn "Constante filtrage changement dynamique contrôle vitesse RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlAVehVSReg "Compteur absolu fin transition contrôle acceleration RVV"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehPotVSRegRq_C "Valeur du filtrage numerique de la consigne potentiel de jerk vehicule RVV"
+      VALUE 0x0 VSREG_RL_UWORD 1 VSREG_CM_29 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehVSRegRq_C "Valeur du filtrage numerique de la consigne de jerk vehicule RVV"
+      VALUE 0x0 VSREG_RL_UWORD 1 VSREG_CM_29 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlAVehVSReg_C "Temps max au dela duquel la transition lente RVV est desactivee"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSRegR1_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant RVV n°1"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSRegR2_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant RVV n°2"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSRegRq1_C "Valeur du filtrage numerique du temps de confirmation min rapport montant RVV n°1"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSRegRq2_C "Valeur du filtrage numerique du temps de confirmation min rapport montant RVV n°2"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_12 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSRegReq1 "Temps gel informations maintenance n°1 RVV"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSRegReq1_C "Temps gel informations maintenance n°1 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 65535 VSREG_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSRegReq2 "Temps gel informations maintenance n°2 RVV"
+      UWORD VSREG_CM_5 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSRegReq2_C "Temps gel informations maintenance n°2 RVV"
+      VALUE 0x0 VSREG_RL_UWORD 65535 VSREG_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiIni_VSReg_C "Duree d’initialisation de la fonction RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiNEngMinVSReg_no2 "Temps confirmation/deconfirmation de la detection regulation RVV autour du regime ralenti"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiTol_ABSRegVSReg_C "Temps maxi de confirmation/deconfirmation de la detection regulation ASR en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_ASRRegVSReg_C "Temps maxi de confirmation/deconfirmation de la detection regulation ASR en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_DynCtlVSReg_C "Temps maxi de confirmation/deconfirmation detection de la dynamique stabilisee RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_ESPRegVSReg_C "Temps maxi de confirmation/deconfirmation de la detection regulation ESP en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_bDrvOvrdVSReg_C "Temps de confirmation de la survitesse 1"
+      VALUE 0x0 VSREG_RL_UWORD 65535 VSREG_CM_5 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_nEngMin2VSReg_C "Temps maxi de confirmation/deconfirmation de la detection regulation autour du regime ralenti en RVV"
+      VALUE 0x0 VSREG_RL_UBYTE 255 VSREG_CM_5 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSREG_ACTIVE_BYP_C "Bypass activation"
+      VALUE 0x0 VSREG_RL_UBYTE 1 VSREG_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSReg_ModuleVersion_Major_MP "VSReg_ModuleVersion_Major_MP"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSReg_ModuleVersion_Minor_MP "VSReg_ModuleVersion_Minor_MP"
+      UBYTE VSREG_CM_5 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+/begin RECORD_LAYOUT VSREG_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSREG_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD VSREG_CM_1 "conversion_method"
+
+RAT_FUNC "%.4" "m/s2"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_2 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_2
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_2 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_3 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_3
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_3 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "CONTROLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_4 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_4
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_4 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "TRANSITOIRE"
+	 1 "STABILISE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_6 "conversion_method"
+
+RAT_FUNC "%.0" "km"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_7 "conversion_method"
+
+RAT_FUNC "%.1" "-"
+COEFFS 0 2 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_8 "conversion_method"
+
+RAT_FUNC "%.3" "m/s3"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_9 "conversion_method"
+
+RAT_FUNC "%.3" "rpm"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_10 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_10
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_10 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "P"
+	 1 "R"
+	 2 "N"
+	 3 "DRIVE"
+	 4 "INTERMEDIAIRE_PR_OU_NR"
+	 5 "INTERMEDIAIRE_ND"
+	 6 "MODE_MANUEL"
+	 7 "INDISPONIBLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_11 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_12 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_13 "conversion_method"
+
+RAT_FUNC "%.2" "%"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_14 "conversion_method"
+
+RAT_FUNC "%.3" "s-1"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_15 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_16 "conversion_method"
+
+RAT_FUNC "%.0" "km/h"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_17 "conversion_vtab"
+
+    TAB_VERB 3
+	 1 "CONTROLE"
+	 2 "TRANSITION"
+	 0 "ARRET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_18 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "TRANSITION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_19 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_19
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_19 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_FILTREE"
+	 2 "FILTREE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_20 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_20
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_20 "conversion_vtab"
+
+    TAB_VERB 6
+	 0 "ARRET"
+	 1 "VERIF"
+	 2 "INIT"
+	 3 "NOMINAL"
+	 4 "DEFAUT_REV"
+	 5 "DEFAUT_IRREV"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_21 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_21
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_21 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ATTENTE"
+	 1 "CAPTURE"
+	 2 "RESET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_22 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_22
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_22 "conversion_vtab"
+
+    TAB_VERB 8
+	 5 "AE"
+	 2 "INHIBEE"
+	 7 "DEFAUT"
+	 3 "ATTENTE"
+	 4 "ANE"
+	 6 "REPRISE"
+	 0 "ARRET"
+	 1 "INITIALISATION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_23 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_23
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_23 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "ARRET"
+	 1 "NON_EFFECTIF_29"
+	 2 "EFFECTIF_29"
+	 3 "ACTIVATION_29"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_24 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_24
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_24 "conversion_vtab"
+
+    TAB_VERB 2
+	 1 "COMPLET"
+	 0 "INCOMPLET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_25 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_25
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_25 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_EFFECTIF"
+	 2 "EFFECTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_26 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_26
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_26 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INIT"
+	 2 "INHIBEE"
+	 3 "ATTENTE"
+	 4 "ANE"
+	 5 "AE"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_27 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSREG_CV_27
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSREG_CV_27 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBE"
+	 3 "ATTENTE"
+	 4 "ACTIF_NON_EFFECTIF"
+	 5 "ACTIF_EFFECTIF"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSREG_CM_28 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSREG_CM_29 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION VSREG_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	VSCtl_aJrkVehVSRegSatMaxAbs_A
+	VSCtl_aJrkVehVSRegSatMaxCvg_A
+	VSCtl_aJrkVehVSRegSatMinAbs_A
+	VSCtl_aJrkVehVSRegSatMinCvg_A
+	VSCtl_aJrkVehVSRegSatMnTran_A
+	VSCtl_aVehErrMaxAccMonVSReg_C
+	VSCtl_aVehErrMaxDeceMonVSReg_C
+	VSCtl_aVehMax1MonVSReg_HysHi_C
+	VSCtl_aVehMax1MonVSReg_HysLo_C
+	VSCtl_aVehMax2MonVSReg_HysHi_C
+	VSCtl_aVehMax2MonVSReg_HysLo_C
+	VSCtl_aVehMaxSpdVehVSRegReq_C
+	VSCtl_aVehMin1MonVSReg_HysHi_C
+	VSCtl_aVehMin1MonVSReg_HysLo_C
+	VSCtl_aVehMin2MonVSReg_HysHi_C
+	VSCtl_aVehMin2MonVSReg_HysLo_C
+	VSCtl_aVehMinSpdVehVSRegReq_C
+	VSCtl_aVehPotOftVSRegReq_M
+	VSCtl_aVehPotVSRegReq_B
+	VSCtl_aVehRq_tiCfmSupStVSRegX_A
+	VSCtl_aVehRq_tiCfmSupTrVSRegX_A
+	VSCtl_aVehVSRegDynStbMax_C
+	VSCtl_aVehVSRegDynStbMin_C
+	VSCtl_aVehVSRegReqSatMaxAbs_M
+	VSCtl_aVehVSRegReqSatMaxCft_M
+	VSCtl_aVehVSRegReqSatMinAbs_M
+	VSCtl_aVehVSRegReqSatMinCft_M
+	VSCtl_aVehVSRegReq_B
+	VSCtl_aVehVSRegReq_DeacVSReg_B
+	VSCtl_aVeh_DeacVSReg_B
+	VSCtl_bAcvInitAVehVSReg_C
+	VSCtl_bAcvJrkSatMnCritVSReg_C
+	VSCtl_bAcvMonAVehVSReg_C
+	VSCtl_bAcvPotVSRegNGear_AE_C
+	VSCtl_bAcvPotVSRegNGear_ANE_C
+	VSCtl_bAcvPotVSRegNGear_REP_C
+	VSCtl_bAcvPotVSRegPed_AE_C
+	VSCtl_bAcvPotVSRegPed_ANE_C
+	VSCtl_bAcvPotVSRegPed_REP_C
+	VSCtl_bAcvPotVSRegTq_AE_C
+	VSCtl_bAcvPotVSRegTq_ANE_C
+	VSCtl_bAcvPotVSRegTq_REP_C
+	VSCtl_bCtl_aVehPotVSReg_B
+	VSCtl_bDeacAccPDrvOvrdVSReg_C
+	VSCtl_bDeacImpDetVSReg_C
+	VSCtl_bDeacORng_nTqVSReg_pt1_C
+	VSCtl_bDeacSatMaxSpdVehVSReg_C
+	VSCtl_bDeacStSatAVehMinVSReg_C
+	VSCtl_bDeacTyreWarnVSReg_C
+	VSCtl_bDeacbNoGVSRegrConvTra_C
+	VSCtl_bDrvOvrdVSReg_spdVeh_B
+	VSCtl_ctTolRvDftVSReg_C
+	VSCtl_dstVehTotMes_DeacVSReg_B
+	VSCtl_grdRatConvTraHiVSReg_C
+	VSCtl_grdRatConvTraLoVSReg_C
+	VSCtl_jVehMaxAccVSReg_HysHi_C
+	VSCtl_jVehMaxAccVSReg_HysLo_C
+	VSCtl_jVehMinDeceVSReg_HysHi_C
+	VSCtl_jVehMinDeceVSReg_HysLo_C
+	VSCtl_jrkVehReqDeacVSReg_B
+	VSCtl_jrkVehVSRegSatMaxAbs_T
+	VSCtl_jrkVehVSRegSatMaxCvg_T
+	VSCtl_jrkVehVSRegSatMinAbs_T
+	VSCtl_jrkVehVSRegSatMinCvg_T
+	VSCtl_jrkVehVSRegSatMnTran_T
+	VSCtl_jrkVeh_DeacVSReg_B
+	VSCtl_jrkVeh_tiCfmSupStVSRegY_A
+	VSCtl_jrkVeh_tiCfmSupTrVSRegY_A
+	VSCtl_nEngErrVSreg_HysHi_C
+	VSCtl_nEngErrVSreg_HysLo_C
+	VSCtl_nEngMaxVSReg_HysHi_C
+	VSCtl_nEngMaxVSReg_HysLo_C
+	VSCtl_nEngMin1VSReg_HysHi_C
+	VSCtl_nEngMin1VSReg_HysLo_C
+	VSCtl_noAMTGearMaxVSReg_C
+	VSCtl_noAMTGearMinVSReg_C
+	VSCtl_noATGearMaxVSReg_C
+	VSCtl_noATGearMinVSReg_C
+	VSCtl_noGearEgd_DeacVSReg_B
+	VSCtl_noMTGearMaxVSReg_C
+	VSCtl_noMTGearMinVSReg_C
+	VSCtl_posnGBxDeacVSReg_B
+	VSCtl_rAccPOvrdVSReg_HysHi_C
+	VSCtl_rAccPOvrdVSReg_HysLo_C
+	VSCtl_rAccP_DeacVSReg_B
+	VSCtl_rConvTraHiVSReg_C
+	VSCtl_rConvTraLoVSReg_C
+	VSCtl_rCtlTqWhlPTPotVSReg_B
+	VSCtl_rCtlTqWhlPotVSReg_T
+	VSCtl_rSlop_DeacVSReg_B
+	VSCtl_rWhlSlip1VSReg_HysHi_C
+	VSCtl_rWhlSlip1VSReg_HysLo_C
+	VSCtl_rWhlSlip2VSReg_HysHi_C
+	VSCtl_rWhlSlip2VSReg_HysLo_C
+	VSCtl_spdCtlGain1VSRegAVeh_C
+	VSCtl_spdCtlGain2VSRegAVeh_C
+	VSCtl_spdCtlGainVSRegAVehPot_C
+	VSCtl_spdEAVehVSRegSatMnAbsY_A
+	VSCtl_spdEAVehVSRegSatMnCftY_A
+	VSCtl_spdEAVehVSRegSatMxAbsY_A
+	VSCtl_spdEAVehVSRegSatMxCftY_A
+	VSCtl_spdERegAVehP_HysHiN_C
+	VSCtl_spdERegAVehP_HysHiP_C
+	VSCtl_spdERegAVehP_HysLoN_C
+	VSCtl_spdERegAVehP_HysLoP_C
+	VSCtl_spdE_aVehPotOftVSRegRqY_A
+	VSCtl_spdE_tiCfmSdwnStVSRegY_A
+	VSCtl_spdE_tiCfmSdwnTrVSRegY_A
+	VSCtl_spdErrOvrdVSReg_Hi1_C
+	VSCtl_spdErrOvrdVSReg_HysHi_C
+	VSCtl_spdErrOvrdVSReg_HysLo_C
+	VSCtl_spdErrOvrdVSReg_Lo1_C
+	VSCtl_spdErrOvrdVSReg_Thd2_C
+	VSCtl_spdErrVSRegSDyn_HysHi_C
+	VSCtl_spdErrVSRegSDyn_HysLo_C
+	VSCtl_spdErr_rCtlPotVSReg_A
+	VSCtl_spdRAVehVSRegSatMaxAbsX_A
+	VSCtl_spdRAVehVSRegSatMinAbsX_A
+	VSCtl_spdRAVehVSRegSatMinCftX_A
+	VSCtl_spdRAVehVSRegSatMxCftX_A
+	VSCtl_spdVehErrVSReg_B
+	VSCtl_spdVehMaxVSReg_HysHi_C
+	VSCtl_spdVehMaxVSReg_HysLo_C
+	VSCtl_spdVehMin1VSReg_HysLo_C
+	VSCtl_spdVehMin2VSReg_HysLo_C
+	VSCtl_spdVehMinVSReg_HysHi_C
+	VSCtl_spdVehReqDeacVSReg_B
+	VSCtl_spdVehVSRegReqImp_C
+	VSCtl_spdVehVSRegSatMax_no1_C
+	VSCtl_spdVehVSRegSatMax_no2_C
+	VSCtl_spdVehVSRegSatMax_no3_C
+	VSCtl_spdVehVSRegSatMax_no4_C
+	VSCtl_spdVehVSRegSatMax_no5_C
+	VSCtl_spdVehVSRegSatMax_no6_C
+	VSCtl_spdVehVSRegSatMax_no7_C
+	VSCtl_spdVehVSRegSatMax_no8_C
+	VSCtl_spdVeh_DeacVSReg_B
+	VSCtl_spdVeh_tiCfmSdwnStVSRgX_A
+	VSCtl_spdVeh_tiCfmSdwnTrVSRgX_A
+	VSCtl_spd_aVehPotOftVSRegReqX_A
+	VSCtl_stCtl_aVehVSReg_B
+	VSCtl_stDeacVSRegReqHi_no1_B
+	VSCtl_stDeacVSRegReqHi_no2_B
+	VSCtl_stDeacVSRegReqLo_no1_B
+	VSCtl_stDeacVSRegReqLo_no2_B
+	VSCtl_stEnaDeacVSRegReqno2Hi_C
+	VSCtl_stEnaDeacVSRegReqno2Lo_C
+	VSCtl_stRec_stDeacVSRegReq1_B
+	VSCtl_stRec_stDeacVSRegReq2_B
+	VSCtl_stSatAVehMinVSRegMod_C
+	VSCtl_stVSRegExtd_B
+	VSCtl_stVSRegPrev_DeacVSReg_B
+	VSCtl_stVSReg_DeacVSReg_B
+	VSCtl_tiAcv_MonVSReg_C
+	VSCtl_tiAcv_nEngMin2VSReg_C
+	VSCtl_tiCfmSdwnStVSRegReq_M
+	VSCtl_tiCfmSdwnTrVSRegReq_M
+	VSCtl_tiCfmSdwnVSRegReqIni_C
+	VSCtl_tiCfmSdwnVSRegReq_B
+	VSCtl_tiCfmSupStVSRegReq_M
+	VSCtl_tiCfmSupTrVSRegReq_M
+	VSCtl_tiCfmSupVSRegReqIni_C
+	VSCtl_tiCfmSupVSRegReq_B
+	VSCtl_tiCfm_SDynCtlChgVSReg_C
+	VSCtl_tiCfm_bABSRegVSReg_C
+	VSCtl_tiCfm_bASRRegVSReg_C
+	VSCtl_tiCfm_bESPRegVSReg_C
+	VSCtl_tiCfm_nEngMin2VSReg_C
+	VSCtl_tiCfm_rSDynCtlVSReg_C
+	VSCtl_tiDftRvVSReg_C
+	VSCtl_tiDiCfmSDynCtlChgVSReg_C
+	VSCtl_tiDiCfm_bABSRegVSReg_C
+	VSCtl_tiDiCfm_bASRRegVSReg_C
+	VSCtl_tiDiCfm_bESPRegVSReg_C
+	VSCtl_tiDiCfm_nEngMin2VSReg_C
+	VSCtl_tiDiCfm_rCtlTDynVSReg_C
+	VSCtl_tiFilNoGearVSReg_C
+	VSCtl_tiFil_jrkVehPotVSRegRq_C
+	VSCtl_tiFil_jrkVehVSRegRq_C
+	VSCtl_tiFil_stCtlAVehVSReg_C
+	VSCtl_tiFil_tiCfmSdwnVSRegR1_C
+	VSCtl_tiFil_tiCfmSdwnVSRegR2_C
+	VSCtl_tiFil_tiCfmSupVSRegRq1_C
+	VSCtl_tiFil_tiCfmSupVSRegRq2_C
+	VSCtl_tiHld_stDeacVSRegReq1_C
+	VSCtl_tiHld_stDeacVSRegReq2_C
+	VSCtl_tiIni_VSReg_C
+	VSCtl_tiTol_ABSRegVSReg_C
+	VSCtl_tiTol_ASRRegVSReg_C
+	VSCtl_tiTol_DynCtlVSReg_C
+	VSCtl_tiTol_ESPRegVSReg_C
+	VSCtl_tiTol_bDrvOvrdVSReg_C
+	VSCtl_tiTol_nEngMin2VSReg_C
+	VSREG_ACTIVE_BYP_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	VSCtl_aVehAccRefVSReg
+	VSCtl_aVehDeceRefVSReg
+	VSCtl_aVehPotVSRegReqOft
+	VSCtl_aVehPotVSRegReqRaw
+	VSCtl_aVehVSRegReqMax
+	VSCtl_aVehVSRegReqMin
+	VSCtl_aVehVSRegReqRaw
+	VSCtl_aVehVSRegReqSatMax
+	VSCtl_aVehVSRegReqSatMaxAbs
+	VSCtl_aVehVSRegReqSatMaxApl
+	VSCtl_aVehVSRegReqSatMaxCft
+	VSCtl_aVehVSRegReqSatMin
+	VSCtl_aVehVSRegReqSatMinAbs
+	VSCtl_aVehVSRegReqSatMinApl
+	VSCtl_aVehVSRegReqSatMinCft
+	VSCtl_bABSRegVSReg
+	VSCtl_bASRRegVSReg
+	VSCtl_bAccVehMaxVSReg
+	VSCtl_bAccVehMinVSReg
+	VSCtl_bAccVehVSReg
+	VSCtl_bAcvCtlAVehVSReg
+	VSCtl_bAcvFilSpdVehVSReg
+	VSCtl_bAcvFil_aVehPotVSReg
+	VSCtl_bAcvFil_aVehVSReg
+	VSCtl_bAcvMonAVehVSReg
+	VSCtl_bAcvRegVSCtlReq
+	VSCtl_bAvlTqWhlPTVSReg1_pt1
+	VSCtl_bAvlTqWhlPTVSReg1_pt2
+	VSCtl_bAvlTqWhlPTVSReg2_pt1
+	VSCtl_bAvlTqWhlPTVSReg2_pt2
+	VSCtl_bAvlTqWhlPTVSReg3_pt1
+	VSCtl_bAvlTqWhlPTVSReg3_pt2
+	VSCtl_bBrkAutoVSReg
+	VSCtl_bBrkDynVSReg
+	VSCtl_bBrkPedPrssVSReg
+	VSCtl_bCfVSReg
+	VSCtl_bCluPedPrssVSReg_pt2
+	VSCtl_bCtlaTqPTPrevVSReg
+	VSCtl_bDeacVSRegHab
+	VSCtl_bDeceVehVSReg
+	VSCtl_bDirMoveVehVSReg_pt1
+	VSCtl_bDrvOvrdVSReg_aVeh_no2
+	VSCtl_bDynCtlSpdVehVSReg
+	VSCtl_bESPRegVSReg
+	VSCtl_bEnaDeacVSRegReq_no2
+	VSCtl_bFastDeacVSRegReq
+	VSCtl_bFastDeacVSRegReq_Brk
+	VSCtl_bFastDeacVSRegReq_Veh
+	VSCtl_bFastDeacVSRegReq_pt
+	VSCtl_bFastDeacVSRegReq_pt1
+	VSCtl_bFastDeacVSRegReq_pt2
+	VSCtl_bGearCtlVSReg_pt2
+	VSCtl_bInhFilSpdVehVSRegReq
+	VSCtl_bInhVSRegReq
+	VSCtl_bInhVSRegReq_Brk
+	VSCtl_bInhVSRegReq_Veh
+	VSCtl_bInhVSRegReq_pt
+	VSCtl_bInhVSRegReq_pt1
+	VSCtl_bInhVSRegReq_pt2
+	VSCtl_bModRegVSCtlReq
+	VSCtl_bNEngMaxVSReg
+	VSCtl_bNEngMinVSReg_no1
+	VSCtl_bNEngMinVSReg_no2
+	VSCtl_bNoGearEgdChgVSReg_pt2
+	VSCtl_bNoGearVSReg_pt2
+	VSCtl_bORng_nTqVSReg_pt1
+	VSCtl_bPosnGBxLevVSReg_pt1
+	VSCtl_bPosnGBxLevVSReg_pt2
+	VSCtl_bPrkBrkVSReg
+	VSCtl_bRec_stDeacVSRegReq
+	VSCtl_bSpdVehDrvOvrdVSReg
+	VSCtl_bSpdVehMaxVSReg
+	VSCtl_bSpdVehMinVSReg
+	VSCtl_bStEngVSReg
+	VSCtl_bTyreWarnVSReg
+	VSCtl_bVehCollWarnVSReg
+	VSCtl_bWhlSlipVSReg
+	VSCtl_bctDefRevVSReg
+	VSCtl_ctDftRevVSReg
+	VSCtl_jrkVehPotVSRegReq
+	VSCtl_jrkVehVSRegReq
+	VSCtl_jrkVehVSRegSatMax
+	VSCtl_jrkVehVSRegSatMaxAbs
+	VSCtl_jrkVehVSRegSatMaxCvg
+	VSCtl_jrkVehVSRegSatMin
+	VSCtl_jrkVehVSRegSatMinAbs
+	VSCtl_jrkVehVSRegSatMinCrit
+	VSCtl_jrkVehVSRegSatMinCvg
+	VSCtl_jrkVehVSRegSatMinTran
+	VSCtl_rSpdVehCtlVSRegDyn
+	VSCtl_spdVehErrVSRegRaw
+	VSCtl_spdVehVSRegReqFil
+	VSCtl_spdVehVSRegReqFilRaw
+	VSCtl_spdVehVSRegReqPrev
+	VSCtl_stCtlAVehVSRegPrev
+	VSCtl_stDeacVSRegReq_Brk
+	VSCtl_stDeacVSRegReq_Fct
+	VSCtl_stDeacVSRegReq_Ini
+	VSCtl_stDeacVSRegReq_Veh
+	VSCtl_stDeacVSRegReq_pt
+	VSCtl_stDeacVSRegReq_pt1
+	VSCtl_stDeacVSRegReq_pt2
+	VSCtl_stFilSpdVehVSReg
+	VSCtl_stMonVSReg
+	VSCtl_stRegVSRegPrev_VSReg
+	VSCtl_stSatAVehMinVSReg
+	VSCtl_stSatJrkVehMinVSReg
+	VSCtl_stSatMaxSpdVehVSReg
+	VSCtl_tiCfmSdwnVSRegReqRaw1
+	VSCtl_tiCfmSdwnVSRegReqRaw2
+	VSCtl_tiCfmSdwnVSRegReqRaw3
+	VSCtl_tiCfmSupVSRegReqRaw1
+	VSCtl_tiCfmSupVSRegReqRaw2
+	VSCtl_tiCfmSupVSRegReqRaw3
+	VSCtl_tiFilABSRegVSReg
+	VSCtl_tiFilASRRegVSReg
+	VSCtl_tiFilDftRvVSReg
+	VSCtl_tiFilDrvOvrdVSReg
+	VSCtl_tiFilESPRegVSReg
+	VSCtl_tiFilIniVSReg
+	VSCtl_tiFilMonAVehVSReg
+	VSCtl_tiFilNoGearVSReg
+	VSCtl_tiFilSpdVehCtlVSRegDyn
+	VSCtl_tiFilStCtlAVehVSReg
+	VSCtl_tiHld_stDeacVSRegReq1
+	VSCtl_tiHld_stDeacVSRegReq2
+	VSCtl_tiNEngMinVSReg_no2
+	VSReg_ModuleVersion_Major_MP
+	VSReg_ModuleVersion_Minor_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE VSReg ------------------------------------*/

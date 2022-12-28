@@ -1,0 +1,17 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|1|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0||
+Oil_EveOilLvl_OilLvlAcq|E|();|SCH.3|OILLVLACQ|1|PTS_DOC_6872932||||0|0|0|0|Event created by LDB to call the API OILLVHAL_udtGetConversionResult|
+Oil_EveRst_OilLvlAcq|D|();|SCH.1|OILLVLACQ|1|PTS_DOC_6872932||||0|0|0|0|Reset Event|
+Oil_SdlFast_OilLvlAcq|E|();|SCH.2|OILLVLACQ|1|PTS_DOC_6872932||||0|0|0|0|Fast scheduler|
+OILLVLACQ_vidAcqBSW|C|();|FCT1.4|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|The two voltage average are produced by the BSW|
+OILLVLACQ_vidAcqMng|D|();|FCT1.5|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|Automate|
+OILLVLACQ_vidAcquisition|D|();|FCT1.3|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|The beginning of the measure is based on vehicle request and conditions on engine speed and water temperature. Once the acquisition is completely done, it will not be restarted until the next Key Off.|
+OILLVLACQ_vidDiagGrd|D|();|FCT1.8|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|Diagnostic based on voltage difference incoherent (Too smal or too big)|
+OILLVLACQ_vidDiagnosis|F|();|FCT1.6|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|Diagnosis are run only when an acquisition has been carried out.|
+OILLVLACQ_vidFailures|E|();|FCT1.7|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|Three diagnosis are carried out : short-circuit to ground, short-circuit to “plus”, and voltage difference incoherent (too small or too big).|
+OILLVLACQ_vidInit|C|();|FCT1.1|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|The engine oil level is initialized with Ext_uEngOilLvlIp_C.|
+OILLVLACQ_vidInitOutput|E|();|FCT1.2|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|fonction d'initialisation des sorties.|
+OILLVLACQ_vidSelection|D|();|FCT1.10|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|This block manages the priorities between the computed value, the default value, and the “measure running” value.|
+OILLVLACQ_vidTreatment|D|();|FCT1.9|OILLVLACQ|0|PTS_DOC_6872932||||0|0|0|0|Several corrections are done on the raw acquisition. There are corrections depending on oil temperature, current, ECU temperature. A change of scale is also performed in order to respect the BSI range.|
+SWFAIL_vidSoftwareErrorHook|A|();|5|HEADER|1|NONE||||0|0|0|0||

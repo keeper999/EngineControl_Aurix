@@ -1,0 +1,856 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjrMdl                                                 */
+/* !Description     : INJRMDL : INJECTOR MODEL                                */
+/*                                                                            */
+/* !Module          : InjrMdl                                                 */
+/*                                                                            */
+/* !File            : InjrMdl.a2l                                             */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed Mar 13 19:55:28 2013                              */
+/*   Model name       : InjrMdl_AUTOCODE.mdl                                  */
+/*   Model version    : 1.280                                                 */
+/*   Root subsystem   : /InjrMdl                                              */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/InjrMdl/5-SOFT-LIV/InjrMdl.a$*/
+/* $Revision::   1.10                                                        $*/
+/* $Author::   adelvare                               $$Date::   18 Mar 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjrMdl
+    /*   LongIdentifier */   "InjrMdl Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjrMdl_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facCorGainLnrInjTFu_T
+       /*   LongIdentifier */   "Correctif du gain injecteur en fonction de la température carburant"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjrMdl_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   233.0
+          /*   UpperLimit     */   488.0
+          AXIS_PTS_REF             InjrM_tFu_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facCorOfsuBatt_T
+       /*   LongIdentifier */   "Table de correctif de l'offset injecteur en fonction de la tension batterie"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjrMdl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             Ext_uBatt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_tiInjOfsInjH1ETB_C
+       /*   LongIdentifier */   "Temps mort injecteur en mode banc pour l'injection H1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_tiInjOfsInjH2ETB_C
+       /*   LongIdentifier */   "Temps mort injecteur en mode banc pour l'injection H2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_tiInjOfsInjS1ETB_C
+       /*   LongIdentifier */   "Temps mort injecteur en mode banc pour l'injection S1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_tiInjOfsInjS2ETB_C
+       /*   LongIdentifier */   "Temps mort injecteur en mode banc pour l'injection S2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facGainInjH1ETB_C
+       /*   LongIdentifier */   "Gain injecteur en mode banc pour l'injection H1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facGainInjH2ETB_C
+       /*   LongIdentifier */   "Gain injecteur en mode banc pour l'injection H2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facGainInjS1ETB_C
+       /*   LongIdentifier */   "Gain injecteur en mode banc pour l'injection S1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_facGainInjS2ETB_C
+       /*   LongIdentifier */   "Gain injecteur en mode banc pour l'injection S2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJRMDL_u8Inhib
+       /*   LongIdentifier */   "INJRMDL inhibition parameter"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrM_bAcvInjMdlETB_C
+       /*   LongIdentifier */   "Booléen activant le mode banc pour les caractéristiques injecteurs"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjrMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjrMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsInjH1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection H1"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsInj
+       /*   LongIdentifier */   "Vecteur (n injections) du temps mort injecteur"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsInjH2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection H2"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsInjS1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection S1"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsInjS2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection S2"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsH2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection H2 du pas de temps précédent"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsH1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection H1 du pas de temps précédent"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsS1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection S1 du pas de temps précédent"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_tiInjOfsS2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des temps morts injecteurs de l'injection S2 du pas de temps précédent"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   InjrMdl_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainInj
+       /*   LongIdentifier */   "Vecteur (n injections) du gain injecteur final"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainInjH1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainInjH2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainInjS1Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainInjS2Cyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainH1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection H1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainH2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection H2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainS1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection S1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainS2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des gains injecteurs finaux de l'injection S2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjrMdl_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_bInhInjrMUpd
+       /*   LongIdentifier */   "Booléen d'inhibition de l'update du modèle injecteur en cas de changement de profil"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjrMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_mfFuStndAdp_MP
+       /*   LongIdentifier */   "Vecteur (n injections) du gain injecteur adapté"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjrMdl_CM_11
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjrM_prm_facGainLnrInj
+       /*   LongIdentifier */   "Vecteur (n injections) du gain injecteur linéaire prenant en compte les différents correctifs (AFA et température carburant)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjrMdl_CM_11
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_1
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_2
+       /*   LongIdentifier */   "Q = (V-233)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "K"
+       COEFFS                   0 1 -233 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_3
+       /*   LongIdentifier */   "Q = V*42.3728813559"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "V"
+       COEFFS                   0 42.3728813559 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_4
+       /*   LongIdentifier */   "Q = V*312.5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 312.5 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_5
+       /*   LongIdentifier */   "Q = V*64"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 64 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjrMdl_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_8
+       /*   LongIdentifier */   "Q = V*312500"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 312500 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_9
+       /*   LongIdentifier */   "Q = V*4294967296"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg/Pa"
+       COEFFS                   0 4294967296 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_10
+       /*   LongIdentifier */   "Q = V/781.25"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 781.25
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjrMdl_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjrMdl_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjrMdl
+       /*   LongIdentifier */   "V01NT1007996.001"
+
+       /begin DEF_CHARACTERISTIC
+          INJRMDL_u8Inhib
+          InjrM_bAcvInjMdlETB_C
+          InjrM_facCorGainLnrInjTFu_T
+          InjrM_facCorOfsuBatt_T
+          InjrM_facGainInjH1ETB_C
+          InjrM_facGainInjH2ETB_C
+          InjrM_facGainInjS1ETB_C
+          InjrM_facGainInjS2ETB_C
+          InjrM_tiInjOfsInjH1ETB_C
+          InjrM_tiInjOfsInjH2ETB_C
+          InjrM_tiInjOfsInjS1ETB_C
+          InjrM_tiInjOfsInjS2ETB_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjrM_prm_facGainH1CylPrev
+          InjrM_prm_facGainH2CylPrev
+          InjrM_prm_facGainLnrInj
+          InjrM_prm_facGainS1CylPrev
+          InjrM_prm_facGainS2CylPrev
+          InjrM_prm_mfFuStndAdp_MP
+          InjrM_prm_tiInjOfsH1CylPrev
+          InjrM_prm_tiInjOfsH2CylPrev
+          InjrM_prm_tiInjOfsS1CylPrev
+          InjrM_prm_tiInjOfsS2CylPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjrM_bInhInjrMUpd
+          InjrM_prm_facGainInj
+          InjrM_prm_facGainInjH1Cyl
+          InjrM_prm_facGainInjH2Cyl
+          InjrM_prm_facGainInjS1Cyl
+          InjrM_prm_facGainInjS2Cyl
+          InjrM_prm_tiInjOfsInj
+          InjrM_prm_tiInjOfsInjH1Cyl
+          InjrM_prm_tiInjOfsInjH2Cyl
+          InjrM_prm_tiInjOfsInjS1Cyl
+          InjrM_prm_tiInjOfsInjS2Cyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,13 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|1|HEADER|1|NONE||||0|0|0|0|Get FRM value|
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|API.1|HEADER|1|NONE||||0|0|0|0|Gets the value of the GDU states.|
+PFCMNG_vidCheckpoint|C|(argin WdgM_SupervisedEntityIdType u8LocalSEID, argin WdgM_CheckpointIdType u16LocalCheckpointID);|FCT1.3|PFCMNG|0|V02 NT 11 06115||||0|0|0|0|Cette fonction incrémente le nombre de checkpoints automatiquement après chaque appel de l'événement checkpoint.|
+PFCMNG_vidInit|B|();|FCT1.2|PFCMNG|0|V02 NT 11 06115||||0|0|0|0|Cette fonction configure le nombre de SEID, le nombre de checkpoints et le timeout.|
+PFCMNG_vidInitOutput|A|();|FCT1.1|PFCMNG|0|V02 NT 11 06115||||0|0|0|0|Initialisation des sorties|
+PFCMNG_vidStatus|C|();|FCT1.4|PFCMNG|0|V02 NT 11 06115||||0|0|0|0|A diagnosis concerning the logical sequence errors and sequence timeout errors is realized for each SEID. If the status is NOK, a failure flag is set to 1.|
+Sfty_EveRst_PfcMng|C|();|SCH.1|PFCMNG|1|V02 NT 11 06115||||0|0|0|0|Reset event|
+Sfty_SdlMid_PfcMng|D|();|SCH.2|PFCMNG|1|V02 NT 11 06115||||0|0|0|0|Middle scheduler of the function|
+Sfty_SdlMid_PfcMng_Chk|D|(argin WdgM_SupervisedEntityIdType u8LocalSEID,argin WdgM_CheckpointIdType u16LocalCheckpointID);|SCH.3|PFCMNG|1|V02 NT 11 06115||||0|0|0|0|Actual SEID and checkpoint call event|
+WdgM_CheckpointReached|A|(argin WdgM_SupervisedEntityIdType SEID, argin WdgM_CheckpointIdType CheckpointID)argout Std_ReturnType;|3|HEADER|1|NONE||||0|0|0|0||
+WdgM_GetLocalStatus|A|(argin WdgM_SupervisedEntityIdType SEID, argout WdgM_LocalStatusType * Status) argout Std_ReturnType;|4|HEADER|1|NONE||||0|0|0|0||
+WdgM_Init|A|(argin WdgM_ConfigType * ConfigPtr);|2|HEADER|1|NONE||||0|0|0|0||

@@ -1,0 +1,2819 @@
+/begin MODULE  TqDem "TqDem 11.4"
+
+    /begin CHARACTERISTIC CoPt_spdVehGearRatDft_C "Valeur de vitesse 1000tr de refuge en cas de défaut du signal rapport de boite"
+      VALUE 0x0 TQDEM_RL_ULONG 255 TQDEM_CM_1 /* km/h/1000rpm:0.0009765625:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPEng_B "Bypass value of CoVSCtl_rAccPEng (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoVSCtl_rAccPThd1Hyst "-"
+      UWORD TQDEM_CM_3 /* %:0.0625:0: */ 1 0 0 25
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPThd1Hyst_C "Hystérésis du seuil de position pédale CoVSCtl_rAccPThd1_C pour déclarer un pied levé."
+      VALUE 0x0 TQDEM_RL_UWORD 25 TQDEM_CM_3 /* %:0.0625:0: */ 0 25
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPThd1_C "Seuil de position pédale pour déclarer un pied."
+      VALUE 0x0 TQDEM_RL_UWORD 25 TQDEM_CM_3 /* %:0.0625:0: */ 0 25
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoVSCtl_rAccPThd3Hyst "-"
+      UWORD TQDEM_CM_3 /* %:0.0625:0: */ 1 0 75 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPThd3Hyst_C "Hystérésis du seuil de position pédale CoVSCtl_AccPThd3_C pour déclarer un pied posé."
+      VALUE 0x0 TQDEM_RL_UWORD 25 TQDEM_CM_3 /* %:0.0625:0: */ 0 25
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPThd3_C "Seuil de position pédale pour déclarer un pied à fond."
+      VALUE 0x0 TQDEM_RL_UWORD 25 TQDEM_CM_3 /* %:0.0625:0: */ 75 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPTra_B "Bypass value of CoVSCtl_rAccPTra (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_stAccP_B "Bypass value of CoVSCtl_stAccP (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_4 /* FT_enumeration1:((0=COVSCTL_STACCP_PIED_LEVE)(1=COVSCTL_STACCP_PIED_POSE)(2=COVSCTL_STACCP_PIED_A_FOND)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_stAcvAccPEng_C "Etat pour la prise en compte du mode push sport pour la pédale moteur"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_stAcvAccPTra_C "Etat pour la prise en compte du mode push sport pour les boites à vitesses"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoVSCtl_tqEfcReq_B "Bypass valueCouple conducteur issu de la coordination XVV avec la structure couple"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_bAcv_C "Activation globale de la stratégie Anti Course Morte"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_bClcAcv "Flag d activation de l apprentissage"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_bTqAux_MP "Flag de désactivation de la fonction demandé par les accessoires"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_bTqDifSel_C "Booleen pour choisir le calcul de l anti course morte à appliquer 0 = Couple volonté conducteur non pris en compte 1 = Couple volonté conducteur pris en compte"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_bTqIdlStab_MP "Flag de stabilisation du couple de ralenti"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_facFilDownHiSpdVeh_C "Gain de filtrage de l atténuation montante à haute vitesse"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_facFilDownLoSpdVeh_C "Gain de filtrage de l atténuation montante"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_facFilNCkIdlDelta_C "Gain de filtrage du delta de régime pour l atténuation"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_facFilTqDifUnLim "Gain d atténuation non filtré"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_facFilTqDif_C "Gain de filtrage du delta de couple"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_facFilTqDif_MP "Gain de filtrage du delta de couple de course morte"
+      UWORD TQDEM_CM_8 /* Nm:0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_facFilTqIdl_C "Coefficient de filtrage du couple issu du régulateur de ralenti"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_facFilUpHiSpdVeh_C "Gain de filtrage de l atténuation descendante à haute vitesse"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_facFilUpLoSpdVeh_C "Gain de filtrage de l atténuation descendante"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS DZone_nCkTarDifX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 6 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC DZone_nCkThdClc_C "Seuil de régime moteur en dessous de laquelle la stratégie est active"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_nEngOfsTakeOff_C "Offset de consigne d aide au décollage en dessous de laquelle la stratégie est active"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_nIdlThdClc_C "Seuil de régime de consigne de ralenti en dessous de laquelle la stratégie est active"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS DZone_noGearCordX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 7 TQDEM_CM_10 /* :1:0: */ 8 0 7
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC DZone_rAccPInhThd_C "Seuil de position pédale au dessus de laquelle on ne fait plus de l anti course morte"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_rAccPMax_C "Seuil de position pédale max pour reseter le delta de couple anti course morte"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_rAccPMin_C "Seuil de position pédale min pour reseter le delta de couple anti course morte"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_rAccPThdClc_C "Seuil de position pédale en dessous de laquelle la stratégie est active"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS DZone_rAccPY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 100 TQDEM_CM_2 /* %:0.0078125:0: */ 6 0 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC DZone_spdVehThdClc_T "Vecteur de vitesse véhicule en dessous de laquelle la stratégie est active"
+      CURVE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_11 /* Km/h:0.0078125:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_10 /* :1:0: */ 8 0 7
+    AXIS_PTS_REF DZone_noGearCordX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_spdVehThdFilSel_C "Seuil de vitesse pour choisir les gain de filtrage de l atténuation"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_spdVehThd_C "Seuil de vitesse véhicule pour apprentissage irréversible"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS DZone_spdVehY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 8 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC DZone_tiFrzClc_C "Tempo de confirmation des booleens d interdiction des apprentissages des pertes accessoires"
+      VALUE 0x0 TQDEM_RL_UWORD 10 TQDEM_CM_13 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_tqCkIdlDelta_C "Delta de gradient de couple ralenti mini en dessous de laquelle la stratégie est active"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_tqCkIdlFil "Couple du régulateur ralenti filtré"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_tqCkIdlFilOfs_C "Offset de couple a ajouter au couple de ralenti pour le calcul de l anti course morte"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_tqDIfLrnResi_MP "Ecart de couple restant à apprendre"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifEfc_MP "Ecart de couple avec la demande conducteur"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLoss_MP "Ecart de couple sans la demande conducteur"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLrn "Delta de couple à appliquer avant atténuation"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLrnOut "Delta de couple à appliquer final"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLrnOutPrev "Delta de couple à appliquer final précédent"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLrnOutRaw_MP "Delta de couple à appliquer brute"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT DZone_tqDifLrnUnLim "Ecart de couple à apprendre non saturé"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS DZone_tqDifLrn_A "Ecart de couple restant à apprendre"
+      0x0 DZone_tqDIfLrnResi_MP TQDEM_RL_SWORD_AXIS 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ 6 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC DZone_tqDifLrn_T "Vecteur de gain définissant la vitesse de l apprentissage"
+      CURVE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS DZone_tqDIfLrnResi_MP TQDEM_CM_6 /* Nm:0.0625:0: */ 6 -2000 2000
+    AXIS_PTS_REF DZone_tqDifLrn_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT DZone_tqDifSat_MP "Ecart de couple à apprendre saturé"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC DZone_tqEfcDifLrnOut_B "Byppas: Couple correspondant à la course morte"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_tqGainGearSpd_M "Carto de gain d atténuation en fonction du rapport de boite et de la vitesse véhicule"
+      MAP 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_10 /* :1:0: */ 8 0 7
+    AXIS_PTS_REF DZone_noGearCordX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_12 /* km/h:0.0078125:0: */ 8 0 500
+    AXIS_PTS_REF DZone_spdVehY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_tqGainNCkAccP_M "Carto de gain d atténuation en fonction du delta de régime et de position pédale"
+      MAP 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_9 /* rpm:0.25:0: */ 6 0 8000
+    AXIS_PTS_REF DZone_nCkTarDifX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_2 /* %:0.0078125:0: */ 6 0 100
+    AXIS_PTS_REF DZone_rAccPY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_tqMaxSatTqDif_C "Seuil de delta couple maxi"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC DZone_tqMinSatTqDif_C "Seuil de delta couple mini"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_002_TEV_B "bypass for runnable RE_TqDem_002_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_003_TEV_B "bypass for runnable RE_TqDem_003_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_004_TEV_B "bypass for runnable RE_TqDem_004_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_005_TEV_B "bypass for runnable RE_TqDem_005_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_006_TEV_B "bypass for runnable RE_TqDem_006_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_007_TEV_B "bypass for runnable RE_TqDem_007_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_TQDEM_008_TEV_B "bypass for runnable RE_TqDem_008_TEV"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_ModuleVersion_Major_MP "TqDem_ModuleVersion_Major_MP"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_ModuleVersion_Minor_MP "TqDem_ModuleVersion_Minor_MP"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_agvGrdNEng "Gradient de régime courant en Rad/sec-2"
+      SLONG TQDEM_CM_14 /* rad/s^2:0.0078125:0: */ 1 0 -790 790
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_agvGrdNEngReq "Gradient de régime de consigne en Rad/sec-2"
+      SLONG TQDEM_CM_14 /* rad/s^2:0.0078125:0: */ 1 0 -790 790
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_agvGrdNEngReqFil "Gradient de régime de consigne filtré en Rad/sec-2"
+      SLONG TQDEM_CM_14 /* rad/s^2:0.0078125:0: */ 1 0 -790 790
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_agvNEngReq "Régime de consigne en Rad/sec"
+      ULONG TQDEM_CM_15 /* rad/s:0.0078125:0: */ 1 0 0 790
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bAcvEcoOn_C "Flag de configuration de la stratégie de transition de la carto1 à la carto2 0 : Inhibition de la fonction 1 : Temporisation 3 : Indice de sportivité (AM6) précalibration :0"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bAcvLimN "Activation de la fonction limitation du régime max"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bAcvLimNOpm "Activation (opti calcul) du régulateur pour la fonction limitation de régime"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bAcvNRegOpm "Activation coordonné (opti calcul) du régulateur"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bAcvNRegTakeOff_B "Bypass valueFlag d activation de la fonction aide au décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_bAcvNRegTakeOff_C "Flag d activation de la fonction aide au décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_bAcvPtSptGsl_C "Booléen pour utiliser l indice de sportivité dans l activation de la transtion green - normal"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bAcvTakeOffOpm "Activation (opti calcul) du régulateur pour la fonction aide au décollage"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bAcvTranEco "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bAuthLimTqNRegProt_C "Flag de désactivation de la limitation spécifique en mode protection EMB"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bAuthTranNorm "Autorisation de transition du mode green vers mode normal"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bDeacFacInt_C "Flag de désactivation de la partie intégrale du régulateur"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bDeacLimN "Désactivation de la régulation de la fonction limitation de régime"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bDeacNReg "Désactivation coordonné de la régulation"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bDeacTakeOff "Désactivation de la régulation de la fonction aide au décollage"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bDrivTakeOff_B "Bypass value of CoVSCtl_stAccP_BypC (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bDrvAvrSpdMap "Activation de l interpolation des cartos BV"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bDrvHiSpdMap "Activation de l interpolation des cartos HV"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bDrvLoSpdMap "Activation de l interpolation des cartos BV"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bEcoOn "Activation de l interpolation des cartos green"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bInhLimN_C "Flag d inhibition de la limitation de régime"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_bModSpt_B "Bypass Mode sport coordonné"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bNormOn "Activation de l interpolation des cartos normal"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bProtCluPNRegTakeOff_C "Flag d activation de la fonction aide au décollage en mode protection EMB"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bRvs "Information Marche Arrière disponible sur le CAN Info MA=1 : Marche Arrière engagée Info MA=0 : Marche Arrière non engagée"
+      UBYTE TQDEM_CM_16 /* FT_enumeration1:((0=TQDEM_BRVS_MA_NON_ENGAGEE)(1=TQDEM_BRVS_MA_ENGAGEE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_bRvsDrvInh "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bRvsDrvInh_C "Bit de calibration permettant d’inhiber l’Etat de roulage Mar 0 : Etat roulage Mar permis (Roulage Mar sur carto MA) 1 : Etat Roulage Mar inhibé (Roulage Mar su carto marche avant BV)"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bRvsMap "Activation de l interpolation des cartos MAR"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bRvsSel_C "Flag pour prendre en compte la MAR dans le calcul de la trajectoire pour la fonction aide au décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bRvsTakeOff "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bRvsTakeOff_C "Flag de configuration de la cartographie de décollage en marche arrière : TqDem_bRevTakeOff==0 : TdDem_tqCkefcRev_T TqDem_bRevTakeOff==1 : Carto_Deco arche avant) précalibration :0"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTakeOffGBx "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTakeOffGBx_C "Flag de prise compte de la condition de sortie décollage des BVA/BVMP"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTakeOffMap "Activation de l interpolation des cartos décollages"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTqCluSel_C "Flag pour prendre en compte le couple d embrayage estimé dans la régulation"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_bTqGrdLim_B "Bypass value of TqDem_bTqGrdLim (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTranDrv "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTranDrv_C "Flag de configuration pour le choix de la stratégie de transition entre états de roulage : 0 : seuils de vitesse 1 : indice RBV précalibration :0"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTranStallEco "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTranStallEco_C "Bit de configuration permettant le forçage du mode green vers le mode normal 1 : forçage actif 0 : pas de forçage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTranTakeOff "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTranTakeOff_C "Flag de configuration pour le choix de la stratégie de transition de Deco à Hors_Deco 0 : Convergence des couple 1 : Transition temporelleImplementation"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_bTranTiEcoOn "-"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_bTranTiEcoOn_C "Bit permettant d’activer la rampe temporelle de transition de mode green à mode normal : 0 :Rampe temporelle inactive et transition directe 1 : Rampe temporelle activée ."
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_bTypSptSel_C "Choix du type de dépendance pour le calcul du gain pédale mode sport"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facAdpAccPOff_MP "Coefficient d interpolation utilisé par la stratégie IVC1"
+      UBYTE TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facDirNReq "Facteur de trajectoire de la fonction limitation de régime"
+      UWORD TQDEM_CM_18 /* s:0.0078125:0: */ 1 0 0.0078125 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facDirNReqLimN "Facteur de trajectoire de la fonction limitation de régime"
+      UWORD TQDEM_CM_18 /* s:0.0078125:0: */ 1 0 0.0078125 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_facDirNReqLimN_C "Facteur de trajectoire (fonction limitation de régime)"
+      VALUE 0x0 TQDEM_RL_UWORD 1.9921875 TQDEM_CM_18 /* s:0.0078125:0: */ 0.0078125 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facDirNReqTakeOff "Facteur de trajectoire de la fonction aide au décollage"
+      UWORD TQDEM_CM_18 /* s:0.0078125:0: */ 1 0 0.0078125 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqDem_facDirNReqTakeOffX_A "Consigne de régime de la fonction aide au décollage"
+      0x0 TqDem_nEngReqTakeOff TQDEM_RL_UWORD_AXIS 7500 TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_facDirNReqTakeOff_M "Facteur de trajectoire (fonction aide au décollage)"
+      MAP 0x0 TQDEM_RL_UWORD 1.99 TQDEM_CM_13 /* s:0.01:0: */ 0.01 2
+    /begin AXIS_DESCR
+      COM_AXIS TqDem_nEngReqTakeOff TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    AXIS_PTS_REF TqDem_facDirNReqTakeOffX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Veh_spdVeh TQDEM_CM_12 /* km/h:0.0078125:0: */ 5 0 100
+    AXIS_PTS_REF TqDem_nEngRegSpdVehY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facDirTCoMes_T "Gain de pondération de la trajectoire (fonction aide au décollage)"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_17 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes TQDEM_CM_25 /* deg C:1:0: */ 7 -40 214
+    AXIS_PTS_REF TqDem_nEngRegTCoMes_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facDirTakeOffRvsSel_C "Facteur de trajectoire en MAR (fonction aide au décollage)"
+      VALUE 0x0 TQDEM_RL_UWORD 1.9921875 TQDEM_CM_18 /* s:0.0078125:0: */ 0.0078125 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilGrdNEng_C "Facteur de filtrage du gradient de régime"
+      VALUE 0x0 TQDEM_RL_UBYTE 0.9921875 TQDEM_CM_17 /* :0.0078125:0: */ 0.0078125 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facFilNEng "Coef de filtrage du régime coordonné"
+      UBYTE TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0.0078125 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facFilNEngLimN "Coef de filtrage du régime de la fonction limitation de régime"
+      UBYTE TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0.0078125 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_facFilNEngLimN_C "Facteur de filtrage du régime (fonction limitation de régime)"
+      VALUE 0x0 TQDEM_RL_UBYTE 0.9921875 TQDEM_CM_17 /* :0.0078125:0: */ 0.0078125 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facFilNEngTakeOff "Coef de filtrage du régime coordonné"
+      UBYTE TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0.0078125 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_facFilNEngTakeOff_C "Facteur de filtrage du régime (fonction aide au décollage)"
+      VALUE 0x0 TQDEM_RL_UBYTE 0.9921875 TQDEM_CM_17 /* :0.0078125:0: */ 0.0078125 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilNEngTraCls_C "Gain du filtrage du régime moteur hors décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_17 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilNEngTraOp_C "Gain du filtrage du régime moteur en décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_17 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facGainFil_nCk_B "Bypass value of TqDem_facGainFil_nCk (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facGearFil_C "-"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_17 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facINReg "Coef intégrale coordonné de la régulation"
+      UWORD TQDEM_CM_20 /* s:0.001:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facINRegLimN "Coef intégrale de la régulation de la fonction limitation de régime"
+      UWORD TQDEM_CM_20 /* s:0.001:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facINRegTakeOff "Coef intégrale de la régulation de la fonction aide au décollage"
+      UWORD TQDEM_CM_20 /* s:0.001:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_facINReqLimN_T "Coefficient intégrale pour la régulation de régime"
+      CURVE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_10 /* :1:0: */ 8 0 7
+    AXIS_PTS_REF TqDem_nEngRegGearNb_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facINReqTakeOff_M "Coefficient intégrale pour l aide au décollage"
+      MAP 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    AXIS_PTS_REF TqDem_nEngRegNEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Veh_spdVeh TQDEM_CM_12 /* km/h:0.0078125:0: */ 5 0 100
+    AXIS_PTS_REF TqDem_nEngRegSpdVehY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facITCoMes_T "Gain de pondération de l intégrale (fonction aide au décollage)"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_13 /* s:0.01:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes TQDEM_CM_25 /* deg C:1:0: */ 7 -40 214
+    AXIS_PTS_REF TqDem_nEngRegTCoMes_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqDem_facNEngIdl_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_SWORD_AXIS 2000 TQDEM_CM_9 /* rpm:0.25:0: */ 9 -1000 1000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_facNEngIdl_T "Vecteur de gain fonction de l’écart entre consigne de ralenti et régime moteur"
+      CURVE 0x0 TQDEM_RL_SWORD 2 TQDEM_CM_21 /* :0.0625:0: */ -1 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_9 /* rpm:0.25:0: */ 9 -1000 1000
+    AXIS_PTS_REF TqDem_facNEngIdl_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facPNReg "Coef proportionnelle coordonné de la régulation"
+      UWORD TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facPNRegLimN "Coef proportionnelle de la régulation de la fonction limitation de régime"
+      UWORD TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facPNRegTakeOff "Coef proportionnelle de la régulation de la fonction aide au décollage"
+      UWORD TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_facPNReqLimN_T "Coefficient intégrale pour la régulation de régime"
+      CURVE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_17 /* :0.0078125:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_10 /* :1:0: */ 8 0 7
+    AXIS_PTS_REF TqDem_nEngRegGearNb_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facPNReqTakeOff_M "Coefficient proportionnelle pour l aide au décollage"
+      MAP 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_17 /* :0.0078125:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    AXIS_PTS_REF TqDem_nEngRegNEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Veh_spdVeh TQDEM_CM_12 /* km/h:0.0078125:0: */ 5 0 100
+    AXIS_PTS_REF TqDem_nEngRegSpdVehY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facPTCoMes_T "Gain de pondération du proportionnelle (fonction aide au décollage)"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_17 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes TQDEM_CM_25 /* deg C:1:0: */ 7 -40 214
+    AXIS_PTS_REF TqDem_nEngRegTCoMes_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facSptSpdAccP_T "Gain pédale en mode sport en fonction de la vitesse véhicule"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_21 /* :0.0625:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS Veh_spdVeh TQDEM_CM_12 /* km/h:0.0078125:0: */ 10 0 500
+    AXIS_PTS_REF TqDem_spdVehSpt_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facSptSpdRatAccP_T "Gain pédale en mode sport en fonction de la v10000"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_21 /* :0.0625:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_22 /* km/h/1000rpm:0.00390625:0: */ 8 0 255
+    AXIS_PTS_REF TqDem_spdVehRatSpt_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_facTranAvrHiSpdIn "-"
+      UWORD TQDEM_CM_11 /* Km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facTranAvrHiSpdOut "-"
+      UWORD TQDEM_CM_11 /* Km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facTranLoAvrSpdIn "-"
+      UWORD TQDEM_CM_11 /* Km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facTranLoAvrSpdOut "-"
+      UWORD TQDEM_CM_11 /* Km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_facTranLvlDrv "-"
+      UWORD TQDEM_CM_11 /* Km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_idxGear "Indice RBV"
+      UWORD TQDEM_CM_17 /* :0.0078125:0: */ 1 0 1 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqDem_idxGearRat_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 255 TQDEM_CM_22 /* km/h/1000rpm:0.00390625:0: */ 7 0 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_idxGearRat_T "Vecteur d’indice RBV en fonction de la vitesse au 1000 tr/min"
+      CURVE 0x0 TQDEM_RL_UWORD 2 TQDEM_CM_17 /* :0.0078125:0: */ 1 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_22 /* km/h/1000rpm:0.00390625:0: */ 7 0 255
+    AXIS_PTS_REF TqDem_idxGearRat_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_idxMapRvsDrv "Indice de carto C (décollage et MAR)"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 4 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_idxMapRvsDrv_B "Indice de carto C (décollage et MAR)"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_10 /* :1:0: */ 4 5
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_idxMapTranDrvFirst "Indice de carto A (roulage)"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 1 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_idxMapTranDrvFirst_B "Indice de carto A (roulage)"
+      VALUE 0x0 TQDEM_RL_UBYTE 3 TQDEM_CM_10 /* :1:0: */ 1 4
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_idxMapTranDrvSec "Indice de carto B (roulage)"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 1 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_idxMapTranDrvSec_B "Indice de carto B (roulage)"
+      VALUE 0x0 TQDEM_RL_UBYTE 3 TQDEM_CM_10 /* :1:0: */ 1 4
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_idxPtSpt_C "Seuil bas d’indice de sportivité Précalibration :"
+      VALUE 0x0 TQDEM_RL_UBYTE 100 TQDEM_CM_10 /* :1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_jEng "Inertie moteur"
+      UBYTE TQDEM_CM_23 /* kg.m^2:0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_jEng_C "Inertie du moteur"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_24 /* kg.m2:0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_nCkIdlHys "-"
+      UWORD TQDEM_CM_19 /* rpm:1:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_nCkIdlHys_C "Hystérésis sur le régime du ralenti."
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_nEngOfsReq "Offset de consigne de régime"
+      UWORD TQDEM_CM_19 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqDem_nEngRegAccPX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 100 TQDEM_CM_2 /* %:0.0078125:0: */ 10 0 100
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_nEngRegGearNb_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 7 TQDEM_CM_10 /* :1:0: */ 8 0 7
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_nEngRegNEngX_A "Axis description"
+      0x0 Eng_nCkFil TQDEM_RL_UWORD_AXIS 7500 TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_nEngRegSpdVehY_A "Axis description"
+      0x0 Veh_spdVeh TQDEM_RL_UWORD_AXIS 100 TQDEM_CM_12 /* km/h:0.0078125:0: */ 5 0 100
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_nEngRegTCoMes_A "Axis description"
+      0x0 Ext_tCoMes TQDEM_RL_SWORD_AXIS 254 TQDEM_CM_25 /* deg C:1:0: */ 7 -40 214
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqDem_nEngReqLimN "Consigne de régime de la fonction limitation de régime"
+      UWORD TQDEM_CM_19 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_nEngReqTakeOff "Consigne de régime de la fonction aide au décollage"
+      UWORD TQDEM_CM_19 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_nEngReqTakeOffProt_M "Régime de consigne de la fonction aide au décollage en mode protection EMB"
+      MAP 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_26 /* RPM:1:0: */ 0 7500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_2 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqDem_nEngRegAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_26 /* RPM:1:0: */ 7 0 7500
+    AXIS_PTS_REF TqDem_nEngReqTakeOffY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqDem_nEngReqTakeOffY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 7500 TQDEM_CM_26 /* RPM:1:0: */ 7 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_nEngReqTakeOff_M "Régime de consigne de la fonction aide au décollage en mode protection EMB"
+      MAP 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_26 /* RPM:1:0: */ 0 7500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_2 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqDem_nEngRegAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_26 /* RPM:1:0: */ 7 0 7500
+    AXIS_PTS_REF TqDem_nEngReqTakeOffY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_nEngReq_B "Bypass_Régime de consigne"
+      VALUE 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_19 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_nOffNEngReq_C "Offset de régime sur la consigne de régime en limitation de régime"
+      VALUE 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_19 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_nThdAcvLimNOpm_C "Seuil de régime pour activer la régulation en limitation de régime"
+      VALUE 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_19 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_nThdDeacLimN_C "Seuil de régime pour désactiver la régulation en limitation de régime"
+      VALUE 0x0 TQDEM_RL_UWORD 7500 TQDEM_CM_19 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_noGearAvrSpd "-"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 1 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_noGearAvrSpd_C "Indice RBV moyenne vitesse Précalibration :2"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_10 /* :1:0: */ 1 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_noGearHiSpd "-"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 1 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_noGearHiSpd_C "Indice RBV haute vitesse Précalibration :3"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_10 /* :1:0: */ 1 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_noGearLoSpd "-"
+      UBYTE TQDEM_CM_10 /* :1:0: */ 1 0 1 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_noGearLoSpd_C "Indice RBV basse vitesse Précalibration :1"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_10 /* :1:0: */ 1 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rAccP "Valeurs de pédale multiplexées pour interpolation des cartos"
+      UWORD TQDEM_CM_2 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_rAccPAdp_T "Vecteur de point d’appuis de régime moteur en fonction du"
+      CURVE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rAccPMax "-"
+      UWORD TQDEM_CM_2 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rAccPMaxEco "Position pédale maxi pour sortir du mode green"
+      UWORD TQDEM_CM_2 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqDem_rAccPMaxEco_A "Axis description"
+      0x0 Ext_nEng TQDEM_RL_UWORD_AXIS 7500 TQDEM_CM_10 /* :1:0: */ 5 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_rAccPMaxEco_T "Vecteur de seuil d’enfoncement pédale fonction du régime moteur au dessus duquel la transition de la carto1 à la carto 2 est réalisable. Précalibration : [90%]"
+      CURVE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEng TQDEM_CM_10 /* :1:0: */ 5 0 7500
+    AXIS_PTS_REF TqDem_rAccPMaxEco_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPMax_C "Seuil d’enfoncement pédale pour passage de l’état Décollage à l’état transition convergence couple. Précalibration : 90%"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rAccPMin "-"
+      UWORD TQDEM_CM_2 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rAccPMinEco "-"
+      UWORD TQDEM_CM_2 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_rAccPMinEco_C "Seuil d’enfoncement pédale en dessous duquel la transition de la carto1 à la carto 2 est réalisée précalibration : 5%"
+      VALUE 0x0 TQDEM_RL_SWORD 101 TQDEM_CM_2 /* %:0.0078125:0: */ -1 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqDem_rAccPMin_A "Axis description"
+      0x0 Ext_nEng TQDEM_RL_UWORD_AXIS 7500 TQDEM_CM_19 /* rpm:1:0: */ 5 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_rAccPMin_T "Vecteur de seuil d’enfoncement pédale fonction du régime pour passage de l’état Décollage à l’état transition convergence couple. Précalibration : 0%"
+      CURVE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEng TQDEM_CM_19 /* rpm:1:0: */ 5 0 7500
+    AXIS_PTS_REF TqDem_rAccPMin_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPOfs_C "Offset de seuil pédale"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPSptMod_B "Bypass Valeur de pédale d accélérateur coordonné avec le mode sport"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPThdAcvSptMod_C "Seuil de position pédale d activation du mode sport"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPThdAcvTakeOff_C "Seuil de position pédale pour activer la régulation en aide au décollage"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPThdDeacLimN_C "Seuil de position pédale pour désactiver la régulation en limitation de régime"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rAccPThdTranNorm_C "Seuil position pédale pour activer la transtion green - normal"
+      VALUE 0x0 TQDEM_RL_UWORD 100 TQDEM_CM_2 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_rDrivTakeOff_B "Bypass value_Ratio de transition entre TqDem_idxA et TqDem_idxB de décollage vers roulage ou roulage vers décollage"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rSpdVeh "-"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranAvrHiSpd "Ratio de la transition entre Carto_roul_MV et Carto_roul_HV."
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranDrv "Ratio de transition entre TqDem_idxA et TqDem_idxB"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_rTranDrv_B "Ratio de transition entre TqDem_idxA et TqDem_idxB"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rTranEco "Ratio de transition de TqDem_stGreen=Green à TqDem_stGreen=Normal"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranEcoNorm "Ratio de transition du mode green vers le mode normal"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_rTranEcoNorm_B "Ratio de transition du mode green vers le mode normal"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_rTranLimNOut "Facteur de trajectoire de la fonction limitation de régime"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranLoAvrSpd "Ratio de la transition entre Carto_roul_BV et Carto_roul_MV."
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranNRegOut "Facteur de transition de Décollage à Roulage coordonné"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_rTranTakeOffOut "Facteur de transition de Décollage à Roulage pour la fonction aide au décollage"
+      UWORD TQDEM_CM_7 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_spdVeh "Vitesse véhicule utilisée dans cette fonction intégrant une valeur par défaut : tqDem_vVehDft"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehDft_C "Valeur de substitution de Veh_vVeh en cas de défaillance Précalibration :0"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehGearRatCord_MP "-"
+      ULONG TQDEM_CM_1 /* km/h/1000rpm:0.0009765625:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_spdVehMaxAvrDrv "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMaxAvrDrv_C "Seuil de vitesse véhicule au-dessus duquel la transition entre Roulage BV et Roulage MV est effectuée."
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehMaxHiSpdDrv "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMaxHiSpdDrv_C "Seuil de vitesse véhicule au-dessus duquel la transition entre Roulage MV et Roulage HV est effectuée"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehMaxTakeOff "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMaxTakeOff_C "Seuil de vitesse pour commencer la transition déco à hors déco"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehMinAvrDrv "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMinAvrDrv_C "Seuil de vitesse véhicule au-dessus duquel s’effectue la transition entre Roulage BV et Roulage MV Précalibration :60km/h"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehMinHiSpdDrv "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMinHiSpdDrv_C "Seuil de vitesse véhicule au-dessus duquel s’effectue la transition entre Roulage MV et Roulage HV Précalibration :150km/h"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_spdVehMinTakeOff "-"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_spdVehMinTakeOff_C "Seuil de vitesse pour commencer la transition hors déco à déco"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqDem_spdVehRatSpt_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 255 TQDEM_CM_22 /* km/h/1000rpm:0.00390625:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_spdVehSpt_A "Axis description"
+      0x0 Veh_spdVeh TQDEM_RL_UWORD_AXIS 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 10 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqDem_spdVehThdAcvTakeOff_C "Seuil de vitesse véhicule pour activer la régulation en aide au décollage"
+      VALUE 0x0 TQDEM_RL_UBYTE 100 TQDEM_CM_27 /* km/h:1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_stAuthSptMod_C "Type de prise en compte du mode protection EMB dans le mode sport"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_10 /* :1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_stDrvEcoReq "TqDem_stGreen peut prendre les valeurs suivantes : Codage : Green_Non_Démarré=1,Green_Démarré=2,Attente_Tempo=4,Transition_Temporelle=3,Normal=5"
+      UBYTE TQDEM_CM_28 /* FT_enumeration1:((1=TQDEM_GREEN_NON_START)(2=TQDEM_GREEN_START)(3=TQDEM_TRANSITION_TEMPORELLE)(4=TQDEM_ATTENTE)(5=TQDEM_NORMAL)) */ 1 0 1 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_stDrvTakeOff "TqDem_stDrivTakeOff peut prendre les valeurs suivantes : Codage : Deco=1 Hors_Deco=2 Trans_Conv_Couple =3 Attente=4 Trans_Temp_Deco_Roul=5 Trans_Temp_Roul_Deco=6 Hors_Deco=7"
+      UBYTE TQDEM_CM_29 /* FT_enumeration1:((1=TQDEM_DECO)(2=TQDEM_HORS_DECO)(3=TQDEM_TRANS_CONV_COUPLE)(4=TQDEM_ATTENTE)(5=TQDEM_TRANS_TEMP_DECO_ROUL)(6=TQDEM_TRANS_TEMP_ROUL_DECO)) */ 1 0 1 6
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_stStrt "Etat_démarrage peut prendre les valeurs suivantes : ECU_Eteint (1) ECU_Réveillé (2) Moteur_Démarré (3) Moteur_Arrêté_ou_Calé (4) ECU_Extinction (5) ECU_Extinction_2 (6)"
+      UBYTE TQDEM_CM_30 /* FT_enumeration1:((1=STSTRT_ECU_ETEINT)(2=STSTRT_ECU_REVEILLE)(3=STSTRT_MOTEUR_DEMARRE)(4=STSTRT_MOTEUR_ARRETE_OU_CALE)(5=STSTRT_ECU_EXTINCTION)(6=STSTRT_ECU_EXTINCTION2)) */ 1 0 1 6
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_stTqDrvReq "TqDem_stIVC peut prendre les valeurs suivantes : Codage : MA=0 BV=2 MV=4 HV=6 Trans_BV_MV =3 Trans_MV_HV =5"
+      UBYTE TQDEM_CM_31 /* FT_enumeration1:((0=TQDEM_MA)(1=TQDEM_RESERVE)(2=TQDEM_BV)(3=TQDEM_TRANS_BV_MV)(4=TQDEM_MV)(5=TQDEM_TRANS_MV_HV)(6=TQDEM_HV)) */ 1 0 0 6
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_stTranNormCf_C "Bit permettant de choisir la condition d’activation de la transition du mode green à normal 0 : Température Moteur, catalyseur et bit chauffe cata 1 : Température Moteur et catalyseur 2 : Bit chauffe cata"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_10 /* :1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tCoMes "Info température d eau traitée"
+      SWORD TQDEM_CM_25 /* deg C:1:0: */ 1 0 -40 214
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tCoMesDft_C "Valeur de température d eau de refuge en cas de défaut du signal"
+      VALUE 0x0 TQDEM_RL_SWORD 254 TQDEM_CM_25 /* deg C:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tCoThdHiTranNorm_C "Valeur du seuil bas de température eau"
+      VALUE 0x0 TQDEM_RL_SWORD 254 TQDEM_CM_25 /* deg C:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tCoThdLoTranNorm_C "Valeur du seuil bas de température eau"
+      VALUE 0x0 TQDEM_RL_SWORD 254 TQDEM_CM_25 /* deg C:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tOxCDft_C "Valeur de température catalyseur de refuge en cas de défaut du signal"
+      VALUE 0x0 TQDEM_RL_SWORD 1040 TQDEM_CM_25 /* deg C:1:0: */ -40 1000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tOxCEstim "Info température cata traitée"
+      SWORD TQDEM_CM_25 /* deg C:1:0: */ 1 0 -50 1000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tOxCHiTranNorm_C "Valeur du seuil haut de temperature cata"
+      VALUE 0x0 TQDEM_RL_SWORD 1050 TQDEM_CM_25 /* deg C:1:0: */ -50 1000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tOxCLoTranNorm_C "Valeur du seuil bas de temperature cata"
+      VALUE 0x0 TQDEM_RL_SWORD 1050 TQDEM_CM_25 /* deg C:1:0: */ -50 1000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiAcvEco "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tiCfmEco "Ratio de transition de TqDem_stGreen=Green à TqDem_stGreen=Normal"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tiCfmEco_C "Durée de la temporisation d’attente de convergence de couple en transition Green Précalibration :1s"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiEgdGearCfm_C "Calibration de la temporisation de forçage de l’indice RVB à 1 quand le rapport reconnu est rapport=0 Précalibration"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiMaxAcvEco "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tiMaxAcvEco_C "Durée d’activation maximum du mode green"
+      VALUE 0x0 TQDEM_RL_UBYTE 100 TQDEM_CM_33 /* s:1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiMaxTakeOff "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tiMaxTakeOff_C "Durée de la temporisation maxi d’attente de convergence de couple en transition Deco"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiMinTakeOff "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tiMinTakeOff_C "Durée de la temporisation de confirmation de passage d’Etat décollage à Etat Roulage sur condition de convergence des couples"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiTakeOff "Temporisation de confirmation de convergence des couples initialisée à la valeur TqDem_tiMinTakeOFF_C"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tiTakeOffMax "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tiTraTakeOffDownDft_C "Durée du filtre temporel de passage de Etat Roulage à Etat décollage quand Veh_vVeh ets en défaut. précalibration 5s"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTraTakeOffDown_C "Durée du filtre temporel de passage de Etat Roulage à Etat décollage : précalibration 0s"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTraTakeOffUp_C "Durée du filtre temporel de passage de Etat décollage à Etat Roulage : précalibration 3s"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranEcoNorm_C "Durée du filtre temporel de la carto1 à la carto2 : Si T_Trans_Green=0 alors le filtre est inhibé précalibration 10s"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranGearRatDftOff_C "Temps de transition de la vitesse 1000tr en cours à la valeur par défaut en cas de défaut de la vitesse véhicule"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_32 /* s:0.1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranGearRatDftOn_C "Temps de transition de la valeur par défaut à la la vitesse 1000tr en cours en cas de disparition de défaut de la vitesse véhicule"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_32 /* s:0.1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranNRegProtCluPOff_C "Tempo de transition mode protection EMB OFF"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranNRegProtCluPOn_C "Tempo de transition mode protection EMB ON"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranProtCluPOff_C "Tempo de transition mode protection EMB OFF"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranProtCluPOn_C "Tempo de transition mode protection EMB ON"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranSpdDftOff_C "Temps de transition de la vitesse en cours à la valeur par défaut en cas de défaut de la vitesse véhicule"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_32 /* s:0.1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranSpdDftOn_C "Temps de transition de la vitesse en cours à la valeur par défaut en cas de défaut de la vitesse véhicule"
+      VALUE 0x0 TQDEM_RL_UBYTE 2 TQDEM_CM_32 /* s:0.1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranSptOff_C "Tempo de transition mode sport OFF"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tiTranSptOn_C "Tempo de transition mode sport ON"
+      VALUE 0x0 TQDEM_RL_UWORD 5 TQDEM_CM_13 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tiWaitEco "-"
+      UWORD TQDEM_CM_13 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcAvrSpdEco "Couple interpolé issu de la carto MV mode green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcAvrSpdNorm "Couple interpolé issu de la carto MV mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcAvrSpdNorm_M "Cartographie roulage moyenne vitesse mode green"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcDeltaEcoNorm "Ecart de couple interpolé entre le couple Green et le couple normal destiné à L’IVC structurelle"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcDeltaEcoNorm_B "Ecart de couple interpolé entre le couple Green et le couple normal destiné à L’IVC structurelle"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_34 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcDeltaTakeOff "Ecart de couple interpolé entre le couple issu de la carto deco et le couple de roulage destiné à L’IVC structurelle"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcDeltaTakeOff_B "Ecart de couple interpolé entre le couple issu de la carto deco et le couple de roulage destiné à L’IVC structurelle"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_34 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvDeltaEco "Delta de couple existant entre la carto Deco1 et la carto Roulage1 (Mode Green)"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvDeltaNorm "Delta de couple existant entre la carto Deco2 et la carto Roulage2 (Mode Normal)"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvEco "CME issu de l’interpolation de la cartographie d’indice Ca et de la cartographie d’indice Cb en mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvEcoFirst "CME issu de l’interpolation de la cartographie d’indice Ca et mode Green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvEcoSec "CME issu de l’interpolation de la cartographie d’indice Cb et mode Green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvNorm "CME issu de l’interpolation de la cartographie d’indice Ca et de la cartographie d’indice Cb en mode green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvNormFirst "CME issu de l’interpolation de la cartographie d’indice Ca et mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcDrvNormSec "CME issu de l’interpolation de la cartographie d’indice Cb et mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcHiSpdEco "Couple interpolé issu de la carto HV mode green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcHiSpdNorm "Couple interpolé issu de la carto HV mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcHiSpdNorm_M "Cartographie roulage haute vitesse mode green"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcLoSpdEco "Couple interpolé issu de la carto BV mode green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcLoSpdEco_M "Cartographie roulage basse vitesse mode normal"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcLoSpdNorm "Couple interpolé issu de la carto BV mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcLoSpdNorm_M "Cartographie roulage basse vitesse mode green"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcLossDelta_MP "Delta de couple à adapter par la stratégie IVC1"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcLossOfs_C "Offset de couple de perte"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcMap "CME conducteur final avant le traitement des stratégies IVC1 d’adaptation des couples négatif en fonction des CMF"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcMapEco "CME issu de la transition deco-roulage mode Green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcMapNorm "CME issu de la transition deco – roulage mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcMax_B "Bypass value of TqDem_tqCkEfcMax (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcMinEco "-"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcMinEco_C "Seuil de couple en dessous duquel le passage de la carto1 à la carto2 est réalisé précalibration : 4 Nm"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcMin_B "Bypass value of TqDem_tqCkEfcMin (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcNRegI_MP "Couple de régulation partie Integrale"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcNRegP_MP "Couple de régulation partie Proportionnelle"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcRev "Couple interpolé issu de la carto MAR"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcRev_M "Cartographie marche arrière"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcRvsTakeOffEco "CME issu de l’interpolation la carto MA et de la carto décollage en mode Green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcRvsTakeOffNorm "CME issu de l’interpolation la carto MA et de la carto décollage en mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcTakeOff "-"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqCkEfcTakeOffEco "Couple interpolé issu de la carto décollage mode green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcTakeOffEco_M "Cartographie décollage mode normal"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkEfcTakeOffNorm "Couple interpolé issu de la carto décollage mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcTakeOffNorm_M "Cartographie décollage mode green"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcTakeOffProt_M "Cartographie décollage mode normal"
+      MAP 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS AccP_rAccP TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    AXIS_PTS_REF TqDem_tqCkEfc_rAccPX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqDem_tqCkEfc_nEngY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcTakeOff_C "Seuil de couple de convergence pour la transtion en couple au décollage"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcWoutAntiDB_B "Bypass Couple CME pour calcul anti-course morte"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfc_B "Bypass value of TqDem_tqCkEfc (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqDem_tqCkEfc_nEngY_A "Axis description"
+      0x0 Eng_nCkFil TQDEM_RL_UWORD_AXIS 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 16 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqDem_tqCkEfc_rAccPX_A "Axis description"
+      0x0 AccP_rAccP TQDEM_RL_UWORD_AXIS 100 TQDEM_CM_2 /* %:0.0078125:0: */ 16 0 100
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqDem_tqCkTakeOffEco "CME de décollage coordonné avec l aide au décollage eb mode Green"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqCkTakeOffMap_B "Bypass_Couple de décollage cartographié"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqCkTakeOffNorm "CME de décollage coordonné avec l aide au décollage en mode normal"
+      SWORD TQDEM_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 2 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqEfcNRegCll "Couple de régulation du régulateur PI"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqEfcNRegOpl "Couple de régulation de la Boucle Ouverte"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqEfcNRegRaw "Couple de régulation brute"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqEfcNRegTakeOffEco_B "Bypass: Couple CME de la fonction aide au décollage en mode Green"
+      VAL_BLK 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    MATRIX_DIM 2 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqEfcNRegTakeOffNorm_B "Bypass: Couple CME de la fonction aide au décollage en mode normal"
+      VAL_BLK 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    MATRIX_DIM 2 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqIdcLimNReg_B "Bypass Couple de régulation de limitation de régime maximum"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqIniINReg "Couple d init coordonné de la partie Intégrale de la régulation"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqIniINRegLimN "Couple d init de la partie Intégrale de la régulation de la fonction limitation de régime"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqIniINRegTakeOff "Couple d init de la partie Intégrale de la régulation de la fonction aide au décollage"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqDem_tqLimProtCluP_T "Couple de limitation en mode protection EMB"
+      CURVE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS Eng_nCkFil TQDEM_CM_19 /* rpm:1:0: */ 9 0 7500
+    AXIS_PTS_REF TqDem_nEngRegNEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqOffSetLimN_C "Offset de couple pour initialiser la partie intégrale"
+      VALUE 0x0 TQDEM_RL_UWORD 500 TQDEM_CM_35 /* Nm:1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqDem_tqSatBackNReg "Couple de limitation anti retour"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqSatBackNRegLimN "Couple de limitation anti retour fonction limitation de régime"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqDem_tqSatBackNRegTakeOff "Couple de limitation anti retour fonction aide decollage"
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_bAcvLimEM "Bit d activation de la limitation EM, 0=conditions de limitation non remplies,1 conditions de limitation remplies"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_bAcvLimEM_MP "Bit d activation de la limitation EM, 0=conditions de limitation non remplies,1 conditions de limitation remplies"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_bAcvLimHillAsi "Bit d activation de la limitation Hill Assist, 0=conditions de limitation non remplies,1 conditions de limitation remplies"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_bAcvLimHillAsi_MP "Bit d activation de la limitation Hill Assist, 0=conditions de limitation non remplies,1 conditions de limitation remplies"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_bBrkParkElDft "Etat de validité du FSE"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_bInhLimEM_C "Bit de désactivation de la fonction EM ."
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_bInhLimHillAsi_C "Bit de désactivation de la fonction Hill Assist"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_stBrkParkElOn "Etat de serrage du FSE"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_tiDiLimEM_MP "Durée de la temporisation pour reset activation gradient EM."
+      UBYTE TQDEM_CM_32 /* s:0.1:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqLimEM_tiDiLimHillAsi_MP "Durée de la temporisation pour reset activation gradient Hill Assist"
+      UBYTE TQDEM_CM_32 /* s:0.1:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_tiGrdHillAsiRls_C "Temporisation de prise en compte du desserage Hill Assist"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tiToutHillAsi_C "Temporisation après laquelle la sortie reprend le couple conducteur par rapport au Hill Assist"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tiTout_C "Temporisation après laquelle la sortie reprend le couple conducteur par rapport au FSE"
+      VALUE 0x0 TQDEM_RL_UBYTE 10 TQDEM_CM_32 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdDft_C "Valeur de gradient utilisée pour la limitation lorsque l’information état FSE est invalide"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_tqGrdEM_MP "Couple pour gradient Easy move."
+      UWORD TQDEM_CM_36 /* N.m:1:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiDft_C "Valeur de gradient utilisée pour la limitation lorsque l’information état Hill Assist est invalide"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOffNb0_C "Gradient de couple de limitation quand le Hill Assist est serré pour le rapport de boite 0"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_36 /* N.m:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOffNb1_C "Gradient de couple de limitation quand le Hill Assist est serré pour le rapport de boite 1"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOffNb2_C "Gradient de couple de limitation quand le Hill Assist est serré pour le rapport de boite 2"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOffNb3_C "Gradient de couple de limitation quand le Hill Assist est serré pour le rapport de boite 2"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOnNb0_C "Gradient de couple de limitation quand le Hill Assist est désserré pour le rapport de boite 0"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_36 /* N.m:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOnNb1_C "Gradient de couple de limitation quand le Hill Assist est désserré pour le rapport de boite 1"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOnNb2_C "Gradient de couple de limitation quand le Hill Assist est désserré pour le rapport de boite 2"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdHillAsiOnNb3_C "Gradient de couple de limitation quand le Hill Assist est désserré pour le rapport de boite 3"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_tqGrdHillAsi_MP "Couple pour gradient Hill Assist."
+      UWORD TQDEM_CM_36 /* N.m:1:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOffNb0_C "Gradient de couple de limitation quand le FSE est serré pour le rapport de boite 0"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_36 /* N.m:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOffNb1_C "Gradient de couple de limitation quand le FSE est serré pour le rapport de boite 1"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOffNb2_C "Gradient de couple de limitation quand le FSE est serré pour le rapport de boite 2"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOffNb3_C "Gradient de couple de limitation quand le FSE est serré pour le rapport de boite 3"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOnNb0_C "Gradient de couple de limitation quand le FSE est désserré pour le rapport de boite 0"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_36 /* N.m:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOnNb1_C "Gradient de couple de limitation quand le FSE est désserré pour le rapport de boite 1"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOnNb2_C "Gradient de couple de limitation quand le FSE est désserré pour le rapport de boite 2"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqGrdOnNb3_C "Gradient de couple de limitation quand le FSE est désserré pour le rapport de boite 3"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_35 /* Nm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_tqLimEMRaw "Couple de limitation lorsque le FSE est serré."
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_tqLimEM_B "Bypass value of CoVSCtl_rAccPEng (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_tqLimHillAsiRaw "Couple de limitation lorsque le Hill Assist est serré."
+      SWORD TQDEM_CM_34 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqLimEM_tqThdAcvHillAsi_C "Seuil de couple au dessus duquel la limitation Hill Assist est possible"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqThdAcv_C "Seuil de couple au dessus duquel la limitation Hill Assist est possible"
+      VALUE 0x0 TQDEM_RL_SWORD 4000 TQDEM_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bOfsAntiStallTakeOff_MP "Active l application de l offset d aide au décollage après une activation de l anti calage BVM"
+      UBYTE TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bOfsLauchIdlTakeOff_C "Permet d appliquer l offset calculé dans le CVC pour le launch control"
+      VALUE 0x0 TQDEM_RL_UBYTE 1 TQDEM_CM_5 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facCorTakeOff_A "Axis description"
+      0x0 TqSys_nTarIdlFil TQDEM_RL_UWORD_AXIS 8000 TQDEM_CM_19 /* rpm:1:0: */ 7 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facCorTakeOff_T "Correction de l offset d aide au décollage"
+      CURVE 0x0 TQDEM_RL_UWORD 3 TQDEM_CM_17 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_nTarIdlFil TQDEM_CM_19 /* rpm:1:0: */ 7 0 8000
+    AXIS_PTS_REF TqSys_facCorTakeOff_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facFilTakeOff_MP "Coefficient du filtre de correction de l offset de l aide au décollage"
+      UWORD TQDEM_CM_17 /* :0.0078125:0: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facGainFilTakeOff_C "Coefficient du filtre de la correction d aide au décollage"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_7 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facGainSpdTakeOff_C "Gain du filtre de la vitesse véhicule"
+      VALUE 0x0 TQDEM_RL_UWORD 1 TQDEM_CM_17 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_nOfsIdlTakeOff "Vitesse véhicule filtrée"
+      UWORD TQDEM_CM_9 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_nOfsIdlTakeOffFil "Offset de l aide au décollage limité"
+      UWORD TQDEM_CM_9 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_nOfsTotTakeOff_B "Bypass value of TqSys_nOfsTotTakeOff (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTakeOffAntiStall_T "Offset pour le décollage après une activation de l anti calage BVM"
+      CURVE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_12 /* km/h:0.0078125:0: */ 7 0 500
+    AXIS_PTS_REF TqSys_nTakeOffOfsSpdY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTakeOffDec_C "Limitation du décrément de l offset d aide au décollage en RPM par pas de temps"
+      VALUE 0x0 TQDEM_RL_SWORD 2000 TQDEM_CM_37 /* rpm/cs:10:0: */ -2000 0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTakeOffInc_C "Limitation de l incrément de l offset d aide au décollage en RPM par pas de temps"
+      VALUE 0x0 TQDEM_RL_UWORD 2000 TQDEM_CM_37 /* rpm/cs:10:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTakeOffMax_C "Offset de régime maximum pour l aide au décollage"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTakeOffMin_C "Offset de régime minimum pour l aide au décollage"
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nTakeOffOfsSpdX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 100 TQDEM_CM_3 /* %:0.0625:0: */ 7 0 100
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_nTakeOffOfsSpdY_A "Vitesse véhicule filtrée"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 500 TQDEM_CM_12 /* km/h:0.0078125:0: */ 7 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nTakeOffOfsSpd_M "Offset ajouté à la consigne de ralenti au décollage"
+      MAP 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_3 /* %:0.0625:0: */ 7 0 100
+    AXIS_PTS_REF TqSys_nTakeOffOfsSpdX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_12 /* km/h:0.0078125:0: */ 7 0 500
+    AXIS_PTS_REF TqSys_nTakeOffOfsSpdY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nTakeOffOfsY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQDEM_RL_UWORD_AXIS 1000 TQDEM_CM_38 /* mbar:1:0: */ 8 500 1500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nTakeOffOfs_M "Offset pour le décollage"
+      MAP 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_19 /* rpm:1:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_3 /* %:0.0625:0: */ 7 0 100
+    AXIS_PTS_REF TqSys_nTakeOffOfsSpdX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQDEM_CM_38 /* mbar:1:0: */ 8 500 1500
+    AXIS_PTS_REF TqSys_nTakeOffOfsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTarFFL_B "Bypass value of TqSys_nTarFFL (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nTarIdlCVCReq_B "Bypass value of TqSys_nTarIdlCVCReq (activation by TqDem_bIntegration_Tests_SC)."
+      VALUE 0x0 TQDEM_RL_UWORD 8000 TQDEM_CM_9 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_pAirExtDft_C "Valeur de remplacement de la pression atmo en cas de défaut"
+      VALUE 0x0 TQDEM_RL_UWORD 1000 TQDEM_CM_38 /* mbar:1:0: */ 500 1500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_spdVehFilTakeOff_MP "Vitesse véhicule filtrée"
+      UWORD TQDEM_CM_12 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiTakeOffAntiStallMax_C "Temps maxi d activation de la stratégie d aide au décollage après une activation du move off"
+      VALUE 0x0 TQDEM_RL_UWORD 10 TQDEM_CM_13 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT TQDEM_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQDEM_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD TQDEM_CM_1 "conversion_method"
+
+RAT_FUNC "%.4" "km/h/1000rpm"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_2 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_3 "conversion_method"
+
+RAT_FUNC "%.2" "%"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_4 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_4
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_4 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "COVSCTL_STACCP_PIED_LEVE"
+	 1 "COVSCTL_STACCP_PIED_POSE"
+	 2 "COVSCTL_STACCP_PIED_A_FOND"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_5 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_5
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_5 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_6 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_7 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_8 "conversion_method"
+
+RAT_FUNC "%.4" "Nm"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_9 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_10 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_11 "conversion_method"
+
+RAT_FUNC "%.3" "Km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_12 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_13 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_14 "conversion_method"
+
+RAT_FUNC "%.3" "rad/s^2"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_15 "conversion_method"
+
+RAT_FUNC "%.3" "rad/s"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_16 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_16
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_16 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "TQDEM_BRVS_MA_NON_ENGAGEE"
+	 1 "TQDEM_BRVS_MA_ENGAGEE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_17 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_18 "conversion_method"
+
+RAT_FUNC "%.3" "s"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_19 "conversion_method"
+
+RAT_FUNC "%.0" "rpm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_20 "conversion_method"
+
+RAT_FUNC "%.3" "s"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_21 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_22 "conversion_method"
+
+RAT_FUNC "%.3" "km/h/1000rpm"
+COEFFS 0 256 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_23 "conversion_method"
+
+RAT_FUNC "%.3" "kg.m^2"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_24 "conversion_method"
+
+RAT_FUNC "%.3" "kg.m2"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_25 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_26 "conversion_method"
+
+RAT_FUNC "%.0" "RPM"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_27 "conversion_method"
+
+RAT_FUNC "%.0" "km/h"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_28 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_28
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_28 "conversion_vtab"
+
+    TAB_VERB 5
+	 1 "TQDEM_GREEN_NON_START"
+	 2 "TQDEM_GREEN_START"
+	 3 "TQDEM_TRANSITION_TEMPORELLE"
+	 4 "TQDEM_ATTENTE"
+	 5 "TQDEM_NORMAL"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_29 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_29
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_29 "conversion_vtab"
+
+    TAB_VERB 6
+	 1 "TQDEM_DECO"
+	 2 "TQDEM_HORS_DECO"
+	 3 "TQDEM_TRANS_CONV_COUPLE"
+	 4 "TQDEM_ATTENTE"
+	 5 "TQDEM_TRANS_TEMP_DECO_ROUL"
+	 6 "TQDEM_TRANS_TEMP_ROUL_DECO"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_30 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_30
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_30 "conversion_vtab"
+
+    TAB_VERB 6
+	 1 "STSTRT_ECU_ETEINT"
+	 2 "STSTRT_ECU_REVEILLE"
+	 3 "STSTRT_MOTEUR_DEMARRE"
+	 4 "STSTRT_MOTEUR_ARRETE_OU_CALE"
+	 5 "STSTRT_ECU_EXTINCTION"
+	 6 "STSTRT_ECU_EXTINCTION2"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_31 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQDEM_CV_31
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQDEM_CV_31 "conversion_vtab"
+
+    TAB_VERB 7
+	 0 "TQDEM_MA"
+	 1 "TQDEM_RESERVE"
+	 2 "TQDEM_BV"
+	 3 "TQDEM_TRANS_BV_MV"
+	 4 "TQDEM_MV"
+	 5 "TQDEM_TRANS_MV_HV"
+	 6 "TQDEM_HV"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQDEM_CM_32 "conversion_method"
+
+RAT_FUNC "%.1" "s"
+COEFFS 0 10 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_33 "conversion_method"
+
+RAT_FUNC "%.0" "s"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_34 "conversion_method"
+
+RAT_FUNC "%.2" "N.m"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_35 "conversion_method"
+
+RAT_FUNC "%.0" "Nm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_36 "conversion_method"
+
+RAT_FUNC "%.0" "N.m"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_37 "conversion_method"
+
+RAT_FUNC "%.0" "rpm/cs"
+COEFFS 0 0.1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQDEM_CM_38 "conversion_method"
+
+RAT_FUNC "%.0" "mbar"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION TQDEM_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	CoPt_spdVehGearRatDft_C
+	CoVSCtl_rAccPEng_B
+	CoVSCtl_rAccPThd1Hyst_C
+	CoVSCtl_rAccPThd1_C
+	CoVSCtl_rAccPThd3Hyst_C
+	CoVSCtl_rAccPThd3_C
+	CoVSCtl_rAccPTra_B
+	CoVSCtl_stAccP_B
+	CoVSCtl_stAcvAccPEng_C
+	CoVSCtl_stAcvAccPTra_C
+	CoVSCtl_tqEfcReq_B
+	DZone_bAcv_C
+	DZone_bTqDifSel_C
+	DZone_facFilDownHiSpdVeh_C
+	DZone_facFilDownLoSpdVeh_C
+	DZone_facFilNCkIdlDelta_C
+	DZone_facFilTqDif_C
+	DZone_facFilTqIdl_C
+	DZone_facFilUpHiSpdVeh_C
+	DZone_facFilUpLoSpdVeh_C
+	DZone_nCkTarDifX_A
+	DZone_nCkThdClc_C
+	DZone_nEngOfsTakeOff_C
+	DZone_nIdlThdClc_C
+	DZone_noGearCordX_A
+	DZone_rAccPInhThd_C
+	DZone_rAccPMax_C
+	DZone_rAccPMin_C
+	DZone_rAccPThdClc_C
+	DZone_rAccPY_A
+	DZone_spdVehThdClc_T
+	DZone_spdVehThdFilSel_C
+	DZone_spdVehThd_C
+	DZone_spdVehY_A
+	DZone_tiFrzClc_C
+	DZone_tqCkIdlDelta_C
+	DZone_tqCkIdlFilOfs_C
+	DZone_tqDifLrn_A
+	DZone_tqDifLrn_T
+	DZone_tqEfcDifLrnOut_B
+	DZone_tqGainGearSpd_M
+	DZone_tqGainNCkAccP_M
+	DZone_tqMaxSatTqDif_C
+	DZone_tqMinSatTqDif_C
+	RE_TQDEM_002_TEV_B
+	RE_TQDEM_003_TEV_B
+	RE_TQDEM_004_TEV_B
+	RE_TQDEM_005_TEV_B
+	RE_TQDEM_006_TEV_B
+	RE_TQDEM_007_TEV_B
+	RE_TQDEM_008_TEV_B
+	TqDem_bAcvEcoOn_C
+	TqDem_bAcvNRegTakeOff_B
+	TqDem_bAcvNRegTakeOff_C
+	TqDem_bAcvPtSptGsl_C
+	TqDem_bAuthLimTqNRegProt_C
+	TqDem_bDeacFacInt_C
+	TqDem_bDrivTakeOff_B
+	TqDem_bInhLimN_C
+	TqDem_bModSpt_B
+	TqDem_bProtCluPNRegTakeOff_C
+	TqDem_bRvsDrvInh_C
+	TqDem_bRvsSel_C
+	TqDem_bRvsTakeOff_C
+	TqDem_bTakeOffGBx_C
+	TqDem_bTqCluSel_C
+	TqDem_bTqGrdLim_B
+	TqDem_bTranDrv_C
+	TqDem_bTranStallEco_C
+	TqDem_bTranTakeOff_C
+	TqDem_bTranTiEcoOn_C
+	TqDem_bTypSptSel_C
+	TqDem_facDirNReqLimN_C
+	TqDem_facDirNReqTakeOffX_A
+	TqDem_facDirNReqTakeOff_M
+	TqDem_facDirTCoMes_T
+	TqDem_facDirTakeOffRvsSel_C
+	TqDem_facFilGrdNEng_C
+	TqDem_facFilNEngLimN_C
+	TqDem_facFilNEngTakeOff_C
+	TqDem_facFilNEngTraCls_C
+	TqDem_facFilNEngTraOp_C
+	TqDem_facGainFil_nCk_B
+	TqDem_facGearFil_C
+	TqDem_facINReqLimN_T
+	TqDem_facINReqTakeOff_M
+	TqDem_facITCoMes_T
+	TqDem_facNEngIdl_A
+	TqDem_facNEngIdl_T
+	TqDem_facPNReqLimN_T
+	TqDem_facPNReqTakeOff_M
+	TqDem_facPTCoMes_T
+	TqDem_facSptSpdAccP_T
+	TqDem_facSptSpdRatAccP_T
+	TqDem_idxGearRat_A
+	TqDem_idxGearRat_T
+	TqDem_idxMapRvsDrv_B
+	TqDem_idxMapTranDrvFirst_B
+	TqDem_idxMapTranDrvSec_B
+	TqDem_idxPtSpt_C
+	TqDem_jEng_C
+	TqDem_nCkIdlHys_C
+	TqDem_nEngRegAccPX_A
+	TqDem_nEngRegGearNb_A
+	TqDem_nEngRegNEngX_A
+	TqDem_nEngRegSpdVehY_A
+	TqDem_nEngRegTCoMes_A
+	TqDem_nEngReqTakeOffProt_M
+	TqDem_nEngReqTakeOffY_A
+	TqDem_nEngReqTakeOff_M
+	TqDem_nEngReq_B
+	TqDem_nOffNEngReq_C
+	TqDem_nThdAcvLimNOpm_C
+	TqDem_nThdDeacLimN_C
+	TqDem_noGearAvrSpd_C
+	TqDem_noGearHiSpd_C
+	TqDem_noGearLoSpd_C
+	TqDem_rAccPAdp_T
+	TqDem_rAccPMaxEco_A
+	TqDem_rAccPMaxEco_T
+	TqDem_rAccPMax_C
+	TqDem_rAccPMinEco_C
+	TqDem_rAccPMin_A
+	TqDem_rAccPMin_T
+	TqDem_rAccPOfs_C
+	TqDem_rAccPSptMod_B
+	TqDem_rAccPThdAcvSptMod_C
+	TqDem_rAccPThdAcvTakeOff_C
+	TqDem_rAccPThdDeacLimN_C
+	TqDem_rAccPThdTranNorm_C
+	TqDem_rDrivTakeOff_B
+	TqDem_rTranDrv_B
+	TqDem_rTranEcoNorm_B
+	TqDem_spdVehDft_C
+	TqDem_spdVehMaxAvrDrv_C
+	TqDem_spdVehMaxHiSpdDrv_C
+	TqDem_spdVehMaxTakeOff_C
+	TqDem_spdVehMinAvrDrv_C
+	TqDem_spdVehMinHiSpdDrv_C
+	TqDem_spdVehMinTakeOff_C
+	TqDem_spdVehRatSpt_A
+	TqDem_spdVehSpt_A
+	TqDem_spdVehThdAcvTakeOff_C
+	TqDem_stAuthSptMod_C
+	TqDem_stTranNormCf_C
+	TqDem_tCoMesDft_C
+	TqDem_tCoThdHiTranNorm_C
+	TqDem_tCoThdLoTranNorm_C
+	TqDem_tOxCDft_C
+	TqDem_tOxCHiTranNorm_C
+	TqDem_tOxCLoTranNorm_C
+	TqDem_tiCfmEco_C
+	TqDem_tiEgdGearCfm_C
+	TqDem_tiMaxAcvEco_C
+	TqDem_tiMaxTakeOff_C
+	TqDem_tiMinTakeOff_C
+	TqDem_tiTraTakeOffDownDft_C
+	TqDem_tiTraTakeOffDown_C
+	TqDem_tiTraTakeOffUp_C
+	TqDem_tiTranEcoNorm_C
+	TqDem_tiTranGearRatDftOff_C
+	TqDem_tiTranGearRatDftOn_C
+	TqDem_tiTranNRegProtCluPOff_C
+	TqDem_tiTranNRegProtCluPOn_C
+	TqDem_tiTranProtCluPOff_C
+	TqDem_tiTranProtCluPOn_C
+	TqDem_tiTranSpdDftOff_C
+	TqDem_tiTranSpdDftOn_C
+	TqDem_tiTranSptOff_C
+	TqDem_tiTranSptOn_C
+	TqDem_tqCkEfcAvrSpdNorm_M
+	TqDem_tqCkEfcDeltaEcoNorm_B
+	TqDem_tqCkEfcDeltaTakeOff_B
+	TqDem_tqCkEfcHiSpdNorm_M
+	TqDem_tqCkEfcLoSpdEco_M
+	TqDem_tqCkEfcLoSpdNorm_M
+	TqDem_tqCkEfcLossOfs_C
+	TqDem_tqCkEfcMax_B
+	TqDem_tqCkEfcMinEco_C
+	TqDem_tqCkEfcMin_B
+	TqDem_tqCkEfcRev_M
+	TqDem_tqCkEfcTakeOffEco_M
+	TqDem_tqCkEfcTakeOffNorm_M
+	TqDem_tqCkEfcTakeOffProt_M
+	TqDem_tqCkEfcTakeOff_C
+	TqDem_tqCkEfcWoutAntiDB_B
+	TqDem_tqCkEfc_B
+	TqDem_tqCkEfc_nEngY_A
+	TqDem_tqCkEfc_rAccPX_A
+	TqDem_tqCkTakeOffMap_B
+	TqDem_tqEfcNRegTakeOffEco_B
+	TqDem_tqEfcNRegTakeOffNorm_B
+	TqDem_tqIdcLimNReg_B
+	TqDem_tqLimProtCluP_T
+	TqDem_tqOffSetLimN_C
+	TqLimEM_bInhLimEM_C
+	TqLimEM_bInhLimHillAsi_C
+	TqLimEM_tiGrdHillAsiRls_C
+	TqLimEM_tiToutHillAsi_C
+	TqLimEM_tiTout_C
+	TqLimEM_tqGrdDft_C
+	TqLimEM_tqGrdHillAsiDft_C
+	TqLimEM_tqGrdHillAsiOffNb0_C
+	TqLimEM_tqGrdHillAsiOffNb1_C
+	TqLimEM_tqGrdHillAsiOffNb2_C
+	TqLimEM_tqGrdHillAsiOffNb3_C
+	TqLimEM_tqGrdHillAsiOnNb0_C
+	TqLimEM_tqGrdHillAsiOnNb1_C
+	TqLimEM_tqGrdHillAsiOnNb2_C
+	TqLimEM_tqGrdHillAsiOnNb3_C
+	TqLimEM_tqGrdOffNb0_C
+	TqLimEM_tqGrdOffNb1_C
+	TqLimEM_tqGrdOffNb2_C
+	TqLimEM_tqGrdOffNb3_C
+	TqLimEM_tqGrdOnNb0_C
+	TqLimEM_tqGrdOnNb1_C
+	TqLimEM_tqGrdOnNb2_C
+	TqLimEM_tqGrdOnNb3_C
+	TqLimEM_tqLimEM_B
+	TqLimEM_tqThdAcvHillAsi_C
+	TqLimEM_tqThdAcv_C
+	TqSys_bOfsLauchIdlTakeOff_C
+	TqSys_facCorTakeOff_A
+	TqSys_facCorTakeOff_T
+	TqSys_facGainFilTakeOff_C
+	TqSys_facGainSpdTakeOff_C
+	TqSys_nOfsTotTakeOff_B
+	TqSys_nTakeOffAntiStall_T
+	TqSys_nTakeOffDec_C
+	TqSys_nTakeOffInc_C
+	TqSys_nTakeOffMax_C
+	TqSys_nTakeOffMin_C
+	TqSys_nTakeOffOfsSpdX_A
+	TqSys_nTakeOffOfsSpdY_A
+	TqSys_nTakeOffOfsSpd_M
+	TqSys_nTakeOffOfsY_A
+	TqSys_nTakeOffOfs_M
+	TqSys_nTarFFL_B
+	TqSys_nTarIdlCVCReq_B
+	TqSys_pAirExtDft_C
+	TqSys_tiTakeOffAntiStallMax_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CoVSCtl_rAccPThd1Hyst
+	CoVSCtl_rAccPThd3Hyst
+	DZone_bClcAcv
+	DZone_bTqAux_MP
+	DZone_bTqIdlStab_MP
+	DZone_facFilTqDifUnLim
+	DZone_facFilTqDif_MP
+	DZone_tqCkIdlFil
+	DZone_tqDIfLrnResi_MP
+	DZone_tqDifEfc_MP
+	DZone_tqDifLoss_MP
+	DZone_tqDifLrn
+	DZone_tqDifLrnOut
+	DZone_tqDifLrnOutPrev
+	DZone_tqDifLrnOutRaw_MP
+	DZone_tqDifLrnUnLim
+	DZone_tqDifSat_MP
+	TqDem_ModuleVersion_Major_MP
+	TqDem_ModuleVersion_Minor_MP
+	TqDem_agvGrdNEng
+	TqDem_agvGrdNEngReq
+	TqDem_agvGrdNEngReqFil
+	TqDem_agvNEngReq
+	TqDem_bAcvLimN
+	TqDem_bAcvLimNOpm
+	TqDem_bAcvNRegOpm
+	TqDem_bAcvTakeOffOpm
+	TqDem_bAcvTranEco
+	TqDem_bAuthTranNorm
+	TqDem_bDeacLimN
+	TqDem_bDeacNReg
+	TqDem_bDeacTakeOff
+	TqDem_bDrvAvrSpdMap
+	TqDem_bDrvHiSpdMap
+	TqDem_bDrvLoSpdMap
+	TqDem_bEcoOn
+	TqDem_bNormOn
+	TqDem_bRvs
+	TqDem_bRvsDrvInh
+	TqDem_bRvsMap
+	TqDem_bRvsTakeOff
+	TqDem_bTakeOffGBx
+	TqDem_bTakeOffMap
+	TqDem_bTranDrv
+	TqDem_bTranStallEco
+	TqDem_bTranTakeOff
+	TqDem_bTranTiEcoOn
+	TqDem_facAdpAccPOff_MP
+	TqDem_facDirNReq
+	TqDem_facDirNReqLimN
+	TqDem_facDirNReqTakeOff
+	TqDem_facFilNEng
+	TqDem_facFilNEngLimN
+	TqDem_facFilNEngTakeOff
+	TqDem_facINReg
+	TqDem_facINRegLimN
+	TqDem_facINRegTakeOff
+	TqDem_facPNReg
+	TqDem_facPNRegLimN
+	TqDem_facPNRegTakeOff
+	TqDem_facTranAvrHiSpdIn
+	TqDem_facTranAvrHiSpdOut
+	TqDem_facTranLoAvrSpdIn
+	TqDem_facTranLoAvrSpdOut
+	TqDem_facTranLvlDrv
+	TqDem_idxGear
+	TqDem_idxMapRvsDrv
+	TqDem_idxMapTranDrvFirst
+	TqDem_idxMapTranDrvSec
+	TqDem_jEng
+	TqDem_nCkIdlHys
+	TqDem_nEngOfsReq
+	TqDem_nEngReqLimN
+	TqDem_nEngReqTakeOff
+	TqDem_noGearAvrSpd
+	TqDem_noGearHiSpd
+	TqDem_noGearLoSpd
+	TqDem_rAccP
+	TqDem_rAccPMax
+	TqDem_rAccPMaxEco
+	TqDem_rAccPMin
+	TqDem_rAccPMinEco
+	TqDem_rSpdVeh
+	TqDem_rTranAvrHiSpd
+	TqDem_rTranDrv
+	TqDem_rTranEco
+	TqDem_rTranEcoNorm
+	TqDem_rTranLimNOut
+	TqDem_rTranLoAvrSpd
+	TqDem_rTranNRegOut
+	TqDem_rTranTakeOffOut
+	TqDem_spdVeh
+	TqDem_spdVehGearRatCord_MP
+	TqDem_spdVehMaxAvrDrv
+	TqDem_spdVehMaxHiSpdDrv
+	TqDem_spdVehMaxTakeOff
+	TqDem_spdVehMinAvrDrv
+	TqDem_spdVehMinHiSpdDrv
+	TqDem_spdVehMinTakeOff
+	TqDem_stDrvEcoReq
+	TqDem_stDrvTakeOff
+	TqDem_stStrt
+	TqDem_stTqDrvReq
+	TqDem_tCoMes
+	TqDem_tOxCEstim
+	TqDem_tiAcvEco
+	TqDem_tiCfmEco
+	TqDem_tiMaxAcvEco
+	TqDem_tiMaxTakeOff
+	TqDem_tiMinTakeOff
+	TqDem_tiTakeOff
+	TqDem_tiTakeOffMax
+	TqDem_tiWaitEco
+	TqDem_tqCkEfcAvrSpdEco
+	TqDem_tqCkEfcAvrSpdNorm
+	TqDem_tqCkEfcDeltaEcoNorm
+	TqDem_tqCkEfcDeltaTakeOff
+	TqDem_tqCkEfcDrvDeltaEco
+	TqDem_tqCkEfcDrvDeltaNorm
+	TqDem_tqCkEfcDrvEco
+	TqDem_tqCkEfcDrvEcoFirst
+	TqDem_tqCkEfcDrvEcoSec
+	TqDem_tqCkEfcDrvNorm
+	TqDem_tqCkEfcDrvNormFirst
+	TqDem_tqCkEfcDrvNormSec
+	TqDem_tqCkEfcHiSpdEco
+	TqDem_tqCkEfcHiSpdNorm
+	TqDem_tqCkEfcLoSpdEco
+	TqDem_tqCkEfcLoSpdNorm
+	TqDem_tqCkEfcLossDelta_MP
+	TqDem_tqCkEfcMap
+	TqDem_tqCkEfcMapEco
+	TqDem_tqCkEfcMapNorm
+	TqDem_tqCkEfcMinEco
+	TqDem_tqCkEfcNRegI_MP
+	TqDem_tqCkEfcNRegP_MP
+	TqDem_tqCkEfcRev
+	TqDem_tqCkEfcRvsTakeOffEco
+	TqDem_tqCkEfcRvsTakeOffNorm
+	TqDem_tqCkEfcTakeOff
+	TqDem_tqCkEfcTakeOffEco
+	TqDem_tqCkEfcTakeOffNorm
+	TqDem_tqCkTakeOffEco
+	TqDem_tqCkTakeOffNorm
+	TqDem_tqEfcNRegCll
+	TqDem_tqEfcNRegOpl
+	TqDem_tqEfcNRegRaw
+	TqDem_tqIniINReg
+	TqDem_tqIniINRegLimN
+	TqDem_tqIniINRegTakeOff
+	TqDem_tqSatBackNReg
+	TqDem_tqSatBackNRegLimN
+	TqDem_tqSatBackNRegTakeOff
+	TqLimEM_bAcvLimEM
+	TqLimEM_bAcvLimEM_MP
+	TqLimEM_bAcvLimHillAsi
+	TqLimEM_bAcvLimHillAsi_MP
+	TqLimEM_bBrkParkElDft
+	TqLimEM_stBrkParkElOn
+	TqLimEM_tiDiLimEM_MP
+	TqLimEM_tiDiLimHillAsi_MP
+	TqLimEM_tqGrdEM_MP
+	TqLimEM_tqGrdHillAsi_MP
+	TqLimEM_tqLimEMRaw
+	TqLimEM_tqLimHillAsiRaw
+	TqSys_bOfsAntiStallTakeOff_MP
+	TqSys_facFilTakeOff_MP
+	TqSys_nOfsIdlTakeOff
+	TqSys_nOfsIdlTakeOffFil
+	TqSys_spdVehFilTakeOff_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE TqDem ------------------------------------*/

@@ -1,0 +1,17 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+HEATSENO2HOTDIAG_vidTgInitCbMdTn|B|();|FCT1.2|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Cette fonction permet la réinitialisation du diagnostic lors des transitions essence ver gaz, ou gaz vers essence (lorsque l’application gaz est applicable)|
+HEATSENO2HOTDIAG_vidUsHDiagCalc|H|();|FCT1.7|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|La valeur donnée par Rchauff_SO2Us est la résistance de chauffage de la sonde amont. Enfin  on   compare Rchauff_SO2Us à un seuil qui dépend de la température des gazes d’échappement.|
+HEATSENO2HOTDIAG_vidUsHDiagCond|G|();|FCT1.6|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Le diagnostique ne se lance qu’a la fin d’une temporisation Us_heat_transit_count après le passage de OFF à ON de la commande de chauffage de la sonde amont.|
+HEATSENO2HOTDIAG_vidUsheat|D|();|FCT1.5|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Appel des fonctions HEATSENO2HOTDIAG_vidUsHDiagCond et HEATSENO2HOTDIAG_vidUsHDiagCalc|
+HEATSENO2HOTDIAG_vidUsHeat_Euro6|A|();|FCT2.1|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Les variables finales envoyées au Mode06 (FacMes, FacMax) sont gelées lorsque la panne est présente mais non  encore confirmée par le GD/GAR. Si on calibre HeatSenO2_bAcvEuro6UsHeat_C à 0, on revient sur le fonctionnel  d’origine (EB).|
+GDGAR_bGetFRM|F|func_FRM_bGetFRM|None|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft,argin boolean bDgo,argin boolean bMonRun,argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0||
+HeatSenO2_EveRst_HeatSenO2Mon|D|();|SCH.1|HEATSENO2HOTDIAG|1|V02 NT 12 00470||||0|0|0|0|Evènement reset|
+HeatSenO2_SdlFast_HeatSenO2Mon|D|();|SCH.2|HEATSENO2HOTDIAG|1|V02 NT 12 00470||||0|0|0|0|Moniteur rapide pour la fonction HeatSenO2|
+HEATSENO2HOTDIAG_vidDsHDiagCalc|G|();|FCT1.10|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|La valeur donnée par Rchauff_SO2Ds est la résistance de chauffage de la sonde aval. Enfin on compare Rchauff_SO2Ds à un seuil qui dépend de la température du catalyseur.|
+HEATSENO2HOTDIAG_vidDsHDiagCond|G|();|FCT1.9|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Le diagnostique ne se lance qu’a la fin d’une temporisation Ds_heat_transit_count après le passage de OFF à ON de la commande de chauffage de la sonde aval.|
+HEATSENO2HOTDIAG_vidDsheat|D|();|FCT1.8|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Appel des fonctions HEATSENO2HOTDIAG_vidDsHDiagCond et HEATSENO2HOTDIAG_vidDsHDiagCalc|
+HEATSENO2HOTDIAG_vidDsHeat_Euro6|A|();|FCT2.2|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Les variables finales envoyées au Mode06 (FacMes, FacMax) sont gelées lorsque la panne est présente mais non encore confirmée par le GD/GAR. Si on calibreHeatSenO2_bAcvEuro6DsHeat_C à 0, on revient sur le fonctionnel d’origine (EB).|
+HEATSENO2HOTDIAG_vidInit|B|();|FCT1.4|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Initialization of module outputs|
+HEATSENO2HOTDIAG_vidInitCbModTrn|B|();|FCT1.3|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Initialisation du diagnostic lors des transitions essence vers gaz, ou gaz vers essence|
+HEATSENO2HOTDIAG_vidInitOutput|C|();|FCT1.1|HEATSENO2HOTDIAG|0|V02 NT 12 00470||||0|0|0|0|Initialization of module outputs|

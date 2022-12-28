@@ -1,0 +1,14 @@
+# Opening file .hex with software + calibration => Buf#1
+open /file_name:%SOFT_TRF%.hex /buf_dest:1
+
+# Creation of .ulp file
+add_ulp /buf_src:1 
+	/addr_src:%DEBUT_SIGNATURE_FLASH% /size:%TAILLE_SIGNATURE_FLASH%
+	/defined_zones
+	/ecu_init:%ADDRESS_UCE% /ecu_key:%KEY_APPLI%
+	/irr_max:%MAX_INTER_REQ_REP% /irr_min:%MIN_INTER_REP_REQ%
+	/system:%SYSTEM% /appli:%APPLICATION%
+	/vers_psa:%VERSION% /edition:%EDITION%
+	/suppl_psa:%SUPPLIER% /log_mark:%LOG_MARK%
+	/ulp_num:%ULP_NUM%
+save /file_name:%SOFT_TRF%.ulp /buf_src:1 /format:ulp

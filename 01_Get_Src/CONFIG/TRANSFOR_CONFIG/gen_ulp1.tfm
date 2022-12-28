@@ -1,0 +1,11 @@
+# Opening file .hex with software + calibration => Buf#1
+open /file_name:%SOFT_TRF%.hex /buf_dest:1
+
+# Move Downloadable data to 3 bytes address: 0x8000 0000 -> 0x00 0000
+move /buf_src:1 /addr_src:%DEBUT_FLASH_4_BYTES% /size:%TAILLE_FLASH%
+     /buf_dest:2 /addr_dest:%DEBUT_FLASH_3_BYTES% /erase_origin
+
+# Extract Downloadable data
+extract /buf_src:2 /addr_src:%DEBUT_FLASH_3_BYTES% /size:%TAILLE_FLASH% /buf_dest:3
+
+save /buf_src:3 /file_name:ULP.hex /format:h86 /seg:xtnd

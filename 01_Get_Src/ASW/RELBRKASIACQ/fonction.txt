@@ -1,0 +1,17 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+AirPres_EveRst_RelBrkAsiAcq|B|();|SCH.1|RELBRKASIACQ|1|PTS_DOC_6547160||||0|0|0|0|Reset event for AirPres function
+AirPres_SdlFast_RelBrkAsiAcq|B|();|SCH.2|RELBRKASIACQ|1|PTS_DOC_6547160||||0|0|0|0|Fast monitor for AirPres function
+AirPres_SdlSfty_RelBrkAsiAcq|B|();|SCH.3|RELBRKASIACQ|1|PTS_DOC_6547160||||0|0|0|0|Calculation event of safety level 2 functions
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|2|HEADER|1|NONE||||0|0|0|0|Fonction de production de variables FRM
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|Fonction de diagnostic des pannes
+RELBRKASIACQ_vidAcqusition|B|();|FCT1.4|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|This function makes the acquisition of the relative mastervac pressure sensor voltage.
+RELBRKASIACQ_vidCalc|B|();|FCT1.3|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|This function calculates the relative mastervac pressure.
+RELBRKASIACQ_vidDiagnosis|B|();|FCT1.5|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|This function makes the diagnosis of the information. There are 3 different diagnosis, one for the max value of the voltage, another one for the min value and the last one controls the gradient of the measured voltage.
+RELBRKASIACQ_vidFiltering|B|();|FCT1.8|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|In this function, the raw voltage of the relative mastervac pressure sensor is filtered by a first order filter.
+RELBRKASIACQ_vidGrdDiag|B|();|FCT1.7|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|In thif function, if the difference between the current voltage and the voltage at previous step is greater than a defined threshold, the Boolean of Grd diagnosis is activated.
+RELBRKASIACQ_vidInit|B|();|FCT1.2|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|The output of the function is initialized at Ext_pRelBrkAsiIni_C.
+RELBRKASIACQ_VidInitOutput|B|();|FCT1.1|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|Fonction d'initialisation
+RELBRKASIACQ_vidLinearization|B|();|FCT1.9|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|In this function, the measured filtered voltage is converted into a pressure information.  This conversion is done by an interpolation between 2 setpoints.
+RELBRKASIACQ_vidScpScgDiag|B|();|FCT1.6|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|This function checks if the measured voltage is up to a max defined threshold, then it activates the boolean of Scp diagnosis. And if the measured voltage is under a min defined threshold, it activates the boolean of Scg diagnosis.
+RELBRKASIACQ_vidSelection|B|();|FCT1.10|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|In thid function, if a punctual diagnosis is detected or if the recovery flag to inhibit electrical diagnosis is set then the relative mastervac pressure is frozen to its last valid value.
+RELBRKASIACQ_vidSftLvl2|B|();|FCT2.1|RELBRKASIACQ|0|PTS_DOC_6547160||||0|0|0|0|The aim of this function is to satisfy the requirement of safety level 2 for the mastervac relative pressure sensor.

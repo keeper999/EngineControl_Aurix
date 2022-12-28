@@ -1,0 +1,41 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+DGOHAL_bfRead|C|(argin uint8 u8Channel)DGOHAL_tbfStatus;|1|HEADER|1|NONE||||0|0|0|0|Return the bfStatus of the udtChannel|
+Inj_EveCkOff_InjCmd|B|();|SCH.2|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evènement de sortie de cranking|
+Inj_EveCkSnOf_InjCmd|D|();|SCH.3|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement  d'appel  de  tâche  "synchro  perdue"  du  CMM  (à  la  perte  de  synchro  et  au  calage)|
+Inj_EveCrTR_InjCmd|E|();|SCH.6|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement CRANKING vers RUNNING|
+Inj_EveInj_InjCmd|C|();|SCH.8|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Tâche INJ pour la commande injection|
+Inj_EveKOf_InjCmd|D|();|SCH.5|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evènement associé au passage de clef ON à clef OFF|
+Inj_EveRst_InjCmd|D|();|SCH.1|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement reset du calculateur|
+Inj_EveSpl_InjCmd|C|();|SCH.10|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement "Spill"|
+Inj_EveStTCr_InjCmd|F|();|SCH.7|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant|
+Inj_EveSyncNotAccu_InjCmd|C|();|SCH.4|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Evénement indiquant le passage en synchronisation non précise du moteur|
+Inj_SdlFast_InjCmd|F|();|SCH.9|INJCMD|1|PTS_DOC_6886136||||0|0|0|0|Moniteur rapide pour la commande des injecteurs|
+INJCMD_vidDiagnosticInjecteur1|E|();|FCT2.2|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Diagnostique du premier injecteur|
+INJCMD_vidDiagnosticInjecteur2|E|();|FCT2.3|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Diagnostique du deuxième injecteur|
+INJCMD_vidDiagnosticInjecteur3|E|();|FCT2.4|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Diagnostique du troisième injecteur|
+INJCMD_vidDiagnosticInjecteur4|D|();|FCT2.5|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Diagnostique du quatrième injecteur|
+INJCMD_vidDisableDriver|C|();|FCT3.3|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Cela permettra sa réactivation au redépart suivant,  l’autorisation étant faite sur le passage des états véhicule de VS_STALL à VS_CRANKING.|
+INJCMD_vidFormatInjTime|C|FUNC_vidFormatInjTime|FCT1.3|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Scaling pour les temps d' injection|
+INJCMD_vidInhibitAllCylinder|D|();|FCT3.4|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Ce bloc gère la demande de désactivation des injections séquentielles.|
+INJCMD_vidInitDiag|A|();|FCT3.5|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Toutes les sorties API DGOHAL BSW sont initialisées à 0.|
+INJCMD_vidInitEnable|D|();|FCT3.1|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|L’injection sera autorisée si la synchronisation « imprécise » est validée si le vilebrequin tourne en sens avant|
+INJCMD_vidInitialisationMode|C|();|FCT3.2|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Initialise le mode d’injection (1, 2, 3 ou 4 pulses) , sur l’événement Stall to Crank,|
+INJCMD_vidInitOutput|C|();|FCT1.1|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Initialisation des variables du module.|
+INJCMD_vidInjectorsDiagnostic|B|();|FCT2.1|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Le diagnostic fournit une information de panne présente, utilisée par la gestion des défauts unitaire pour générer les éventuelles  demande de reconfiguration et définir les modes dégradés associés.|
+INJCMD_vidInjHALCmdProfile|C|();|FCT1.6|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Fonction de changement de profil de commande.|
+INJCMD_vidInjHALUpdate|D|();|FCT1.5|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Mise a jour de la couche hard d'injection|
+INJCMD_vidManCutByCylinder|F|();|FCT2.6|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Deux entrées contrôlent la coupure (totale ou partielle) de l'injection: Auto_injection = 0 (lâché de pied ou véhicule arrêté) : coupure totale (sur les 3 cylindres), Coupure_decel_progr_inj ? 0 : coupure de l’injecteur concerné|
+INJCMD_vidManInjTime|F|();|FCT1.2|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Les consignes phase et temps d'injection séquentielle doivent être immédiatement prises en compte par le driver injection si l'indicateur d'inhibition Inhibe_reactualisation_t_inj (calibration) n'est pas positionné.|
+INJCMD_vidModeInjectionSequentielleCyl1|C|();|FCT1.7|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Mode d'injection sequentielle appliqué au cylindre 1|
+INJCMD_vidModeInjectionSequentielleCyl2|C|();|FCT1.8|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Mode d'injection sequentielle appliqué au cylindre 2|
+INJCMD_vidModeInjectionSequentielleCyl3|C|();|FCT1.9|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Mode d'injection sequentielle appliqué au cylindre 3|
+INJCMD_vidModeInjectionSequentielleCyl4|D|();|FCT1.10|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Mode d'injection sequentielle appliqué au cylindre 4|
+INJCMD_vidUpdate|B|();|FCT1.4|INJCMD|0|PTS_DOC_6886136||||0|0|0|0|Gestion de la mise a jour de la couche hard d'injection.|
+INJHAL_bfUpdate|A|FUNC_bfUpdate|4|HEADER|1|NONE||||0|0|0|0||
+INJHAL_udtSwitchGdiProfile|A|func_INJHAL_udtSwitchGdiProfile|10|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidDisable|A|(argin uint8 u8InstanceId);|15|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidEnable|A|(argin uint8 u8InstanceId);|2|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidInhibit|A|(uint8 u8InstanceId, INJHAL_tbfInhibitMask bfInhibitMask);|7|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidWriteAngle|A|(uint8 u8Channel, uint8 u8PulseNumber, uint16 u16InjectionAngle);|6|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidWriteMode|A|(uint8 u8InstanceId, uint8 u8Channel, uint8 u8InjectionMode);|9|HEADER|1|NONE||||0|0|0|0||
+INJHAL_vidWriteTime|A|(uint8 u8Channel, uint8 u8PulseNumber, uint32 u32InjectionTime);|5|HEADER|1|NONE||||0|0|0|0||

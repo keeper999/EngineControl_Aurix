@@ -1,0 +1,26 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+CRKHAL_udtReadMode|A|func_CRKHAL_udtReadMode|1|HEADER|1|NONE||||0|0|0|0||
+GDGAR_bGetFRM|E|func_GDGAR_bGetFRM|1|HEADER|1|NONE||||0|0|0|0|Fonction de production des variables GDGAR.|
+KNKRBLACQ_vidInitConfigParam|D|();|FCT1.2|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Calls the subroutine in charge of initializing the configuration parameters when the knock's rumble acquisition strategy is activated.|
+KNKRBLACQ_vidInitOutput|H|();|FCT1.1|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Initializing component's ouptus.|
+KNKRBLACQ_vidRblAcqWinLength|B|();|FCT1.9|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Compute of the Length of the acquisition window and the Inhibition boolean of the Rumble API.|
+KNKRBLACQ_vidRblCalcDetectAuthrz|H|();|FCT1.5|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|To allow the acquisition of the rumble signal, the engine speed must be in an adequate range and the information from the crankshaft sensor reliable. The software phasing is reliable in the case of a 3 cylinder engine.|
+KNKRBLACQ_vidRblCalcParameters|E|();|FCT1.7|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Calls the subroutines configuring the observation window and the band pass filter parameters.|
+KNKRBLACQ_vidRblConfigParameters|D|();|FCT1.6|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|The diagnosis request (Knk_sens_diag_dmd_uavb0), sent under condition when diagnosis is needed, is changed into active status (Knk_sens_diag_act_uavb0) when the acquisition is authorized. This allows launching the diagnosis with the disired parameters.|
+KNKRBLACQ_vidRblObservtnWindow|H|();|FCT1.8|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|The engine air load is used rather than the collector pressure to set the beginning of the rumble acquisition window. This window has to be applied not too close to the TDC. A correction is applied to compensate the error on the intake VVT angle.|
+KNKRBLACQ_vidRblTaskEndTreatment|D|();|FCT1.3|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|First, we make sure that we want to authorize the acquisition of the signal rumble. In that case only, the parameters of acquisition are calculated.|
+KNKRBLACQ_vidRblTaskTreatment|D|();|FCT1.4|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Calls the subroutines in charge of evaluating the activating conditions of the rumble acquisition strategy and calculating its parameters.|
+KNKRBLACQ_vidSdlAcqWinLength|B|();|FCT2.7|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Compute of the Length of the acquisition window and the Inhibition boolean of the Rumble API.|
+KNKRBLACQ_vidSdlCalcDetectAuthrz|G|();|FCT2.3|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|To allow the acquisition of the rumble signal, the engine speed must be in an adequate range and the information from the crankshaft sensor reliable. The software phasing is reliable in the case of a 3 cylinder engine.|
+KNKRBLACQ_vidSdlCalcParameters|E|();|FCT2.5|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Calls the subroutines configuring the observation window and the band pass filter parameters in case of a temporal treatment.|
+KNKRBLACQ_vidSdlConfigParameters|D|();|FCT2.4|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|The clank sensor diagnosis must be reset if it has been interrupted.|
+KNKRBLACQ_vidSdlObservtnWindow|G|();|FCT2.6|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|The lengine air load is used rather than the collector pressure to set the beginning of the rumble acquisition window. This window has to be applied not too close to the TDC. A correction is applied to compensate the error on the intake VVT angle.|
+KNKRBLACQ_vidSdlTaskTreatment|D|();|FCT2.2|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|Calls the subroutines in charge of evaluating the activating conditions of the rumble acquisition strategy and calculating its parameters in case of a temporal treatment.|
+KNKRBLACQ_vidTemporalTreatment|D|();|FCT2.1|KNKRBLACQ|0|V02 NT 12 02237||||0|0|0|0|The purpose of the temporal treatment is to enable reactivating the rumble acquisition authorization when this has been interrupted. The configuration of the acquisition parameters is nearly the same as in the nominal case.|
+KnkTreat_EveCkSnOf_KnkRblAcq|D|();|SCH.6|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Event corresponding to the loss of synchronisation|
+KnkTreat_EveCkSnOn_KnkRblAcq|E|();|SCH.3|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise|
+KnkTreat_EveRbl_KnkRblAcqLst|E|();|SCH.4|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Tâche de calcul du niveau de rumble pour le cylindre en cours.|
+KnkTreat_EveRst_KnkRblAcq|E|();|SCH.1|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Evénement reset du calculateur|
+KnkTreat_EveRTSt_KnkRblAcq|E|();|SCH.5|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant|
+KnkTreat_SdlFast_KnkRblAcq|E|();|SCH.2|KNKRBLACQ|1|V02 NT 12 02237||||0|0|0|0|Moniteur Rapide|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0||

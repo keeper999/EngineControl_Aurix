@@ -1,0 +1,35 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0|
+InjCtl_EveRst_InjFarCtlDsCtl|B|();|SCH.1|INJFARCTLDSCTL|1|V02 NT 08 05886||||0|0|0|0|Reset du calculateur
+InjCtl_SdlFast_InjFarCtlDsCtl|B|();|SCH.3|INJFARCTLDSCTL|1|V02 NT 08 05886||||0|0|0|0|Moniteur rapide pour la fonction injection
+InjCtl_SdlMid_InjFarCtlDsCtl|C|();|SCH.2|INJFARCTLDSCTL|1|V02 NT 08 05886||||0|0|0|0|Moniteur medium pour la fonction injection
+INJFARCTLDSCTL_DownStrmSenTrans|F|();|FCT2.3|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition DOWNSTREAM_SENSOR_CTRL
+INJFARCTLDSCTL_InitCtrlTrans|C|();|FCT1.7|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition de INIT_CTRL_DNSTR_CORRECTION  vers WAITING_DNSTR_GENERAL_CONDS
+INJFARCTLDSCTL_PurgeCataTrans|G|();|FCT2.4|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition  DNSTR_PURGE_CATA
+INJFARCTLDSCTL_vidCalcErrTenGain|F|();|FCT3.9|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|calculer la tension de référence de la sonde aval
+INJFARCTLDSCTL_vidCalcErrTension|B|();|FCT3.8|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|L’erreur de tension sur la sonde aval est calculée par la différence entre l’Erreur entre la tension sonde et la tension de référence et la dernière tension différentielle correcte.
+INJFARCTLDSCTL_vidCalcModifiers|D|();|FCT1.3|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|mécanisme d’adaptation pour affiner  Feedback_correction pendant le fonctionnement du moteur.
+INJFARCTLDSCTL_vidCalculationMod|A|();|FCT1.9|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Fonction qui assure l'appel de 01_Calculation_modifiers (INJFARCTLDSCTL_vidCalcModifiers)
+INJFARCTLDSCTL_vidDecrEntryDly|B|();|FCT1.2|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Décrémentation du délai d'entrée
+INJFARCTLDSCTL_vidDecrLowCount|A|();|FCT3.5|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|La décrémentation du temps restant d'appauvrissement possible par la pu InjCtl_SampleTiFast_SC. Dnstr_purge_cata_done_wo_result indique la fin de la purge catalyseur
+INJFARCTLDSCTL_vidDecrRichCount|A|();|FCT3.7|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|La décrémentation du temps restant d'enrichissement possible par la purge cata est réalisé à la valeur du pas InjCtl_SampleTiFast_SC.  Dnstr_purge_cata_done_wo_result indique la fin de la purge catalyseur
+INJFARCTLDSCTL_vidDecSettlingDly|A|();|FCT1.5|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Décrémentation du délai de prise en compte de l’offset de la valeur du pas InjCtl_SampleTiFast_SC
+INJFARCTLDSCTL_vidDownstreamCond|C|();|FCT1.6|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Ce module permet d’évaluer si les conditions d’adaptation sont remplies en agissant sur le booléen Dnstr_conds_met.
+INJFARCTLDSCTL_vidFeedbackCorr|F|();|FCT3.10|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|calculer les paramètres de correction
+INJFARCTLDSCTL_vidInitEntryDly|B|();|FCT2.9|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|réinitialiser le délai d’attente après l’obtention de toutes les conditions dynamiques d’adaptation.
+INJFARCTLDSCTL_vidInitOutput|E|();|FCT1.1|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|initializing inputs
+INJFARCTLDSCTL_vidInitParam|F|();|FCT2.5|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|initialiser les différents paramètres de la double boucle de régulation
+INJFARCTLDSCTL_vidInitPurgeCata|A|();|FCT3.1|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|spécifier les délais d’enrichissement et d’appauvrissement.
+INJFARCTLDSCTL_vidInitSetlingDly|B|();|FCT2.10|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|réinitialiser le délai d’attente après application de l’offset de biais de richesse du à la régulation de richesse.
+INJFARCTLDSCTL_vidManager|D|();|FCT1.4|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|La stratégie de régulation double boucle
+INJFARCTLDSCTL_vidPurgeCata|B|();|FCT3.3|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|détermine les conditions et les paramètres de la purge catalyseur pour les cas d’enrichissement et d’appauvrissement.
+INJFARCTLDSCTL_vidPurgeCataLow|C|();|FCT3.4|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|calcule le délai (en PMH)  avant de basculer la régulation de richesse vers un mélange riche. Ce calcul est réalisé par l’intermédiaire d’une hystérésis.
+INJFARCTLDSCTL_vidPurgeCataRich|C|();|FCT3.6|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|calcule le délai (en PMH)  avant de basculer la régulation de richesse vers un mélange pauvre. Ce calcul est réalisé par l’intermédiaire d’une hystérésis.
+INJFARCTLDSCTL_vidResetOffset|C|();|FCT2.6|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Lorsque la purge du catalyser est réalisée, et lorsque qu’on sort de la boucle de régulation, les paramètres du délai d’attente sont réinitialisés.
+INJFARCTLDSCTL_vidResetOffsetVal|B|();|FCT2.8|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Initialisation des paramètres du délai d’attente
+INJFARCTLDSCTL_vidResetPurgeCata|A|();|FCT3.2|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|réinitialiser les délais d’enrichissement et d’appauvrissement possible par la purge du catalyseur
+INJFARCTLDSCTL_vidSaveFeedbackCr|B|();|FCT2.7|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Enregistrement de Feedback_correction dans une Variable temporaire
+INJFARCTLDSCTL_WaitCtrlCondTrans|D|();|FCT2.1|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition de WAITING_FOR_DNSTR_CTRL_CONDS vers WAITING_FOR_OFFSET_DELAY
+INJFARCTLDSCTL_WaitGnrlCondTrans|D|();|FCT1.8|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition WAITING_DNSTR_GENERAL_CONDS vers  WAITING_FOR_DNSTR_CTRL_CONDS
+INJFARCTLDSCTL_WaitOffDlyTrans|F|();|FCT2.2|INJFARCTLDSCTL|0|V02 NT 08 05886||||0|0|0|0|Transition WAITING_FOR_OFFSET_DELAY  vers les différentes états
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|ErrorHook routine

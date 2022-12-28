@@ -1,0 +1,2219 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjSysSpCrk                                             */
+/* !Description     : InjSysSpCrk : INJECTION SETPOINTS FOR START             */
+/*                                                                            */
+/* !Module          : InjSysSpCrk                                             */
+/*                                                                            */
+/* !File            : InjSysSpCrk.a2l                                         */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Feb 14 12:28:19 2013                              */
+/*   Model name       : InjSysSpCrk_AUTOCODE.mdl                              */
+/*   Model version    : 1.113                                                 */
+/*   Root subsystem   : /InjSysSpCrk                                          */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/INJSYSSPCRK/InjSysSpCrk.a2$*/
+/* $Revision::   1.1                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   21 Feb 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjSysSpCrk
+    /*   LongIdentifier */   "InjSysSpCrk Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSysSpCrk_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModHCrkSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection homogène\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModHLPCrkSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection homogène\" en cranking pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModHCrk_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection homogène\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModHLPCrk_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection homogène\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSplstLPSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection fractionnée\" en cranking pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSplstSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSplstLP_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSplst_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSstSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection stratifiée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuCrkSpModSst_M
+       /*   LongIdentifier */   "Cartographie de la consigne de pression rail en mode \"injection stratifiée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModHBasCrkSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection homogène\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModHLPCrkSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection homogène\" en cranking pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModHBasCrk_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection homogène\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModHIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection homogène\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModHLPCrk_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection homogène\" en démarrage BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSplstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de la fin de l'injection 3 en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSplstLPSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de fin de l'injection 3 en mode \"injection fractionnée\" pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModSplstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModSplstLPSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection fractionnée\" pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSplstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSplstLPSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection fractionnée\" pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModSplIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection fractionnée\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModSplstBas_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1ModSplstLP_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSplIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection fractionnée\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSplstBas_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSplstLP_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSplIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du fin de l'injection 3 en mode \"injection fractionnée\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSplstBas_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de la fin de l'injection 3 en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSplstLP_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de fin de l'injection 3 en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection stratifiée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de la fin de l'injection 3 en mode \"injection stratifiée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSstBas_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection stratifiée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2ModSstIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 en mode \"injection stratifiée\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSstBas_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de la fin de l'injection 3 en mode \"injection stratifiée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3ModSstIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du fin de l'injection 3 en mode \"injection stratifiée\" pour une interruption d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj1FrstInj_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 1 pour la première injection en HP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInj2FrstInj_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage du début de l'injection 2 pour la première injection en HP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInj3FrstInj_M
+       /*   LongIdentifier */   "Cartographie de consigne de phasage de la fin de l'injection 3 pour la première injection en HP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2CrkSpModSplBasSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 2 en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSplBasSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection fractionnée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2CrkSpModSplLPSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 2 en mode \"injection fractionnée\" en cranking pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSplLPSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection fractionnée\" en cranking pour un démarrage STT BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2CrkSpModSplLP_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 2 en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSplLP_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection fractionnée\" en cranking BP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2CrkSpModSplBas_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 2 en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSplBas_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection fractionnée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSstBasSTT_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection stratifiée\" en cranking pour un démarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3CrkSpModSstBas_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement pour l'injection 3 en mode \"injection stratifiée\" en cranking"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj2FrstInj_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement de l'injection 2 pour la première injection en démarrage HP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rInj3FrstInj_M
+       /*   LongIdentifier */   "Cartographie de la consigne de fractionnement de l'injection 3 pour la première injection en démarrage HP"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngRef3_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSysSpCrk_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             Ext_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInj1CrkSpDft_C
+       /*   LongIdentifier */   "Consigne de phasage par défaut de l'injection 1 en cranking"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInj2CrkSpDft_C
+       /*   LongIdentifier */   "Consigne de phasage par défaut de l'injection 2 en cranking"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInj3CrkSpDft_C
+       /*   LongIdentifier */   "Consigne de phasage par défaut de l'injection 3 en cranking"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJSYSSPCRK_u8Inhib
+       /*   LongIdentifier */   "Inhibition of the module InjSysSpCrk"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhFrstInjSp_C
+       /*   LongIdentifier */   "Inhibition manuelle des consignes spécifique pour la première injection en HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSysSpCrk_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   Ext_nEngRef3_A
+       /*   LongIdentifier */   "Table de points d'appuis en régime moteur pour le démarrage"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSysSpCrk_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSysSpCrk_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agInj1CrkSp
+       /*   LongIdentifier */   "Consigne phasage injection 1 en cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agInj2CrkSp
+       /*   LongIdentifier */   "Consigne phasage injection 2 pour le cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agInj3CrkSp
+       /*   LongIdentifier */   "Consigne phasage injection 3 pour le cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuCrkSp
+       /*   LongIdentifier */   "Consigne de pression rail en cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj1CrkSp
+       /*   LongIdentifier */   "Consigne de fractionnement Injection 1 sous cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj2CrkSp
+       /*   LongIdentifier */   "Consigne de fractionnement Injection 2 sous cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInj3CrkSp
+       /*   LongIdentifier */   "Consigne de fractionnement Injection 3 sous cranking"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSysSpCrk_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvFrstInjSp
+       /*   LongIdentifier */   "Booléen d'activation des consignes pour la première injection en HP"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSysSpCrk_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_1
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_3
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_4
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_5
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjSysSpCrk_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_8
+       /*   LongIdentifier */   "Q = V/32"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 32
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSysSpCrk_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjSysSpCrk_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjSysSpCrk
+       /*   LongIdentifier */   "PTS_DOC_5051193.01"
+
+       /begin DEF_CHARACTERISTIC
+          Ext_nEngRef3_A
+          INJSYSSPCRK_u8Inhib
+          InjSys_agBegInj1FrstInj_M
+          InjSys_agBegInj1ModHBasCrkSTT_M
+          InjSys_agBegInj1ModHBasCrk_M
+          InjSys_agBegInj1ModHIntrSTT_M
+          InjSys_agBegInj1ModHLPCrkSTT_M
+          InjSys_agBegInj1ModHLPCrk_M
+          InjSys_agBegInj1ModSplIntrSTT_M
+          InjSys_agBegInj1ModSplstBasSTT_M
+          InjSys_agBegInj1ModSplstBas_M
+          InjSys_agBegInj1ModSplstLPSTT_M
+          InjSys_agBegInj1ModSplstLP_M
+          InjSys_agBegInj2FrstInj_M
+          InjSys_agBegInj2ModSplIntrSTT_M
+          InjSys_agBegInj2ModSplstBasSTT_M
+          InjSys_agBegInj2ModSplstBas_M
+          InjSys_agBegInj2ModSplstLPSTT_M
+          InjSys_agBegInj2ModSplstLP_M
+          InjSys_agBegInj2ModSstBasSTT_M
+          InjSys_agBegInj2ModSstBas_M
+          InjSys_agBegInj2ModSstIntrSTT_M
+          InjSys_agEndInj3FrstInj_M
+          InjSys_agEndInj3ModSplIntrSTT_M
+          InjSys_agEndInj3ModSplstBasSTT_M
+          InjSys_agEndInj3ModSplstBas_M
+          InjSys_agEndInj3ModSplstLPSTT_M
+          InjSys_agEndInj3ModSplstLP_M
+          InjSys_agEndInj3ModSstBasSTT_M
+          InjSys_agEndInj3ModSstBas_M
+          InjSys_agEndInj3ModSstIntrSTT_M
+          InjSys_agInj1CrkSpDft_C
+          InjSys_agInj2CrkSpDft_C
+          InjSys_agInj3CrkSpDft_C
+          InjSys_bInhFrstInjSp_C
+          InjSys_pFuCrkSpModHCrkSTT_M
+          InjSys_pFuCrkSpModHCrk_M
+          InjSys_pFuCrkSpModHLPCrkSTT_M
+          InjSys_pFuCrkSpModHLPCrk_M
+          InjSys_pFuCrkSpModSplstLPSTT_M
+          InjSys_pFuCrkSpModSplstLP_M
+          InjSys_pFuCrkSpModSplstSTT_M
+          InjSys_pFuCrkSpModSplst_M
+          InjSys_pFuCrkSpModSstSTT_M
+          InjSys_pFuCrkSpModSst_M
+          InjSys_rInj2CrkSpModSplBasSTT_M
+          InjSys_rInj2CrkSpModSplBas_M
+          InjSys_rInj2CrkSpModSplLPSTT_M
+          InjSys_rInj2CrkSpModSplLP_M
+          InjSys_rInj2FrstInj_M
+          InjSys_rInj3CrkSpModSplBasSTT_M
+          InjSys_rInj3CrkSpModSplBas_M
+          InjSys_rInj3CrkSpModSplLPSTT_M
+          InjSys_rInj3CrkSpModSplLP_M
+          InjSys_rInj3CrkSpModSstBasSTT_M
+          InjSys_rInj3CrkSpModSstBas_M
+          InjSys_rInj3FrstInj_M
+       /end DEF_CHARACTERISTIC
+
+       /begin OUT_MEASUREMENT
+          InjSys_agInj1CrkSp
+          InjSys_agInj2CrkSp
+          InjSys_agInj3CrkSp
+          InjSys_bAcvFrstInjSp
+          InjSys_pFuCrkSp
+          InjSys_rInj1CrkSp
+          InjSys_rInj2CrkSp
+          InjSys_rInj3CrkSp
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

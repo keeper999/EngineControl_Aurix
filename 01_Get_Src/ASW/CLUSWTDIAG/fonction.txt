@@ -1,0 +1,27 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Clu_EveCrTR_CluSwtDiag|A|();|SCH.3|CLUSWTDIAG|1|V02 NT 08 04680||||0|0|0|0|Evènement Crank To Run|
+Clu_EveKOn_CluSwtDiag|A|();|SCH.2|CLUSWTDIAG|1|V02 NT 08 04680||||0|0|0|0|Evénement associé au passge de clef OFF à clef ON|
+Clu_EveRst_CluSwtDiag|A|();|SCH.1|CLUSWTDIAG|1|V02 NT 08 04680||||0|0|0|0|Evénement reset du calculateur|
+Clu_SdlMid_CluSwtDiag|A|();|SCH.4|CLUSWTDIAG|1|V02 NT 08 04680||||0|0|0|0|Moniteur moyen du diagnostic switch embrayage|
+Clu_SdlSlow_CluSwtDiag|B|();|SCH.5|CLUSWTDIAG|1|V02 NT 08 04680||||0|0|0|0|Moniteur lent du diagnostic switch embrayage|
+CLUSWTDIAG_vidCounter|A|();|FCT1.7|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|L’autorisation de diagnostic monte sur un pas de temps, le compteur de défaut est donc incrémenté une seule fois à la fin de chaque diagnostic NOK.|
+CLUSWTDIAG_vidCps_switch_mal_cpt|A|();|FCT2.2|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Le calcul réalisé ici est l’incrémentation du compteur de défaut "Cps_switch_mal_utilise_cpt".|
+CLUSWTDIAG_vidDgoCoh_CluSt|C|();|FCT2.1|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère la detection d'une panne du capteur d'embrayage|
+CLUSWTDIAG_vidDiagCoh|A|();|FCT1.6|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère d’une part la génération des variables Ext_bDgoCoh_CluSt et Ext_bMonRunCoh_CluSt et d’autre part le compteur d’embrayage mal utilisé.|
+CLUSWTDIAG_vidDiagCohMonitoring|B|();|FCT1.4|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Le stateflow permet de gérer les phases du diagnostic de cohérence d’état, notamment le déclenchement des temporisations à l’initialisation et lorsque le diagnostic est activé.|
+CLUSWTDIAG_vidDiagStuck|A|();|FCT1.8|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère gère la génération des variables Ext_bDgoStuck_CluSt et Ext_bMonRunStuck_CluSt.|
+CLUSWTDIAG_vidDiagStuck_CluSt|C|();|FCT2.3|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère la génération des variables Ext_bDgoStuck_CluSt et Ext_bMonRunStuck_CluSt.|
+CLUSWTDIAG_vidDiagStuckAcvn|A|();|FCT2.6|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Fonction de production de Clu_bDiagStuckCtrAcvn|
+CLUSWTDIAG_vidDiagStuckDft|A|();|FCT2.8|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Fonction de production de Clu_bDgoStuck_CluSt.|
+CLUSWTDIAG_vidDiagStuckInitTempo|A|();|FCT2.7|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Fonction d'initialisation de Cps_emb_tempo.|
+CLUSWTDIAG_vidEventFlagOn|A|();|FCT1.3|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction est appelée aux évenememnts Clu_EveKOn_CluSwtDiag Clu_EveCrTR_CluSwtDiag, elle sert à mettre la variable CLUSWTDIAG_bAllowCohRunnigToInit à 1 pour autoriser la transaction de l'automate.|
+CLUSWTDIAG_vidInit|A|();|FCT1.1|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Initialisation des variables au reset de l’ECU (Clu_EveRst_CluSwtDiag).|
+CLUSWTDIAG_vidInitDiagStuck|A|();|FCT1.5|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère l’initialisation des variables après un Key OFF/ON.|
+CLUSWTDIAG_vidInitOutput|A|();|FCT1.2|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Initialisation des variables internes.|
+CLUSWTDIAG_vidStateCluInit|A|();|FCT1.10|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Fonction de transition à l'état CLU_INIT de l'automate.|
+CLUSWTDIAG_vidTempo|A|();|FCT1.9|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Cette fonction gère la temporisation d’autorisation du diagnostic du capteur embrayage, appelée à récurrence temporelle lente|
+CLUSWTDIAG_vidTempoCoh|A|();|FCT2.4|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Calcul de la temporisation du diagnostic de cohérence, lorsque l’indicateur télécodé de présence du capteur d’embrayage est à la valeur 1.|
+CLUSWTDIAG_vidTempoStuck|A|();|FCT2.5|CLUSWTDIAG|0|V02 NT 08 04680||||0|0|0|0|Calcul de la temporisation du diagnostic de plausibilité temporel, lorsque l’indicateur télécodé de présence du capteur d’embrayage est à la valeur 1.|
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|3|HEADER|1|NONE||||0|0|0|0||

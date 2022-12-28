@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+AC_EveRst_ACPresAcq|A|();|SCH.1|ACPRESACQ|1|PTS_DOC_6545428||||0|0|0|0|Fonction d'accroche à l'event AC_EveRst_ACPresAcq
+AC_SdlFast_ACPresAcq|A|();|SCH.2|ACPRESACQ|1|PTS_DOC_6545428||||0|0|0|0|Fonction d'accroche à l'event AC_SdlFast_ACPresAcq
+AC_SdlMid_ACPresAcq|A|();|SCH.3|ACPRESACQ|1|PTS_DOC_6545428||||0|0|0|0|Fonction d'accroche à l'event AC_SdlMid_ACPresAcq
+ACPRESACQ_vidDiagnosisConversion|B|();|FCT1.4|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Le signal de ratiométrie de tension (-) est converti via un gain (Pa/-) et un offset (Pa) en  signal de pression (Pa)  La dynamique de la pression de fluide réfrigérant est [0..4194240] Pa et de résolution 64  Pa.
+ACPRESACQ_vidElectricDiagnosis|A|();|FCT1.5|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Ce sous-système compare la tension issue du capteur aux valeurs minimales et  maximales de fonctionnement du capteur dans la zone correcte.
+ACPRESACQ_vidFiltering|C|();|FCT1.6|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|On réalise un filtrage passe-bas de la tension capteur. A cet effet, on utilise la méthode  des rectangles supérieurs qui donne le signal filtré en fonction du signal non filtré à  l'instant courant et du signal filtré à l'instant précédent.
+ACPRESACQ_vidFunctionalDetection|B|();|FCT1.8|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Ce système génère la panne fonctionnelle.
+ACPRESACQ_vidInit|A|();|FCT1.2|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|L'acquisition de la pression de fluide réfrigérant doit être effectué dès le réveil principal  du calculateur .
+ACPRESACQ_vidInitOutput|A|();|FCT1.1|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Fonction qui initialise les sorties.
+ACPRESACQ_vidMgtDefaultTracking|A|();|FCT1.9|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Le coefficient AC_SampleTiMid_SC permet de prendre en compte la période d'activation de la fonction tout en conservant Ac_cooling_max_tracker_value en kPa/s (et non pas en kPa/ AC_SampleTiMid_SC s).
+ACPRESACQ_VidPressRefriDiagFunc|B|();|FCT1.7|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|Outre le test électrique, un test fonctionnel sur le gradient est effectué. Si le gradient dépasse la calibration  Ac_cooling_max_tracker_value, la panne  Ext_bDgoGrd_pACMes est générée.
+ACPRESACQ_vidPressure_refri|B|();|FCT1.3|ACPRESACQ|0|PTS_DOC_6545428||||0|0|0|0|En cas de défaut sur la batterie, la détection de défaut est inhibée ; dans le cas d'un  défaut sur les alimentations capteurs, la détection de défaut est inhibée sur le groupe de capteurs alimenté par l'alimentation en défaut
+GDGAR_bGetFRM|A|(argin uint16 u16channel)boolean;|1|HEADER|1|NONE||||0|0|0|0|Fonction de production de variables FRM
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|Fonction de diagnostic des pannes

@@ -1,0 +1,2093 @@
+/begin MODULE
+    /*   Name           */   TrbActMgt
+    /*   LongIdentifier */   "TrbActMgt Software Component"
+
+    /begin MOD_PAR
+       /*   Comment          */   "-"
+    /end MOD_PAR
+
+    /begin MOD_COMMON
+       /*   Comment                */   "-"
+       BYTE_ORDER                       MSB_FIRST
+    /end MOD_COMMON
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   TrbActMgt_RL_Lookup2D_X_SWORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrCllAcvThd_T
+       /*   LongIdentifier */   "Seuil de consigne de pression de suralimentation utilise pour l'activation de la boucle fermée"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facpGain_M
+       /*   LongIdentifier */   "Cartographie du gain proportionnel du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   TrbAct_pErrFltGrd_MP
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThrGrd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_faciGain_M
+       /*   LongIdentifier */   "Cartographie du gain integral du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   TrbAct_pErrFltGrd_MP
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThrGrd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain1_M
+       /*   LongIdentifier */   "Cartographie du gain derive 1 du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   TrbAct_pErrFltGrd_MP
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThrGrd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain2_M
+       /*   LongIdentifier */   "Cartographie du gain derive 2 du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   TrbAct_pErrFltGrd_MP
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThrGrd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facFfGain_M
+       /*   LongIdentifier */   "Cartographie de gain de prépositionnement du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -7500.0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngGrd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facpGainErrPres_M
+       /*   LongIdentifier */   "cartographie de la correction dépendant de l'erreur de pression du gain proportionnel du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_faciGainErrPres_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain intégral du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain1ErrPres_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain dérivé 1 du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain2ErrPres_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain dérivé 2 du régulateur PID de la pression de suralimentation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facpGainErrPresEth_M
+       /*   LongIdentifier */   "cartographie de la correction dépendant de l'erreur de pression du gain proportionnel du régulateur PID de la pression de suralimentation pour carburant FlexFuel"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_faciGainErrPresEth_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain intégral du régulateur PID de la pression de suralimentation pour carburant FlexFuel"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain1ErrPresEth_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain dérivé 1 du régulateur PID de la pression de suralimentation pour carburant FlexFuel"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facdGain2ErrPresEth_M
+       /*   LongIdentifier */   "Cartographie de la correction dépendant de l'erreur de pression du gain dérivé 2 du régulateur PID de la pression de suralimentation pour carburant FlexFuel"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngCtl_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_1
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -262140.0
+          /*   UpperLimit     */   262136.0
+          AXIS_PTS_REF             TrbAct_pErrUsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pInMnfReqThd_T
+       /*   LongIdentifier */   "Seuil de pression collecteur utilise pour le choix du mode de calcul de la consigne de position de la wastegate"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pInMnfReqThdEth_T
+       /*   LongIdentifier */   "Seuil de pression collecteur utilise pour le choix du mode de calcul de la consigne de position de la wastegate avec carburant FlexFuel"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_nEngTrbActCmdHys_C
+       /*   LongIdentifier */   "Hystérésis de régime pour la commandabilité de la wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_nEngTrbActCmdThd_C
+       /*   LongIdentifier */   "Seuil de régime pour la commandabilité de la Wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pAirExtHys_C
+       /*   LongIdentifier */   "Hystérésis relatif a la valeur de la pression atmosphérique utilisée pour l'initialisation du terme intégral du régulateur PID"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pDifUsThrPresHiThd_C
+       /*   LongIdentifier */   "Seuil haut de différence de pression entre la consigne et la mesure de la pression de suralimentation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pDifUsThrPresLoThd_C
+       /*   LongIdentifier */   "Seuil bas de différence de pression entre la consigne et la mesure de la pression de suralimentation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pInMnfReqHys_C
+       /*   LongIdentifier */   "Hystérésis sur la consigne de pression dans le collecteur admission utilise pour le choix du mode de calcul de la consigne de position de la wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrCorReqTest_C
+       /*   LongIdentifier */   "Consigne de pression de suralimentation en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrCorReq_B
+       /*   LongIdentifier */   "Consigne de pression de suralimentation issue du régulateur PID(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrFil_B
+       /*   LongIdentifier */   "Mesure de la pression de suralimentation filtrée pour la prise en compte de la dynamique du turbocompresseur (Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrICorReqHiThd_C
+       /*   LongIdentifier */   "Seuil haut de saturation de la consigne de pression de suralimentation issue de la correction intégrale du gain PID"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pOilMesThd_C
+       /*   LongIdentifier */   "Seuil de pression d'huile pour le choix d'une cartographie de temps après démarrage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.04856E+006
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_tiStrtThd_C
+       /*   LongIdentifier */   "Seuil de temps après démarrage en cas de défaillance du capteur de température extérieure ou de pression d'huile"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.710784E+004
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_tiStrtThd_M
+       /*   LongIdentifier */   "Cartographie 2D de seuils de temps après démarrage"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.710784E+004
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   100.0
+          AXIS_PTS_REF             TrbAct_tAir_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             TrbAct_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_tiStrtThd_T
+       /*   LongIdentifier */   "Cartographie 1D de seuils de temps après démarrage"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.710784E+004
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_6
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             TrbAct_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facFilGainUsThrPresMes_T
+       /*   LongIdentifier */   "Cartographie du gain de filtrage de la mesure de la pression de suralimentation"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             TrbAct_nEngRef2_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rOpTrbActHiThd_C
+       /*   LongIdentifier */   "Seuil haut de saturation de la position de la wastegate utilise pour le calcul de la correction intégral"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rOpTrbActLoThd_C
+       /*   LongIdentifier */   "Seuil bas de saturation de la position de la wastegate utilise pour le calcul de la correction intégral"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   9.9998474121093750E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facPresAltiCor_B
+       /*   LongIdentifier */   "Facteur de correction altimétrique Pref/Patmo corrigé(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facPresAltiCor_T
+       /*   LongIdentifier */   "cartographie du facteur altimétrique"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9999694824218750E+000
+          AXIS_PTS_REF             TrbAct_facPresAltiCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rRCOICorReq_B
+       /*   LongIdentifier */   "Correction intégrale du régulateur amont en RCO(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_10
+       /*   LowerLimit     */   -9.9996948242187500E-001
+       /*   UpperLimit     */   9.9996948242187500E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rRCOICorReq_C
+       /*   LongIdentifier */   "Valeur d'initialisation de la correction intégrale du régulateur amont en RCO"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_10
+       /*   LowerLimit     */   -9.9996948242187500E-001
+       /*   UpperLimit     */   9.9996948242187500E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rRCOPIDCorReq_B
+       /*   LongIdentifier */   "Correction du régulateur amont en RCO(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_10
+       /*   LowerLimit     */   -9.9996948242187500E-001
+       /*   UpperLimit     */   9.9996948242187500E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rRCOPIDCorReq_C
+       /*   LongIdentifier */   "Valeur d'initialisation de la correction du régulateur amont en RCO"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_10
+       /*   LowerLimit     */   -9.9996948242187500E-001
+       /*   UpperLimit     */   9.9996948242187500E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_tiDlyPosnTrbActMod_C
+       /*   LongIdentifier */   "Délai de retard après le gel des consignes pour le mode de calcul de la position wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facFltErrPres_C
+       /*   LongIdentifier */   "Constante de temps du filtre du gradient de l'erreur de la pression de suralimentation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_13
+       /*   LowerLimit     */   1.5258789062500000E-005
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_pUsThrICorReqLoThd_C
+       /*   LongIdentifier */   "Seuil bas de saturation de la consigne de pression de suralimentation issue de la correction intégrale du gain PID"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_14
+       /*   LowerLimit     */   -524280.0
+       /*   UpperLimit     */   0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_facPresRCOCnv_C
+       /*   LongIdentifier */   "Facteur de conversion de la pression de sural. vers le RCO wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.8145808503031739E-006
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TRBACTMGT_ACTIVE_BYP_C
+       /*   LongIdentifier */   "Calibration de bypass"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvCtlEth_C
+       /*   LongIdentifier */   "Booléen d'activation des stratégies FlexFuel du régulateur PID"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvEth_C
+       /*   LongIdentifier */   "Booléen d'activation des stratégies FlexFuel"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvInhICor_C
+       /*   LongIdentifier */   "Valeur d'initialisation du booléen d'inhibition du terme intégral"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvOilPresCtl_C
+       /*   LongIdentifier */   "Booléen d'activation de la condition sur la pression d'huile"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvTrbActCmd_B
+       /*   LongIdentifier */   "Booléen dactivation pour le pilotage de la wastegate(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bAcvUsThrPresCorTest_C
+       /*   LongIdentifier */   "Booléen d'activation du mode banc permettant d'imposer une consigne de pression de suralimentation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bBoostPresClCtlAcv_B
+       /*   LongIdentifier */   "Booléen indiquant si la régulation de la pression de suralimentation est active(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bInhCllCtl_C
+       /*   LongIdentifier */   "Booléen permettant l'inhibition de la régulation de la wastegate"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bInhICor_B
+       /*   LongIdentifier */   "Booléen dinhibition du terme intégral(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bInhUsReg_C
+       /*   LongIdentifier */   "Booléen permettant d'utiliser le régulateur amont comme régulateur aval"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bPosnTrbActMod_B
+       /*   LongIdentifier */   "Booléen indiquant le mode de calcul de la consigne de position de la wastegate(Bypass)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bSelInhICnd_C
+       /*   LongIdentifier */   "Booléen de sélection entre la levée et le RCO wastegate pour le calcul de l'activation du terme intégral."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_bSelPresErrReq_C
+       /*   LongIdentifier */   "Booléen de sélection de la pression de suralimentation pour le calcul des gains d'adaptation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rEthWoutExctCor_T
+       /*   LongIdentifier */   "Table de correction fonction du taux d'ethanol"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_17
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9921875
+          AXIS_PTS_REF             TrbAct_rEthWoutExct_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rEthWoutExctDftl1_T
+       /*   LongIdentifier */   "Table de correction du coefficient dérivé 1 fonction du taux d'ethanol"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_17
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9921875
+          AXIS_PTS_REF             TrbAct_rEthWoutExctCtl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rEthWoutExctDftl2_T
+       /*   LongIdentifier */   "Table de correction du coefficient dérivé 2 fonction du taux d'ethanol"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_17
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9921875
+          AXIS_PTS_REF             TrbAct_rEthWoutExctCtl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rEthWoutExctInt_T
+       /*   LongIdentifier */   "Table de correction du coefficient intégral fonction du taux d'ethanol"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_17
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9921875
+          AXIS_PTS_REF             TrbAct_rEthWoutExctCtl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TrbAct_rEthWoutExctProp_T
+       /*   LongIdentifier */   "Table de correction du coefficient proportionnel fonction du taux d'ethanol"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   TrbActMgt_CM_17
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.9921875
+          AXIS_PTS_REF             TrbAct_rEthWoutExctCtl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_pErrUsThr_A
+       /*   LongIdentifier */   "Table de point d'appui de la difference entre la consigne et la mesure de pression de suralimentation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262136.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_pErrUsThrGrd_A
+       /*   LongIdentifier */   "Table de point d'appui du gradient de l'erreur de la pression de suralimentation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   TrbAct_pErrFltGrd_MP
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262136.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_nEngCtl_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_nEngGrd_A
+       /*   LongIdentifier */   "table de point d'appui en gradient de régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_5
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -7500.0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_pErrUsThr2_A
+       /*   LongIdentifier */   "Table de points d'appui en pression de suralimentation (erreur de pression ou pression consigne)"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262136.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_tAir_A
+       /*   LongIdentifier */   "Table de points d'appui de la température extérieure"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_BYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   100.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_tCoMes_A
+       /*   LongIdentifier */   "Table de points d'appui de la température d'eau"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup2D_X_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_6
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_nEngRef2_A
+       /*   LongIdentifier */   "Table de points d'appui en régime pour le filtrage de la mesure de la pression de suralimentation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_rEthWoutExct_A
+       /*   LongIdentifier */   "Table de points d'appui du taux d'ethanol"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   TrbAct_rEthWoutExctCtl_A
+       /*   LongIdentifier */   "Table de points d'appui du taux d'ethanol"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   TrbActMgt_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   TrbActMgt_CM_17
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end AXIS_PTS
+
+  /begin MEASUREMENT 
+     /* Name                   */      TrbActMgt_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      TrbActMgt_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      TrbActMgt_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      TrbActMgt_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      TrbActMgt_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      TrbActMgt_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrICorReqPrev
+       /*   LongIdentifier */   "Consigne de pression de suralimentation issue de la correction intégrale du gain PID du pas  de temps précédent"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262140.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrCorReqPrev
+       /*   LongIdentifier */   "Consigne de la pression de suralimentation issue du PID du pas de temps precedent"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrFfCorReq
+       /*   LongIdentifier */   "consigne de pression issue du prepositionnement du correcteur PID"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262140.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrDCorReq
+       /*   LongIdentifier */   "Consigne de pression de suralimentation issue de la correction derivee du gain PID"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262140.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrICorReqIni
+       /*   LongIdentifier */   "Consigne de pression de suralimentation initiale, calculée lors du passage BO/BF, issue de la correction intégrale du PID"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrPCorReq
+       /*   LongIdentifier */   "Consigne de pression de suralimentation issue de la correction proportionnelle du gain PID"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262140.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facpGain
+       /*   LongIdentifier */   "Gain proportionnel du regulateur PID pour tout type de carburant Flex fuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_faciGain
+       /*   LongIdentifier */   "Gain integral du regulateur PID pour tout type de carburant Flex fuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facdGain1
+       /*   LongIdentifier */   "Gain dérivée 1 du correcteur PID pour tout type de carburant Flex fuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facdGain2
+       /*   LongIdentifier */   "Gain dérivée 2 du correcteur PID pour tout type de carburant Flex fuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facFfGain
+       /*   LongIdentifier */   "gain de pré-positionnement du correcteur PID"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facpGainRef
+       /*   LongIdentifier */   "Gain proportionnel du regulateur PID carburant de reference (type E10)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_faciGainRef
+       /*   LongIdentifier */   "Gain integral du regulateur PID carburant de reference (type E10)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facdGain1Ref
+       /*   LongIdentifier */   "Gain dérivée 1 du correcteur PID carburant de reference (type E10)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.1999511718750000E+001
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_facdGain2Ref
+       /*   LongIdentifier */   "Gain dérivée 2 du correcteur PID carburant de reference (type E10)"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.9998779296875000E+000
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pErrUsThr
+       /*   LongIdentifier */   "Difference entre la consigne et la mesure de pression de suralimentation"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262140.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pInMnfReqThdEth
+       /*   LongIdentifier */   "pression de suralimentation naturelle (papillon plein ouvert) carburant FlexFuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pInMnfReqThd
+       /*   LongIdentifier */   "pression de suralimentation naturelle (papillon plein ouvert) carburant non FlexFuel"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   TrbActMgt_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   524280.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pUsThrICorReq_IRV_MP
+       /*   LongIdentifier */   "Consigne de pression de suralimentation issue de la correction intégrale du gain PID"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262136.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_pErrFltGrd_MP
+       /*   LongIdentifier */   "Gradient de de l'erreur de pression de suralimentation, filtrée"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   TrbActMgt_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -262140.0
+       /*   UpperLimit     */   262136.0
+       ECU_ADDRESS              0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_bRstICor
+       /*   LongIdentifier */   "booléen activant le reste du terme intégral du régulateur"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   TrbAct_bDetTran
+       /*   LongIdentifier */   "Booléen indiquant si le moteur est loin d'un état stabilisé (Psural mesurée loin de la consigne de Psural)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   TrbActMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+    /end MEASUREMENT
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      TrbActMgt_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_1
+       /*   LongIdentifier */   "Q = V/8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_3
+       /*   LongIdentifier */   "Q = V*2048"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 2048 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_4
+       /*   LongIdentifier */   "Q = V*8192"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 8192 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "tr/s^2"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_7
+       /*   LongIdentifier */   "Q = V/16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 16
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_8
+       /*   LongIdentifier */   "Q = V/1.024"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1.024
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_9
+       /*   LongIdentifier */   "Q = V*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 65536 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_10
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_11
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_12
+       /*   LongIdentifier */   "Q = V*8192"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 8192 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_13
+       /*   LongIdentifier */   "Q = (V-1.52587890625e-005)*65536"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 65536 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_14
+       /*   LongIdentifier */   "Q = (V+524280)/8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 524280 0 0 8
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_15
+       /*   LongIdentifier */   "Q = V*17179869184"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 17179869184 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "-"
+       COMPU_TAB_REF            TrbActMgt_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_17
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_18
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "Pa"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   TrbActMgt_CM_19
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   TrbActMgt_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   TrbActMgt_FCT_TrbActMgt
+       /*   LongIdentifier */   "CHARACTERISTIC and MEASUREMENT of TrbActMgt Software Component"
+
+       /begin DEF_CHARACTERISTIC
+          TRBACTMGT_ACTIVE_BYP_C
+          TrbAct_bAcvCtlEth_C
+          TrbAct_bAcvEth_C
+          TrbAct_bAcvInhICor_C
+          TrbAct_bAcvOilPresCtl_C
+          TrbAct_bAcvTrbActCmd_B
+          TrbAct_bAcvUsThrPresCorTest_C
+          TrbAct_bBoostPresClCtlAcv_B
+          TrbAct_bInhCllCtl_C
+          TrbAct_bInhICor_B
+          TrbAct_bInhUsReg_C
+          TrbAct_bPosnTrbActMod_B
+          TrbAct_bSelInhICnd_C
+          TrbAct_bSelPresErrReq_C
+          TrbAct_facFfGain_M
+          TrbAct_facFilGainUsThrPresMes_T
+          TrbAct_facFltErrPres_C
+          TrbAct_facPresAltiCor_B
+          TrbAct_facPresAltiCor_T
+          TrbAct_facPresRCOCnv_C
+          TrbAct_facdGain1ErrPresEth_M
+          TrbAct_facdGain1ErrPres_M
+          TrbAct_facdGain1_M
+          TrbAct_facdGain2ErrPresEth_M
+          TrbAct_facdGain2ErrPres_M
+          TrbAct_facdGain2_M
+          TrbAct_faciGainErrPresEth_M
+          TrbAct_faciGainErrPres_M
+          TrbAct_faciGain_M
+          TrbAct_facpGainErrPresEth_M
+          TrbAct_facpGainErrPres_M
+          TrbAct_facpGain_M
+          TrbAct_nEngCtl_A
+          TrbAct_nEngGrd_A
+          TrbAct_nEngRef2_A
+          TrbAct_nEngTrbActCmdHys_C
+          TrbAct_nEngTrbActCmdThd_C
+          TrbAct_pAirExtHys_C
+          TrbAct_pDifUsThrPresHiThd_C
+          TrbAct_pDifUsThrPresLoThd_C
+          TrbAct_pErrUsThr2_A
+          TrbAct_pErrUsThrGrd_A
+          TrbAct_pErrUsThr_A
+          TrbAct_pInMnfReqHys_C
+          TrbAct_pInMnfReqThdEth_T
+          TrbAct_pInMnfReqThd_T
+          TrbAct_pOilMesThd_C
+          TrbAct_pUsThrCllAcvThd_T
+          TrbAct_pUsThrCorReqTest_C
+          TrbAct_pUsThrCorReq_B
+          TrbAct_pUsThrFil_B
+          TrbAct_pUsThrICorReqHiThd_C
+          TrbAct_pUsThrICorReqLoThd_C
+          TrbAct_rEthWoutExctCor_T
+          TrbAct_rEthWoutExctCtl_A
+          TrbAct_rEthWoutExctDftl1_T
+          TrbAct_rEthWoutExctDftl2_T
+          TrbAct_rEthWoutExctInt_T
+          TrbAct_rEthWoutExctProp_T
+          TrbAct_rEthWoutExct_A
+          TrbAct_rOpTrbActHiThd_C
+          TrbAct_rOpTrbActLoThd_C
+          TrbAct_rRCOICorReq_B
+          TrbAct_rRCOICorReq_C
+          TrbAct_rRCOPIDCorReq_B
+          TrbAct_rRCOPIDCorReq_C
+          TrbAct_tAir_A
+          TrbAct_tCoMes_A
+          TrbAct_tiDlyPosnTrbActMod_C
+          TrbAct_tiStrtThd_C
+          TrbAct_tiStrtThd_M
+          TrbAct_tiStrtThd_T
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+      TrbActMgt_ModuleVersion_Major_MP 
+      TrbActMgt_ModuleVersion_Minor_MP 
+      TrbActMgt_ModuleVersion_Patch_MP 
+          TrbAct_bDetTran
+          TrbAct_bRstICor
+          TrbAct_facFfGain
+          TrbAct_facdGain1
+          TrbAct_facdGain1Ref
+          TrbAct_facdGain2
+          TrbAct_facdGain2Ref
+          TrbAct_faciGain
+          TrbAct_faciGainRef
+          TrbAct_facpGain
+          TrbAct_facpGainRef
+          TrbAct_pErrFltGrd_MP
+          TrbAct_pErrUsThr
+          TrbAct_pInMnfReqThd
+          TrbAct_pInMnfReqThdEth
+          TrbAct_pUsThrCorReqPrev
+          TrbAct_pUsThrDCorReq
+          TrbAct_pUsThrFfCorReq
+          TrbAct_pUsThrICorReqIni
+          TrbAct_pUsThrICorReqPrev
+          TrbAct_pUsThrICorReq_IRV_MP
+          TrbAct_pUsThrPCorReq
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE
+
+/* ------------------------------ END OF MODULE TrbActMgt ------------------------------------*/

@@ -1,0 +1,1099 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjCutOffMgr                                            */
+/* !Description     : GESTION DE LA COUPURE DES INJECTEURS                    */
+/*                                                                            */
+/* !Module          : InjCutOffMgr                                            */
+/*                                                                            */
+/* !File            : InjCutOffMgr.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Mon Mar 25 22:22:41 2013                              */
+/*   Model name       : InjCutOffMgr_AUTOCODE.mdl                             */
+/*   Model version    : 1.271                                                 */
+/*   Root subsystem   : /InjCutOffMgr                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/INJCUTOFFMGR/InjCutOffMgr.$*/
+/* $Revision::   1.8                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   27 Mar 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjCutOffMgr
+    /*   LongIdentifier */   "InjCutOffMgr Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjCutOffMgr_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_noInNxtNxtNxtCyl_T
+       /*   LongIdentifier */   "Numéro du 3eme prochain cylindre en phase admission suceptible d'être coupé"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjCutOffMgr_CM_1
+          /*   MaxAxisPoints  */   6
+          /*   LowerLimit     */   1.0
+          /*   UpperLimit     */   6.0
+          AXIS_PTS_REF             InjSys_noInNxtCyl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhTWCTotCutOff_T
+       /*   LongIdentifier */   "Cartographie donnant le booléen d'inhibition de la coupure d'injection pour des raisons de chauffe catalyseur"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjCutOffMgr_CM_1
+          /*   MaxAxisPoints  */   6
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.0
+          AXIS_PTS_REF             InjSys_GearEgd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhCylCutOff_T
+       /*   LongIdentifier */   "Cartographie donnant le booléen d'inhibition de la coupure d'injection selective pour des raisons de chauffe catalyseur"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjCutOffMgr_CM_1
+          /*   MaxAxisPoints  */   6
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.0
+          AXIS_PTS_REF             InjSys_GearEgd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiDlyInjCutOff_T
+       /*   LongIdentifier */   "Cartographie en fonction de la température et du type de démarrage (STT ou non) du temps après démarrage nécessaire avant de pouvoir inhiber la coupure injection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   655.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjCutOffMgr_CM_8
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mAirMinInhCutOff_C
+       /*   LongIdentifier */   "Seuil minimum inhibant la coupure injection totale de l'objectif masse d'air pompé par cylindre corrigé par la masse minimale pour garantir une pression minimale"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_4
+       /*   LowerLimit     */   -0.007812
+       /*   UpperLimit     */   7.8117615966796878E-003
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJCUTOFFMGR_u8Inhib
+       /*   LongIdentifier */   "Inhibiton of module InjCutOffMgr"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjCutOff_bAcvInjCutOffSTTEs_C
+       /*   LongIdentifier */   "Booléen d'activation de la requête de coupure injection pour les arrêts STT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvPrioProtAC_C
+       /*   LongIdentifier */   "Activation prioritaires de la protection protection du fluide réfrigérant devant la protection thermique"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bETBAcvTotCutOff_C
+       /*   LongIdentifier */   "Activation de la coupure d'injection générale pour le mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaSelCutASRSecu_C
+       /*   LongIdentifier */   "Activation de la priorité safety de l'ASR avant TPM dans le cas de demande de coupures injections sélectives"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaSelCutASR_C
+       /*   LongIdentifier */   "Activation de la priorité ASR avant TPM dans le cas de demande de coupures injections sélectives"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaSelCutSIP_C
+       /*   LongIdentifier */   "Activation de la priorité SIP avant TPM dans le cas de demande de coupures injections sélectives"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaTotCutASRSecu_C
+       /*   LongIdentifier */   "Activation de la priorité safety ASR avant TPM dans le cas de demande decoupure injection totale"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaTotCutASR_C
+       /*   LongIdentifier */   "Activation de la priorité d'ASR avant TPM dans le cas de demande de coupure injection totale"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaTotCutSIP_C
+       /*   LongIdentifier */   "Activation de la priorité SIP avant TPM dans le cas de demande de coupure injection totale"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fco_regul_rich_regime_thresh
+       /*   LongIdentifier */   "Seuil de régime de coupure d'injection générale si on a déjà un ou plusieurs cylindres de coupés"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjCutOffMgr_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   8160.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_noInNxtCyl_A
+       /*   LongIdentifier */   "NS: Table de points d'appuis indexés [1 2 3 4 5 0]"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   MaxAxisPoints  */   6
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_GearEgd_A
+       /*   LongIdentifier */   "Table de breakpoint identité à 6 points"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjCutOffMgr_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   MaxAxisPoints  */   6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noCylCutOffTarSub
+       /*   LongIdentifier */   "Ecart de consigne de coupure sélective entre 2 pas"
+       /*   Datatype       */   SBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -6.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noCylCutOff
+       /*   LongIdentifier */   "Nombre de cylindre coupés (coupure sélective)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_decel_progr_inj
+       /*   LongIdentifier */   "Indicateur de coupure d'injection par cylindre"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noInNxtNxtNxtCyl
+       /*   LongIdentifier */   "Numéro du 3eme prochain cylindre en phase admission suceptible d'être coupé"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bTotCutOffDftMod
+       /*   LongIdentifier */   "Injectors forced general cut off boolean coming from default mode"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Auto_injection
+       /*   LongIdentifier */   "Indicateur d'injection autorisée"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_inj_ess_1
+       /*   LongIdentifier */   "Indicateur de coupure d'injection sur le cylindre 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_inj_ess_2
+       /*   LongIdentifier */   "Indicateur de coupure d'injection sur le cylindre 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_inj_ess_3
+       /*   LongIdentifier */   "Indicateur de coupure d'injection sur le cylindre 3"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_inj_ess_4
+       /*   LongIdentifier */   "Indicateur de coupure d'injection sur le cylindre 4"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Fco_for_mf_cat_dam_actif
+       /*   LongIdentifier */   "Indicateur de coupure cylindre afin de le protéger en cas de ratés d'allumage ou de panne bobine."
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bFuCutOff
+       /*   LongIdentifier */   "Indicateur de coupure injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bTotCutOff
+       /*   LongIdentifier */   "Flag de coupure totale (recalculé)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bCylCutOff
+       /*   LongIdentifier */   "Vecteur représentant l'état de coupure des cylindres"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhCutOffAirMin
+       /*   LongIdentifier */   "Inhibition de la coupure injection pour des besoins minimales de remplissage en air"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bAcvCutOffTarCylPrev
+       /*   LongIdentifier */   "Valeur précédente du Vecteur (cylindre en position physique) de requête de coupure injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInhCutOffTar
+       /*   LongIdentifier */   "Inhibition de la coupure injection sélective"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_decel_progr_inj_cyl4
+       /*   LongIdentifier */   "Indicateur de coupure d'injection du cylindre 4"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bCutOffCyl4Raw
+       /*   LongIdentifier */   "Demande de coupure injection du cylindre 4"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bCutOffCyl3Raw
+       /*   LongIdentifier */   "Demande de coupure injection du cylindre 3"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_decel_progr_inj_cyl3
+       /*   LongIdentifier */   "Indicateur de coupure d'injection du cylindre 3"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bCutOffCyl2Raw
+       /*   LongIdentifier */   "Demande de coupure injection du cylindre 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_decel_progr_inj_cyl2
+       /*   LongIdentifier */   "Indicateur de coupure d'injection du cylindre 2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bCutOffCyl1Raw
+       /*   LongIdentifier */   "Demande de coupure injection du cylindre 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Coupure_decel_progr_inj_cyl1
+       /*   LongIdentifier */   "Indicateur de coupure d'injection du cylindre 1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bAcvCutOffTarCyl
+       /*   LongIdentifier */   "Vecteur (cylindre en position physique) de requête de coupure injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 4 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bForcFuCutOff
+       /*   LongIdentifier */   "Indicateur de coupure injection générale"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bInjCutOffRaw
+       /*   LongIdentifier */   "Demande de coupure injection générale"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvCutOff_MP
+       /*   LongIdentifier */   "Désactivation d'inhibition de coupure globale d'injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvCutOffTyp1
+       /*   LongIdentifier */   "Activation de la coupure globale d'injection du type 1 (coupure inhibable)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjCutOffMgr_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bool"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_3
+       /*   LongIdentifier */   "Q = V*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_4
+       /*   LongIdentifier */   "Q = V*4194572.45264"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Kg"
+       COEFFS                   0 4194572.45264 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjCutOffMgr_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_7
+       /*   LongIdentifier */   "Q = V/32"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "tr/min"
+       COEFFS                   0 1 0 0 0 32
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_8
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_9
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_10
+       /*   LongIdentifier */   "Q = V*16777216"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 16777216 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjCutOffMgr_CM_12
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjCutOffMgr_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjCutOffMgr
+       /*   LongIdentifier */   "PTS_DOC_5048292_v04"
+
+       /begin DEF_CHARACTERISTIC
+          Fco_regul_rich_regime_thresh
+          INJCUTOFFMGR_u8Inhib
+          InjCutOff_bAcvInjCutOffSTTEs_C
+          InjSys_GearEgd_A
+          InjSys_bAcvPrioProtAC_C
+          InjSys_bETBAcvTotCutOff_C
+          InjSys_bEnaSelCutASRSecu_C
+          InjSys_bEnaSelCutASR_C
+          InjSys_bEnaSelCutSIP_C
+          InjSys_bEnaTotCutASRSecu_C
+          InjSys_bEnaTotCutASR_C
+          InjSys_bEnaTotCutSIP_C
+          InjSys_bInhCylCutOff_T
+          InjSys_bInhTWCTotCutOff_T
+          InjSys_mAirMinInhCutOff_C
+          InjSys_noInNxtCyl_A
+          InjSys_noInNxtNxtNxtCyl_T
+          InjSys_tiDlyInjCutOff_T
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Coupure_decel_progr_inj_cyl1
+          Coupure_decel_progr_inj_cyl2
+          Coupure_decel_progr_inj_cyl3
+          Coupure_decel_progr_inj_cyl4
+          InjSys_bAcvCutOffTyp1
+          InjSys_bAcvCutOff_MP
+          InjSys_bCutOffCyl1Raw
+          InjSys_bCutOffCyl2Raw
+          InjSys_bCutOffCyl3Raw
+          InjSys_bCutOffCyl4Raw
+          InjSys_bForcFuCutOff
+          InjSys_bInhCutOffTar
+          InjSys_bInjCutOffRaw
+          InjSys_bTotCutOffDftMod
+          InjSys_noCylCutOffTarSub
+          InjSys_noInNxtNxtNxtCyl
+          InjSys_prm_bAcvCutOffTarCyl
+          InjSys_prm_bAcvCutOffTarCylPrev
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          Auto_injection
+          Coupure_decel_progr_inj
+          Coupure_inj_ess_1
+          Coupure_inj_ess_2
+          Coupure_inj_ess_3
+          Coupure_inj_ess_4
+          Fco_for_mf_cat_dam_actif
+          InjSys_bFuCutOff
+          InjSys_bInhCutOffAirMin
+          InjSys_bTotCutOff
+          InjSys_noCylCutOff
+          InjSys_prm_bCylCutOff
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

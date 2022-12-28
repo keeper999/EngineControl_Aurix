@@ -1,0 +1,895 @@
+/begin MODULE  CoTq "CoTq 12.0"
+
+    /begin CHARACTERISTIC COTQ_ACTIVE_BYP_C "Bypass de CoTq"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bAcvCll_B "Bypass de CoCha_bAcvCll"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bInhEGRTrv_B "Bypass de CoCha_bInhEGRTrv"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_noCylCutAuth_B "Bypass de CoCha_noCylCutAuth"
+      VALUE 0x0 COTQ_RL_SBYTE 7 COTQ_CM_2 /* :1:0: */ -1 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tiTranCll_B "Bypass de CoCha_tiTranCll"
+      VALUE 0x0 COTQ_RL_UWORD 5 COTQ_CM_3 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqIncCll_B "Bypass de CoCha_tqIncCll"
+      VALUE 0x0 COTQ_RL_UWORD 2000 COTQ_CM_4 /* Nm/s:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bAcvNRegReqBuf_B "Bypass de CoPt_bAcvNRegReqBuf"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bDeacCllBuf_B "Bypass de CoPt_bDeacCllBuf"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bDeacCll_B "Bypass de CoPt_bDeacCll"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bInjCutDynAuth1_B "Bypass de CoPt_bInjCutDynAuth1"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bInjCutDynAuth2_B "Bypass de CoPt_bInjCutDynAuth2"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bSIPBuf_B "Bypass de CoPt_bSIPBuf"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_nTarBuf_B "Bypass de CoPt_nTarBuf"
+      VALUE 0x0 COTQ_RL_UWORD 8000 COTQ_CM_5 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_noTarGearCordBuf_B "Bypass de CoPt_noTarGearCordBuf"
+      VALUE 0x0 COTQ_RL_SBYTE 9 COTQ_CM_2 /* :1:0: */ -1 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqEfcAirCordLimIt_tqGBx_B "Bypass de CoPt_tqEfcAirCordLimIt_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqEfcAirCordLim_tqGBx_B "Bypass de CoPt_tqEfcAirCordLim_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqEfcCordLimIt_tqGBx_B "Bypass de CoPt_tqEfcCordLimIt_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoPt_tqEfcCordLim_tqGBxUpd "Couple effectif limité, coordonné avec la consigne de couple envoyé par les BVA/BVMP traité"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoPt_tqEfcCordLim_tqGBx_B "Bypass de CoPt_tqEfcCordLim_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqEfcReqCord_nRegReq_B "Bypass de CoPt_tqEfcReqCord_nRegReq"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcAirCordLim_tqGBx_B "Bypass de CoPt_tqIdcAirCordLim_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcAirMaxGBx_B "Bypass de CoPt_tqIdcAirMaxGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcCordLimBuf_tqGBx_B "Bypass de CoPt_tqIdcCordLimBuf_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcCordLim_tqGBx_B "Bypass de CoPt_tqIdcCordLim_tqGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcMaxGBxBuf_B "Bypass de CoPt_tqIdcMaxGBxBuf"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqIdcMaxGBx_B "Bypass de CoPt_tqIdcMaxGBx"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tqMaxGBx_nRegBuf_B "Bypass de CoPt_tqMaxGBx_nRegBuf"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoTq_ModuleVersion_Major_MP "CoTq_ModuleVersion_Major_MP"
+      UBYTE COTQ_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoTq_ModuleVersion_Minor_MP "CoTq_ModuleVersion_Minor_MP"
+      UBYTE COTQ_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoVSCtl_rAccPEngTrv_B "Bypass de CoVSCtl_rAccPEngTrv"
+      VALUE 0x0 COTQ_RL_UWORD 100 COTQ_CM_7 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqCkEfcFLdLim_B "Bypass de EngLim_tqCkEfcFLdLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqCkEfcLim_B "Bypass de EngLim_tqCkEfcLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqCkEfcSmkLim_B "Bypass de EngLim_tqCkEfcSmkLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqCkEfcStatLim_B "Bypass de EngLim_tqCkEfcStatLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcCurMinFuCutSel_B "Bypass de EngLim_tqEfcCurMinFuCutSel"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcEngCurMax_B "Bypass de EngLim_tqEfcEngCurMax"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcEngCurMin_B "Bypass de EngLim_tqEfcEngCurMin"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcEngLimCmb_B "Bypass de EngLim_tqEfcEngLimCmb"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcEngLim_B "Bypass de EngLim_tqEfcEngLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcEngProt_B "Bypass de EngLim_tqEfcEngProt"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcLdAdvMinFuCutSel_B "Bypass de EngLim_tqEfcLdAdvMinFuCutSel"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcLdMaxTrbMax_B "Bypass de EngLim_tqEfcLdMaxTrbMax"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcLdMaxWoutOvb_B "Bypass de EngLim_tqEfcLdMaxWoutOvb"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcLdMinAdvMin_B "Bypass de EngLim_tqEfcLdMinAdvMin"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcMaxEngLimCmb_B "Bypass de EngLim_tqEfcMaxEngLimCmb"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcMaxNReg_B "Bypass de EngLim_tqEfcMaxNReg"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcMinCurCutOffTrv_B "Bypass de EngLim_tqEfcMinCurCutOffTrv"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcMinCurTrv_B "Bypass de EngLim_tqEfcMinCurTrv"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcMinEngLimCmb_B "Bypass de EngLim_tqEfcMinEngLimCmb"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcPresUsThrMax_B "Bypass de EngLim_tqEfcPresUsThrMax"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcRed_B "Bypass de EngLim_tqEfcRed"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcSfty_B "Bypass de EngLim_tqEfcSfty"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqEfcSyst_B "Bypass de EngLim_tqEfcSyst"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC ThMgt_tqEfcLimAntiBoilProt_B "Bypass de ThMgt_tqEfcLimAntiBoilProt"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facGainFilHY_nCk_C "Coefficient de filtrage de régime pour les applications HY"
+      VALUE 0x0 COTQ_RL_UWORD 1 COTQ_CM_8 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facGainFilTrv_nCk_B "Bypass de TqDem_facGainFilTrv_nCk"
+      VALUE 0x0 COTQ_RL_UWORD 1 COTQ_CM_8 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_tqCkEfcTrv_B "Bypass de TqDem_tqCkEfcTrv"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqIdcLimEM_B "Bypass de TqLimEM_tqIdcLimEM"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqLimEM_tqLimEMTrv_B "Bypass de TqLimEM_tqLimEMTrv"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqLimEM_tqLimEMUpd "Couple demandé après coodination Easy Move traité"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcceClrCrossAOS_B "Bypass de TqSys_bAcceClrCrossAOS"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcceDetAOS_B "Bypass de TqSys_bAcceDetAOS"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcvCll_B "Bypass de TqSys_bAcvCll"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcvRLdClc_MP "Point de visualisation : Activation du calcul de charge moteur"
+      UBYTE COTQ_CM_9 /* FT_enumeration1:((0=CALCUL_DE_CHARGE_ACTIVE)(1=CALCUL_DE_CHARGE_DESACTIVE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcvTqCnv_irv_MP "Activation de l appel de la conversion en synchrone moteur ou temporelle"
+      UBYTE COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDeceAcv_B "Bypass de TqSys_bDeceAcv"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDeceDetAOS_B "Bypass de TqSys_bDeceDetAOS"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bEngAsiReqTrv_B "Bypass de TqSys_bEngAsiReqTrv"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bInhEGR_B "Bypass de TqSys_bInhEGR"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bRstAOS_B "Bypass de TqSys_bRstAOS"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqLossRealSel_C "Choix du type de perte pour la conversion du couple réalisé."
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqMaxGslSel_C " Choix du couple MAX absolu pour le pilotage de HY en essence"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqMinFeas_C "Choix de couple Min pour le minimum faisable"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqRealEsGslSel_C "Activation de la correction du couple reel pour les applications essence"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPndAstTqReal_M "Table de ponderation de la correction en fonction du temps d arret moteur"
+      MAP 0x0 COTQ_RL_UWORD 1 COTQ_CM_10 /* :0.0625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY COTQ_CM_19 /* s:1:0: */ 8 0 65535
+    AXIS_PTS_REF TqSys_tiStopTqRealCorX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY COTQ_CM_18 /* deg C:1:0: */ 6 -50 200
+    AXIS_PTS_REF TqSys_tEngTqRealCorY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facPndSpdTqReal_T "Vecteur de ponderation de la correction en fonction de la vitesse vehicule"
+      CURVE 0x0 COTQ_RL_UWORD 1 COTQ_CM_10 /* :0.0625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Veh_spdVeh COTQ_CM_16 /* km/h:0.0078125:0: */ 4 0 500
+    AXIS_PTS_REF TqSys_spdVehTqReal_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTTqEngReal_C "Coefficient de ponderation dans le choix de la temperature (1 =100% Teau et 0 = 100% Tair)"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_10 /* :0.0625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTqRealCorDriv_M "Table de ponderation de la correction en fonction des parametres de regime et gradient de couple"
+      MAP 0x0 COTQ_RL_UWORD 10 COTQ_CM_10 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqLimEMGrdFil COTQ_CM_4 /* Nm/s:0.0625:0: */ 6 -2000 2000
+    AXIS_PTS_REF TqSys_tqGrdTqRealCorX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS TreatTDC_nCkFil COTQ_CM_5 /* rpm:0.25:0: */ 6 0 8000
+    AXIS_PTS_REF TqSys_nCkTqRealCorY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTqRealCor_M "Table de ponderation de la correction en fonction des parametres de regime et gradient de regime"
+      MAP 0x0 COTQ_RL_UWORD 10 COTQ_CM_10 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS TreatTDC_nCkGrdFil COTQ_CM_11 /* rpm/s:0.25:0: */ 6 -8000 8000
+    AXIS_PTS_REF TqSys_nCkGrdTqRealCorX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS TreatTDC_nCkFil COTQ_CM_5 /* rpm:0.25:0: */ 6 0 8000
+    AXIS_PTS_REF TqSys_nCkTqRealCorY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nCkGrdTqRealCorX_A "Axis description"
+      0x0 TreatTDC_nCkGrdFil COTQ_RL_SWORD_AXIS 16000 COTQ_CM_11 /* rpm/s:0.25:0: */ 6 -8000 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_nCkTqRealCorY_A "Axis description"
+      0x0 TreatTDC_nCkFil COTQ_RL_UWORD_AXIS 8000 COTQ_CM_5 /* rpm:0.25:0: */ 6 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nThdStopIdcCnvEfc_C "Seuil de régime en dessous duquel les taches Synchro Moteur sont remplacées par les taches temporelles 10ms"
+      VALUE 0x0 COTQ_RL_UWORD 8000 COTQ_CM_12 /* rpm:1:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noCylCutAuth_B "Bypass de TqSys_noCylCutAuth"
+      VALUE 0x0 COTQ_RL_SBYTE 7 COTQ_CM_2 /* :1:0: */ -1 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noDlyTqIdcEngReal_C "Index de retard du couple estime"
+      VALUE 0x0 COTQ_RL_UBYTE 3 COTQ_CM_2 /* :1:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_pAirExtRef_C "Pression atmosphérique de référence"
+      VALUE 0x0 COTQ_RL_UWORD 1000 COTQ_CM_13 /* mbar:1:0: */ 500 1500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rLdEngRef_B "Bypass de TqSys_rLdEngRef"
+      VALUE 0x0 COTQ_RL_UBYTE 100 COTQ_CM_14 /* %:1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_rPAirExt_MP "Point de visualisation : Ratio de la pression atmo"
+      UWORD COTQ_CM_15 /* :0.0078125:0: */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_rTAirExt_A "Axis description"
+      0x0 NO_INPUT_QUANTITY COTQ_RL_UWORD_AXIS 2 COTQ_CM_15 /* :0.0078125:0: */ 4 0 2
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_rTAirExt_MP "Point de visualisation : Coefficient de pondération en fonction du ratio de température d air"
+      UWORD COTQ_CM_15 /* :0.0078125:0: */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_rTAirExt_T "Coefficient de pondération en fonction du ratio de température d air pour le calcul de la charge moteur"
+      CURVE 0x0 COTQ_RL_UWORD 2 COTQ_CM_15 /* :0.0078125:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY COTQ_CM_15 /* :0.0078125:0: */ 4 0 2
+    AXIS_PTS_REF TqSys_rTAirExt_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_spdVehTqReal_A "Axis description"
+      0x0 Veh_spdVeh COTQ_RL_UWORD_AXIS 500 COTQ_CM_16 /* km/h:0.0078125:0: */ 4 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_stDrivFilPha_B "Bypass de TqSys_stDrivFilPha"
+      VALUE 0x0 COTQ_RL_UBYTE 15 COTQ_CM_17 /* FT_enumeration1:((0=FILTRAGE_DESACTIVE)(1=FILTRAGE_INACTIF)(2=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_2_SAUT_DEBUE_DU_FILTRAGE)(3=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_3_1ER_ORDRE)(4=FILTRAGE_EN_ACCEL_POUR_LA_ZONE_4_PENTE_DE_TRAVERSEE_DES_JEUX)(5=FILTRAGE_EN_ACCEL_ZONE_5_FORME_PARABOLIQUE)(6=FILTRAGE_EN_ACCEL_ZONE_6_LIMITATION_DE_LA_PARABOLE)(7=FILTRAGE_EN_ACCEL_ZONE_7_PENTE_AU_DESSUS_DES_JEUX)(8=FILTRAGE_EN_DECEL_ZONE_8_SAUT_DE_DEBUT_DE_FILTRAGE)(9=FILTRAGE_EN_DECEL_ZONE_9_PREMIERE_PENTE)(10=FILTRAGE_EN_DECEL_ZONE_10_2ND_PENTE_POUR_LA_TRAVERSEE_DES_JEUX)(11=FILTRAGE_EN_DECEL_ZONE_11_3EME_PENTE)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RESERVE_15)) */ 0 15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tAirRef_C "Température d air de référence"
+      VALUE 0x0 COTQ_RL_SBYTE 140 COTQ_CM_18 /* deg C:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tEngTqRealCorY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY COTQ_RL_SWORD_AXIS 250 COTQ_CM_18 /* deg C:1:0: */ 6 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tiFilTqLimEM_C "Temps de filtrage du gradient de couple volonte conducteur"
+      VALUE 0x0 COTQ_RL_UBYTE 1 COTQ_CM_3 /* s:0.01:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiSatTqEfcRealMax_C "Temps max d’attente avant de saturer le couple"
+      VALUE 0x0 COTQ_RL_UWORD 10 COTQ_CM_3 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tiStopTqRealCorX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY COTQ_RL_UWORD_AXIS 65535 COTQ_CM_19 /* s:1:0: */ 8 0 65535
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tiTranCll_B "Bypass de TqSys_tiTranCll"
+      VALUE 0x0 COTQ_RL_UWORD 5 COTQ_CM_3 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqAltLossPos "Couple alternateur partie prélevé sur le moteur"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkDeceIni_B "Bypass de TqSys_tqCkDeceIni"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcFilTrv_B "Bypass de TqSys_tqCkEfcFilTrv"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkEfcMinFeasDsl "Couple réel minimum faisable diesel"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkEfcMinFeasGsl "Couple reel minimum faisable essence"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcMinFeas_B "Bypass de TqSys_tqCkEfcMinFeas"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcReq_B "Bypass de TqSys_tqCkEfcReq"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEngRealEM_B "Bypass de TqSys_tqCkEngRealEM"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEngReal_B "Bypass de TqSys_tqCkEngReal"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaRealCor_M "Table de correction de couple reel"
+      MAP 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY COTQ_CM_6 /* Nm:0.0625:0: */ 6 -2000 2000
+    AXIS_PTS_REF TqSys_tqRawTqRealCorX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY COTQ_CM_18 /* deg C:1:0: */ 6 -50 200
+    AXIS_PTS_REF TqSys_tEngTqRealCorY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEfcAirIdl_B "Bypass de TqSys_tqEfcAirIdl"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqEfcEngRealDly "Couple reel retarde"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqEfcEngWoutAOS_B "Bypass de TqSys_tqEfcEngWoutAOS"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEfcIdl_B "Bypass de TqSys_tqEfcIdl"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqEngRealCor "Couple reel corrige brute"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqEngRealMaxEs_C "Couple max de saturation du couple reel a l’arret moteur"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_20 /* Nm:1:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEngRealMinEs_C "Couple min de saturation du couple reel a l’arret moteur"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_20 /* Nm:1:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqEngRealRaw_MP "Couple reel brute avant traitement"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqGrdTqRealCorX_A "Gradient de couple volonte conducteur"
+      0x0 TqSys_tqLimEMGrdFil COTQ_RL_SWORD_AXIS 4000 COTQ_CM_4 /* Nm/s:0.0625:0: */ 6 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirLim_B "Bypass de TqSys_tqIdcAirLim"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqIdcMaxCor_MP "Point de visualisation : Couple MAX corrigé"
+      SWORD COTQ_CM_6 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqIncCll_B "Bypass de TqSys_tqIncCll"
+      VALUE 0x0 COTQ_RL_UWORD 2000 COTQ_CM_4 /* Nm/s:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqLimEMGrdFil "Gradient de couple volonte conducteur"
+      SWORD COTQ_CM_4 /* Nm/s:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqRawTqRealCorX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY COTQ_RL_SWORD_AXIS 4000 COTQ_CM_6 /* Nm:0.0625:0: */ 6 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqThdPha3_B "Bypass de TqSys_tqThdPha3"
+      VALUE 0x0 COTQ_RL_SWORD 4000 COTQ_CM_6 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT COTQ_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT COTQ_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD COTQ_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF COTQ_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB COTQ_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD COTQ_CM_2 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_3 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_4 "conversion_method"
+
+RAT_FUNC "%.2" "Nm/s"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_5 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_6 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_7 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_8 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_9 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF COTQ_CV_9
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB COTQ_CV_9 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "CALCUL_DE_CHARGE_ACTIVE"
+	 1 "CALCUL_DE_CHARGE_DESACTIVE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD COTQ_CM_10 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_11 "conversion_method"
+
+RAT_FUNC "%.1" "rpm/s"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_12 "conversion_method"
+
+RAT_FUNC "%.0" "rpm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_13 "conversion_method"
+
+RAT_FUNC "%.0" "mbar"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_14 "conversion_method"
+
+RAT_FUNC "%.0" "%"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_15 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_16 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF COTQ_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB COTQ_CV_17 "conversion_vtab"
+
+    TAB_VERB 16
+	 0 "FILTRAGE_DESACTIVE"
+	 1 "FILTRAGE_INACTIF"
+	 2 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_2_SAUT_DEBUE_DU_FILTRAGE"
+	 3 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_3_1ER_ORDRE"
+	 4 "FILTRAGE_EN_ACCEL_POUR_LA_ZONE_4_PENTE_DE_TRAVERSEE_DES_JEUX"
+	 5 "FILTRAGE_EN_ACCEL_ZONE_5_FORME_PARABOLIQUE"
+	 6 "FILTRAGE_EN_ACCEL_ZONE_6_LIMITATION_DE_LA_PARABOLE"
+	 7 "FILTRAGE_EN_ACCEL_ZONE_7_PENTE_AU_DESSUS_DES_JEUX"
+	 8 "FILTRAGE_EN_DECEL_ZONE_8_SAUT_DE_DEBUT_DE_FILTRAGE"
+	 9 "FILTRAGE_EN_DECEL_ZONE_9_PREMIERE_PENTE"
+	 10 "FILTRAGE_EN_DECEL_ZONE_10_2ND_PENTE_POUR_LA_TRAVERSEE_DES_JEUX"
+	 11 "FILTRAGE_EN_DECEL_ZONE_11_3EME_PENTE"
+	 12 "RESERVE_12"
+	 13 "RESERVE_13"
+	 14 "RESERVE_14"
+	 15 "RESERVE_15"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD COTQ_CM_18 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_19 "conversion_method"
+
+RAT_FUNC "%.0" "s"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD COTQ_CM_20 "conversion_method"
+
+RAT_FUNC "%.0" "Nm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION COTQ_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	COTQ_ACTIVE_BYP_C
+	CoCha_bAcvCll_B
+	CoCha_bInhEGRTrv_B
+	CoCha_noCylCutAuth_B
+	CoCha_tiTranCll_B
+	CoCha_tqIncCll_B
+	CoPt_bAcvNRegReqBuf_B
+	CoPt_bDeacCllBuf_B
+	CoPt_bDeacCll_B
+	CoPt_bInjCutDynAuth1_B
+	CoPt_bInjCutDynAuth2_B
+	CoPt_bSIPBuf_B
+	CoPt_nTarBuf_B
+	CoPt_noTarGearCordBuf_B
+	CoPt_tqEfcAirCordLimIt_tqGBx_B
+	CoPt_tqEfcAirCordLim_tqGBx_B
+	CoPt_tqEfcCordLimIt_tqGBx_B
+	CoPt_tqEfcCordLim_tqGBx_B
+	CoPt_tqEfcReqCord_nRegReq_B
+	CoPt_tqIdcAirCordLim_tqGBx_B
+	CoPt_tqIdcAirMaxGBx_B
+	CoPt_tqIdcCordLimBuf_tqGBx_B
+	CoPt_tqIdcCordLim_tqGBx_B
+	CoPt_tqIdcMaxGBxBuf_B
+	CoPt_tqIdcMaxGBx_B
+	CoPt_tqMaxGBx_nRegBuf_B
+	CoVSCtl_rAccPEngTrv_B
+	EngLim_tqCkEfcFLdLim_B
+	EngLim_tqCkEfcLim_B
+	EngLim_tqCkEfcSmkLim_B
+	EngLim_tqCkEfcStatLim_B
+	EngLim_tqEfcCurMinFuCutSel_B
+	EngLim_tqEfcEngCurMax_B
+	EngLim_tqEfcEngCurMin_B
+	EngLim_tqEfcEngLimCmb_B
+	EngLim_tqEfcEngLim_B
+	EngLim_tqEfcEngProt_B
+	EngLim_tqEfcLdAdvMinFuCutSel_B
+	EngLim_tqEfcLdMaxTrbMax_B
+	EngLim_tqEfcLdMaxWoutOvb_B
+	EngLim_tqEfcLdMinAdvMin_B
+	EngLim_tqEfcMaxEngLimCmb_B
+	EngLim_tqEfcMaxNReg_B
+	EngLim_tqEfcMinCurCutOffTrv_B
+	EngLim_tqEfcMinCurTrv_B
+	EngLim_tqEfcMinEngLimCmb_B
+	EngLim_tqEfcPresUsThrMax_B
+	EngLim_tqEfcRed_B
+	EngLim_tqEfcSfty_B
+	EngLim_tqEfcSyst_B
+	ThMgt_tqEfcLimAntiBoilProt_B
+	TqDem_facGainFilHY_nCk_C
+	TqDem_facGainFilTrv_nCk_B
+	TqDem_tqCkEfcTrv_B
+	TqLimEM_tqIdcLimEM_B
+	TqLimEM_tqLimEMTrv_B
+	TqSys_bAcceClrCrossAOS_B
+	TqSys_bAcceDetAOS_B
+	TqSys_bAcvCll_B
+	TqSys_bDeceAcv_B
+	TqSys_bDeceDetAOS_B
+	TqSys_bEngAsiReqTrv_B
+	TqSys_bInhEGR_B
+	TqSys_bRstAOS_B
+	TqSys_bTqLossRealSel_C
+	TqSys_bTqMaxGslSel_C
+	TqSys_bTqMinFeas_C
+	TqSys_bTqRealEsGslSel_C
+	TqSys_facPndAstTqReal_M
+	TqSys_facPndSpdTqReal_T
+	TqSys_facTTqEngReal_C
+	TqSys_facTqRealCorDriv_M
+	TqSys_facTqRealCor_M
+	TqSys_nCkGrdTqRealCorX_A
+	TqSys_nCkTqRealCorY_A
+	TqSys_nThdStopIdcCnvEfc_C
+	TqSys_noCylCutAuth_B
+	TqSys_noDlyTqIdcEngReal_C
+	TqSys_pAirExtRef_C
+	TqSys_rLdEngRef_B
+	TqSys_rTAirExt_A
+	TqSys_rTAirExt_T
+	TqSys_spdVehTqReal_A
+	TqSys_stDrivFilPha_B
+	TqSys_tAirRef_C
+	TqSys_tEngTqRealCorY_A
+	TqSys_tiFilTqLimEM_C
+	TqSys_tiSatTqEfcRealMax_C
+	TqSys_tiStopTqRealCorX_A
+	TqSys_tiTranCll_B
+	TqSys_tqCkDeceIni_B
+	TqSys_tqCkEfcFilTrv_B
+	TqSys_tqCkEfcMinFeas_B
+	TqSys_tqCkEfcReq_B
+	TqSys_tqCkEngRealEM_B
+	TqSys_tqCkEngReal_B
+	TqSys_tqDeltaRealCor_M
+	TqSys_tqEfcAirIdl_B
+	TqSys_tqEfcEngWoutAOS_B
+	TqSys_tqEfcIdl_B
+	TqSys_tqEngRealMaxEs_C
+	TqSys_tqEngRealMinEs_C
+	TqSys_tqGrdTqRealCorX_A
+	TqSys_tqIdcAirLim_B
+	TqSys_tqIncCll_B
+	TqSys_tqRawTqRealCorX_A
+	TqSys_tqThdPha3_B
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CoPt_tqEfcCordLim_tqGBxUpd
+	CoTq_ModuleVersion_Major_MP
+	CoTq_ModuleVersion_Minor_MP
+	TqLimEM_tqLimEMUpd
+	TqSys_bAcvRLdClc_MP
+	TqSys_bAcvTqCnv_irv_MP
+	TqSys_rPAirExt_MP
+	TqSys_rTAirExt_MP
+	TqSys_tqAltLossPos
+	TqSys_tqCkEfcMinFeasDsl
+	TqSys_tqCkEfcMinFeasGsl
+	TqSys_tqEfcEngRealDly
+	TqSys_tqEngRealCor
+	TqSys_tqEngRealRaw_MP
+	TqSys_tqIdcMaxCor_MP
+	TqSys_tqLimEMGrdFil
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE CoTq ------------------------------------*/

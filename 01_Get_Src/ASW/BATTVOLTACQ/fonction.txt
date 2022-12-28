@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+BATTVOLTACQ_vidBattAcqOn2ms|C|();|FCT1.10|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Acquisition de la tension batterie toute les 2ms, sous condition d’activation de la stratégie : Pwr_bEnaEve2ms_C = 1. En sortie, on retrouve les 5 derniers échantillons.
+BATTVOLTACQ_vidBattAcqOnEveInj|C|();|FCT1.9|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Acquisition de la tension batterie sur événement d’injection, sous condition d’activation de la stratégie :  Pwr_bEnaEveInj_C = 1.
+BATTVOLTACQ_vidBattAcqReset|C|();|FCT1.2|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Acquisition de la tension batterie au Reset.
+BATTVOLTACQ_vidBattDiag|D|();|FCT1.3|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Diagnostic défaut haut et bas de la tension batterie
+BATTVOLTACQ_vidBattFil|E|();|FCT1.7|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Calcul de la tension batterie précédente
+BATTVOLTACQ_vidBattFilt|C|();|FCT1.8|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Tension_batterie_filt est créé à partir d’un filtrage du premier ordre sur Tension_batterie.
+BATTVOLTACQ_vidbattFiltMng|C|();|FCT2.1|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Avant chaque injection, une requête de boost est envoyée à la batterie. Ces emandes entraînent des chutes de tension.
+BATTVOLTACQ_vidBattIni|D|();|FCT1.4|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Initialisation de la tension batterie.
+BATTVOLTACQ_vidFilClcnAcv|D|();|FCT1.5|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Fonction du filtre anti-progression
+BATTVOLTACQ_vidFilClcnVal|D|();|FCT1.6|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Calcul de la tension batterie filtrée
+BATTVOLTACQ_vidInitOutput|D|();|FCT1.1|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Fonction d'initialisation
+BATTVOLTACQ_vidWeightedAvr|C|();|FCT2.2|BATTVOLTACQ|0|PTS_DOC_6547150||||0|0|0|0|Moyenne pondérée  glissante sur 5 échantillons, avec une pondération calibrable. Les pondérations doivent être comprises entre 0 et 1et la somme des pondération doit être obligatoirement égale à 1.
+GDGAR_bGetFRM|A|(uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0|
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait) ;|2|HEADER|1|NONE||||0|0|0|0|
+Pwr_EveInj_BattVotlAcq|C|();|SCH.3|BATTVOLTACQ|1|PTS_DOC_6547150||||0|0|0|0|Evenenement d'injection.
+Pwr_EveRst_BattVoltAcq|E|();|SCH.1|BATTVOLTACQ|1|PTS_DOC_6547150||||0|0|0|0|Evènement reset
+Pwr_Sdl2ms_BattVotlAcq|C|();|SCH.4|BATTVOLTACQ|1|PTS_DOC_6547150||||0|0|0|0|Scheduler à 2ms.
+Pwr_SdlFast_BattVoltAcq|E|();|SCH.2|BATTVOLTACQ|1|PTS_DOC_6547150||||0|0|0|0|Moniteur rapide de la fonction power

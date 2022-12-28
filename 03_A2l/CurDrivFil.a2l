@@ -1,0 +1,2214 @@
+﻿/begin MODULE  CurDrivFil "CurDrivFil 12.2"
+
+    /begin CHARACTERISTIC CURDRIVFIL_ACTIVE_BYP_C "Bypass"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CurDriv_ModuleVersion_Major_MP "CurDrivFil_ModuleVersion_Major_MP"
+      UBYTE CURDRIVFIL_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CurDriv_ModuleVersion_Minor_MP "CurDrivFil_ModuleVersion_Minor_MP"
+      UBYTE CURDRIVFIL_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_bA0ThdCros "Seuil de jeu franchi"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_bAcvClrCross_B "Bypass de TqClrCros_bAcvClrCross"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_bClrAcv "Phase de détection des jeux activée"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_bSelDetClrTyp_C "Choix de l utilisation du type de détection"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_deltaGrdNEngFilt "Delta de gradient de régime (sans unité)"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_deltaTqCorCur "Delta de correction de curatif brute (sans unité)"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqClrCros_detClr_nEngX_A "Axis description"
+      0x0 Ext_nEngClc0 CURDRIVFIL_RL_UWORD_AXIS 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqClrCros_detClr_noGearY_A "Axis description"
+      0x0 CoPt_noGearCordDrivFil CURDRIVFIL_RL_UWORD_AXIS 8 CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqClrCros_facCurDetClr_MP "Valeur adimensionnelle provenant du gradient de régime pour détecter les jeux"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_facFiltGrdNEng "Facteur de filtrage du gradient de régime"
+      UWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_facFiltGrdNEng_M "Table de facteur de filtrage du gradient de régime"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 1 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEngClc0 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqClrCros_detClr_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS CoPt_noGearCordDrivFil CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqClrCros_detClr_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqClrCros_facScale_C "Facteur d échelle"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_grdNEngFilt "Gradient de régime filtré"
+      SWORD CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_grdNEngFiltDly "Gradient de régime filtré retardé"
+      SWORD CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_stDetClr_B "Bypass de TqClrCros_stDetClr"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 3 CURDRIVFIL_CM_7 /* FT_enumeration1:((0=DETECTION_INACTIF)(1=DETECTION_EN_COURS)(2=DETECTION_EFFECIF)(3=FIN_DE_DETECTION)) */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_tiDetClr "Temps passé dans le passage des jeux"
+      UWORD CURDRIVFIL_CM_8 /* s:0.001:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_tiMaxDetClr "Temps max pour le passage des jeux"
+      UWORD CURDRIVFIL_CM_8 /* s:0.001:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_tiMaxDetClr_M "Table de facteur de filtrage du gradient de régime"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_8 /* s:0.001:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEngClc0 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqClrCros_detClr_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS CoPt_noGearCordDrivFil CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqClrCros_detClr_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqClrCros_tqClrAcv_M "Table d offset de couple par rapport au jeu préventif pour détecter les jeux"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 500 CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEngClc0 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqClrCros_detClr_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS CoPt_noGearCordDrivFil CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqClrCros_detClr_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqClrCros_tqOffSetClrAcv_C "Hystérésis de couple pour arrêter la détection des jeux"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 100 CURDRIVFIL_CM_10 /* Nm:1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_tqThdClrDet "Seuil de couple de détection des jeux"
+      UWORD CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_valCurDetClr "Valeur adimensionnelle pour détecter les jeux"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqClrCros_valCurHystDetClr "Hystérésis de valeur adimensionnelle de détection des jeux"
+      UWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_valCurHystDetClr_M "Table de valeur d hystérésis pour la détection des jeux"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 100 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEngClc0 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqClrCros_detClr_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS CoPt_noGearCordDrivFil CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqClrCros_detClr_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqClrCros_valCurThdDetClr "Seuil de valeur adimensionnelle de détection des jeux"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqClrCros_valCurThdDetClr_M "Table de valeur pour la détection des jeux"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 200 CURDRIVFIL_CM_3 /* :0.0625:0: */ -100 100
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEngClc0 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqClrCros_detClr_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS CoPt_noGearCordDrivFil CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqClrCros_detClr_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_AOSGrd_MP "Seuil de dérivé de régime donné par la cartographie TqSys_AOscGrd_M"
+      SWORD CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_CutDynWgh_tq_A "Axis description"
+      0x0 TqSys_tqCkDeceIni CURDRIVFIL_RL_SWORD_AXIS 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_CutDyn_nEngX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_CutDyn_noGearY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8 CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_CutDyn_tqMemX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_SWORD_AXIS 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 10 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_aFilEngMaxThd_C "Seuil de dérivée de régime au dessus duquel on annule la correction curative"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 8000 CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAOSAcv_B "Bypass de TqSys_bAOSAcv"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAOSIdlEna_C "Booléen permettant dactiver la fonction au ralenti"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAOSPrev_bAcv "Flag précédent d activation"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAOSSlopAcv_C "0= Pente d activation pour les 3 conditions seulement (décollage), 1= Pente d activation pour toutes les conditions"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAOSSlopAcv_irv_MP "Booléen de désactivation du curatif"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAOS_tiMaxEna_C "Booléen pour inhiber la condition de reset par la tempo max"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcceClrCrossCord "pas de détéction accél avec traversée des jeux pour le curatif 0= détéction accél avec traversée des jeux pour le curatifImplementation = 1"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceDetCord "Flag d accélération au dessus des jeux coordonné pas de détéction accél pour le curatif = 0 détéction accél pour le curatif = 1"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceDetCur "Boolean"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bCorManGBx_C "Booléen indiquant si la boîte est manuelle"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bCorSel_ChgStDece_C "Prise en compte du gradient de régime =0 Prise en compte de la correction curative finale = 1"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bDeceDetCord "pas de détéction décél pour le curatif = 0 détéction decel pour le curatif = 1"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDeceDetCur "Boolean definition"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDetClrCrossAcvCur_C "Pas d activation de la détection des jeux = 0 activation de la détection des jeux = 1"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDiAOS_C "Booléen de désactivation de la fonction si égale à 1"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDiInjCutDyn_C "Désactivation de la coupure dynamique"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bDisNEngEna_C "discrétisation du régime moteur = 0 pas de discrétisation du régime moteur =1"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bInjCutDynAuthDly_MP "Booléen d activation du délai d autorisation de coupure dynamique"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bInjCutDynCondAuth "Autorisation de coupure dynamique"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bInjCutDynCondDi_MP "Conditions de désactivation de la coupure dynamique"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bInjCutDynCondEna "Conditions d activation de la coupure dynamique"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bInjCutDynReq_B "Bypass de TqSys_bInjCutDynReq"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bNGrdFil "Flag de passage de l état 3 vers l état 2 sur condition de régime filtré"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bNSel_ChgStDece_C "Booleen de choix du régime utilisé pour le calcul du gradient"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bRstAOS_MP "Coordonne les demandes d activation de la stratégie AOS et l active"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bRstAOS_tiMaxAcv "Désactive la stratégie AOS si la temporisation est dépassé"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bRstAOS_tqIdl "Désactive la correction de l AOS si le couple de coordination ralenti anti-calage < couple de régulation de boite"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bRstAOS_tqMaxCord "Désactive la stratégie AOS si le couple max indiqué est inférieur à un seuil"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bRstAOS_tqRawSmall "Désactive la stratégie AOS si le couple d AOS est petit pendant un nombre successifs d injections"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bSelAOSTran_C "Booléen pour activer le filtrage de la correction à chaque changement d état 0= Filtrage de la correction lors des transitions, 1= Pas de filtrage de la correction lors des transitions"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bSelCdnAOS_C "Booléen pour activer le filtrage de la correction à chaque changement d état 0= Filtrage de la correction lors des transitions, 1= Pas de filtrage de la correction lors des transitions"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bSelStCur_C "Booléen de prise en compte des états calculés par le préventif ou par le curatif"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bSetAOS_MP "Coordonne les demandes de désactivation de la stratégie AOS et la désactive"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bSetAOS_nEngHi "Active la stratégie AOS si le régime moteur est en dessous de la limite haute"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bSetAOS_nEngLo "Active la stratégie AOS si le régime moteur est au dessus de la limite haute"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bSetAOS_tCoMes "Active la stratégie si la température deau est supérieure à un seuil calibrable"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bSetAOS_tiEna_C "0= l état précédent d activation de l AOS n est pas pris en compte, 1= l état précédent d activation de l AOS est pris en compte"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bSetAOS_tqCordChg "Active la stratégie AOS si la variation de couple d entrée est assez importante pour activer l AOS"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bSetAOS_tqIdl "Active la stratégie AOS si le couple de coordination ralenti - anti-calage est inférieur au couple de coordination de relance boite"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bSetAOS_tqRawHi "Active la stratégie AOS si la variation de correction de couple est assez importante pour activer l AOS"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bTqThdCutDynAuth "Condition sur le couple filtré autoriser la coupure dynamique"
+      UBYTE CURDRIVFIL_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_ctIncAcvAOS_irv_MP "Incrément du couple curatif"
+      UWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_ctIncDiAOS_irv_MP "Incrément lors de l augmentation de la pondération final du couple AOS"
+      UWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_ctOfsAcvAOS_M "Offset sur la pondération d activation de l AOS"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 1 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_ctOfsAcvAOS_irv_MP "Incrément lors de la diminution de la pondération final du couple AOS"
+      UWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_ctRstSmallMax_T "Si TqSys_ctRstSmall dépasse cette limite, l AOS est désactivé"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 255 CURDRIVFIL_CM_2 /* :1:0: */ 0 255
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_ctSetHiMax_T "Si la temporisation de confirmation dépasse cette limite, l AOS est activé"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 255 CURDRIVFIL_CM_2 /* :1:0: */ 0 255
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facCnvNFil2_C "Facteur de conversion régime/couple de correction"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 1 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facCor1AOS "Facteur correctif du couple AOS non limité fonction du rapport de boite et du régime moteur"
+      UBYTE CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCor1AOS_M "Facteur correctif sur couple AOS non-limité"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facCor2AOS "Facteur correctif du couple AOS non limité fonction du rapport de boite, de la demande conducteur et de la décélération"
+      UBYTE CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCor2AOS_M "Facteur correctif sur couple AOS non-limité"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facCor3AOS_M "Facteur correctif accélération sur couple AOS non-limité"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facCorAcceAOS_M "Facteur correctif du couple AOS non-limité en accélération"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facCorDeceAOSX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_SWORD_AXIS 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 10 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facCorDeceAOS_M "Facteur correctif du couple AOS non-limité en déccélération"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 10 -2000 2000
+    AXIS_PTS_REF TqSys_facCorDeceAOSX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facCorGlbl_irv_MP "Pondération globale"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facCorIdlPha_irv_MP "Facteur de pondération en phase de ralenti"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCorMaxAOS_C "Correction maximale sur le couple AOS"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facCorMinAOS_C "Correction minimale sur le couple AOS"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facCorOxCHeatPha_irv_MP "Facteur de pondération"
+      SWORD CURDRIVFIL_CM_3 /* :0.0625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCorStabAOS_M "Facteur correctif du couple AOS non-limité en stabilisé"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_15 /* %:0.0078125:0: */ 10 0 100
+    AXIS_PTS_REF TqSys_rAccP_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facNGrdFilChgStDece_C "Facteur de filtrage du filtre passe bas"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_12 /* :0.01:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facOnIdlAOS_M "Pondération de la correction curative lorsque ralenti est actif"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 5 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facOxCHeatAOS_M "Pondération de la correction curative lorsque la chauffe catalyseur est active"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 5 CURDRIVFIL_CM_3 /* :0.0625:0: */ 0 5
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facSelPha3_C "seuil des jeux calculé dans le curatif =0 seuil des jeux calculé dans le préventif = 1"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 1 CURDRIVFIL_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facSelSetAOS_C "0= Condition d activation sur le gradient de régime, 1= Prise en compte des deux conditions, 2= Condtion d activation sur la variation de couple"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 2 CURDRIVFIL_CM_2 /* :1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_facSpd0AOS_irv_MP "Coefficient de régime de map AOS 0"
+      SWORD CURDRIVFIL_CM_13 /* N.m/rpm:0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facSpd1AOS_irv_MP "Coefficient de régime de map AOS 1"
+      SWORD CURDRIVFIL_CM_13 /* N.m/rpm:0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facTq0AOS_irv_MP "Coefficient de couple de map AOS 0"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facTq1AOS_irv_MP "Coefficient de couple de map AOS 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facTq2AOS_irv_MP "Coefficient de couple de map AOS 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facTq3AOS_irv_MP "Coefficient de couple de map AOS 3"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facTqAOS_stManGBx "Pondération de couple AOS pour la boite manuel"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_idxGain_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 5 CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_nChgStDece "Regime utilisé pour le calcul du gradient"
+      SWORD CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_nCkFilMaxInjCutDyn_C "Régime moteur maxi pour autoriser la coupure dynamique"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nCkFilMinInjCutDyn_C "Régime moteur mini pour autoriser la coupure dynamique"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nEngGrdAOS_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_SWORD_AXIS 16000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nEngGrdAOS_M "Seuil de sortie de l état d accélération 3 vers 2"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 16000 CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ -8000 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nEng_AOSAcv_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_nEng_AOSCor_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_nEng_AOSGain_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nEng_AOSGain_T "Table Offset de temporisation min pour passer de l état 3 à l état 2"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 8000 CURDRIVFIL_CM_14 /* rpm/min:0.25:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_nFil1AOS "Sortie du filtre de régime 1"
+      SWORD CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_nFil2AOS_irv_MP "Sortie du filtre de régime 2"
+      SWORD CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_nGrdChgStDeceFil "gradient de régime filtré"
+      SWORD CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_nGrdChgStDece_MP "gradient de régime avant filtrage"
+      SWORD CURDRIVFIL_CM_6 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_nHiSpdAntiStall_T "Régime moteur après lequel l AOS ne peut être activé"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nLoSpdAntiStall_T "Régime moteur sous lequel l AOS ne peut être activé"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 8000 CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noCylCutAuthCord_B "Bypass de TqSys_noCylCutAuthCord"
+      VALUE 0x0 CURDRIVFIL_RL_UBYTE 6 CURDRIVFIL_CM_2 /* :1:0: */ 0 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_noGearAOS_C "Rapport de Boite pour lequel on désactive le curatif"
+      VALUE 0x0 CURDRIVFIL_RL_SBYTE 9 CURDRIVFIL_CM_2 /* :1:0: */ -1 8
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_noGear_AOS_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 8 CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear0_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 0"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear1_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 1"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear2_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 2"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear3_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 3"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear4_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 4"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear5_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 5"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear6_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 6"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear7_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 7"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf1_noGear8_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 8"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear0_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 1 pour le rapport 0"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear1_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 1"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear2_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 2"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear3_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 3"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear4_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 4"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear5_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 5"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear6_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 6"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear7_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 7"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf2_noGear8_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 2 pour le rapport 8"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear0_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 0"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear1_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 1"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear2_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 2"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear3_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 3"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear4_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 4"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear5_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 5"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear6_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 6"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear7_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 7"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_prm_AOSCf3_noGear8_M "Cartographie des 6 paramètres de filtrage sur toute la plage de régime en configuration 3 pour le rapport 8"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 6 1 6
+    AXIS_PTS_REF TqSys_idxGain_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[0] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[1] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[2] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[3] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[4] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf1[5] "Vecteur de paramètres de filtrage curatif en configuration 1"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[0] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[1] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[2] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[3] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[4] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_prm_AOSConf2[5] "Vecteur de paramètres de filtrage curatif en configuration 2"
+      SWORD CURDRIVFIL_CM_5 /* :0.0009765625:: */ 1 0 -2 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_prm_AOSConf3_B "Paramètre 0 du vecteur de filtrage en configuration 3"
+      VAL_BLK 0x0 CURDRIVFIL_RL_SWORD 4 CURDRIVFIL_CM_5 /* :0.0009765625:0: */ -2 2
+    MATRIX_DIM 6 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rAccPEngTrvThdRst_C "Seuil de pédale d accélération pour inhiber la coupure séléctive"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 100 CURDRIVFIL_CM_15 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rAccPEngTrvThd_C "Seuil de pédale d accélération pour inhiber la coupure séléctive"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 100 CURDRIVFIL_CM_15 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_rAccP_AOS_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_UWORD_AXIS 100 CURDRIVFIL_CM_15 /* %:0.0078125:0: */ 10 0 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_spdLimAOS_C "Vitesse véhicule minimum pour pouvoir activer le curatif en rapport 0"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 500 CURDRIVFIL_CM_16 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_spdMinAOS_C "Vitesse véhicule minimum sous laquelle l AOS est désactivé / Vehicle speed min under which the AOS is disabled"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 500 CURDRIVFIL_CM_16 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_stAcceAOS_irv_MP "Etat de l accélération"
+      UBYTE CURDRIVFIL_CM_17 /* FT_enumeration1:((1=DECELERATION)(2=ACCELERATION_AU_DESSUS_DES_JEUX)(3=ACCELERATION_EN_DESSOUS_DES_JEUX)) */ 1 0 1 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tCoMesMinAOS_C "Seuil de température deau au dessus de laquelle la fonction AOS est active"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 254 CURDRIVFIL_CM_18 /* degC:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tCoMesMinInjCutDyn_C "Température d eau mini pour autoriser coupure dynamique"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 254 CURDRIVFIL_CM_19 /* deg C:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiAOSCorrMaxMem "Durée entre le point maxi du curatif et le déclenchement de coupure"
+      UWORD CURDRIVFIL_CM_20 /* ms:1:0: */ 1 0 1 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiAOSCorrMaxMemWgh_T "Pondération de la temporisation entre maxi curatif et coupure"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 3 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqCkDeceIni CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_CutDynWgh_tq_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiAOSCorrMaxMem_M "Valeur de base de temporisation entre maxi curatif et coupure"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 4000 CURDRIVFIL_CM_20 /* ms:1:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_CutDyn_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiAOSCur_MP "Temps d activation de l AOS"
+      ULONG CURDRIVFIL_CM_8 /* s:0.001:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiCkRawAOSFil_T "Durée de la transition lors d un changement d état"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 1 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiDlyOnFil_M "Temps avant la désacivation du curatif sur rapport nul"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 2 CURDRIVFIL_CM_8 /* s:0.001:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSGain_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiDurSlopOffFil_M "Durée de l incrément de la pondération de désactivation AOS"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 1 CURDRIVFIL_CM_8 /* s:0.001:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiDurSlopOnFil_M "Durée de l incrément de la pondération de l activation AOS"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 1 CURDRIVFIL_CM_8 /* s:0.001:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSCor_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiMaxRstAOS_C "Saturation haute du temps calculé d activation de l AOS"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 100 CURDRIVFIL_CM_23 /* s:0.1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiMaxRstAOS_M "Utilisé dans le calcul du temps de reset maximal"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 100 CURDRIVFIL_CM_23 /* s:0.1:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiOffThrInjCutDyn "Durée entre le début de pied levé et l autorisation de coupure"
+      UWORD CURDRIVFIL_CM_20 /* ms:1:0: */ 1 0 1 4000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiOffThrInjCutDynWgh_T "Pondération de la temporisation pied levé"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 3 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqCkDeceIni CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_CutDynWgh_tq_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiOffThrInjCutDyn_M "Valeur de base pour temporisation pied levé"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 4000 CURDRIVFIL_CM_20 /* ms:1:0: */ 0 4000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_CutDyn_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiSt1 "temporisation pour passer de l état 1 à 3"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiSt1Acce "temporisation pour passer de l état 1 à 3"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiSt1Acce_C "temporisation pour passer de l état 1 à 3"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiSt1Max "temporisation max de l état 1 à 2"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiSt1Max_C "temporisation max de l état 1 à 2"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiSt1Min "temporisation min de l état 1 à 2"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiSt1MinTq_T "Vecteur de pondération fonction du couple init de la temporisation min pour passer"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 2 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqCkDeceIni_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiSt1Min_M "temporisation min pour passer de l état 1 à l état 2"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiSt3 "temporisation pour passer de l état 3 à 1"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiSt3Dece "temporisation pour passer de l état 3 à 1"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiSt3Dece_C "temporisation pour passer de l état 3 à 1"
+      VALUE 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiSt3Max "temporisation max pour passer de l état 3 à 2"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiSt3Min "temporisation min pour passer de l état 3 à 2"
+      UWORD CURDRIVFIL_CM_22 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiSt3NGear_M "temporisation min pour passer de l état 3 à l état 2"
+      MAP 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiSt3Ofs_T "Offset de temporisation min pour passer de l état 3 à l état 2"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 10 CURDRIVFIL_CM_22 /* s:0.01:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiSt3Tq_T "Vecteur de pondération fonction du couple conducteur de la temporisation min pour passer de l état 3 à l état 2"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 2 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqAOSCorrMinThd "Amplitude mini du curatif pour autorisation de coupure dynamique"
+      SWORD CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqAOSCorrMinThdWgh_T "Pondération du seuil mini curatif pour autorisation coupure dynamique"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 3 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqCkDeceIni CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_CutDynWgh_tq_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqAOSCorrMinThd_M "Valeur de base du seuil mini curatif pour autorisation coupure dynamique"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_CutDyn_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqAOSThd_tqMem_M "seuil de couple curatif pour enclencher la coupure dynamique"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 10 -2000 2000
+    AXIS_PTS_REF TqSys_CutDyn_tqMemX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkAOSCorAuth "Correction de couple curatif pour coupure dynamique"
+      SWORD CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkAOSCorMaxMem "Correction curatif maxi mémorisée"
+      SWORD CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkAOSCor_B "Bypass de TqSys_tqCkAOSCor"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqCkDeceIni_AOS_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_SWORD_AXIS 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcMinCutDyn_M "Valeur de base du couple mini pour autoriser la coupure"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_CutDyn_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkFilRawAOS_irv_MP "couple de correction du régulateur de curatif brut"
+      SWORD CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkRawAOS "Couple limité et corrigé de l AOS"
+      SWORD CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqDeltaAcceCur_C "Offset de couple pour détecter l accélération quand le couple est supérieur à un seuil absolu"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaAcceCur_M "Seuil de détection de l état accélération"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaAcceCur_T "Vecteur de couple conducteur pour la détection de l état accélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaDeceCur_C "Offset de couple pour détecter la décélération quand le couple est supérieur à un seuil absolu"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaDeceCur_M "Seuil de détection de l état décélération"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaDeceCur_T "Vecteur de couple init pour la détection de l état décélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqCkDeceIni_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEfcFilMaxCutDynWgh_T "Pondération du couple maxi pour autoriser la coupure"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 3 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqCkDeceIni CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_CutDynWgh_tq_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEfcFilMaxCutDyn_M "Valeur de base du couple maxi pour autoriser la coupure"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_9 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqSys_CutDyn_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_CutDyn_noGearY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqEfcFilMinCutDynWgh_T "Pondération du couple mini pour autoriser la coupure"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 3 CURDRIVFIL_CM_21 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_tqCkDeceIni CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_CutDynWgh_tq_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqGearHiClrCross_T "Valeur de couple curatif (correction) max au dessus de laquelle la fonction curative est activée en accélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqGearSmlClrCross_T "Valeur de couple curatif (correction) mini en dessous de laquelle la fonction curative est inhibée en accélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqGrdAOS_T "Vecteur de couple conducteur pour le calcul du seuil de transition de l état 3 à l état 2"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHiAOS_M "Valeur de couple curatif (correction) max au dessus de laquelle la fonction curative est activée en stabilisé"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHiAOS_T "Pondération de la valeur de correction max fonction du couple conducteur en dessous de laquelle la fonction curative est activée en stabilisé"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHiClrCross_T "Pondération de la valeur de correction max fonction du couple conducteur en dessous de laquelle la fonction curative est activée en accélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHiDece_M "Valeur de couple curatif (correction) max au dessus de laquelle la fonction curative est activée en décélération"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHiDece_T "Pondération de la valeur de correction max fonction du couple conducteur en dessous de laquelle la fonction curative est inhibée en décélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqCkDeceIni_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdCordMaxThd_C "Seuil de couple indiqué limité sous lequel l AOS est désactivé"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqLimEM_AOS_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CURDRIVFIL_RL_SWORD_AXIS 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqMaxAOS_T "Couple maximum de la correction AOS fonction du rapport engagé"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqMaxIdlAOS_T "Couple de ralenti maxi au dela duquel le ralenti est considéré comme actif"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqMaxSafety_C "Vecteur de couple maximum définit pour des besoins safety"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqMinAOS_T "Vecteur de couple minimum de la correction AOS fonction du rapport engagé"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsClrCross_M "Offset de couple sur la valeur du seuil des jeux"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_nEngGrdAOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqRawMaxAOS_T "Couple de l AOS limité maxi"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqRstAOS_nIdl_C "Offset de couple compris entre le couple de ralenti et le couple conducteur filtré sous lequel le ralenti est considéré comme activé"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetAOS_nIdl_C "Offset de couple compris entre le couple de ralenti et le couple conducteur filtré sous lequel le ralenti est considéré comme desactivé"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetChgClrCrossAOS_T "Variation minimum du couple indiqué limité pour lequel l AOS est activé durant la phase de traversée des jeux"
+      CURVE 0x0 CURDRIVFIL_RL_UWORD 50 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 0 50
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetCordChgAOS_M "Variation minimum du couple indiqué limité pour lequel l AOS est activé"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetCordChgAOS_T "Pondération pour la variation minimum de couple indiqué limité pour lequel l AOS est activé durant la phase de stabilisé"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetCordChgDeceAOS_M "Variation minimum du couple indiqué limité pour lequel l AOS est activé durant la phase de décélération"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSetCordChgDeceAOS_T "Pondération pour la variation minimum de couple indiqué limité pour lequel l AOS est activé durant la phase de décélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqCkDeceIni_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSmlAOS_M "Valeur de couple curatif (correction) mini en dessous de laquelle la fonction curative est inhibée"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSmlAOS_T "Pondération de la valeur de correction mini fonction du couple conducteur en dessous de laquelle la fonction curative est inhibée en stabilisé"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSmlClrCross_T "Pondération de la valeur de correction mini fonction du couple conducteur en dessous de laquelle la fonction curative est inhibée en accélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqLimEM_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSmlDece_M "Valeur de couple curatif (correction) mini en dessous de laquelle la fonction curative est inhibée en décélération"
+      MAP 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_2 /* :1:0: */ 9 0 8
+    AXIS_PTS_REF TqSys_noGear_AOS_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_4 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqSys_nEng_AOSAcv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqSmlDece_T "Pondération de la valeur de correction mini fonction du couple conducteur en dessous de laquelle la fonction curative est inhibée en décélération"
+      CURVE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ 5 -2000 2000
+    AXIS_PTS_REF TqSys_tqCkDeceIni_AOS_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdDeltaAcceCur_C "Seuil de couple définissant le couple de détéction de l accélération"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqThdDeltaDeceCur_C "Seuil de couple définissant le couple de détéction de la décélération"
+      VALUE 0x0 CURDRIVFIL_RL_SWORD 4000 CURDRIVFIL_CM_11 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CURDRIVFIL_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD CURDRIVFIL_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF CURDRIVFIL_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB CURDRIVFIL_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD CURDRIVFIL_CM_2 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_3 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_4 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_5 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_6 "conversion_method"
+
+RAT_FUNC "%.1" "rpm/s"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_7 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF CURDRIVFIL_CV_7
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB CURDRIVFIL_CV_7 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "DETECTION_INACTIF"
+	 1 "DETECTION_EN_COURS"
+	 2 "DETECTION_EFFECIF"
+	 3 "FIN_DE_DETECTION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD CURDRIVFIL_CM_8 "conversion_method"
+
+RAT_FUNC "%.3" "s"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_9 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_10 "conversion_method"
+
+RAT_FUNC "%.0" "Nm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_11 "conversion_method"
+
+RAT_FUNC "%.2" "N.m"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_12 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_13 "conversion_method"
+
+RAT_FUNC "%.4" "N.m/rpm"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_14 "conversion_method"
+
+RAT_FUNC "%.1" "rpm/min"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_15 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_16 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF CURDRIVFIL_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB CURDRIVFIL_CV_17 "conversion_vtab"
+
+    TAB_VERB 3
+	 1 "DECELERATION"
+	 2 "ACCELERATION_AU_DESSUS_DES_JEUX"
+	 3 "ACCELERATION_EN_DESSOUS_DES_JEUX"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD CURDRIVFIL_CM_18 "conversion_method"
+
+RAT_FUNC "%.0" "degC"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_19 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_20 "conversion_method"
+
+RAT_FUNC "%.0" "ms"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_21 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_22 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CURDRIVFIL_CM_23 "conversion_method"
+
+RAT_FUNC "%.1" "s"
+COEFFS 0 10 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION CURDRIVFIL_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	CURDRIVFIL_ACTIVE_BYP_C
+	TqClrCros_bAcvClrCross_B
+	TqClrCros_bSelDetClrTyp_C
+	TqClrCros_facFiltGrdNEng_M
+	TqClrCros_facScale_C
+	TqClrCros_stDetClr_B
+	TqClrCros_tiMaxDetClr_M
+	TqClrCros_tqClrAcv_M
+	TqClrCros_tqOffSetClrAcv_C
+	TqClrCros_valCurHystDetClr_M
+	TqClrCros_valCurThdDetClr_M
+	TqSys_aFilEngMaxThd_C
+	TqSys_bAOSAcv_B
+	TqSys_bAOSIdlEna_C
+	TqSys_bAOSSlopAcv_C
+	TqSys_bAOS_tiMaxEna_C
+	TqSys_bCorManGBx_C
+	TqSys_bCorSel_ChgStDece_C
+	TqSys_bDetClrCrossAcvCur_C
+	TqSys_bDiAOS_C
+	TqSys_bDiInjCutDyn_C
+	TqSys_bDisNEngEna_C
+	TqSys_bInjCutDynReq_B
+	TqSys_bNSel_ChgStDece_C
+	TqSys_bSelAOSTran_C
+	TqSys_bSelCdnAOS_C
+	TqSys_bSelStCur_C
+	TqSys_bSetAOS_tiEna_C
+	TqSys_ctOfsAcvAOS_M
+	TqSys_ctRstSmallMax_T
+	TqSys_ctSetHiMax_T
+	TqSys_facCnvNFil2_C
+	TqSys_facCor1AOS_M
+	TqSys_facCor2AOS_M
+	TqSys_facCor3AOS_M
+	TqSys_facCorAcceAOS_M
+	TqSys_facCorDeceAOS_M
+	TqSys_facCorMaxAOS_C
+	TqSys_facCorMinAOS_C
+	TqSys_facCorStabAOS_M
+	TqSys_facNGrdFilChgStDece_C
+	TqSys_facOnIdlAOS_M
+	TqSys_facOxCHeatAOS_M
+	TqSys_facSelPha3_C
+	TqSys_facSelSetAOS_C
+	TqSys_nCkFilMaxInjCutDyn_C
+	TqSys_nCkFilMinInjCutDyn_C
+	TqSys_nEngGrdAOS_M
+	TqSys_nEng_AOSGain_T
+	TqSys_nHiSpdAntiStall_T
+	TqSys_nLoSpdAntiStall_T
+	TqSys_noCylCutAuthCord_B
+	TqSys_noGearAOS_C
+	TqSys_prm_AOSCf1_noGear0_M
+	TqSys_prm_AOSCf1_noGear1_M
+	TqSys_prm_AOSCf1_noGear2_M
+	TqSys_prm_AOSCf1_noGear3_M
+	TqSys_prm_AOSCf1_noGear4_M
+	TqSys_prm_AOSCf1_noGear5_M
+	TqSys_prm_AOSCf1_noGear6_M
+	TqSys_prm_AOSCf1_noGear7_M
+	TqSys_prm_AOSCf1_noGear8_M
+	TqSys_prm_AOSCf2_noGear0_M
+	TqSys_prm_AOSCf2_noGear1_M
+	TqSys_prm_AOSCf2_noGear2_M
+	TqSys_prm_AOSCf2_noGear3_M
+	TqSys_prm_AOSCf2_noGear4_M
+	TqSys_prm_AOSCf2_noGear5_M
+	TqSys_prm_AOSCf2_noGear6_M
+	TqSys_prm_AOSCf2_noGear7_M
+	TqSys_prm_AOSCf2_noGear8_M
+	TqSys_prm_AOSCf3_noGear0_M
+	TqSys_prm_AOSCf3_noGear1_M
+	TqSys_prm_AOSCf3_noGear2_M
+	TqSys_prm_AOSCf3_noGear3_M
+	TqSys_prm_AOSCf3_noGear4_M
+	TqSys_prm_AOSCf3_noGear5_M
+	TqSys_prm_AOSCf3_noGear6_M
+	TqSys_prm_AOSCf3_noGear7_M
+	TqSys_prm_AOSCf3_noGear8_M
+	TqSys_prm_AOSConf3_B
+	TqSys_rAccPEngTrvThdRst_C
+	TqSys_rAccPEngTrvThd_C
+	TqSys_spdLimAOS_C
+	TqSys_spdMinAOS_C
+	TqSys_tCoMesMinAOS_C
+	TqSys_tCoMesMinInjCutDyn_C
+	TqSys_tiAOSCorrMaxMemWgh_T
+	TqSys_tiAOSCorrMaxMem_M
+	TqSys_tiCkRawAOSFil_T
+	TqSys_tiDlyOnFil_M
+	TqSys_tiDurSlopOffFil_M
+	TqSys_tiDurSlopOnFil_M
+	TqSys_tiMaxRstAOS_C
+	TqSys_tiMaxRstAOS_M
+	TqSys_tiOffThrInjCutDynWgh_T
+	TqSys_tiOffThrInjCutDyn_M
+	TqSys_tiSt1Acce_C
+	TqSys_tiSt1Max_C
+	TqSys_tiSt1MinTq_T
+	TqSys_tiSt1Min_M
+	TqSys_tiSt3Dece_C
+	TqSys_tiSt3NGear_M
+	TqSys_tiSt3Ofs_T
+	TqSys_tiSt3Tq_T
+	TqSys_tqAOSCorrMinThdWgh_T
+	TqSys_tqAOSCorrMinThd_M
+	TqSys_tqAOSThd_tqMem_M
+	TqSys_tqCkAOSCor_B
+	TqSys_tqCkEfcMinCutDyn_M
+	TqSys_tqDeltaAcceCur_C
+	TqSys_tqDeltaAcceCur_M
+	TqSys_tqDeltaAcceCur_T
+	TqSys_tqDeltaDeceCur_C
+	TqSys_tqDeltaDeceCur_M
+	TqSys_tqDeltaDeceCur_T
+	TqSys_tqEfcFilMaxCutDynWgh_T
+	TqSys_tqEfcFilMaxCutDyn_M
+	TqSys_tqEfcFilMinCutDynWgh_T
+	TqSys_tqGearHiClrCross_T
+	TqSys_tqGearSmlClrCross_T
+	TqSys_tqGrdAOS_T
+	TqSys_tqHiAOS_M
+	TqSys_tqHiAOS_T
+	TqSys_tqHiClrCross_T
+	TqSys_tqHiDece_M
+	TqSys_tqHiDece_T
+	TqSys_tqIdCordMaxThd_C
+	TqSys_tqMaxAOS_T
+	TqSys_tqMaxIdlAOS_T
+	TqSys_tqMaxSafety_C
+	TqSys_tqMinAOS_T
+	TqSys_tqOfsClrCross_M
+	TqSys_tqRawMaxAOS_T
+	TqSys_tqRstAOS_nIdl_C
+	TqSys_tqSetAOS_nIdl_C
+	TqSys_tqSetChgClrCrossAOS_T
+	TqSys_tqSetCordChgAOS_M
+	TqSys_tqSetCordChgAOS_T
+	TqSys_tqSetCordChgDeceAOS_M
+	TqSys_tqSetCordChgDeceAOS_T
+	TqSys_tqSmlAOS_M
+	TqSys_tqSmlAOS_T
+	TqSys_tqSmlClrCross_T
+	TqSys_tqSmlDece_M
+	TqSys_tqSmlDece_T
+	TqSys_tqThdDeltaAcceCur_C
+	TqSys_tqThdDeltaDeceCur_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CurDriv_ModuleVersion_Major_MP
+	CurDriv_ModuleVersion_Minor_MP
+	TqClrCros_bA0ThdCros
+	TqClrCros_bClrAcv
+	TqClrCros_deltaGrdNEngFilt
+	TqClrCros_deltaTqCorCur
+	TqClrCros_facCurDetClr_MP
+	TqClrCros_facFiltGrdNEng
+	TqClrCros_grdNEngFilt
+	TqClrCros_grdNEngFiltDly
+	TqClrCros_tiDetClr
+	TqClrCros_tiMaxDetClr
+	TqClrCros_tqThdClrDet
+	TqClrCros_valCurDetClr
+	TqClrCros_valCurHystDetClr
+	TqClrCros_valCurThdDetClr
+	TqSys_AOSGrd_MP
+	TqSys_bAOSPrev_bAcv
+	TqSys_bAOSSlopAcv_irv_MP
+	TqSys_bAcceClrCrossCord
+	TqSys_bAcceDetCord
+	TqSys_bAcceDetCur
+	TqSys_bDeceDetCord
+	TqSys_bDeceDetCur
+	TqSys_bInjCutDynAuthDly_MP
+	TqSys_bInjCutDynCondAuth
+	TqSys_bInjCutDynCondDi_MP
+	TqSys_bInjCutDynCondEna
+	TqSys_bNGrdFil
+	TqSys_bRstAOS_MP
+	TqSys_bRstAOS_tiMaxAcv
+	TqSys_bRstAOS_tqIdl
+	TqSys_bRstAOS_tqMaxCord
+	TqSys_bRstAOS_tqRawSmall
+	TqSys_bSetAOS_MP
+	TqSys_bSetAOS_nEngHi
+	TqSys_bSetAOS_nEngLo
+	TqSys_bSetAOS_tCoMes
+	TqSys_bSetAOS_tqCordChg
+	TqSys_bSetAOS_tqIdl
+	TqSys_bSetAOS_tqRawHi
+	TqSys_bTqThdCutDynAuth
+	TqSys_ctIncAcvAOS_irv_MP
+	TqSys_ctIncDiAOS_irv_MP
+	TqSys_ctOfsAcvAOS_irv_MP
+	TqSys_facCor1AOS
+	TqSys_facCor2AOS
+	TqSys_facCorGlbl_irv_MP
+	TqSys_facCorIdlPha_irv_MP
+	TqSys_facCorOxCHeatPha_irv_MP
+	TqSys_facSpd0AOS_irv_MP
+	TqSys_facSpd1AOS_irv_MP
+	TqSys_facTq0AOS_irv_MP
+	TqSys_facTq1AOS_irv_MP
+	TqSys_facTq2AOS_irv_MP
+	TqSys_facTq3AOS_irv_MP
+	TqSys_facTqAOS_stManGBx
+	TqSys_nChgStDece
+	TqSys_nFil1AOS
+	TqSys_nFil2AOS_irv_MP
+	TqSys_nGrdChgStDeceFil
+	TqSys_nGrdChgStDece_MP
+	TqSys_prm_AOSConf1[0]
+	TqSys_prm_AOSConf1[1]
+	TqSys_prm_AOSConf1[2]
+	TqSys_prm_AOSConf1[3]
+	TqSys_prm_AOSConf1[4]
+	TqSys_prm_AOSConf1[5]
+	TqSys_prm_AOSConf2[0]
+	TqSys_prm_AOSConf2[1]
+	TqSys_prm_AOSConf2[2]
+	TqSys_prm_AOSConf2[3]
+	TqSys_prm_AOSConf2[4]
+	TqSys_prm_AOSConf2[5]
+	TqSys_stAcceAOS_irv_MP
+	TqSys_tiAOSCorrMaxMem
+	TqSys_tiAOSCur_MP
+	TqSys_tiOffThrInjCutDyn
+	TqSys_tiSt1
+	TqSys_tiSt1Acce
+	TqSys_tiSt1Max
+	TqSys_tiSt1Min
+	TqSys_tiSt3
+	TqSys_tiSt3Dece
+	TqSys_tiSt3Max
+	TqSys_tiSt3Min
+	TqSys_tqAOSCorrMinThd
+	TqSys_tqCkAOSCorAuth
+	TqSys_tqCkAOSCorMaxMem
+	TqSys_tqCkFilRawAOS_irv_MP
+	TqSys_tqCkRawAOS
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE CurDrivFil ------------------------------------*/

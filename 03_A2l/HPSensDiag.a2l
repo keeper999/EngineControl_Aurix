@@ -1,0 +1,889 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : HPSensDiag                                              */
+/* !Description     : Functional diagnosis of HP Sensor                       */
+/*                                                                            */
+/* !Module          : HPSensDiag                                              */
+/*                                                                            */
+/* !File            : HPSensDiag.a2l                                          */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Oct 17 18:16:02 2013                              */
+/*   Model name       : HPSensDiag_Autocode.mdl                               */
+/*   Model version    : 1.418                                                 */
+/*   Root subsystem   : /HPSensDiag                                           */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FU/HPSENSDIAG/HPSensDiag.a2v    $*/
+/* $Revision::   1.8                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   21 Oct 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   HPSensDiag
+    /*   LongIdentifier */   "HPSensDiag Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPSensDiag_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailDifNegThd_T
+       /*   LongIdentifier */   "Seuil  (négatif) de différence de pression rail pour detecter un défaut de cohérence"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_1
+       /*   LowerLimit     */   -5.1199218750000006E+002
+       /*   UpperLimit     */   0.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   Fu_mFuDifBtwSpl
+          /*   Conversion     */   HPSensDiag_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -488.28125
+          /*   UpperLimit     */   7812.5
+          AXIS_PTS_REF             Fu_mFuDifBtwSpl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_rFuEngMinHPSensThd_C
+       /*   LongIdentifier */   "Minimun engine speed to authorize the sensor diagnosis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuDifHPSensDiagThd_C
+       /*   LongIdentifier */   "Seuil de différence entre la pression rail mesurée et la pression de consigne précédente pour activation du diag"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailDifPosThd_T
+       /*   LongIdentifier */   "Seuil  (positif) de différence de pression rail pour detecter un défaut de cohérence"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPSensDiag_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -488.28125
+          /*   UpperLimit     */   7812.5
+          AXIS_PTS_REF             Fu_mFuDifBtwSpl_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailGrdHPSensDiag_C
+       /*   LongIdentifier */   "Gradient de pression rail mesurée pour au delà duquel on il n'y a pas de défaut capteur HP figé"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailMaxHPSensThd_C
+       /*   LongIdentifier */   "Seuil de pression rail maximale pour autoriser le diagnostic"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailMinHPSensThd_C
+       /*   LongIdentifier */   "Seuil de pression rail minimale pour autoriser le diagnostic"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailThdMax_C
+       /*   LongIdentifier */   "Seuil de pression rail maximal"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuRailThdMin_C
+       /*   LongIdentifier */   "Seuil de pression rail minimum"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuReqGrdHPSensDiagThd_C
+       /*   LongIdentifier */   "Seuil de gradient de consigne de pression rail pour lancer le diagnostic capteur HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_pFuReqThdBdVal_C
+       /*   LongIdentifier */   "Seuil de la différence de consigne de pression rail mémorisée et la consigne courante"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_mFuDifThdMin_C
+       /*   LongIdentifier */   "Seuil en différence de masse de carburant pour activation du diagnostic du capteur de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_mFuInjMinHPSensThd_C
+       /*   LongIdentifier */   "Seuil de masse injectée minimale pour autoriser le diagnostic"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Fu_tiPFuRailStabHPSensDiagDly_C
+       /*   LongIdentifier */   "Durée pour calculer le gradient de consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   HPSENSDIAG_u8Inhib
+       /*   LongIdentifier */   "Inhibition Mechanism for HPSensDiag"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPSensDiag_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   Fu_mFuDifBtwSpl_A
+       /*   LongIdentifier */   "Table de points d'appui pour Fu_mFuDifBtwSpl"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   Fu_mFuDifBtwSpl
+       /*   Deposit        */   HPSensDiag_RL_Lookup1D_X_LONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPSensDiag_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -488.28125
+       /*   UpperLimit     */   7812.5
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_mFuDifBtwSpl
+       /*   LongIdentifier     */   "Différence de masse de carburant (pompé et injecté) entre les deux derniers spill events"
+       /*   Datatype           */   SLONG
+       /*   Conversion         */   HPSensDiag_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -488.28125
+       /*   UpperLimit         */   7812.5
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqPrev
+       /*   LongIdentifier     */   "Consigne de pression rail au pas précédent"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailHPSensDiagMem
+       /*   LongIdentifier     */   "Mémorisation de la mesure de la pression rail"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuRailGrdHPSensDiag
+       /*   LongIdentifier     */   "Gradient de pression rail pour lancer le diagnostic capteur HP"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqDiagMem
+       /*   LongIdentifier     */   "Mémorisation de la consigne de pression rail"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqGrdHPSensDiag
+       /*   LongIdentifier     */   "Gradient de consigne de pression rail pour lancer le diagnostic capteur HP"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqPrevIni
+       /*   LongIdentifier     */   "Initial required rail pressure of the previous time step"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_mFuInjBtwEveSpl
+       /*   LongIdentifier     */   "Masse de carburant injectée mise à jour sur évènement injection"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuReqGrdHPSensDiagRaw
+       /*   LongIdentifier     */   "Gradient de consigne de pression rail pour lancer le diagnostic capteur HP (brut)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -256.0
+       /*   UpperLimit         */   2.5599218750000003E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_pFuDifHPSensDiag
+       /*   LongIdentifier     */   "Ecart entre la pression rail mesurée et la consigne précédente de pression rail"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   HPSensDiag_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -256.0
+       /*   UpperLimit         */   2.5599218750000003E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_tiPFuRailStabHPSensDiagDly
+       /*   LongIdentifier     */   "Durée pour calculer le gradient de consigne de pression rail"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   HPSensDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   500.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvPFuRailSenDiag
+       /*   LongIdentifier     */   "Booléen indiquant que les condition d'activation du diagnostic du capteur de pression rail sont atteintes"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bMonRunCoh_HPSens
+       /*   LongIdentifier     */   "Activation of the coherency diagnostic of the rail pressure sensor"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bDgoCoh_HPSens
+       /*   LongIdentifier     */   "Result of the coherency diagnosis on the rail pressure sensor"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bPFuRailStabHPSensDiag_prev
+       /*   LongIdentifier     */   "Valeur précédente du booléen idiquant que la pression rail doit être stabilisée depuis le changment de consigne"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvStuck_HPSens_prev
+       /*   LongIdentifier     */   "Valeur précédente du booléen d'activation du diagnostic pression rail figé testant le retour de cette pression à sa valeur initiale"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bRawDgoStuck_HPSens
+       /*   LongIdentifier     */   "Diagnostic du capteur HP figé"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bPFuRailStabHPSensDiag
+       /*   LongIdentifier     */   "Booléen idiquant que la pression rail doit être stabilisée depuis le changment de consigne"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bMonRunStuck_HPSens
+       /*   LongIdentifier     */   "Booléen d'activation du diagnostic capteur HP figé"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvStuck_HPSens
+       /*   LongIdentifier     */   "Booléen d'activation du diagnostic pression rail figé testant le retour de cette pression à sa valeur initiale"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bDgoStuck_HPSens
+       /*   LongIdentifier     */   "Résultat du diagnostic capteur HP figé"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bAcvHPSensDiag_pFuRailCond
+       /*   LongIdentifier     */   "Booléen d'activation du diagnostic pression rail figé sur les conditions de Pression Rail mesurée"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Fu_bCondDiag_HPSens
+       /*   LongIdentifier     */   "Booléen indiquant que la temporisation avant activation du diagnostic capteur HP figé peut être lancée"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPSensDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_1
+       /*   LongIdentifier */   "Q = (V+511.9921875)*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 65535 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_2
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_3
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_4
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_5
+       /*   LongIdentifier */   "Q = V*50"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 50 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPSensDiag_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            HPSensDiag_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   HPSensDiag_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   HPSensDiag
+       /*   LongIdentifier */   "PTS_DOC_5060514_05"
+
+       /begin DEF_CHARACTERISTIC
+          Fu_mFuDifBtwSpl_A
+          Fu_mFuDifThdMin_C
+          Fu_mFuInjMinHPSensThd_C
+          Fu_pFuDifHPSensDiagThd_C
+          Fu_pFuRailDifNegThd_T
+          Fu_pFuRailDifPosThd_T
+          Fu_pFuRailGrdHPSensDiag_C
+          Fu_pFuRailMaxHPSensThd_C
+          Fu_pFuRailMinHPSensThd_C
+          Fu_pFuRailThdMax_C
+          Fu_pFuRailThdMin_C
+          Fu_pFuReqGrdHPSensDiagThd_C
+          Fu_pFuReqThdBdVal_C
+          Fu_rFuEngMinHPSensThd_C
+          Fu_tiPFuRailStabHPSensDiagDly_C
+          HPSENSDIAG_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Fu_bAcvHPSensDiag_pFuRailCond
+          Fu_bAcvPFuRailSenDiag
+          Fu_bAcvStuck_HPSens
+          Fu_bAcvStuck_HPSens_prev
+          Fu_bCondDiag_HPSens
+          Fu_bDgoCoh_HPSens
+          Fu_bDgoStuck_HPSens
+          Fu_bMonRunCoh_HPSens
+          Fu_bMonRunStuck_HPSens
+          Fu_bPFuRailStabHPSensDiag
+          Fu_bPFuRailStabHPSensDiag_prev
+          Fu_bRawDgoStuck_HPSens
+          Fu_mFuDifBtwSpl
+          Fu_mFuInjBtwEveSpl
+          Fu_pFuDifHPSensDiag
+          Fu_pFuRailGrdHPSensDiag
+          Fu_pFuRailHPSensDiagMem
+          Fu_pFuReqDiagMem
+          Fu_pFuReqGrdHPSensDiag
+          Fu_pFuReqGrdHPSensDiagRaw
+          Fu_pFuReqPrev
+          Fu_pFuReqPrevIni
+          Fu_tiPFuRailStabHPSensDiagDly
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

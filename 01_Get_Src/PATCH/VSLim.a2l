@@ -1,0 +1,1549 @@
+/begin MODULE  VSLim "VSLim 12.0"
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMaxAbs_A "Axis description"
+      0x0 VSCtl_aVehReq VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMaxCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMinAbs_A "Axis description"
+      0x0 VSCtl_aVehReq VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMinCvg_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMxTra1Y_A "Axis description"
+      0x0 VSCtl_aVehReq VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aJrkVehVSLimSatMxTra2Y_A "Axis description"
+      0x0 VSCtl_aVehReq VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehMaxSpdVehVSLimReq_C "Acceleration max de la consigne de vitesse vehicule"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehMinSpdVehVSLimReq_C "Acceleration min de la consigne de vitesse vehicule"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehPotOftVSLimReq_M "Offset du potentiel d acceleration vehicule LVV brute"
+      MAP 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spd_aVehPotOftVSLimReqX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_aVehPotOftVSLimRqY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehPotVSLimReqOft "Offset du potentiel d acceleration vehicule LVV brute"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotVSLimReqRaw "Consigne de potentiel d acceleration vehicule LVV brute"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehPotVSLimReq_B "Bypass de VSCtl_aVehPotVSLimReq"
+      VALUE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_aVehReq_tiCfmSupVSLimX_A "Axis description"
+      0x0 VSCtl_aVehPotVSLimReq VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aVehSpdCtlGain1VSLimX_A "Axis description"
+      0x0 VSCtl_aVehPTMax VSLIM_RL_SWORD_AXIS 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimDynStbMax_C "Acceleration vehicule max en stabilise LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimDynStbMin_C "Acceleration vehicule min en stabilise LVV"
+      VALUE 0x0 VSLIM_RL_SWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqMax "Gabarit acceleration max"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqMin "Gabarit acceleration min"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqRaw "Consigne acceleration vehicule brute"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMax "Saturation max consigne acceleration vehicule"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMaxAbs "Saturation max consigne acceleration vehicule (absolu)"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReqSatMaxAbs_M "Cartographie 2D d’acceleration vehicule max absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSLimReqFil VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSLimSatMaxAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSLimSatMxAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMaxApl "Saturation max appliquee consigne acceleration vehicule LVV"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMaxCft "Saturation max consigne acceleration vehicule (confort)"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReqSatMaxCft_M "Cartographie 2D d’acceleration vehicule max confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSLimReqFil VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSLimSatMxCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSLimSatMxCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMin "Saturation min consigne acceleration vehicule"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMinAbs "Saturation min consigne acceleration vehicule (absolu)"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReqSatMinAbs_M "Cartographie 2D d’acceleration vehicule min absolu fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSLIM_RL_SWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSLimReqFil VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSLimSatMinAbsX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSLimSatMnAbsY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMinApl "Saturation min appliquee consigne acceleration vehicule LVV"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSatMinCft "Saturation min consigne acceleration vehicule (confort)"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReqSatMinCft_M "Cartographie 2D d’acceleration vehicule min confort fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSLIM_RL_SWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehVSLimReqFil VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdRAVehVSLimSatMinCftX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdEAVehVSLimSatMnCftY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReq_B "Bypass de VSCtl_aVehVSLimReq"
+      VALUE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehVSLimReq_DeacVSLim_B "Bypass de VSCtl_aVehVSLimReq_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVeh_AuthVSLim_HysHi "Seuil dynamique haute d’acceleration vehicule reference autorisant l’activation de la LVV"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVeh_AuthVSLim_HysHi_T "Cartographie 1D de seuil haut d’acceleration vehicule d’interdiction autorisation activation LVV"
+      CURVE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_aVehVSLim_HysHi_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVeh_AuthVSLim_HysLo "Seuil dynamique basse d’acceleration vehicule reference autorisant l’activation de la LVV"
+      SWORD VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVeh_AuthVSLim_HysLo_T "Cartographie 1D de seuil bas d’acceleration vehicule d’autorisation activation LVV"
+      CURVE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdE_aVehVSLim_HysLo_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVeh_DeacVSLim_B "Bypass de VSCtl_aVeh_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVhEAcvOvrdVSLim_HysHi_C "Seuil acceleration vehicule d’autorisation activation LVV depuis reprise"
+      VALUE 0x0 VSLIM_RL_SWORD 20 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVhEAcvWaitVSLim_HysHi_C "Seuil acceleration vehicule d’autorisation activation LVV depuis attente"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvFilSpdVehVSLimReq "Activation filtrage consigne vitesse vehicule"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehPotVSLim "Activation filtrage potentiel d acceleration LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehVSLim "Activation filtrage derivee d acceleration LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvJrkSatMnCritVSLim_C "Activation de la prise en compte du jerk vehicule critique"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvLimVSCtlReq "Condition desactivation activation fonction LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvOvrdFromANEVSLim_C "Activation condition reprise depuis actif non effectif"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimNGear_AE_C "Activation du contrôle potentiel d acceleration en mode rapport dans l etat AE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimNGear_ANE_C "Activation du contrôle potentiel d acceleration en mode rapport dans l etat ANE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimNGear_REP_C "Activation du contrôle potentiel d acceleration en mode rapport dans l etat reprise LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimPed_AE_C "Activation du contrôle potentiel d acceleration en mode leurage dans l etat AE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimPed_ANE_C "Activation du contrôle potentiel d acceleration en mode leurage dans l etat ANE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimPed_REP_C "Activation du contrôle potentiel d acceleration en mode leurage dans l etat reprise LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimTq_AE_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat AE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimTq_ANE_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat ANE LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvPotVSLimTq_REP_C "Activation du contrôle potentiel d acceleration en mode couple dans l etat reprise LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bCfVSLim "Condition desactivation configuration fonction LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtl_aVehPotVSLim_B "Bypass de VSCtl_bCtl_aVehPotVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacCtlnoGearVSLim_C "Desactivation de la prise en compte de l etat BV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacImpDetVSLim_C "Desactivation de la detection des increments/decrements impulsionnels"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacStSatAVehVSLim_C "Desactivation condition saturation acceleration vehicule"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacTyreWarnVSLim_C "Desactivation de la prise en compte de l’alerte pneumatique LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDeacVSLimHab "Condition desactivation flux contrôle commande habitacle incoherents LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdVSLim "Reprise pedale accelerateur"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdVSLimFromOvrd "Autorisation reprise LVV depuis l’etat reprise"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdVSLimFromWait "Autorisation reprise LVV depuis l’etat attente"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bDynCtlSpdVehVSLim "Dynamique contrôle vitesse vehicule"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bEnaDeacVSLimReq_no2 "Activation de la demande de memorisation LVV n°2"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bFastDeacVSLimReq_B "Bypass de VSCtl_bFastDeacVSLimReq"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bGearCtlVSLim "Condition desactivation pilotage rapport indisponible LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhFilSpdVehVSLimReq "Inhibition filtrage consigne vitesse vehicule"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSLimReq "Demande inhibition LVV"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSLimReq_Brk "Demande inhibition LVV GMP frein LAS"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bInhVSLimReq_pt "Demande inhibition LVV GMP"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bModLimVSCtlReq "Condition desactivation deselection LVV habitacle"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bOvrdVSLimFromANE "Autorisation reprise LVV depuis l’etat actif non effectif"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bRec_stDeacVSLimReq "Demande memorisation de l etat conditions desactivation LVV n°1 ou n°2"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bTyreWarnVSLim "Alertes pneumatiques"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bctDefRevVSLim "Condition desactivations securitaires reversibles LVV trop eleve"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_ctDftRevVSLim "Compteur defauts reversibles LVV"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_ctTolRvDftVSLim_C "Nombre maximum de defauts reversibles toleres"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_dstVehTotMes_DeacVSLim_B "Bypass de VSCtl_dstVehTotMes_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_ULONG 16777214 VSLIM_CM_4 /* km:1:0: */ 0 16777214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehVSLimReqSatMx1Tra_M "Cartographie 2D de jerk vehicule max de transition lente en fonction de la vitesse vehicule et de l’acceleration vehicule"
+      MAP 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdAJrkVSLimSatMxTra1X_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMxTra1Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jVehVSLimReqSatMx2Tra_M "Cartographie 2D de jerk vehicule max de transition rapide en fonction de la vitesse vehicule et de l’acceleration vehicule"
+      MAP 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdAJrkVSLimSatMxTra2X_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMxTra2Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehPotVSLimReq "Consigne potentiel de jerk vehicule LVV"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehReqDeacVSLim_B "Bypass de VSCtl_jrkVehReqDeacVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 200 VSLIM_CM_5 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimReq "Consigne de jerk vehicule LVV"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMax "Jerk vehicule max de consigne acceleration vehicule max"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMax1Tran "Jerk vehicule max de consigne acceleration vehicule max de transition lente"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMax2Tran "Jerk vehicule max de consigne acceleration vehicule max de transition rapide"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMaxAbs "Jerk vehicule max de consigne acceleration vehicule max absolu"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSLimSatMaxAbs_T "Cartographie 1D de Jerk vehicule max absolu de prestation LVV"
+      CURVE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMaxAbs_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMaxCrit "Jerk vehicule dynamique critique de consigne acceleration vehicule max de transition lente"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMaxCvg "Jerk vehicule max de consigne acceleration vehicule max de convergence"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSLimSatMaxCvg_T "Cartographie 1D de Jerk vehicule max de convergence de prestation LVV"
+      CURVE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMaxCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMin "Jerk vehicule min de consigne acceleration vehicule min"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMinAbs "Jerk vehicule min de consigne acceleration vehicule min absolu"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSLimSatMinAbs_T "Cartographie 1D de Jerk vehicule max absolu de prestation LVV"
+      CURVE 0x0 VSLIM_RL_SWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMinAbs_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehVSLimSatMinCvg "Jerk vehicule min de consigne acceleration vehicule min de convergence"
+      SWORD VSLIM_CM_5 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehVSLimSatMinCvg_T "Cartographie 1D de Jerk vehicule min de convergence de prestation LVV"
+      CURVE 0x0 VSLIM_RL_SWORD 100 VSLIM_CM_5 /* m/s3:0.0078125:0: */ -100 0
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aJrkVehVSLimSatMinCvg_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_jrkVeh_DeacVSLim_B "Bypass de VSCtl_jrkVeh_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 200 VSLIM_CM_5 /* m/s3:0.0078125:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_jrkVeh_tiCfmSupVSLimY_A "Consigne potentiel de jerk vehicule LVV"
+      0x0 VSCtl_jrkVehPotVSLimReq VSLIM_RL_SWORD_AXIS 200 VSLIM_CM_5 /* m/s3:0.0078125:0: */ 8 -100 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_noGearEgd_DeacVSLim_B "Bypass de VSCtl_noGearEgd_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_SBYTE 9 VSLIM_CM_3 /* :1:0: */ -1 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_posnGBxDeacVSLim_B "Bypass de VSCtl_posnGBxDeacVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 7 VSLIM_CM_6 /* FT_enumeration1:((0=P)(1=R)(2=N)(3=DRIVE)(4=INTERMEDIAIRE_P_R_OU_N_R)(5=INTERMEDIAIRE_N_D)(6=MODE_MANUEL)(7=INDISPONIBLE)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccP_DeacVSLim_B "Bypass de VSCtl_rAccP_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_7 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqPotVSLim_T "Cartographie 1D de Taux d application du potentiel de couple LVV"
+      CURVE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_8 /* :0.0625:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdErr_rCtlPotVSLim_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rCtlTqWhlPTPotVSLim_B "Bypass de VSCtl_rCtlTqWhlPTPotVSLim"
+      VALUE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_9 /* %:0.0625:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rSlop_DeacVSLim_B "Bypass de VSCtl_rSlop_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 40 VSLIM_CM_7 /* %:0.0078125:0: */ -20 20
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rSpdVehCtlVSLimDyn "Taux application dynamique contrôle vitesse transitoire"
+      UWORD VSLIM_CM_10 /* :0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_spdAJrkVSLimSatMxTra1X_A "Axis description"
+      0x0 VSCtl_spdVeh VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdAJrkVSLimSatMxTra2X_A "Axis description"
+      0x0 VSCtl_spdVeh VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_spdCtlGain1VSLimAVeh "Gain proportionnel dynamique de consigne d’acceleration vehicule de la boucle regulation de vitesse LVV en dynamique transitoire"
+      UWORD VSLIM_CM_12 /* s-1:0.0078125:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain1VSLimAVeh_M "Cartographie 2D de gain proportionnel dynamique de consigne d’acceleration vehicule de la boucle regulation LVV en fonction de la vitesse vehicule et de l’erreur de vitesse vehicule"
+      MAP 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_12 /* s-1:0.0078125:0: */ 0 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPTMax VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehSpdCtlGain1VSLimX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdESpdCtlGain1VSLimY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGain2VSLimAVeh_C "Gain proportionnel de consigne d’acceleration vehicule de la boucle de vitesse"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_12 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdCtlGainVSLimAVehPot_C "Gain proportionnel de consigne de potentiel d’acceleration vehicule de la boucle de vitesse"
+      VALUE 0x0 VSLIM_RL_UWORD 10 VSLIM_CM_12 /* s-1:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSLimSatMnAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSLimSatMnCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSLimSatMxAbsY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdEAVehVSLimSatMxCftY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdEAcvOvrdVSLim_HysHi_C "Seuil haut d’ecart de vitesse vehicule d’autorisation activation LVV depuis reprise"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEAcvOvrdVSLim_HysLo_C "Seuil bas d’ecart de vitesse vehicule d’autorisation activation LVV depuis reprise"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEAcvWaitVSLim_HysHi_C "Seuil haut d’ecart de vitesse vehicule d’autorisation activation LVV depuis attente"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdEAcvWaitVSLim_HysLo_C "Seuil bas d’ecart de vitesse vehicule d’autorisation activation LVV depuis attente"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdELimAVehP_HysHiN_C "Seuil haut d erreur de vitesse negative d activation contrôle potentiel d acceleration LVV"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdELimAVehP_HysHiP_C "Seuil haut d erreur de vitesse positive d activation contrôle potentiel d acceleration LVV"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdELimAVehP_HysLoN_C "Seuil bas d erreur de vitesse negative d activation contrôle potentiel d acceleration LVV"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdELimAVehP_HysLoP_C "Seuil bas d erreur de vitesse positive d activation contrôle potentiel d acceleration LVV"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdESpdCtlGain1VSLimY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdE_aVehPotOftVSLimRqY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdE_aVehVSLim_HysHi_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdE_aVehVSLim_HysLo_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSLimSDyn_HysHi_C "Seuil haut d’ecart de vitesse vehicule de deconfirmation detection dynamique stabilisee"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdErrVSLimSDyn_HysLo_C "Seuil bas d’ecart de vitesse vehicule de detection dynamique stabilisee"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdErr_aVehVSLim_HysHi "Erreur de vitesse de calcul du seuil dynamique haut d’acceleration vehicule reference autorisant l’activation de la LVV"
+      SWORD VSLIM_CM_11 /* km/h:0.0078125:0: */ 1 0 -255 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdErr_aVehVSLim_HysLo "Erreur de vitesse de calcul du seuil dynamique bas d’acceleration vehicule reference autorisant l’activation de la LVV"
+      SWORD VSLIM_CM_11 /* km/h:0.0078125:0: */ 1 0 -255 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_spdErr_rCtlPotVSLim_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSLimSatMaxAbsX_A "Consigne vitesse vehicule LVV filtee"
+      0x0 VSCtl_spdVehVSLimReqFil VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSLimSatMinAbsX_A "Consigne vitesse vehicule LVV filtee"
+      0x0 VSCtl_spdVehVSLimReqFil VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSLimSatMinCftX_A "Consigne vitesse vehicule LVV filtee"
+      0x0 VSCtl_spdVehVSLimReqFil VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdRAVehVSLimSatMxCftX_A "Consigne vitesse vehicule LVV filtee"
+      0x0 VSCtl_spdVehVSLimReqFil VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVehE_tiCfmSdwnVSLiY_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSLIM_RL_SWORD_AXIS 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_spdVehErrVSLim_B "Bypass de VSCtl_spdVehErrVSLim"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehOvrdVSLim_HysHi_C "Seuil haut de vitesse vehicule de reprise LVV depuis active non effective"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehOvrdVSLim_HysLo_C "Seuil bas de vitesse vehicule de reprise LVV depuis active non effective"
+      VALUE 0x0 VSLIM_RL_SWORD 510 VSLIM_CM_11 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehReqDeacVSLim_B "Bypass de VSCtl_spdVehReqDeacVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_13 /* km/h:1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehVSLimReqFil "Consigne vitesse vehicule LVV filtee"
+      UWORD VSLIM_CM_11 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehVSLimReqImp_C "Increment/decrement impulsionnel de la consigne de vitesse LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehVSLimReqPrev "Consigne vitesse memorisee"
+      UWORD VSLIM_CM_11 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVeh_DeacVSLim_B "Bypass de VSCtl_spdVeh_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_UWORD 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdVeh_tiCfmSdwnVSLimX_A "Axis description"
+      0x0 VSCtl_spdVeh VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spd_aVehPotOftVSLimReqX_A "Axis description"
+      0x0 VSCtl_spdVeh VSLIM_RL_UWORD_AXIS 255 VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_stCtl_aVehVSLim_B "Bypass de VSCtl_stCtl_aVehVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 3 VSLIM_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANSITION_LENTE)(3=TRANSITION_RAPIDE)) */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stDeacVSLimReq_Brk "Etat conditions desactivation LVV frein LAS"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSLimReq_Fct "Etat conditions desactivation LVV fonction"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stDeacVSLimReq_Ini "Etat conditions desactivation LVV initialisation"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 127
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSLimReq_no1_B "Bypass de VSCtl_stDeacVSLimReq_no1"
+      VALUE 0x0 VSLIM_RL_ULONG 16777215 VSLIM_CM_3 /* :1:0: */ 0 16777215
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stDeacVSLimReq_no2_B "Bypass de VSCtl_stDeacVSLimReq_no2"
+      VALUE 0x0 VSLIM_RL_ULONG 16777215 VSLIM_CM_3 /* :1:0: */ 0 16777215
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stDeacVSLimReq_pt "Etat conditions desactivation LVV GMP"
+      UBYTE VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stEnaDeacVSLimReqno2_C "Selection des conditions desactivation LVV n°2"
+      VALUE 0x0 VSLIM_RL_ULONG 16777215 VSLIM_CM_3 /* :1:0: */ 0 16777215
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stFilSpdVehVSLim "Etat filtrage consigne vitesse vehicule"
+      UBYTE VSLIM_CM_15 /* FT_enumeration1:((0=ARRET)(1=NON_FILTRE)(2=FILTRE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stMonVSLim "Etat service LVV"
+      UBYTE VSLIM_CM_16 /* FT_enumeration1:((0=ARRET)(1=VERIFICATION)(2=INITIALISATION)(3=NOMINAL)(4=DEFAUT_REVERSIBLE)(5=DEFAUT_IRREVERSIBLE)) */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSLimReq1_B "Bypass de VSCtl_stRec_stDeacVSLimReq1"
+      VALUE 0x0 VSLIM_RL_UBYTE 2 VSLIM_CM_17 /* FT_enumeration1:((0=ATTENTE)(1=MEMORISATION)(2=EFFACEMENT_DES_MEMOIRES)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stRec_stDeacVSLimReq2_B "Bypass de VSCtl_stRec_stDeacVSLimReq2"
+      VALUE 0x0 VSLIM_RL_UBYTE 2 VSLIM_CM_17 /* FT_enumeration1:((0=ATTENTE)(1=MEMORISATION)(2=EFFACEMENT_DES_MEMOIRES)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stSatAVehMinVSLimMod_C "Mode de contrôle de saturation accel min LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stSatAVehVSLim "Etat saturation accelerations vehicule"
+      UBYTE VSLIM_CM_18 /* FT_enumeration1:((0=ARRET)(1=INIT_27)(2=NON_EFFECTIF_27)(3=EFFECTIF_27)(4=ACTIVATION_27)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSatJrkVehMaxVSLim "Etat saturation jerk vehicule max"
+      UBYTE VSLIM_CM_19 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF)(2=EFFECTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stSatJrkVehMinVSLim "Etat saturation jerk vehicule min"
+      UBYTE VSLIM_CM_19 /* FT_enumeration1:((0=ARRET)(1=NON_EFFECTIF)(2=EFFECTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stVSLimExtd_B "Bypass de VSCtl_stVSLimExtd"
+      VALUE 0x0 VSLIM_RL_UBYTE 7 VSLIM_CM_20 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stVSLimPrev "Etat precedent regulation LVV"
+      UBYTE VSLIM_CM_21 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBÉ)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DÉFAUT)) */ 1 0 0 7
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stVSLimPrev_DeacVSLim_B "Bypass de VSCtl_stVSLimPrev_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 7 VSLIM_CM_20 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stVSLim_DeacVSLim_B "Bypass de VSCtl_stVSLim_DeacVSLim"
+      VALUE 0x0 VSLIM_RL_UBYTE 7 VSLIM_CM_20 /* FT_enumeration1:((0=ARRET)(1=INITIALISATION)(2=INHIBE)(3=ATTENTE)(4=ACTIF_NON_EFFECTIF)(5=ACTIF_EFFECTIF)(6=REPRISE)(7=DEFAUT)) */ 0 7
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSLimReqIni_C "Valeur initiale du temps confirmation min rapport descendant LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSLimReqRaw1 "Temps confirmation min rapport descendant LVV brut 1"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSLimReqRaw2 "Temps confirmation min rapport descendant LVV brut 2"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnVSLimReqRaw3 "Temps confirmation min rapport descendant LVV brut 3"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSLimReq_B "Bypass de VSCtl_tiCfmSdwnVSLimReq"
+      VALUE 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnVSLimReq_M "Valeur du temps de confirmation min rapport descendant LVV"
+      MAP 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_tiCfmSdwnVSLimX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSLIM_CM_11 /* km/h:0.0078125:0: */ 8 -255 255
+    AXIS_PTS_REF VSCtl_spdVehE_tiCfmSdwnVSLiY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSLimReqIni_C "Valeur initiale du temps confirmation min rapport montant LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSLimReqRaw1 "Temps confirmation min rapport montant LVV brut 1"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSLimReqRaw2 "Temps confirmation min rapport montant LVV brut 2"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupVSLimReqRaw3 "Temps confirmation min rapport montant LVV brut 3"
+      UWORD VSLIM_CM_22 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSLimReq_B "Bypass de VSCtl_tiCfmSupVSLimReq"
+      VALUE 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupVSLimReq_M "Valeur du temps de confirmation min rapport montant LVV"
+      MAP 0x0 VSLIM_RL_UWORD 16 VSLIM_CM_22 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehPotVSLimReq VSLIM_CM_1 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehReq_tiCfmSupVSLimX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_jrkVehPotVSLimReq VSLIM_CM_5 /* m/s3:0.0078125:0: */ 8 -100 100
+    AXIS_PTS_REF VSCtl_jrkVeh_tiCfmSupVSLimY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_SDynCtlChgVSLim_C "Temps de confirmation detection de la dynamique stabilisee LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfm_rSDynCtlVSLim_C "Temps de lissage de la dynamique de contrôle de vitesse de transitoire vers stabilise"
+      VALUE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_10 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDftRvVSLim_C "Duree mini de la rehabilitation des defauts reversibles LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfmSDynCtlChgVSLim_C "Temps de deconfirmation detection de la dynamique stabilisee LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDiCfm_rCtlTDynVSLim_C "Temps de lissage de transition de l’etat de la dynamique de contrôle de vitesse LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 100 VSLIM_CM_10 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDrvOvrdFromAEVSLim_C "Constante de temps de filtrage reprise pedale d’accelerateur LVV depuis active effective"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDrvOvrdFromANEVSLim_C "Constante de temps de filtrage reprise pedale d’accelerateur LVV depuis active non effective"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiDrvOvrdFromWaitVSLim_C "Constante de temps de filtrage reprise pedale d’accelerateur LVV depuis attente"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilDftRvVSLim "Temps de filtrage rehabilitation defauts reversibles LVV"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilDrvOvrdVSLim "Temps de filtrage reprise pedale d’accelerateur LVV"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilIniVSLim "Temps de filtrage initialisation LVV"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilSpdVehCtlVSLimDyn "Temps de filtrage changement dynamique contrôle vitesse vehicule LVV"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlAVehVSLim "Temps caracteristique de l’etat de contrôle acceleration en transition lente"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehPotVSLimRq_C "Valeur du filtrage numerique de la consigne potentiel de jerk vehicule LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 1 VSLIM_CM_23 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehVSLimRq_C "Valeur du filtrage numerique de la consigne de jerk vehicule LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 1 VSLIM_CM_23 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlAVehVSLim_C "Constante de temps caracteristique de l’etat de contrôle acceleration en transition lente"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSLimR1_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant LVV n°1"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_10 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSdwnVSLimR2_C "Valeur du filtrage numerique du temps de confirmation min rapport descendant LVV n°2"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_10 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSLimRq1_C "Valeur du filtrage numerique du temps de confirmation min rapport montant LVV n°1"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_10 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tiCfmSupVSLimRq2_C "Valeur du filtrage numerique du temps de confirmation min rapport montant LVV n°2"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_10 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSLimReq1 "Temps gel informations maintenance n°1 LVV"
+      UWORD VSLIM_CM_3 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSLimReq1_C "Temps gel informations maintenance n°1 LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 65535 VSLIM_CM_3 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stDeacVSLimReq2 "Temps gel informations maintenance n°2 LVV"
+      UWORD VSLIM_CM_3 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHld_stDeacVSLimReq2_C "Temps gel informations maintenance n°2 LVV"
+      VALUE 0x0 VSLIM_RL_UWORD 65535 VSLIM_CM_3 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiIni_VSLim_C "Constante de temps de filtrage initialisation LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_DynCtlVSLim_C "Temps maxi de confirmation/deconfirmation detection de la dynamique stabilisee LVV"
+      VALUE 0x0 VSLIM_RL_UBYTE 255 VSLIM_CM_3 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSLIM_ACTIVE_BYP_C "Bypass activation"
+      VALUE 0x0 VSLIM_RL_UBYTE 1 VSLIM_CM_2 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSLim_ModuleVersion_Major_MP "VSLim_ModuleVersion_Major_MP"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSLim_ModuleVersion_Minor_MP "VSLim_ModuleVersion_Minor_MP"
+      UBYTE VSLIM_CM_3 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+/begin RECORD_LAYOUT VSLIM_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSLIM_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD VSLIM_CM_1 "conversion_method"
+
+RAT_FUNC "%.4" "m/s2"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_2 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_2
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_2 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_3 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_4 "conversion_method"
+
+RAT_FUNC "%.0" "km"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_5 "conversion_method"
+
+RAT_FUNC "%.3" "m/s3"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_6 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_6
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_6 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "P"
+	 1 "R"
+	 2 "N"
+	 3 "DRIVE"
+	 4 "INTERMEDIAIRE_P_R_OU_N_R"
+	 5 "INTERMEDIAIRE_N_D"
+	 6 "MODE_MANUEL"
+	 7 "INDISPONIBLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_7 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_8 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_9 "conversion_method"
+
+RAT_FUNC "%.2" "%"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_10 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_11 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_12 "conversion_method"
+
+RAT_FUNC "%.3" "s-1"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_13 "conversion_method"
+
+RAT_FUNC "%.0" "km/h"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_14 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_14
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_14 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "TRANSITION_LENTE"
+	 3 "TRANSITION_RAPIDE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_15 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_15
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_15 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_FILTRE"
+	 2 "FILTRE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_16 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_16
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_16 "conversion_vtab"
+
+    TAB_VERB 6
+	 0 "ARRET"
+	 1 "VERIFICATION"
+	 2 "INITIALISATION"
+	 3 "NOMINAL"
+	 4 "DEFAUT_REVERSIBLE"
+	 5 "DEFAUT_IRREVERSIBLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_17 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ATTENTE"
+	 1 "MEMORISATION"
+	 2 "EFFACEMENT_DES_MEMOIRES"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_18 "conversion_vtab"
+
+    TAB_VERB 5
+	 0 "ARRET"
+	 1 "INIT_27"
+	 2 "NON_EFFECTIF_27"
+	 3 "EFFECTIF_27"
+	 4 "ACTIVATION_27"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_19 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_19
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_19 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "NON_EFFECTIF"
+	 2 "EFFECTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_20 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_20
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_20 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBE"
+	 3 "ATTENTE"
+	 4 "ACTIF_NON_EFFECTIF"
+	 5 "ACTIF_EFFECTIF"
+	 6 "REPRISE"
+	 7 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_21 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSLIM_CV_21
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSLIM_CV_21 "conversion_vtab"
+
+    TAB_VERB 8
+	 0 "ARRET"
+	 1 "INITIALISATION"
+	 2 "INHIBÉ"
+	 3 "ATTENTE"
+	 4 "ACTIF_NON_EFFECTIF"
+	 5 "ACTIF_EFFECTIF"
+	 6 "REPRISE"
+	 7 "DÉFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSLIM_CM_22 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSLIM_CM_23 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION VSLIM_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	VSCtl_aJrkVehVSLimSatMaxAbs_A
+	VSCtl_aJrkVehVSLimSatMaxCvg_A
+	VSCtl_aJrkVehVSLimSatMinAbs_A
+	VSCtl_aJrkVehVSLimSatMinCvg_A
+	VSCtl_aJrkVehVSLimSatMxTra1Y_A
+	VSCtl_aJrkVehVSLimSatMxTra2Y_A
+	VSCtl_aVehMaxSpdVehVSLimReq_C
+	VSCtl_aVehMinSpdVehVSLimReq_C
+	VSCtl_aVehPotOftVSLimReq_M
+	VSCtl_aVehPotVSLimReq_B
+	VSCtl_aVehReq_tiCfmSupVSLimX_A
+	VSCtl_aVehSpdCtlGain1VSLimX_A
+	VSCtl_aVehVSLimDynStbMax_C
+	VSCtl_aVehVSLimDynStbMin_C
+	VSCtl_aVehVSLimReqSatMaxAbs_M
+	VSCtl_aVehVSLimReqSatMaxCft_M
+	VSCtl_aVehVSLimReqSatMinAbs_M
+	VSCtl_aVehVSLimReqSatMinCft_M
+	VSCtl_aVehVSLimReq_B
+	VSCtl_aVehVSLimReq_DeacVSLim_B
+	VSCtl_aVeh_AuthVSLim_HysHi_T
+	VSCtl_aVeh_AuthVSLim_HysLo_T
+	VSCtl_aVeh_DeacVSLim_B
+	VSCtl_aVhEAcvOvrdVSLim_HysHi_C
+	VSCtl_aVhEAcvWaitVSLim_HysHi_C
+	VSCtl_bAcvJrkSatMnCritVSLim_C
+	VSCtl_bAcvOvrdFromANEVSLim_C
+	VSCtl_bAcvPotVSLimNGear_AE_C
+	VSCtl_bAcvPotVSLimNGear_ANE_C
+	VSCtl_bAcvPotVSLimNGear_REP_C
+	VSCtl_bAcvPotVSLimPed_AE_C
+	VSCtl_bAcvPotVSLimPed_ANE_C
+	VSCtl_bAcvPotVSLimPed_REP_C
+	VSCtl_bAcvPotVSLimTq_AE_C
+	VSCtl_bAcvPotVSLimTq_ANE_C
+	VSCtl_bAcvPotVSLimTq_REP_C
+	VSCtl_bCtl_aVehPotVSLim_B
+	VSCtl_bDeacCtlnoGearVSLim_C
+	VSCtl_bDeacImpDetVSLim_C
+	VSCtl_bDeacStSatAVehVSLim_C
+	VSCtl_bDeacTyreWarnVSLim_C
+	VSCtl_bFastDeacVSLimReq_B
+	VSCtl_ctTolRvDftVSLim_C
+	VSCtl_dstVehTotMes_DeacVSLim_B
+	VSCtl_jVehVSLimReqSatMx1Tra_M
+	VSCtl_jVehVSLimReqSatMx2Tra_M
+	VSCtl_jrkVehReqDeacVSLim_B
+	VSCtl_jrkVehVSLimSatMaxAbs_T
+	VSCtl_jrkVehVSLimSatMaxCvg_T
+	VSCtl_jrkVehVSLimSatMinAbs_T
+	VSCtl_jrkVehVSLimSatMinCvg_T
+	VSCtl_jrkVeh_DeacVSLim_B
+	VSCtl_jrkVeh_tiCfmSupVSLimY_A
+	VSCtl_noGearEgd_DeacVSLim_B
+	VSCtl_posnGBxDeacVSLim_B
+	VSCtl_rAccP_DeacVSLim_B
+	VSCtl_rCtlTqPotVSLim_T
+	VSCtl_rCtlTqWhlPTPotVSLim_B
+	VSCtl_rSlop_DeacVSLim_B
+	VSCtl_spdAJrkVSLimSatMxTra1X_A
+	VSCtl_spdAJrkVSLimSatMxTra2X_A
+	VSCtl_spdCtlGain1VSLimAVeh_M
+	VSCtl_spdCtlGain2VSLimAVeh_C
+	VSCtl_spdCtlGainVSLimAVehPot_C
+	VSCtl_spdEAVehVSLimSatMnAbsY_A
+	VSCtl_spdEAVehVSLimSatMnCftY_A
+	VSCtl_spdEAVehVSLimSatMxAbsY_A
+	VSCtl_spdEAVehVSLimSatMxCftY_A
+	VSCtl_spdEAcvOvrdVSLim_HysHi_C
+	VSCtl_spdEAcvOvrdVSLim_HysLo_C
+	VSCtl_spdEAcvWaitVSLim_HysHi_C
+	VSCtl_spdEAcvWaitVSLim_HysLo_C
+	VSCtl_spdELimAVehP_HysHiN_C
+	VSCtl_spdELimAVehP_HysHiP_C
+	VSCtl_spdELimAVehP_HysLoN_C
+	VSCtl_spdELimAVehP_HysLoP_C
+	VSCtl_spdESpdCtlGain1VSLimY_A
+	VSCtl_spdE_aVehPotOftVSLimRqY_A
+	VSCtl_spdE_aVehVSLim_HysHi_A
+	VSCtl_spdE_aVehVSLim_HysLo_A
+	VSCtl_spdErrVSLimSDyn_HysHi_C
+	VSCtl_spdErrVSLimSDyn_HysLo_C
+	VSCtl_spdErr_rCtlPotVSLim_A
+	VSCtl_spdRAVehVSLimSatMaxAbsX_A
+	VSCtl_spdRAVehVSLimSatMinAbsX_A
+	VSCtl_spdRAVehVSLimSatMinCftX_A
+	VSCtl_spdRAVehVSLimSatMxCftX_A
+	VSCtl_spdVehE_tiCfmSdwnVSLiY_A
+	VSCtl_spdVehErrVSLim_B
+	VSCtl_spdVehOvrdVSLim_HysHi_C
+	VSCtl_spdVehOvrdVSLim_HysLo_C
+	VSCtl_spdVehReqDeacVSLim_B
+	VSCtl_spdVehVSLimReqImp_C
+	VSCtl_spdVeh_DeacVSLim_B
+	VSCtl_spdVeh_tiCfmSdwnVSLimX_A
+	VSCtl_spd_aVehPotOftVSLimReqX_A
+	VSCtl_stCtl_aVehVSLim_B
+	VSCtl_stDeacVSLimReq_no1_B
+	VSCtl_stDeacVSLimReq_no2_B
+	VSCtl_stEnaDeacVSLimReqno2_C
+	VSCtl_stRec_stDeacVSLimReq1_B
+	VSCtl_stRec_stDeacVSLimReq2_B
+	VSCtl_stSatAVehMinVSLimMod_C
+	VSCtl_stVSLimExtd_B
+	VSCtl_stVSLimPrev_DeacVSLim_B
+	VSCtl_stVSLim_DeacVSLim_B
+	VSCtl_tiCfmSdwnVSLimReqIni_C
+	VSCtl_tiCfmSdwnVSLimReq_B
+	VSCtl_tiCfmSdwnVSLimReq_M
+	VSCtl_tiCfmSupVSLimReqIni_C
+	VSCtl_tiCfmSupVSLimReq_B
+	VSCtl_tiCfmSupVSLimReq_M
+	VSCtl_tiCfm_SDynCtlChgVSLim_C
+	VSCtl_tiCfm_rSDynCtlVSLim_C
+	VSCtl_tiDftRvVSLim_C
+	VSCtl_tiDiCfmSDynCtlChgVSLim_C
+	VSCtl_tiDiCfm_rCtlTDynVSLim_C
+	VSCtl_tiDrvOvrdFromAEVSLim_C
+	VSCtl_tiDrvOvrdFromANEVSLim_C
+	VSCtl_tiDrvOvrdFromWaitVSLim_C
+	VSCtl_tiFil_jrkVehPotVSLimRq_C
+	VSCtl_tiFil_jrkVehVSLimRq_C
+	VSCtl_tiFil_stCtlAVehVSLim_C
+	VSCtl_tiFil_tiCfmSdwnVSLimR1_C
+	VSCtl_tiFil_tiCfmSdwnVSLimR2_C
+	VSCtl_tiFil_tiCfmSupVSLimRq1_C
+	VSCtl_tiFil_tiCfmSupVSLimRq2_C
+	VSCtl_tiHld_stDeacVSLimReq1_C
+	VSCtl_tiHld_stDeacVSLimReq2_C
+	VSCtl_tiIni_VSLim_C
+	VSCtl_tiTol_DynCtlVSLim_C
+	VSLIM_ACTIVE_BYP_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	VSCtl_aVehPotVSLimReqOft
+	VSCtl_aVehPotVSLimReqRaw
+	VSCtl_aVehVSLimReqMax
+	VSCtl_aVehVSLimReqMin
+	VSCtl_aVehVSLimReqRaw
+	VSCtl_aVehVSLimReqSatMax
+	VSCtl_aVehVSLimReqSatMaxAbs
+	VSCtl_aVehVSLimReqSatMaxApl
+	VSCtl_aVehVSLimReqSatMaxCft
+	VSCtl_aVehVSLimReqSatMin
+	VSCtl_aVehVSLimReqSatMinAbs
+	VSCtl_aVehVSLimReqSatMinApl
+	VSCtl_aVehVSLimReqSatMinCft
+	VSCtl_aVeh_AuthVSLim_HysHi
+	VSCtl_aVeh_AuthVSLim_HysLo
+	VSCtl_bAcvFilSpdVehVSLimReq
+	VSCtl_bAcvFil_aVehPotVSLim
+	VSCtl_bAcvFil_aVehVSLim
+	VSCtl_bAcvLimVSCtlReq
+	VSCtl_bCfVSLim
+	VSCtl_bDeacVSLimHab
+	VSCtl_bDrvOvrdVSLim
+	VSCtl_bDrvOvrdVSLimFromOvrd
+	VSCtl_bDrvOvrdVSLimFromWait
+	VSCtl_bDynCtlSpdVehVSLim
+	VSCtl_bEnaDeacVSLimReq_no2
+	VSCtl_bGearCtlVSLim
+	VSCtl_bInhFilSpdVehVSLimReq
+	VSCtl_bInhVSLimReq
+	VSCtl_bInhVSLimReq_Brk
+	VSCtl_bInhVSLimReq_pt
+	VSCtl_bModLimVSCtlReq
+	VSCtl_bOvrdVSLimFromANE
+	VSCtl_bRec_stDeacVSLimReq
+	VSCtl_bTyreWarnVSLim
+	VSCtl_bctDefRevVSLim
+	VSCtl_ctDftRevVSLim
+	VSCtl_jrkVehPotVSLimReq
+	VSCtl_jrkVehVSLimReq
+	VSCtl_jrkVehVSLimSatMax
+	VSCtl_jrkVehVSLimSatMax1Tran
+	VSCtl_jrkVehVSLimSatMax2Tran
+	VSCtl_jrkVehVSLimSatMaxAbs
+	VSCtl_jrkVehVSLimSatMaxCrit
+	VSCtl_jrkVehVSLimSatMaxCvg
+	VSCtl_jrkVehVSLimSatMin
+	VSCtl_jrkVehVSLimSatMinAbs
+	VSCtl_jrkVehVSLimSatMinCvg
+	VSCtl_rSpdVehCtlVSLimDyn
+	VSCtl_spdCtlGain1VSLimAVeh
+	VSCtl_spdErr_aVehVSLim_HysHi
+	VSCtl_spdErr_aVehVSLim_HysLo
+	VSCtl_spdVehVSLimReqFil
+	VSCtl_spdVehVSLimReqPrev
+	VSCtl_stDeacVSLimReq_Brk
+	VSCtl_stDeacVSLimReq_Fct
+	VSCtl_stDeacVSLimReq_Ini
+	VSCtl_stDeacVSLimReq_pt
+	VSCtl_stFilSpdVehVSLim
+	VSCtl_stMonVSLim
+	VSCtl_stSatAVehVSLim
+	VSCtl_stSatJrkVehMaxVSLim
+	VSCtl_stSatJrkVehMinVSLim
+	VSCtl_stVSLimPrev
+	VSCtl_tiCfmSdwnVSLimReqRaw1
+	VSCtl_tiCfmSdwnVSLimReqRaw2
+	VSCtl_tiCfmSdwnVSLimReqRaw3
+	VSCtl_tiCfmSupVSLimReqRaw1
+	VSCtl_tiCfmSupVSLimReqRaw2
+	VSCtl_tiCfmSupVSLimReqRaw3
+	VSCtl_tiFilDftRvVSLim
+	VSCtl_tiFilDrvOvrdVSLim
+	VSCtl_tiFilIniVSLim
+	VSCtl_tiFilSpdVehCtlVSLimDyn
+	VSCtl_tiFilStCtlAVehVSLim
+	VSCtl_tiHld_stDeacVSLimReq1
+	VSCtl_tiHld_stDeacVSLimReq2
+	VSLim_ModuleVersion_Major_MP
+	VSLim_ModuleVersion_Minor_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE VSLim ------------------------------------*/

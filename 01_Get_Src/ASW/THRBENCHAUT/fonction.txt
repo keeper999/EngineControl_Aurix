@@ -1,0 +1,31 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|Routine defaut logiciel|
+Thr_EveRst_BenchAut|A|();|SCH.1|THRBENCHAUT|1|V02 NT 08 04529||||0|0|0|0|Sched reset|
+Thr_SdlMid_BenchAut|A|();|SCH.2|THRBENCHAUT|1|V02 NT 08 04529||||0|0|0|0|Moniteur moyen pour la fonction papillon|
+THRBENCHAUT_vidCalcAngleEval|C|();|FCT2.9|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'angle eval|
+THRBENCHAUT_vidCompSinAngleEval|C|();|FCT2.7|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|A partir du temps Tpac_sin_time, on va calculer sin (Tpac_sin_time) d'après une cartographie à 7 points d'appuis.|
+THRBENCHAUT_vidComputeAbsolutRef|C|();|FCT1.9|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce sous-système calcule la valeur de la consigne ramenée  par rapport à la butée basse. Un offset est ajoutée à la valeur de consigne relative.|
+THRBENCHAUT_vidComputeAbsRefIncr|A|();|FCT1.8|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce sous-système calcule les valeurs de consigne par rapport à la butée basse de l’index de plage courant et suivant.|
+THRBENCHAUT_vidComputeIncrement|B|();|FCT1.10|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'incrément|
+THRBENCHAUT_vidComputeReference|C|();|FCT2.1|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce sous-système calcule  la consigne toutes  les 8 ms, à partir de  la valeur de consigne absolue de l’index en cours.|
+THRBENCHAUT_vidComputeSignal|C|();|FCT2.5|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc calcule le signal sinusoïdal brut à la fréquence désirée, le multiplie par l'amplitude associée et ajoute l'amplitude et un offset calibrable au signal final.|
+THRBENCHAUT_vidControlPart|E|();|FCT1.4|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Partie contrôle faite avec un automate|
+THRBENCHAUT_vidCurrentIndex|D|();|FCT1.6|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Définir l'index actuel de la calibration utilisée|
+THRBENCHAUT_vidDynMode_1|A|();|FCT1.3|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Le mode créneaux/rampes paramétrables (mode 1) est gérée par un Stateflow et Le Stateflow commande une partie opérative qui a pour but de calculer la consigne.|
+THRBENCHAUT_vidDynMode_2|C|();|FCT2.2|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce sous-système réalise la recopie brute sur la consigne du signal de tension présent sur l’entrée pédale 1.|
+THRBENCHAUT_vidDynMode_3|A|();|FCT2.3|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Génération de consignes en sinus paramétrables|
+THRBENCHAUT_vidGenerateSignal|A|();|FCT2.6|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|A partir du temps Tpac_sin_time, on va calculer sin (Tpac_sin_time) d'après une cartographie à 7 points d'appuis.|
+THRBENCHAUT_vidIncrGenTimeCount|D|();|FCT3.6|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc réinitialise Tpac_sin_time et Tpac_sin_func_entry à leur valeur de départ. Afin de commencer le cycle du sinus avec les bonnes valeurs, on n'effectue pas l'addition de 0.008s sur Tpac_sin_time lorsque ce bloc est exécuté|
+THRBENCHAUT_vidIncrSignalCount|C|();|FCT3.7|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc incrémente de 1 le numéro du signal utilisé (Tpac_sin_signal_count) quand la durée de ce signal est écoulée.|
+THRBENCHAUT_vidIncSinTime|D|();|FCT2.8|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc incrémente la valeur Tpac_sin_time après que celle-ci ait été utilisée pour la génération de Tpac_sin_func_entry.|
+THRBENCHAUT_vidInitOutput|C|();|FCT1.1|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Fonction d'initialisation des paramètres produits|
+THRBENCHAUT_vidMotThrAutBenchMod|B|();|FCT1.2|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Le mode banc automatique présente deux modes de fonctionnement :Un mode génération de consignes en créneaux/rampes paramétrables et Un mode génération de consignes en sinus paramétrables|
+THRBENCHAUT_vidNextIndex|B|();|FCT1.7|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Determiner l'index suivant|
+THRBENCHAUT_vidNextSignal|C|();|FCT3.8|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul du numéro du signal sinus en cours d'émission|
+THRBENCHAUT_vidResetSinTime|B|();|FCT3.5|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc réinitialise Tpac_sin_time et Tpac_sin_func_entry à leur valeur de départ. Afin de commencer le cycle du sinus avec les bonnes valeurs, on n'effectue pas l'addition de 0.008s sur Tpac_sin_time lorsque ce bloc est exécuté|
+THRBENCHAUT_vidSelectFrequency|A|();|FCT2.4|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce bloc sélectionne la fréquence utilisée pour générer le signal sinusoïdal.|
+THRBENCHAUT_vidSinTimeFirstQuad|D|();|FCT3.2|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'angle eval premier quadrant|
+THRBENCHAUT_vidSinTimeFourthQuad|D|();|FCT3.1|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'angle eval quatrième quadrant|
+THRBENCHAUT_vidSinTimeSecondQuad|D|();|FCT3.3|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'angle eval deuxième quadrant|
+THRBENCHAUT_vidSinTimeThirdQuad|D|();|FCT3.4|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Calcul de l'angle eval troisième quadrant|
+THRBENCHAUT_vidUserCalibrations|A|();|FCT1.5|THRBENCHAUT|0|V02 NT 08 04529||||0|0|0|0|Ce sous-système définit les cartographies à partir desquelles l’utilisateur définit le cycle d’actionnement désiré.|

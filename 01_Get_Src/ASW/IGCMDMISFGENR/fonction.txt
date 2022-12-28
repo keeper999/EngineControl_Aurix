@@ -1,0 +1,24 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Gpt_GetTimeElapsed|A|(argin uint16 channel)uint32;|2|HEADER|1|NONE||||0|0|0|0||
+IgCmd_EveBDC_MisfGenr|B|();|SCH.5|IGCMDMISFGENR|1|V02 NT 09 06148||||0|0|0|0|Interruption PMB|
+IgCmd_EveRst_MisfGenr|A|();|SCH.1|IGCMDMISFGENR|1|V02 NT 09 06148||||0|0|0|0|Evénement reset du calculateur|
+IgCmd_EveRTSt_MisfGenr|A|();|SCH.2|IGCMDMISFGENR|1|V02 NT 09 06148||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant.|
+IgCmd_EveStTR_MisfGenr|A|();|SCH.3|IGCMDMISFGENR|1|V02 NT 09 06148||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant.|
+IgCmd_SdlSlow_MisfGenr|B|();|SCH.4|IGCMDMISFGENR|1|V02 NT 09 06148||||0|0|0|0|Moniteur lent de la fonction MisfGenr.|
+IGCMDMISFGENR_vidAutorisMisfConf|A|();|FCT1.4|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet l'initialisation de Msm_spark_counter à Recurrence_misfire_deterministe afin de déclencher un misfire sur le premier cylindre choisi par Msm_coupure_cylindre.|
+IGCMDMISFGENR_vidCylSelection|A|();|FCT2.3|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet de redistribuer les composantes du vecteur Misfire_cylindre dans les variables de sortie propre à chaque cylindre.|
+IGCMDMISFGENR_vidDeterministMode|A|();|FCT1.7|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet de couper la bobine courante en mode déterministe et d' autoriser aussi la coupure de la bobine suivante en cas de mode successif.|
+IGCMDMISFGENR_vidInhibMisfConf|A|();|FCT1.5|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet la réinitalisation du calcul du générateur de misfire.|
+IGCMDMISFGENR_vidInit|D|();|FCT1.1|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Initialisation des variables au reset.|
+IGCMDMISFGENR_vidInitcompteurs|A|();|FCT2.4|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Le compteur global du nombre de combustions Cnt_global ainsi que le compteur de misfire Cnt_misfire sont réinitialisés à 0 lors de la détection d’un changement effectué sur la valeur de la calibration Taux_misfire_aleatoire.|
+IGCMDMISFGENR_vidInitOutput|C|();|FCT1.2|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Initialisation des sorties.|
+IGCMDMISFGENR_vidManageMisfCoils|D|();|FCT1.3|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Gestion des Misfire des  bobines.|
+IGCMDMISFGENR_vidMisfireCylinder|B|();|FCT1.6|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet de faire le choix du mode de génération de misfire : Déterministe ou Aléatoire.|
+IGCMDMISFGENR_vidMisfireGenStop|A|();|FCT2.6|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Ce bloc réinitalise le calcul de Misfire_cylindre.|
+IGCMDMISFGENR_vidMisfireRatio|E|();|FCT2.2|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction pemet de produire les taux de misfire en mode aléatoire et déterministe ainsi que le taux de misfire EOBD (mode aléatoire ou déterministe).|
+IGCMDMISFGENR_vidNotReachedRecur|A|();|FCT1.10|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet, si Recurrence_misfire_deterministe n’est pas atteinte, d'initialiser Misfire_cylindre à zéro.|
+IGCMDMISFGENR_vidRandomMode|C|();|FCT1.8|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction produit l'indicateur de génération d'un raté d'allumage.|
+IGCMDMISFGENR_vidRazMsmSparkCnt|A|();|FCT2.1|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet, en mode successif, d'initialiser  le compteur de récurrence uniquement lors du premier misfire.|
+IGCMDMISFGENR_vidReachedRecur|B|();|FCT1.9|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Cette fonction permet,lorsque Recurrence_misfire_deterministe est atteinte, de générer un misfire sur le cylindre actuellement en compression.Dans le cas d’un mode successif, elle permet l'inhibition de la réinitialisation du compteur de récurrence.|
+IGCMDMISFGENR_vidTauxmisfirereel|A|();|FCT2.5|IGCMDMISFGENR|0|V02 NT 09 06148||||0|0|0|0|Le taux réel de misfire générés est calculés mis à jour en permanence grâce à deux compteurs : Cnt_global comptant toutes les combustions et Cnt_misfire comptant les combustions avec misfire.|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0||

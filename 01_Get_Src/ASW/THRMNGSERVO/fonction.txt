@@ -1,0 +1,41 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|15|HEADER|1|NONE||||0|0|0|0|ErrorHook routine|
+Thr_EveIniLrnLih_StopClcn|A|();|3|HEADER|1|NONE||||0|0|0|0|Evénement de l'initialisation du flag d'apprentissage au power on suivant en cas de dérive de limp-home.|
+Thr_EveIniStop_MngServo|A|();|1|HEADER|1|NONE||||0|0|0|0|Demande d'initialisation des valeurs maximales lues sur les deux capteurs de position papillon|
+Thr_EveRst_MngServo|E|();|SCH.1|THRMNGSERVO|1|V02 NT 08 04528||||0|0|0|0|Evénement reset du calculateur|
+Thr_EveRstThr_MngServo|B|();|SCH.3|THRMNGSERVO|1|V02 NT 08 04528||||0|0|0|0|Evèvenement de requête de recentrage des adaptatifs papillon|
+Thr_EveStoreHiStop_MngServo|A|();|4|HEADER|1|NONE||||0|0|0|0|Demande de mémorisation de la butée haute du papillon|
+Thr_EveStoreLih_SecuMng|A|();|9|HEADER|1|NONE||||0|0|0|0||
+Thr_EveStoreLih_StopClcn|A|();|8|HEADER|1|NONE||||0|0|0|0||
+Thr_EveStoreLoStop_MngServo|A|();|6|HEADER|1|NONE||||0|0|0|0|Demande de mémorisation de la butéee basse du papillon|
+Thr_SdlMid_MngServo|F|();|SCH.2|THRMNGSERVO|1|V02 NT 08 04528||||0|0|0|0|Moniteur moyen de la fonction papillon|
+THRMNGSERVO_LearningStopsAndStop|G|();|FCT2.9|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|focntion d'apprentissage butées et arret|
+THRMNGSERVO_vidCalInhibInjection|C|();|FCT1.8|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Le manager du Thr a la posibilité d’inhiber l’injection lors de sa procédure d’apprentissage à l’init.|
+THRMNGSERVO_vidCalTempCleoff|D|();|FCT1.4|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|fonction de calcul Tempo_Cleoff|
+THRMNGSERVO_vidDownThrustEnable|A|();|FCT3.5|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Le booleen Tpac_thrusts_enable passe à OFF lorsqu’un apprentissage des butées a été réalisé avec succès|
+THRMNGSERVO_vidEndThrLrn|C|();|FCT3.7|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|En cas de détection d’une dérive de position Limp Home, il est possible de forcer un apprentissage des butées basses au prochain power-latch.|
+THRMNGSERVO_vidEntryNodeInitSdf|F|();|FCT2.2|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition du noeud NodInitSdf|
+THRMNGSERVO_vidFClnReset|A|();|FCT3.10|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|A la fin du cycle de nettoyage, le booléen d’activation de cette fonction ainsi que le compteur de cycles de roulage sont remis à zéro.|
+THRMNGSERVO_vidForceLrnRst|C|();|FCT3.8|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|En cas de détection d’une dérive de position Limp Home ou en cas de défaillance système, il est possible de forcer un apprentissage des butées basses au prochain Reset.|
+THRMNGSERVO_vidInitOutput|G|();|FCT1.1|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|fonction d'initialisation des variables produites.|
+THRMNGSERVO_vidManager|D|();|FCT1.3|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Gestionnaire des différents modes de fonctionnement/asservissement du papillon|
+THRMNGSERVO_vidManagerTransition|E|();|FCT1.5|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Partie de contrôle de l'automate des transitions|
+THRMNGSERVO_vidManagerTreatment|E|();|FCT1.6|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Partie de contrôle de l'automate des traitements|
+THRMNGSERVO_vidPowrLatchCountMng|F|();|FCT1.2|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Comptage des passages en Power-Latch de manière à pouvoir gérer l’espacement entre les apprentissages des butées. Le comptage n’a pas lieu si une demande d’apprentissage des butées est déjà active ou une demande de nettoyage est en cours.|
+THRMNGSERVO_vidSrvTran|A|();|FCT1.9|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Ce bloc permet de gérer la transition d’inhibition vers réhabilitation par les routines du  papillon motorisé via un booléen passant à 1 lors de la descente du flag d’inhibition si les conditions sont réunies|
+THRMNGSERVO_vidThrIniAftsStopCln|A|();|FCT3.9|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Commande de l'initialisation de Tpac_FCln_powerlatch_counter et Tpac_FCln_enable à la fin de du cycle de nettoyage.|
+THRMNGSERVO_vidThrIniAftsStopLrn|C|();|FCT3.6|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Un service APV permet de placer la fonction dans le même état qu’au premier Key-on|
+THRMNGSERVO_vidThrServoInh|E|();|FCT1.7|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Control: Dans cet état, Thr_bInhMngThrServo est calculé. Il regroupe FRM_bInhMngThrServo et L’état d’automate de la position papillon.|
+THRMNGSERVO_vidTransClosingRamp|H|();|FCT2.6|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_CLOSING_RAMP|
+THRMNGSERVO_vidTransControl|I|();|FCT2.4|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_CONTROL|
+THRMNGSERVO_vidTransExitLowThrus|G|();|FCT2.7|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_EXIT_LOW_THRUST|
+THRMNGSERVO_vidTransHighThSearch|G|();|FCT2.5|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_HIGH_THRUST_SEARCH|
+THRMNGSERVO_vidTransLimpHome|J|();|FCT2.8|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_LIMP_HOME|
+THRMNGSERVO_vidTransMcwInhibTest|G|();|FCT2.3|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_MCW_INHIBIT_TEST|
+THRMNGSERVO_vidTransRestorMobil|A|();|FCT2.10|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_RESTOR_MOBILITY.|
+THRMNGSERVO_vidTransWaitForAdc|E|();|FCT2.1|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|Condition de transition de l'etat TPAC_WAIT_FOR_ADC|
+THRMNGSERVO_vidTreatClosingRamp|B|();|FCT3.2|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|During de l'etat TPAC_CLOSING_RAMP|
+THRMNGSERVO_vidTreatExitLowThrus|B|();|FCT3.3|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|During de l'etat TPAC_EXIT_LOW_THRUST|
+THRMNGSERVO_vidTreatHighThSearch|B|();|FCT3.1|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|During de l'etat TPAC_HIGH_THRUST_SEARCH|
+THRMNGSERVO_vidTreatLimpHome|C|();|FCT3.4|THRMNGSERVO|0|V02 NT 08 04528||||0|0|0|0|During de l'etat TPAC_LIMP_HOME|

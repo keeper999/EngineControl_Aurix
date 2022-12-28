@@ -1,0 +1,82 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+DC_RstDftCal|B|();|3|HEADER|1|HEADER||||0|0|0|0||
+DC_vidMngEveCDThd|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+DC_vidMngEveCDThd_opt|A|(argin sint32 s32IdxDft,argin uint32 u32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+FRM_vidF01_PrmDft_Init_opt_suite|A|();|3|HEADER|1|NONE||||0|0|0|0||
+GD_CDThd|A|(argin uint16 u16IdxDft);|1|HEADER|1|NONE||||0|0|0|0||
+GD_CDThd_opt|A|(argin sint32 s32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+GD_DftClr|A|(argin uint16 u16IdxDft);|1|HEADER|1|NONE||||0|0|0|0||
+GD_EveKOn_GDU|C|();|SCH.4|GDU|1|PTS_DOC_5444560||||0|0|0|0|Ignition key's transit from ON to OFF|
+GD_EveRst_GDU|C|();|SCH.1|GDU|1|PTS_DOC_5444560||||0|0|0|0|ECU reset event|
+GD_EveRstDft_GDU|C|();|SCH.2|GDU|1|PTS_DOC_5444560||||0|0|0|0|After-sale tool request for a clear failure|
+GD_EveRstDftObd_GDU|C|();|SCH.5|GDU|1|PTS_DOC_5444560||||0|0|0|0|After-sale tool request for an OBD clear failure|
+GD_RstDftCal|B|();|2|HEADER|1|HEADER||||0|0|0|0||
+GDU_bGetEndDiagStrt|B|Func_GDU_bGetEndDiagStrt|API.3|GDU|1|PTS_DOC_5444560||||0|0|0|0|API which returns the value of the boolean EndDiaStrt|
+GDU_bMngAutomateTrans|C|func_bMngAutomateTrans|FCT3.2|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function manage the transition of GDU manager state. It returns true if the state has changed.|
+GDU_tenuGetStDgo|B|Fct_GDU_tenuGetStDgo|API.2|GDU|1|PTS_DOC_5444560||||0|0|0|0|API which return the state of the single default. If the index is wrong it's return the default state|
+GDU_vidAutomate|D|(argin uint16 u16IdxDft);|FCT3.1|GDU|0|PTS_DOC_5444560||||0|0|0|0|Function which launchs all steps which are necessary to update the GDU Manager state.|
+GDU_vidExitEveCDThd|B|(argin uint16 u16DftIdx);|API.5|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event CDth produce by the module and the scheduling of the call to the other module.|
+GDU_vidExitEveCDThdUp|B|(argin uint16 u16DftIdx);|API.6|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event CDth produce by the module and the scheduling of the call to the other module.|
+GDU_vidExitEveDftClr|B|(argin uint16 u16IdxDft);|API.11|GDU|1|PTS_DOC_5444560||||0|0|0|0|Function which manage the event Default clear|
+GDU_vidExitEveFrfRec|C|(argin uint16 u16IdxDft);|API.8|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event FrFRec produce by the module and the scheduling of the call to the other module.|
+GDU_vidExitEveRstDftCal|C|();|API.9|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event RstDftCal used in validation|
+GDU_vidExitEveSt|C|(argin uint16 u16IdxDft);|API.7|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event St (change state) produce by the module and the scheduling of the call to the others modules.|
+GDU_vidExitEveUnval|B|(argin uint16 u16IdxDft);|API.10|GDU|1|PTS_DOC_5444560||||0|0|0|0|function which manage the event unval.|
+GDU_vidF01_CntDet|C|(argin uint16 u16DftIdx);|FCT1.1|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function manages state of GDU manager|
+GDU_vidF01_EndDiag|B|(argin uint16 u16DftIdx);|FCT1.5|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function manages the parameter bEndDiagStrt|
+GDU_vidF01_EndDiag_opt|A|(argin sint32 s32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+GDU_vidF02_IniCntDet|B|();|FCT1.2|GDU|0|PTS_DOC_5444560||||0|0|0|0|Set the meter detection to zero|
+GDU_vidF02_IniEndDiag|B|();|FCT1.6|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function initializes the parameter bEndDiagStrt|
+GDU_vidF03_IniCntDetScanTool|B|();|FCT1.3|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function initializes the parameter s16ctDet which detect meter for default|
+GDU_vidF03_IniEndDiagScanTool|B|();|FCT1.7|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function intializes the parameter bEndDiagStrt for an OBD type failure by an after-sale tool|
+GDU_vidF04_IniCntDetGlbDCStrt|C|();|FCT1.4|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function initializes s16ctDet at start of a global driving cycle|
+GDU_vidF04_IniCntDetGlbDCStrt_opt|B|(void);|FCT1.9|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function initializes s16ctDet at start of a global driving cycle. Optimization of the function GDU_vidF04_IniCntDetGlbDCStrt.|
+GDU_vidF06_ClearCntDetEvents|B|(void);|FCT1.10|GDU|0|PTS_DOC_5444560||||0|0|0|0|Replace function GDU_vidF06_CntDetEvents on a Global DC Start. This function is dedicated to the creation of various events linked to the fault detection counter.|
+GDU_vidF06_CntDetEvents|C|(argin uint16 u16DftIdx);|FCT1.8|GDU|0|PTS_DOC_5444560||||0|0|0|0|This function is dedicated to the creation of various events linked to the fault detection counter|
+GDU_vidGdu|C|(argin uint16 u16IdxDft);|API.1|GDU|1|PTS_DOC_5444560||||0|0|0|0|Main API to manage the GDU.|
+GDU_vidGlbDCStrt|B|();|API.4|GDU|1|PTS_DOC_5444560||||0|0|0|0|Start-up of a new Global Driving Cycle|
+GDU_vidMngAutomateEntry|C|(argin uint16 u16IdxDft);|FCT3.3|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action which must be done when the manager enter in a different state.|
+GDU_vidMngAutomateExit|C|(argin uint16 u16IdxDft, argin GDFRM_tenuGDUState enuStDgo);|FCT3.4|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action which must be done when the manager leave in a different state.|
+GDU_vidMngEntryStAbsent|D|(argin uint16 u16IdxDft);|FCT2.1|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you enter in the state ABSENT.|
+GDU_vidMngEntryStDeval|B|(argin uint16 u16DftIdx);|FCT2.9|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you enter in the state DEVALIDATION|
+GDU_vidMngEntryStFugitif|D|(argin uint16 u16IdxDft);|FCT2.11|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state FUGITIF.|
+GDU_vidMngEntryStPctlAbsent|B|(argin uint16 u16IdxDft);|FCT2.5|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you enter in the state PCTL ABSENT|
+GDU_vidMngEntryStPctlPresent|C|(argin uint16 u16IdxDft);|FCT2.7|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state PCTPRESENT.|
+GDU_vidMngEntryStPresent|D|(argin uint16 u16IdxDft);|FCT2.3|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state PRESENT.|
+GDU_vidMngExitStAbsent|C|(argin uint16 u16IdxDft);|FCT2.2|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state ABSENT.|
+GDU_vidMngExitStDeval|C|(argin uint16 u16IdxDft);|FCT2.10|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state DEVALIDATION.|
+GDU_vidMngExitStFugitif|C|(argin uint16 u16IdxDft);|FCT2.12|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state  FUGITIF.|
+GDU_vidMngExitStPctlAbsent|C|(argin uint16 u16IdxDft);|FCT2.6|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state PTCL ABSENT.|
+GDU_vidMngExitStPctlPresent|C|(argin uint16 u16IdxDft);|FCT2.8|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state PTCL  PRESENT.|
+GDU_vidMngExitStPresent|C|(argin uint16 u16IdxDft);|FCT2.4|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the action to do when you exit from the state PRESENT.|
+GDU_vidSdlSlow|D|();|SCH.3|GDU|1|PTS_DOC_5444560||||0|0|0|0|Function used only on debug. It used to reset all the  default on a rising edge for GD_bRstDftCal.|
+GDU_vidTransAbs|E|(argin uint16 u16IdxDft);|FCT4.1|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state ABSENT.|
+GDU_vidTransDeval|E|(argin uint16 u16IdxDft);|FCT4.5|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state DEVALIDATION.|
+GDU_vidTransFugit|E|(argin uint16 u16IdxDft);|FCT4.6|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state FUGITIF.|
+GDU_vidTransPctlAbs|D|(argin uint16 u16IdxDft);|FCT4.3|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state PTCL ABSENT.|
+GDU_vidTransPctlPrst|D|(argin uint16 u16IdxDft);|FCT4.2|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state PTCL PRESENT.|
+GDU_vidTransPrst|D|(argin uint16 u16IdxDft);|FCT4.4|GDU|0|PTS_DOC_5444560||||0|0|0|0|Manage the transition in the state PRESENT.|
+GOBD_vidMngEveCDThdUp|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+GOBD_vidMngEveCDThdUp_opt|A|(argin sint32 s32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+GOBD_vidMngEveDftUnval|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+GOBD_vidMngEveRstDftCal|A|();|1|HEADER|1|HEADER||||0|0|0|0|header|
+GOBD_vidMngEveStPres|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+INDICOBD_RstDftCal|A|();|4|HEADER|1|NONE||||0|0|0|0||
+JDD_CxtFrfRec|D|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+JDD_DftExitUnval|D|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+JDD_DftInPres|D|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+JDD_RstDftCal|B|();|5|HEADER|1|NONE||||0|0|0|0||
+JDD_vidDftUnval|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+MEM_vidMngEveCDThUp|B|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+MEM_vidMngEveCDThUp_opt|A|(argin sint32 s32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+MEM_vidMngEveDftClr|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0||
+MEM_vidMngEveDftUnval|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|Evènement entrée de l'automate GDU dans l'état GDU_ST_FUGITIF|
+MEM_vidMngEveDtcClr|A|(argin uint16 u16IdxDft);|1|HEADER|1|NONE||||0|0|0|0||
+MEM_vidMngEveFrfRec|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+MEM_vidMngEveFrfRec_opt|A|(argin sint32 s32IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+MEM_vidMngEveRstDftCal|A|();|1|HEADER|1|HEADER||||0|0|0|0|Demande d'effacement Manuel des défauts|
+MEM_vidMngEveStPres|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+OBD_vidMngEveRstDftCal|A|();|1|HEADER|1|HEADER||||0|0|0|0|header|
+RC01_vidMngEveRstDft|A|();|1|HEADER|1|VEMS V02 ECU#050744||||0|0|0|0||
+StatusOfDtc_StGDU|A|(argin uint16 u16IdxDft);|1|HEADER|1|HEADER||||0|0|0|0|header|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|HEADER||||0|0|0|0|header|

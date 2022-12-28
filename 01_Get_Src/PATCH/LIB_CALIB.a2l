@@ -1,0 +1,3180 @@
+/begin MODULE LIB_CALIB "Module Librairie des Calibrations"
+
+	/***************************************************************************/
+	/* CALIBRATION                                                             */
+	/***************************************************************************/
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_agCkDeltaInVlvThd_C
+		/* Long Identifier        */      "Seuil du delta d'angle VVT admission entre consigne et position courante"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      191.25
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_agCkDeltaExVlvThd_C
+		/* Long Identifier        */      "Seuil du delta d'angle VVT échappement entre consigne et position courante"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      191.25
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_bAcvETBMod_C
+		/* Long Identifier        */      "Booléen de sélection du mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_4
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Eng_mRef_C
+		/* Long Identifier        */      "Masse d'air de référence pour le remplissage"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_5
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.007811880798339844
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_noCylEng_C
+		/* Long Identifier        */      "Nombre de cylindres de l'application "
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      3.0
+		/* Upper Limit            */      6.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_volRef_C
+		/* Long Identifier        */      "Cylindrée unitaire "
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_7
+		/* Lower Limit            */      0.0002
+		/* Upper Limit            */      0.0007
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_pRef_C
+		/* Long Identifier        */      "Pression atmosphérique d'adimensionnement"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Lower Limit            */      100000.0
+		/* Upper Limit            */      110000.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_densAir_C
+		/* Long Identifier        */      "Densité de l'air dans les conditions normales de pression et température"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_11
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      2.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_rOpThrRef2_C
+		/* Long Identifier        */      "Point d'appui 2 pour l'interpolation de l'erreur d'aire efficace"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_12
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_rOpThrRef3_C
+		/* Long Identifier        */      "Point d'appui 3 pour l'interpolation de l'erreur d'aire efficace"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_12
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Air_pUsThrRef_C
+		/* Long Identifier        */      "Pression de référence pour le calcul de la correction altimétrique"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      524280.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AcvMP_noEngMdl_C
+		/* Long Identifier        */      "Calibration d’activation des points de mesures"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      10.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_arEffThrOfsRef_C
+		/* Long Identifier        */      "Biais adaptatif sur l'aire efficace totale : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_15
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.0039061903953552246
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_bAcvVVTAdp_C
+		/* Long Identifier        */      "Booléen d'activation manuelle de l'adaptation VVT"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_agCkVlvExRef_C
+		/* Long Identifier        */      "offset adaptatif AFA sur angle villebrequin de fermeture soupape échappement : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      23.90625
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_agCkVlvInRef_C
+		/* Long Identifier        */      "offset adaptatif AFA sur angle villebrequin d'ouverture soupape admission : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      23.90625
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facArEffThrOfs1Ref_C
+		/* Long Identifier        */      "Adaptatif linéaire 1 sur l'aire efficace papillon : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.000972747802734375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facArEffThrOfs2Ref_C
+		/* Long Identifier        */      "Adaptatif linéaire 2 sur l'aire efficace papillon : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.000972747802734375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facArEffThrOfs3Ref_C
+		/* Long Identifier        */      "Adaptatif linéaire 3 sur l'aire efficace papillon : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.000972747802734375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facIvsInjGainRef_C
+		/* Long Identifier        */      "Adaptatif additif sur l'inverse du gain injecteur : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_19
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1023.984375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facLamErrRef_C
+		/* Long Identifier        */      "Erreur typique de mesure de lambda"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_20
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1023.984375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facPresDsThrErrRef_C
+		/* Long Identifier        */      "Erreur typique de pression collecteur"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_21
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.99993896484375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_facSlopInjGainRef_C
+		/* Long Identifier        */      "Adaptatif de pente sur l'erreur relative de constante injecteur = f(Patmo - Pcoll) : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_22
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.064
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_rCorArEffEGRVlvReqRef_C
+		/* Long Identifier        */      "Adaptatif linéaire sur l'aire efficace de la vanne EGR : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_23
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.498046875
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_rOpThrMax_C
+		/* Long Identifier        */      "Position papillon maximale pour l'interpolation de l'erreur d'aire efficace papillon"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_24
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_tiOffInjRef_C
+		/* Long Identifier        */      "Adaptatif additif sur le temps mort injecteur : Référence"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_25
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.000816
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Air_rLdMin_C
+		/* Long Identifier        */      "Seuil de charge moteur minimale"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.99993896484375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_agCkVlvOvlpLim_C
+		/* Long Identifier        */      "constante de croisement de soupape limite considéré"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_27
+		/* Lower Limit            */      -192.0
+		/* Upper Limit            */      190.5
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_bBoost_C
+		/* Long Identifier        */      "bit de configuration de l'architecture moteur : avec ou sans suralimentation"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_28
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_bBoostCf_C
+		/* Long Identifier        */      "bit de configuration de l'architecture echappement du moteur : twinscroll ou monoscroll"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_29
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_bRhoAir_C
+		/* Long Identifier        */      "Flag d'activation de la prise en compte de la densité des gaz balayés"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_30
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_bVolBurnRgTot_C
+		/* Long Identifier        */      "bit de configuration du volume de gaz brulé résiduel total considéré"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_31
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_gmaIvsAir_C
+		/* Long Identifier        */      "constante de l'inverse du gamma (Cp/Cv) des gaz frais"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_35
+		/* Lower Limit            */      0.5
+		/* Upper Limit            */      0.9999923706054688
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_nEngThdVal_C
+		/* Long Identifier        */      "Seuil de régime"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_36
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_tRef_C
+		/* Long Identifier        */      "constante de température de reference T0"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_39
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      323.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_bInhPred_C
+		/* Long Identifier        */      "Flag inhibant la prédiction de l'état collecteur"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_41
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_rKk2_C
+		/* Long Identifier        */      "Terme égal à Vcol_acc / Vcol_dec"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_43
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.99609375
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Vlv_agCkExVlvRefMax_C
+		/* Long Identifier        */      "Butée haute de l'actionneur VVT échappement"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Vlv_agCkExVlvRefMin_C
+		/* Long Identifier        */      "Butée basse de l'actionneur VVT échappement"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Vlv_agCkInVlvRefMax_C
+		/* Long Identifier        */      "Butée haute de l'actionneur VVT admission"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Vlv_agCkInVlvRefMin_C
+		/* Long Identifier        */      "Butée basse de l'actionneur VVT admission"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_mRef_C
+		/* Long Identifier        */      "masse de reference à (P0, T0 et V0)"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_44
+		/* Lower Limit            */      0.0002
+		/* Upper Limit            */      0.002
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      ExM_bSenPresTyp_C
+		/* Long Identifier        */      "Booléen de type de capteur de pression."
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_45
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      ExM_noPresSenPres_C
+		/* Long Identifier        */      "Indice du vecteur de pression où doit être inscrit la valeur du capteur de pression. 0 s'il n'existe pas de capteur de pression."
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      12.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facKk2_C
+		/* Long Identifier        */      "Facteur égal à Vcol_statique / R"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_46
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.00012206844985485077
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFA_bSelAdpTyp_C
+		/* Long Identifier        */      "booléen permettant de sélectionner le type d'adaptatif sur l'injecteur ( gain simple ou gain dépendant de deltaP)"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_50
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_bTotLdEx_C
+		/* Long Identifier        */      "Flag d'activation du modèle de remplissage total simplifié"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_rTotLdExMin_C
+		/* Long Identifier        */      "remplissage en air minimum (frais + EGR éventuellement) dans le cylindre à la fermeture soupape admission"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngMTrb_bMPMAcv_C
+		/* Long Identifier        */      "Booléen d'activation de la prise en compte d'un facteur d'overboost extérieur"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_agCkClsExVlvReqRef0Min_C
+		/* Long Identifier        */      "Constante correspondant à l'angle vilebrequin de fermeture de la soupape échappement lorsque l'actionneur VVT échappement est en butée minimum"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_agCkOpInVlvReqRef0Max_C
+		/* Long Identifier        */      "Constante correspondant à l'angle vilebrequin d'ouverture de la soupape admission lorsque l'actionneur VVT admission est en butée maximum"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_SBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_bAcvOEMBedMod_C
+		/* Long Identifier        */      "Booléen d'activation du mode banc pour le manager de mode de combustion"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_bPresExServo_C
+		/* Long Identifier        */      "Booléen caractérisant la présence d'un actionneur VVT échappement"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_bPresInServo_C
+		/* Long Identifier        */      "Booléen caractérisant la présence d'un actionneur VVT admission"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_facBasModCurBedMod_C
+		/* Long Identifier        */      "Facteurs d'interpolation du VVT admission entre les bases 1 et 2 du mode courant en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_54
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_facBasModTarBedMod_C
+		/* Long Identifier        */      "Facteurs d'interpolation du VVT admission entre les bases 1 et 2 du mode consigne en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_54
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_facTranModBedMod_C
+		/* Long Identifier        */      "Facteurs d'interpolation du VVT admission entre les modes courant et consigne en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_54
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_idxBas1ModCurBedMod_C
+		/* Long Identifier        */      "Numéros de calibration du VVT admission à utiliser pour la base 1 mode courant en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      32.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_idxBas1ModTarBedMod_C
+		/* Long Identifier        */      "Numéros de calibration du VVT admission à utiliser pour la base 1 mode consigne en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      32.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_idxBas2ModCurBedMod_C
+		/* Long Identifier        */      "Numéros de calibration du VVT admission à utiliser pour la base 2 mode courant en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      32.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      VlvSys_idxBas2ModTarBedMod_C
+		/* Long Identifier        */      "Numéros de calibration du VVT admission à utiliser pour la base 2 mode consigne en mode banc"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      32.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Eng_facStoich_C
+		/* Long Identifier        */      "Ratio stoechiométrique (A/F) de la combustion"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_40
+		/* Lower Limit            */      4.0
+		/* Upper Limit            */      25.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_bAcvLimTarAgCor_C
+		/* Long Identifier        */      "Inhibition de la déformation sur tout le domaine de la courbe unique"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_bAcvAirLdCor_C
+		/* Long Identifier        */      "bit d'activation de la correction de la pente et de l'offset de remplissage pour la prise en compte des carburants alternatifs"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_Boolean
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InjSys_noCyl_C
+		/* Long Identifier        */      "Nombre de cylindres moteur"
+		/* Type                   */      VALUE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Scalar_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      6.0
+	/end CHARACTERISTIC
+
+
+	/***************************************************************************/
+	/* CARTO 1D                                                                */
+	/***************************************************************************/
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTExSqrt_T
+		/* Long Identifier        */      "Correspond à la racine carrée de la température adimensionnée des gaz d'échappement dans le collecteur"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      2.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_9
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      1523.0
+			AXIS_PTS_REF                    AirEfc_tExMnf_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facChgCorSlopEfc_T
+		/* Long Identifier        */      "table de coefficient linéarisé permettant la passage d'une correction acoustique atmosphérique à suralimenté"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      11
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    AirEfc_facChgCorSlopEfc_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facChrExp_T
+		/* Long Identifier        */      "table de restriction de débit en fonction du rapport de pression (equation de barré St Venant)"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      11
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      1.0
+			AXIS_PTS_REF                    AirEfc_rPresEngX_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTBurnCyl_T
+		/* Long Identifier        */      "table de coefficient de rapport de la température des gaz IGR dans le cylindre par rapport à la température de reference T0"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_33
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      9.999847412109375
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_9
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      1523.0
+			AXIS_PTS_REF                    AirEfc_tBurnCyl_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTInSqrt_T
+		/* Long Identifier        */      "table de la racine de température admission considéré sur la température de reference T0"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_37
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      734.0
+			AXIS_PTS_REF                    AirEfc_tAirUsInVlv_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_pDeltaCorSlopEfc_T
+		/* Long Identifier        */      "table de delta de pression necessaire afin de prendre en compte soit totalement la correction acoustique en zone atmophérique, soit totalement la correction acoustique en zone suralimentée"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      50000.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nDeltaCorSlopEfc_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_rVolCyl_T
+		/* Long Identifier        */      "table de rapport du volume cylindre à l'angle villebrquin considéré sur le volume de reference V0"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      20
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      180.0
+			AXIS_PTS_REF                    AirEfc_agCk_facTDC_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facCfeThr_T
+		/* Long Identifier        */      "Table donnant la variable intermédiaire pour le calcul du flux surfacique"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_42
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.062499046325683594
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      22
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    Air_rAirPres_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Air_arEffThr_T
+		/* Long Identifier        */      "Points d'appui de la cartographie section - position papillon"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_15
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.0039061903953552246
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_24
+			/* Number of Axis Pts   */      33
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      1.0
+			AXIS_PTS_REF                    Air_rOpThr_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facCfeVlv_T
+		/* Long Identifier        */      "Table d'interpolation de la variable intermédiaire pour le calcul du flux surfacique"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_42
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.062499046325683594
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      22
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    Air_rAirPres_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facCylRef2_T
+		/* Long Identifier        */      "Facteur permettant de convertir la position vilebrequin en position vilebrequin équivalente dans le référentiel du cylindre 1 à partir d'un numéro de cylindre"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      5.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_6
+			/* Number of Axis Pts   */      6
+			/* Lower Limit          */      1.0
+			/* Upper Limit          */      6.0
+			AXIS_PTS_REF                    InM_noCylEng_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facRelax_T
+		/* Long Identifier        */      "Facteur de relaxation"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_47
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.99609375
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_24
+			/* Number of Axis Pts   */      30
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      63.9990234375
+			AXIS_PTS_REF                    InM_facRelax_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_rAirPresFullLd_T
+		/* Long Identifier        */      "Rapport entre les pressions en aval et en amont du boîtier papillon au-dessus duquel on détecte la pleine charge"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_2
+			/* Number of Axis Pts   */      9
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    Ext_nEngRef2_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      Air_rOpThr_T
+		/* Long Identifier        */      "Cartographie de la position papillon fonction de la section efficace"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_24
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_15
+			/* Number of Axis Pts   */      33
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.0039061903953552246
+			AXIS_PTS_REF                    Air_arEffThr_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      ExM_cppEg_T
+		/* Long Identifier        */      "Table de capacité calorifique des gaz d'échappement"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_52
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      6553.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_9
+			/* Number of Axis Pts   */      11
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      1523.0
+			AXIS_PTS_REF                    ExM_tEg_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      InM_facCfeGradThr_T
+		/* Long Identifier        */      "Dérivée du débit surfacique par rapport à (Pcol / Pamont_pap)"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_53
+		/* Lower Limit            */      -31.99951171875
+		/* Upper Limit            */      0.0
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      22
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    Air_rAirPres_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTAirUsInVlv_T
+		/* Long Identifier        */      "table de correction en densité de la pente et de l'offset de remplissage en air"
+		/* Type                   */      CURVE
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup1D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_37
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      734.0
+			AXIS_PTS_REF                    AirEfc_tAirUsInVlv_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/***************************************************************************/
+	/* CARTO 2D                                                                */
+	/***************************************************************************/
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_agCkClsExVlvWrmDft_M
+		/* Long Identifier        */      "Cartographie de position de consigne VVT échappement"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_2
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    Ext_nEng_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_3
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      3.0
+			AXIS_PTS_REF                    Eng_rAirLd_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      IgSys_agCkOpInVlvWrmDft_M
+		/* Long Identifier        */      "Cartographie de position de consigne VVT admission"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_1
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      96.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_2
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    Ext_nEng_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_3
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      3.0
+			AXIS_PTS_REF                    Eng_rAirLd_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AFAMgt_tiDlyLstObsThd_M
+		/* Long Identifier        */      "Table des délais d'attente entre les observations"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_26
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      16777.211
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      9
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    Inj_concFuStm_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      9
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    Inj_concFuStmErr_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facAirScv_M
+		/* Long Identifier        */      "cartographie de relatant la proportion de gaz balayée directement à l'echappement"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_14
+			/* Number of Axis Pts   */      11
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      0.9999847412109375
+			AXIS_PTS_REF                    AirEfc_facAirScvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      8
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEng2Y_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facCorAtmSlopEfc_M
+		/* Long Identifier        */      "cartographie de correction acoustique de la pression repartiteur admission moyenne en zone atmosphérique"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      84.0
+			/* Upper Limit          */      275.90625
+			AXIS_PTS_REF                    AirEfc_agCkClsInVlvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facCorBoostSlopEfc_M
+		/* Long Identifier        */      "cartographie de correction acoustique de la pression repartiteur admission moyenne en zone suralimentée"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      84.0
+			/* Upper Limit          */      275.90625
+			AXIS_PTS_REF                    AirEfc_agCkClsInVlvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facCorMassBurnRg_M
+		/* Long Identifier        */      "cartographie de correction acoustique de la pression echappement"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      -96.0
+			/* Upper Limit          */      95.90625
+			AXIS_PTS_REF                    AirEfc_agCkClsExVlvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facMassFlowCor_M
+		/* Long Identifier        */      "cartographie de correction du débit reaspiré et balayé en fonction de la position du croisement de soupape par rapport au PMH admission"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_32
+		/* Lower Limit            */      0.7
+		/* Upper Limit            */      1.2999908447265625
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      -96.0
+			/* Upper Limit          */      95.90625
+			AXIS_PTS_REF                    AirEfc_agCkPosnVlvOvlpX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTAirUsInVlv_M
+		/* Long Identifier        */      "table de correction en densité de la pente et de l'offset de remplissage en air"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_37
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      223.0
+			/* Upper Limit          */      734.0
+			AXIS_PTS_REF                    AirEfc_tAirUsInVlv_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_facTCo_M
+		/* Long Identifier        */      "facteur de correction,température eau"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_34
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      2.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_38
+			/* Number of Axis Pts   */      10
+			/* Lower Limit          */      -40.0
+			/* Upper Limit          */      214.0
+			AXIS_PTS_REF                    AirEfc_tCoX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_mfAirScvRed_M
+		/* Long Identifier        */      "cartographie de débit réduit de gaz balayé"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      25
+			/* Lower Limit          */      -192.0
+			/* Upper Limit          */      191.90625
+			AXIS_PTS_REF                    AirEfc_agCkVlvOvlpX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      8
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEng2Y_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_mfBurnRspgRedBas_M
+		/* Long Identifier        */      "cartographie de débit réduit de gaz brulé reaspiré de base"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      25
+			/* Lower Limit          */      -192.0
+			/* Upper Limit          */      191.90625
+			AXIS_PTS_REF                    AirEfc_agCkVlvOvlpX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_mfBurnRspgRedCor_M
+		/* Long Identifier        */      "cartographie de débit réduit de gaz brulé reaspiré corrigé"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      25
+			/* Lower Limit          */      -192.0
+			/* Upper Limit          */      191.90625
+			AXIS_PTS_REF                    AirEfc_agCkVlvOvlpX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_pBegCorBoostSlopEfc_M
+		/* Long Identifier        */      "cartographie de pression à partir de laquelle la prise en compte de la correction acoustique en zone suralimenté est considérée"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Lower Limit            */      50000.0
+		/* Upper Limit            */      150000.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      84.0
+			/* Upper Limit          */      275.90625
+			AXIS_PTS_REF                    AirEfc_agCkClsInVlvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_rVolCyl_M
+		/* Long Identifier        */      "cartographie de rapport du volume cylindre à l'angle villebrequin considéré sur le volume de reference V0"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      -96.0
+			/* Upper Limit          */      95.90625
+			AXIS_PTS_REF                    AirEfc_agCkClsExVlvX_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_17
+			/* Number of Axis Pts   */      13
+			/* Lower Limit          */      -96.0
+			/* Upper Limit          */      95.90625
+			AXIS_PTS_REF                    AirEfc_agCkOpInVlvY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_facD_M
+		/* Long Identifier        */      "Coefficient D(N,Ppumped) de l'équation de charge"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_40
+		/* Lower Limit            */      -0.0625
+		/* Upper Limit            */      0.0625
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_2
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    Ext_nEng_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_8
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      524280.0
+			AXIS_PTS_REF                    Air_pAir_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_facDGas_M
+		/* Long Identifier        */      "Coefficient Dgaz(N,Ppumped) de l'équation de charge en GAZ"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_40
+		/* Lower Limit            */      -0.0625
+		/* Upper Limit            */      0.0625
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_2
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    Ext_nEng_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_8
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      524280.0
+			AXIS_PTS_REF                    Air_pAir_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      AirEfc_rFuStmMass_M
+		/* Long Identifier        */      "Cartographie modélisant l'impact de l'évaporation du carburant en injection directe"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_51
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      2.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_55
+			/* Number of Axis Pts   */      20
+			/* Lower Limit          */      -360.0
+			/* Upper Limit          */      360.0
+			AXIS_PTS_REF                    AirEfc_agInjPha_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_36
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    AirEfc_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/begin CHARACTERISTIC
+		/* Name                   */      EngM_rTotLdEx_M
+		/* Long Identifier        */      "Cartographie modélisant le remplissage total simplifié"
+		/* Type                   */      MAP
+		/* Memory Address         */      0x0
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.0
+		/begin AXIS_DESCR
+			/* Description of Y-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_8
+			/* Number of Axis Pts   */      16
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      524280.0
+			AXIS_PTS_REF                    EngM_pDsThr_A
+		/end AXIS_DESCR
+		/begin AXIS_DESCR
+			/* Description of X-Axis Points */
+			/* Axis Type            */      COM_AXIS
+			/* Reference to Input   */      NO_INPUT_QUANTITY
+			/* Conversion Method    */      LIB_CALIB_CM_48
+			/* Number of Axis Pts   */      18
+			/* Lower Limit          */      0.0
+			/* Upper Limit          */      7500.0
+			AXIS_PTS_REF                    EngM_nEngY_A
+		/end AXIS_DESCR
+	/end CHARACTERISTIC
+
+	/***************************************************************************/
+	/* AXE                                                                     */
+	/***************************************************************************/
+
+	/begin AXIS_PTS
+		/* Name                   */      Ext_nEng_A
+		/* Long Identifier        */      "Carto de point d'appui en régime moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_2
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Eng_rAirLd_A
+		/* Long Identifier        */      "Carto de point d'appui du ratio de débit d'air"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Ext_nEngRef4_A
+		/* Long Identifier        */      "Table de points d'appui en régime moteur 4."
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_2
+		/* Number of Axis Pts     */      20
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Ext_nEngRef1_A
+		/* Long Identifier        */      "Table de points d'appui en régime moteur 1."
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_2
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_tExMnf_A
+		/* Long Identifier        */      "Axe d'appui de la table AirEfc_facTExSqrt_T. Correspond à la température  estimée des gaz d'échappement dans le collecteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_9
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      1523.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_mfEGR_A
+		/* Long Identifier        */      "Table de points d'appui en débit de gaz à travers la vanne EGR"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_pAir_A
+		/* Long Identifier        */      "Cartographie des points d'appuis paramétrables en pression pour le calcul de la charge"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      524280.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_rAirPres_A
+		/* Long Identifier        */      "Points d'appui du rapport des pressions aval et amont du boitier papillon"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      22
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Ext_nEngRef2_A
+		/* Long Identifier        */      "Table de breakpoints 9 points du régime moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_2
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_mfAir_A
+		/* Long Identifier        */      "Cartographie des points d'appuis paramétrables pour le débit pompé"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCk_facTDC_A
+		/* Long Identifier        */      "vecteur de point d'appui d'angle villebrequin"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      20
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      180.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCkClsExVlvX_A
+		/* Long Identifier        */      "vecteur de point d'appui d'angle villebrequin de fermeture soupape echappement"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      13
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      95.90625
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCkClsInVlvX_A
+		/* Long Identifier        */      "vecteur de point d'appui d'angle villebrequin de fermeture soupape admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      13
+		/* Lower Limit            */      84.0
+		/* Upper Limit            */      275.90625
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCkOpInVlvY_A
+		/* Long Identifier        */      "vecteur de point d'appui d'angle villebrequin d'ouverture soupape admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      13
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      95.90625
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCkPosnVlvOvlpX_A
+		/* Long Identifier        */      "vecteur de point d'appui de position du croisement de soupapes par rapport au PMH admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      13
+		/* Lower Limit            */      -96.0
+		/* Upper Limit            */      95.90625
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agCkVlvOvlpX_A
+		/* Long Identifier        */      "vecteur de point d'appui de croisement de soupape par rapport au PMH admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_17
+		/* Number of Axis Pts     */      25
+		/* Lower Limit            */      -192.0
+		/* Upper Limit            */      191.90625
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_facAirScvX_A
+		/* Long Identifier        */      "vecteur de point d'appui de masse de gaz balayé par rapport à la somme de la masse de gaz balayé et de la masse de gaz brulé totale"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      11
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_facChgCorSlopEfc_A
+		/* Long Identifier        */      "vecteur de point d'appui du coefficient permettant la passage d'une correction acoustique atmosphérique à suralimenté"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      11
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_nDeltaCorSlopEfc_A
+		/* Long Identifier        */      "vecteur de point d'appui du régime moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_36
+		/* Number of Axis Pts     */      18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_nEng2Y_A
+		/* Long Identifier        */      "vecteur de point d'appui du régime moteur pour les cartographies et tables participant au calcul de la quantité de gaz balayé"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_36
+		/* Number of Axis Pts     */      8
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_nEngY_A
+		/* Long Identifier        */      "vecteur de point d'appui du régime moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_36
+		/* Number of Axis Pts     */      18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_rPresEngX_A
+		/* Long Identifier        */      "vecteur de point d'appui de rapport de pression autour du moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_ULONG
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      11
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_tAirUsInVlv_A
+		/* Long Identifier        */      "vecteur de point d'appui de température d'air amont soupape admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_37
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      734.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_tBurnCyl_A
+		/* Long Identifier        */      "vecteur de point d'appui de la température des gaz brulé dans le cylindre à la fermeture soupape admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_9
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      1523.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_tCoX_A
+		/* Long Identifier        */      "vecteur de point d'appui de la température d'eau"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_38
+		/* Number of Axis Pts     */      10
+		/* Lower Limit            */      -40.0
+		/* Upper Limit            */      214.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Inj_concFuStm_A
+		/* Long Identifier        */      "Point d'appui de la concentration de vapeurs d'essence dans le canister"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Inj_concFuStmErr_A
+		/* Long Identifier        */      "Points d'appui de l'erreur sur la concentration de vapeurs d'essence dans le canister"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_14
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      InM_noCylEng_A
+		/* Long Identifier        */      "Points d'appui en numéro de cylindre pour calcul de l'horizon de prédiction."
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UBYTE
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_6
+		/* Number of Axis Pts     */      6
+		/* Lower Limit            */      1.0
+		/* Upper Limit            */      6.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_mfAirRef1_A
+		/* Long Identifier        */      "Table de points d'appui en débit d'air utilisée pour le calcul des pertes de charge"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_13
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.9999847412109375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      InM_facRelax_A
+		/* Long Identifier        */      "Table de points d'appui du facteur de relaxation"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_24
+		/* Number of Axis Pts     */      30
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      63.9990234375
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      TrbAct_facPresAltiCor_A
+		/* Long Identifier        */      "Table de points d'appui du facteur de correction altimétrique"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_10
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.999969482421875
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      TrbAct_nEng_A
+		/* Long Identifier        */      "Table de points d'appui en régime utilisé pour les cartographies du module TrbActMgr"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_48
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      TrbAct_pDifMaxPnmActReq_A
+		/* Long Identifier        */      "Table de points d'appui en différence de pression maximale au niveau de l'actionneur pneumatique de la wastegate pour le calcul de la consigne de RCO"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_49
+		/* Number of Axis Pts     */      9
+		/* Lower Limit            */      -262140
+		/* Upper Limit            */      262140
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      TrbAct_pDifTrbEstim_A
+		/* Long Identifier        */      "Table de points d'appui en différence de pression au niveau de la soupape de la wastegate utilisée pour le calcul de la consigne de dépression au niveau de la membrane"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      -262144
+		/* Upper Limit            */      262136.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_tFu_A
+		/* Long Identifier        */      "vecteur de points d'appui de la température carburant"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_37
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      734.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      EngM_nEngY_A
+		/* Long Identifier        */      "point d'appui régime moteur"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_48
+		/* Number of Axis Pts     */      18
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      EngM_pDsThr_A
+		/* Long Identifier        */      "point d'appui pression répartiteur admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_8
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      524280.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      ExM_tEg_A
+		/* Long Identifier        */      "Vecteur de température des gaz d'échappement"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_9
+		/* Number of Axis Pts     */      11
+		/* Lower Limit            */      223.0
+		/* Upper Limit            */      1523.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      VlvSys_nEng16_A
+		/* Long Identifier        */      "Vecteur de 16 points d'appuis du régime"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_48
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      VlvSys_nEng8_A
+		/* Long Identifier        */      "Vecteur de 8 points d'appuis du régime"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_48
+		/* Number of Axis Pts     */      8
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      7500.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      VlvSys_rAirLd16_A
+		/* Long Identifier        */      "Vecteur de 16 points d'appuis du ratio de charge en air"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Number of Axis Pts     */      16
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      VlvSys_rAirLd8_A
+		/* Long Identifier        */      "Vecteur de 8 points d'appuis du ratio de charge en air"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_3
+		/* Number of Axis Pts     */      8
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      3.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_arEffThr_A
+		/* Long Identifier        */      "Points d'appui de la cartographie section - position papillon"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_15
+		/* Number of Axis Pts     */      33
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      0.0039061903953552246
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      Air_rOpThr_A
+		/* Long Identifier        */      "Cartographie de la position papillon fonction de la section efficace"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_UWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_24
+		/* Number of Axis Pts     */      33
+		/* Lower Limit            */      0.0
+		/* Upper Limit            */      1.0
+	/end AXIS_PTS
+
+	/begin AXIS_PTS
+		/* Name                   */      AirEfc_agInjPha_A
+		/* Long Identifier        */      "vecteur de points d'appui en phasage angulaire de l'injection vis-à-vis de la fermeture des soupapes d'admission"
+		/* Memory Address         */      0x0
+		/* Input Quantity         */      NO_INPUT_QUANTITY
+		/* Record Layout          */      LIB_CALIB_RL_Lookup2D_X_SWORD
+		/* Maxdiff                */      0
+		/* Conversion Method      */      LIB_CALIB_CM_55
+		/* Number of Axis Pts     */      20
+		/* Lower Limit            */      -360.0
+		/* Upper Limit            */      360.0
+	/end AXIS_PTS
+
+	/***************************************************************************/
+	/* RECORD LAYOUT                                                           */
+	/***************************************************************************/
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_UBYTE
+		FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_SWORD
+		FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_X_UWORD
+		AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_Boolean
+		FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_UWORD
+		FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_ULONG
+		FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup1D_ULONG
+		FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_ULONG
+		FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_X_SWORD
+		AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_UWORD
+		FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup1D_UWORD
+		FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_X_ULONG
+		AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup2D_X_UBYTE
+		AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_SWORD
+		FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Lookup1D_UBYTE
+		FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/begin RECORD_LAYOUT LIB_CALIB_RL_Scalar_SBYTE
+		FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+	/end   RECORD_LAYOUT
+
+	/***************************************************************************/
+	/* COMPU METHOD                                                            */
+	/***************************************************************************/
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_1
+		/* Long Identifier        */      "Q = V * 1.3333333333333333 0 °Ck"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "°Ck"
+		/* Coefficients           */      COEFFS 0 1.3333333333333333  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_2
+		/* Long Identifier        */      "Q = V * 1 0 Rpm"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "Rpm"
+		/* Coefficients           */      COEFFS 0 1  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_3
+		/* Long Identifier        */      "Q = V * 16384.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 16384.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_4
+		/* Long Identifier        */      "Q = V * 1 0 -"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_5
+		/* Long Identifier        */      "Q = V * 8389144.905273939 0 kg/cyl/cycle"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "kg/cyl/cycle"
+		/* Coefficients           */      COEFFS 0 8389144.905273939  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_6
+		/* Long Identifier        */      "Q = V * 1 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 1  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_7
+		/* Long Identifier        */      "Q = V * 131072000.0 0 m^3"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "m^3"
+		/* Coefficients           */      COEFFS 0 131072000.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_8
+		/* Long Identifier        */      "Q = V * 0.125 0 Pa"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "Pa"
+		/* Coefficients           */      COEFFS 0 0.125  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_9
+		/* Long Identifier        */      "Q = V * 32.0 0 K"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "K"
+		/* Coefficients           */      COEFFS 0 32.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_10
+		/* Long Identifier        */      "Q = V * 32768.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 32768.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_11
+		/* Long Identifier        */      "Q = V * 65536.0 0 kg/m^3"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "kg/m^3"
+		/* Coefficients           */      COEFFS 0 65536.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_12
+		/* Long Identifier        */      "Q = V * 1024.0 0 %"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "%"
+		/* Coefficients           */      COEFFS 0 1024.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_13
+		/* Long Identifier        */      "Q = V * 65536.0 0 kg/s"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "kg/s"
+		/* Coefficients           */      COEFFS 0 65536.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_14
+		/* Long Identifier        */      "Q = V * 65536.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 65536.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_15
+		/* Long Identifier        */      "Q = V * 16777216.0 0 m²"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "m²"
+		/* Coefficients           */      COEFFS 0 16777216.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_16
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_2
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_17
+		/* Long Identifier        */      "Q = V * 10.666666666666666 0 °Ck"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "°Ck"
+		/* Coefficients           */      COEFFS 0 10.666666666666666  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_18
+		/* Long Identifier        */      "Q = V * 262144.0 0 m²/-"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "m²/-"
+		/* Coefficients           */      COEFFS 0 262144.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_19
+		/* Long Identifier        */      "Q = V * 64.0 0 s/kg"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s/kg"
+		/* Coefficients           */      COEFFS 0 64.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_20
+		/* Long Identifier        */      "Q = V * 64.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 64.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_21
+		/* Long Identifier        */      "Q = V * 16384.0 0 1/Pa"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "1/Pa"
+		/* Coefficients           */      COEFFS 0 16384.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_22
+		/* Long Identifier        */      "Q = V * 3072000000.0 0 s/kg/Pa"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s/kg/Pa"
+		/* Coefficients           */      COEFFS 0 3072000000.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_23
+		/* Long Identifier        */      "Q = V * 512.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 512.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_24
+		/* Long Identifier        */      "Q = V * 1024.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 1024.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_25
+		/* Long Identifier        */      "Q = V * 312500.0 0 s"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s"
+		/* Coefficients           */      COEFFS 0 312500.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_26
+		/* Long Identifier        */      "Q = V * 200.0 0 s"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s"
+		/* Coefficients           */      COEFFS 0 200.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_27
+		/* Long Identifier        */      "Q = V * 0.6666666666666666 + 128.0 °Ck"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "°Ck"
+		/* Coefficients           */      COEFFS 0 0.6666666666666666  128.0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_28
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_3
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_29
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_4
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_30
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_5
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_31
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_6
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_32
+		/* Long Identifier        */      "Q = V * 109226.66666666667 -76458.66666666667 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 109226.66666666667  -76458.66666666667  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_33
+		/* Long Identifier        */      "Q = V * 6553.6 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 6553.6  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_34
+		/* Long Identifier        */      "Q = V * 128.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 128.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_35
+		/* Long Identifier        */      "Q = V * 131072.0 -65536.0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 131072.0  -65536.0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_36
+		/* Long Identifier        */      "Q = V * 1 0 rpm"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "rpm"
+		/* Coefficients           */      COEFFS 0 1  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_37
+		/* Long Identifier        */      "Q = V * 128.0 -28544.0 K"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "K"
+		/* Coefficients           */      COEFFS 0 128.0  -28544.0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_38
+		/* Long Identifier        */      "Q = V + 40.0 °C"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "°C"
+		/* Coefficients           */      COEFFS 0 1.0  40.0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_39
+		/* Long Identifier        */      "Q = V * 128.0 0 K"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "K"
+		/* Coefficients           */      COEFFS 0 128.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_40
+		/* Long Identifier        */      "Q = V * 2048.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 2048.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_41
+		/* Long Identifier        */      "Q = V * 1 0 -"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_7
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_42
+		/* Long Identifier        */      "Q = V * 1048576.0 0 s/m.K^0.5"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s/m.K^0.5"
+		/* Coefficients           */      COEFFS 0 1048576.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_43
+		/* Long Identifier        */      "Q = V * 256.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 256.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_44
+		/* Long Identifier        */      "Q = V * 8389144.905273939 0 kg"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "kg"
+		/* Coefficients           */      COEFFS 0 8389144.905273939  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_45
+		/* Long Identifier        */      "Q = V * 1 0 -"
+		/* Conversion Type        */      TAB_VERB
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COMPU_TAB_REF  LIB_CALIB_CV_8
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_46
+		/* Long Identifier        */      "Q = V * 536870912.0 0 K.kg/Pa"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "K.kg/Pa"
+		/* Coefficients           */      COEFFS 0 536870912.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_47
+		/* Long Identifier        */      "Q = V * 256.0 0 s.u"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "s.u"
+		/* Coefficients           */      COEFFS 0 256.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_48
+		/* Long Identifier        */      "Q = V * 1 0 RPM"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "RPM"
+		/* Coefficients           */      COEFFS 0 1  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_49
+		/* Long Identifier        */      "Q = V * 0.125 -0.5 Pa"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "Pa"
+		/* Coefficients           */      COEFFS 0 0.125  -0.5  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_50
+		/* Long Identifier        */      "Q = V * 1 0 bool"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "bool"
+		/* Coefficients           */      COEFFS 0 1  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_51
+		/* Long Identifier        */      "Q = V * 1000.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 1000.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_52
+		/* Long Identifier        */      "Q = V * 10.0 0 J/kg/K"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "J/kg/K"
+		/* Coefficients           */      COEFFS 0 10.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_53
+		/* Long Identifier        */      "Q = V * 2048.0 + 65535.0 kg/(s.m^2)"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "kg/(s.m^2)"
+		/* Coefficients           */      COEFFS 0 2048.0  65535.0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_54
+		/* Long Identifier        */      "Q = V * 100.0 0 -"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "-"
+		/* Coefficients           */      COEFFS 0 100.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/begin COMPU_METHOD
+		/* Name of CompuMethod    */      LIB_CALIB_CM_55
+		/* Long Identifier        */      "Q = V * 10.0 0 °Ck"
+		/* Conversion Type        */      RAT_FUNC
+		/* Format                 */      "%0.6"
+		/* Units                  */      "°Ck"
+		/* Coefficients           */      COEFFS 0 10.0  0  0  0  1
+	/end COMPU_METHOD
+
+	/***************************************************************************/
+	/* COMPU VTAB                                                              */
+	/***************************************************************************/
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_1
+		/* Long Identifier        */      "0 Non Mode banc, 1 Mode banc"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Non Mode banc"
+		/* Value Pairs (In Out)   */      1 "Mode banc"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_2
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_3
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_4
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_5
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_6
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_7
+		/* Long Identifier        */      "0 Faux, 1 Vrai"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "Faux"
+		/* Value Pairs (In Out)   */      1 "Vrai"
+	/end COMPU_VTAB
+
+	/begin COMPU_VTAB
+		/* Name                   */      LIB_CALIB_CV_8
+		/* Long Identifier        */      "0 capteur de perte de charge, 1 capteur de pression brute"
+		/* Conversion Type        */      TAB_VERB
+		/* Number Value Pairs     */      2
+		/* Value Pairs (In Out)   */      0 "capteur de perte de charge"
+		/* Value Pairs (In Out)   */      1 "capteur de pression brute"
+	/end COMPU_VTAB
+
+	/begin FUNCTION LIB_CALIB_FCT_LIB_CALIB "Librairie de Calibration"
+		/begin DEF_CHARACTERISTIC
+			IgSys_agCkDeltaInVlvThd_C
+			IgSys_agCkDeltaExVlvThd_C
+			IgSys_bAcvETBMod_C
+			Eng_mRef_C
+			AirEfc_noCylEng_C
+			AirEfc_volRef_C
+			AirEfc_pRef_C
+			AirEfc_densAir_C
+			AFA_rOpThrRef2_C
+			AFA_rOpThrRef3_C
+			Air_pUsThrRef_C
+			AcvMP_noEngMdl_C
+			AFA_arEffThrOfsRef_C
+			AFA_bAcvVVTAdp_C
+			AFA_agCkVlvExRef_C
+			AFA_agCkVlvInRef_C
+			AFA_facArEffThrOfs1Ref_C
+			AFA_facArEffThrOfs2Ref_C
+			AFA_facArEffThrOfs3Ref_C
+			AFA_facIvsInjGainRef_C
+			AFA_facLamErrRef_C
+			AFA_facPresDsThrErrRef_C
+			AFA_facSlopInjGainRef_C
+			AFA_rCorArEffEGRVlvReqRef_C
+			AFA_rOpThrMax_C
+			AFA_tiOffInjRef_C
+			Air_rLdMin_C
+			AirEfc_agCkVlvOvlpLim_C
+			AirEfc_bBoost_C
+			AirEfc_bBoostCf_C
+			AirEfc_bRhoAir_C
+			AirEfc_bVolBurnRgTot_C
+			AirEfc_gmaIvsAir_C
+			AirEfc_nEngThdVal_C
+			AirEfc_tRef_C
+			InM_bInhPred_C
+			InM_rKk2_C
+			Vlv_agCkExVlvRefMax_C
+			Vlv_agCkExVlvRefMin_C
+			Vlv_agCkInVlvRefMax_C
+			Vlv_agCkInVlvRefMin_C
+			EngM_mRef_C
+			ExM_bSenPresTyp_C
+			ExM_noPresSenPres_C
+			InM_facKk2_C
+			AFA_bSelAdpTyp_C
+			EngM_bTotLdEx_C
+			EngM_rTotLdExMin_C
+			EngMTrb_bMPMAcv_C
+			VlvSys_agCkClsExVlvReqRef0Min_C
+			VlvSys_agCkOpInVlvReqRef0Max_C
+			VlvSys_bAcvOEMBedMod_C
+			VlvSys_bPresExServo_C
+			VlvSys_bPresInServo_C
+			VlvSys_facBasModCurBedMod_C
+			VlvSys_facBasModTarBedMod_C
+			VlvSys_facTranModBedMod_C
+			VlvSys_idxBas1ModCurBedMod_C
+			VlvSys_idxBas1ModTarBedMod_C
+			VlvSys_idxBas2ModCurBedMod_C
+			VlvSys_idxBas2ModTarBedMod_C
+			Eng_facStoich_C
+			IgSys_bAcvLimTarAgCor_C
+			AirEfc_bAcvAirLdCor_C
+			InjSys_noCyl_C
+			AirEfc_facTExSqrt_T
+			AirEfc_facChgCorSlopEfc_T
+			AirEfc_facChrExp_T
+			AirEfc_facTBurnCyl_T
+			AirEfc_facTInSqrt_T
+			AirEfc_pDeltaCorSlopEfc_T
+			AirEfc_rVolCyl_T
+			InM_facCfeThr_T
+			Air_arEffThr_T
+			InM_facCfeVlv_T
+			InM_facCylRef2_T
+			InM_facRelax_T
+			InM_rAirPresFullLd_T
+			Air_rOpThr_T
+			ExM_cppEg_T
+			InM_facCfeGradThr_T
+			AirEfc_facTAirUsInVlv_T
+			IgSys_agCkClsExVlvWrmDft_M
+			IgSys_agCkOpInVlvWrmDft_M
+			AFAMgt_tiDlyLstObsThd_M
+			AirEfc_facAirScv_M
+			AirEfc_facCorAtmSlopEfc_M
+			AirEfc_facCorBoostSlopEfc_M
+			AirEfc_facCorMassBurnRg_M
+			AirEfc_facMassFlowCor_M
+			AirEfc_facTAirUsInVlv_M
+			AirEfc_facTCo_M
+			AirEfc_mfAirScvRed_M
+			AirEfc_mfBurnRspgRedBas_M
+			AirEfc_mfBurnRspgRedCor_M
+			AirEfc_pBegCorBoostSlopEfc_M
+			AirEfc_rVolCyl_M
+			EngM_facD_M
+			EngM_facDGas_M
+			AirEfc_rFuStmMass_M
+			EngM_rTotLdEx_M
+			Ext_nEng_A
+			Eng_rAirLd_A
+			Ext_nEngRef4_A
+			Ext_nEngRef1_A
+			AirEfc_tExMnf_A
+			Air_mfEGR_A
+			Air_pAir_A
+			Air_rAirPres_A
+			Ext_nEngRef2_A
+			Air_mfAir_A
+			AirEfc_agCk_facTDC_A
+			AirEfc_agCkClsExVlvX_A
+			AirEfc_agCkClsInVlvX_A
+			AirEfc_agCkOpInVlvY_A
+			AirEfc_agCkPosnVlvOvlpX_A
+			AirEfc_agCkVlvOvlpX_A
+			AirEfc_facAirScvX_A
+			AirEfc_facChgCorSlopEfc_A
+			AirEfc_nDeltaCorSlopEfc_A
+			AirEfc_nEng2Y_A
+			AirEfc_nEngY_A
+			AirEfc_rPresEngX_A
+			AirEfc_tAirUsInVlv_A
+			AirEfc_tBurnCyl_A
+			AirEfc_tCoX_A
+			Inj_concFuStm_A
+			Inj_concFuStmErr_A
+			InM_noCylEng_A
+			Air_mfAirRef1_A
+			InM_facRelax_A
+			TrbAct_facPresAltiCor_A
+			TrbAct_nEng_A
+			TrbAct_pDifMaxPnmActReq_A
+			TrbAct_pDifTrbEstim_A
+			AirEfc_tFu_A
+			EngM_nEngY_A
+			EngM_pDsThr_A
+			ExM_tEg_A
+			VlvSys_nEng16_A
+			VlvSys_nEng8_A
+			VlvSys_rAirLd16_A
+			VlvSys_rAirLd8_A
+			Air_arEffThr_A
+			Air_rOpThr_A
+			AirEfc_agInjPha_A
+		/end DEF_CHARACTERISTIC
+	/end FUNCTION
+
+/end MODULE
+/***************************************************************************/
+
+/* ------------------------------ END OF MODULE LIB_CALIB_T ------------------------------------*/

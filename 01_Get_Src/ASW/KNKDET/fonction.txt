@@ -1,0 +1,28 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|C|func_FRM_bGetFRM|2|HEADER|1|NONE||||0|0|0|0|FRM|
+KNKDET_vidAverageNoiseCalc|D|();|FCT2.8|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Calcul du bruit moyen.|
+KNKDET_vidAverageNoiseReset|B|();|FCT2.9|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Réinitialisation du bruit moyen.|
+KNKDET_vidCy14Detection|H|();|FCT2.6|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Détection des cylindres 1 et 4 simultanément.|
+KNKDET_vidCy23Detection|H|();|FCT2.5|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Détection des cylindres 2 et 3 simultanément.|
+KNKDET_vidCyclDetection|I|();|FCT2.2|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Le bruit instantané du dernier cylindre sur lequel on a fait la mesure est comparé avec un seuil représentatif du bruit de ce cylindre sans cliquetis pour décider de la présence de cliquetis.|
+KNKDET_vidCylAverageNoiseCalc|B|();|FCT2.7|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Calcul de bruit moyen d'un cylindre.|
+KNKDET_vidCylTreatment|B|();|FCT2.1|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|La détection est réalisée avant la mise à jour du bruit moyen car celle-ci tient compte de la présence ou non de cliquetis dans  le cylindre en cours.|
+KNKDET_vidCylUncertainTreatment|B|();|FCT2.4|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Traitement en cas d'incertitude de detection.|
+KNKDET_vidDecrDynFilterCounter|B|();|FCT1.6|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Décrémentation du compteur de filtrage dynamique.|
+KNKDET_vidFactorFilterCalcFinal|D|();|FCT1.8|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Lors d'une transition de charge ou de régime ou si un changement de la fréquence du filtre passe-bande a été détecté, un filtrage différent (dynamique) est appliqué durant un délai calibrable..|
+KNKDET_vidFactorFilterCalcFreq|B|();|FCT1.7|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Le changement de la fréquence du filtre-passe bande peut entraîner une variation brutale du bruit instantané qui peut être interprété à tord comme du cliquetis.|
+KNKDET_vidFactorFilterCalcLoad|C|();|FCT1.4|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|La détection des transitoires de charge est calculée à fréquence SdlMid: en effet une Détection moins fréquente induit un retard trop important dans l'application du gain de filtrage dynamique,avec comme conséquence des fausses détections.|
+KNKDET_vidFactorFilterCalcN|B|();|FCT1.3|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|En  prévision  du  changement  de  filtrage  lors  des  transitoires,  les  transitoires  de  régime  sont  évalués  en observant  la variation de  régime sur  l’échantillon  temporel SdlSlow.|
+KNKDET_vidInhibitionCorrection|C|();|FCT1.9|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Afin d’éviter  les  fausses détections cliquetis en cas de  fortes dégradations d’avance  lors des changements de rapport,  la  détection  est  inhibée  lorsque  les  retraits  d’avance  dépassent  un seuil  calibrable.|
+KNKDET_vidInitDynFilterCounter|B|();|FCT1.5|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Initialisation du compteur de filtrage dynamique.|
+KNKDET_vidInitOutput|D|();|FCT1.1|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Reset du compteur de temps avant sortie du transitoire régime ou charge pour le facteur de filtrage (par cylindre).|
+KNKDET_vidInitStrategy|D|();|FCT1.2|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Initialisation de stratégies à l'activation des combustions.|
+KNKDET_vidPairCylTreatment|B|();|FCT2.3|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|Traitement par paire de cylindre.|
+KNKDET_vidReset|B|();|FCT2.10|KNKDET|0|PTS_DOC_5068282||||0|0|0|0|En cas de panne du capteur cliquetis, le bruit moyen est réinitialisé à sa valeur maximale en raison de l'incertitude sur la pertinence des mesures précédentes.|
+KnkTreat_EveCkSnOn_KnkDet|B|();|SCH.3|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise|
+KnkTreat_EveKnk_KnkDet|C|();|SCH.2|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Tâche de calcul du niveau de cliquetis pour le cylindre en cours.|
+KnkTreat_EveRst_KnkDet|B|();|SCH.1|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Evénement reset du calculateur|
+KnkTreat_SdlFast_KnkDet|A|();|SCH.6|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Moniteur rapide KnkTreat|
+KnkTreat_SdlMid_KnkDet|B|();|SCH.4|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Moniteur moyen|
+KnkTreat_SdlSlow_KnkDet|B|();|SCH.5|KNKDET|1|PTS_DOC_5068282||||0|0|0|0|Moniteur lent|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0||

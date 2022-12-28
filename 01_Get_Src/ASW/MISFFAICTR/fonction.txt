@@ -1,0 +1,58 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 index)boolean;|2|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft,argin  boolean bDgo,argin boolean bMonRun,argin boolean Ns_bMonWait) ;|4|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+Misf_EveMisf_MisfFaiCtr|E|();|SCH.2|MISFFAICTR|1|PTS_DOC_5069596||||0|0|0|0|Evènement lié à l'interruption logicielle de fin d'acquisition de la fenêtre misfire.|
+Misf_EveRst_MisfFaiCtr|C|();|SCH.1|MISFFAICTR|1|PTS_DOC_5069596||||0|0|0|0|Evénement reset du calculateur.|
+Misf_SdlSlow_MisfFaiCtr|B|();|SCH.3|MISFFAICTR|1|PTS_DOC_5069596||||0|0|0|0|Moniteur lent de la fonction MisfFaiCtr.|
+MISFFAICTR_vidCataDamage|C|();|FCT3.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc permet si de la mauvaise route est détectée(Mf_rough_road_cat_sum_uavn0 > Mf_rough_road_cat_thresh_uacn0) .|
+MISFFAICTR_vidCataDamagePerCyl|E|();|FCT2.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc permet :    D’attribuer les dommages causés au catalyseur par les misfires pour chaque cylindre.   De compter l’ensemble des misfires « destruction catalyseur » qui se sont produits sur l’ensemble des cylindres.|
+MISFFAICTR_vidCataDamageSum|G|();|FCT3.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction additionne les dommages causés au catalyseur par tous les misfires détectés (sauf en cas de coupure d’injection) sur l’ensemble des cylindres.|
+MISFFAICTR_vidCataEmissPerCyl|D|();|FCT5.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet :  D’attribuer les dommages causés au catalyseur par les misfires pour chaque cylindre.   De compter pour chaque cylindre le nombre de misfires « émission ».|
+MISFFAICTR_vidCataRoughRdEmisCnt|C|();|FCT4.8|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction somme le pic lié à la mauvaise route pour la stratégie émission excessive de polluant.|
+MISFFAICTR_vidCataRoughRoadCnt|C|();|FCT1.7|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction somme le pic lié à la mauvaise route pour la stratégie dommage catalyseur.|
+MISFFAICTR_vidCatDamCylCalc|F|();|FCT4.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|En 4 cylindres, il est interdit de couper 2 cylindres consécutifs en cas de panne Dephia ou AAC. Si cela se produit les booléens de défaut dommages catalyseurs sont remis à zéros.|
+MISFFAICTR_vidCatDamWghtRealCnt|B|();|FCT3.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Dans cette fonction  est réalisée le vecteur somme des poids des misfires réels.|
+MISFFAICTR_vidCatDmgCylCutMgt|B|();|FCT1.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction effectue la production de Misf_bAcvDetDmgCat qui active le comptage des défauts émissions excessives de polluants.|
+MISFFAICTR_vidEmission|C|();|FCT5.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet si la mauvaise route est détectée  Mf_rough_road_emiss_sum_uavn0 = Mf_rough_road_emiss_thresh_uacn0.|
+MISFFAICTR_vidEmissRealCount|B|();|FCT6.9|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Les misfires détectés sur des cylindres dont l’injection est coupée sont écartés afin de ne pas fausser la détection|
+MISFFAICTR_vidEmissSum|E|();|FCT6.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction fait la somme des misfires « émission » détectés sur l’ensemble des cylindres pour l’horizon « émission » de 2000.|
+MISFFAICTR_vidEssenceDefault|F|();|FCT7.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc détermine la gestion des défauts de ratés de combustion durant le fonctionnement en essence.|
+MISFFAICTR_vidFailDetCatDam|F|();|FCT1.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|cette fonction effectue ses calculs à récurrence Misf_EveMisf.|
+MISFFAICTR_vidFailDetCatDamage|E|();|FCT1.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction  effectue ses calculs à récurrence Misf_EveMisf:  Comptage de panne « destruction du catalyseur » dès lors que les conditions d’activations des algorithmes sont vérifiées.|
+MISFFAICTR_vidFailDetCatDamage1|F|();|FCT6.8|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction  effectue ses calculs à récurrence Misf_EveMisf:  Comptage de panne « destruction du catalyseur » dès lors que les conditions d’activations des algorithmes sont vérifiées.|
+MISFFAICTR_vidFailDetEmiss|H|();|FCT4.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction effectue ses calculs à récurrence Misf_EveMisf.|
+MISFFAICTR_vidFailDetEmission|G|();|FCT4.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction effectue ses calculs à récurrence Misfire_task.|
+MISFFAICTR_vidFuelLowLevelComput|D|();|FCT7.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc calcule l’indicateur de niveau bas réservoir. Suite à la détection d’un seuil minimum de dommages catalyseurs sur les quatre cylindres une temporisation est enclenchée.|
+MISFFAICTR_vidGazDefault|F|();|FCT7.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc détermine la gestion des défauts de ratés de combustion durant le fonctionnement au gaz.|
+MISFFAICTR_vidHorizonCalcCatDam|D|();|FCT1.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet de mettre 1 booléen à 1 dès lors que les horizons définis pour les stratégies « dommages catalyseur » (400 PMH) est atteint.|
+MISFFAICTR_vidHorizonsCalcEmiss|D|();|FCT4.7|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet de mettre 1 booléen à 1 dès lors que les horizons définis pour les stratégies «émission » excessive de polluant (2000 PMH) sont atteints.|
+MISFFAICTR_vidInhDetNoMisfEnable|B|();|FCT7.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction inhibe le comptage lorsq'il n'y a pas encore eu de misfire détecté.|
+MISFFAICTR_vidInit|G|();|FCT1.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction d'initialisation.|
+MISFFAICTR_vidInitCatDam|D|();|FCT4.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Initialisation des variables relatives au comptage des pannes «dommages catalyseur » dès lors que l’horizon « dommages catalyseur » de 400 PMH est atteint.|
+MISFFAICTR_vidInitEmiss|C|();|FCT6.7|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Initialisation des variables relatives au comptage des pannes «émissions » de polluants dès lors que l’horizon « émission » de 2000 PMH est atteint.|
+MISFFAICTR_vidInitOutput|J|();|FCT1.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction d'initialisation des sorties.|
+MISFFAICTR_vidMfCatDamRealSum|B|();|FCT3.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Dans cette fonction on réalise la somme des misfires réels sur les PMH relatifs à la stratégie.|
+MISFFAICTR_vidMfCyl_1|D|();|FCT2.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 1 cylindre.|
+MISFFAICTR_vidMfCyl_1_P2|C|();|FCT5.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 1 cylindre.|
+MISFFAICTR_vidMfCyl_2|C|();|FCT2.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 2 cylindre.|
+MISFFAICTR_vidMfCyl_2_P2|C|();|FCT5.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 2 cylindre.|
+MISFFAICTR_vidMfCyl_3|D|();|FCT2.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 3 cylindre.|
+MISFFAICTR_vidMfCyl_3_P2|C|();|FCT5.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 3 cylindre.|
+MISFFAICTR_vidMfCyl_4|C|();|FCT2.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 4 cylindre.|
+MISFFAICTR_vidMfCyl_4_P2|C|();|FCT5.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Fonction permet de compter les dommages catalyseur du 4 cylindre.|
+MISFFAICTR_vidMfDet4Cyl|E|();|FCT3.9|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction détermine les cylindres en misfire destruction de catalyseur, pour un fonctionnement en quatre   cylindres. Ainsi en quatre cylindres seul deux défauts cylindre identifié peut être mémorisé.|
+MISFFAICTR_vidMfDetected3Cyl|F|();|FCT3.7|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction détermine les cylindres en misfire destruction de catalyseur, pour un fonctionnement en trois cylindres.Ainsi en trois cylindre seul un défaut cylindre identifiés peut être mémorisé.|
+MISFFAICTR_vidMfDetected4Cyl|C|();|FCT3.8|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction détermine les cylindres en misfire destruction de catalyseur, pour un fonctionnement en quatre   cylindres. Ainsi en quatre cylindres seul deux défauts cylindre identifié peut être mémorisé.|
+MISFFAICTR_vidMfDetectedCatDam|E|();|FCT3.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc permet de déterminer si les misfires « dommage catalyseur » ont lieu préférentiellement sur un cylindre ou si tous les cylindres sont affectés.|
+MISFFAICTR_vidMfDetectedEmiss|C|();|FCT6.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc effectue ses calculs à récurrence Misfire_task :  Comptage de panne «  émission excessive » dès lors que les conditions d’activations des algorithmes sont vérifiées.|
+MISFFAICTR_vidMfEmissCyl|E|();|FCT6.4|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction indique permet d'indiquer s'il ya des des émissions excessives de polluants sont dues par le cylindre1 en misfire.|
+MISFFAICTR_vidMisfFaiCtrEnable|B|();|FCT7.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet d’activer la stratégie de comptage des misfires à partir du moment oùle premier misfire est détecté. Cette solution a été adoptée pour optimiser la chaîne de calcul.|
+MISFFAICTR_vidMisfireDefault|B|();|FCT7.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc détermine la gestion des défauts de ratés de combustion qui doit être distincte entre un fonctionnement au gaz et un fonctionnement en essence.|
+MISFFAICTR_vidMisfireRateCatDam|C|();|FCT4.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction calcule le taux de misfire  « dommage catalyseur » qui se sont produits sur l’ensemble des cylindres sur l’horizon « dommage catalyseur » de 400 PMH.|
+MISFFAICTR_vidMisfireRateEmiss|C|();|FCT6.5|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Calcul du taux de misfires « émission » pour un bloc « émission » de 2000 PMH.|
+MISFFAICTR_vidMisfireTotal|C|();|FCT4.9|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Ce bloc détermine, pour les 4 cylindres, un défaut misfire dû à un injecteur ou une bougie défaillante.|
+MISFFAICTR_vidRoughRdNoDetCatDam|D|();|FCT3.2|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Cette fonction permet d'Additionner des dommages causés au catalyseur par tous les misfires détectés sur l’ensemble des cylindres.|
+MISFFAICTR_vidRoughRdNoDetEmiss|D|();|FCT6.1|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|la détection de ratés liés à une émission excessive de polluant (2000 PMH).|
+MISFFAICTR_vidRoughRoadDetCatDam|C|();|FCT4.3|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Si la mauvaise route est détectée (Mf_rough_road_cat_sum_uavn0 = mf_rough_road_cat_thresh_uacn0) alors les variables entrant en compte dans le comptage de pannes sont réinitialisées à 0.|
+MISFFAICTR_vidRoughRoadDetEmiss|C|();|FCT6.6|MISFFAICTR|0|PTS_DOC_5069596||||0|0|0|0|Si la mauvaise route est détectée (Mf_rough_road_sum_emiss_uavn0 = Mf_rough_emiss_thresh_uacn0) alors les variables entrant en compte dans le comptage de pannes sont réinitialisées à 0.|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|Erreur logiciel.|

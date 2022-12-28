@@ -1,0 +1,14 @@
+# Opening .hex software file => Buf#1
+open /file_name:%SOFT_TRF%.hex /buf_dest:1
+
+# Reading calibration checksum
+assert /buf_src:1 /addr_src:%CHECKSUM_CALIB% /size:2
+
+# Reading software checksum
+assert /buf_src:1 /addr_src:%CHECKSUM_CODE% /size:2
+
+# Reading TMS calibration checksum
+assert /buf_src:1 /addr_src:%CHECKSUM_TMS_CALIB% /size:2
+
+# Reading TMS software checksum
+assert /buf_src:1 /addr_src:%CHECKSUM_TMS_CODE% /size:2

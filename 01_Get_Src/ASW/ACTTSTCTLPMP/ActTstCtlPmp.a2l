@@ -1,0 +1,457 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : ActTstCtlPmp                                            */
+/* !Description     : Test actionneur Electrovanne Pompe à Huile              */
+/*                                                                            */
+/* !Module          : ActTstCtlPmp                                            */
+/*                                                                            */
+/* !File            : ActTstCtlPmp.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Tue Sep 27 14:15:26 2011                              */
+/*   Model name       : ActTstCtlPmp_AUTOCODE.mdl                             */
+/*   Model version    : 1.27                                                  */
+/*   Root subsystem   : /ActTstCtlPmp                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/OIL/ACTTSTCTLPMP/ActTstCtlPmp.a2$*/
+/* $Revision::   1.0                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   17 Oct 2011 $*/
+/******************************************************************************/
+
+
+/begin MODULE ActTstCtlPmp  "ActTstCtlPmp"
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT ActTstCtlPmp_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ActrTstCtlPmp_OffTime_C
+    /* Long Identifier        */      "Durée de consigne nulle pour le test actionneur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      25.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ActrTstCtlPmp_OnTime_C
+    /* Long Identifier        */      "Durée des impulsions du test actionneur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      25.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ActrTstCtlPmp_Tempo_C
+    /* Long Identifier        */      "Temps nécessaire entre 2 tests actionneurs"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      50.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ActrTstCtlPmp_TotTime_C
+    /* Long Identifier        */      "Durée totale du test actionneur "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      50.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Oil_rSpPosnActrTstPos1_C
+    /* Long Identifier        */      "Consigne de position 1 pendant le test actionneur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_2
+    /* Lower Limit            */      0
+    /* Upper Limit            */      99.609375
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Oil_rSpPosnActrTstPos2_C
+    /* Long Identifier        */      "Consigne de position 2 pendant le test actionneur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      ActTstCtlPmp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      ActTstCtlPmp_CM_2
+    /* Lower Limit            */      0
+    /* Upper Limit            */      99.609375
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  /begin MEASUREMENT
+    /* Name                   */      Oil_bActrTstInProgs
+    /* Long identifier        */      "Booléen indiquant qu'un test actionneur pompe a huile est en cours"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ActTstCtlPmp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Oil_bCtlPmpTstCmpl
+    /* Long identifier        */      "Test actionneur électrovanne pompe à huile réalisé sans interruption"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ActTstCtlPmp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Oil_rSpPosnActrTst
+    /* Long identifier        */      "Consigne de position pendant le test actionneur"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ActTstCtlPmp_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      99.609375
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ActrTstCtlPmp_CumulTime
+    /* Long identifier        */      "Temps de test cumulé"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ActTstCtlPmp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      50.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ActrTstCtlPmp_IntTime
+    /* Long identifier        */      "Temps intermédiaire du test actionneur"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ActTstCtlPmp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      25.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      ActrTstCtlPmp_Tempo
+    /* Long identifier        */      "Temporisation qui permet de retarder le passage de l'état 'Test End' à l'état 'Idle'"
+    /* Data type              */      UWORD
+    /* Conversion method      */      ActTstCtlPmp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      50.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Oil_stActrTst
+    /* Long identifier        */      "Etat de l'automate de test actionneur"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      ActTstCtlPmp_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      255.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ActTstCtlPmp_CM_1
+    /* Long identifier        */      "Q = V*100.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 100.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ActTstCtlPmp_CM_2
+    /* Long identifier        */      "Q = V*2.560000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 2.560000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ActTstCtlPmp_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF ActTstCtlPmp_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      ActTstCtlPmp_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      ActTstCtlPmp_CM_4
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin FUNCTION ActTstCtlPmp
+    "V02NT1105535.001"
+    
+    /begin IN_MEASUREMENT
+      Code_test_action
+      Srv_bActrTstEna
+    /end IN_MEASUREMENT
+    
+    /begin LOC_MEASUREMENT
+      ActrTstCtlPmp_CumulTime
+      ActrTstCtlPmp_IntTime
+      ActrTstCtlPmp_Tempo
+      Oil_stActrTst
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      Oil_bActrTstInProgs
+      Oil_bCtlPmpTstCmpl
+      Oil_rSpPosnActrTst
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      ActrTstCtlPmp_OffTime_C
+      ActrTstCtlPmp_OnTime_C
+      ActrTstCtlPmp_Tempo_C
+      ActrTstCtlPmp_TotTime_C
+      Oil_rSpPosnActrTstPos1_C
+      Oil_rSpPosnActrTstPos2_C
+    /end DEF_CHARACTERISTIC
+    
+  /end FUNCTION
+  
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+

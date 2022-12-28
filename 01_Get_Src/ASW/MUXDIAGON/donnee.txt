@@ -1,0 +1,17 @@
+Nom_donnée|Type|Nom_module|Public|Nb_lignes|Nb_colonnes|Label_père|Offset|Masque_accès|Affichage|Unité|Fonction_transfert_ades|Coefficient_a|Coefficient_b|Groupe|Groupe_1|Groupe_2|Alias_1|Alias_2|Genre|Variable_indice_ligne|Variable_indice_colonne|Fonction_transfert_ligne|Fonction_transfert_colonne|Table_breakpoint_ligne|Table_breakpoint_colonne|Référence_spécification|Recuperable|Modifiable|Fournisseur|Responsable|Valeurs|Visualisable_ADES|Donnée_a_supprimer|Validation|Commentaires|Volatile|MinDecValue|MaxDecValue|MinPhysValue|MaxPhysValue|Def_Eval
+Clef_de_contact|boolean|HEADER|1|0|0|Clef_de_contact|0|0|Phys|bool|2|0||Acquisitions|Acquisitions||Clef_de_contact||1||||||||0|1||||1|0|0||0|0|1|0|1|0
+CoPTSt_stEng|uint8|HEADER|1|0|0|CoPTSt_stEng|0|0|Phys|-|1|1|0|IFRTE|IFRTE||CoPTSt_stEng||1||||||||0|1||||1|0|0||0|0|15|0|15|0
+Diag_on|boolean|MUXDIAGON|1|0|0|Diag_on|0|0|Phys|bool|2|0||Divers|Divers||Diag_on||1||||||||0|1||||1|0|0||0|0|1|0|1|0
+Dtc_etat_structure|st12|HEADER|1|0|0|Dtc_etat_structure|0|0|Phys|etat|4|||CrkMng|CrkMng||Dtc_etat_structure||1||||||||0|1||||1|0|0||0|||||0
+DTC_VERS_ET_DEBOUCLEE|bool|HEADER|1|0|0|Dtc_etat_structure|0|128|Phys|bool|2|128||CrkMng|CrkMng||DTC_VERS_ET_DEBOUCLEE||1||||||||0|1|||128|1|0|0||0|||||0
+DTC_VERS_ET_STRUCTURE_COUPLE|bool|HEADER|1|0|0|Dtc_etat_structure|0|32|Phys|bool|2|32||CrkMng|CrkMng||DTC_VERS_ET_STRUCTURE_COUPLE||1||||||||0|1|||32|1|0|0||0|||||0
+EcuSt_SampleTiFast_SC|uint8|HEADER|0|0|0|EcuSt_SampleTiFast_SC|0|0|Phys|-|||||||EcuSt_SampleTiFast_SC||3||||||||0|1|||10|0|0|0||0|||||0
+Engine_Running|uint8|HEADER|1|0|0|Engine_Running|0|0|Phys|-|||||||Engine_Running||3||||||||0|1|||5|0|0|0||0|||||0
+Mux_SampleTiMid_SC|uint8|HEADER|1|0|0|Mux_SampleTiMid_SC|0|0|Phys|-|||||||Mux_SampleTiMid_SC||3||||||||0|1|||100|0|0|0||0|||||0
+MUXDIAGON_u8Inhib|uint8|MUXDIAGON|0|0|0|MUXDIAGON_u8Inhib|0|0|Hexa|-||||Divers|Divers||MUXDIAGON_u8Inhib||2|||||||V02 NT 08 05997|1|1||||1|0|0|calib permet d'inhiber la mise à jour des variables produites de la spec|0|0|255|0|255|0
+Rcd_mode_active|boolean|HEADER|1|0|0|Rcd_mode_active|0|0|Phys|bool|2|0||Divers|Divers||Rcd_mode_active||2|||||||V02 NT 08 05997|1|1||||1|0|0|Switch permettant l'utilisation du +APC (0) ou du signal RCD (1)|0|0|1|0|1|0
+Rcd_tempo_boot_count|uint16|HEADER|1|0|0|Rcd_tempo_boot_count|0|0|Phys|s|1|EcuSt_SampleTiFast_SC/1000|0|Variables systeme|Variables systeme||Rcd_tempo_boot_count||1||||||||0|1||||1|0|0||0|0|60000|0|600|0
+Stop|uint8|HEADER|1|0|0|Stop|0|0|Phys|-|||||||Stop||3||||||||0|1|||6|0|0|0||0|||||0
+Tempo_surveillance_liaison|uint8|MUXDIAGON|0|0|0|Tempo_surveillance_liaison|0|0|Phys|s|1|Mux_SampleTiMid_SC/1000|0|Divers|Divers||Tempo_surveillance_liaison||1||||||||0|1||||1|0|0||0|0|250|0|25|0
+Valeur_tempo_srv_liaison_dem|uint8|MUXDIAGON|1|0|0|Valeur_tempo_srv_liaison_dem|0|0|Phys|s|1|Mux_SampleTiMid_SC/1000|0|Divers|Divers||Valeur_tempo_srv_liaison_dem||2|||||||V02 NT 08 05997|1|1||||1|0|0|Valeur de la temporisation de surveillance du bus CAN pour le démarrage initial|0|0|250|0|25|0
+Valeur_tempo_srv_liaison_redem|uint8|MUXDIAGON|1|0|0|Valeur_tempo_srv_liaison_redem|0|0|Phys|s|1|Mux_SampleTiMid_SC/1000|0|Divers|Divers||Valeur_tempo_srv_liaison_redem||2|||||||V02 NT 08 05997|1|1||||1|0|0|Valeur de la temporisation de surveillance du bus CAN pour le redémarrage (Fonction STT).|0|0|250|0|25|0

@@ -1,0 +1,35 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GD_EveRst_GJDD|C|();|SCH.1|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement Reset CMM|
+GD_EveRstDft_GJDD|B|();|SCH.5|JDD|1|PTS_DOC_5447356||||0|0|0|0|Requête d'effacement des défauts avec l'outil APV.|
+GD_EveRxn55F_GJDD|D|();|SCH.4|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement de réception de la trame 55F|
+GD_EveRxn772_GJDD|D|();|SCH.3|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement de réception de la trame 772|
+GD_SdlFast_GJDD|E|();|SCH.2|JDD|1|PTS_DOC_5447356||||0|0|0|0|Moniteur rapide de la fonction GD.|
+GDGAR_bGetFRM|B|func_FRM_bGetFRM|1|HEADER|1|NONE||||0|0|0|0||
+JDD_CxtFrfRec|C|(argin uint16 u16IdxDft);|SCH.9|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement défauts|
+JDD_DftExitUnval|C|(argin uint16 u16IdxDft);|SCH.8|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement défauts pannes disparus|
+JDD_DftInPres|C|(argin uint16 u16IdxDft);|SCH.7|JDD|1|PTS_DOC_5447356||||0|0|0|0|Evènement défauts pannes apparus|
+JDD_RstDftCal|B|();|SCH.6|JDD|1|PTS_DOC_5447356||||0|0|0|0|Demande d'effacement Manuel des défauts.|
+JDD_vidAcqFrame55F|F|();|FCT2.4|JDD|0|PTS_DOC_5447356||||0|0|0|0|Cette fonction est exécutée à chaque réception de la trame d’acquittement du journal BSI (AEE 2010).|
+JDD_vidAcqFrame772|F|();|FCT2.3|JDD|0|PTS_DOC_5447356||||0|0|0|0|Cette fonction est exécutée à chaque réception de la trame d’acquittement du journal BSI (AEE 2004).|
+JDD_vidAcquisitionCptBeforSyncro|B|();|FCT1.4|JDD|0|PTS_DOC_5447356||||0|0|0|0|Acquisition de la référence horaire|
+JDD_vidCaptureData|F|(argin uint16 u16IdxDft);|FCT1.7|JDD|0|PTS_DOC_5447356||||0|0|0|0|Ce bloc traite du figeage des paramètres (captures) pour les 2 architecture AEE 2004 / 2010 lors de la détection ou de la confirmation d’absence d’un défaut.|
+JDD_vidDftClrData|B|();|FCT3.10|JDD|0|PTS_DOC_5447356||||0|0|0|0|Cette fonction gère l’effacement du contexte associé à un défaut lorsque celui-ci a été correctement transmis au BSI ou lorsque toutes les tentatives d’envoi de celui-ci ont été épuisées.|
+JDD_vidFillBufferContextFailure|F|(argin uint16 u16IdxDft);|FCT2.1|JDD|0|PTS_DOC_5447356||||0|0|0|0|La gestion du remplissage dans le Buffer des évènements défauts à émettre peut être inhibé par calibration (Jbsi_manu_inh).|
+JDD_vidIni|C|();|FCT1.2|JDD|0|PTS_DOC_5447356||||0|0|0|0|A l’initialisation de l’ECU, les données statiques de l’entête des différentes trames se configurent selon l’architecture AEE en place.|
+JDD_vidInitOutput|E|();|FCT1.1|JDD|0|PTS_DOC_5447356||||0|0|0|0|Initialisation des sorties|
+JDD_vidPrepaDataIscanBuffer|B|();|3|HEADER|1|NONE||||0|0|0|0|Demande de préparation par le manager de la trame JDD (768h) à émettre|
+JDD_vidReqClrDft|C|();|FCT2.5|JDD|0|PTS_DOC_5447356||||0|0|0|0|Lors d'une requête d'effacement des défauts ou par passage à 1 du CLRDTC de la  trame 92h, le buffer est réinitialisé et le nombre de pannes en attente passe à 0|
+JDD_vidRstAckBsi|B|();|FCT3.9|JDD|0|PTS_DOC_5447356||||0|0|0|0|A chaque demande d’émission de la trame JDD par le manager, le flag de réception de l’acquittement est  reseté.|
+JDD_vidSetStateDtcFugitf|D|(argin uint16 u16IdxDft);|FCT1.6|JDD|0|PTS_DOC_5447356||||0|0|0|0|Indique que l’évènement défaut à émettre s’agit d’un défaut disparu.|
+JDD_vidSetStateDtcPresent|D|(argin uint16 u16IdxDft);|FCT1.5|JDD|0|PTS_DOC_5447356||||0|0|0|0|Indique que l’évènement défaut à émettre s’agit d’un défaut confirmé.|
+JDD_vidStartFaultSending|E|();|FCT2.2|JDD|0|PTS_DOC_5447356||||0|0|0|0|Cette fonction gère la préparation des données des différentes trames de l’évènement défaut à émettre l’architecture AEE en place.|
+JDD_vidStateJbsiIdle|C|();|FCT3.2|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_IDLE|
+JDD_vidStateJbsiWaitAcquittement|D|();|FCT3.6|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_ATTENTE_ACQUITTEMENT|
+JDD_vidStateJbsiWaitRestartProc|E|();|FCT3.7|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_ATTENTE_RESTART_PROCESSUS|
+JDD_vidStateJbsiWaitSendFrame1|C|();|FCT3.3|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_ATTENTE_ENVOI_TRAME_1|
+JDD_vidStateJbsiWaitSendFrame2|C|();|FCT3.4|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_ATTENTE_ENVOI_TRAME_2|
+JDD_vidStateJbsiWaitSendFrame3|C|();|FCT3.5|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition de l'état JBSI_ATTENTE_ENVOI_TRAME_3|
+JDD_vidTimeCounterBeforeSynchro|C|();|FCT1.3|JDD|0|PTS_DOC_5447356||||0|0|0|0|Ce bloc traite de l’acquisition de la référence horaire avant la première synchronisation (uniquement en AEE 2010).|
+JDD_vidTransmissionFramesMngr|C|();|FCT3.1|JDD|0|PTS_DOC_5447356||||0|0|0|0|Cette fonction traite de la gestion du séquencement de  l’émission des évènements défauts vers le calculateur BSI.|
+JDD_vidTransToIdleOrSendFrame1|C|();|FCT3.8|JDD|0|PTS_DOC_5447356||||0|0|0|0|Transition à l'état  JBSI_IDLE ou JBSI_ATTENTE_ENVOI_TRAME_1.|
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||

@@ -1,0 +1,31 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Can_EveRxn5B2_TiEngStop|A|();|SCH.9|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evènement de réception de la trame CAN 5B2.|
+Can_EveRxn7F2_TiEngStop|A|();|SCH.10|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evènement de réceprion de la trame CAN 7F2.|
+EngSt_EvePwrl_TiEngStop|C|();|SCH.6|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evénement powerlatch|
+EngSt_EveRst_TiEngStop|C|();|SCH.1|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Cette fonction permet l'initialisation des sorties au reset du calculateur.|
+EngSt_EveRTSt_TiEngStop|C|();|SCH.5|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant.|
+EngSt_EveRxn552_TiEngStop|C|();|SCH.3|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evènement correspondent à la reception de la trame 552h.|
+EngSt_EveRxn552bis_TiEngStop|C|();|SCH.7|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Evènement correspondent à la reception de la trame 552bis|
+EngSt_SdlFast_TiEngStop|B|();|SCH.8|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Moniteur rapide pour la fonction EngSt|
+EngSt_SdlMid_TiEngStop|D|();|SCH.2|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Moniteur moyen pour la fonction EngSt.|
+EngSt_SdlSlow_TiEngStop|D|();|SCH.4|TIENGSTOP|1|PTS_DOC_5329313||||0|0|0|0|Moniteur lent pour la fonction EngSt|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|API.2|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|API.1|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+TIENGSTOP_vidAlarmClockCalc|C|();|FCT1.4|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Cette fonction permet d'enregistrer la  " Date de dernier Réveil ".|
+TIENGSTOP_vidChangeOfMind|D|();|FCT1.5|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|" durée d'arrêt moteur avec Reset" se comportera de la même manière que " durée  d'arrêt moteur ", sauf dans le cas particulier, sur détection d'un " Change of Mind ", "durée d'arrêt moteur avec Reset" sera remis à zéro.|
+TIENGSTOP_vidDegradedPeriodEstim|F|();|FCT1.6|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Dès que les acquisitions de température d'air et d'eau sont réalisées et que toutes les  informations nécessaires au calcul sont disponibles, on appelle la fonction d'estimation du temps d'arrêt dégradée.|
+TIENGSTOP_vidEmfActiveDate|C|();|FCT2.6|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Quand le régime moteur devient non nul le CMM met à zéro " date arrêt volatile " et fige " durée d'arrêt moteur ".|
+TIENGSTOP_vidEmfDate|D|();|FCT2.1|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Si  l'information  temporelle provenant du véhicule est  invalide, La durée d'arrêt ne pourra pas être évaluée de manière nominale. Par conséquent, la valeur " durée d'arrêt moteur " aura en  interne de  la fonction une valeur invalide|
+TIENGSTOP_vidEmfDateCalc|E|();|FCT2.2|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|A partir de l'arrêt moteur (N=0), le CMM évalue en temps réel la durée écoulée entre le  dernier arrêt moteur (suite à un calage, une demande conducteur, ou une demande STT) et le nouveau passage de dents vilebrequin.|
+TIENGSTOP_vidEmfDateCoh|C|();|FCT2.8|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Le CMM validera l'information sur les 3 premières valeurs de cette information temporelle qui devront être successives et cohérentes. En cas d'incohérence sur ces 3 valeurs de l'information temporelle reçue, la valeur retenue sera invalide.|
+TIENGSTOP_vidEmfDateSinceStall|E|();|FCT2.5|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|A partir de l'arrêt moteur (N=0), le CMM évalue en temps réel la durée écoulée entre le  dernier arrêt moteur (suite à un calage, une demande conducteur, ou une demande STT) et le nouveau passage de dents vilebrequin.|
+TIENGSTOP_vidEmfInvalidCrankDate|C|();|FCT2.9|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Cette fonction permet le sauvegarde de la date de le dernier démarrage "Date valide".|
+TIENGSTOP_vidEmfSaveLastAlarmClk|C|();|FCT1.3|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|On mémorisera, l'information temporelle envoyée par le véhicule contenue dans la  dernière trame reçue valide en mémoire non volatile, c'est la " Date de dernier Réveil ".|
+TIENGSTOP_vidEmfSaveLastStopDate|D|();|FCT1.8|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|A la perte du réveil principal et si un démarrage a eu lieu depuis la dernière apparition du réveil principal, le CMM doit enregistrer en mémoire non volatile la valeur de " date arrêt volatile " ou " date actuelle ".|
+TIENGSTOP_vidEmfValidCrankDate|C|();|FCT2.7|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Cette fonction permet le sauvegarde de la date de le dernier démarrage "Date valide"|
+TIENGSTOP_vidFrameTairCAN|A|();|FCT1.9|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Cette fonction indique la réception de l'évènement CAN relatif à la mesure de la température d'air.|
+TIENGSTOP_vidInitialisation|D|();|FCT1.2|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|A l’initialisation, on va lire en EEPROM les dates de dernier réveil, de dernier arrêt et date de démarrage.On met aussi à 0 l’indicateur de calcul de la date du démarrage.|
+TIENGSTOP_vidInitOutput|D|();|FCT1.1|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Initialisation des sorties|
+TIENGSTOP_vidInitTimeSinceStall|F|();|FCT2.4|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Après le réveil du CMM et jusqu'au passage des premières dents vilebrequin, on déduit  la durée d'arrêt moteur, nommée " durée d'arrêt moteur ", calculée ainsi : " date actuelle " - " date arrêt NON volatile ".|
+TIENGSTOP_vidRazTimeSinceStall|C|();|FCT1.7|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Quand le régime moteur devient nul le CMM enregistre la " date actuelle " en mémoire  volatile, cette date est appelée " date arrêt volatile ".|
+TIENGSTOP_vidTimeBuffer|C|();|FCT2.3|TIENGSTOP|0|PTS_DOC_5329313||||0|0|0|0|Cette fonction permet d'enregistrer la date dans les buffeurs de sauvegarde.|

@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GD_EveRst_DftLogTx|A|();|SCH.1|JDDISCANIF|1|V02 NT 11 02911||||0|1|0|0|Evènement reset ECU de la fonction GD|
+GD_EveSendDftLog_DftLogTx|A|();|1|HEADER|1|NONE||||0|0|0|0|Evènement demandant d’envoyer la trame 0x768 avec le contenu de Jbsi_IscanBufferPosX|
+JDDISCANIF_PrepaDataIscanBuffer|A|();|SCH.2|JDDISCANIF|1|V02 NT 11 02911||||0|1|0|0|Demande de préparation par le manager de la trame JDD (768h) à émettre|
+JDDISCANIF_vid1Trame|A|();|FCT2.1|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Cette fonction permet d'envoyer une trame lorsque le defaut est fugitifs|
+JDDISCANIF_vid3Trames|A|();|FCT2.2|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|cette fonction envoie trois trames lorsque le défaut est present.|
+JDDISCANIF_vidAEE2004Treat|B|();|FCT1.10|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Le traitement des trames pour une AEE 2004 ou 2007 n’est pas encore spécifie. Néanmoins il est pris en compte dans l’architecture de cette NT.|
+JDDISCANIF_vidAEE2010Treat|C|();|FCT1.4|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Pour une AEE 2010, on traite les données en fonction de leur appartenance à la première ou à la deuxième trame.|
+JDDISCANIF_vidDftCodTreat|A|();|FCT1.5|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Le code défaut, émis vers le BSI dans la trame n 1, doit respecter le format de codage  du constructeur|
+JDDISCANIF_vidDftTime|A|();|FCT1.7|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|La référence horaire du défaut, émise vers le BSI dans la trame n 1, doit respecter le  format de codage du constructeur|
+JDDISCANIF_vidDstTreat|A|();|FCT1.6|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|L'information kilométrage du défaut, émise vers la BSI dans la trame n 2, doit respecter  le format de codage du constructeur|
+JDDISCANIF_vidHdTreat|B|();|FCT1.3|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|L'octet d'entête de chaque trame à émettre doit respecter le format de codage du  constructeur|
+JDDISCANIF_vidInit|A|();|FCT1.1|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Fonction d'initialisation des paramètres produits|
+JDDISCANIF_vidPrepaDataISCAN|B|();|FCT1.2|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Sur chaque demande d’émission de trame du JDD vers la BSI, on teste l’architecture électrique et électronique, afin de déterminer le traitement à effectuer.|
+JDDISCANIF_vidRcdTreat|B|();|FCT1.9|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Fonction qui détermine L’information Etat automate RCD à émettre|
+JDDISCANIF_vidRemplissageTrame1|A|();|FCT2.3|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Cette fonction permet de remplir la 1 trame en cas d'un défaut.|
+JDDISCANIF_vidRemplissageTrame2|A|();|FCT2.4|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Cette fonction permet de remplir la 2 trame en cas d'un défaut.|
+JDDISCANIF_vidRemplissageTrame3|A|();|FCT2.5|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|Cette fonction permet de remplir la 3 trame en cas d'un défaut.|
+JDDISCANIF_vidVehCdn|A|();|FCT1.8|JDDISCANIF|0|V02 NT 11 02911||||0|1|0|0|L'information situation de vie, émise vers le BSI dans la trame n 2, doit respecter le  format de codage du constructeur|

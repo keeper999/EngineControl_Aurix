@@ -1,0 +1,2741 @@
+/begin MODULE EngMGslT  "EngMGslT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT EngMGslT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facLfpPresAtmBoost_M
+    /* Long Identifier        */      "Gain du filtre de la pression dans le répartiteur"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    EngM_nEng_LfpPresAtmY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_5
+      /* Number of Axis Pts   */      11
+      /* Lower Limit          */      0
+      /* Upper Limit          */      1.0
+      AXIS_PTS_REF                    EngM_rPresX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      EngM_nEng_LfpPresAtmY_A
+    /* Long Identifier        */      "Carto de point dappui en régime moteur"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      EngM_rPresX_A
+    /* Long Identifier        */      "Carto de point dappui du rapport entre la pression répartiteur et la pression dair extérieur"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_X_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Number of Axis Pts     */      11
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facChgCorSlopEfc_T
+    /* Long Identifier        */      "table de coefficient linéarité permettant le passage d'un ratio de consigne de charge à un ratio de pression de consigne"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_5
+      /* Number of Axis Pts   */      11
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    EngM_facChgCorSlopEfc_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      EngM_facChgCorSlopEfc_A
+    /* Long Identifier        */      "vecteur de point d'appui du coefficient permettant le passage d'un ratio de consigne de charge à un ratiode pression de consigne"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Number of Axis Pts     */      11
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facCorT_T
+    /* Long Identifier        */      "Cartographie de correction du remplissage de référence en température"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.9999694824218750E+000
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_7
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      223.0
+      /* Upper Limit          */      734.0
+      AXIS_PTS_REF                    Ext_tAirRef1_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      Ext_tAirRef1_A
+    /* Long Identifier        */      "Table de points dappui de la température dair"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_7
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      734.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_pInMnfMinReq_T
+    /* Long Identifier        */      "Cartographie de la pression collecteur minimale"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_2
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_8
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngRef2_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facCorRatPresExt_T
+    /* Long Identifier        */      "Table de point dappui du facteur de correction en ratio de pression"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_9
+    /* Lower Limit            */      0.5
+    /* Upper Limit            */      1.4999847412109379E+000
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_9
+      /* Number of Axis Pts   */      22
+      /* Lower Limit          */      0.5
+      /* Upper Limit          */      1.4999847412109379E+000
+      AXIS_PTS_REF                    Air_rAirPresRef2_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      Air_rAirPresRef2_A
+    /* Long Identifier        */      "Points dappui du rapport des pressions aval et amont du boitier papillon"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_9
+    /* Number of Axis Pts     */      22
+    /* Lower Limit            */      0.5
+    /* Upper Limit            */      1.4999847412109379E+000
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfFuInjMin_T
+    /* Long Identifier        */      "Carto de débit carburant injecté en fonction de la pression rail"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.0625
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_11
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      0
+      /* Upper Limit          */      5.119921875E+007
+      AXIS_PTS_REF                    EngM_pFuLdMin_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      EngM_pFuLdMin_A
+    /* Long Identifier        */      "Carto de point dappui en pression rail"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_11
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.119921875E+007
+  /end AXIS_PTS
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rLdMinProt_M
+    /* Long Identifier        */      "Cartographie du remplissage minimum lors de protection composant"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.9999389648437500E+000
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_13
+      /* Number of Axis Pts   */      17
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    Ext_tCoRef1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_8
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEng_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      Ext_tCoRef1_A
+    /* Long Identifier        */      "Table de points dappui de la variable de température deau"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_X_WORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_13
+    /* Number of Axis Pts     */      17
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rLdMinRef_M
+    /* Long Identifier        */      "Carto de remplissage minimum de base"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.9999389648437500E+000
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_13
+      /* Number of Axis Pts   */      17
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    Ext_tCoRef1_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      EngMGslT_CM_8
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEng_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facMassAirScvCor_B
+    /* Long Identifier        */      "Fraction de gaz frais dans les gaz balayés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facMassAirScvReq_B
+    /* Long Identifier        */      "Fraction de gaz frais dans les gaz balayés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_tiInjMin_C
+    /* Long Identifier        */      "Temps dinjection mini"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_14
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirEngCylMax_B
+    /* Long Identifier        */      "Masse maximale dair pompée par cylindre  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_15
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.007812
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirEngCylMin_B
+    /* Long Identifier        */      "Masse minimale dair pompée par cylindre permettant de garantir une pression minimale  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_15
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.007812
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirEngCylTrbMax_B
+    /* Long Identifier        */      "Masse maximale dair pompée par cylindre (Turbo 100%, papillon 100% avec overboost)  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_15
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.007812
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirPresUsThr_B
+    /* Long Identifier        */      "Masse dair maximale calculé à partir de la pression plénum  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_15
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.007812
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facOfsEfcCor_B
+    /* Long Identifier        */      "offset de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facOfsEfcPred_B
+    /* Long Identifier        */      "offset de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facOfsEfcReq_B
+    /* Long Identifier        */      "Offset de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_rAirLdPredInCyl_B
+    /* Long Identifier        */      "Vecteur par cylindre de la charge moteur en air prédite en phase admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_rTotLdExCorCyl_B
+    /* Long Identifier        */      "remplissage en air (frais + EGR eventuellement) dans le cylindre à la fermeture soupape admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rAirLdCor_B
+    /* Long Identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais residuel dans les gaz brulés) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rAirLdPredIn_B
+    /* Long Identifier        */      "Charge moteur en air prédite en phase admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rAirLdPred_B
+    /* Long Identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rItBurnRateCor_B
+    /* Long Identifier        */      "Taux digr dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rMassAirResiCor_B
+    /* Long Identifier        */      "rapport de la masse de gaz frais résiduel (masse de gaz frais contenu dans les gaz brulés) par la masse de référence à (P0, T0 et V0)  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rMassAirScvCor_B
+    /* Long Identifier        */      "rapport de la masse de gaz balayé par la masse de reference à (P0, T0 et V0)  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rMaxTotLd_B
+    /* Long Identifier        */      "Remplissage maximum  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.9999389648437500E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rTotLdExCor_B
+    /* Long Identifier        */      "remplissage en air (frais + EGR eventuellement) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rTotLdExPred_B
+    /* Long Identifier        */      "remplissage en air (frais + EGR éventuellement) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkClsExVlvEstimRef1_B
+    /* Long Identifier        */      "angle villebrequin de fermeture soupape échappement référence 1 pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_16
+    /* Lower Limit            */      -96.0
+    /* Upper Limit            */      96.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkClsExVlvReqRef1_B
+    /* Long Identifier        */      "angle villebrequin de fermeture soupape échappement référence 1 pour les VVT de consigne  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_16
+    /* Lower Limit            */      -96.0
+    /* Upper Limit            */      96.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpInVlvEstimRef1_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape admission référence 1 pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_16
+    /* Lower Limit            */      -96.0
+    /* Upper Limit            */      96.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpInVlvReqRef1_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape admission référence 1 pour les VVT de consigne  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_16
+    /* Lower Limit            */      -96.0
+    /* Upper Limit            */      96.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkClsInVlvEstimRef0_B
+    /* Long Identifier        */      "angle villebrequin de fermeture soupape admission référence 0 (à 1mm de levée par rapport au PMH admission) pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_17
+    /* Lower Limit            */      84.0
+    /* Upper Limit            */      276.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkClsInVlvEstimRef1_B
+    /* Long Identifier        */      "angle villebrequin de fermeture soupape admission référence 1 pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_17
+    /* Lower Limit            */      84.0
+    /* Upper Limit            */      276.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facMassFlowLdCor_B
+    /* Long Identifier        */      "coefficient permettant la conversion dune variable de débit en charge  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_18
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.9999389648437500E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facSlopEfcCor_B
+    /* Long Identifier        */      "pente de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_19
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.1999664306640622E-005
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facSlopEfcPred_B
+    /* Long Identifier        */      "pente de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_19
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.1999664306640622E-005
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facSlopEfcReq_B
+    /* Long Identifier        */      "Pente de remplissage en air frais  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_19
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.1999664306640622E-005
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfAirCor_B
+    /* Long Identifier        */      "Débit massique corrigé dair pompé par le moteur  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfAirPredIn_B
+    /* Long Identifier        */      "Débit massique dair pompé par le moteur par cylindre prédit en phase admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfAirPred_B
+    /* Long Identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfAirScvCor_B
+    /* Long Identifier        */      "débit dair frais balayé de ladmission vers lechappement  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfTotExCor_B
+    /* Long Identifier        */      "Masse dair issue du remplissage en air (frais + EGR eventuellement) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfTotExPredIn_B
+    /* Long Identifier        */      "Débit massique de gaz pompé par le moteur prédit en phase admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mfTotExPred_B
+    /* Long Identifier        */      "Masse dair issue du remplissage en air (frais + EGR éventuellement) dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mfAirCorCyl_B
+    /* Long Identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mfAirPredInCyl_B
+    /* Long Identifier        */      "Vecteur par cylindre du débit massique dair pompé par le moteur prédit en phase admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mfAirScvCorCyl_B
+    /* Long Identifier        */      "Débit dair balayé (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mfTotExCorCyl_B
+    /* Long Identifier        */      "Masse dair issue du remplissage en air (frais + EGR eventuellement) dans le cylindre à la fermeture soupape admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rltMassAirScvCor_B
+    /* Long Identifier        */      "Taux de balayage  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_pInMnfMinReq_B
+    /* Long Identifier        */      "Pression collecteur minimale  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_2
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_tBurnCylCor_B
+    /* Long Identifier        */      "température des gaz brulé dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_20
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      1523.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_tMixtCylCor_B
+    /* Long Identifier        */      "température de mélange dans le cylindre à la fermeture soupape admission entre lair frais et les gaz brulé mais sans prendre en compte les echanges aux parois  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_20
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      1523.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_tMixtCylGDICor_B
+    /* Long Identifier        */      "température de mélange dans le cylindre à la fermeture soupape admission entre lair frais, le carburant et les gaz brulé mais sans prendre en compte les echanges aux parois  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_20
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      1523.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpExVlvEstimRef0_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape échappement référence 0 (à 1mm de levée par rapport au PMH admission) pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_21
+    /* Lower Limit            */      -276.0
+    /* Upper Limit            */      -84.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpExVlvEstimRef1_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape échappement référence 1 pour les VVT estimés  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_21
+    /* Lower Limit            */      -276.0
+    /* Upper Limit            */      -84.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirCor_B
+    /* Long Identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirPredIn_B
+    /* Long Identifier        */      "Masse dair pompée par cylindre prédite en phase admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirPred_B
+    /* Long Identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mAirScvCor_B
+    /* Long Identifier        */      "Masse dair balayée de ladmission vers léchappement  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mBurnCor_B
+    /* Long Identifier        */      "Masse de gaz brulé dans le cylindre à la fermeture soupape admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mTotExPredIn_B
+    /* Long Identifier        */      "Masse dair et dessence pompée par cylindre prédite en phase admission  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_mTotExPred_B
+    /* Long Identifier        */      "Masse dair et dessence pompée prédite par cylindre estimée par MBF  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mAirPredInCyl_B
+    /* Long Identifier        */      "Vecteur par cylindre de la masse dair pompée prédite en phase admission (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_prm_mAirScvCorCyl_B
+    /* Long Identifier        */      "Masse dair balayée de ladmission vers léchappement (dimension 6)  Bypass"
+    /* Type                   */      VAL_BLK
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7.8118807983398441E-003
+    /* Array Size             */
+    MATRIX_DIM                        6 1 1
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rDeltaLdInjPha_B
+    /* Long Identifier        */      "Offset de remplissage lié à linjection directe.  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_24
+    /* Lower Limit            */      -3.0
+    /* Upper Limit            */      2.9999084472656250E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_rPresLostThrPosnInfo_C
+    /* Long Identifier        */      "Ratio de pression maximum autorisé lors de perte info position papillon"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_25
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ENGMGSLT_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_bAcvMPMMod_C
+    /* Long Identifier        */      "Flag dactivation de la prise en compte dun remplissage maximal spécifique MPM"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_bAcvReqPres_C
+    /* Long Identifier        */      "bit d'activation pour le calcul de la pression admission de consigne approximée"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_bAcvStraLdMin_C
+    /* Long Identifier        */      "Booléen dactivation du mode de calcul du remplissage min à partir de la pression rail mini"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_bAcvTPMMod_C
+    /* Long Identifier        */      "Flag dactivation de la prise en compte dun remplissage maximal spécifique pour protection thermique échappement"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_bSelMaxLdClcMod_C
+    /* Long Identifier        */      "Booléen de sélection du mode de calcul du remplissage maximum"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Ext_bAcvTrbMod_C
+    /* Long Identifier        */      "Booléen dactivation du mode turbo"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facACor_B
+    /* Long Identifier        */      "Coefficient A(Tpumped) de léquation de charge  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_27
+    /* Lower Limit            */      0.5
+    /* Upper Limit            */      1.49609375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facAPred_B
+    /* Long Identifier        */      "Coefficient A(Tpumped) de léquation de charge  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_27
+    /* Lower Limit            */      0.5
+    /* Upper Limit            */      1.49609375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkClsInVlvReqRef0_B
+    /* Long Identifier        */      "angle villebrequin de fermeture soupape admission référence 0 (à 1mm de levée par rapport au PMH admission) pour les VVT de consigne  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_28
+    /* Lower Limit            */      84.0
+    /* Upper Limit            */      275.25
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpExVlvReqRef0_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape échappement référence 0 (à 1mm de levée par rapport au PMH admission) pour les VVT de consigne  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_29
+    /* Lower Limit            */      -276.0
+    /* Upper Limit            */      -84.75
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_agCkOpExVlvReqRef1_B
+    /* Long Identifier        */      "angle villebrequin douverture soupape échappement référence 1 pour les VVT de consigne  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_29
+    /* Lower Limit            */      -276.0
+    /* Upper Limit            */      -84.75
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_facDCor_B
+    /* Long Identifier        */      "Coefficient D(N,Ppumped) de léquation de charge  Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_30
+    /* Lower Limit            */      -0.0625
+    /* Upper Limit            */      0.06201171875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_noPhaInjLoaEstimn_C
+    /* Long Identifier        */      "Constante de choix de linjection à prendre en compte pour le calcul du remplissage corrigé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_31
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_noPhaInjLoaReq_C
+    /* Long Identifier        */      "Constante de choix de linjection à prendre en compte pour le calcul du remplissage de consigne"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_31
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      EngM_noPhaInjPredLoaEstimn_C
+    /* Long Identifier        */      "Constante de choix de linjection à prendre en compte pour le calcul du remplissage prédit"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      EngMGslT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      EngMGslT_CM_31
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      4.0
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      EngMGslT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      EngMGslT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      EngMGslT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      EngMGslT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      EngMGslT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      EngMGslT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      EngM_mFuStmEstim
+    /* Long identifier        */      "Masse dessence provenant de la pruge canister"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_32
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      0.007812
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLdMinCord
+    /* Long identifier        */      "Remplissage minimum intermédiaire"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_33
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMinLd
+    /* Long identifier        */      "Remplissage minimum calculé à partir de la pression mini"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_33
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facAtmSlop_MP
+    /* Long identifier        */      "Pente de remplissage en zone atmosphérique"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_34
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.2E-005
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facBoostSlop_MP
+    /* Long identifier        */      "Pente de remplissage en zone suralimentée"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_34
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.2E-005
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rTotLdExPredIn
+    /* Long identifier        */      "Charge moteur en gaz prédite en phase admission"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      EngMGslT_CM_33
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMaxLimLd
+    /* Long identifier        */      "Remplissage maximum après limitation pour les protections moteur."
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_MP
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_001
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_002
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_003
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_004
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_005
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rAirLdPredCyl_006
+    /* Long identifier        */      "remplissage en air frais total (air frais venant de ladmission et air frais résiduel dans les gaz brulés) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMaxAvlLd_IRV_MP
+    /* Long identifier        */      "Remplissage maximum réalisable à partir de la pente et de loffset du remplissage au point de fonctionnement courant"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMinTotLd_IRV_MP
+    /* Long identifier        */      "Remplissage minimum"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rVolCylClsInVlvPrev_IRV_MP
+    /* Long identifier        */      "rapport du volume cylindre à la fermeture admission (comprenant le volume chambre) par le volume cylindre unitaire"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.9999694824218750E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facTAirUsInVlvPrev_IRV_MP
+    /* Long identifier        */      "correction en densité de la pente et de l'offset de remplissage en air"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.9999694824218750E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facCorAtmSlopEfcPrev_IRV_MP
+    /* Long identifier        */      "correction acoustique de la pression répartiteur admission moyenne en zone atmosphérique"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.9999694824218750E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facCorBoostSlopEfcPrev_IRV_MP
+    /* Long identifier        */      "correction acoustique de la pression répartiteur admission moyenne en zone suralimentée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.9999694824218750E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirCorCyl_MP
+    /* Long identifier        */      "Point de mesure, débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirScvCorCyl_MP
+    /* Long identifier        */      "Point de mesure, débit dair balayé"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpFilCor_IRV_MP
+    /* Long identifier        */      "Estimation de la restriction de débit en fonction du rapport de pression en zone suralimentée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpFilPred_IRV_MP
+    /* Long identifier        */      "Prédiction de la restriction de débit en fonction du rapport de pression"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpScvFilCor_IRV_MP
+    /* Long identifier        */      "Estimation de la restriction de débit en fonction du rapport de pression"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpScvFilPred
+    /* Long identifier        */      "Prédiction de la restriction de débit en fonction du rapport de pression en zone suralimentée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_001_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_002_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_003_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_004_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_005_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mfAirPredCyl_006_IRV_MP
+    /* Long identifier        */      "débit dair frais issu du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpScvFilReq_IRV_MP
+    /* Long identifier        */      "Consigne de la restriction de débit en fonction du rapport de pression en zone suralimentée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      AirEfc_facChrExpFilReq_IRV_MP
+    /* Long identifier        */      "Consigne de la restriction de débit en fonction du rapport de pression"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InM_pDsThrPrev_IRV_MP
+    /* Long identifier        */      "Pression dans le répartiteur admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      524280.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_pDeltaCorSlopEfcPrev_IRV_MP
+    /* Long identifier        */      "delta de pression nécessaire afin de prendre en compte soit totalement la correction acoustique en zoneatmosphérique, soit totalement la correction acoustique en zone suralimentée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      5000.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_pBegCorBoostSlopEfcPrev_IRV_MP
+    /* Long identifier        */      "pression à partir de laquelle la prise en compte de la correction acoustique en zone suralimentée est considérée"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      50000.0
+    /* Upper limit            */      1.5E+005
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirScvCorCyl_MP
+    /* Long identifier        */      "Point de mesure, masse dair balayée de ladmission vers léchappement"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_001_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_002_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_003_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_004_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_005_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_mAirPredCyl_006_IRV_MP
+    /* Long identifier        */      "Masse dair frais issue du remplissage en air frais total dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facECor_IRV_MP
+    /* Long identifier        */      "Coefficient E(N, Ppos pap) de léquation de charge"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_35
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.75
+    /* Upper limit            */      1.25
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_agCkClsInVlvReqRef1_IRV_MP
+    /* Long identifier        */      "angle villebrequin de fermeture soupape admission référence 1 pour les VVT de consigne"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      EngMGslT_CM_28
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      84.0
+    /* Upper limit            */      275.25
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facTCoPrev_IRV_MP
+    /* Long identifier        */      "Facteur de correction, température d'eau"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      EngMGslT_CM_36
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.9921875
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facLfpPresAtmBoost_MP
+    /* Long identifier        */      "Gain du filtre de la pression dans le répartiteur"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      EngMGslT_CM_4
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMinCord_MP
+    /* Long identifier        */      "point de visualisation du remplissage mini prise en compte lors du calcul du remplissage minimal pour un système sans systeme de déchage rail"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLdMinBas_MP
+    /* Long identifier        */      "Remplissage maximum après limitation pour les protections composant"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLdMinCor_MP
+    /* Long Identifier        */      "-"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLd_MP
+    /* Long identifier        */      "Premier facteur de léquation de charge B(N)*Ppumped"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rMinLd_MP
+    /* Long identifier        */      "Charge minimale réalisable à partir de la pente et de loffset du remplissage"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLdBas_MP
+    /* Long identifier        */      "Remplissage maximum de base après protection composant ( raté de combustion,problèmes injecteurs)"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rLdMaxBas_MP
+    /* Long identifier        */      "Remplissage maximum après protection de la perte info cliquetis"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facRLdMax_MP
+    /* Long identifier        */      "Point de visualisation du remplissage max calculé à partir de la pression papillon"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facUsThr_MP
+    /* Long Identifier        */      "-"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.9999389648437500E+000
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_prm_rTotLdExCorCyl_MP
+    /* Long identifier        */      "Point de mesure, remplissage en air (frais + EGR éventuellement) dans le cylindre à la fermeture soupape admission"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_rTotLdEx_MP
+    /* Long identifier        */      "Point de mesure, cartographie modélisant le remplissage total simplifié"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_mAirMin_MP
+    /* Long identifier        */      "Point de visualisation de la masse dair minimale intermédiaire"
+    /* Data type              */      UWORD
+    /* Conversion method      */      EngMGslT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      7.8118807983398441E-003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      EngM_facD_MP
+    /* Long identifier        */      "Coefficient D(N,Ppumped) de léquation de charge"
+    /* Data type              */      SBYTE
+    /* Conversion method      */      EngMGslT_CM_12
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -0.0625
+    /* Upper limit            */      0.06201171875
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_1
+    /* Long identifier        */      "Q = V*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 16384 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_2
+    /* Long identifier        */      "Q = V/8"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 8
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "RPM"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_4
+    /* Long identifier        */      "Q = V*100"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 100 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_5
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_6
+    /* Long identifier        */      "Q = V*32768"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 32768 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_7
+    /* Long identifier        */      "Q = (V-223)*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 128 -28544 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_9
+    /* Long identifier        */      "Q = (V-0.5)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -32768 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_10
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/s"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_11
+    /* Long identifier        */      "Q = V/781.25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 781.25
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_12
+    /* Long identifier        */      "Q = V*2048"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 2048 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_13
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_14
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_15
+    /* Long identifier        */      "Q = V*16777216"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg"
+    /* Coefficients           */      COEFFS 0 16777216 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_16
+    /* Long identifier        */      "Q = V*10.6666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 10.6666666667 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_17
+    /* Long identifier        */      "Q = (V-84)*10.6666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 10.6666666667 -896 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_18
+    /* Long identifier        */      "Q = V*163840"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/s"
+    /* Coefficients           */      COEFFS 0 163840 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_19
+    /* Long identifier        */      "Q = V*2978909090.91"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "1/Pa"
+    /* Coefficients           */      COEFFS 0 2978909090.91 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_20
+    /* Long identifier        */      "Q = (V-223)*32"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 32 -7136 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_21
+    /* Long identifier        */      "Q = (V+276)*10.6666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 10.6666666667 2944 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_22
+    /* Long identifier        */      "Q = V*8389144.90527"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg"
+    /* Coefficients           */      COEFFS 0 8389144.90527 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_23
+    /* Long identifier        */      "Q = V*8389144.90527"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/cyl/cycle"
+    /* Coefficients           */      COEFFS 0 8389144.90527 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_24
+    /* Long identifier        */      "Q = V*10922.6666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 10922.6666667 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_25
+    /* Long identifier        */      "Q = V*256"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 256 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF EngMGslT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      EngMGslT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_27
+    /* Long identifier        */      "Q = (V-0.5)*256"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 256 -128 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_28
+    /* Long identifier        */      "Q = (V-84)*1.33333333333"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1.33333333333 -112 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_29
+    /* Long identifier        */      "Q = (V+276)*1.33333333333"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1.33333333333 368 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_30
+    /* Long identifier        */      "Q = (V+0.0625)*2048"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 2048 128 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_31
+    /* Long identifier        */      "Q = (V-1)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 -1 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_32
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_33
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_34
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "1/Pa "
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_35
+    /* Long identifier        */      "Q = (V-0.75)*1024"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1024 -768 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      EngMGslT_CM_36
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION EngMGslT_FCT_EngMGslT
+    "CHARACTERISTIC and MEASUREMENT of EngMGslT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      EngMGslT_ModuleVersion_Major_MP 
+      EngMGslT_ModuleVersion_Minor_MP 
+      EngMGslT_ModuleVersion_Patch_MP 
+      AirEfc_facChrExpFilCor_IRV_MP
+      AirEfc_facChrExpFilPred_IRV_MP
+      AirEfc_facChrExpFilReq_IRV_MP
+      AirEfc_facChrExpScvFilCor_IRV_MP
+      AirEfc_facChrExpScvFilPred
+      AirEfc_facChrExpScvFilReq_IRV_MP
+      EngM_agCkClsInVlvReqRef1_IRV_MP
+      EngM_facAtmSlop_MP
+      EngM_facBoostSlop_MP
+      EngM_facCorAtmSlopEfcPrev_IRV_MP
+      EngM_facCorBoostSlopEfcPrev_IRV_MP
+      EngM_facD_MP
+      EngM_facECor_IRV_MP
+      EngM_facLfpPresAtmBoost_MP
+      EngM_facRLdMax_MP
+      EngM_facTAirUsInVlvPrev_IRV_MP
+      EngM_facTCoPrev_IRV_MP
+      EngM_facUsThr_MP
+      EngM_mAirMin_MP
+      EngM_mFuStmEstim
+      EngM_pBegCorBoostSlopEfcPrev_IRV_MP
+      EngM_pDeltaCorSlopEfcPrev_IRV_MP
+      EngM_prm_mAirPredCyl_001_IRV_MP
+      EngM_prm_mAirPredCyl_002_IRV_MP
+      EngM_prm_mAirPredCyl_003_IRV_MP
+      EngM_prm_mAirPredCyl_004_IRV_MP
+      EngM_prm_mAirPredCyl_005_IRV_MP
+      EngM_prm_mAirPredCyl_006_IRV_MP
+      EngM_prm_mAirPredCyl_MP
+      EngM_prm_mAirScvCorCyl_MP
+      EngM_prm_mfAirCorCyl_MP
+      EngM_prm_mfAirPredCyl_001_IRV_MP
+      EngM_prm_mfAirPredCyl_002_IRV_MP
+      EngM_prm_mfAirPredCyl_003_IRV_MP
+      EngM_prm_mfAirPredCyl_004_IRV_MP
+      EngM_prm_mfAirPredCyl_005_IRV_MP
+      EngM_prm_mfAirPredCyl_006_IRV_MP
+      EngM_prm_mfAirPredCyl_MP
+      EngM_prm_mfAirScvCorCyl_MP
+      EngM_prm_rAirLdPredCyl_001
+      EngM_prm_rAirLdPredCyl_002
+      EngM_prm_rAirLdPredCyl_003
+      EngM_prm_rAirLdPredCyl_004
+      EngM_prm_rAirLdPredCyl_005
+      EngM_prm_rAirLdPredCyl_006
+      EngM_prm_rAirLdPredCyl_MP
+      EngM_prm_rTotLdExCorCyl_MP
+      EngM_rLdBas_MP
+      EngM_rLdMaxBas_MP
+      EngM_rLdMinBas_MP
+      EngM_rLdMinCor_MP
+      EngM_rLdMinCord
+      EngM_rLd_MP
+      EngM_rMaxAvlLd_IRV_MP
+      EngM_rMaxLimLd
+      EngM_rMinCord_MP
+      EngM_rMinLd
+      EngM_rMinLd_MP
+      EngM_rMinTotLd_IRV_MP
+      EngM_rTotLdExPredIn
+      EngM_rTotLdEx_MP
+      EngM_rVolCylClsInVlvPrev_IRV_MP
+      InM_pDsThrPrev_IRV_MP
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      AirEfc_bAcvAirLdCor_C
+      Air_rAirPresRef2_A
+      ENGMGSLT_ACTIVE_BYP_C
+      EngM_agCkClsExVlvEstimRef1_B
+      EngM_agCkClsExVlvReqRef1_B
+      EngM_agCkClsInVlvEstimRef0_B
+      EngM_agCkClsInVlvEstimRef1_B
+      EngM_agCkClsInVlvReqRef0_B
+      EngM_agCkOpExVlvEstimRef0_B
+      EngM_agCkOpExVlvEstimRef1_B
+      EngM_agCkOpExVlvReqRef0_B
+      EngM_agCkOpExVlvReqRef1_B
+      EngM_agCkOpInVlvEstimRef1_B
+      EngM_agCkOpInVlvReqRef1_B
+      EngM_bAcvMPMMod_C
+      EngM_bAcvReqPres_C
+      EngM_bAcvStraLdMin_C
+      EngM_bAcvTPMMod_C
+      EngM_bSelMaxLdClcMod_C
+      EngM_facACor_B
+      EngM_facAPred_B
+      EngM_facChgCorSlopEfc_A
+      EngM_facChgCorSlopEfc_T
+      EngM_facCorRatPresExt_T
+      EngM_facCorT_T
+      EngM_facDCor_B
+      EngM_facLfpPresAtmBoost_M
+      EngM_facMassAirScvCor_B
+      EngM_facMassAirScvReq_B
+      EngM_facMassFlowLdCor_B
+      EngM_facOfsEfcCor_B
+      EngM_facOfsEfcPred_B
+      EngM_facOfsEfcReq_B
+      EngM_facSlopEfcCor_B
+      EngM_facSlopEfcPred_B
+      EngM_facSlopEfcReq_B
+      EngM_mAirCor_B
+      EngM_mAirEngCylMax_B
+      EngM_mAirEngCylMin_B
+      EngM_mAirEngCylTrbMax_B
+      EngM_mAirPredIn_B
+      EngM_mAirPred_B
+      EngM_mAirPresUsThr_B
+      EngM_mAirScvCor_B
+      EngM_mBurnCor_B
+      EngM_mTotExPredIn_B
+      EngM_mTotExPred_B
+      EngM_mfAirCor_B
+      EngM_mfAirPredIn_B
+      EngM_mfAirPred_B
+      EngM_mfAirScvCor_B
+      EngM_mfFuInjMin_T
+      EngM_mfTotExCor_B
+      EngM_mfTotExPredIn_B
+      EngM_mfTotExPred_B
+      EngM_nEng_LfpPresAtmY_A
+      EngM_noPhaInjLoaEstimn_C
+      EngM_noPhaInjLoaReq_C
+      EngM_noPhaInjPredLoaEstimn_C
+      EngM_pFuLdMin_A
+      EngM_pInMnfMinReq_B
+      EngM_pInMnfMinReq_T
+      EngM_prm_mAirPredInCyl_B
+      EngM_prm_mAirScvCorCyl_B
+      EngM_prm_mfAirCorCyl_B
+      EngM_prm_mfAirPredInCyl_B
+      EngM_prm_mfAirScvCorCyl_B
+      EngM_prm_mfTotExCorCyl_B
+      EngM_prm_rAirLdPredInCyl_B
+      EngM_prm_rTotLdExCorCyl_B
+      EngM_rAirLdCor_B
+      EngM_rAirLdPredIn_B
+      EngM_rAirLdPred_B
+      EngM_rDeltaLdInjPha_B
+      EngM_rItBurnRateCor_B
+      EngM_rLdMinProt_M
+      EngM_rLdMinRef_M
+      EngM_rMassAirResiCor_B
+      EngM_rMassAirScvCor_B
+      EngM_rMaxTotLd_B
+      EngM_rPresLostThrPosnInfo_C
+      EngM_rPresX_A
+      EngM_rTotLdExCor_B
+      EngM_rTotLdExPred_B
+      EngM_rltMassAirScvCor_B
+      EngM_tBurnCylCor_B
+      EngM_tMixtCylCor_B
+      EngM_tMixtCylGDICor_B
+      EngM_tiInjMin_C
+      Ext_bAcvTrbMod_C
+      Ext_tAirRef1_A
+      Ext_tCoRef1_A
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+/* ------------------------------ END OF MODULE EngMGslT ------------------------------------*/

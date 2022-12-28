@@ -1,0 +1,55 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Dem_ClearDTC|B|func_GDEI_ClearDTC|API1.7|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Clears single DTCs as well as groups of DTCs. This API can only be used  through the RTE, and therefore no declaration is exported via Dem.h.|
+Dem_DcmCancelOperation|C|();|API2.10|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Fonction vode créée pour le besoin du DCM|
+Dem_DcmReadDataOfPID01|B|(argin uint8* u8PID01value)Std_ReturnType;|API2.8|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Service to report the value of PID $01 computed by the Dem.|
+Dem_DisableDTCRecordUpdate|B|func_DisableDTCRecordUpdate|API1.5|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Disables the DTC record update.|
+Dem_DisableDTCSetting|B|func_GDEI_DisableDTCSetting|API1.3|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Disables the DTC setting for a DTC group.|
+Dem_EnableDTCRecordUpdate|B|func_EnableDTCRecordUpdate|API1.6|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Enables the DTC record update.|
+Dem_EnableDTCSetting|B|func_GDEI_DisableDTCSetting|API1.4|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Enables the DTC setting for a DTC group.|
+Dem_GetDTCOfOBDFreezeFrame|B|func_Dem_GetDTCOfOBDFreezeFrame|API2.6|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets DTC by freeze frame record number.|
+Dem_GetDTCStatusAvailabilityMask|B|func_GDEI_GetDTCStatusAvailabilityMask|API2.4|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the DTC Status availability mask.|
+Dem_GetEventStatus|C|func_GDEI_GetEventStatus|API1.2|GDExtInt|1|PTS_DOC_5075312||||0|0|0|0|Gets the current extended event status of an event|
+Dem_GetFreezeFrameDataByDTC|C|func_GetFreezeFrameDataByDTC|API2.3|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets freeze frame data by DTC. The function stores the data in the provided  DestBuffer.|
+Dem_GetNextFilteredDTC|B|func_GDEI_GetNextFilteredDTC|API1.10|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the next filtered DTC.|
+Dem_GetNumberOfFilteredDTC|B|func_GDEI_GetNumberOfFilteredDTC|API1.9|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the number of a filtered DTC.|
+Dem_GetSizeOfFreezeFrameByDTC|B|func_GetSizeOfFreezeFrameByDTC|API2.2|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the size of freeze frame data by DTC.|
+Dem_GetStatusOfDTC|B|func_GDEI_GetStatusOfDTC|API2.1|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the status of a DTC.|
+Dem_GetTranslationType|B|func_GDEI_GetTranslationType|API2.5|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets the supported DTC formats of the ECU. The supported formats are  configured via DemTypeOfDTCSupported.|
+Dem_Init|F|();|SCH.1|GDExtInt|1|PTS_DOC_5075312||||0|0|0|0|Initializes or re-initializes the GD|
+Dem_ReadDataOfOBDFreezeFrame|B|(argin uint8 u8PID,argin uint8 u8DataElementIndexOfPID,argin uint8* u8DestBuffer, argin uint8* u8BufSize)Std_ReturnType;|API2.7|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Gets data element per PID and index of the most important freeze frame being selected for the output of service $02. The function stores the data in the provided  DestBuffer.|
+Dem_SetDTCFilter|B|func_GDEI_SetDTCFilter|API1.8|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|The server shall perform a bit-wise logical AND-ing operation between the mask  specified in the client's request and the actual status associated with each DTC supported by the server.|
+Dem_SetEventStatus|C|func_GDEI_SetEventStatus|API1.1|GDExtInt|1|PTS_DOC_5075312||||0|0|0|0|Set the status of an Event|
+Fin_DemInit|A|();|20|HEADER|1|NONE||||0|0|0|0||
+Fim_DemTriggerOnEventStatus|B|(argin uint16 u16DftIdx, argin uint8 u8StatusOld, argin uint8 u8Status);|3|HEADER|1|NONE||||0|0|0|0||
+Fim_DemTriggerOnEventStatus_opt|A|(argin uint16 u16DftIdx, argin uint8 u8StatusOld, argin uint8 u8Status);|23|HEADER|1|NONE||||0|0|0|0||
+GD_RstEventSt|A|();|API2.12|GDEXTINT|1|PTS_DOC_5075312||||0|0|0|0|Event indicating an update of StatusOfDTC information on failure clear|
+GD_SetEventSt|D|(argin uint16 u16IdxDft);|API2.9|GDExtInt|1|PTS_DOC_5075312||||0|0|0|0|Update the GAR upon changes of the event status|
+GD_SetEventSt_reinit|D|(argin uint16 u16IdxDft);|API2.11|GDExtInt|1|PTS_DOC_5075312||||0|0|0|0|Reinit the GAR upon changes of the event status|
+GDEXTINT_ClearDTC|F|func_GDEI_ClearDTC|FCT1.7|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Clears single DTCs as well as groups of DTCs. This API can only be used  through the RTE, and therefore no declaration is exported via Dem.h.|
+GDEXTINT_DcmReadDataOfPID01|D|(argin uint8* u8PID01value)Std_ReturnType;|FCT2.9|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Service to report the value of PID $01 computed by the Dem.|
+GDEXTINT_DisableDTCRecordUpdate|B|func_DisableDTCRecordUpdate|FCT1.5|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Enables the DTC setting for a DTC group.|
+GDEXTINT_DisableDTCSetting|B|func_GDEI_DisableDTCSetting|FCT1.3|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Disables the DTC setting for a DTC group.|
+GDEXTINT_EnableDTCRecordUpdate|B|func_EnableDTCRecordUpdate|FCT1.6|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Disables the DTC record update.|
+GDEXTINT_EnableDTCSetting|B|func_GDEI_EnableDTCSetting|FCT1.4|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Enables the DTC setting for a DTC group.|
+GDEXTINT_EveRstDft|A|();|14|HEADER|1|NONE||||0|0|0|0||
+GDEXTINT_EveRstDftObd|A|();|15|HEADER|1|NONE||||0|0|0|0||
+GDEXTINT_GetDTCOfOBDFreezeFrame|C|(argin uint8 u8FrameNumber, argin uint32* u32DTC)Std_ReturnType;|FCT2.7|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets DTC by freeze frame record number.|
+GDEXTINT_GetDTCStatAvailbltyMask|B|func_GDEI_GetDTCStatusAvailabilityMask|FCT2.5|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the DTC Status availability mask.|
+GDEXTINT_GetEventStatus|B|func_GDEI_GetEventStatus|FCT1.2|GDExtInt|0|PTS_DOC_5075312||||0|0|0|0|Gets the current extended event status of an event|
+GDEXTINT_GetFreezeFrameDataByD1|E|func_GetFreezeFrameDataByDTC1|FCT2.4|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Sub function of GDEXTINT_GetFreezeFrameDataByDTC|
+GDEXTINT_GetFreezeFrameDataByDTC|D|func_GetFreezeFrameDataByDTC|FCT2.3|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets freeze frame data by DTC. The function stores the data in the provided  DestBuffer.|
+GDEXTINT_GetNextFilteredDTC|D|func_GDEI_GetNextFilteredDTC|FCT1.10|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the next filtered DTC.|
+GDEXTINT_GetNumberOfFilteredDTC|B|func_GDEI_GetNumberOfFilteredDTC|FCT1.9|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the number of a filtered DTC.|
+GDEXTINT_GetSizeOfFrzeFrameByDTC|E|func_GetSizeOfFreezeFrameByDTC|FCT2.2|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the size of freeze frame data by DTC.|
+GDEXTINT_GetStatusOfDTC|C|func_GDEI_GetStatusOfDTC|FCT2.1|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the status of a DTC.|
+GDEXTINT_GetTranslationType|B|func_GDEI_GetTranslationType|FCT2.6|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets the supported DTC formats of the ECU. The supported formats are  configured via DemTypeOfDTCSupported.|
+GDEXTINT_ReadDataOfOBDFreezeFrame|D|(argin uint8 u8PID,argin uint8 u8DataElementIndexOfPID,argin uint8* u8DestBuffer, argin uint8* u8BufSize)Std_ReturnType;|FCT2.8|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Gets data element per PID and index of the most important freeze frame being selected for the output of service $02. The function stores the data in the provided  DestBuffer.|
+GDEXTINT_SetDTCFilter|D|func_GDEI_SetDTCFilter|FCT1.8|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|The server shall perform a bit-wise logical AND-ing operation between the mask specified in the client's request and the actual status associated with each DTC supported by the server.|
+GDEXTINT_SetEventStatus|B|func_GDEI_SetEventStatus|FCT1.1|GDExtInt|0|PTS_DOC_5075312||||0|0|0|0|Set the status of an Event|
+GDEXTINT_vidEveRst_GDExtInt|D|();|FCT2.10|GDExtInt|0|PTS_DOC_5075312||||0|0|0|0|Return old value of the GAR upon changes of the event status|
+GDEXTINT_vidRstEventSt|A|();|FCT3.3|GDEXTINT|0|PTS_DOC_5075312||||0|0|0|0|Event indicating an update of StatusOfDTC information on failure clear|
+GDEXTINT_vidSetEventSt|C|(argin uint16 u16IdxDft);|FCT3.1|GDExtInt|0|PTS_DOC_5075312||||0|0|0|0|Update the GAR upon changes of the event status|
+GDEXTINT_vidSetEventSt_reinit|A|(argin uint16 u16IdxDft);|FCT3.2|GDExtInt|0|PTS_DOC_5075312||||0|0|0|0|Update the GAR upon changes of the event status|
+GDU_vidGdu|B|(argin uint16 u16DftIdx);|2|HEADER|1|NONE||||0|0|0|0|Diagnosis' calling event|
+SUPSRV_vidRstrtProtectedOutputs|A|();|4|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0||

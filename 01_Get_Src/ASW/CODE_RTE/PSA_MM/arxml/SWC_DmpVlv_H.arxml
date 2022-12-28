@@ -1,0 +1,1148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<!-- ******************************************************************************* -->
+<!-- *                           P. C. A.                                            -->
+<!-- *                                                                               -->
+<!-- *                    Peugeot Citroen Automobile                                 -->
+<!-- *                                                                               -->
+<!-- *        This file is the property of PCA. All rights are reserved              -->
+<!-- *        by PCA and this file must not be copied or disclosed                   -->
+<!-- *       (in whole or in part) without prior written consent of PCA.             -->
+<!-- *                                                                               -->
+<!-- ******************************************************************************* -->
+<!--  -->
+<!-- %name: SWC_DmpVlv_H.arxml % -->
+<!--  -->
+<!-- %version: 1.0 % -->
+<!--  -->
+<!-- %date_modified: Wed Aug 13 11:31:34 2014 % -->
+<!--  -->
+<!--  -->
+<!-- %derived_by: e446745 % -->
+<!-- %release: % -->
+<!-- %full_filespec: % -->
+<!--  -->
+<!-- ******************************************************************************/-->
+<!--  -->
+<!--Created with SystemDesk 3.1.7.5149-->
+<AUTOSAR xmlns="http://autosar.org/3.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.1.2 autosar.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Components</SHORT-NAME>
+      <ELEMENTS />
+      <SUB-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>SWC_DmpVlv_H</SHORT-NAME>
+          <ELEMENTS>
+            <APPLICATION-SOFTWARE-COMPONENT-TYPE UUID="404f99c2-4e40-1015-9a1a-9a8426bfdefe">
+              <SHORT-NAME>DMPVLV_H</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">DmpVlv_H</L-4>
+              </LONG-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_UCE_stWkuMainRelSt</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UCE_stWkuMainRelSt</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bAcvUsThrCtlDft</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bAcvUsThrCtlDft</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bInhDmpVlvCtl</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bInhDmpVlvCtl</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bInhStraLimSurge</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bInhStraLimSurge</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="4091582a-4e40-1015-a521-bbf3f1627cca">
+                  <SHORT-NAME>P_DmpVlv_bAcvDmpVlv</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_DmpVlv_bAcvDmpVlv</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_bAcvDmpVlv/DmpVlv_bAcvDmpVlv</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_DmpVlv_H/BooleanInitValue/BooleanInitValue</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_DmpVlv_bAcvDmpVlv</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="40bf4a22-4e40-1015-a5ca-f38d9621b1a1">
+                  <SHORT-NAME>P_DmpVlv_rAirLdLimSurgeReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_DmpVlv_rAirLdLimSurgeReq</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_rAirLdLimSurgeReq/DmpVlv_rAirLdLimSurgeReq</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue/UInt16InitValue</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_DmpVlv_rAirLdLimSurgeReq</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="40e09520-4e40-1015-a700-9488ada006d2">
+                  <SHORT-NAME>R_EcuM_CurrentMode</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_EcuM_CurrentMode</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Ecu_Package/EcuM_CurrentMode</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="41012bb4-4e40-1015-a079-f7b21a8e0413">
+                  <SHORT-NAME>R_AirSys_prm_mfAirThrReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_prm_mfAirThrReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_prm_mfAirThrReq/AirSys_prm_mfAirThrReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="ARRAY-SPECIFICATION">/Components/SWC_DmpVlv_H/ArrayConstantValue/ArrayConstantValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_prm_mfAirThrReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4121b704-4e40-1015-a8af-dc2af2076643">
+                  <SHORT-NAME>R_Eng_stEru</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Eng_stEru</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Eng_stEru/Eng_stEru</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt8InitValue/UInt8InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Eng_stEru</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4142843a-4e40-1015-ae5a-9dddf694cf5c">
+                  <SHORT-NAME>R_UsThrM_pDsCmpr</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pDsCmpr</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsCmpr/UsThrM_pDsCmpr</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue1/UInt16InitValue1</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pDsCmpr</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="416307b8-4e40-1015-8de4-85530d82fc9b">
+                  <SHORT-NAME>R_UsThrM_pUsCmpr</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pUsCmpr</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsCmpr/UsThrM_pUsCmpr</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue3/UInt16InitValue3</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pUsCmpr</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="418e83e8-4e40-1015-bb55-cc46755e23a1">
+                  <SHORT-NAME>R_UsThrM_tUsCmpr</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_tUsCmpr</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_tUsCmpr/UsThrM_tUsCmpr</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue5/UInt16InitValue5</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_tUsCmpr</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="41b84edc-4e40-1015-b5ca-c2ac9278a578">
+                  <SHORT-NAME>R_EngM_facMassFlowLdCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_EngM_facMassFlowLdCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_facMassFlowLdCor/EngM_facMassFlowLdCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue7/UInt16InitValue7</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_EngM_facMassFlowLdCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="41ead068-4e40-1015-893e-e6fee68e93e5">
+                  <SHORT-NAME>R_CoPt_tqIdcReqCord_nRegReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_CoPt_tqIdcReqCord_nRegReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_CoPt_tqIdcReqCord_nRegReq/CoPt_tqIdcReqCord_nRegReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/SInt16InitValue/SInt16InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_CoPt_tqIdcReqCord_nRegReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="421ff06c-4e40-1015-a4d4-e08cba93c024">
+                  <SHORT-NAME>R_IgSys_rMinIgEfc</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_IgSys_rMinIgEfc</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_IgSys_rMinIgEfc/IgSys_rMinIgEfc</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue9/UInt16InitValue9</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_IgSys_rMinIgEfc</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4258e010-4e40-1015-b4f0-cb53358023f1">
+                  <SHORT-NAME>R_AirSys_effAfr</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_effAfr</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effAfr/AirSys_effAfr</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue11/UInt16InitValue11</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_effAfr</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4282693a-4e40-1015-adf8-f528d4274efd">
+                  <SHORT-NAME>R_IgSys_rTarStatIgSpEff</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_IgSys_rTarStatIgSpEff</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_IgSys_rTarStatIgSpEff/IgSys_rTarStatIgSpEff</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue13/UInt16InitValue13</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_IgSys_rTarStatIgSpEff</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="42a43200-4e40-1015-90f9-db21fb1e4e43">
+                  <SHORT-NAME>R_AirSys_effCyc</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_effCyc</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effCyc/AirSys_effCyc</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue15/UInt16InitValue15</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_effCyc</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="42c55bda-4e40-1015-9f19-c3322a23594d">
+                  <SHORT-NAME>R_AirSys_effEGR</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_effEGR</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effEGR/AirSys_effEGR</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt8InitValue17/UInt8InitValue17</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_effEGR</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="42e6276c-4e40-1015-ab01-b3f152ec86b0">
+                  <SHORT-NAME>R_EngM_mAirEngCylMin</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_EngM_mAirEngCylMin</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_mAirEngCylMin/EngM_mAirEngCylMin</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt32InitValue/UInt32InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_EngM_mAirEngCylMin</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4306f22c-4e40-1015-9165-add74fffc9ee">
+                  <SHORT-NAME>R_EngM_mAirEngCylMax</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_EngM_mAirEngCylMax</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_mAirEngCylMax/EngM_mAirEngCylMax</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt32InitValue19/UInt32InitValue19</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_EngM_mAirEngCylMax</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="432ec0f8-4e40-1015-b911-a1e45c97099f">
+                  <SHORT-NAME>R_InjSys_noCylCutOff</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_InjSys_noCylCutOff</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_InjSys_noCylCutOff/InjSys_noCylCutOff</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt8InitValue21/UInt8InitValue21</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_InjSys_noCylCutOff</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4350c798-4e40-1015-85ef-f3c57b0eb1e3">
+                  <SHORT-NAME>R_Ext_noCylEng</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_noCylEng</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_noCylEng/Ext_noCylEng</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt8InitValue23/UInt8InitValue23</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_noCylEng</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="4371a934-4e40-1015-9663-ca135ff15799">
+                  <SHORT-NAME>R_AirSys_bActStraLimSurge</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_bActStraLimSurge</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_bActStraLimSurge/AirSys_bActStraLimSurge</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_DmpVlv_H/ConstantValue/ConstantValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_bActStraLimSurge</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="43969086-4e40-1015-b7ce-bce8bb5aafde">
+                  <SHORT-NAME>R_InjSys_bTotCutOff</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_InjSys_bTotCutOff</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_InjSys_bTotCutOff/InjSys_bTotCutOff</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_DmpVlv_H/BooleanInitValue25/BooleanInitValue25</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_InjSys_bTotCutOff</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="43b7c34a-4e40-1015-b366-af02ddf9c0c4">
+                  <SHORT-NAME>R_UsThrM_pDsThrMesCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pDsThrMesCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsThrMesCor/UsThrM_pDsThrMesCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue27/UInt16InitValue27</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pDsThrMesCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="43daba6e-4e40-1015-9889-b6401d976482">
+                  <SHORT-NAME>R_UsThrM_pUsThrCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pUsThrCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsThrCor/UsThrM_pUsThrCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/UInt16InitValue29/UInt16InitValue29</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pUsThrCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="43fc2746-4e40-1015-bb0f-cbf05460e5cb">
+                  <SHORT-NAME>R_Ext_nEng</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_nEng</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEng/Ext_nEng</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/ConstantValue31/ConstantValue31</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_nEng</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="441cec2c-4e40-1015-909d-8ba35c7cd0c5">
+                  <SHORT-NAME>R_TqLimEM_tqIdcLimEM</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TqLimEM_tqIdcLimEM</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TqLimEM_tqIdcLimEM/TqLimEM_tqIdcLimEM</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/SInt16InitValue33/SInt16InitValue33</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TqLimEM_tqIdcLimEM</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </APPLICATION-SOFTWARE-COMPONENT-TYPE>
+            <CONSTANT-SPECIFICATION UUID="83e56faa-bf05-4f51-be50-8422a09b5856">
+              <SHORT-NAME>ArrayConstantValue</SHORT-NAME>
+              <VALUE>
+                <ARRAY-SPECIFICATION>
+                  <SHORT-NAME>ArrayConstantValue</SHORT-NAME>
+                  <TYPE-TREF DEST="ARRAY-TYPE">/Interfaces/Datatypes/rt_Array_UInt16_2_m1</TYPE-TREF>
+                  <ELEMENTS>
+                    <INTEGER-LITERAL>
+                      <SHORT-NAME>Const</SHORT-NAME>
+                      <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_prm_mfAirThrReq</TYPE-TREF>
+                      <VALUE>0</VALUE>
+                    </INTEGER-LITERAL>
+                    <INTEGER-LITERAL>
+                      <SHORT-NAME>Const1</SHORT-NAME>
+                      <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_prm_mfAirThrReq</TYPE-TREF>
+                      <VALUE>0</VALUE>
+                    </INTEGER-LITERAL>
+                  </ELEMENTS>
+                </ARRAY-SPECIFICATION>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>BooleanInitValue</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>BooleanInitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_DmpVlv_bAcvDmpVlv</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>BooleanInitValue25</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>BooleanInitValue25</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_InjSys_bTotCutOff</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="0c8b827a-29c1-45ea-ac57-4fe0a221bea9">
+              <SHORT-NAME>ConstantValue</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>ConstantValue</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_AirSys_bActStraLimSurge</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="7d59acb4-c8e7-4559-804b-37add14041d9">
+              <SHORT-NAME>ConstantValue31</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue31</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_nEng</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>InitValue_UInt16_0</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>InitValue_UInt16_0</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Components/SWC_DmpVlv_H/DmpVlv_H_IRVDatatypes/DT_DmpVlv_tiDmpVlvAcvTmr_irv</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>SInt16InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>SInt16InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_CoPt_tqIdcReqCord_nRegReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>SInt16InitValue33</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>SInt16InitValue33</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TqLimEM_tqIdcLimEM</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_DmpVlv_rAirLdLimSurgeReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue1</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue1</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pDsCmpr</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue11</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue11</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_effAfr</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue13</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue13</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_IgSys_rTarStatIgSpEff</TYPE-TREF>
+                  <VALUE>1024</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue15</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue15</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_effCyc</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue27</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue27</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pDsThrMesCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue29</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue29</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pUsThrCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue3</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue3</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pUsCmpr</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue5</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue5</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_tUsCmpr</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue7</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue7</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_EngM_facMassFlowLdCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue9</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue9</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_IgSys_rMinIgEfc</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt32InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt32InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_EngM_mAirEngCylMin</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt32InitValue19</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt32InitValue19</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_EngM_mAirEngCylMax</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt8InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt8InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Eng_stEru</TYPE-TREF>
+                  <VALUE>1</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt8InitValue17</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt8InitValue17</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_effEGR</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt8InitValue21</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt8InitValue21</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_InjSys_noCylCutOff</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt8InitValue23</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt8InitValue23</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_noCylEng</TYPE-TREF>
+                  <VALUE>1</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <INTERNAL-BEHAVIOR UUID="443dcff8-4e40-1015-bfc1-8944485b3607">
+              <SHORT-NAME>IB_DmpVlv_H</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">IB_DmpVlv_H</L-4>
+              </LONG-NAME>
+              <COMPONENT-REF DEST="APPLICATION-SOFTWARE-COMPONENT-TYPE">/Components/SWC_DmpVlv_H/DMPVLV_H</COMPONENT-REF>
+              <EVENTS>
+                <TIMING-EVENT UUID="44805ff0-4e40-1015-9448-cef31e98f898">
+                  <SHORT-NAME>EV_DmpVlv_H_002_TEV</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_DmpVlv_H/IB_DmpVlv_H/RE_DmpVlv_H_002_TEV</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+                <MODE-SWITCH-EVENT UUID="445f7b44-4e40-1015-ad56-c21947d511f0">
+                  <SHORT-NAME>EV_DmpVlv_H_001_MSE</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">EV_DmpVlv_H_001_MSE</L-4>
+                  </LONG-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_DmpVlv_H/IB_DmpVlv_H/RE_DmpVlv_H_001_MSE</START-ON-EVENT-REF>
+                  <ACTIVATION>ENTRY</ACTIVATION>
+                  <MODE-IREF>
+                    <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_EcuM_CurrentMode</R-PORT-PROTOTYPE-REF>
+                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Ecu_Package/EcuM_CurrentMode/currentMode</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                    <MODE-DECLARATION-REF DEST="MODE-DECLARATION">/Ecu_Package/EcuM_Mode/RUN</MODE-DECLARATION-REF>
+                  </MODE-IREF>
+                </MODE-SWITCH-EVENT>
+              </EVENTS>
+              <INTER-RUNNABLE-VARIABLES>
+                <INTER-RUNNABLE-VARIABLE UUID="44aeba08-4e40-1015-ae56-a39808e28d8b">
+                  <SHORT-NAME>DmpVlv_tiDmpVlvAcvTmr_irv</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:A2LExtensions">
+                        <SD GID="edve:uniqueName">$c_Irv_$e</SD>
+                        <SD GID="edve:variableGroup">$c</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                    <DISPLAY-FORMAT />
+                  </SW-DATA-DEF-PROPS>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Components/SWC_DmpVlv_H/DmpVlv_H_IRVDatatypes/DT_DmpVlv_tiDmpVlvAcvTmr_irv</TYPE-TREF>
+                  <COMMUNICATION-APPROACH>EXPLICIT</COMMUNICATION-APPROACH>
+                  <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_DmpVlv_H/InitValue_UInt16_0/InitValue_UInt16_0</INIT-VALUE-REF>
+                </INTER-RUNNABLE-VARIABLE>
+              </INTER-RUNNABLE-VARIABLES>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="44ea19c4-4e40-1015-99b0-a87d5eba1012">
+                  <SHORT-NAME>RE_DmpVlv_H_001_MSE</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">RE_DmpVlv_H_001_MSE</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-READ-ACCESSS />
+                  <DATA-RECEIVE-POINTS />
+                  <DATA-SEND-POINTS>
+                    <DATA-SEND-POINT UUID="451240aa-4e40-1015-b883-e36c0bf0684e">
+                      <SHORT-NAME>ds_DmpVlv_rAirLdLimSurgeReq</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_DmpVlv_rAirLdLimSurgeReq</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/P_DmpVlv_rAirLdLimSurgeReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_rAirLdLimSurgeReq/DmpVlv_rAirLdLimSurgeReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="4534179a-4e40-1015-9115-e833411b4c85">
+                      <SHORT-NAME>ds_DmpVlv_bAcvDmpVlv</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_DmpVlv_bAcvDmpVlv</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/P_DmpVlv_bAcvDmpVlv</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_bAcvDmpVlv/DmpVlv_bAcvDmpVlv</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS />
+                  <SYMBOL>RE_DmpVlv_H_001_MSE</SYMBOL>
+                  <WRITTEN-VARIABLE-REFS>
+                    <WRITTEN-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_DmpVlv_H/IB_DmpVlv_H/DmpVlv_tiDmpVlvAcvTmr_irv</WRITTEN-VARIABLE-REF>
+                  </WRITTEN-VARIABLE-REFS>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="45588052-4e40-1015-a131-9cec861dfb5c">
+                  <SHORT-NAME>RE_DmpVlv_H_002_TEV</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">RE_DmpVlv_H_002_TEV</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-READ-ACCESSS />
+                  <DATA-RECEIVE-POINTS>
+                    <DATA-RECEIVE-POINT UUID="050176b0-1967-4404-a68a-ae33850a0082">
+                      <SHORT-NAME>dr_AirSys_prm_mfAirThrReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_AirSys_prm_mfAirThrReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_prm_mfAirThrReq/AirSys_prm_mfAirThrReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="466f0a34-4e40-1015-a674-d71ec8401996">
+                      <SHORT-NAME>dr_EngM_mAirEngCylMin</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_EngM_mAirEngCylMin</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_EngM_mAirEngCylMin</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_mAirEngCylMin/EngM_mAirEngCylMin</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="459afa6a-4e40-1015-9bc1-adb3e39d22a8">
+                      <SHORT-NAME>dr_UsThrM_pDsThrMesCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_pDsThrMesCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_UsThrM_pDsThrMesCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsThrMesCor/UsThrM_pDsThrMesCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="46264a0c-4e40-1015-a348-88faa617984f">
+                      <SHORT-NAME>dr_InjSys_noCylCutOff</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_InjSys_noCylCutOff</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_InjSys_noCylCutOff</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_InjSys_noCylCutOff/InjSys_noCylCutOff</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="485ee37e-4e40-1015-95a8-c3820bd0e5c2">
+                      <SHORT-NAME>dr_Eng_stEru</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Eng_stEru</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_Eng_stEru</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Eng_stEru/Eng_stEru</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="47652cb4-4e40-1015-9694-e03c4472ed43">
+                      <SHORT-NAME>dr_EngM_facMassFlowLdCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_EngM_facMassFlowLdCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_EngM_facMassFlowLdCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_facMassFlowLdCor/EngM_facMassFlowLdCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4832bc22-4e40-1015-bc78-cb0706700064">
+                      <SHORT-NAME>dr_UsThrM_pDsCmpr</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_pDsCmpr</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_UsThrM_pDsCmpr</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsCmpr/UsThrM_pDsCmpr</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="47e3c22a-4e40-1015-9006-b0e18caeabfc">
+                      <SHORT-NAME>dr_UsThrM_tUsCmpr</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_tUsCmpr</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_UsThrM_tUsCmpr</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_tUsCmpr/UsThrM_tUsCmpr</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="46d19a5c-4e40-1015-8825-91aa7ed4cf19">
+                      <SHORT-NAME>dr_IgSys_rTarStatIgSpEff</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_IgSys_rTarStatIgSpEff</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_IgSys_rTarStatIgSpEff</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_IgSys_rTarStatIgSpEff/IgSys_rTarStatIgSpEff</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="9869d771-5581-448b-8084-48399eb48b47">
+                      <SHORT-NAME>dr_Ext_nEng</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_Ext_nEng</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEng/Ext_nEng</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="457a1eb6-4e40-1015-b892-c863d63fa214">
+                      <SHORT-NAME>dr_UsThrM_pUsThrCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_pUsThrCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_UsThrM_pUsThrCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsThrCor/UsThrM_pUsThrCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="45bbb77e-4e40-1015-b4f4-d50e69817fc5">
+                      <SHORT-NAME>dr_InjSys_bTotCutOff</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_InjSys_bTotCutOff</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_InjSys_bTotCutOff</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_InjSys_bTotCutOff/InjSys_bTotCutOff</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="46f20e36-4e40-1015-a334-d1ea4520f4bd">
+                      <SHORT-NAME>dr_AirSys_effAfr</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_AirSys_effAfr</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_AirSys_effAfr</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effAfr/AirSys_effAfr</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4690d91a-4e40-1015-ae09-94e418ce217d">
+                      <SHORT-NAME>dr_AirSys_effEGR</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_AirSys_effEGR</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_AirSys_effEGR</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effEGR/AirSys_effEGR</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="47904380-4e40-1015-a9ce-a53be7ec96e6">
+                      <SHORT-NAME>dr_TqLimEM_tqIdcLimEM</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_TqLimEM_tqIdcLimEM</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_TqLimEM_tqIdcLimEM</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TqLimEM_tqIdcLimEM/TqLimEM_tqIdcLimEM</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="46b14904-4e40-1015-941b-b2ceb55d778a">
+                      <SHORT-NAME>dr_AirSys_effCyc</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_AirSys_effCyc</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_AirSys_effCyc</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_effCyc/AirSys_effCyc</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4713def8-4e40-1015-aeb7-cdc1e885eee9">
+                      <SHORT-NAME>dr_IgSys_rMinIgEfc</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_IgSys_rMinIgEfc</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_IgSys_rMinIgEfc</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_IgSys_rMinIgEfc/IgSys_rMinIgEfc</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4605641e-4e40-1015-95ee-e8986f39f92d">
+                      <SHORT-NAME>dr_Ext_noCylEng</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Ext_noCylEng</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_Ext_noCylEng</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_noCylEng/Ext_noCylEng</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="48091f64-4e40-1015-8979-e72a4bfd36b5">
+                      <SHORT-NAME>dr_UsThrM_pUsCmpr</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_pUsCmpr</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_UsThrM_pUsCmpr</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsCmpr/UsThrM_pUsCmpr</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="42eeec73-8eae-4345-aa06-5bab1c695d0a">
+                      <SHORT-NAME>dr_AirSys_bActStraLimSurge</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_AirSys_bActStraLimSurge</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_bActStraLimSurge/AirSys_bActStraLimSurge</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4734a566-4e40-1015-af8e-bdc4e2c0f4dc">
+                      <SHORT-NAME>dr_CoPt_tqIdcReqCord_nRegReq</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_CoPt_tqIdcReqCord_nRegReq</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_CoPt_tqIdcReqCord_nRegReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_CoPt_tqIdcReqCord_nRegReq/CoPt_tqIdcReqCord_nRegReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="4646ec00-4e40-1015-b0cd-aaf769b43c1b">
+                      <SHORT-NAME>dr_EngM_mAirEngCylMax</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_EngM_mAirEngCylMax</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_EngM_mAirEngCylMax</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_EngM_mAirEngCylMax/EngM_mAirEngCylMax</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                  </DATA-RECEIVE-POINTS>
+                  <DATA-SEND-POINTS>
+                    <DATA-SEND-POINT UUID="48a6cfa0-4e40-1015-a1ec-8cbba1d23510">
+                      <SHORT-NAME>ds_DmpVlv_rAirLdLimSurgeReq</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_DmpVlv_rAirLdLimSurgeReq</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/P_DmpVlv_rAirLdLimSurgeReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_rAirLdLimSurgeReq/DmpVlv_rAirLdLimSurgeReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="48cb4fce-4e40-1015-9b38-b8cf4f8f0b0e">
+                      <SHORT-NAME>ds_DmpVlv_bAcvDmpVlv</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_DmpVlv_bAcvDmpVlv</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/P_DmpVlv_bAcvDmpVlv</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_DmpVlv_bAcvDmpVlv/DmpVlv_bAcvDmpVlv</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS />
+                  <READ-VARIABLE-REFS>
+                    <READ-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_DmpVlv_H/IB_DmpVlv_H/DmpVlv_tiDmpVlvAcvTmr_irv</READ-VARIABLE-REF>
+                  </READ-VARIABLE-REFS>
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bInhDmpVlvCtl</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bInhDmpVlvCtl</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_FRM_bInhDmpVlvCtl</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bInhStraLimSurge</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bInhStraLimSurge</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_FRM_bInhStraLimSurge</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bAcvUsThrCtlDft</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bAcvUsThrCtlDft</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_DmpVlv_H/DMPVLV_H/R_FRM_bAcvUsThrCtlDft</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_DmpVlv_H_002_TEV</SYMBOL>
+                  <WRITTEN-VARIABLE-REFS>
+                    <WRITTEN-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_DmpVlv_H/IB_DmpVlv_H/DmpVlv_tiDmpVlvAcvTmr_irv</WRITTEN-VARIABLE-REF>
+                  </WRITTEN-VARIABLE-REFS>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </INTERNAL-BEHAVIOR>
+            <SWC-IMPLEMENTATION>
+              <SHORT-NAME>Imp_DmpVlv_H</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">Imp_DmpVlv_H</L-4>
+              </LONG-NAME>
+              <CODE-DESCRIPTORS>
+                <CODE UUID="0f65806e-d178-4e0f-b4a6-82ab61777290">
+                  <SHORT-NAME>CodeDescriptor</SHORT-NAME>
+                  <TYPE>SRC</TYPE>
+                  <XFILES>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_private_h</SHORT-NAME>
+                      <URL>DmpVlv_H_private.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_Def_c</SHORT-NAME>
+                      <URL>DmpVlv_H_Def.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_h</SHORT-NAME>
+                      <URL>DmpVlv_H.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_c</SHORT-NAME>
+                      <URL>DmpVlv_H.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_types_h</SHORT-NAME>
+                      <URL>DmpVlv_H_types.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_MemMap_h</SHORT-NAME>
+                      <URL>DmpVlv_H_MemMap.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_data_c</SHORT-NAME>
+                      <URL>DmpVlv_H_data.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_Version_c</SHORT-NAME>
+                      <URL>DmpVlv_H_Version.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_import_h</SHORT-NAME>
+                      <URL>DmpVlv_H_import.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>DmpVlv_H_Version_h</SHORT-NAME>
+                      <URL>DmpVlv_H_Version.h</URL>
+                    </XFILE>
+                  </XFILES>
+                </CODE>
+              </CODE-DESCRIPTORS>
+              <CODE-GENERATOR>Real-Time Workshop Embedded Coder 5.5 (R2010a) 25-Jan-2010</CODE-GENERATOR>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/Components/SWC_DmpVlv_H/IB_DmpVlv_H</BEHAVIOR-REF>
+            </SWC-IMPLEMENTATION>
+          </ELEMENTS>
+          <SUB-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>DmpVlv_H_IRVDatatypes</SHORT-NAME>
+              <ELEMENTS>
+                <INTEGER-TYPE UUID="00b8d7bd-f423-4cec-b117-aca3b9ec0706">
+                  <SHORT-NAME>DT_DmpVlv_tiDmpVlvAcvTmr_irv</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BaseTypeGeneric/uint16</BASE-TYPE-REF>
+                  </SW-DATA-DEF-PROPS>
+                  <LOWER-LIMIT INTERVAL-TYPE="CLOSED">0</LOWER-LIMIT>
+                  <UPPER-LIMIT INTERVAL-TYPE="CLOSED">65535</UPPER-LIMIT>
+                </INTEGER-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </SUB-PACKAGES>
+        </AR-PACKAGE>
+      </SUB-PACKAGES>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

@@ -1,0 +1,48 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+Can_DisableControllerInterrupts|A|(argin uint8 CAN_Channel);|16|HEADER|1|NONE||||0|0|0|0|
+Can_Init|A|(argin const Lin_ConfigType * Config);|1|HEADER|1|NONE||||0|0|0|0|
+Can_MainFunction_BusOff|A|();|23|HEADER|1|NONE||||0|0|0|0|
+Can_MainFunction_Read|A|();|22|HEADER|1|NONE||||0|0|0|0|
+Can_MainFunction_Write|A|();|21|HEADER|1|NONE||||0|0|0|0|
+CanIf_Init|A|(uint16 *pu16Aks);|3|HEADER|1|NONE||||0|0|0|0|
+CanSM_Init|A|(uint16 *pu16Can);|5|HEADER|1|NONE||||0|0|0|0|
+CanSM_MainFunction|A|();|27|HEADER|1|NONE||||0|0|0|0|
+CanTp_Init|A|(argin const CanTp_ConfigType *CfgPtr);|17|HEADER|1|NONE||||0|0|0|0|
+CanTp_MainFunction|A|();|28|HEADER|1|NONE||||0|0|0|0|
+Com_ClearIpduGroupVector|A|(uint16 u16PduGroup);|18|HEADER|1|NONE||||0|0|0|0|
+Com_Init|A|(uint16 *pu16Com);|6|HEADER|1|NONE||||0|0|0|0|
+Com_IpduGroupControl|A|(uint16 u16PduGroupVector, boolean bTest);|10|HEADER|1|NONE||||0|0|0|0|
+Com_MainFunctionRouteSignals|A|();|24|HEADER|1|NONE||||0|0|0|0|
+Com_MainFunctionRx|A|();|25|HEADER|1|NONE||||0|0|0|0|
+Com_MainFunctionTx|A|();|26|HEADER|1|NONE||||0|0|0|0|
+Com_ReceptionDMControl|A|(uint16 u16PduGroup);|19|HEADER|1|NONE||||0|0|0|0|
+Com_SetIpduGroup|A|(uint16 u16PduGroup, uint8 u8ComIP, boolean bEnable);|9|HEADER|1|NONE||||0|0|0|0|
+ComM_CommunicationAllowed|A|(uint8 u8ComMChannel, boolean bEna);|7|HEADER|1|NONE||||0|0|0|0|
+ComM_GetCurrentComMode|A|(uint8 u8ComMUser, uint8 *ComMode);|12|HEADER|1|NONE||||0|0|0|0|
+ComM_Init|A|();|2|HEADER|1|NONE||||0|0|0|0|
+ComM_MainFunction_000|A|();|29|HEADER|1|NONE||||0|0|0|0|
+ComM_MainFunction_001|A|();|30|HEADER|1|NONE||||0|0|0|0|
+ComM_RequestComMode|A|(uint8 u8ComMUser, uint8 u8FullCom);|8|HEADER|1|NONE||||0|0|0|0|
+ComStMng_EveRst|A|();|SCH.1|COMSTMNG|1|PTS_DOC_6832731||||0|0|0|0|Evènement de reset logiciel.
+ComStMng_EveSdlFast|A|();|SCH.2|COMSTMNG|1|PTS_DOC_6832731||||0|0|0|0|Evènement tâche temporelle rapide.
+COMSTMNG_vidCanIsLifeCyclePhases|A|();|FCT1.4|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Afin de gérer la communication CAN pendant la phase d’intégration électronique et de power-latch, il suffit de positionner les PduGroup des trames qui ne doivent plus être émises à 0.
+COMSTMNG_vidInitOutput|A|();|FCT1.10|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Initialisation des internes et des sorties
+COMSTMNG_vidIntegraElectronique|A|();|FCT1.2|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Fontion permettant la circulation d'un ensemble de trames prédéfini sur le bus pendant la phase d’intégration électronique.
+COMSTMNG_vidLinLifeCyclePhases|A|();|FCT2.1|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0| L’automate détermine dans quel état se trouve le réseau LIN. Au réveil RCD et afin de réveiller le réseau LIN, il est nécessaire d’envoyer une trame de réveil. De même à la coupure du contact clef, il est nécessaire d’envoyer une trame de mise en veille.
+COMSTMNG_vidLinStatusInit|A|();|FCT2.2|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Transition de l'état ISLIN_INIT.
+COMSTMNG_vidLinStatusNormal|A|();|FCT2.4|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Transition de l'état ISLIN_NORMAL.
+COMSTMNG_vidLinStatusShut|A|();|FCT2.5|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Transition de l'état ISLIN_SHUTDOWN.
+COMSTMNG_vidLinStatusWakeUp|A|();|FCT2.3|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|transition de l'état ISLIN_WAKEUP.
+COMSTMNG_vidPowerlatch|A|();|FCT1.3|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Fontion permettant la circulation d'un ensemble de trames prédéfini sur le bus pendant la phase de Power-latch.
+COMSTMNG_vidReset|A|();|FCT1.1|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Fonction d'initialisation des différentes couches de la COM stack pour l’activation de la  communication via le réseau CAN IS
+COMSTMNG_vidShutDown|A|();|FCT1.6|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Quand l’automate est à l’état SHUTDOWN, on demande le passage du réseau LIN en mode NO_COM.
+COMSTMNG_vidWakeUp|A|();|FCT1.5|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Quand l’automate est à l’état WAKEUP, on demande le passage du réseau LIN en mode FULL_COM.
+Lin_Init|A|(uint16 *Config);|13|HEADER|1|NONE||||0|0|0|0|
+LinIf_Init|A|(uint16 *pu16Lin);|14|HEADER|1|NONE||||0|0|0|0|
+LinSM_Init|A|();|15|HEADER|1|NONE||||0|0|0|0|
+LinSM_ScheduleRequest|A|(uint8 u8ComMChannel, boolean bEna);|20|HEADER|1|NONE||||0|0|0|0|
+PduR_Init|A|(uint16 *pu16Pdu);|4|HEADER|1|NONE||||0|0|0|0|
+SWFAIL_vidSoftwareErrorHook|A|();|11|HEADER|1|NONE||||0|0|0|0|
+VidMainFunction_StackCom_10MS|A|();|FCT1.8|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Call Main function: task OSTSK_C_10MS_7
+VidMainFunction_StackCom_2_5MS|A|();|FCT1.7|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Call Main function: task OSTSK_C_2_5MS_1
+VidMainFunction_StackCom_20MS|A|();|FCT1.9|COMSTMNG|0|PTS_DOC_6832731||||0|0|0|0|Call Main function: task OSTSK_C_20MS_5

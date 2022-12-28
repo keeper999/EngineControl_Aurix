@@ -1,0 +1,4329 @@
+/begin MODULE GSI "GSI"
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        GSI_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        GSI_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        GSI_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noEgdGearCordFilIt_B /* Name */ 
+        "Rapport de boite engagé vu par le GSI" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        GSI_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        9 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noTarGear_B /* Name */ 
+        "Rapport préconisé par le GSI " /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        GSI_CM_Byp_Table_out44 /* Conversion */ 
+        0 /* LowerLimit */ 
+        9 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_stGearShiftReq_B /* Name */ 
+        "Préconisation d'action GSI " /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        GSI_CM_Byp_Table_out45 /* Conversion */ 
+        0 /* LowerLimit */ 
+        3 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_stGSIEna_B /* Name */ 
+        "Etat de la fonction GSI " /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        GSI_CM_Byp_Table_out46 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module GSI" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        GSI_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_Byp_Table_out44 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF GSI_CV_CONV_TAB_Table_out44 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_Byp_Table_out45 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF GSI_CV_CONV_TAB_Table_out45 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_Byp_Table_out46 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF GSI_CV_CONV_TAB_Table_out46 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "GSI_CM_VOID_SCALING_VersionModule"                              /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        GSI_CV_CONV_TAB_Table_out44 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        10 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "0" /* OutVal */ 
+        1 /* InVal */ 
+        "1" /* OutVal */ 
+        2 /* InVal */ 
+        "2" /* OutVal */ 
+        3 /* InVal */ 
+        "3" /* OutVal */ 
+        4 /* InVal */ 
+        "4" /* OutVal */ 
+        5 /* InVal */ 
+        "5" /* OutVal */ 
+        6 /* InVal */ 
+        "6" /* OutVal */ 
+        7 /* InVal */ 
+        "7" /* OutVal */ 
+        8 /* InVal */ 
+        "8" /* OutVal */ 
+        9 /* InVal */ 
+        "repos actif" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin COMPU_VTAB 
+        GSI_CV_CONV_TAB_Table_out45 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        4 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "repos actif" /* OutVal */ 
+        1 /* InVal */ 
+        "flèche montante" /* OutVal */ 
+        2 /* InVal */ 
+        "flèche descendante" /* OutVal */ 
+        3 /* InVal */ 
+        "repos inactif" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin COMPU_VTAB 
+        GSI_CV_CONV_TAB_Table_out46 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        2 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "etat GSI inactif" /* OutVal */ 
+        1 /* InVal */ 
+        "etat GSI actif" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        GSI_FCT_Byp    /* Name */ 
+        "GSI_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_noEgdGearCordFilIt_B /* Identifier */ 
+            GSI3_noTarGear_B /* Identifier */ 
+            GSI3_stGearShiftReq_B /* Identifier */ 
+            GSI3_stGSIEna_B /* Identifier */ 
+            GSI_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            GSI_ModuleVersion_Major_MP      /* Identifier */ 
+            GSI_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAccPCoVSCtl_C	/* Name */ 
+        "Booléen pour l'activation de l'information pédale reconstituée de la XVV"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvBrkPed_ldEstim_C	/* Name */ 
+        "Booléen d'activation du figeage de la charge sur pédale de frein"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvEngRun_ldEstim_C	/* Name */ 
+        "Booléen d'activation du figeage de la charge sur moteur démarré, 1ere engagée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvEsp_ldEstim_C	/* Name */ 
+        "Booléen d'activation du figeage de la charge sur requete ESP"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvGSIEna_C	/* Name */ 
+        "Booléen pour forcer l'acitvation de l'état GSI"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvLdVehEstimMan_C	/* Name */ 
+        "Activation du mode manuel de la charge"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvLdVehWup_C	/* Name */ 
+        "Boolean d'activation de la prise en compte de la pente pour sortir du mode Warm Up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvLevAuth_ldEstim_C	/* Name */ 
+        "Booléen d'activation du figeage de la charge sur levier au neutre ou marche arrière"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvManWup_C	/* Name */ 
+        "Booléen d'activation du mode warm-up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvSpdVeh_ldEstim_C	/* Name */ 
+        "Booléen d'activation du figeage de la charge sur vitesse véhicule faible"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bAcvTiDlyInhWup_C	/* Name */ 
+        "Boolean d'activation de la prise en compte du temps d'activation du mode warm UP pour sortir du mode Warm Up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bARefAcv_IdVehEstim_C	/* Name */ 
+        "Booléen de choix entre la différence des accélération véhicules estimée par observateur et mesure ou l'accélération totale extérieure due à l'écart de charge observée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhRegABS_C	/* Name */ 
+        "Booléen d'inhibition de la foncton GSI lors d'une régulation ABS"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhRegDecTq_C	/* Name */ 
+        "Booléen d'inhibition de la foncton GSI lors d'une régulation ASR"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhRegIncTq_C	/* Name */ 
+        "Booléen d'inhibition de la foncton GSI lors d'une régulation MSR"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhTraAT_C	/* Name */ 
+        "Booléen d'inhibition forcant l'état GSI en boite de vitesse manuelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhVehSpdCtlLim_C	/* Name */ 
+        "Booléen d'inhibition de la fonction GSI lorsque la LVV/BVV est effective"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bInhVehSpdCtlReg_C	/* Name */ 
+        "Booléen d'inhibition de la fonction GSI lorsque la RVV/ACC est effective"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_bTqCluEstimSel_C	/* Name */ 
+        "Selection du couple embrayage estimé corrigé par rendement BV"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_dstWhl_C	/* Name */ 
+        "Développée du pneu"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_g	/* Conversion */ 
+        0.0078125	/* LowerLimit */ 
+        4	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_effGBx_T	/* Name */ 
+        "Rendement de la boite de vitesse"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_q	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+            GSI_CM_VOID_SCALING	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_noEgdGearX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facCluEstimLossB_T	/* Name */ 
+        "Table de facteur B de correction de couple embrayage estimé suivant le rapport engagé"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0625_r	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+            GSI_CM_VOID_SCALING	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_noEgdGearX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facCluEstimLossC_T	/* Name */ 
+        "Table de facteur C de correction de couple embrayage estimé suivant le rapport engagé"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0625_s	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+            GSI_CM_VOID_SCALING	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_noEgdGearX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facCorGearPed_T	/* Name */ 
+        "Facteur de pondération de la cartographie pédale inversée par rapport de boite"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0625_u	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+            GSI_CM_VOID_SCALING	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_noEgdGearX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys12UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 1 en 2"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys23UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 2 en 3"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys32DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 2"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys34UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 3 en 4"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys43DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 3"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys45UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 4 en 5"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys54DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 4"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys56UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 5 en 6"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys65DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 5"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys67UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 6 en 7"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys76DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 6"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys78UpLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage montante pour un passage de 7 en 8"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facHys87DownLaw_C	/* Name */ 
+        "Hystérésis pour les lois de passage descendante pour un passage de 3 en 7"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facIAVehExtEstim_Brk_C	/* Name */ 
+        "Facteur intégral sur appui pédale de frein permettant le calcul de l'accélérération résiduelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_o	/* Conversion */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facIAVehExtEstim_C	/* Name */ 
+        "Facteur Intégral permettant le calcul de l'accélérération résiduelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_o	/* Conversion */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facPAVehExtEstim_Brk_C	/* Name */ 
+        "Facteur Proportionnel sur appui pédale de frein permettant le calcul de l'accélérération résiduelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_p	/* Conversion */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facPAVehExtEstim_C	/* Name */ 
+        "Facteur Proportionnel  permettant le calcul de l'accélérération résiduelle"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125_p	/* Conversion */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear0_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport neutre"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear1_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport un"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear2_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport deux"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear3_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport trois"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear4_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport quatre"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear5_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport cinq"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear6_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport six"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear7_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport sept"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_facRatePtToWhlGear8_C	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue en rapport huit"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear1_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 1"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear2_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 2"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear3_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 3"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear4_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 4"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear5_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 5"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear6_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 6"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear7_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 7"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGear8_C	/* Name */ 
+        "Inertie mécanisme BVA pour le rapport 8"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jATGearNeut_C	/* Name */ 
+        "Inertie mécanisme BVA pour le neutre"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCluFric_C	/* Name */ 
+        "Inertie embrayage coté arbre primaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCluPlate_C	/* Name */ 
+        "Inertie embrayage coté MTH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCnvLockPrim_C	/* Name */ 
+        "Inertie du convertisseur  ponté côté primaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCnvLockSec_C	/* Name */ 
+        "Inertie du convertisseur  ponté côté secondaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCnvUnlockPrim_C	/* Name */ 
+        "Inertie du convertisseur  déponté côté primaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jCnvUnlockSec_C	/* Name */ 
+        "Inertie du convertisseur  ponté côté secondaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jEng_C	/* Name */ 
+        "Inertie MTH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jPlate_C	/* Name */ 
+        "Inertie de la flex plate"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jPrimShaft_C	/* Name */ 
+        "Inertie arbre primaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_jWhlVeh_C	/* Name */ 
+        "Inertie des 4 roues du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_ldVehEstimMan_C	/* Name */ 
+        "Valeur manuelle de charge estimée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        50	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_ldVehEstimMaxThd_C	/* Name */ 
+        "Seuil de charge estimée au-delà duquelle on sort de l'état du warm up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_25	/* Conversion */ 
+        -63	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_ldVehEstimRawMax_C	/* Name */ 
+        "Maximum de charge estimée instantanée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        50	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_ldVehEstimRawMin_C	/* Name */ 
+        "Minimum de charge estimée instantanée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        50	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_mVehEstim_C	/* Name */ 
+        "Masse en ordre de marche du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_j	/* Conversion */ 
+        0	/* LowerLimit */ 
+        4095	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noCoefVeh0_C	/* Name */ 
+        "Coefficient F0 du Coast Down du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noCoefVeh1_C	/* Name */ 
+        "Coefficient F1 du Coast Down du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_k	/* Conversion */ 
+        -100	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noCoefVeh2_C	/* Name */ 
+        "Coefficient F2 du Coast Down du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0009765625_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_noTarGearMax_C	/* Name */ 
+        "Offset du rapport maximum à préconiser par rapport au rapport courant"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_rAccPInhGSI3_C	/* Name */ 
+        "Enfoncement pédale minimum pour avoir une préconisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_rAccPInhGSIOfs_C	/* Name */ 
+        "Offset sur l'enfoncement pédale minimum servant d'hystérésis"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_rAccPIvs_M	/* Name */ 
+        "Position pédale pour la cartographie inversée de la pédale"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_v	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_nEngX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_tqCkEfcY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd12LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 1 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd12LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 1 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd12LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 1 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd12SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 1 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r12SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd23LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 3 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd23LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 2 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd23LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 2 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd23LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 2 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd23SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 2 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r23SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd32LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 3 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd32LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 3 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd32SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 3 en 2"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r32SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd34LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 4 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd34LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 3 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd34LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 3 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd34LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 3 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd34SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 3 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r34SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd43LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 4 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd43LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 4 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd43SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 4 en 3"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r43SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd45LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 5 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd45LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 4 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd45LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 4 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd45LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 4 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd45SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 4 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r45SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd54LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 5 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd54LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 5 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd54SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 5 en 4"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r54SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd56LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 6 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd56LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 5 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd56LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 5 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd56LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 5 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd56SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 5 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r56SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd65LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 6 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd65LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 6 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd65SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 6 en 5"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r65SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd67LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 7 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd67LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 6 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd67LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 6 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd67LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 6 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd67SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 6 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r67SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd76LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 7 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd76LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 7 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd76SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 7 en 6"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r76SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd78LawDownNorm_T	/* Name */ 
+        "Vecteur de loi passage descendante pour un passage de 8 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd78LawUpHEAT_T	/* Name */ 
+        "Vecteur de loi passage montante en chauffe catalyseur pour un passage de 7 en 8"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPUpHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd78LawUpNorm_T	/* Name */ 
+        "Vecteur de loi passage montante pour un passage de 7 en 8"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd78LawUpWup_T	/* Name */ 
+        "Vecteur de loi passage montante en Warmup pour un passage de 7 en 8"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            13	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawUpWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd78SlopLawUp_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 7 en 8"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r78SlopLawUpX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd87LawDownHEAT_T	/* Name */ 
+        "Vecteur de loi passage descendante en chauffe catalyseur pour un passage de 8 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPDownHEATX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd87LawDownWup_T	/* Name */ 
+        "Vecteur de loi passage descendante en Warmup pour un passage de 8 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_rAccPGSI	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_rAccPLawDownWupX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spd87SlopLawDown_T	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en vitesse véhicule pour un passage de 8 en 7"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            GSI3_ldVehEstim	/* InputQuantity */ 
+            GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            -100	/* LowerLimit */ 
+            110	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_r87SlopLawDownX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spdVehHiThd_ldEstim_C	/* Name */ 
+        "Seuil haut de vitesse véhicule pour figeage charge"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        250	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_spdVehLoThd_ldEstim_C	/* Name */ 
+        "Seuil bas de vitesse véhicule pour figeage charge"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        250	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tAirExtMaxWupAcvThd_C	/* Name */ 
+        "Seuil de température de l'air éxtérieur maximal pour l'activation du warm-up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_e	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tAirExtMinWupAcvThd_C	/* Name */ 
+        "Seuil de température de l'air éxtérieur minimal pour l'activation du warm-up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_e	/* Conversion */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tCoMaxWupAcvThd_C	/* Name */ 
+        "Seuil de température d'eau maximal pour l'activation du warm-up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_e	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tCoMinWupAcvThd_C	/* Name */ 
+        "Seuil de température d'eau minimal pour l'activation du warm-up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_e	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiAccPInhGSI3_C	/* Name */ 
+        "Temps de confirmation d'enfoncement pédale pour activer le GSI"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiAccPTran_C	/* Name */ 
+        "Temps de transition pour passage de XVV effective/non effective"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiAnt_aVehEstim_C	/* Name */ 
+        "Durée d'anticipation de l'accélération du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyBrkPed_ldEstim_C	/* Name */ 
+        "Delai de désactivation du figeage de la charge sur pédale de frein"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyEngRun_ldEstim_C	/* Name */ 
+        "Delai de désactivation du figeage de la charge sur moteur démarré, 1ere engagée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyEsp_ldEstim_C	/* Name */ 
+        "Delai de désactivation du figeage de la charge sur requête ESP"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyInhESP_C	/* Name */ 
+        "Temporisation de maintient de l'inhibtion ESP lors d'une régulation ASR ou MSR"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyInhWup_C	/* Name */ 
+        "Temps au delà duquel on désactive le mode Warm Up"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_f	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyInhWupCold_C	/* Name */ 
+        "Temps d'activation de la condition froid 1"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_f	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlyLevAuth_ldEstim_C	/* Name */ 
+        "Delai de désactivation du figeage de la charge sur levier au neutre ou marche arrière"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDlySpdVeh_ldEstim_C	/* Name */ 
+        "Delai de désactivation du figeage de la charge sur vitesse véhicule faible"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiDrvTraOp_C	/* Name */ 
+        "Temps au-delà duquel on déclare la chaine de traction ouverte"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        60	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiEgdGearVld_C	/* Name */ 
+        "Temps avant de déclarer rapport reconnu"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiEndAVehEstimFlt_C	/* Name */ 
+        "Durée de filtrage de l'accélération estimée pour la charge"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiEndAVehRawFil_C	/* Name */ 
+        "Durée de filtrage de l'accélération du véhicule"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiEndAVehRefFlt_C	/* Name */ 
+        "Constante de temps du filtre passe bas"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiEndLdVehEstimImd_C	/* Name */ 
+        "Durée de filtrage de la charge instantanée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiInhAccpThd_C	/* Name */ 
+        "Temporisation de maintient de l'activation pédale pour rapport montant, lors d'un changement de rapport"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiMinGearIdc_C	/* Name */ 
+        "Temps mimimum d'affichage d'une préconisation "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiMinNewGearIdc_C	/* Name */ 
+        "Temps minimum avant l'affichage d'une nouvelle préconisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tiSIPEndVld_C	/* Name */ 
+        "Temps de confirmation de fin de changement de rapport pour le temps minimum entre deux préconisations GSI"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_1_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        60	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_tqCluEstimLossA_T	/* Name */ 
+        "Table de couple de correction suivant le rapport engagé"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+            GSI_CM_VOID_SCALING	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF GSI3_noEgdGearX_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        GSI3_velAcvDrvTraOp_C	/* Name */ 
+        "Vitesse véhicule pour définir l'état changement de rapport en cours pour les BVM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        GSI_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        GSI3_nEngX_A	/* Name */ 
+        "Points d'appuis en  régime pour la cartographie inversée de la pédale"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_v	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_noEgdGearX_A	/* Name */ 
+        "Points d'appuis des rapport de boite de vitesse"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        CoPt_noEgdGearCordFilIt	/* InputQuantity */ 
+        GSI_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r12SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 1 en 2"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r23SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 2 en 3"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r32SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 3 en 2"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r34SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 3 en 4"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r43SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 4 en 3"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r45SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 4 en 5"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r54SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 5 en 4"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r56SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 5 en 6"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r65SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 6 en 5"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r67SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 6 en 7"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r76SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 7 en 6"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r78SlopLawUpX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 7 en 8"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_r87SlopLawDownX_A	/* Name */ 
+        "Vecteur d'adaptation de la charge véhicule en pourcentage de pente pour un passage de 8 en 7"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_ldVehEstim	/* InputQuantity */ 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_1_d	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        -100	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPDownHEATX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois descendantes en chauffe cata"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPLawDownWupX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois descendantes en warmup"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPLawDownX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois descendantes"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPLawUpWupX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois montantes en warmup"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        13	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPLawUpX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois montantes"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        13	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_rAccPUpHEATX_A	/* Name */ 
+        "Vecteur de points d'appuis en pourcentage pédale pour les lois montantes en chauffe cata"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        GSI3_rAccPGSI	/* InputQuantity */ 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        13	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        GSI3_tqCkEfcY_A	/* Name */ 
+        "Points d'appuis en couple pour la cartographie inversée de la pédale"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        GSI_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        CoPt_noEgdGearCordFilIt	/* Name */ 
+        "Rapport de boite engagé vu par le GSI"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_aVehEstim_ldEstim	/* Name */ 
+        "Accélération véhicule calculée pour la charge"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_l	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -15	/* LowerLimit */ 
+        15	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_aVehExtEstim	/* Name */ 
+        "Accélération véhicule estimée due aux efforts extérieurs"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_l	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -15	/* LowerLimit */ 
+        15	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_aVehRefEstim	/* Name */ 
+        "Accélération véhicule théorique de référence "	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_l	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -15	/* LowerLimit */ 
+        15	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bAcvGSIAccP	/* Name */ 
+        "Booléen d'activation de la position pédale GSI pour rapport montant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bAcvWup_MP	/* Name */ 
+        "Booléen d'activation de l'état warm-up"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bDeacWup_MP	/* Name */ 
+        "Booléen de désactivation du mode warmup"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bFrzLdVehEstim	/* Name */ 
+        "Flag de figeage de la charge estimée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bInhGSIAT	/* Name */ 
+        "Booléen inhibant l'état GSI lorsque sur une boite auto, le mode manuel n'est pas actif"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bInhGSICoVSCtl	/* Name */ 
+        "Booléen d'inhibition de la fonction GSI lorsque que la XVV est effective"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bInhGSICtlStab	/* Name */ 
+        "Booléen inhibant l'état GSI lorsqu'une régulation LAS intervient"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_bTiAcvMinGearIdc	/* Name */ 
+        "Booléen temporisation des préconisations GSI"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jATGear	/* Name */ 
+        "Inertie mécanisme BVA coordonnée au rapport de boite."	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jPtFrntPrimAT_MP	/* Name */ 
+        "Inertie du GMP avant à l'arbre primaire pour BVA."	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0009765625_t	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        315	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jPtFrntPrimMT_MP	/* Name */ 
+        "Inertie du GMP avant à l'arbre primaire pour BVM / BVMP."	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        GSI_CM_EQ_LSB_5_9604644775390625em08	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        252	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jTotWhl	/* Name */ 
+        "Inertie totale à la roue fonction du type de boite de vitesse"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_m	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jTotWhlAT	/* Name */ 
+        "Inertie totale à la roue pour une BVA"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_m	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_jTotWhlMT	/* Name */ 
+        "Inertie totale à la roue pour une BVM / BVMP"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125_m	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_ldVehEstim	/* Name */ 
+        "Charge estimée (homogène à une pente)"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_001953125_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -63	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_ldVehEstimRawSat	/* Name */ 
+        "Charge estimée saturée brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_001953125_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -63	/* LowerLimit */ 
+        63	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noEgdGearCordClc	/* Name */ 
+        "Rapport courant engagé avant filtrage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        9	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noEgdGearCordTiFil	/* Name */ 
+        "Rapport courant engagé en sortie de filtrage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        9	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noGearLawRawDown	/* Name */ 
+        "Rapport de boite résultant des lois de passage pour le calcul des préconisations descendantes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noGearLawRawUp	/* Name */ 
+        "Rapport de boite résultant des lois de passage pour le calcul des préconisations montantes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noTarGearClc	/* Name */ 
+        "Préconisation de rapport de boite de vitesse brute"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        9	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noTarGearCord	/* Name */ 
+        "Préconisation de rapport de boite de vitesse après filtrage du temps entre 2 préconisations"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_noTarGearTiFil	/* Name */ 
+        "Préconisation de rapport de boite de vitesse après filtage du temps minimum d'affichage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        9	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_rAccPGSI	/* Name */ 
+        "Position pédale accélérateur coordonnée pour le GSI"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        110	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_rAccPIvs_MP	/* Name */ 
+        "Enfoncement pédale issue de la cartographie inversée"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_rAccPIvsCor_MP	/* Name */ 
+        "Enfoncement pédale issue de la cartographie inversée corrigée en fonction du rapport de boite"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_001953125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_rdWhl	/* Name */ 
+        "Rayon de la roue"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_1_52587890625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.9999847412109375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_rPtToWhlEgdGear	/* Name */ 
+        "Taux de conversion de couple arbre primaire en couple à la roue "	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0.0009765625	/* LowerLimit */ 
+        40	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_spdVehEstimRaw	/* Name */ 
+        "Vitesse véhicule estimée brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_00390625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -15	/* LowerLimit */ 
+        70	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stATSIP	/* Name */ 
+        "Etat sur le type de changement de rapport pour une boite automatique"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stGearShiftClc	/* Name */ 
+        "Préconisation d'action brute"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stGearShiftCord	/* Name */ 
+        "Préconisation d'action après filtrage du temps entre 2 préconisations"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stGearShiftTiFil	/* Name */ 
+        "Préconisation d'action après filtage du temps minimum d'affichage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stGSIAcv	/* Name */ 
+        "Etat du GSI ready"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stIdcSync	/* Name */ 
+        "Données GSI après filtrage temporel"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        9	/* UpperLimit */ 
+        MATRIX_DIM  3 1 1
+		ECU_ADDRESS 0x0
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stInhGSISIP	/* Name */ 
+        "Etat de la chaine de traction sur le type de changement de rapport"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        6	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stMTSIP	/* Name */ 
+        "Etat sur le type de changement de rapport pour une boite mécanique"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        6	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_stWupAcv	/* Name */ 
+        "Etat Warmup / Chauffe Cata"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        GSI_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqCluCorClc_MP	/* Name */ 
+        "Couple embrayage corrigé calculé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqCluCorEstim_MP	/* Name */ 
+        "Couple embrayage corrigé estimé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqCluCorGBx	/* Name */ 
+        "Couple embrayage corrigé par rendement de boite"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqCorNPrim_MP	/* Name */ 
+        "Couple corrigé à partir du régime arbre primaire"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqCorTqPrimFrnt_MP	/* Name */ 
+        "Couple corrigé à partir du couple arbre primaire"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqWhlExtThe	/* Name */ 
+        "Couple des efforts extérieurs théorique"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_5_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -4000	/* LowerLimit */ 
+        11000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        GSI3_tqWhlPt	/* Name */ 
+        "Couple GMP théorique"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        GSI_CM_EQ_LSB_0_5_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -4000	/* LowerLimit */ 
+        11000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0009765625	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0009765625"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.10"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0009765625_h	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0009765625_h"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.10"	/* Format */ 
+        "kg.m²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0009765625_k	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0009765625_k"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%18.10"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0009765625_t	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0009765625_t"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%18.10"	/* Format */ 
+        "kg.m²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_001953125	/* Name */ 
+        "GSI_CM_EQ_LSB_0_001953125"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.9"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001953125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_001953125_c	/* Name */ 
+        "GSI_CM_EQ_LSB_0_001953125_c"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.9"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001953125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_00390625	/* Name */ 
+        "GSI_CM_EQ_LSB_0_00390625"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.8"	/* Format */ 
+        "m/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.00390625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_g	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_g"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_l	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_l"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "m/s²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_m	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_m"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "kg.m²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_o	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_o"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "1/s²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_p	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_p"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "1/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0078125_q	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0078125_q"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_01	/* Name */ 
+        "GSI_CM_EQ_LSB_0_01"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0625	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0625"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0625_r	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0625_r"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m.s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0625_s	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0625_s"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_0625_u	/* Name */ 
+        "GSI_CM_EQ_LSB_0_0625_u"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_1	/* Name */ 
+        "GSI_CM_EQ_LSB_0_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_1_b	/* Name */ 
+        "GSI_CM_EQ_LSB_0_1_b"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_25	/* Name */ 
+        "GSI_CM_EQ_LSB_0_25"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_5	/* Name */ 
+        "GSI_CM_EQ_LSB_0_5"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.1"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_0_5_n	/* Name */ 
+        "GSI_CM_EQ_LSB_0_5_n"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.1"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1	/* Name */ 
+        "GSI_CM_EQ_LSB_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_52587890625em05	/* Name */ 
+        "GSI_CM_EQ_LSB_1_52587890625em05"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.15"	/* Format */ 
+        "m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1.52587890625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_d	/* Name */ 
+        "GSI_CM_EQ_LSB_1_d"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_e	/* Name */ 
+        "GSI_CM_EQ_LSB_1_e"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_f	/* Name */ 
+        "GSI_CM_EQ_LSB_1_f"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_j	/* Name */ 
+        "GSI_CM_EQ_LSB_1_j"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "kg"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_1_v	/* Name */ 
+        "GSI_CM_EQ_LSB_1_v"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_EQ_LSB_5_9604644775390625em08	/* Name */ 
+        "GSI_CM_EQ_LSB_5_9604644775390625em08"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%19.15"	/* Format */ 
+        "kg.m²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 5.9604644775390625e-08 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        GSI_CM_VOID_SCALING_a	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        GSI_FCT_GSI_002_TEV_fct	/* Name */ 
+        "GSI_FCT_GSI_002_TEV_fct"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_bAcvGSIEna_C	/* Identifier */ 
+            GSI3_rAccPInhGSI3_C	/* Identifier */ 
+            GSI3_rAccPInhGSIOfs_C	/* Identifier */ 
+            GSI3_tiAccPInhGSI3_C	/* Identifier */ 
+            GSI3_tiInhAccpThd_C	/* Identifier */ 
+            GSI3_bInhRegABS_C	/* Identifier */ 
+            GSI3_bInhRegDecTq_C	/* Identifier */ 
+            GSI3_bInhRegIncTq_C	/* Identifier */ 
+            GSI3_tiDlyInhESP_C	/* Identifier */ 
+            GSI3_bInhVehSpdCtlLim_C	/* Identifier */ 
+            GSI3_bInhVehSpdCtlReg_C	/* Identifier */ 
+            GSI3_bInhTraAT_C	/* Identifier */ 
+            GSI3_tiDrvTraOp_C	/* Identifier */ 
+            GSI3_velAcvDrvTraOp_C	/* Identifier */ 
+            GSI3_tiMinNewGearIdc_C	/* Identifier */ 
+            GSI3_tiSIPEndVld_C	/* Identifier */ 
+            GSI3_tiMinGearIdc_C	/* Identifier */ 
+            GSI3_noTarGearMax_C	/* Identifier */ 
+            GSI3_spd32SlopLawDown_T	/* Identifier */ 
+            GSI3_r32SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd43SlopLawDown_T	/* Identifier */ 
+            GSI3_r43SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd54SlopLawDown_T	/* Identifier */ 
+            GSI3_r54SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd65SlopLawDown_T	/* Identifier */ 
+            GSI3_r65SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd76SlopLawDown_T	/* Identifier */ 
+            GSI3_r76SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd87SlopLawDown_T	/* Identifier */ 
+            GSI3_r87SlopLawDownX_A	/* Identifier */ 
+            GSI3_spd12SlopLawUp_T	/* Identifier */ 
+            GSI3_r12SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd23SlopLawUp_T	/* Identifier */ 
+            GSI3_r23SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd34SlopLawUp_T	/* Identifier */ 
+            GSI3_r34SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd45SlopLawUp_T	/* Identifier */ 
+            GSI3_r45SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd56SlopLawUp_T	/* Identifier */ 
+            GSI3_r56SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd67SlopLawUp_T	/* Identifier */ 
+            GSI3_r67SlopLawUpX_A	/* Identifier */ 
+            GSI3_spd78SlopLawUp_T	/* Identifier */ 
+            GSI3_r78SlopLawUpX_A	/* Identifier */ 
+            GSI3_bAcvLdVehWup_C	/* Identifier */ 
+            GSI3_bAcvManWup_C	/* Identifier */ 
+            GSI3_bAcvTiDlyInhWup_C	/* Identifier */ 
+            GSI3_ldVehEstimMaxThd_C	/* Identifier */ 
+            GSI3_tAirExtMaxWupAcvThd_C	/* Identifier */ 
+            GSI3_tAirExtMinWupAcvThd_C	/* Identifier */ 
+            GSI3_tCoMaxWupAcvThd_C	/* Identifier */ 
+            GSI3_tCoMinWupAcvThd_C	/* Identifier */ 
+            GSI3_tiDlyInhWupCold_C	/* Identifier */ 
+            GSI3_tiDlyInhWup_C	/* Identifier */ 
+            GSI3_bAccPCoVSCtl_C	/* Identifier */ 
+            GSI3_facCorGearPed_T	/* Identifier */ 
+            GSI3_noEgdGearX_A	/* Identifier */ 
+            GSI3_rAccPIvs_M	/* Identifier */ 
+            GSI3_nEngX_A	/* Identifier */ 
+            GSI3_tqCkEfcY_A	/* Identifier */ 
+            GSI3_tiAccPTran_C	/* Identifier */ 
+            GSI3_tiEgdGearVld_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            CoPt_noEgdGearCordFilIt	/* Identifier */ 
+            GSI3_bInhGSICoVSCtl	/* Identifier */ 
+            GSI3_noEgdGearCordClc	/* Identifier */ 
+            GSI3_noTarGearClc	/* Identifier */ 
+            GSI3_noTarGearCord	/* Identifier */ 
+            GSI3_rAccPGSI	/* Identifier */ 
+            GSI3_stGearShiftClc	/* Identifier */ 
+            GSI3_stGearShiftCord	/* Identifier */ 
+            GSI3_stInhGSISIP	/* Identifier */ 
+            GSI3_bAcvGSIAccP	/* Identifier */ 
+            GSI3_bInhGSIAT	/* Identifier */ 
+            GSI3_bInhGSICtlStab	/* Identifier */ 
+            GSI3_stGSIAcv	/* Identifier */ 
+            GSI3_stMTSIP	/* Identifier */ 
+            GSI3_stATSIP	/* Identifier */ 
+            GSI3_noEgdGearCordTiFil	/* Identifier */ 
+            GSI3_noTarGearTiFil	/* Identifier */ 
+            GSI3_stGearShiftTiFil	/* Identifier */ 
+            GSI3_bTiAcvMinGearIdc	/* Identifier */ 
+            GSI3_stIdcSync	/* Identifier */ 
+            GSI3_noGearLawRawDown	/* Identifier */ 
+            GSI3_noGearLawRawUp	/* Identifier */ 
+            GSI3_ldVehEstim	/* Identifier */ 
+            GSI3_stWupAcv	/* Identifier */ 
+            GSI3_bDeacWup_MP	/* Identifier */ 
+            GSI3_bAcvWup_MP	/* Identifier */ 
+            GSI3_rAccPIvs_MP	/* Identifier */ 
+            GSI3_rAccPIvsCor_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            GSI_FCT_SGSI163_F05_01__tenir_Affichage	/* Identifier */ 
+            GSI_FCT_SGSI123_F04_04__r_Lois_Normales	/* Identifier */ 
+            GSI_FCT_SGSI122_F04_04___Chauffe_Warmup	/* Identifier */ 
+            GSI_FCT_SGSI121_F04_04__is_Chauffe_Cata	/* Identifier */ 
+            GSI_FCT_SGSI39_F04_02___Charge_Vehicule	/* Identifier */ 
+            GSI_FCT_SGSI38_F04_01___ametres_globaux	/* Identifier */ 
+            GSI_FCT_SGSI16_MSW	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI121_F04_04__is_Chauffe_Cata	/* Name */ 
+        "GSI_FCT_SGSI121_F04_04__is_Chauffe_Cata"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_facHys32DownLaw_C	/* Identifier */ 
+            GSI3_facHys43DownLaw_C	/* Identifier */ 
+            GSI3_facHys54DownLaw_C	/* Identifier */ 
+            GSI3_facHys65DownLaw_C	/* Identifier */ 
+            GSI3_facHys76DownLaw_C	/* Identifier */ 
+            GSI3_facHys87DownLaw_C	/* Identifier */ 
+            GSI3_spd32LawDownHEAT_T	/* Identifier */ 
+            GSI3_rAccPDownHEATX_A	/* Identifier */ 
+            GSI3_spd43LawDownHEAT_T	/* Identifier */ 
+            GSI3_spd54LawDownHEAT_T	/* Identifier */ 
+            GSI3_spd65LawDownHEAT_T	/* Identifier */ 
+            GSI3_spd76LawDownHEAT_T	/* Identifier */ 
+            GSI3_spd87LawDownHEAT_T	/* Identifier */ 
+            GSI3_facHys12UpLaw_C	/* Identifier */ 
+            GSI3_facHys23UpLaw_C	/* Identifier */ 
+            GSI3_facHys34UpLaw_C	/* Identifier */ 
+            GSI3_facHys45UpLaw_C	/* Identifier */ 
+            GSI3_facHys56UpLaw_C	/* Identifier */ 
+            GSI3_facHys67UpLaw_C	/* Identifier */ 
+            GSI3_facHys78UpLaw_C	/* Identifier */ 
+            GSI3_spd12LawUpHEAT_T	/* Identifier */ 
+            GSI3_rAccPUpHEATX_A	/* Identifier */ 
+            GSI3_spd23LawUpHEAT_T	/* Identifier */ 
+            GSI3_spd34LawUpHEAT_T	/* Identifier */ 
+            GSI3_spd45LawUpHEAT_T	/* Identifier */ 
+            GSI3_spd56LawUpHEAT_T	/* Identifier */ 
+            GSI3_spd67LawUpHEAT_T	/* Identifier */ 
+            GSI3_spd78LawUpHEAT_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            GSI3_rAccPGSI	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI122_F04_04___Chauffe_Warmup	/* Name */ 
+        "GSI_FCT_SGSI122_F04_04___Chauffe_Warmup"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_facHys32DownLaw_C	/* Identifier */ 
+            GSI3_facHys43DownLaw_C	/* Identifier */ 
+            GSI3_facHys54DownLaw_C	/* Identifier */ 
+            GSI3_facHys65DownLaw_C	/* Identifier */ 
+            GSI3_facHys76DownLaw_C	/* Identifier */ 
+            GSI3_facHys87DownLaw_C	/* Identifier */ 
+            GSI3_spd32LawDownWup_T	/* Identifier */ 
+            GSI3_rAccPLawDownWupX_A	/* Identifier */ 
+            GSI3_spd43LawDownWup_T	/* Identifier */ 
+            GSI3_spd54LawDownWup_T	/* Identifier */ 
+            GSI3_spd65LawDownWup_T	/* Identifier */ 
+            GSI3_spd76LawDownWup_T	/* Identifier */ 
+            GSI3_spd87LawDownWup_T	/* Identifier */ 
+            GSI3_facHys12UpLaw_C	/* Identifier */ 
+            GSI3_facHys23UpLaw_C	/* Identifier */ 
+            GSI3_facHys34UpLaw_C	/* Identifier */ 
+            GSI3_facHys45UpLaw_C	/* Identifier */ 
+            GSI3_facHys56UpLaw_C	/* Identifier */ 
+            GSI3_facHys67UpLaw_C	/* Identifier */ 
+            GSI3_facHys78UpLaw_C	/* Identifier */ 
+            GSI3_spd12LawUpWup_T	/* Identifier */ 
+            GSI3_rAccPLawUpWupX_A	/* Identifier */ 
+            GSI3_spd23LawUpWup_T	/* Identifier */ 
+            GSI3_spd34LawUpWup_T	/* Identifier */ 
+            GSI3_spd45LawUpWup_T	/* Identifier */ 
+            GSI3_spd56LawUpWup_T	/* Identifier */ 
+            GSI3_spd67LawUpWup_T	/* Identifier */ 
+            GSI3_spd78LawUpWup_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            GSI3_rAccPGSI	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI123_F04_04__r_Lois_Normales	/* Name */ 
+        "GSI_FCT_SGSI123_F04_04__r_Lois_Normales"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_facHys32DownLaw_C	/* Identifier */ 
+            GSI3_facHys43DownLaw_C	/* Identifier */ 
+            GSI3_facHys54DownLaw_C	/* Identifier */ 
+            GSI3_facHys65DownLaw_C	/* Identifier */ 
+            GSI3_facHys76DownLaw_C	/* Identifier */ 
+            GSI3_facHys87DownLaw_C	/* Identifier */ 
+            GSI3_spd23LawDownNorm_T	/* Identifier */ 
+            GSI3_rAccPLawDownX_A	/* Identifier */ 
+            GSI3_spd34LawDownNorm_T	/* Identifier */ 
+            GSI3_spd45LawDownNorm_T	/* Identifier */ 
+            GSI3_spd56LawDownNorm_T	/* Identifier */ 
+            GSI3_spd67LawDownNorm_T	/* Identifier */ 
+            GSI3_spd78LawDownNorm_T	/* Identifier */ 
+            GSI3_facHys12UpLaw_C	/* Identifier */ 
+            GSI3_facHys23UpLaw_C	/* Identifier */ 
+            GSI3_facHys34UpLaw_C	/* Identifier */ 
+            GSI3_facHys45UpLaw_C	/* Identifier */ 
+            GSI3_facHys56UpLaw_C	/* Identifier */ 
+            GSI3_facHys67UpLaw_C	/* Identifier */ 
+            GSI3_facHys78UpLaw_C	/* Identifier */ 
+            GSI3_spd12LawUpNorm_T	/* Identifier */ 
+            GSI3_rAccPLawUpX_A	/* Identifier */ 
+            GSI3_spd23LawUpNorm_T	/* Identifier */ 
+            GSI3_spd34LawUpNorm_T	/* Identifier */ 
+            GSI3_spd45LawUpNorm_T	/* Identifier */ 
+            GSI3_spd56LawUpNorm_T	/* Identifier */ 
+            GSI3_spd67LawUpNorm_T	/* Identifier */ 
+            GSI3_spd78LawUpNorm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            GSI3_rAccPGSI	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI16_MSW	/* Name */ 
+        "GSI_FCT_SGSI16_MSW"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_tiAccPTran_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI163_F05_01__tenir_Affichage	/* Name */ 
+        "GSI_FCT_SGSI163_F05_01__tenir_Affichage"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            GSI3_noTarGearClc	/* Identifier */ 
+            GSI3_stGearShiftClc	/* Identifier */ 
+            GSI3_noEgdGearCordClc	/* Identifier */ 
+            GSI3_stIdcSync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI38_F04_01___ametres_globaux	/* Name */ 
+        "GSI_FCT_SGSI38_F04_01___ametres_globaux"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_dstWhl_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear0_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear1_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear2_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear3_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear4_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear5_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear6_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear7_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear8_C	/* Identifier */ 
+            GSI3_jATGear1_C	/* Identifier */ 
+            GSI3_jATGear2_C	/* Identifier */ 
+            GSI3_jATGear3_C	/* Identifier */ 
+            GSI3_jATGear4_C	/* Identifier */ 
+            GSI3_jATGear5_C	/* Identifier */ 
+            GSI3_jATGear6_C	/* Identifier */ 
+            GSI3_jATGear7_C	/* Identifier */ 
+            GSI3_jATGear8_C	/* Identifier */ 
+            GSI3_jATGearNeut_C	/* Identifier */ 
+            GSI3_jCluFric_C	/* Identifier */ 
+            GSI3_jCluPlate_C	/* Identifier */ 
+            GSI3_jCnvLockPrim_C	/* Identifier */ 
+            GSI3_jCnvLockSec_C	/* Identifier */ 
+            GSI3_jCnvUnlockPrim_C	/* Identifier */ 
+            GSI3_jCnvUnlockSec_C	/* Identifier */ 
+            GSI3_jEng_C	/* Identifier */ 
+            GSI3_jPlate_C	/* Identifier */ 
+            GSI3_jPrimShaft_C	/* Identifier */ 
+            GSI3_jWhlVeh_C	/* Identifier */ 
+            GSI3_mVehEstim_C	/* Identifier */ 
+            GSI3_noCoefVeh0_C	/* Identifier */ 
+            GSI3_noCoefVeh1_C	/* Identifier */ 
+            GSI3_noCoefVeh2_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI39_F04_02___Charge_Vehicule	/* Name */ 
+        "GSI_FCT_SGSI39_F04_02___Charge_Vehicule"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_dstWhl_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear0_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear1_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear2_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear3_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear4_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear5_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear6_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear7_C	/* Identifier */ 
+            GSI3_facRatePtToWhlGear8_C	/* Identifier */ 
+            GSI3_jATGear1_C	/* Identifier */ 
+            GSI3_jATGear2_C	/* Identifier */ 
+            GSI3_jATGear3_C	/* Identifier */ 
+            GSI3_jATGear4_C	/* Identifier */ 
+            GSI3_jATGear5_C	/* Identifier */ 
+            GSI3_jATGear6_C	/* Identifier */ 
+            GSI3_jATGear7_C	/* Identifier */ 
+            GSI3_jATGear8_C	/* Identifier */ 
+            GSI3_jATGearNeut_C	/* Identifier */ 
+            GSI3_jCluFric_C	/* Identifier */ 
+            GSI3_jCluPlate_C	/* Identifier */ 
+            GSI3_jCnvLockPrim_C	/* Identifier */ 
+            GSI3_jCnvLockSec_C	/* Identifier */ 
+            GSI3_jCnvUnlockPrim_C	/* Identifier */ 
+            GSI3_jCnvUnlockSec_C	/* Identifier */ 
+            GSI3_jEng_C	/* Identifier */ 
+            GSI3_jPlate_C	/* Identifier */ 
+            GSI3_jPrimShaft_C	/* Identifier */ 
+            GSI3_jWhlVeh_C	/* Identifier */ 
+            GSI3_mVehEstim_C	/* Identifier */ 
+            GSI3_noCoefVeh0_C	/* Identifier */ 
+            GSI3_noCoefVeh1_C	/* Identifier */ 
+            GSI3_noCoefVeh2_C	/* Identifier */ 
+            GSI3_bAcvLdVehEstimMan_C	/* Identifier */ 
+            GSI3_ldVehEstimMan_C	/* Identifier */ 
+            GSI3_tiEndLdVehEstimImd_C	/* Identifier */ 
+            GSI3_bARefAcv_IdVehEstim_C	/* Identifier */ 
+            GSI3_ldVehEstimRawMax_C	/* Identifier */ 
+            GSI3_ldVehEstimRawMin_C	/* Identifier */ 
+            GSI3_bAcvBrkPed_ldEstim_C	/* Identifier */ 
+            GSI3_bAcvEngRun_ldEstim_C	/* Identifier */ 
+            GSI3_bAcvEsp_ldEstim_C	/* Identifier */ 
+            GSI3_bAcvLevAuth_ldEstim_C	/* Identifier */ 
+            GSI3_bAcvSpdVeh_ldEstim_C	/* Identifier */ 
+            GSI3_spdVehHiThd_ldEstim_C	/* Identifier */ 
+            GSI3_spdVehLoThd_ldEstim_C	/* Identifier */ 
+            GSI3_tiDlyBrkPed_ldEstim_C	/* Identifier */ 
+            GSI3_tiDlyEngRun_ldEstim_C	/* Identifier */ 
+            GSI3_tiDlyEsp_ldEstim_C	/* Identifier */ 
+            GSI3_tiDlyLevAuth_ldEstim_C	/* Identifier */ 
+            GSI3_tiDlySpdVeh_ldEstim_C	/* Identifier */ 
+            GSI3_tiEndAVehEstimFlt_C	/* Identifier */ 
+            GSI3_bTqCluEstimSel_C	/* Identifier */ 
+            GSI3_effGBx_T	/* Identifier */ 
+            GSI3_noEgdGearX_A	/* Identifier */ 
+            GSI3_facCluEstimLossB_T	/* Identifier */ 
+            GSI3_facCluEstimLossC_T	/* Identifier */ 
+            GSI3_tqCluEstimLossA_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            CoPt_noEgdGearCordFilIt	/* Identifier */ 
+            GSI3_ldVehEstim	/* Identifier */ 
+            GSI3_aVehExtEstim	/* Identifier */ 
+            GSI3_aVehRefEstim	/* Identifier */ 
+            GSI3_jTotWhl	/* Identifier */ 
+            GSI3_rdWhl	/* Identifier */ 
+            GSI3_bFrzLdVehEstim	/* Identifier */ 
+            GSI3_ldVehEstimRawSat	/* Identifier */ 
+            GSI3_aVehEstim_ldEstim	/* Identifier */ 
+            GSI3_rPtToWhlEgdGear	/* Identifier */ 
+            GSI3_tqCluCorGBx	/* Identifier */ 
+            GSI3_tqWhlExtThe	/* Identifier */ 
+            GSI3_tqWhlPt	/* Identifier */ 
+            GSI3_jATGear	/* Identifier */ 
+            GSI3_tqCluCorEstim_MP	/* Identifier */ 
+            GSI3_tqCorNPrim_MP	/* Identifier */ 
+            GSI3_tqCorTqPrimFrnt_MP	/* Identifier */ 
+            GSI3_tqCluCorClc_MP	/* Identifier */ 
+            GSI3_jTotWhlAT	/* Identifier */ 
+            GSI3_jPtFrntPrimAT_MP	/* Identifier */ 
+            GSI3_jTotWhlMT	/* Identifier */ 
+            GSI3_jPtFrntPrimMT_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            GSI_FCT_SGSI52_F04_02___e_Longitudinale	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        GSI_FCT_SGSI52_F04_02___e_Longitudinale	/* Name */ 
+        "GSI_FCT_SGSI52_F04_02___e_Longitudinale"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            GSI3_tiAnt_aVehEstim_C	/* Identifier */ 
+            GSI3_tiEndAVehRawFil_C	/* Identifier */ 
+            GSI3_tiEndAVehRefFlt_C	/* Identifier */ 
+            GSI3_facIAVehExtEstim_Brk_C	/* Identifier */ 
+            GSI3_facIAVehExtEstim_C	/* Identifier */ 
+            GSI3_facPAVehExtEstim_Brk_C	/* Identifier */ 
+            GSI3_facPAVehExtEstim_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            GSI3_aVehExtEstim	/* Identifier */ 
+            GSI3_aVehRefEstim	/* Identifier */ 
+            GSI3_jTotWhl	/* Identifier */ 
+            GSI3_rdWhl	/* Identifier */ 
+            GSI3_tqWhlExtThe	/* Identifier */ 
+            GSI3_tqWhlPt	/* Identifier */ 
+            GSI3_spdVehEstimRaw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_SBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_SBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_SLONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+  
+    /begin RECORD_LAYOUT 
+        GSI_RL_UBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_ULONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        GSI_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE GSI ------------------------------------*/

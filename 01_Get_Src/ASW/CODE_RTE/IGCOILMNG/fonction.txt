@@ -1,0 +1,41 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+DGOHAL_bfRead|B|func_DGOHAL_bfRead|1|HEADER|1|NONE||||0|0|0|0|API DGOHAL_bfRead|
+IgCmd_EveCkSnOf_IgCoilMng|C|();|SCH.7|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evènement synchronisation perdue|
+IgCmd_EveICD_IgCoilMng|B|();|SCH.4|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evénement de commande du driver des bobines d'allumage|
+IgCmd_EveRst_IgCoilMng|B|();|SCH.1|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evénement reset du calculateur|
+IgCmd_EveStTR_IgCoilMng|B|();|SCH.5|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant.|
+IgCmd_EveSyncAccu_IgCoilMng|C|();|SCH.6|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evénement indiquant le passage en synchronisation précise du moteur|
+IgCmd_SdlFast_IgCoilMng|B|();|SCH.3|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Moniteur rapide de la fonction IgCmd|
+IgCmd_SdlSlow_IgCoilMng|B|();|SCH.2|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Moniteur lent de la fonction IgCmd|
+IGCOILMNG_vidAgIgMng|B|();|FCT1.10|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Ce bloc gère l’envoi de l’avance finale à appliquer et l’avance finale suivante et la demande d’inhibition de l’allumage pour les besoins de la stratégie Misfire.|
+IGCOILMNG_vidCalcDwellTime|C|();|FCT1.7|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Calcul du seuil temporel du diagnostic du circuit ouvert c’est à dire du temps de Dwell|
+IGCOILMNG_vidCalcIcdRatioEnergy|C|();|FCT1.5|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Le rapport « Icd_ratio_energy » est géré entre l’énergie souhaitée et nominale  (cf. déterminé en fonction de caractéristiques hardware) de la commande des bobines, Deux cas peuvent se présenter:  cas où le moteur est froid/cas où le moteur est chaud|
+IGCOILMNG_vidCalcIcdState|C|();|FCT1.4|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Cet automate détermine le mode de fonctionnement des bobines: Phase de démarrage ou normale où l’énergie d’allumage nommée Icd_max_current_coils bénéficiera de l’adaptation via le ratio nommé Icd_ratio_energy. Initialement, l’énergie d’allumage sera fixe.|
+IGCOILMNG_vidCallDiagICD|B|();|FCT3.1|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Il est inutile de prendre en compte la condition sur Code_test_action ni celle Srv_stActrTstStatus puisque les tests actionneurs n’ont lieu que lorsque le moteur est arrêté (pas de PMB).|
+IGCOILMNG_vidCallDiagSdlFast|B|();|FCT3.2|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|call the diagnosis function depending on IgCmd_bCallDiagTyp_C, Srv_stActrTstStatus and Code_test_action.|
+IGCOILMNG_vidDiagBob1|B|();|FCT2.7|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Fonction du diagnostic du bobine 1|
+IGCOILMNG_vidDiagBob2|B|();|FCT2.8|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Fonction du diagnostic du bobine 2|
+IGCOILMNG_vidDiagBob3|B|();|FCT2.9|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Fonction du diagnostic du bobine 3|
+IGCOILMNG_vidDiagBob4|B|();|FCT2.10|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Fonction du diagnostic du bobine 4. La génération des événements CALL_GduOc_IgCoil4Cmd et CALL_GduScp_IgCoil4Cmd doit se faire après l’appel de l’API DgoHALRead.|
+IGCOILMNG_vidDiagCoil|C|(argin uint32 udtChannel,argout boolean *bDgoOc,argout boolean *bMonRunOc,argout boolean *bDgoScg,argout boolean *bMonRunScg,argout boolean *bDgoScp,argout boolean *bMonRunScp);|FCT1.6|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|En cas de procédure « Test actionneurs » active, aucunes de ces deux pannes ne seront comptées, mais les booléens « Defaut_cc_plus » et « Defaut_circuit_ouvert » seront mis à jour.|
+IGCOILMNG_vidDiagnostic|B|();|FCT2.6|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Pour garder la transversalité 3 cylindres/4 cylindres, l'appel au diagnostic se fera pour tous les cylindres à chaque PMB. Les diagnostics non réalisés seront couverts par les _bMonRun à 0|
+IGCOILMNG_vidDisable|B|();|FCT3.3|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Le driver est désactivé sur perte de synchronisation et sur Key Off.|
+IGCOILMNG_vidDwellTime|C|();|FCT1.8|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Le temps de Dwell est calculé via la cartographie Table_dwell_dem puis envoyé au Ldb par l’API IgnHALWriteDwellTime|
+IGCOILMNG_vidEnable|C|();|FCT1.2|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Le driver allumage est activé sur validation de la synchronisation précise et sur sens de rotation avant.|
+IGCOILMNG_vidIcdRatioEnergy|C|();|FCT1.9|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Fonction permet de calculer Le courant primaire  définie par une cartographie Régime Charge.|
+IGCOILMNG_vidInhibIgn|B|();|FCT2.2|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Calling IGNHAL_vidInhibCoil for the current cylinder.|
+IGCOILMNG_vidInhibIgnNext|B|();|FCT2.3|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Calling IGNHAL_vidInhibCoil for the next cylinder.|
+IGCOILMNG_vidInitilization|C|();|FCT1.3|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Initialisation de l'automate de commande des bobines|
+IGCOILMNG_vidInitOutput|B|();|FCT1.1|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Initialisation of the output|
+IGCOILMNG_vidProgAvance|B|();|FCT2.4|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Calling IgnHALWriteAngle for the current cylinder.|
+IGCOILMNG_vidProgAvanceNext|B|();|FCT2.5|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Calling IgnHALWriteAngle for the next cylinder.|
+IGCOILMNG_vidTestInhibIgn|B|();|FCT2.1|IGCOILMNG|0|PTS_DOC_6668934||||0|0|0|0|Ce bloc gère la demande d’inhibition de la bobine du cylindre en cours de compression et celle de la bobine du cylindre suivant.|
+IGNHAL_vidInhibCoil|B|(argin uint8 u8Channel);|13|HEADER|1|NONE||||0|0|0|0||
+IGNHAL_vidWriteEnergy|B|(argin uint16 u16MaxCurrent);|5|HEADER|1|NONE||||0|0|0|0||
+IgnHALDisable|B|();|10|HEADER|1|NONE||||0|0|0|0||
+IgnHALEnable|B|();|9|HEADER|1|NONE||||0|0|0|0||
+IgnHALWriteAngle|B|(argin uint8 u8Channel, argin uint16 u16Advance);|4|HEADER|1|NONE||||0|0|0|0||
+IgnHALWriteDwellTime|B|(argin uint16 u16DwellTime);|6|HEADER|1|NONE||||0|0|0|0||
+IgnHALWriteMode|B|func_IgnHALWriteMode|8|HEADER|1|NONE||||0|0|0|0||
+IgSys_EveCkSnOn_IgCoilMng|C|();|SCH.8|IGCOILMNG|1|PTS_DOC_6668934||||0|0|0|0|Evènement d'appel de l'enable du driver allumage pour couvrir les cas de redémarrages STT rapides.|
+SWFAIL_vidSoftwareErrorHook|B|();|5|HEADER|1|NONE||||0|0|0|0||

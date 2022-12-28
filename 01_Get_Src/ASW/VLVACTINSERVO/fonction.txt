@@ -1,0 +1,26 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_vidGdu|A|(argin uint16 indexDefaut, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0||
+VlvAct_EveInCmToo_InServo|H|();|SCH.2|VLVACTINSERVO|1|PTS_DOC_5060915||||0|0|0|0|Evènement dent AAC admission|
+VlvAct_EveKOn_InServo|H|();|SCH.4|VLVACTINSERVO|1|PTS_DOC_5060915||||0|0|0|0|Clef on|
+VlvAct_EveRst_InServo|G|();|SCH.1|VLVACTINSERVO|1|PTS_DOC_5060915||||0|0|0|0|Evènement reset du calculateur|
+VlvAct_SdlFast_InServo|H|();|SCH.3|VLVACTINSERVO|1|PTS_DOC_5060915||||0|0|0|0|Moniteur rapide pour la fonction VVT|
+VLVACTINSERVO_vidCalPeakToPNoise|D|();|FCT1.4|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|On commande le système sur sa butée basse  et on relève les mesures min et max. Au bout de Kfvcpi_noise_learn_count mesures on fait la différence entre le max et le min et on obtient le bruit de mesure.|
+VLVACTINSERVO_vidControlAlgo|J|();|FCT2.1|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|L'algorithme de commande se décompose en deux parties:1_Determine_PID_Terms qui calcule des actions du PID; 2_Evaluate_PID_Duty_Cycle qui calcule la Somme des actions du correcteur,|
+VLVACTINSERVO_vidDetPIDTerms|D|();|FCT2.3|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Le correcteur PID est logiquement partagé en trois, un bloc pour le calcul de chacune de ces actions.|
+VLVACTINSERVO_vidDiagnosis|H|();|FCT2.10|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|La surveillance de l'erreur de position du décaleur n'est active que lorsque le système est en asservissement sur la position de consigne de l'applicatif.|
+VLVACTINSERVO_vidEvalDerivTerm|I|();|FCT2.6|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Suivant la valeur du booléen Vta_intake_der_mod l'action dérivée est faite sur l'erreur de vitesse ou sur la vitesse.|
+VLVACTINSERVO_vidEvalIntegVal|I|();|FCT2.4|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|L'action intégrale est active à l'intérieur d'une bande (Vta_intake_band), à l'interieur de laquelle  on actualise la valeur intégrale|
+VLVACTINSERVO_vidEvalPIDDutCycle|I|();|FCT2.7|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Pour le calcul du RCO PID on ajoute les actions proportionnelle et dérivée à la valeur intégrale. De meme, on impose la commande en boucle ouverte pour des consignes très proches des butées, afin d'éviter les contacts répétés avec les butées physiques.|
+VLVACTINSERVO_vidEvalPropTerm|I|();|FCT2.5|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|L'action proportionnelle à l'intérieur de la bande (Vta_intake_band) est calculée de manière classique.|
+VLVACTINSERVO_vidInitFailure|B|();|FCT1.10|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Les pannes présentes sont initialisées sur clé off --> on afin qu’elles ne restent pas figées à ON entre le clé off --> on et le démarrage du moteur.|
+VLVACTINSERVO_vidInitialize|F|();|FCT1.6|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Dans le cadre de l’apprentissage de la valeur RCO d’équilibre, on incrémente la commande et on teste si il y a eu du mouvement.|
+VLVACTINSERVO_vidInitIntegral|E|();|FCT1.3|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|L'action intégrale est active à l'intérieur d'une bande (Vta_intake_band), dans cette bande on actualise la valeur intégrale (qui suit les variations lentes du RCO d'équilibre)|
+VLVACTINSERVO_vidInitOutput|F|();|FCT1.2|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Initialisation des variables produites.|
+VLVACTINSERVO_vidInitRst|E|();|FCT1.1|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Initialisation des variables au reset.|
+VLVACTINSERVO_vidLearnNoise|C|();|FCT1.5|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Au bout de Kfvcpi_noise_learn_count mesures on fait la différence entre le max et le min et on obtient le bruit de mesure.|
+VLVACTINSERVO_vidSelDutyCycl|C|();|FCT1.8|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|fonction  de Selection de Duty_Cycle|
+VLVACTINSERVO_vidSelectPWM|C|();|FCT1.9|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Choix du RCO à appliquer: apprentissage initial du RCO d'équilibre, mode banc, valeur RCO issue du régulateur PID.|
+VLVACTINSERVO_vidServoError|D|();|FCT2.2|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Afin de pouvoir maîtriser les dépassement lors des fortes variation de consignes (échelons), un degré de liberté est ajouté sur la consigne de position VVT|
+VLVACTINSERVO_vidServoError_2|A|();|FCT2.8|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|calcul de l'erreur d'asservissement lors des passage BF-->BO près des butées|
+VLVACTINSERVO_vidSetpVelocity|E|();|FCT1.7|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Fonction qui calcule la dérivée de la consigne  utilisée par l'action dérivée de l'asservissement VVT.|
+VLVACTINSERVO_vidVcpiDiagnosis|H|();|FCT2.9|VLVACTINSERVO|0|PTS_DOC_5060915||||0|0|0|0|Le diagnostic est inhibé lorsque: le mode banc pwm est actif, le régime est en dessous du seuil minimum, les offsets ne sont pas encore appris, une panne fonction vient d'être détectée.|

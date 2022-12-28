@@ -1,0 +1,2377 @@
+/begin MODULE
+    ACCmd /* Name */ 
+    "-" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        ACCmd_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        ACCmd_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        ACCmd_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_stReq_B /* Name */ 
+        "Consigne Soulagement Puissance Compresseur. 1 : normal 2 : débrayé ou soulagement maximal pour les clim non débrayables. 3 : Figeage 4 : cylindrée mini 5%" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        ACCmd_CM_Byp_Table_out421 /* Conversion */ 
+        1 /* LowerLimit */ 
+        4 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nAntiStall_B /* Name */ 
+        "Seuil de régime moteur d'anti calage" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        ACCmd_CM_Byp_EQ_RES_0_25 /* Conversion */ 
+        0 /* LowerLimit */ 
+        8000 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_bInhAntiStall_B /* Name */ 
+        "Condition d'inhibition du fonctionnement compresseur pour anti calage" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        ACCmd_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RE_ACCMD_002_TEV_B /* Name */ 
+        "Bypass du runnable RE_ACCmd_002_TEV" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        ACCmd_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RE_ACCMD_003_DRE_B /* Name */ 
+        "Bypass du runnable RE_ACCmd_003_DRE" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        ACCmd_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_Byp_Table_out421 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF ACCmd_CV_CONV_TAB_Table_out421 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_Byp_EQ_RES_0_25 /* Name */ 
+        "Phys = Num * 2^-2" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%5.2" /* Format */ 
+        "RPM" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "-"                              /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        ACCmd_CV_CONV_TAB_Table_out421 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        4 /* NumberValuePairs */ 
+        1 /* InVal */ 
+        "normal" /* OutVal */ 
+        2 /* InVal */ 
+        "débrayé ou soulagement maximal pour les clim non débrayables." /* OutVal */ 
+        3 /* InVal */ 
+        "Figeage" /* OutVal */ 
+        4 /* InVal */ 
+        "cylindrée mini 5%" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_Byp    /* Name */ 
+        "ACCmd_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_stReq_B /* Identifier */ 
+            ACCmd_nAntiStall_B /* Identifier */ 
+            ACCmd_bInhAntiStall_B /* Identifier */ 
+            RE_ACCMD_002_TEV_B /* Identifier */ 
+            RE_ACCMD_003_DRE_B /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            ACCmd_ModuleVersion_Major_MP      /* Identifier */ 
+            ACCmd_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_bACMgtAntiStallReq_C	/* Name */ 
+        "Paramètre de configuration définissant l'action à réaliser en anti calage préventif"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_bACMgtBrioReq_T	/* Name */ 
+        "Vecteur pour déterminer le choix du type de délestage en zone Brio. (0 : Cylindrée mini 5%, 1 : Débrayage du compresseur / Soulagement maxi). Ce vecteur est fonction de la zone de régime Brio"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            ACCmd_idxBrioArCur	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_0_0625_p	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -8	/* LowerLimit */ 
+            7.9375	/* UpperLimit */ 
+            READ_ONLY  
+            AXIS_PTS_REF I8_x_table_7 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_bFrzACESPReq_C	/* Name */ 
+        "Choix d'activation du figeage lors de regul ESP ( 0 : pas de figeage, 1 : figeage autorisé)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_facPndTAir_T	/* Name */ 
+        "Table définissant le coefficient de température d'air en fonction de la température extérieure"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_1_o	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_idxGearGrp_T	/* Name */ 
+        "Table définissant le groupe auquel appartient le rapport de boite"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_VOID_SCALING_j	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_noGearACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkAntiStallDelta_T	/* Name */ 
+        "Table définissant un écart de régime par rapport à ACCmd_nCkIdlAntistallReq"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25	/* Conversion */ 
+        -10000	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_0_25_b	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_nCkAntiStallDelta_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkAntiStallMax_C	/* Name */ 
+        "Bornage supérieur du seuil anticalage calculé. A froid la consigne est élevée et il y a risque que le seuil anticalage remonte suffisamment pour annuler la zone brio décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkAntiStallMin_C	/* Name */ 
+        "Bornage inférieur du seuil anticalage calculé"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkDeltaAntiStallAcv_C	/* Name */ 
+        "Delta anticalage supplémentaire ajouté lors de l'enclenchement du compresseur de CLIM afin d'éviter les fausses détections et les passages ON/OFF/ du compresseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkGrd_rAccP_T	/* Name */ 
+        "Vecteur de seuil de gradient de régime moteur fonction de la position pédale utilisé dans la condition de passage de OFF à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_1_f	/* Conversion */ 
+        -10000	/* LowerLimit */ 
+        10000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            5	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_nCkGrd_rAccP_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkGrdMin_C	/* Name */ 
+        "Gradient mini pour sortir de l'inhibition de la clim au décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_b	/* Conversion */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkHys_C	/* Name */ 
+        "Hystérésis sur le seuil de désactivation du compresseur pour condition de sur régime"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkIdlMinDet_C	/* Name */ 
+        "Seuil d'écart statique de régime pour la consigne de détection"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkInhLo_C	/* Name */ 
+        "Seuil de régime bas pour la désactivation des fonctions au PMH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkInhMax_C	/* Name */ 
+        "Seuil de régime moteur utilisé dans la condition de passage de OFF à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkInhMin_C	/* Name */ 
+        "Seuil de régime moteur utilisé dans la condition de passage de ON à OFF de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkInhUp_C	/* Name */ 
+        "Seuil de régime haut pour la désactivation des fonctions au PMH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nCkMax_C	/* Name */ 
+        "Seuil de régime de désactivation du compresseur pour condition de sur régime"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngBrioArGrp1_T	/* Name */ 
+        "Vecteur de régimes définissant les zones de régime du groupe de rapport de boite n°1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngBrioArGrp2_T	/* Name */ 
+        "Vecteur de régimes définissant les zones de régime du groupe de rapport de boite n°2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngBrioArGrp3_T	/* Name */ 
+        "Vecteur de régimes définissant les zones de régime du groupe de rapport de boite n°3"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngHysBrioArGrp1_T	/* Name */ 
+        "Hystérésis appliqué sur les zones de régime du groupe de rapport de boite n°1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngHysBrioArGrp2_T	/* Name */ 
+        "Hystérésis appliqué sur les zones de régime du groupe de rapport de boite n°2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_nEngHysBrioArGrp3_T	/* Name */ 
+        "Hystérésis appliqué sur les zones de régime du groupe de rapport de boite n°3"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPBrioArGrp1_T	/* Name */ 
+        "Vecteur de 6 positions pédale définissant les zones d'enfoncement pédale du groupe de rapport de boite n°1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPBrioArGrp2_T	/* Name */ 
+        "Vecteur de 6 positions pédale définissant les zones d'enfoncement pédale du groupe de rapport de boite n°2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPBrioArGrp3_T	/* Name */ 
+        "Vecteur de 6 positions pédale définissant les zones d'enfoncement pédale du groupe de rapport de boite n°3"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPHysBrioArGrp1_T	/* Name */ 
+        "Hystérésis appliqué sur les zones d'enfoncement pédale du groupe de rapport de boite n°1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPHysBrioArGrp2_T	/* Name */ 
+        "Hystérésis appliqué sur les zones d'enfoncement pédale du groupe de rapport de boite n°2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPHysBrioArGrp3_T	/* Name */ 
+        "Hystérésis appliqué sur les zones d'enfoncement pédale du groupe de rapport de boite n°3"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        MATRIX_DIM 6 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPThdPedRls_C	/* Name */ 
+        "Enfoncement de pédale limite utilisé dans la condition de passage à OFF de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_rAccPThdTakeOffAcv_C	/* Name */ 
+        "Enfoncement de pédale limite utilisé dans la condition de passage à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_spdHysTakeOffAcv_C	/* Name */ 
+        "Hystérésis de vitesse véhicule utilisé dans la condition de passage de OFF à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_spdThdInhBrioVst_C	/* Name */ 
+        "Seuil de vitesse véhicule en deçà duquel la condition de Brio peut etre désactivée"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_spdVehDft_C	/* Name */ 
+        "Vitesse véhicule de substitution sur réception du FID FRM_bInhRvDeClthACTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_spdVehTakeOffMax_C	/* Name */ 
+        "Seuil de vitesse véhicule supérieur utilisé dans la condition de passage de OFF à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_spdVehTakeOffMin_C	/* Name */ 
+        "Seuil de vitesse véhicule inférieur utilisé dans la condition de passage de OFF à ON de ACCmd_bInhTakeOff"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiACAcv_C	/* Name */ 
+        "Temporisation pendant laquelle le ACCmd_nCkDeltaAntiStallAcv_C est appliqué lors de l'enclenchement de la temporisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiACOffAntiStall_C	/* Name */ 
+        "Temporisation maxi de débrayage du compresseur pour l'anticalage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiFrzGearShiftEnd_C	/* Name */ 
+        "Temporisation permettant de décaler la sortie de l'état figeage avec la fin du passage de vitesse si la temporisation ACCmd_tiFrzGearShiftMax_C n'est pas écoulée à la remise à 0 de CoPt_bFrzAC"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiFrzGearShiftMax_C	/* Name */ 
+        "Temporisation permettant de sortir de l'état figeage si la boite n'en n'envoie pas l'ordre"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiFrzIdlMax_C	/* Name */ 
+        "Temporisation de figeage à l'entrée au ralenti"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiFrzResMax_C	/* Name */ 
+        "Temporisation de figeage à la demande des fonctions de réserve de couple"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02_q	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiInhACBrio_T	/* Name */ 
+        "Temporisation en fonction de la température extérieure pour l'activation du brio"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        60	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMaxACBrio_M	/* Name */ 
+        "Cartographie définissant la temporisation maximum en fonction du rapport de boite et de la température exterieure"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_VOID_SCALING_j	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -1	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_noGearACBrio_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMAxACRlsAst_T	/* Name */ 
+        "Vecteur de temporisation pour l'inhibition de la clim après un démarrage en fonction de la température extérieure"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMAxACRlsRStrt_C	/* Name */ 
+        "Temporisation de désactivation du compresseur de climatisation après  redémarrage (cas stop and start)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMaxACRlsTakeOff_C	/* Name */ 
+        "Temporisation maximum  pendant laquelle le compresseur de climatisation est inhibé en phase de décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMaxACRlsVst_C	/* Name */ 
+        "Temporisation maximum  pendant laquelle la fonction brio clim est inhibée en phase d'accel a vide"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiMinACBrio_T	/* Name */ 
+        "Vecteur de temporisation en fonction de la température d'air"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiSched_ACCmdBrio_SC	/* Name */ 
+        "Temps échantillonnage du scheduleur TqSys_Sdl20ms_ACCmd"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0005_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        65536	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiSched_ACCmdFrz_SC	/* Name */ 
+        "Temps échantillonnage du scheduleur TqSys_Sdl20ms_ACCmd"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0005_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        65536	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiSched_ACCmdInhAst_SC	/* Name */ 
+        "Temps échantillonnage du scheduleur TqSys_Sdl100ms_ACCmd"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0005	/* Conversion */ 
+        0	/* LowerLimit */ 
+        65536	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tiWaitACRlsTakeOff_C	/* Name */ 
+        "Temporisation d'attente pour désactiver l'inhibition de la clim en phase de décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tqCkHysIn_M	/* Name */ 
+        "Cartographie fonction du régime moteur et de la température indiquant l'hystérésis de couple pour le calcul de la condition de brio"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tqCkHysInX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+            7	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF ACCmd_tAirACBrio_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        ACCmd_tqCkHysOut_C	/* Name */ 
+        "Hystérésis sur le seuil de couple pour la désactivation du brio"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_02	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        ACCmd_nCkAntiStallDelta_A	/* Name */ 
+        "Breakpoints de gradient de régime pour le calcul du d'un écart de régime par rapport à la consigne d'anticalage ACCmd_nCkIdlAntistallReq en fonction du gradient de régime"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        ACCmd_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_b	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        ACCmd_nCkGrd_rAccP_A	/* Name */ 
+        "Breakpoints de 5 points en % d'enfoncement pédale"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        ACCmd_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        5	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        ACCmd_noGearACBrio_A	/* Name */ 
+        "Breakpoints en rapport de boite commun de la fonction"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        ACCmd_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_VOID_SCALING_j	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -1	/* LowerLimit */ 
+        8	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        ACCmd_tAirACBrio_A	/* Name */ 
+        "Breakpoints en température d'air commun pour la fonction"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        ACCmd_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_1	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        ACCmd_tqCkHysInX_A	/* Name */ 
+        "Breakpoints en régime pour la table ACCmd_tqCkHysIn_M"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        ACCmd_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        I8_x_table_7	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        ACCmd_idxBrioArCur	/* InputQuantity */ 
+        ACCmd_RL_SBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        ACCmd_CM_EQ_LSB_0_0625_p	/* Conversion */ 
+        7	/* MaxAxisPoints */ 
+        -8	/* LowerLimit */ 
+        7.9375	/* UpperLimit */ 
+        READ_ONLY  
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACFrzSIPEnd_MP	/* Name */ 
+        "Tempo de confirmation de la condition de figeage du compresseur en phase changement de rapport terminée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACFrzSIPTiMaxEnd_MP	/* Name */ 
+        "Tempo de confirmation MAX de la condition de figeage du compresseur en phase changement de rapport terminée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACMgtBrioReq	/* Name */ 
+        "Action à mener dans le cas BRIO du soulagement clim : 0=Réduction de cylindrée à 5%, 1=débrayage compresseur"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACOffAntiStallAstEnd_MP	/* Name */ 
+        "Tempo de confirmation de la condition d'inhibition du compresseur en phase départ terminée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACOffAntiStallEnd_MP	/* Name */ 
+        "Tempo de confirmation de la condition d'inhibition du compresseur en anti calage terminée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bACTmpAcv_MP	/* Name */ 
+        "Embrayage du compresseur confirmé par un temporisaition"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bAcvBrioArIn	/* Name */ 
+        "Flag indiquant si on est dans une zone brio (0 = faux et 1 = vrai)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bBrio	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bBrioIn	/* Name */ 
+        "Flag indiquant le dépassement du seuil pédale pour entrer en zone Brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bBrioInAccPCnd_MP	/* Name */ 
+        "Flag indiquant le dépassement du seuil pédale pour entrer en zone Brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bBrioOut	/* Name */ 
+        "Flag de désactivation du Brio Clim"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bEngRun	/* Name */ 
+        "Flag indiquant que le moteur est tournant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bEngRunBrio	/* Name */ 
+        "Flag d'activation du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bFrz	/* Name */ 
+        "Condition de figeage du fonctionnement compresseur"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bFrzACSIPOn	/* Name */ 
+        "Condition de figeage du fonctionnement compresseur suite à requête BVA/BVMP"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bFrzESP	/* Name */ 
+        "Condition de figeage du fonctionnement compresseur en régulation ESP"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bFrzIdl	/* Name */ 
+        "Condition de figeage du fonctionnement compresseur en entrée ralenti"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bFrzRes	/* Name */ 
+        "Condition de figeage du fonctionnement compresseur demandée par les réserves de couple"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhACExtReq	/* Name */ 
+        "Condition d'inhibition du fonctionnement compresseur demandée par les fonctions externes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhBrioVst	/* Name */ 
+        "Condition d'inhibition du brio a vide en fonction de l'état embrayage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhBrioVstCluPTmp_MP	/* Name */ 
+        "Condition d'inhibition du brio a vide en fonction de l'état embrayage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhBrioVstCluPVld_MP	/* Name */ 
+        "Flag de validation du capteur d'embrayage pour la condition de brio à vide"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhNCkMax	/* Name */ 
+        "Condition d'inhibition sur régime"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhTOffIn_MP	/* Name */ 
+        "Tempo de confirmation de la condition de sortie d'inhibition du compresseur en décollage terminé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhTOffOff_MP	/* Name */ 
+        "Condition Inhibition au décollage non validée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhTOffOn_MP	/* Name */ 
+        "Condition Inhibition au décollage validée"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_bInhTOffOut_MP	/* Name */ 
+        "Tempo d'inhibition du compresseur en décollage terminé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_facPndTAir_MP	/* Name */ 
+        "Coefficient de pondération pour la fonction brio clim en fonction de la Tair"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_1_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        25.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr1	/* Name */ 
+        "Indice de la zone 1 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr2	/* Name */ 
+        "Indice de la zone 2 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr3	/* Name */ 
+        "Indice de la zone 3 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr4	/* Name */ 
+        "Indice de la zone 4 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr5	/* Name */ 
+        "Indice de la zone 5 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioAr6	/* Name */ 
+        "Indice de la zone 6 du brio"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioArCur	/* Name */ 
+        "Indice de la zone de régime Brio en cours"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxBrioArLim_MP	/* Name */ 
+        "Indice de la zone de régime Brio en cours limité de 1 à 5"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_idxGearGrp	/* Name */ 
+        "Groupe de brio en fonction du rapport de boite"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_nCkAntiStallDelta_MP	/* Name */ 
+        "Consigne d'anticalage âpres l'influence du gradient de régime"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_nCkDeltaAntiStallAcv_MP	/* Name */ 
+        "Régime mini anti calage calculé"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_nCkIdlAntiStallReq	/* Name */ 
+        "Consigne de régime utilisée pour déterminer le seuil anti calage"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_d	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_nEngBrioArGrp	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        16383.75	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 6 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_nEngHysBrioArGrp	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        16383.75	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 6 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnAccPIn1	/* Name */ 
+        "Ordonnée du premier point  de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnAccPIn2	/* Name */ 
+        "Ordonnée du second point  de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnAccPOut1	/* Name */ 
+        "Ordonnée du premier point  avec hystérésis de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnAccPOut2	/* Name */ 
+        "Ordonnée du second point  avec hystérésis de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnNEngOut1	/* Name */ 
+        "Abscisse du premier point  avec hystérésis de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        16383.75	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_posnNEngOut2	/* Name */ 
+        "Abscisse du second point  avec hystérésis de la zone de Brio"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        16383.75	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rAccPBrioArGrp	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 6 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rAccPHysBrioArGrp	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        511.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 6 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rAccPInpThd	/* Name */ 
+        "Ordonnée de la limite de zone de coupure en entrée zone (Définition supérieure à 100% pour permettre inhibition)"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_1_l	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -3276.8	/* LowerLimit */ 
+        3276.7	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rAccPOutThd	/* Name */ 
+        "Ordonnée de la limite de zone de coupure en sortie zone (Définition supérieure à 100% pour permettre inhibition)"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_1_m	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        150	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rInpSlop_MP	/* Name */ 
+        "Pente de la limite de coupure brio en entrée zone (Pente mini : 0.5% pour 1000tr/min, Pente maxi : 100% pour 100tr/min)"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_00048828125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -1	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_rOutSlop_MP	/* Name */ 
+        "Pente de la limite de coupure brio en entrée zone (Pente mini : 0.5% pour 1000tr/min, Pente maxi : 100% pour 100tr/min)"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_00048828125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -1	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_stInh	/* Name */ 
+        "Condition d'inhibition du fonctionnement compresseur"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        ACCmd_tiInhAst_MP	/* Name */ 
+        "Temporisation pour l'inhibition après départ"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_1_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_ACCmd_bInhTDCClc_irv_out	/* Name */ 
+        "Flag d activation des fonctions de débrayage du compresseur dont la récurrence est au PMH"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER ACCmd_bInhTDCClc 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_ACCmd_spdVeh_irv_out	/* Name */ 
+        "Vitesse véhicule reconstruite pour la prise en compte de defauts"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER ACCmd_spdVeh 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_ACCmd_bInhTakeOff_irv_out	/* Name */ 
+        "Condition d inhibition du fonctionnement compresseur en phase décollage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER ACCmd_bInhTakeOff 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_ACCmd_bInhACOn_irv_out	/* Name */ 
+        "Condition d inhibition du fonctionnement compresseur en fonction des diagnostiques et des modes dégradés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER ACCmd_bInhACOn 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_ACCmd_bInhAst_irv_out	/* Name */ 
+        "Condition d inhibition du fonctionnement compresseur en phase départ"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER ACCmd_bInhAst 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        SACCmd70_Logical_Operator6	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        ACCmd_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqSys_nTarIdlOld_MP	/* Name */ 
+        "Valeur de régime de consigne précédent mémorisé"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_00048828125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%14.11"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.00048828125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0005	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.4"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0005 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0005_k	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.4"	/* Format */ 
+        "RPM/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0005 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0078125_h	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0078125_n	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_01	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_02	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.02 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_02_q	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.02 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_0625_p	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_1_a	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_1_l	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.1"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_1_m	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.1"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_1_o	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_25	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%12.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_25_b	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "RPM/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_25_c	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_25_d	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_0_25_e	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_EQ_LSB_1_f	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_VOID_SCALING_g	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        ACCmd_CM_VOID_SCALING_j	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_ACCmd	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            ACCmd_FCT_RE_ACCmd_004_TEV_fct	/* Identifier */ 
+            ACCmd_FCT_RE_ACCmd_003_DRE_fct	/* Identifier */ 
+            ACCmd_FCT_RE_ACCmd_002_TEV_fct	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_RE_ACCmd_002_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bEngRun	/* Identifier */ 
+            ACCmd_stInh	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE002_ACCmd_bInhTDCClc_irv_out	/* Identifier */ 
+            RE002_ACCmd_spdVeh_irv_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            ACCmd_FCT_SACCmd10_F06_C__pilot_comp_clim	/* Identifier */ 
+            ACCmd_FCT_SACCmd9_F05_Dem_brio_comp_clim	/* Identifier */ 
+            ACCmd_FCT_SACCmd8_F04_Dem_fige_comp_clim	/* Identifier */ 
+            ACCmd_FCT_SACCmd14_F03_0__a_climatisation	/* Identifier */ 
+            ACCmd_FCT_SACCmd13_F03_0__s_fonctions_PMH	/* Identifier */ 
+            ACCmd_FCT_SACCmd12_F03_0__n_en_sur_regime	/* Identifier */ 
+            ACCmd_FCT_SACCmd11_F02_0__ctions_externes	/* Identifier */ 
+            ACCmd_FCT_SACCmd6_F02_Pr__ter_les_entrees	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_RE_ACCmd_003_DRE_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            SACCmd70_Logical_Operator6	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE003_ACCmd_bInhTakeOff_irv_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            ACCmd_FCT_SACCmd71_F03_04	/* Identifier */ 
+            ACCmd_FCT_SACCmd70_F03_03	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_RE_ACCmd_004_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin OUT_MEASUREMENT 
+            RE004_ACCmd_bInhACOn_irv_out	/* Identifier */ 
+            RE004_ACCmd_bInhAst_irv_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            ACCmd_FCT_SACCmd91_F03_0__emarrage_moteur	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd10_F06_C__pilot_comp_clim	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bACMgtBrioReq	/* Identifier */ 
+            ACCmd_bBrio	/* Identifier */ 
+            ACCmd_bFrz	/* Identifier */ 
+            ACCmd_stInh	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd11_F02_0__ctions_externes	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bInhACExtReq	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd12_F03_0__n_en_sur_regime	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_nCkHys_C	/* Identifier */ 
+            ACCmd_nCkMax_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bInhNCkMax	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd13_F03_0__s_fonctions_PMH	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_nCkInhLo_C	/* Identifier */ 
+            ACCmd_nCkInhUp_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd14_F03_0__a_climatisation	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_bACMgtAntiStallReq_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bInhACExtReq	/* Identifier */ 
+            ACCmd_bInhNCkMax	/* Identifier */ 
+            ACCmd_stInh	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd6_F02_Pr__ter_les_entrees	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_spdVehDft_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bEngRun	/* Identifier */ 
+            ACCmd_bEngRunBrio	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd70_F03_03	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_nCkGrdMin_C	/* Identifier */ 
+            ACCmd_nCkGrd_rAccP_T	/* Identifier */ 
+            ACCmd_nCkGrd_rAccP_A	/* Identifier */ 
+            ACCmd_nCkInhMax_C	/* Identifier */ 
+            ACCmd_nCkInhMin_C	/* Identifier */ 
+            ACCmd_rAccPThdPedRls_C	/* Identifier */ 
+            ACCmd_rAccPThdTakeOffAcv_C	/* Identifier */ 
+            ACCmd_spdHysTakeOffAcv_C	/* Identifier */ 
+            ACCmd_spdVehTakeOffMax_C	/* Identifier */ 
+            ACCmd_spdVehTakeOffMin_C	/* Identifier */ 
+            ACCmd_tiMaxACRlsTakeOff_C	/* Identifier */ 
+            ACCmd_tiWaitACRlsTakeOff_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            SACCmd70_Logical_Operator6	/* Identifier */ 
+            ACCmd_bInhTOffOff_MP	/* Identifier */ 
+            ACCmd_bInhTOffOn_MP	/* Identifier */ 
+            ACCmd_bInhTOffOut_MP	/* Identifier */ 
+            ACCmd_bInhTOffIn_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd71_F03_04	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_tiACOffAntiStall_C	/* Identifier */ 
+            ACCmd_nCkAntiStallDelta_T	/* Identifier */ 
+            ACCmd_nCkAntiStallDelta_A	/* Identifier */ 
+            ACCmd_nCkAntiStallMax_C	/* Identifier */ 
+            ACCmd_nCkAntiStallMin_C	/* Identifier */ 
+            ACCmd_nCkDeltaAntiStallAcv_C	/* Identifier */ 
+            ACCmd_nEngBrioArGrp1_T	/* Identifier */ 
+            ACCmd_nEngBrioArGrp2_T	/* Identifier */ 
+            ACCmd_nEngBrioArGrp3_T	/* Identifier */ 
+            ACCmd_tiACAcv_C	/* Identifier */ 
+            ACCmd_nCkIdlMinDet_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bACOffAntiStallEnd_MP	/* Identifier */ 
+            ACCmd_nCkIdlAntiStallReq	/* Identifier */ 
+            ACCmd_nCkAntiStallDelta_MP	/* Identifier */ 
+            ACCmd_nCkDeltaAntiStallAcv_MP	/* Identifier */ 
+            ACCmd_bACTmpAcv_MP	/* Identifier */ 
+            TqSys_nTarIdlOld_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd8_F04_Dem_fige_comp_clim	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_tiFrzResMax_C	/* Identifier */ 
+            ACCmd_tiSched_ACCmdFrz_SC	/* Identifier */ 
+            ACCmd_bFrzACESPReq_C	/* Identifier */ 
+            ACCmd_tiFrzIdlMax_C	/* Identifier */ 
+            ACCmd_tiFrzGearShiftEnd_C	/* Identifier */ 
+            ACCmd_tiFrzGearShiftMax_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bFrz	/* Identifier */ 
+            ACCmd_stInh	/* Identifier */ 
+            ACCmd_bFrzRes	/* Identifier */ 
+            ACCmd_bFrzACSIPOn	/* Identifier */ 
+            ACCmd_bFrzESP	/* Identifier */ 
+            ACCmd_bFrzIdl	/* Identifier */ 
+            ACCmd_bACFrzSIPEnd_MP	/* Identifier */ 
+            ACCmd_bACFrzSIPTiMaxEnd_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd9_F05_Dem_brio_comp_clim	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_tiInhACBrio_T	/* Identifier */ 
+            ACCmd_tAirACBrio_A	/* Identifier */ 
+            ACCmd_tiMaxACBrio_M	/* Identifier */ 
+            ACCmd_noGearACBrio_A	/* Identifier */ 
+            ACCmd_tiMinACBrio_T	/* Identifier */ 
+            ACCmd_tiSched_ACCmdBrio_SC	/* Identifier */ 
+            ACCmd_tqCkHysIn_M	/* Identifier */ 
+            ACCmd_tqCkHysInX_A	/* Identifier */ 
+            ACCmd_tqCkHysOut_C	/* Identifier */ 
+            ACCmd_spdThdInhBrioVst_C	/* Identifier */ 
+            ACCmd_tiMaxACRlsVst_C	/* Identifier */ 
+            ACCmd_facPndTAir_T	/* Identifier */ 
+            ACCmd_bACMgtBrioReq_T	/* Identifier */ 
+            I8_x_table_7	/* Identifier */ 
+            ACCmd_idxGearGrp_T	/* Identifier */ 
+            ACCmd_nEngBrioArGrp1_T	/* Identifier */ 
+            ACCmd_nEngBrioArGrp2_T	/* Identifier */ 
+            ACCmd_nEngBrioArGrp3_T	/* Identifier */ 
+            ACCmd_nEngHysBrioArGrp1_T	/* Identifier */ 
+            ACCmd_nEngHysBrioArGrp2_T	/* Identifier */ 
+            ACCmd_nEngHysBrioArGrp3_T	/* Identifier */ 
+            ACCmd_rAccPBrioArGrp1_T	/* Identifier */ 
+            ACCmd_rAccPBrioArGrp2_T	/* Identifier */ 
+            ACCmd_rAccPBrioArGrp3_T	/* Identifier */ 
+            ACCmd_rAccPHysBrioArGrp1_T	/* Identifier */ 
+            ACCmd_rAccPHysBrioArGrp2_T	/* Identifier */ 
+            ACCmd_rAccPHysBrioArGrp3_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_bACMgtBrioReq	/* Identifier */ 
+            ACCmd_bBrio	/* Identifier */ 
+            ACCmd_bBrioIn	/* Identifier */ 
+            ACCmd_bBrioOut	/* Identifier */ 
+            ACCmd_bAcvBrioArIn	/* Identifier */ 
+            ACCmd_bInhBrioVst	/* Identifier */ 
+            ACCmd_bInhBrioVstCluPVld_MP	/* Identifier */ 
+            ACCmd_bInhBrioVstCluPTmp_MP	/* Identifier */ 
+            ACCmd_idxBrioArCur	/* Identifier */ 
+            ACCmd_idxGearGrp	/* Identifier */ 
+            ACCmd_rAccPInpThd	/* Identifier */ 
+            ACCmd_rAccPOutThd	/* Identifier */ 
+            ACCmd_bBrioInAccPCnd_MP	/* Identifier */ 
+            ACCmd_nEngBrioArGrp	/* Identifier */ 
+            ACCmd_rAccPBrioArGrp	/* Identifier */ 
+            ACCmd_rAccPHysBrioArGrp	/* Identifier */ 
+            ACCmd_posnAccPIn1	/* Identifier */ 
+            ACCmd_posnAccPIn2	/* Identifier */ 
+            ACCmd_posnAccPOut1	/* Identifier */ 
+            ACCmd_posnAccPOut2	/* Identifier */ 
+            ACCmd_posnNEngOut1	/* Identifier */ 
+            ACCmd_posnNEngOut2	/* Identifier */ 
+            ACCmd_rInpSlop_MP	/* Identifier */ 
+            ACCmd_rOutSlop_MP	/* Identifier */ 
+            ACCmd_facPndTAir_MP	/* Identifier */ 
+            ACCmd_idxBrioArLim_MP	/* Identifier */ 
+            ACCmd_nEngHysBrioArGrp	/* Identifier */ 
+            ACCmd_idxBrioAr1	/* Identifier */ 
+            ACCmd_idxBrioAr2	/* Identifier */ 
+            ACCmd_idxBrioAr3	/* Identifier */ 
+            ACCmd_idxBrioAr4	/* Identifier */ 
+            ACCmd_idxBrioAr5	/* Identifier */ 
+            ACCmd_idxBrioAr6	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        ACCmd_FCT_SACCmd91_F03_0__emarrage_moteur	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            ACCmd_tiMAxACRlsAst_T	/* Identifier */ 
+            ACCmd_tAirACBrio_A	/* Identifier */ 
+            ACCmd_tiMAxACRlsRStrt_C	/* Identifier */ 
+            ACCmd_tiSched_ACCmdInhAst_SC	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            ACCmd_tiInhAst_MP	/* Identifier */ 
+            ACCmd_bACOffAntiStallAstEnd_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_SBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_SLONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_ULONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        ACCmd_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE ACCmd ------------------------------------*/

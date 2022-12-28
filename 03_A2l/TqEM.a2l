@@ -1,0 +1,3751 @@
+﻿/begin MODULE
+    TqEM /* Name */ 
+    "_" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "_" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        TqEM_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        TqEM_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        TqEM_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_ModuleVersion_Build_MP              /* Name */ 
+        "Version Build du module"               /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        TqEM_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_bFrzACComp_B /* Name */ 
+        "Flag de figeage climatisation" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        TqEM_CM_Byp_Table_out3 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqEM_B /* Name */ 
+        "Couple Easy Move" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        TqEM_CM_Byp_EQ_RES_0_0625 /* Conversion */ 
+        -100 /* LowerLimit */ 
+        510 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TQEM_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module TqEM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        TqEM_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        TqEM_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "_"                            /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_CM_Byp_Table_out3 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COMPU_TAB_REF TqEM_CV_CONV_TAB_Table_out3 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_CM_Byp_EQ_RES_0_0625 /* Name */ 
+        "Phys = Num *2^-4" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%7.4" /* Format */ 
+        "N.m" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_CM_Byp_VOID_SCALING /* Name */ 
+        "-" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        TqEM_CV_CONV_TAB_Table_out3 /* Name */ 
+        "Conversion table" /* LongIdentifier */ 
+        TAB_VERB /* ConversionType */ 
+        2 /* NumberValuePairs */ 
+        0 /* InVal */ 
+        "Pas de demande de figeage clim" /* OutVal */ 
+        1 /* InVal */ 
+        "Demande de figeage clim" /* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_BYP    /* Name */ 
+        " Fonction regroupant les bypass des sorties " /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_bFrzACComp_B /* Identifier */ 
+            TqEM_tqEM_B /* Identifier */ 
+            TQEM_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_VersionModule          /* Name */ 
+        "-"	/* LongIdentifier */    	
+        /begin LOC_MEASUREMENT 
+            TqEM_ModuleVersion_Major_MP      /* Identifier */ 
+            TqEM_ModuleVersion_Minor_MP      /* Identifier */ 
+            TqEM_ModuleVersion_Build_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_nEngHiThdTrigSel_C	/* Name */ 
+        "Seuil de régime moteur au-dessus duquel le trigger utilisé est synchronise à plusieurs PMH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_002_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_nEngLoThdTrigSel_C	/* Name */ 
+        "Seuil de régime moteur en-dessous duquel le trigger utilisé est synchronise au PMH"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_002_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin MEASUREMENT 
+        TqEM_EveSync	/* Name */ 
+        "Trigger des fonctions synchrones tous les PMH ou plusieurs PMH"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tiEveSync	/* Name */ 
+        "Temps entre 2 évènements synchrones"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_002_CM_EQ_LSB_0_001	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCkEngRealEM	/* Name */ 
+        "Estimation du couple moteur effectif réel coordonné essence / diesel"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_002_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+    
+    /begin COMPU_METHOD 
+        TqEM_002_CM_EQ_LSB_0_001	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.3"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001 
+    /end COMPU_METHOD 
+    
+    /begin COMPU_METHOD 
+        TqEM_002_CM_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_002_CM_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_002_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_TqEM_002_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_nEngHiThdTrigSel_C	/* Identifier */ 
+            TqEM_nEngLoThdTrigSel_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_EveSync	/* Identifier */ 
+            TqEM_tiEveSync	/* Identifier */ 
+            TqEM_tqCkEngRealEM	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_bFrzACCompAuth_C	/* Name */ 
+        "Booléen d'autorisation du figeage de l'état du compresseur de climatisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_bTqCfmInh_C	/* Name */ 
+        "booléen d'inhibition de la fonction de confirmation du couple EM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_nDeltaNThd_C	/* Name */ 
+        "Seuil maximum de la différence de 2 points de régime consécutifs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_nStabThd_C	/* Name */ 
+        "Seuil de régime maxi pour le recalage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rAccPAdpThd_C	/* Name */ 
+        "Seuil d'enfoncement pédale accélérateur pour le recalage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rAccPThdFrzACComp_C	/* Name */ 
+        "Seuil sur la volonté conducteur pour le figeage de la climatisation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rCluCls_C	/* Name */ 
+        "Position de la pédale d'embrayage en-dessous de laquelle l'embrayage est complètement fermé"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rCluEgdLimDrv_C	/* Name */ 
+        "Garde au débrayage du conducteur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rCluOpMin_C	/* Name */ 
+        "Position mini de la pédale d'embrayage au-dessus de laquelle l'embrayage est complètement ouvert"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rIncGainStrt_C	/* Name */ 
+        "Valeur d'incrémentation du gain au démarrage quand le moteur est autonome"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0009765625_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rTCoTOil_C	/* Name */ 
+        "Choix de la température à utiliser pour la correction du couple EM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0625_e	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdReWhlHiThd_C	/* Name */ 
+        "Seuil de vitesse roues arrière au-dessus duquel on inhibe les calculs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdReWhlLoThd_C	/* Name */ 
+        "Seuil de vitesse roues arrière en-dessous duquel on active les calculs"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0078125_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdVehAdpThd_C	/* Name */ 
+        "Seuil de vitesse véhicule pour le recalage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdVehHiThdFrzACComp_C	/* Name */ 
+        "Seuil haut sur la vitesse pour identifier le décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdVehHiThdPtOp_C	/* Name */ 
+        "Seuil de vitesse véhicule au-dessus duquel l'état de la chaîne de traction est ouvert"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdVehLoThdFrzACComp_C	/* Name */ 
+        "Seuil bas sur la vitesse pour identifier le décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_spdVehLoThdPtOp_C	/* Name */ 
+        "Seuil de vitesse véhicule en-dessous duquel l'état de la chaîne de traction est déterminé par une machine d'état"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilAdp_C	/* Name */ 
+        "Constante de temps pour le filtrage du couple de recalage des pertes"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiNStab_C	/* Name */ 
+        "Temporisation sur la stabilité du régime pour le recalage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiRstFrzACComp_C	/* Name */ 
+        "Temps pendant lequel on fige la climatisation au décollage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_01_f	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiSdl_SC	/* Name */ 
+        "Temps d'échantillonage périodique de la fonction EM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_001	/* Conversion */ 
+        0	/* LowerLimit */ 
+        0.1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqAdpHiThd_C	/* Name */ 
+        "Couple maxi de recalage des pertes"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqAdpLoThd_C	/* Name */ 
+        "Couple mini de recalage des pertes"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCfmThd_C	/* Name */ 
+        "Seuil de couple au-dessus duquel les pics de couple "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin MEASUREMENT 
+        TqEM_bAdpAuth	/* Name */ 
+        "Flag indiquant si le recalage des pertes est autorisé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bAuthClc	/* Name */ 
+        "Flag d'autorisation des calculs"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bCluEgd	/* Name */ 
+        "Etat de l'embrayage en BVM dans le cadre du FSE activé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bFrzACAT_MP	/* Name */ 
+        "Booléen de demande de figeage de l'état du compresseur de climatisation pour les BVA"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bFrzACMT_MP	/* Name */ 
+        "Booléen de demande de figeage de l'état du compresseur de climatisation pour les BVM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bGrdNAdpAuth_MP	/* Name */ 
+        "Condition sur le gradient de régime nécessaire au recalage des pertes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bNStabAdpAuth_MP	/* Name */ 
+        "Condition sur la stabilité du régime nécessaire au recalage des pertes"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bPtOp	/* Name */ 
+        "Flag indiquant si la chaîne de traction est ouverte"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bPtOpAdpAuth_MP	/* Name */ 
+        "Condition de chaîne de traction ouverte nécessaire au recalage des pertes"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bRstDly_MP	/* Name */ 
+        "Inhibition du figeage de l'état du compresseur de climatisation sur temporisation du booléen d'autorisation"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bRstFrzACComp	/* Name */ 
+        "Booléen d'inhibition du figeage de l'état du compresseur de climatisation"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bRstPtOp_MP	/* Name */ 
+        "Inhibition du figeage de l'état du compresseur de climatisation sur ouverture de la chaîne de traction"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bRstSpdVeh_MP	/* Name */ 
+        "Inhibition du figeage de l'état du compresseur de climatisation sur dépassement de seuil de vitesse véhicule"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bSetFrzACComp	/* Name */ 
+        "Booléen de demande de figeage de l'état du compresseur de climatisation"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bTqCfm_MP	/* Name */ 
+        "Confirmation du couple Easy-Move"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_facTEng	/* Name */ 
+        "Facteur de température pour le calcul du couple de correction CMF"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_25	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCluCls	/* Name */ 
+        "Position de la pédale d'embrayage en-dessous de laquelle l'embrayage est complètement fermé"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCluNotEgd_MP	/* Name */ 
+        "Seuil de position de la pédale d'embrayage au-delà duquel l'embrayage est complètement ouvert, embrayage ouvert"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCluOp	/* Name */ 
+        "Seuil de position de la pédale d'embrayage au-delà duquel l'embrayage est complètement ouvert"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGainTakeOff	/* Name */ 
+        "Gain appliqué au couple EM avant confirmation"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_spdVehHiThd	/* Name */ 
+        "Seuil de vitesse roues arrière au-dessus duquel on inhibe les calculs"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_spdVehLoThd	/* Name */ 
+        "Seuil de vitesse roue arrière en-dessous duquel on active les calculs"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_004_CM_VOID_SCALING_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdp	/* Name */ 
+        "Couple de recalage des pertes"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpAvr	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpAvr3Sync	/* Name */ 
+        "Couple de recalage des pertes moyenné sur 3 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpAvr4Sync	/* Name */ 
+        "Couple de recalage des pertes moyenné sur 4 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpAvr6Sync	/* Name */ 
+        "Couple de recalage des pertes moyenné sur 6 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpAvrFil_MP	/* Name */ 
+        "Couple de recalage des pertes moyenné et filtré"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMNotCfm_MP	/* Name */ 
+        "Couple Easy-Move non confirmé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0009765625	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.10"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0009765625_a	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.10"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_001	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.3"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.001 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0078125	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0078125_h	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_01	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_01_f	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0625	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_0625_e	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_1	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.1"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_0_25	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_1	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_1_c	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_EQ_LSB_1_d	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "km/h"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_004_CM_VOID_SCALING_g	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00424_F05_03___eur_temperature	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_rTCoTOil_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_facTEng	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00426_F05_03___dition_recalage	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_nDeltaNThd_C	/* Identifier */ 
+            TqEM_nStabThd_C	/* Identifier */ 
+            TqEM_rAccPAdpThd_C	/* Identifier */ 
+            TqEM_spdVehAdpThd_C	/* Identifier */ 
+            TqEM_tiNStab_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bAdpAuth	/* Identifier */ 
+            TqEM_bPtOpAdpAuth_MP	/* Identifier */ 
+            TqEM_bGrdNAdpAuth_MP	/* Identifier */ 
+            TqEM_bPtOp	/* Identifier */ 
+            TqEM_bNStabAdpAuth_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0043_F02_Auto__ouple_easy_move	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_spdReWhlHiThd_C	/* Identifier */ 
+            TqEM_spdReWhlLoThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bAuthClc	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00433_F05_03___recalage_pertes	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdp	/* Identifier */ 
+            TqEM_tqAdpAvr	/* Identifier */ 
+            TqEM_tqAdpAvr3Sync	/* Identifier */ 
+            TqEM_tqAdpAvr4Sync	/* Identifier */ 
+            TqEM_tqAdpAvr6Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00438_F05_03___recalage_pertes	/* Identifier */ 
+            TqEM_FCT_S00436_F05_03___er_6_evenements	/* Identifier */ 
+            TqEM_FCT_S00435_F05_03___er_4_evenements	/* Identifier */ 
+            TqEM_FCT_S00434_F05_03___er_3_evenements	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00434_F05_03___er_3_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdpAvr3Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00435_F05_03___er_4_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdpAvr4Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00436_F05_03___er_6_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdpAvr6Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00438_F05_03___recalage_pertes	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_tiConFilAdp_C	/* Identifier */ 
+            TqEM_tiSdl_SC	/* Identifier */ 
+            TqEM_tqAdpHiThd_C	/* Identifier */ 
+            TqEM_tqAdpLoThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdp	/* Identifier */ 
+            TqEM_tqAdpAvr	/* Identifier */ 
+            TqEM_tqAdpAvrFil_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0044_F05_Calc__ouple_easy_move	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_facTEng	/* Identifier */ 
+            TqEM_rGainTakeOff	/* Identifier */ 
+            TqEM_tqAdp	/* Identifier */ 
+            TqEM_bPtOp	/* Identifier */ 
+            TqEM_bAdpAuth	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00454_F05_04___Gerer_demarrage	/* Identifier */ 
+            TqEM_FCT_S00433_F05_03___recalage_pertes	/* Identifier */ 
+            TqEM_FCT_S00426_F05_03___dition_recalage	/* Identifier */ 
+            TqEM_FCT_S00424_F05_03___eur_temperature	/* Identifier */ 
+            TqEM_FCT_S0049_F05_02_F__r_climatisation	/* Identifier */ 
+            TqEM_FCT_S0048_F05_01_D__ter_CDT_ouverte	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0045_F06_Dete__move_applicable	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_bTqCfmInh_C	/* Identifier */ 
+            TqEM_tqCfmThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMNotCfm_MP	/* Identifier */ 
+            TqEM_bTqCfm_MP	/* Identifier */ 
+            TqEM_bAuthClc	/* Identifier */ 
+            TqEM_rGainTakeOff	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00454_F05_04___Gerer_demarrage	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_rIncGainStrt_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_rGainTakeOff	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0048_F05_01_D__ter_CDT_ouverte	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_rCluEgdLimDrv_C	/* Identifier */ 
+            TqEM_rCluOpMin_C	/* Identifier */ 
+            TqEM_rCluCls_C	/* Identifier */ 
+            TqEM_spdVehHiThdPtOp_C	/* Identifier */ 
+            TqEM_spdVehLoThdPtOp_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bPtOp	/* Identifier */ 
+            TqEM_rCluNotEgd_MP	/* Identifier */ 
+            TqEM_bCluEgd	/* Identifier */ 
+            TqEM_rCluOp	/* Identifier */ 
+            TqEM_spdVehHiThd	/* Identifier */ 
+            TqEM_spdVehLoThd	/* Identifier */ 
+            TqEM_rCluCls	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0049_F05_02_F__r_climatisation	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_bFrzACCompAuth_C	/* Identifier */ 
+            TqEM_spdVehHiThdFrzACComp_C	/* Identifier */ 
+            TqEM_tiRstFrzACComp_C	/* Identifier */ 
+            TqEM_rAccPThdFrzACComp_C	/* Identifier */ 
+            TqEM_spdVehLoThdFrzACComp_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bPtOp	/* Identifier */ 
+            TqEM_bRstFrzACComp	/* Identifier */ 
+            TqEM_bSetFrzACComp	/* Identifier */ 
+            TqEM_bRstPtOp_MP	/* Identifier */ 
+            TqEM_bRstSpdVeh_MP	/* Identifier */ 
+            TqEM_bRstDly_MP	/* Identifier */ 
+            TqEM_bFrzACAT_MP	/* Identifier */ 
+            TqEM_bFrzACMT_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_TqEM_004_TEV_fct	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bAuthClc	/* Identifier */ 
+            TqEM_facTEng	/* Identifier */ 
+            TqEM_tqAdp	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S0045_F06_Dete__move_applicable	/* Identifier */ 
+            TqEM_FCT_S0044_F05_Calc__ouple_easy_move	/* Identifier */ 
+            TqEM_FCT_S0043_F02_Auto__ouple_easy_move	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_bInhTqDampWhl_C	/* Name */ 
+        "Bit d'inhibition du calcul du couple DVA"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_facCorTiConFilTqEMBas_T	/* Name */ 
+        "Table de correction de la constante de temps pour le filtrage du couple EM de base"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCk_corTiConFilTqEMBas_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_facGrdDampWhl_C	/* Name */ 
+        "Facteur d'amortissement du double volant amortisseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_m	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_facNEngGrdTqCor_M	/* Name */ 
+        "Cartographie de correction des frottements en fonction du régime et du gradient de régime moteur"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkTDCDeltaX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkFilY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_idxCorTqDampWhl_T	/* Name */ 
+        "Table de selection de la correction du couple DVA fonction de l'indice de précision de couple"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            255	/* UpperLimit */ 
+            AXIS_PTS_REF S00665_TqEM_id__TqDampWhl_T_x_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_idxCorTqWoutTEng_T	/* Name */ 
+        "Table de selection de la correction du couple EM fonction de l'indice de précision de couple"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            255	/* UpperLimit */ 
+            AXIS_PTS_REF S00689_TqEM_id__qWoutTEng_T_x_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_idxDly_C	/* Name */ 
+        "Nombre de PMH de retard du régime par rapport au couple EM pour le calcul"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_Default_Table_6	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_jEng_C	/* Name */ 
+        "Inertie du moteur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_jSecDampWhl_C	/* Name */ 
+        "Inertie du secondaire du double volant amortisseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_k	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rCorGain_T	/* Name */ 
+        "Table de correction des gains appliqués sur le couple moteur indiqué optimal en fonction du delta entre le régime moteur et le régime ralenti cible"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nDeltaN_CorGain_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rCorRspgAir_T	/* Name */ 
+        "Table de correction de l'erreur du remplissage prédit sur le couple CMI réalisé"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            3	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rRspgAirPredLd_CorRspgAir_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rIncGainOutFuCutOff_M	/* Name */ 
+        "Cartographie d'incrément du gain en sortie de coupure"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_1	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nEngIncGainOutFuCutOffX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rAccPIncGainOutFuCutOffY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rThdCor_T	/* Name */ 
+        "Table déterminant le seuil de correction du couple CMI réalisé autorisé par la température eau moteur"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_1_j	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tCo_rThdCor_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rTqEMBas1_M	/* Name */ 
+        "Cartographie de correction du couple effectif EM en fonction du régime moteur et de l'avance à l'allumage"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rIgAg_TqEMBas1X_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCk_TqEMBas1Y_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rTqEMBas2_M	/* Name */ 
+        "Cartographie de correction du couple effectif EM en fonction de l'avance à l'allumage et du couple moteur indiqué optimal"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rIgAg_TqEMBas2X_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqIdc_TqEMBas2Y_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rTqEMBas3_M	/* Name */ 
+        "Cartographie de correction du couple effectif EM en fonction du facteur de température moteur et du couple moteur indiqué optimal"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tEng_TqEMBas3X_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqIdc_TqEMBas3Y_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_rTqEMBas4_M	/* Name */ 
+        "Cartographie de correction du couple effectif EM en fonction du remplissage en air et du facteur de température moteur"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tEng_TqEMBas4X_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625_h	/* Conversion */ 
+            10	/* MaxAxisPoints */ 
+            -300	/* LowerLimit */ 
+            300	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rAir_TqEMBas4Y_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilRspgAir_C	/* Name */ 
+        "Constante de temps du filtre de la dérivée du remplissage d'air"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilTqCor1_C	/* Name */ 
+        "Constante de temps du filtre de la correction DVA (correction 1)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilTqCor2_C	/* Name */ 
+        "Constante de temps du filtre de la correction DVA (correction 2)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilTqCor3_C	/* Name */ 
+        "Constante de temps du filtre de la correction DVA (correction 3)"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilTqEMBas_M	/* Name */ 
+        "Cartographie de constante de temps pour le filtrage du couple EM brut"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            100	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_rAccP_tiFilX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -8000	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkTDCDelta_tiFilY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiConFilTqEMCor_C	/* Name */ 
+        "Constante de temps du filtre du couple EM coordonné"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiRampCor_C	/* Name */ 
+        "Durée de transition de la rampe entre le couple de correction et le couple de correction après démarrage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        120	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tiThdAst_C	/* Name */ 
+        "Temporisation pendant laquelle on applique les pertes après départ"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        250	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqConstDampWhl_C	/* Name */ 
+        "Raideur du double volant amortisseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_n	/* Conversion */ 
+        0	/* LowerLimit */ 
+        15	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorFacTEng_T	/* Name */ 
+        "Table de correction des frottements en fonction de la température d'eau moteur"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_facTEng_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorFacTEngAst_T	/* Name */ 
+        "Table de correction des pertes moteur par frottement après départ"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -50	/* LowerLimit */ 
+            200	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_facTEng_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorTqDampWhl1_T	/* Name */ 
+        "Table 1 de correction du couple DVA"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqDeltaTqEMRaw_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorTqDampWhl2_T	/* Name */ 
+        "Table 2 de correction du couple DVA"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqDeltaTqEMRaw_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorTqDampWhl3_T	/* Name */ 
+        "Table 3 de correction du couple DVA"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqDeltaTqEMRaw_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorWoutTEng1_M	/* Name */ 
+        "Cartographie 1 de correction du couple EM"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            TqEM_tqEMRaw	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqEMRawX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkFilY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorWoutTEng2_M	/* Name */ 
+        "Cartographie 2 de correction du couple EM"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            TqEM_tqEMRaw	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqEMRawX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkFilY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqCorWoutTEng3_M	/* Name */ 
+        "Cartographie 3 de correction du couple EM"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            TqEM_tqEMRaw	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            -2000	/* LowerLimit */ 
+            2000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_tqEMRawX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8000	/* UpperLimit */ 
+            AXIS_PTS_REF TqEM_nCkFilY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqDampWhlSatMax_C	/* Name */ 
+        "Saturation haute du couple prélevé par le double volant amortisseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqDampWhlSatMin_C	/* Name */ 
+        "Saturation basse du couple prélevé par le double volant amortisseur"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqJSatMax_C	/* Name */ 
+        "Saturation basse du couple inertiel"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        TqEM_tqJSatMin_C	/* Name */ 
+        "Saturation haute du couple inertiel"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        TqEM_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        S00665_TqEM_id__TqDampWhl_T_x_A	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        S00689_TqEM_id__qWoutTEng_T_x_A	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_VOID_SCALING_e	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_facTEng_A	/* Name */ 
+        "Points d'appui en température eau ou huile pour la correction du couple EM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nCk_corTiConFilTqEMBas_A	/* Name */ 
+        "Points d'appui en régime moteur pour la correction de la constante de temps"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nCk_TqEMBas1Y_A	/* Name */ 
+        "Points d'appui en delta de régime moteur et régime ralenti cible pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nCkFilY_A	/* Name */ 
+        "Points d'appui en régime moteur pour la correction du couple EM en fonction du mode de combustion"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nCkTDCDelta_tiFilY_A	/* Name */ 
+        "Points d'appui en gradient de régime pour la constante de temps du filtre du couple EM brut"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nCkTDCDeltaX_A	/* Name */ 
+        "Points d'appui en dérivée de régime moteur au PMH pour la correction du couple EM en fonction du gradient de régime moteur"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -8000	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nDeltaN_CorGain_A	/* Name */ 
+        "Points d'appui en delta de régime moteur et régime ralenti cible pour corriger les gains"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_nEngIncGainOutFuCutOffX_A	/* Name */ 
+        "Points d'appui en régime moteur pour l'incrément du gain en sortie de coupure"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_1	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rAccP_tiFilX_A	/* Name */ 
+        "Points d'appui en appui pédale accel pour la constante de temps du filtre du couple EM brut"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rAccPIncGainOutFuCutOffY_A	/* Name */ 
+        "Points d'appui en appui pédale d'accélérateur pour l'incrément du gain en sortie de coupure"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_b	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        100	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rAir_TqEMBas4Y_A	/* Name */ 
+        "Points d'appui en remplissage en air pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625_h	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -300	/* LowerLimit */ 
+        300	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rIgAg_TqEMBas1X_A	/* Name */ 
+        "Points d'appui en avance à l'allumage pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rIgAg_TqEMBas2X_A	/* Name */ 
+        "Points d'appui en avance à l'allumage pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_rRspgAirPredLd_CorRspgAir_A	/* Name */ 
+        "Points d'appui en ratio de remplissage pour la correction du couple CMI réalisé"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0009765625	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tCo_rThdCor_A	/* Name */ 
+        "Points d'appui en température eau pour déterminer le seuil d'autorisation de correction du couple CMI réalisé"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_1_j	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tEng_TqEMBas3X_A	/* Name */ 
+        "Points d'appui en facteur de température moteur pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tEng_TqEMBas4X_A	/* Name */ 
+        "Points d'appui en facteur de température moteur pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_25_f	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -50	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tqDeltaTqEMRaw_A	/* Name */ 
+        "Points d'appui en gradient de couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tqEMRawX_A	/* Name */ 
+        "Points d'appui en couple EM pour la correction du couple EM en fonction du mode de combustion"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        TqEM_tqEMRaw	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tqIdc_TqEMBas2Y_A	/* Name */ 
+        "Points d'appui en couple moteur indiqué optimal pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        TqEM_tqIdc_TqEMBas3Y_A	/* Name */ 
+        "Points d'appui en couple moteur indiqué optimal pour corriger le couple Easy-Move"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        10	/* MaxAxisPoints */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        TqEM_bAst_MP	/* Name */ 
+        "Booléen indiquant la fin de la période de démarrage"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bEnaAvr3Sync	/* Name */ 
+        "Flag activant la moyennes glissantes sur 3 évènements synchrones"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bEnaAvr4Sync	/* Name */ 
+        "Flag activant la moyennes glissantes sur 4 évènements synchrones"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bEnaAvr6Sync	/* Name */ 
+        "Flag activant la moyennes glissantes sur 6 évènements synchrones"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_bThd_MP	/* Name */ 
+        "Booléen interdisant la correction du transitoire du couple moteur indiqué optimal"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_facCorTiConFilTqEMBas_MP	/* Name */ 
+        "Correction de la constante de temps pour le filtrage du couple EM de base"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_facNEngGrdTqCor_MP	/* Name */ 
+        "Correction des frottements en fonction du régime et du gradient de régime moteur"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_nClu_MP	/* Name */ 
+        "Régime du secondaire du DVA"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Conversion */
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        8000	/* UpperLimit */
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCorErrRspgAirPred	/* Name */ 
+        "Gain de correction du CMI transitoire"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCorGain_MP	/* Name */ 
+        "Correction des gains appliqués sur le CMI optimal en fonction du delta entre le régime moteur et le régime ralenti cible"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rCorRspgAir_MP	/* Name */ 
+        "Correction du CMI transitoire"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGain1_MP	/* Name */ 
+        "Gain 1 de correction du couple effectif EM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGain2_MP	/* Name */ 
+        "Gain 2 de correction du couple effectif EM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGain3_MP	/* Name */ 
+        "Gain 3 de correction du couple effectif EM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGain4_MP	/* Name */ 
+        "Gain 4 de correction du couple effectif EM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGainFuCutOff_MP	/* Name */ 
+        "Gain appliqué au couple EM pour prendre en compte la coupure"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGainFuCutOffNotSat_MP	/* Name */ 
+        "Gain appliqué au couple EM pour prendre en compte la coupure non saturé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -1	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGrdAirLd_MP	/* Name */ 
+        "Dérivée du remplissage"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_h	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -300	/* LowerLimit */ 
+        300	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rGrdAirLdFil_MP	/* Name */ 
+        "Dérivée du remplissage filtrée"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_h	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -300	/* LowerLimit */ 
+        300	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rIncGainOutFuCutOff_MP	/* Name */ 
+        "Incrément à appliquer au gain de gestion de la coupure"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rThdCor_MP	/* Name */ 
+        "Ratio en fonction de la température au-dessus duquel on n'applique plus de correction au CMI"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rTqEMBas1_MP	/* Name */ 
+        "Sortie de la cartographie de gain 1 du couple effectif"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rTqEMBas2_MP	/* Name */ 
+        "Sortie de la cartographie de gain 2 du couple effectif"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rTqEMBas3_MP	/* Name */ 
+        "Sortie de la cartographie de gain 3 du couple effectif"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_rTqEMBas4_MP	/* Name */ 
+        "Sortie de la cartographie de gain 4 du couple effectif"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tiConFilTqCorTqDampWhl	/* Name */ 
+        "Constante de temps pour le filtrage du couple de correction appliqué au couple DVA brut"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tiConFilTqEMBas	/* Name */ 
+        "Constante de temps pour le filtrage du couple EM effectif brut"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tiConFilTqEMBas_MP	/* Name */ 
+        "Constante de temps pour le filtrage du couple EM brut"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        30	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqAdpRaw	/* Name */ 
+        "Couple de recalage des pertes brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqConst_MP	/* Name */ 
+        "Couple provenant de la raideur du DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCor	/* Name */ 
+        "Couple de correction CMF"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorAst	/* Name */ 
+        "Couple de correction CMF après départ"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorBas	/* Name */ 
+        "Couple de correction CMF brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorFacTEng_MP	/* Name */ 
+        "Correction des frottements en fonction de la température d'eau moteur"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -10	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorFacTEngAst_MP	/* Name */ 
+        "Composante après départ de la correction des pertes par frottement, fonction de la température moteur"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorTqDampWhl	/* Name */ 
+        "Couple de correction appliqué au couple DVA brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorTqDampWhl1_MP	/* Name */ 
+        "Correction 1 du couple DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorTqDampWhl2_MP	/* Name */ 
+        "Correction 2 du couple DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorTqDampWhl3_MP	/* Name */ 
+        "Correction 3 du couple DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorTqDampWhlFil	/* Name */ 
+        "Couple de correction appliqué au couple DVA filtré"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorWoutTEng_MP	/* Name */ 
+        "Couple de correction CMF en fonction de l'indice de précision de couple avant correction sur temperature d'eau"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorWoutTEng1_MP	/* Name */ 
+        "Correction 1 du couple EM"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorWoutTEng2_MP	/* Name */ 
+        "Correction 2 du couple EM"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqCorWoutTEng3_MP	/* Name */ 
+        "Correction 3 du couple EM"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqDamp_MP	/* Name */ 
+        "Couple provenant de l'amortissement du DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqDampWhl	/* Name */ 
+        "Couple DVA"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqDampWhlRaw	/* Name */ 
+        "Couple DVA brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMAvr	/* Name */ 
+        "Couple effectif EM moyenné"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMAvr3Sync	/* Name */ 
+        "Couple effectif EM moyenné sur 3 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMAvr4Sync	/* Name */ 
+        "Couple effectif EM moyenné sur 4 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMAvr6Sync	/* Name */ 
+        "Couple effectif EM moyenné sur 6 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMBas	/* Name */ 
+        "Couple effectif EM brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMBasDsl	/* Name */ 
+        "Couple EM diesel effectif brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMBasGsl	/* Name */ 
+        "Couple EM essence effectif brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMCor	/* Name */ 
+        "Couple Easy-Move coordonné à partir des différents contributeurs et corrections"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMCorFil_MP	/* Name */ 
+        "Couple Easy-Move corrigé et filtré"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMCorFilSat	/* Name */ 
+        "Couple Easy-Move coordonné, filtré et saturé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMRaw	/* Name */ 
+        "Couple effectif EM brut moyenné et retardé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqEMWiCutOff	/* Name */ 
+        "Couple EM final avant confirmation"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEng	/* Name */ 
+        "Couple inertiel"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEngAvr	/* Name */ 
+        "Couple inertiel moyenné, non saturé"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEngAvr3Sync	/* Name */ 
+        "Couple inertiel moyenné sur 3 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEngAvr4Sync	/* Name */ 
+        "Couple inertiel moyenné sur 4 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEngAvr6Sync	/* Name */ 
+        "Couple inertiel moyenné sur 6 évènements synchrones"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        TqEM_tqJEngRaw	/* Name */ 
+        "Couple inertiel brut"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -2000	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_Default_Table_6	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        TAB_VERB	/* ConversionType */ 
+        "%12.6"	/* Format */ 
+        "_"	/* Unit */ 
+        COMPU_TAB_REF TqEM_CV_CONV_TAB_Default_Table_6 
+    /end COMPU_METHOD 
+ 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0009765625	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.10"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0009765625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125_a	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125_b	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "%"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125_k	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "kg.m²"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125_m	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "N.m/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0078125_n	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.7"	/* Format */ 
+        "N/m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_01	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_01_c	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.2"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.01 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_03125	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.5"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0625	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "N.m"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0625_g	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_0625_h	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "%/s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_25	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_25_d	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.2"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_0_25_f	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.2"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.25 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_1	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_EQ_LSB_1_j	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        TqEM_006_CM_VOID_SCALING_e	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "_"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_VTAB 
+        TqEM_CV_CONV_TAB_Default_Table_6	/* Name */ 
+        "Conversion table"	/* LongIdentifier */ 
+        TAB_VERB	/* ConversionType */ 
+        4	/* NumberValuePairs */ 
+        0	/* InVal */ 
+        "pas de retard"	/* OutVal */ 
+        1	/* InVal */ 
+        "1 pas de calcul de retard"	/* OutVal */ 
+        2	/* InVal */ 
+        "2 pas de calcul de retard"	/* OutVal */ 
+        3	/* InVal */ 
+        "3 pas de calcul de retard"	/* OutVal */ 
+    /end COMPU_VTAB 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S006100_F05_04_02_Gerer_coupure	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_rIncGainOutFuCutOff_M	/* Identifier */ 
+            TqEM_nEngIncGainOutFuCutOffX_A	/* Identifier */ 
+            TqEM_rAccPIncGainOutFuCutOffY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMWiCutOff	/* Identifier */ 
+            TqEM_rGainFuCutOffNotSat_MP	/* Identifier */ 
+            TqEM_rIncGainOutFuCutOff_MP	/* Identifier */ 
+            TqEM_tqEMCorFilSat	/* Identifier */ 
+            TqEM_rGainFuCutOff_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00618_F05_03___tionner_moyenne	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00619_F05_03___y_move_effectif	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_idxDly_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+            TqEM_tqEMAvr	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00628_F05_03___y_move_effectif	/* Identifier */ 
+            TqEM_FCT_S00627_F05_03___ctif_applicable	/* Identifier */ 
+            TqEM_FCT_S00626_F05_03___ffectif_essence	/* Identifier */ 
+            TqEM_FCT_S00625_F05_03___effectif_diesel	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00621_F05_03___uler_couple_DVA	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_bInhTqDampWhl_C	/* Identifier */ 
+            TqEM_tqDampWhlSatMax_C	/* Identifier */ 
+            TqEM_tqDampWhlSatMin_C	/* Identifier */ 
+            TqEM_idxCorTqDampWhl_T	/* Identifier */ 
+            S00665_TqEM_id__TqDampWhl_T_x_A	/* Identifier */ 
+            TqEM_tiConFilTqCor1_C	/* Identifier */ 
+            TqEM_tiConFilTqCor2_C	/* Identifier */ 
+            TqEM_tiConFilTqCor3_C	/* Identifier */ 
+            TqEM_tqCorTqDampWhl1_T	/* Identifier */ 
+            TqEM_tqDeltaTqEMRaw_A	/* Identifier */ 
+            TqEM_tqCorTqDampWhl2_T	/* Identifier */ 
+            TqEM_tqCorTqDampWhl3_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqDampWhl	/* Identifier */ 
+            TqEM_tqDampWhlRaw	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+            TqEM_tqCorTqDampWhlFil	/* Identifier */ 
+            TqEM_tiConFilTqCorTqDampWhl	/* Identifier */ 
+            TqEM_tqCorTqDampWhl	/* Identifier */ 
+            TqEM_tqCorTqDampWhl1_MP	/* Identifier */ 
+            TqEM_tqCorTqDampWhl2_MP	/* Identifier */ 
+            TqEM_tqCorTqDampWhl3_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00622_F05_03___couple_inertiel	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_tqJSatMax_C	/* Identifier */ 
+            TqEM_tqJSatMin_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqJEng	/* Identifier */ 
+            TqEM_tqJEngAvr	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00672_F05_03___couple_inertiel	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00623_F05_03____correction_CMF	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_tiRampCor_C	/* Identifier */ 
+            TqEM_tiThdAst_C	/* Identifier */ 
+            TqEM_facNEngGrdTqCor_M	/* Identifier */ 
+            TqEM_nCkTDCDeltaX_A	/* Identifier */ 
+            TqEM_nCkFilY_A	/* Identifier */ 
+            TqEM_idxCorTqWoutTEng_T	/* Identifier */ 
+            S00689_TqEM_id__qWoutTEng_T_x_A	/* Identifier */ 
+            TqEM_tqCorFacTEngAst_T	/* Identifier */ 
+            TqEM_facTEng_A	/* Identifier */ 
+            TqEM_tqCorFacTEng_T	/* Identifier */ 
+            TqEM_tqCorWoutTEng1_M	/* Identifier */ 
+            TqEM_tqEMRawX_A	/* Identifier */ 
+            TqEM_tqCorWoutTEng2_M	/* Identifier */ 
+            TqEM_tqCorWoutTEng3_M	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqCor	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+            TqEM_bAst_MP	/* Identifier */ 
+            TqEM_tqCorWoutTEng_MP	/* Identifier */ 
+            TqEM_tqCorBas	/* Identifier */ 
+            TqEM_tqCorAst	/* Identifier */ 
+            TqEM_facNEngGrdTqCor_MP	/* Identifier */ 
+            TqEM_tqCorFacTEngAst_MP	/* Identifier */ 
+            TqEM_tqCorFacTEng_MP	/* Identifier */ 
+            TqEM_tqCorWoutTEng1_MP	/* Identifier */ 
+            TqEM_tqCorWoutTEng2_MP	/* Identifier */ 
+            TqEM_tqCorWoutTEng3_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00692_MSW	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00624_F05_03___ouple_easy_move	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMCor	/* Identifier */ 
+            TqEM_tqCor	/* Identifier */ 
+            TqEM_tqDampWhl	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+            TqEM_tqJEng	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00625_F05_03___effectif_diesel	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_facCorTiConFilTqEMBas_T	/* Identifier */ 
+            TqEM_nCk_corTiConFilTqEMBas_A	/* Identifier */ 
+            TqEM_tiConFilTqEMBas_M	/* Identifier */ 
+            TqEM_rAccP_tiFilX_A	/* Identifier */ 
+            TqEM_nCkTDCDelta_tiFilY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMBasDsl	/* Identifier */ 
+            TqEM_tiConFilTqEMBas	/* Identifier */ 
+            TqEM_facCorTiConFilTqEMBas_MP	/* Identifier */ 
+            TqEM_tiConFilTqEMBas_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00626_F05_03___ffectif_essence	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_rCorGain_T	/* Identifier */ 
+            TqEM_nDeltaN_CorGain_A	/* Identifier */ 
+            TqEM_rTqEMBas1_M	/* Identifier */ 
+            TqEM_rIgAg_TqEMBas1X_A	/* Identifier */ 
+            TqEM_nCk_TqEMBas1Y_A	/* Identifier */ 
+            TqEM_rTqEMBas2_M	/* Identifier */ 
+            TqEM_rIgAg_TqEMBas2X_A	/* Identifier */ 
+            TqEM_tqIdc_TqEMBas2Y_A	/* Identifier */ 
+            TqEM_rTqEMBas3_M	/* Identifier */ 
+            TqEM_tEng_TqEMBas3X_A	/* Identifier */ 
+            TqEM_tqIdc_TqEMBas3Y_A	/* Identifier */ 
+            TqEM_rTqEMBas4_M	/* Identifier */ 
+            TqEM_tEng_TqEMBas4X_A	/* Identifier */ 
+            TqEM_rAir_TqEMBas4Y_A	/* Identifier */ 
+            TqEM_tiConFilRspgAir_C	/* Identifier */ 
+            TqEM_rCorRspgAir_T	/* Identifier */ 
+            TqEM_rRspgAirPredLd_CorRspgAir_A	/* Identifier */ 
+            TqEM_rThdCor_T	/* Identifier */ 
+            TqEM_tCo_rThdCor_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMBasGsl	/* Identifier */ 
+            TqEM_rGain1_MP	/* Identifier */ 
+            TqEM_rGain2_MP	/* Identifier */ 
+            TqEM_rGain3_MP	/* Identifier */ 
+            TqEM_rGain4_MP	/* Identifier */ 
+            TqEM_rCorErrRspgAirPred	/* Identifier */ 
+            TqEM_rCorGain_MP	/* Identifier */ 
+            TqEM_rTqEMBas1_MP	/* Identifier */ 
+            TqEM_rTqEMBas2_MP	/* Identifier */ 
+            TqEM_rTqEMBas3_MP	/* Identifier */ 
+            TqEM_rTqEMBas4_MP	/* Identifier */ 
+            TqEM_rGrdAirLd_MP	/* Identifier */ 
+            TqEM_rGrdAirLdFil_MP	/* Identifier */ 
+            TqEM_bThd_MP	/* Identifier */ 
+            TqEM_rCorRspgAir_MP	/* Identifier */ 
+            TqEM_rThdCor_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00627_F05_03___ctif_applicable	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMBas	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00628_F05_03___y_move_effectif	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqEMAvr	/* Identifier */ 
+            TqEM_tqEMBas	/* Identifier */ 
+            TqEM_tqEMAvr3Sync	/* Identifier */ 
+            TqEM_tqEMAvr4Sync	/* Identifier */ 
+            TqEM_tqEMAvr6Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00651_F05_03___er_6_evenements	/* Identifier */ 
+            TqEM_FCT_S00650_F05_03___er_4_evenements	/* Identifier */ 
+            TqEM_FCT_S00649_F05_03___er_3_evenements	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0064_Subsystem_1	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqAdpRaw	/* Identifier */ 
+            TqEM_tqEMWiCutOff	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S0068_F05_Calc__ouple_easy_move	/* Identifier */ 
+            TqEM_FCT_S0067_F04_Calc__couple_inertiel	/* Identifier */ 
+            TqEM_FCT_S0066_F03_Calculer_couple_DVA	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00649_F05_03___er_3_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMAvr3Sync	/* Identifier */ 
+            TqEM_tqEMBas	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00650_F05_03___er_4_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMAvr4Sync	/* Identifier */ 
+            TqEM_tqEMBas	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00651_F05_03___er_6_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMAvr6Sync	/* Identifier */ 
+            TqEM_tqEMBas	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0066_F03_Calculer_couple_DVA	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_facGrdDampWhl_C	/* Identifier */ 
+            TqEM_jSecDampWhl_C	/* Identifier */ 
+            TqEM_tqConstDampWhl_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqConst_MP	/* Identifier */ 
+            TqEM_tqDampWhlRaw	/* Identifier */ 
+            TqEM_tqDamp_MP	/* Identifier */ 
+            TqEM_nClu_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00664_F05_03___recalage_pertes	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqAdpRaw	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0067_F04_Calc__couple_inertiel	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_jEng_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqJEngRaw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00672_F05_03___couple_inertiel	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqJEngAvr	/* Identifier */ 
+            TqEM_tqJEngAvr3Sync	/* Identifier */ 
+            TqEM_tqJEngAvr4Sync	/* Identifier */ 
+            TqEM_tqJEngAvr6Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S00676_F05_03___er_6_evenements	/* Identifier */ 
+            TqEM_FCT_S00675_F05_03___er_4_evenements	/* Identifier */ 
+            TqEM_FCT_S00674_F05_03___er_3_evenements	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00674_F05_03___er_3_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqJEngAvr3Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00675_F05_03___er_4_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqJEngAvr4Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00676_F05_03___er_6_evenements	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqJEngAvr6Sync	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S0068_F05_Calc__ouple_easy_move	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqAdpRaw	/* Identifier */ 
+            TqEM_tqDampWhlRaw	/* Identifier */ 
+            TqEM_tqEMWiCutOff	/* Identifier */ 
+            TqEM_tqEMCor	/* Identifier */ 
+            TqEM_tqEMRaw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S006100_F05_04_02_Gerer_coupure	/* Identifier */ 
+            TqEM_FCT_S00699_F05_04___ouple_easy_move	/* Identifier */ 
+            TqEM_FCT_S00624_F05_03___ouple_easy_move	/* Identifier */ 
+            TqEM_FCT_S00623_F05_03____correction_CMF	/* Identifier */ 
+            TqEM_FCT_S00622_F05_03___couple_inertiel	/* Identifier */ 
+            TqEM_FCT_S00621_F05_03___uler_couple_DVA	/* Identifier */ 
+            TqEM_FCT_S00664_F05_03___recalage_pertes	/* Identifier */ 
+            TqEM_FCT_S00619_F05_03___y_move_effectif	/* Identifier */ 
+            TqEM_FCT_S00618_F05_03___tionner_moyenne	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00692_MSW	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_tiRampCor_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_S00699_F05_04___ouple_easy_move	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            TqEM_tiConFilTqEMCor_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            TqEM_tqEMCorFilSat	/* Identifier */ 
+            TqEM_tqEMCor	/* Identifier */ 
+            TqEM_tqEMCorFil_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        TqEM_FCT_TqEM_006_DRE_fct	/* Name */ 
+        "_"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            TqEM_bEnaAvr3Sync	/* Identifier */ 
+            TqEM_bEnaAvr4Sync	/* Identifier */ 
+            TqEM_bEnaAvr6Sync	/* Identifier */ 
+            TqEM_tqAdpRaw	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            TqEM_FCT_S0064_Subsystem_1	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_UBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        TqEM_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE TqEM ------------------------------------*/

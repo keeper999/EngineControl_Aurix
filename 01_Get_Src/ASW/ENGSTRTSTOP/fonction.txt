@@ -1,0 +1,31 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+DIOHAL_vidWrite|A|(argin uint8 u8Channel , argin boolean bState);|-|HEADER|1|NONE||||0|0|0|0|
+EngSt_EveCkOn_EngStrtStop|A|();|SCH.10|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evènement Détection rotation moteur
+EngSt_EveCkSnOn_EngStrtStop|A|();|SCH.5|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise.
+EngSt_EveKOf_EngStrtStop|A|();|SCH.6|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evénement associé au passage de clef ON à clef OFF.
+EngSt_EveKOn_EngStrtStop|B|();|SCH.3|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evénement associé au passage de clef OFF à clef ON
+EngSt_EveRst_EngStrtStop|A|();|SCH.1|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evènement RESET du calculateur
+EngSt_EveRTSt_EngStrtStop|A|();|SCH.8|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant.
+EngSt_EveRxn552_EngStrtStop|A|();|SCH.7|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evènement correspondent à la reception de la trame 552h .
+EngSt_EveStTR_EngStrtStop|C|();|SCH.4|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant
+EngSt_SdlFast_EngStrtStop|A|();|SCH.2|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Moniteur rapide pour la fonction EngSt
+EngSt_SdlSlow_EngStrtStop|A|();|SCH.9|ENGSTRTSTOP|1|V02 NT 08 05182||||0|0|0|0|Moniteur lent pour la fonction EngSt.
+ENGSTRTSTOP_vidCmdCranking|E|();|FCT1.6|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|La commande démarreur est attribuée à la même fréquence d’appel que la fonction DAGMP.(StaCtl_bStaReq=0 : Interdiction de démarrer, StaCtl_bStaReq=1 : Autorisation de démarrer.)
+ENGSTRTSTOP_vidComputeCrankRetry|D|();|FCT2.4|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui indique le redémarrage (le moteur a déjà été entraîné).
+ENGSTRTSTOP_vidControlAutoInj|D|();|FCT1.8|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Lorsqu'une demande d'arrêt moteur par la BSI est reçue, on doit lui renvoyer l'état du moteur égal à coupé ou calé, alors elle peut désactiver sa demande d'arrêt,
+ENGSTRTSTOP_vidEnaTransitToCrank|B|();|FCT2.9|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui permet de tourner le moteur
+ENGSTRTSTOP_vidEngStateDmlCalc|E|();|FCT1.5|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui définit un compteur d’incrémentation réalisé à chaque démarrage moteur.
+ENGSTRTSTOP_vidEngStopCond|C|();|FCT1.3|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Cette fonction définit si l’arrêt moteur est dû à une coupure clef après un calage
+ENGSTRTSTOP_vidEveStallRunning|G|();|FCT1.9|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui permet de calculer Cranking_retry lors du passage de l'état stall vers running.
+ENGSTRTSTOP_vidFirstCrank|B|();|FCT2.6|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui fait appel à ENGSTRTSTOP_vidMajFirstCrank.
+ENGSTRTSTOP_vidInitAutoInjStlCrk|C|();|FCT1.7|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|L'injection n'est autorisée qu'à la transition "cale_tournant" et jusqu'à une demande d'arrêt moteur ou une coupure du réveil principal.
+ENGSTRTSTOP_vidInitialization|C|();|FCT1.1|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonctions d'nitialisation des sorties
+ENGSTRTSTOP_vidInitOutput|E|();|FCT1.2|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Initialisation des sorties
+ENGSTRTSTOP_vidKeyOffOn|B|();|FCT2.2|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui indique le calage du moteur.
+ENGSTRTSTOP_vidKeyOnOff|B|();|FCT2.8|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui indique le calage du moteur.
+ENGSTRTSTOP_vidKeyStopCond|C|();|FCT1.4|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Le booléen Arret_moteur_clef indique si l’arrêt moteur est dû à une demande d'arrêt moteur par la BSI (TRUE) ou bien à un calage (FALSE).
+ENGSTRTSTOP_vidMajFirstCrank|B|();|FCT2.7|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui indique le tout premier démarrage sauvegardé en eeprom.
+ENGSTRTSTOP_vidMemrTransStEng|A|();|FCT2.10|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|fonction déterminant la valeur de mémorisation de la transition de CoPTSt_stEng vers Engine_Running
+ENGSTRTSTOP_vidStallRunning|C|();|FCT2.5|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui permet de passer à l'état running.
+ENGSTRTSTOP_vidTransEngine|C|();|FCT2.1|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui permet de redémarrer le moteur.
+ENGSTRTSTOP_vidTransToCranking|C|();|FCT2.3|ENGSTRTSTOP|0|V02 NT 08 05182||||0|0|0|0|Fonction qui permet de tourner le moteur.

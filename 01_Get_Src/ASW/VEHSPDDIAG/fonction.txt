@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|B|(argin uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|B|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0||
+VehSpd_EveRst_MonVehSpd|C|();|SCH.1|VEHSPDDIAG|1|V02 NT 09 01664||||0|0|0|0|Evènement reset de l'ECU.|
+VehSpd_SdlMid_MonVehSpd|C|();|SCH.2|VEHSPDDIAG|1|V02 NT 09 01664||||0|0|0|0|Moniteur moyen|
+VehSpd_SdlSfty_MonVehSpd|A|();|SCH.3|VEHSPDDIAG|1|V02 NT 09 01664||||0|0|0|0|Evènement de calcul des fonctions safety de niveau 2.|
+VEHSPDDIAG_vidActivateDiag|B|();|FCT1.5|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Gère l'activation et l'inhibition du diagnostic du capteur de vitesse véhicule.|
+VEHSPDDIAG_vidCheckStabilityCond|B|();|FCT1.4|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Vérifie les conditions de stabilité du régime véhicule et celles la stabilité de la charge.|
+VEHSPDDIAG_vidConsistDetectActiv|A|();|FCT1.6|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|La détection du défaut revient à tester si la vitesse est insuffisante par rapport aux conditions de fonctionnement  moteur.|
+VEHSPDDIAG_vidConsistency_Test|A|();|FCT1.2|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Le diagnostic de cohérence peut être inhibé manuellement si VehSpd_bInhMonVehSpd_C = 1.|
+VEHSPDDIAG_vidInit|B|();|FCT1.1|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Au reset, on initialise les compteurs de points de mesures sur les conditions de stabilités du régime et de la charge.|
+VEHSPDDIAG_vidMaxValDetectActiv|A|();|FCT1.8|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|La détection du défaut revient à tester si la vitesse est supérieur à un seuil calibrable.|
+VEHSPDDIAG_vidMaxValueTested|B|();|FCT1.7|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Le diagnostic du capteur de vitesse véhicule est activé si : -  Auncune demande d’inhibition provenant du GAR  -  Pas d’inhibition manuelle|
+VEHSPDDIAG_vidRunDiag|C|();|FCT1.3|VEHSPDDIAG|0|V02 NT 09 01664||||0|0|0|0|Le diagnostic du capteur de vitesse est activé si les conditions de stabilité du régime dans une zone spécifique et celles de la charge dans une zone spécifique sont remplies. Il sera inhibé par une demande spécifique du GAR via FRM_bInhMonVehSpd.|
+VEHSPDDIAG_vidSafetyLev2|A|();|FCT1.9|VEHSPDDIAG|1|V02 NT 09 01664||||0|0|0|0| Le but de cette stratégie est de sécuriser l’entrée de mesure (vitesse véhicule) via une stratégie de niveau 2 afin de se prémunir contre les fautes latentes. Cette stratégie est appliquée sur le Test avec un seuil max de vitesse véhicule.|

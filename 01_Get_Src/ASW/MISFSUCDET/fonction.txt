@@ -1,0 +1,24 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Misf_EveMisf_MisfSucDet|B|();|SCH.2|MISFSUCDET|1|PTS_DOC_5198660||||0|0|0|0|Evènement lié à l'interruption logicielle de fin d'acquisition de la fenêtre misfire|
+MISFSUCDET_vidAlgorithme|B|();|FCT1.5|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc se décompose en 2 sous-blocs : Calcul de l’indice de confiance appliqué au « 1er misfire » scruté. Calcul de l’indice de confiance appliqué au « 2ème misfire » scruté|
+MISFSUCDET_vidDecision|B|();|FCT1.6|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc se divise en 2 sous blocs :Le 1er décide si le 1er misfire a effectivement eu lieu. Le 2ème décide si le 2ème misfire a effectivement eu lieu|
+MISFSUCDET_vidDetTwoMisfNotChckd|B|();|FCT1.7|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc permet de remettre la variable Mf_2_misfire_detected_uavb0 à 0 dès lors que la détection de 2 misfires successifs n’est pas vérifiée ( à savoir Mf_2_mf_det_ena_uavb0 = 0 )|
+MISFSUCDET_vidEntryInit|B|();|SCH.1|MISFSUCDET|1|PTS_DOC_5198660||||0|0|0|0|Evénement reset du calculateur|
+MISFSUCDET_vidFirstAlgoTrust|B|();|FCT3.3|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule : l’indice de confiance appliqué au « 1er misfire » scruté et l’indice de confiance appliqué au « 2ième misfire » scruté|
+MISFSUCDET_vidFirstCombDetection|B|();|FCT3.4|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Calcul de l’indice de confiance appliqué au « 1er misfire » scruté|
+MISFSUCDET_vidFirstFilter|B|();|FCT3.2|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Les algorithmes combustions adaptés à la détection de 2 misfires successifs sont calculés selon deux équations.|
+MISFSUCDET_vidFirstFilterMain|B|();|FCT3.1|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule les sorties des algorithmes dédiés à la détection du 1er des 2 misfires|
+MISFSUCDET_vidFirstMisfDetection|B|();|FCT2.1|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule : La sortie des algorithmes. Les indices de confiance correspondant|
+MISFSUCDET_vidFstMisfDecision|B|();|FCT2.3|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc décide si le 1er misfire a effectivement eu lieu|
+MISFSUCDET_vidFstPfiltDetection|B|();|FCT3.5|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Calcul de l’indice de confiance appliqué au « 2ème misfire » scruté|
+MISFSUCDET_vidInitOutput|B|();|FCT1.1|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Initialisation des variables de sorties|
+MISFSUCDET_vidSecondFilter|B|();|FCT3.7|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Les algorithmes combustions adaptés à la détection du 2ième misfire sont calculés selon deux équations|
+MISFSUCDET_vidSndAlgoTrust|B|();|FCT3.8|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule : l’indice de confiance appliqué au « 1er misfire » scruté et l’indice de confiance appliqué au « 2ième misfire » scruté|
+MISFSUCDET_vidSndCombDetection|B|();|FCT3.9|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Calcul de l’indice de confiance appliqué au « 1er misfire » scruté|
+MISFSUCDET_vidSndFilterMain|B|();|FCT3.6|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule les sorties des algorithmes dédiés à la détection du 2ième misfire|
+MISFSUCDET_vidSndMisfDecision|B|();|FCT2.4|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc décide si le 2ème misfire a effectivement eu lieu|
+MISFSUCDET_vidSndMisfDetection|B|();|FCT2.2|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc calcule : La sortie des algorithmes. Les indices de confiance correspondant du 2ième misfire|
+MISFSUCDET_vidSndPfiltDetect|B|();|FCT3.10|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Calcul de l’indice de confiance appliqué au « 2ème misfire » scruté|
+MISFSUCDET_vidSuccessiveMisfires|B|();|FCT1.4|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc permet d’activer la stratégie de détection de 2 misfires successifs dès lors que la sortie unique est supérieure à un seuil calibrable.|
+MISFSUCDET_vidSucMisfDetection|B|();|FCT1.3|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|Ce bloc est constitué de 3 modules dont les fonctions sont respectivement: L’activation de la stratégie de détection. Le calcul des nouveaux algorithmes. La décision permettant de dire si 2 misfires successifs se sont produits ou non.|
+MISFSUCDET_vidSucMisfDetectMain|B|();|FCT1.2|MISFSUCDET|0|PTS_DOC_5198660||||0|0|0|0|La stratégie de détection de 2 misfires successifs sera calculée si le Booléen ,qui indique que les conditions d'activation des algorithmes sont vérifiées, est mis à '1'|

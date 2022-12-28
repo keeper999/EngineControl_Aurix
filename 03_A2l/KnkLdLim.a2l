@@ -1,0 +1,788 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : KnkLdLim                                                */
+/* !Description     : LOAD LIMITATION IN KNOCK SITUATION                      */
+/*                                                                            */
+/* !Module          : KnkLdLim                                                */
+/*                                                                            */
+/* !File            : KnkLdLim.a2l                                            */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Mar 28 15:46:24 2013                              */
+/*   Model name       : KnkLdLim_AUTOCODE.mdl                                 */
+/*   Model version    : 1.206                                                 */
+/*   Root subsystem   : /KnkLdLim                                             */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/KNKRBLTREATSYS/KNKLDLIM/KnkLdLim$*/
+/* $Revision::   1.3                                                         $*/
+/* $Author::   etsasson                               $$Date::   29 Mar 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   KnkLdLim
+    /*   LongIdentifier */   "KnkLdLim Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkLdLim_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctKnkDetHiThd_C
+       /*   LongIdentifier */   "Seuil haut du compteur cliquetis activant la limitation de charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctKnkDetLoThd_C
+       /*   LongIdentifier */   "Seuil bas du compteur cliquetis desactivant la limitation de charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctSuperKnkDetDec_C
+       /*   LongIdentifier */   "Valeur du décrément utilisé lorsqu'il n'y a pas de super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctSuperKnkDetHiThd_C
+       /*   LongIdentifier */   "Seuil haut du compteur super cliquetis activant la limitation de charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctSuperKnkDetLoThd_C
+       /*   LongIdentifier */   "Seuil bas du compteur super cliquetis desactivant la limitation de charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KNKLDLIM_u8Inhib
+       /*   LongIdentifier */   "Calibration d'inhibition du module KnkLdLim."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctKnkDetDec_C
+       /*   LongIdentifier */   "valeur du décrément utilisé lorsqu'il n'y a pas de cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctKnkDetInc_C
+       /*   LongIdentifier */   "valeur de l'incrément utilisé en cas de détection cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctSuperKnkDetInc_C
+       /*   LongIdentifier */   "Valeur de l'incrément utilisé en cas de détection super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bAcvLdLimAdvCor_C
+       /*   LongIdentifier */   "Calcul de la limitation de charge basée sur la correction d'avance"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bAcvLdLimKnkDet_C
+       /*   LongIdentifier */   "booléen précisant que la limitation de charge (en cliquetis) est basée sur la détection cliquetis et non l'avance"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bAcvLdLimSuperKnkDet_C
+       /*   LongIdentifier */   "Booléen précisant que la limitation de charge (supercliquetis) est basée sur la détection super cliquetis et non l'avance"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bLdLimAdvCor_knk_C
+       /*   LongIdentifier */   "si VRAI, la limitation de de charge basée sur l'avance est incluse dans la limitation de charge cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bLdLimAdvCor_superKnk_C
+       /*   LongIdentifier */   "si VRAI, la limitation de de charge basée sur l'avance est incluse dans la limitation de charge super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bLdLimStra_C
+       /*   LongIdentifier */   "si VRAI, le booléen de limitation de charge en cliquetis inclut également la limitation en super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bStraLdLimKnkDet_C
+       /*   LongIdentifier */   "Booléen indiquant que le supercliquetis doit aussi être pris en compte dans la stratégie cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_agIgHiThd_KnkLdLim_M
+       /*   LongIdentifier */   "Table de seuils de correction d'avance au dela desquels la limitation de charge est demandée (cliquetis)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_6
+       /*   LowerLimit     */   -36.0
+       /*   UpperLimit     */   59.625
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkLdLim_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             KnkMgt_nEng_ldLim_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkLdLim_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   2.9999542236328119E+002
+          AXIS_PTS_REF             KnkMgt_rAirLd_ldLim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_agIgLoThd_KnkLdLim_M
+       /*   LongIdentifier */   "Table de seuils de correction d'avance en dessous desquels la limitation de charge est inhibée (cliquetis)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_6
+       /*   LowerLimit     */   -36.0
+       /*   UpperLimit     */   59.625
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkLdLim_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             KnkMgt_nEng_ldLim_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkLdLim_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   2.9999542236328119E+002
+          AXIS_PTS_REF             KnkMgt_rAirLd_ldLim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_tiFilAgIgKnkCor_C
+       /*   LongIdentifier */   "Constante de temps du filtre de correction d'avance"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkLdLim_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_nEng_ldLim_A
+       /*   LongIdentifier */   "Table de points d'appui pour le régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   KnkLdLim_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_rAirLd_ldLim_A
+       /*   LongIdentifier */   "Table de points d'appui pour la charge."
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   KnkLdLim_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkLdLim_CM_3
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.9999542236328119E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_agIgKnkCorFil
+       /*   LongIdentifier */   "Correction d'avance cliquetis filtrée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   KnkLdLim_CM_10
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -36.0
+       /*   UpperLimit     */   59.625
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_ctSuperKnkDetLdLim
+       /*   LongIdentifier */   "Compteur interne du nombre de detection super cliquetis"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_ctKnkDetLdLim
+       /*   LongIdentifier */   "Compteur interne du nombre de detection cliquetis"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   KnkLdLim_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvTmpLdLimKnkReq
+       /*   LongIdentifier */   "Booléen de limitation de charge temporaire en cas de détection cliquetis"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvTmpLdLimSuperKnkReq
+       /*   LongIdentifier */   "Booléen de limitation de charge temporaire en cas de détection super cliquetis"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvTmpLdLimSuperKnkRaw
+       /*   LongIdentifier */   "Demande brute de limitation de charge en raison de super cliquetis"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bAcvTmpLdLimKnkRaw
+       /*   LongIdentifier */   "Demande brute de limitation de charge en raison de cliquetis"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   KnkMgt_bLdLimKnkAdvCor
+       /*   LongIdentifier */   "Demande de limitation de charge en situation de cliquetis et basée sur la correction d'avance"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   KnkLdLim_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_3
+       /*   LongIdentifier */   "Q = V*218.453333333"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 218.453333333 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            KnkLdLim_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_6
+       /*   LongIdentifier */   "Q = (V+36)*2.66666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 2.66666666667 96 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_7
+       /*   LongIdentifier */   "Q = V*200"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 200 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_8
+       /*   LongIdentifier */   "Q = (V-1)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_9
+       /*   LongIdentifier */   "Q = (V+36)*2.66666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 2.66666666667 96 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkLdLim_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   KnkLdLim_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   KnkLdLim
+       /*   LongIdentifier */   "PTS_DOC_5144542_v02"
+
+       /begin DEF_CHARACTERISTIC
+          KNKLDLIM_u8Inhib
+          KnkMgt_agIgHiThd_KnkLdLim_M
+          KnkMgt_agIgLoThd_KnkLdLim_M
+          KnkMgt_bAcvLdLimAdvCor_C
+          KnkMgt_bAcvLdLimKnkDet_C
+          KnkMgt_bAcvLdLimSuperKnkDet_C
+          KnkMgt_bLdLimAdvCor_knk_C
+          KnkMgt_bLdLimAdvCor_superKnk_C
+          KnkMgt_bLdLimStra_C
+          KnkMgt_bStraLdLimKnkDet_C
+          KnkMgt_ctKnkDetDec_C
+          KnkMgt_ctKnkDetHiThd_C
+          KnkMgt_ctKnkDetInc_C
+          KnkMgt_ctKnkDetLoThd_C
+          KnkMgt_ctSuperKnkDetDec_C
+          KnkMgt_ctSuperKnkDetHiThd_C
+          KnkMgt_ctSuperKnkDetInc_C
+          KnkMgt_ctSuperKnkDetLoThd_C
+          KnkMgt_nEng_ldLim_A
+          KnkMgt_rAirLd_ldLim_A
+          KnkMgt_tiFilAgIgKnkCor_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          KnkMgt_agIgKnkCorFil
+          KnkMgt_bAcvTmpLdLimKnkRaw
+          KnkMgt_bAcvTmpLdLimSuperKnkRaw
+          KnkMgt_bLdLimKnkAdvCor
+          KnkMgt_ctKnkDetLdLim
+          KnkMgt_ctSuperKnkDetLdLim
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          KnkMgt_bAcvTmpLdLimKnkReq
+          KnkMgt_bAcvTmpLdLimSuperKnkReq
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

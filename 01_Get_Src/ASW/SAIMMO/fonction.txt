@@ -1,0 +1,61 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Can_EveSaimmo_TxFrame072|A|();|HD_6|HEADER|1|HEADER||||0|0|0|0||
+Can_EveSaimmo_TxFrame0E8|A|();|HD_5|HEADER|1|HEADER||||0|0|0|0||
+DEVHAL_bCheckEmulCard|A|func_DEVHAL_bCheckEmulCard|14|HEADER|1|NONE||||0|0|0|0||
+Ext_getBInhCdtSpdVehImmo|B|(argin boolean *Immo_bInhCdtSpdVehImmo);|FCT4.6|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Invalid vehicle speed information acquisition function sent by the GAR.|
+Ext_getBInhConf|B|(argin boolean *Immo_bInhConf);|FCT1.15|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function of inhibition of the procedure of confirmation.|
+Ext_getBUnlockAutho|B|(argin boolean *Immo_bUnlockAutho);|FCT1.13|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function of inhibition of the unlock procedure and the automatic pairring|
+Ext_getBUnlockReq|B|(argin boolean *Immo_bUnlockReq, argin boolean *Immo_bMainECUWakeUp);|FCT1.12|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Immobiliser life situation acquisition function|
+Ext_getImmoCodProg|C|(argin uint32 *Ext_noImmoCod, argin uint8 *Ext_stCANMatchOpt, argin uint16 *Ext_stProgImmo, argin uint8 *Ext_stReadImmo);|FCT1.8|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by IMMO to get state of data stored in SA module.|
+Ext_getNInputImmo|B|(argin uint16 *Immo_nInput);|FCT1.14|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Engine speed acquisition function.|
+Ext_getRandomUInt32|B|(argin uint32 *Ext_noUInt32Random);|FCT1.9|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Get a random data on 4 bytes.|
+Ext_getSpdVehImmo|B|(argin uint8 *Immo_spdVeh);|FCT1.11|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Vehicle speed acquisition function|
+Ext_getStLockECU|B|(argin uint8 *Ext_stLockECU);|FCT1.4|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function which allow module to get the value of the ECUlock state store in the SAIMMO. If the state is not "LOCK" or "UNLOCK", we return the "INVALID" state.|
+Ext_sendBLockECUCANImmo|B|(argin boolean Immo_bLockECUCAN);|FCT2.3|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Request to send the ECU lock State on the CAN network.|
+Ext_sendNegAnswImmo|B|(argin uint8 Immo_stNegAnswSrv, argin uint8 Immo_noNegAnswCod);|FCT3.7|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|interface function called by IMMO. Used to send a negative answer for a UDS request.|
+Ext_sendNoSeedImmo|B|(argin uint32 Immo_noSeed, argin uint8 Immo_stCANEmiTyp);|FCT2.4|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Request to send the seed on the CAN Network. The type of  send could be : stop transmission, send one frame or send  periodical.|
+Ext_sendPosAnswImmoReadSt|B|(argin uint8 Immo_stLockECUReadSt, argin uint8 Immo_stProgImmoReadSt, argin uint8 Immo_bfImmoReadStDft, argin uint8 Immo_stCANMatchOptReadSt);|FCT3.5|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+Ext_sendPosAnswRCImmo|B|(argin uint8 Immo_noRC, argin uint8 Immo_stRCSrv1, argin uint8 Immo_stRCSrv2);|FCT3.6|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+Ext_setBDgoImmoCodNotRead|B|(argin boolean bLocalImmo_bDgoImmoCodNotRead, argin boolean Immo_bMonRunImmoCodNotRead);|FCT4.5|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Demande d’envoi du défaut « Lecture du Code ADC impossible » au gestionnaire de diagnostic simplifié.|
+Ext_setBDgoNoAnswCtlUnit|B|(argin boolean bLocalImmo_bDgoNoAnswCtlUnit, argin boolean Immo_bMonRunNoAnswCtlUnit);|FCT4.3|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Demande d’envoi du défaut « Absence de réponse UCx » au gestionnaire de diagnostic simplifié.|
+Ext_setBDgoWrgAnswCtlUnit|B|(argin boolean bLocalImmo_bDgoWrgAnswCtlUnit, argin boolean Immo_bMonRunWrgAnswCtlUnit);|FCT4.4|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Demande d’envoi du défaut « Réponse UCx incorrecte » au gestionnaire de diagnostic simplifié|
+Ext_setBECUAwakeImmoNeed|B|(argin boolean bEcuAwakeImmoNeed);|FCT1.10|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by IMMO to alert the S.A. of the new power latch need for the ADC function.|
+Ext_setImmoCod|B|(argin uint32 Immo_noImmoCodWr, argin uint8 Immo_stCANMatchOptWr);|FCT1.6|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by module IMMO to write in SA the ADC type and code. The data are stored in EEPROM and the SA should return the writing status in EEPROM to IMMO with a perioical function.|
+Ext_setImmoProg|C|(argin uint16 Immo_stProgImmoWr);|FCT1.7|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by IMMO to update the Programmation state stored in SA (in no volatil memory).|
+Ext_setStCANOptImmoEve|B|(argin uint8 Immo_stCANOptEve);|FCT4.1|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Indicate to the SA the new ADC CAN option.|
+Ext_setStLockECU|B|(argin uint8 Immo_stLockECU);|FCT1.5|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|function used by the IMMO module to set the ECU lock state memorized in SAIMMO. The state is duplicate on 2 data.|
+Ext_setStMatchProgImmoEve|B|();|FCT4.2|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Indicate to SA if the UCM is paired or not.|
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|HD|HEADER|1|HEADER||||0|0|0|0||
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|1|HEADER|1|HEADER||||0|0|0|0||
+GDGAR_vidMngEveRstDftApv|A|();|HD|HEADER|1|HD||||0|0|0|0||
+Immo_100ms|A|();|HD_2|HEADER|1|HEADER||||0|0|0|0||
+Immo_EndWr|A|(argin uint8 Ext_stEndWrImmo);|HD_3|HEADER|1|HEADER||||0|0|0|0||
+Immo_GetConf|B|(argout uint8 *Immo_stProgImmoConf, argout boolean *Immo_bLockECUConf, argout uint8 *Immo_stCANOptConf);|4|HEADER|1|HEADER||||0|0|0|0||
+Immo_Init|A|();|HD_01|HEADER|1|HEADER||||0|0|0|0||
+Immo_KeyMgt|B|(argin uint32 Ext_noKeyCtlUnit, argin uint8 Ext_noRcvSrvTypImmo);|HD|HEADER|1|HEADER||||0|0|0|0||
+Immo_ReqCtlCod|A|(argin uint32 Ext_noImmoCodTestDiag);|HD|HEADER|1|HEADER||||0|0|0|0||
+Immo_ReqMatch|A|(argin uint8 Ext_stMatchSrvDiag);|HD|HEADER|1|HEADER||||0|0|0|0||
+Immo_ReqReadSt|A|();|HD|HEADER|1|HEADER||||0|0|0|0||
+Immo_ReqWrCod|A|(argin uint32 Ext_noImmoCodProgDiag, argin uint8 Ext_stCANMatchOptDiag);|HD|HEADER|1|HEADER||||0|0|0|0||
+NVMSRV_u8GetStatus|B|func_NVMSRV_u8GetStatus|HD_7|HEADER|1|HEADER||||0|0|0|0||
+NVMSRV_u8WriteStatus|A|func_NVMSRV_u8WriteStatus|HD_8|HEADER|1|HEADER||||0|0|0|0||
+NVMSRV_vidWrite|A|(argin NVMSRV_tudtObjectList udtObject, argin boolean bMode);|2|HEADER|1|V03 NT 08 04754||||0|0|0|0||
+RND_vidReadRandomNumber|B|(argin uint32 *Ext_noUInt32Random);|HD|HEADER|1|HEADER||||0|0|0|0||
+SAIMMO_CODE__nvmini|F|();|FCT5.2|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Init the EEPROM object SAIMMO_CODE if it is in default and if the first init has never been done.|
+SAIMMO_ETAT__nvmini|F|();|FCT5.1|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|init the EEPROM object SAIMMO_ETAT if it is in default and if the first init has never been done.|
+SAIMMO_EveRst|G|();|SCH.1|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called on reset. It calls IMMO's function (if necessary) and intializes the internal SAIMMO data.|
+SAIMMO_EveRxn0A8|F|();|FCT2.2|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by the ISCAN on the frame 0A8 reception.|
+SAIMMO_EveRxn0E0|F|();|FCT2.1|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Function called by the ISCAN on the frame 0E0 reception.|
+SAIMMO_init|D|();|FCT5.3|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Call the IMMO module function if the module hanve not been already activated.|
+SAIMMO_SdlMid|G|();|SCH.2|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Call on event "sdlMid". It sequences the IMMO tasks at the Sdl_Mid recurence.|
+SAIMMO_vidCallIsCanTx|E|();|FCT2.5|SAIMMO|0|PTS_DOC_5060905||||0|0|0|0|Call the right function (client or PSA) to send data on ISCAN.|
+SAIMMO_vidChkWrEep|G|();|FCT1.1|SAIMMO|0|PTS_DOC_5060905||||0|0|0|0|check the EEPROM object writing and send the status to IMMO.|
+SAIMMO_vidSdlFast|H|();|SCH.3|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0|Call on event "sdlFast". It sequences the IMMO tasks at the Sdl_fast recurence.|
+SAIMMO_vidSendCAN|E|();|FCT1.3|SAIMMO|0|PTS_DOC_5060905||||0|0|0|0|Management of the periodic emission of CAN frames.|
+SAIMMO_vidUpdateSaimmoExit|F|();|FCT1.2|SAIMMO|0|PTS_DOC_5060905||||0|0|0|0|Update the SAIMMO exit data with the value get from IMMO.|
+Srv_EveFirstInitDone_NvmDiag|A|();|HD_9|HEADER|1|HEADER||||0|0|0|0||
+Srv_EveRcChkCodProg|B|();|FCT3.4|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+Srv_EveRcMatch|B|();|FCT3.3|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+Srv_EveRcWrCodProg|B|();|FCT3.2|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+Srv_EveRdByDidADC|B|();|FCT3.1|SAIMMO|1|PTS_DOC_5060905||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|HEADER||||0|0|0|0|header|

@@ -1,0 +1,1928 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : tFuM                                                    */
+/* !Description     : tFuM  Fuel temperature estimation                      */
+/*                                                                            */
+/* !Module          : tFuM                                                    */
+/*                                                                            */
+/* !File            : tFuM.a2l                                                */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Aug 30 11:09:41 2012                              */
+/*   Model name       : tFuM_AUTOCODE.mdl                                     */
+/*   Model version    : 1.502                                                 */
+/*   Root subsystem   : /tFuM                                                 */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/tFuM/5-SOFT-LIV/tFuM.a2v    $*/
+/* $Revision::   1.11                                                        $*/
+/* $Author::   adelvare                               $$Date::   30 Aug 2012 $*/
+/******************************************************************************/
+
+/begin MODULE tFuM  "tFuM Software Component"
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT tFuM_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgUndHo_M
+    /* Long Identifier        */      "Cartographie du facteur d'échange thermique de la température sous capot"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_rSpdFanReq_A
+    /* Long Identifier        */      "Table de points d'appui en consigne de GMV"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      126.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_spdVeh_A
+    /* Long Identifier        */      "Table de points d'appuis en vitesse véhicule"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_3
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_rGainFilUndHo_M
+    /* Long Identifier        */      "Cartoographie du gain du filtre de la température sous capot"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_rCorTFuIni_M
+    /* Long Identifier        */      "Table de correctifs de la température carburant dans le rail pour l'initialisation"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_5
+    /* Lower Limit            */      -0.9921875
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_tiEcuStop
+      /* Conversion Method    */      tFuM_CM_6
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      864000.0
+      AXIS_PTS_REF                    FuSysM_tiEngStop_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_7
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    FuSysM_tCoMes_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_tiEngStop_A
+    /* Long Identifier        */      "Table de points d'appuis sur la durée d'arrêt moteur"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      FuSysM_tiEcuStop
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_ULONG
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_6
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      864000.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_tCoMes_A
+    /* Long Identifier        */      "Table de points d'appuis en température d'eau"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_7
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_rCorTFuUsPmpIni_M
+    /* Long Identifier        */      "Table de correctifs de la température carburant en amont de la pompe HP pour l'initialisation"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_5
+    /* Lower Limit            */      -0.9921875
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_tiEcuStop
+      /* Conversion Method    */      tFuM_CM_6
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      864000.0
+      AXIS_PTS_REF                    FuSysM_tiEngStop_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_7
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    FuSysM_tCoMes_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facCormfFutFuUsPmpEng_T
+    /* Long Identifier        */      "Table de facteur correctif de l'influence du débit carburant sur les échanges thermiques entre le carburant en amont de la pompe HP et le moteur"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_mfFuEstim_A
+    /* Long Identifier        */      "Table de points d'appuis en débit massique d'essence estimé"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      FuSysM_mfFuEstim
+    /* Record Layout          */      tFuM_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_9
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609374999999E-002
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facCormfFutFuUsPmpExt_T
+    /* Long Identifier        */      "Table de facteur correctif de l'influence du débit carburant sur les échanges thermiques entre le carburant en amont de la pompe HP et l'air extérieur"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facCormfFutFuUsPmp_T
+    /* Long Identifier        */      "Table de facteur correctif de l'influence du débit carburant sur les échanges thermiques du carburant en amont de la pompe HP"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgtEngtFuUsPmp_M
+    /* Long Identifier        */      "Cartographie de facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air sous capot fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgtExttFuUsPmp_M
+    /* Long Identifier        */      "Cartographie de facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air extérieur fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tFuUsPmpWaPmpOff_M
+    /* Long Identifier        */      "Cartographie de température carburant amont pompe HP lorsque la pompe à eau est inactive fonction de la température d'air extérieur et de la température d'eau"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_10
+    /* Lower Limit            */      -4.0149999999999977E+001
+    /* Upper Limit            */      2.1485000000000002E+002
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_11
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      200.0
+      AXIS_PTS_REF                    FuSysM_tAirExtMes_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_7
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    FuSysM_tCoMes_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_tAirExtMes_A
+    /* Long Identifier        */      "Table de points d'appuis en température d'air extérieur"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_11
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      200.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tFuUsPmpWaPmpOn_M
+    /* Long Identifier        */      "Cartographie de température carburant amont pompe HP lorsque la pompe à eau est active fonction de la température d'air extérieur et de la température d'eau"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_10
+    /* Lower Limit            */      -4.0149999999999977E+001
+    /* Upper Limit            */      2.1485000000000002E+002
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_11
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      200.0
+      AXIS_PTS_REF                    FuSysM_tAirExtMes_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_7
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    FuSysM_tCoMes_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tiFilBastFuUsPmp_M
+    /* Long Identifier        */      "Cartographie du temps de réponse de la variation de la température du carburant en amont de la pompe HP fonction de la température d'eau et de la température d'air extérieur"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_12
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_11
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      200.0
+      AXIS_PTS_REF                    FuSysM_tAirExtMes_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_7
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    FuSysM_tCoMes_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tiFilExgtFuUsPmp_M
+    /* Long Identifier        */      "Cartographie du temps de réponse des échanges thermiques avec le carburant en amont de la pompe HP fonction de la vitesse véhicule de la vitesse de rotation du GMV"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_12
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgAirStalltFuUsPmp_T
+    /* Long Identifier        */      "Table de facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air extérieur moteur à l'arrêt"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facCormfFutFuExgWa_T
+    /* Long Identifier        */      "Table de facteur correctif de l'échange thermique entre le carburant dans le rail et le moteur fonction du débit de masse de carburant"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facCormfFutFu_T
+    /* Long Identifier        */      "Table de facteur correctif de l'échange thermique entre le carburant dans le rail et l'air sous capot fonction du débit de masse de carburant"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgmfFu_M
+    /* Long Identifier        */      "Cartographie du facteur correctif de la température rail en fonction du débit de carburant et de la pression dans le rail"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_13
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      5.1199218750000006E+002
+      AXIS_PTS_REF                    FuSysM_pFuRail_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      FuSysM_mfFuEstim
+      /* Conversion Method    */      tFuM_CM_9
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      2.5599609374999999E-002
+      AXIS_PTS_REF                    FuSysM_mfFuEstim_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      FuSysM_pFuRail_A
+    /* Long Identifier        */      "Table de points d'appuis en pression rail"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      tFuM_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_13
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.1199218750000006E+002
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgtEngtFu_M
+    /* Long Identifier        */      "Cartographie de facteur d'échange thermique entre l'air sous capot et le carburant dans le rail fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_3
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      255.0
+      AXIS_PTS_REF                    FuSysM_spdVeh_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgAirStalltFu_T
+    /* Long Identifier        */      "Table de facteur d'échange thermique entre le carburant dans le rail et l'air extérieur moteur à l'arrêt"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      tFuM_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      126.0
+      AXIS_PTS_REF                    FuSysM_rSpdFanReq_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgWatFuUsPmp_C
+    /* Long Identifier        */      "Facteur d'échange thermique entre le carburant en amont de la pompe HP et le moteur à l'état calé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_facExgWatFu_C
+    /* Long Identifier        */      "Facteur d'échange thermique entre le carburant dans le rail et le moteur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      TFUM_u8Inhib
+    /* Long Identifier        */      "Calibration d'inhibition du module tFuM"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_14
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_bAcvTFuETB_C
+    /* Long Identifier        */      "Booléen d'activation du mode banc pour le calcul de la température du carburant"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tFuETB_C
+    /* Long Identifier        */      "Température carburant dans le rail en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_10
+    /* Lower Limit            */      -4.0149999999999977E+001
+    /* Upper Limit            */      2.1485000000000002E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      FuSysM_tFuUsPmpETB_C
+    /* Long Identifier        */      "Température carburant amont pompe en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      tFuM_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      tFuM_CM_10
+    /* Lower Limit            */      -4.0149999999999977E+001
+    /* Upper Limit            */      2.1485000000000002E+002
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tEng
+    /* Long identifier        */      "Température air sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpFineRsl
+    /* Long identifier        */      "Température carburant en amont de la pompe (résolution fine)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuFineRsl
+    /* Long identifier        */      "Température carburant dans le rail (résolution fine)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_rCorTFuIni
+    /* Long identifier        */      "Correctif de la température carburant dans le rail pour l'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -1.0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_rCorTFuUsPmpIni
+    /* Long identifier        */      "Correctif de la température carburant en amont de la pompe HP pour l'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -1.0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpPrev
+    /* Long identifier        */      "Valeur précédente de la température carburant amont pompe"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuPrev
+    /* Long identifier        */      "Température carburant dans le rail du pas de temps précédent"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -5.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_factFuExgAirStall
+    /* Long identifier        */      "Facteur d'échange thermique entre le carburant dans le rail et l'air extérieur moteur à l'arrêt"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFutAirDifStall
+    /* Long identifier        */      "Différence de température entre le carburant dans le rail et l'air extérieur moteur calé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFutWaDifStall
+    /* Long identifier        */      "Différence de température entre le carburant dans le rail et le moteur, moteur calé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgWaStallCor
+    /* Long identifier        */      "Correctif en température sur la température dans le rail dû à l'échange thermique avec le moteur, moteur calé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgAirStallCor
+    /* Long identifier        */      "Correctif en température sur la température dans le rail dû à l'échange thermique avec l'air extérieur moteur à l'arrêt"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facCormfFutFuExgWa
+    /* Long identifier        */      "Facteur correctif de l'échange thermique entre le carburant dans le rail et le moteur fonction du débit de masse de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facCormfFutFu
+    /* Long identifier        */      "Facteur correctif de l'échange thermique entre le carburant dans le rail et l'air sous capot fonction du débit de masse de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgmfFu
+    /* Long identifier        */      "Facteur correctif de la température rail en fonction du débit de carburant et de la pression dans le rail"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgtEngtFu
+    /* Long identifier        */      "Facteur d'échange thermique entre l'air sous capot et le carburant dans le rail fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFutWaDif
+    /* Long identifier        */      "Différence de température entre le carburant dans le rail et le moteur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFutFuUsPmpDif
+    /* Long identifier        */      "Différence de température entre le carburant dans le rail et le carburant en amont de la pompe HP"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFutEngDif
+    /* Long identifier        */      "Différence de température entre le carburant dans le rail et l'air sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgtEngRaw
+    /* Long identifier        */      "Correctif en température sur la température dans le rail dû à l'échange thermique avec l'air sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgtEngCor
+    /* Long identifier        */      "Correctif en température sur la température dans le rail dû à l'échange thermique avec l'air sous capot, corrigé par le flux de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgmfFuCor
+    /* Long identifier        */      "Correctif en température dû au flux de carburant dans le rail et à la mise sous pression du carburant par la pompe HP"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuExgWaCor
+    /* Long identifier        */      "Correctif en température sur la température dans le rail dû à l'échange thermique avec le moteur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgAirtFuUsPmp
+    /* Long identifier        */      "Facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air extérieur moteur à l'arrêt"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpAirDifStall
+    /* Long identifier        */      "Différence de température entre le carburant en amont de la pompe HP et l'air extérieur moteur calé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpWaDifStall
+    /* Long identifier        */      "Différence de température entre le carburant en amont de la pompe HP et le moteur, moteur calé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpExgWaCor
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec le moteur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpExgAirCor
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air extérieur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tiFilBastFuUsPmp
+    /* Long identifier        */      "Temps de réponse de la variation de la température du carburant en amont de la pompe HP fonction de la température d'eau et de la température d'air extérieur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1023.984375
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facCormfFutFuUsPmp
+    /* Long identifier        */      "Facteur correctif des échanges thermiques avec le carburant en amont de la pompe HP fonction du débit de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpBasRaw
+    /* Long identifier        */      "Température carburant en amont de la pompe HP issue de la cartographie air/eau avant filtrage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpBasCorRaw
+    /* Long identifier        */      "Température carburant en amont de la pompe HP issue de la cartographie air/eau corrigé par l'influence du débit avant filtrage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpBasFil
+    /* Long identifier        */      "Température carburant en amont de la pompe HP issue de la cartographie air/eau filtrée"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tiFilExgtFuUsPmp
+    /* Long identifier        */      "Temps de réponse des échanges thermiques avec le carburant en amont de la pompe HP fonction de la vitesse véhicule de la vitesse de rotation du GMV"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1023.984375
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facCormfFutFuUsPmpExt
+    /* Long identifier        */      "Facteur correctif des échanges thermiques entre le carburant en amont de la pompe HP et l'air extérieur fonction du débit de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpAirDif
+    /* Long identifier        */      "Différence de température entre le carburant en amont de la pompe HP et l'air extérieur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgtExttFuUsPmp
+    /* Long identifier        */      "Facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air extérieur fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpExtRaw
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air extérieur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpExtCorRaw
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air extérieur corrigé par le flux de carburant, non filtré"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpExtCorFil
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air extérieur corrigé par le flux de carburant, filtré"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facCormfFutFuUsPmpEng
+    /* Long identifier        */      "Facteur correctif des échanges thermiques entre le carburant en amont de la pompe HP et le moteur fonction du débit de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmptEngDif
+    /* Long identifier        */      "Différence de température entre le carburant en amont de la pompe HP et l'air sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgtEngtFuUsPmp
+    /* Long identifier        */      "Facteur d'échange thermique entre le carburant en amont de la pompe HP et l'air sous capot fonction de la vitesse véhicule et de la vitesse de rotation du GMV"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpEngRaw
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air sous capot avant filtrage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpEngCorRaw
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air sous capot, corrigé par le flux de carburant avant filtrage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmpEngCorFil
+    /* Long identifier        */      "Correctif en température sur la température en amont de la pompe HP dû à l'échange thermique avec l'air sous capot, corrigé par le flux de carburant"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0115E+002
+    /* Upper limit            */      -1.4614999999999998E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tOiltAirDif
+    /* Long identifier        */      "Différence de température entre l'huile et l'air extérieur"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -128.0
+    /* Upper limit            */      127.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_facExgUndHo
+    /* Long identifier        */      "Facteur d'échange thermique de la température sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      9.9998474121093750E-001
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tEngRaw
+    /* Long identifier        */      "Température air sous capot avant filtrage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_rGainFilUndHo
+    /* Long identifier        */      "Gain du filtre de la température sous capot"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tEngPrev
+    /* Long identifier        */      "Température air sous capot du pas de temps précédent"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      tFuM_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tiEcuStop
+    /* Long identifier        */      "Durée d'arrêt de l'ECU"
+    /* Data type              */      ULONG
+    /* Conversion method      */      tFuM_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      864000.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFu
+    /* Long identifier        */      "Température carburant dans le rail"
+    /* Data type              */      UWORD
+    /* Conversion method      */      tFuM_CM_19
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      233.0
+    /* Upper limit            */      488.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_mfFuEstim
+    /* Long identifier        */      "Débit massique d'essence estimé"
+    /* Data type              */      UWORD
+    /* Conversion method      */      tFuM_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609374999999E-002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_bAcvTFuInit
+    /* Long identifier        */      "Booléen d'activation de l'initialisation de la temperature carburant"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      tFuM_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_bRstFil
+    /* Long identifier        */      "Booléen d'initialisation pour les filtres du modèle de température carburant"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      tFuM_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      FuSysM_tFuUsPmp
+    /* Long identifier        */      "Température carburant en amont de la pompe"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      tFuM_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -4.0149999999999977E+001
+    /* Upper limit            */      2.1485000000000002E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_1
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_2
+    /* Long identifier        */      "Q = V/2"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 2
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "km/h"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_4
+    /* Long identifier        */      "Q = V*32768"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 32768 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_5
+    /* Long identifier        */      "Q = (V+0.9921875)*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 128 127 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_6
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_7
+    /* Long identifier        */      "Q = (V+40)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 40 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_8
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_9
+    /* Long identifier        */      "Q = V*2560000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/s"
+    /* Coefficients           */      COEFFS 0 2560000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_10
+    /* Long identifier        */      "Q = (V+40.15)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 40.15 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_11
+    /* Long identifier        */      "Q = (V+50)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 50 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_12
+    /* Long identifier        */      "Q = V*64"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 64 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_13
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "bar"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_14
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s.u."
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF tFuM_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      tFuM_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_16
+    /* Long identifier        */      "Q = (V+273.15)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 273.15 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_17
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_18
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      tFuM_CM_19
+    /* Long identifier        */      "Q = (V-233)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 1 -233 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION tFuM
+    "V02NT1200996.002"
+    
+    /begin LOC_MEASUREMENT
+      FuSysM_bAcvTFuInit
+      FuSysM_bRstFil
+      FuSysM_facCormfFutFu
+      FuSysM_facCormfFutFuExgWa
+      FuSysM_facCormfFutFuUsPmp
+      FuSysM_facCormfFutFuUsPmpEng
+      FuSysM_facCormfFutFuUsPmpExt
+      FuSysM_facExgAirtFuUsPmp
+      FuSysM_facExgUndHo
+      FuSysM_facExgmfFu
+      FuSysM_facExgtEngtFu
+      FuSysM_facExgtEngtFuUsPmp
+      FuSysM_facExgtExttFuUsPmp
+      FuSysM_factFuExgAirStall
+      FuSysM_mfFuEstim
+      FuSysM_rCorTFuIni
+      FuSysM_rCorTFuUsPmpIni
+      FuSysM_rGainFilUndHo
+      FuSysM_tEng
+      FuSysM_tEngPrev
+      FuSysM_tEngRaw
+      FuSysM_tFuExgAirStallCor
+      FuSysM_tFuExgWaCor
+      FuSysM_tFuExgWaStallCor
+      FuSysM_tFuExgmfFuCor
+      FuSysM_tFuExgtEngCor
+      FuSysM_tFuExgtEngRaw
+      FuSysM_tFuFineRsl
+      FuSysM_tFuPrev
+      FuSysM_tFuUsPmpAirDif
+      FuSysM_tFuUsPmpAirDifStall
+      FuSysM_tFuUsPmpBasCorRaw
+      FuSysM_tFuUsPmpBasFil
+      FuSysM_tFuUsPmpBasRaw
+      FuSysM_tFuUsPmpEngCorFil
+      FuSysM_tFuUsPmpEngCorRaw
+      FuSysM_tFuUsPmpEngRaw
+      FuSysM_tFuUsPmpExgAirCor
+      FuSysM_tFuUsPmpExgWaCor
+      FuSysM_tFuUsPmpExtCorFil
+      FuSysM_tFuUsPmpExtCorRaw
+      FuSysM_tFuUsPmpExtRaw
+      FuSysM_tFuUsPmpFineRsl
+      FuSysM_tFuUsPmpPrev
+      FuSysM_tFuUsPmpWaDifStall
+      FuSysM_tFuUsPmptEngDif
+      FuSysM_tFutAirDifStall
+      FuSysM_tFutEngDif
+      FuSysM_tFutFuUsPmpDif
+      FuSysM_tFutWaDif
+      FuSysM_tFutWaDifStall
+      FuSysM_tOiltAirDif
+      FuSysM_tiEcuStop
+      FuSysM_tiFilBastFuUsPmp
+      FuSysM_tiFilExgtFuUsPmp
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      FuSysM_tFu
+      FuSysM_tFuUsPmp
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      FuSysM_bAcvTFuETB_C
+      FuSysM_facCormfFutFuExgWa_T
+      FuSysM_facCormfFutFuUsPmpEng_T
+      FuSysM_facCormfFutFuUsPmpExt_T
+      FuSysM_facCormfFutFuUsPmp_T
+      FuSysM_facCormfFutFu_T
+      FuSysM_facExgAirStalltFuUsPmp_T
+      FuSysM_facExgAirStalltFu_T
+      FuSysM_facExgUndHo_M
+      FuSysM_facExgWatFuUsPmp_C
+      FuSysM_facExgWatFu_C
+      FuSysM_facExgmfFu_M
+      FuSysM_facExgtEngtFuUsPmp_M
+      FuSysM_facExgtEngtFu_M
+      FuSysM_facExgtExttFuUsPmp_M
+      FuSysM_mfFuEstim_A
+      FuSysM_pFuRail_A
+      FuSysM_rCorTFuIni_M
+      FuSysM_rCorTFuUsPmpIni_M
+      FuSysM_rGainFilUndHo_M
+      FuSysM_rSpdFanReq_A
+      FuSysM_spdVeh_A
+      FuSysM_tAirExtMes_A
+      FuSysM_tCoMes_A
+      FuSysM_tFuETB_C
+      FuSysM_tFuUsPmpETB_C
+      FuSysM_tFuUsPmpWaPmpOff_M
+      FuSysM_tFuUsPmpWaPmpOn_M
+      FuSysM_tiEngStop_A
+      FuSysM_tiFilBastFuUsPmp_M
+      FuSysM_tiFilExgtFuUsPmp_M
+      TFUM_u8Inhib
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/

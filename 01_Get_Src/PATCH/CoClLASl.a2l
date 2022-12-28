@@ -1,0 +1,1390 @@
+/begin MODULE  CoClLASl "CoClLASl 13.0"
+
+    /begin CHARACTERISTIC COCLLASL_ACTIVE_BYP_C "Bypass"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoClLASl_ModuleVersion_Major_MP "CoClLASl_ModuleVersion_Major_MP"
+      UBYTE CoClLASl_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoClLASl_ModuleVersion_Minor_MP "CoClLASl_ModuleVersion_Minor_MP"
+      UBYTE CoClLASl_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallBrk "Condition d activation sur l appui frein"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoPt_bAcvAntiStallBrk_C "Prise en compte de l info frein pour l anticalage"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_bAcvAntiStallFil_B "Bypass de CoPt_bAcvAntiStallFil"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallNEng "Condition d activation sur le regime moteur"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallNGrd "Condition d activation sur le gradient de regime"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallRaw "Condition d activation de l anticalage brute"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallSpdVeh "Condition de desactivation sur la vitesse vehicule"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoPt_bAcvAntiStallStCpl_T "Activation de l anticalage en fonction de l etat couplage"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_2 /* :1:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_2 /* :1:0: */ 4 0 3
+    AXIS_PTS_REF CoPt_stCplAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoPt_bAcvAntiStallStPt "Condition d activation sur l etat de la chaine de traction"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoPt_bAcvAntiStallStPt_C "Activation de l anticalage en cas de defaut des infos d etat chaine de traction"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoPt_bAuthAcvAntiStall "Autorisation d activation de la strategie d anticalage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoPt_nAcvAntiStall_C "Regime pour activer l anticalage"
+      VALUE 0x0 CoClLASl_RL_UWORD 7500 CoClLASl_CM_3 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_nGrdThdAntiStallDft_C "Gradient de regime pour activer l anticalage en cas de defauts"
+      VALUE 0x0 CoClLASl_RL_SWORD 16000 CoClLASl_CM_4 /* rpm/s:1:0: */ -8000 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_nGrdThdAntiStall_C "Gradient de regime pour activer l anticalage"
+      VALUE 0x0 CoClLASl_RL_SWORD 16000 CoClLASl_CM_4 /* rpm/s:1:0: */ -8000 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_nThdAntiStall_T "Regime mini pour activer l anticalage"
+      CURVE 0x0 CoClLASl_RL_UWORD 8000 CoClLASl_CM_3 /* rpm:1:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF CoPt_tCoAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_spdThdAntiStall_C "Seuil de vitesse pour desactiver l anticalage"
+      VALUE 0x0 CoClLASl_RL_UWORD 500 CoClLASl_CM_5 /* km/h:1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS CoPt_stCplAntiStall_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_UWORD_AXIS 3 CoClLASl_CM_2 /* :1:0: */ 4 0 3
+    /end AXIS_PTS
+
+    /begin AXIS_PTS CoPt_tCoAntiStall_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_SWORD_AXIS 254 CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC CoPt_tCoDft_C "Temperature d eau moteur en cas de defaut"
+      VALUE 0x0 CoClLASl_RL_SWORD 254 CoClLASl_CM_6 /* deg C:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tiDeacAntiStallIdl_C "Tempo de maintien de l anticalage pour le ralenti"
+      VALUE 0x0 CoClLASl_RL_UWORD 5 CoClLASl_CM_7 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tiDeacAntiStallSmk_C "Tempo de maintien de l anticalage pour les cartos fumees"
+      VALUE 0x0 CoClLASl_RL_UWORD 5 CoClLASl_CM_7 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tiDeacAntiStallSpd_C "Tempo pour desactiver l anticalage sur une condition de vitesse"
+      VALUE 0x0 CoClLASl_RL_UWORD 5 CoClLASl_CM_7 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tiDeacAntiStall_C "Tempo de maintien de l anticalage"
+      VALUE 0x0 CoClLASl_RL_UWORD 5 CoClLASl_CM_7 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoPt_tiMaxAntiStall_C "Tempo max d activation de l anticalage"
+      VALUE 0x0 CoClLASl_RL_UWORD 5 CoClLASl_CM_7 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC ESLim_bAcvEngSpdLim_B "Bypass de ESLim_bAcvEngSpdLim"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqCkCurDrivFil_B "Bypass de EngLim_tqCkCurDrivFil"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC EngLim_tqDeltaLimMaxAir_C "Delta de couple pour limitation de la branche Air"
+      VALUE 0x0 CoClLASl_RL_UWORD 2000 CoClLASl_CM_8 /* Nm:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT EngLim_tqIdcAirLimAfterRes_irv "Couple de limitation apres la coordination des reserves sur la branche air"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EngLim_tqIdcAirLim_irv_MP "Couple de limitation apres la coodination du ralenti sur la branche air"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC EngLim_tqIdcEngLimMax_B "Bypass de EngLim_tqIdcEngLimMax"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT EngLim_tqIdcLimDsl "Couple max de limitation de la branche injection specifique diesel"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EngLim_tqIdcLimGsl "Couple max de limitation de la branche injection specifique essence"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC EngLim_tqIdcLim_B "Bypass de EngLim_tqIdcLim"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT EngLim_tqIdcMaxNRegDsl "Couple de limitation pour la regulation de regime BV specifique diesel"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT EngLim_tqIdcMaxNRegGsl "Couple de limitation pour la regulation de regime BV specifique essence"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC EngLim_tqIdcMaxNReg_B "Bypass de EngLim_tqIdcMaxNReg"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT IdlSys_tqIdcIdlAirSBPA_irv_MP "Amplitude de la correction de la fonction SBPA Air apres activation"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT IdlSys_tqIdcIdlAvSBPA "Amplitude de la correction de la fonction SBPA Avance apres activation"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bAcvCllPrev "Booleen de demande de bouclage aupas precedent"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bAcvCllRaw "Etat global de bouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_bAcvCll_B "Bypass de TqCll_bAcvCll"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_bCondTmrAcv_C "Booleen d activation de la condition sur le timer pour le reset de la transition de debouclage"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_bForcCll_B "Bypass de TqCll_bForcCll"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_bLimTranAcv_C "Booleen d activation des limitation en transition de bouclage/debouclage --------"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_bReqCll "Etat de la demande globale de bouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bReqCllGbl "Synthese des demandes de bouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_bReqCllPtl_B "Bypass de TqCll_bReqCllPtl"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_bTmrOff "Etat de la temporisation max pour le debouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranAdvMin "Etat de transition de bouclage demande par les avances mini"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranCha "Etat de transition de bouclage demande par l ESP"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranCll "Etat de la transition de debouclage vers bouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranDriv "Etat de transition de bouclage demande par l agrement"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranEngReq "Etat de transition de bouclage demandé pour les besoins moteurs"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranForc "Etat de la transition de debouclage vers bouclage demande sur defaut ou sur une divergence couplAir / consigne Air"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranIdl "Etat de transition de bouclage demande par le ralenti"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranLim "Etat de transition de bouclage demande par les limitations"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranOpl "Etat de la transition de bouclage vers debouclage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranRes "Etat de transition de bouclage demande par les reserves"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_bTranTra "Etat de transition de bouclage demande par la boite"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_facTiTranOpl_T "Facteur de ponderation du temps de transition pour le bouclage force"
+      CURVE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_10 /* :0.0078125:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_9 /* N.m:0.0625:0: */ 8 -2000 2000
+    AXIS_PTS_REF TqCll_tqDifTranOpl_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCll_nEngOpl_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_UWORD_AXIS 8000 CoClLASl_CM_11 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCll_noGearOpl_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_UWORD_AXIS 8 CoClLASl_CM_2 /* :1:0: */ 7 0 8
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCll_tiAcvDifForc_C "temporisation d activation du forcage du bouclage"
+      VALUE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tiAdvMinRun "Temps ecoule depuis la demande de bouclage pour l application des avances mini"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiChaRun "Temps ecoule depuis la demande de bouclage ESP"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tiDiDifForc_C "temporisation de desactivation de la demande de forcage"
+      VALUE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tiDrivRun "Temps ecoule depuis la demande de bouclage agrement"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiEngReqRun "Temps écoulé depuis la demande de bouclage Dump Valve Soft"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiForcRun "Temps ecoule depuis la demande de forcage"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiIdlRun "Temps ecoule depuis la demande de bouclage ralenti"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiLimRun "Temps ecoule depuis la demande de bouclage limitation"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiOplRun "Temps ecoule depuis la demande de bouclage reserves"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tiResRun "Difference de couple pour le calcul des transition de debouclage"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tiTqDifCfm_C "temporisation de detection de l erreur consigne air/ couple air"
+      VALUE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tiTraRun "Temps ecoule depuis la demande de bouclage boite"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tiTranCllEngReq_C "Temps de transition pour les bouclage demandé par la strate moteur --------"
+      VALUE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_tiTranForc_C "Temps de transition pour forcer un bouclage"
+      VALUE 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tiTranOpl "Temps de transition de debouclage"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tiTranOpl_M "Carto de temps de transition de de deouclage"
+      MAP 0x0 CoClLASl_RL_UWORD 3 CoClLASl_CM_12 /* s:0.001:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_11 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqCll_nEngOpl_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_2 /* :1:0: */ 7 0 8
+    AXIS_PTS_REF TqCll_noGearOpl_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqCllTranRaw_MP "Consigne de couple pour la transition de bouclage avant limitation par le couple TqSys_tqIdcEngLimCord"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqCllTran_MP "Consigne de couple pour la transition de bouclage avant validation par la demande de debouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqDifCll "Difference de couple pour le calcul des transition de bouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqDifHiForc_C "Seuil de couple haut pour activer le forage du bouclage"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_tqDifLoForc_C "Seuil de couple bas pour activer le forage du bouclage"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqDifOpl "Increment de bouclage reserves calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCll_tqDifTranOpl_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_SWORD_AXIS 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ 8 -2000 2000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCll_tqGainDeltaCll_C "Gain applicable sur la variation du couple cible en bouclage --------"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_tqGainDeltaOpl_C "Gain applicable sur la variation du couple cible en debouclage --------"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqIdcCllRaw_MP "Consigne de couple avec transition bouclage avant validation par l etat de debouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncAdvMinRaw "Increment de bouclage pour les avances mini calcule par rapport à la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncChaRaw "Increment de bouclage ESP calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncCha_MP "Increment de couple valide par la demande par l ESP"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncDrivRaw "Increment de bouclage agrement calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncDriv_MP "Increment de couple valide par la demande par l agrement"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncEngReqRaw "Incrément de debouclage calculé par rapport à la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqIncEngReq_C "Incrément de bouclage pour la transition de bouclage"
+      VALUE 0x0 CoClLASl_RL_UWORD 2000 CoClLASl_CM_13 /* N.m/s:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqIncForc "Increment demande sur defaut ou sur une divergence coupl Air / consigne Air"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncForcRaw "Increment de bouclage demande sur defaut ou sur une divergence coupl Air / consigne Air"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqIncForc_C "Increment de couple pour le forcage du bouclage"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_13 /* N.m/s:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqIncIdlRaw "Increment de bouclage ralenti calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncIdl_MP "Increment de couple valide par la demande par le ralenti"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncLimRaw "Increment de bouclage limitation calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncLim_MP "Increment de couple valide par la demande par les limitations"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncOpl "Increment de debouclage valide"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqIncOplDft_C "Increment de couple utilise par defaut en debouclage --------"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqIncOplRaw "Temps ecoule depuis la demande de debouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncOplVld "Increment de debouclage valide"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqIncOpl_M "Increment de couple pour le debouclage"
+      MAP 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_13 /* N.m/s:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_11 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqCll_nEngOpl_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_2 /* :1:0: */ 7 0 8
+    AXIS_PTS_REF TqCll_noGearOpl_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqIncRaw "Synthese des increments de bouclage emis par les demandeurs de bouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncResRaw "Increment de debouclage calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncRes_MP "Increment de couple valide par la demande par les reserves"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncTraRaw "Increment de bouclage boite calcule par rapport a la temporisation de transition"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncTra_MP "Increment de couple valide par la demande par la boite"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqIncVld "Couple demande par la structure couple incluant les demandes de bouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCll_tqOfsCllConv_C "Offset sur le couple pour la convergence du bouclage"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCll_tqOfsOplConv_C "Offset sur le couple pour la convergence du debouclage"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCll_tqOplTranRaw_MP "Consigne de couple pour la transition de debouclage avant limitation par le couple EngLim_tqIdcEngCurMax"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCll_tqOplTran_MP "Consigne de couple pour la transition de debouclage avant validation par l etat de debouclage"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_aEngThdAcvAntiStall_T "Seuil d acceleration de regime moteur pour l activation du move-off"
+      CURVE 0x0 CoClLASl_RL_SWORD 16000 CoClLASl_CM_14 /* rpm/s:0.25:0: */ -8000 8000
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcvAntiStallAut_irv_MP "Flag d activation de la strategie d anti-calage BVA/BVMP utilisee par la strategie IVC"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcvAntiStallClc "Flag d activation du calcul de la strategie"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcvAntiStallMan_B "Bypass de TqSys_bAcvAntiStallSmk"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcvAntiStallSmk_B "Bypass de TqSys_bAcvAntiStallSmk"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bAcvAntiStall_B "Bypass de TqSys_bAcvAntiStall"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAcvRegAntiStall "Activation du calcul du regulateur"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bAcvSBPA_C "Flag d activation de la fonction SBPA pour la calibration"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_bAntiStallAuth "Autorise l activation de la strategy d anti-calage"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDiAntiStall "Vrai si les conditions de desactivation de la strategie sont realisees"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bEnaAntiStall "Vrai si les conditions d activation de la strategie sont realisees"
+      UBYTE CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bEngNOnIdl_B "Bypass de TqSys_bEngNOnIdl"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bEngUHNOnIdl_B "Bypass de TqSys_bEngUHNOnIdl"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bIdlAcvCmn_B "Bypass de TqSys_bIdlAcvCmn"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bMaxTqLim_C "Bit d activation de la limitation du couple coordonne avec le curatif"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bProtDfwTypSel_C "Choix du type de couple MAX pour protection DVA"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTqAOSCVC_C "Bit de configuration pour choisir entre le couple AOS SSTG ou le couple d anti-oscillation provenant du CVC"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTypDiAntiStall_C "Determine si le seuil de regime de desactivation de la strategie est un delta de regime moteur ou un niveau de regime moteur"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bTypEnaAntiStall_C "Determine si le seuil de regime pour l activation de la strategie est un delta de regime moteur ou un niveau de regime moteur"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_bUseFuelRunDry_C "Flag de configuration pour prendre en compte les fonctions CVC"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall1_B "Bypass de TqSys_facAntiStall1"
+      VALUE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall1_T "Vecteur de calibration du premier gain du regulateur"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall2_B "Bypass de TqSys_facAntiStall2"
+      VALUE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall2_T "Vecteur de calibration du deuxieme gain du regulateur"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall3_B "Bypass de TqSys_facAntiStall3"
+      VALUE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facAntiStall3_T "Vecteur de calibration du troisieme gain du regulateur"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_15 /* Nm/rpm:6.103515625e-005:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facCorAntiStallX_A "Ecart entre le regime cible et le regime moteur"
+      0x0 TqSys_nErrAntiStall_MP CoClLASl_RL_SWORD_AXIS 16000 CoClLASl_CM_11 /* rpm:0.25:0: */ 8 -8000 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_facCorAntiStallY_A "Axis description"
+      0x0 TreatTDC_nCkTDCDelta CoClLASl_RL_SWORD_AXIS 16000 CoClLASl_CM_11 /* rpm:0.25:0: */ 8 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facCorAntiStall_M "Correction de la sortie du regulateur RST"
+      MAP 0x0 CoClLASl_RL_UWORD 2 CoClLASl_CM_16 /* :0.0009765625:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS TqSys_nErrAntiStall_MP CoClLASl_CM_11 /* rpm:0.25:0: */ 8 -8000 8000
+    AXIS_PTS_REF TqSys_facCorAntiStallX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS TreatTDC_nCkTDCDelta CoClLASl_CM_11 /* rpm:0.25:0: */ 8 -8000 8000
+    AXIS_PTS_REF TqSys_facCorAntiStallY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTqCkAntiStall_B "Bypass de TqSys_facTqCkAntiStall"
+      VALUE 0x0 CoClLASl_RL_UWORD 2 CoClLASl_CM_16 /* :0.0009765625:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTqSmkAcv_C "Coefficient de gain sur le couple de fumee de base pour activation descendante"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_10 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_nCkGrdDly "Derivee de regime retardee"
+      SWORD CoClLASl_CM_14 /* rpm/s:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_nEngColdSmk_A "Axis description"
+      0x0 Ext_nEng CoClLASl_RL_UWORD_AXIS 7500 CoClLASl_CM_3 /* rpm:1:0: */ 6 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_nEngThdAcvAntiCal_C "Seuil de regime d activation du calcul du regulateur"
+      VALUE 0x0 CoClLASl_RL_UWORD 7500 CoClLASl_CM_3 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nEngThdAcvAntiStall_C "Seuil de regime d’activation de la fonction"
+      VALUE 0x0 CoClLASl_RL_UWORD 7500 CoClLASl_CM_3 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nEngTqOfsAntiJerkX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_UWORD_AXIS 7500 CoClLASl_CM_3 /* rpm:1:0: */ 12 0 7500
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_nErrAntiStall_MP "Ecart entre le regime cible et le regime moteur"
+      SWORD CoClLASl_CM_11 /* rpm:0.25:0: */ 1 0 -8000 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_nIdlOff_C "Seuil bas d hysterisis de regime pour le calcul du flag de ralenti actif"
+      VALUE 0x0 CoClLASl_RL_UWORD 7500 CoClLASl_CM_3 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nIdlOn_C "Seuil haut d hysterisis de regime pour le calcul du flag de ralenti actif"
+      VALUE 0x0 CoClLASl_RL_UWORD 7500 CoClLASl_CM_3 /* rpm:1:0: */ 0 7500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nThdDiAntiStall_T "Seuil de regime pour desactiver la fonction d anti-calage"
+      CURVE 0x0 CoClLASl_RL_SWORD 16000 CoClLASl_CM_11 /* rpm:0.25:0: */ -8000 8000
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nThdEnaAntiStall_T "Seuil de regime pour activer la fonction d anti-calage"
+      CURVE 0x0 CoClLASl_RL_SWORD 16000 CoClLASl_CM_11 /* rpm:0.25:0: */ -8000 8000
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_nbGearTqOfsAntiJerkY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY CoClLASl_RL_UWORD_AXIS 6 CoClLASl_CM_2 /* :1:0: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_noEngSpdAcceAntiStall_C "Index de retard sur l acceleration de regime moteur"
+      VALUE 0x0 CoClLASl_RL_UBYTE 10 CoClLASl_CM_2 /* :1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_rAccPThdPedPrss_C "Seuil de pedale pour etre hors Pied Leve"
+      VALUE 0x0 CoClLASl_RL_UWORD 100 CoClLASl_CM_17 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_stAntiStallLvl "Etat du controleur d anti-calage"
+      UBYTE CoClLASl_CM_18 /* FT_enumeration1:((0=MOVEOFF_CTRL_OFF)(1=MOVEOFF_CTRL_ON)(2=MOVEOFF_CTRL_DISABLED)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tCoMesAntiStall_A "Axis description"
+      0x0 Ext_tCoMes CoClLASl_RL_SWORD_AXIS 254 CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_tiDlyDiAntiStall "Seuil de temps pour maintenir la desactivation de la strategie anti-calage"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyDiAntiStall_C "Delai maximum d activation de la strategie d anti-calage"
+      VALUE 0x0 CoClLASl_RL_UWORD 10 CoClLASl_CM_7 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiDlyEnaAntiStall "Seuil de temps maximum pour l activation de la strategie anti-calage"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiDlyEnaAntiStall_C "Delai depuis lequel la strategie d anti-calage peut etre reactivee"
+      VALUE 0x0 CoClLASl_RL_UWORD 10 CoClLASl_CM_7 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiIniDiAntiStall "data"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tiIniEnaAntiStall "data"
+      UWORD CoClLASl_CM_7 /* s:0.01:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tiStrtAntiStall_T "Seuil de temps pour l activation de la strategie d anti-calage apres le demarrage"
+      CURVE 0x0 CoClLASl_RL_UWORD 65535 CoClLASl_CM_19 /* s:1:0: */ 0 65535
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiTranSmkOff_T "Temps de transition ascendante dans la coordination de la fumee bleue"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_12 /* s:0.001:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEng CoClLASl_CM_3 /* rpm:1:0: */ 6 0 7500
+    AXIS_PTS_REF TqSys_nEngColdSmk_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tiTranSmkOn_T "Temps de transition descendante dans la coordination de la fumee bleue"
+      CURVE 0x0 CoClLASl_RL_UWORD 1 CoClLASl_CM_12 /* s:0.001:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS Ext_nEng CoClLASl_CM_3 /* rpm:1:0: */ 6 0 7500
+    AXIS_PTS_REF TqSys_nEngColdSmk_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqAntiStallMax_C "Couple max de saturation du regulateur"
+      VALUE 0x0 CoClLASl_RL_UWORD 2000 CoClLASl_CM_8 /* Nm:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqAntiStallMin_C "Couple min de saturation du regulateur"
+      VALUE 0x0 CoClLASl_RL_SWORD 2000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkAOSCordUnLim "Couple avec correction curative non limite"
+      SWORD CoClLASl_CM_8 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkAOSCord_B "Bypass de TqSys_tqCkAOSCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkAntiStall_B "Bypass"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkEngLimCordPrev "Consigne de couple bouclee pour calcul interne"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkEngLimCordRaw "Consigne de couple avance avant coordination pour un systeme diesel"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEngLimCord_B "Bypass de TqSys_tqCkEngLimCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkIdlCmn_B "Bypass de TqSys_tqCkIdlCmn"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkIdlCord_B "Bypass de TqSys_tqCkIdlCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaThdAcvAntiStall_T "Seuil de derivee de couple indique pour l activation du moveoff"
+      CURVE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqHystTqSmkDeac_C "Hysteresis de couple sur le seuil d activation ascendante de la fumee bleue"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirEngIdlCord_B "Bypass de TqSys_tqIdcAirEngIdlCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirEngLimCord_B "Bypass de TqSys_tqIdcAirEngLimCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirLimCordWiRes_B "Bypass de TqSys_tqIdcAirLimCordWiRes"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirLimCordWoutRes_B "Bypass de TqSys_tqIdcAirLimCordWoutRes"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcAirReqUnlim_B "Bypass de TqSys_tqIdcAirReqUnlim"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcColdSmkCord_B "Bypass de TqSys_tqIdcColdSmkCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcEngIdlCord_B "Bypass de TqSys_tqIdcEngIdlCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqIdcEngLimCordRaw "Couple coordonne avec le ralenti et les limitations brute"
+      SWORD CoClLASl_CM_9 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqIdcEngLimCord_B "Bypass de TqSys_tqIdcEngLimCord"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqIdcThdAcvAntiStall_T "Seuil de couple indiqué pour l activation du move-off"
+      CURVE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_8 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS Ext_tCoMes CoClLASl_CM_6 /* deg C:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqSys_tCoMesAntiStall_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqMaxProtDfw_C "Couple max de saturation du couple du regulateur de ralenti pour protection DVA"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsAntiJerkLim_M "Table d offset de couple de limitation du curatif"
+      MAP 0x0 CoClLASl_RL_UWORD 2000 CoClLASl_CM_8 /* Nm:0.0625:0: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_3 /* rpm:1:0: */ 12 0 7500
+    AXIS_PTS_REF TqSys_nEngTqOfsAntiJerkX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY CoClLASl_CM_2 /* :1:0: */ 7 0 6
+    AXIS_PTS_REF TqSys_nbGearTqOfsAntiJerkY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsThdHiIdlAcv_C "Seuil haut d hystérésis de couple pour le calcul du flag de ralenti effectif"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsThdLoIdlAcv_C "Seuil bas d hystérésis de couple pour le calcul du flag de ralenti effectif"
+      VALUE 0x0 CoClLASl_RL_SWORD 4000 CoClLASl_CM_9 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC Tqsys_bUseExhTempProt_C "Flag de configuration pour prendre en compte les fonctions CVC"
+      VALUE 0x0 CoClLASl_RL_UBYTE 1 CoClLASl_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT CoClLASl_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT CoClLASl_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD CoClLASl_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF CoClLASl_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB CoClLASl_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD CoClLASl_CM_2 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_3 "conversion_method"
+
+RAT_FUNC "%.0" "rpm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_4 "conversion_method"
+
+RAT_FUNC "%.0" "rpm/s"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "km/h"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_6 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_7 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_8 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_9 "conversion_method"
+
+RAT_FUNC "%.2" "N.m"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_10 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_11 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_12 "conversion_method"
+
+RAT_FUNC "%.3" "s"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_13 "conversion_method"
+
+RAT_FUNC "%.2" "N.m/s"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_14 "conversion_method"
+
+RAT_FUNC "%.1" "rpm/s"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_15 "conversion_method"
+
+RAT_FUNC "%.5" "Nm/rpm"
+COEFFS 0 16384 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_16 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_17 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD CoClLASl_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF CoClLASl_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB CoClLASl_CV_18 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "MOVEOFF_CTRL_OFF"
+	 1 "MOVEOFF_CTRL_ON"
+	 2 "MOVEOFF_CTRL_DISABLED"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD CoClLASl_CM_19 "conversion_method"
+
+RAT_FUNC "%.0" "s"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION CoClLASl_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	COCLLASL_ACTIVE_BYP_C
+	CoPt_bAcvAntiStallBrk_C
+	CoPt_bAcvAntiStallFil_B
+	CoPt_bAcvAntiStallStCpl_T
+	CoPt_bAcvAntiStallStPt_C
+	CoPt_nAcvAntiStall_C
+	CoPt_nGrdThdAntiStallDft_C
+	CoPt_nGrdThdAntiStall_C
+	CoPt_nThdAntiStall_T
+	CoPt_spdThdAntiStall_C
+	CoPt_stCplAntiStall_A
+	CoPt_tCoAntiStall_A
+	CoPt_tCoDft_C
+	CoPt_tiDeacAntiStallIdl_C
+	CoPt_tiDeacAntiStallSmk_C
+	CoPt_tiDeacAntiStallSpd_C
+	CoPt_tiDeacAntiStall_C
+	CoPt_tiMaxAntiStall_C
+	ESLim_bAcvEngSpdLim_B
+	EngLim_tqCkCurDrivFil_B
+	EngLim_tqDeltaLimMaxAir_C
+	EngLim_tqIdcEngLimMax_B
+	EngLim_tqIdcLim_B
+	EngLim_tqIdcMaxNReg_B
+	TqCll_bAcvCll_B
+	TqCll_bCondTmrAcv_C
+	TqCll_bForcCll_B
+	TqCll_bLimTranAcv_C
+	TqCll_bReqCllPtl_B
+	TqCll_facTiTranOpl_T
+	TqCll_nEngOpl_A
+	TqCll_noGearOpl_A
+	TqCll_tiAcvDifForc_C
+	TqCll_tiDiDifForc_C
+	TqCll_tiTqDifCfm_C
+	TqCll_tiTranCllEngReq_C
+	TqCll_tiTranForc_C
+	TqCll_tiTranOpl_M
+	TqCll_tqDifHiForc_C
+	TqCll_tqDifLoForc_C
+	TqCll_tqDifTranOpl_A
+	TqCll_tqGainDeltaCll_C
+	TqCll_tqGainDeltaOpl_C
+	TqCll_tqIncEngReq_C
+	TqCll_tqIncForc_C
+	TqCll_tqIncOplDft_C
+	TqCll_tqIncOpl_M
+	TqCll_tqOfsCllConv_C
+	TqCll_tqOfsOplConv_C
+	TqSys_aEngThdAcvAntiStall_T
+	TqSys_bAcvAntiStallMan_B
+	TqSys_bAcvAntiStallSmk_B
+	TqSys_bAcvAntiStall_B
+	TqSys_bAcvSBPA_C
+	TqSys_bEngNOnIdl_B
+	TqSys_bEngUHNOnIdl_B
+	TqSys_bIdlAcvCmn_B
+	TqSys_bMaxTqLim_C
+	TqSys_bProtDfwTypSel_C
+	TqSys_bTqAOSCVC_C
+	TqSys_bTypDiAntiStall_C
+	TqSys_bTypEnaAntiStall_C
+	TqSys_bUseFuelRunDry_C
+	TqSys_facAntiStall1_B
+	TqSys_facAntiStall1_T
+	TqSys_facAntiStall2_B
+	TqSys_facAntiStall2_T
+	TqSys_facAntiStall3_B
+	TqSys_facAntiStall3_T
+	TqSys_facCorAntiStallX_A
+	TqSys_facCorAntiStallY_A
+	TqSys_facCorAntiStall_M
+	TqSys_facTqCkAntiStall_B
+	TqSys_facTqSmkAcv_C
+	TqSys_nEngColdSmk_A
+	TqSys_nEngThdAcvAntiCal_C
+	TqSys_nEngThdAcvAntiStall_C
+	TqSys_nEngTqOfsAntiJerkX_A
+	TqSys_nIdlOff_C
+	TqSys_nIdlOn_C
+	TqSys_nThdDiAntiStall_T
+	TqSys_nThdEnaAntiStall_T
+	TqSys_nbGearTqOfsAntiJerkY_A
+	TqSys_noEngSpdAcceAntiStall_C
+	TqSys_rAccPThdPedPrss_C
+	TqSys_tCoMesAntiStall_A
+	TqSys_tiDlyDiAntiStall_C
+	TqSys_tiDlyEnaAntiStall_C
+	TqSys_tiStrtAntiStall_T
+	TqSys_tiTranSmkOff_T
+	TqSys_tiTranSmkOn_T
+	TqSys_tqAntiStallMax_C
+	TqSys_tqAntiStallMin_C
+	TqSys_tqCkAOSCord_B
+	TqSys_tqCkAntiStall_B
+	TqSys_tqCkEngLimCord_B
+	TqSys_tqCkIdlCmn_B
+	TqSys_tqCkIdlCord_B
+	TqSys_tqDeltaThdAcvAntiStall_T
+	TqSys_tqHystTqSmkDeac_C
+	TqSys_tqIdcAirEngIdlCord_B
+	TqSys_tqIdcAirEngLimCord_B
+	TqSys_tqIdcAirLimCordWiRes_B
+	TqSys_tqIdcAirLimCordWoutRes_B
+	TqSys_tqIdcAirReqUnlim_B
+	TqSys_tqIdcColdSmkCord_B
+	TqSys_tqIdcEngIdlCord_B
+	TqSys_tqIdcEngLimCord_B
+	TqSys_tqIdcThdAcvAntiStall_T
+	TqSys_tqMaxProtDfw_C
+	TqSys_tqOfsAntiJerkLim_M
+	TqSys_tqOfsThdHiIdlAcv_C
+	TqSys_tqOfsThdLoIdlAcv_C
+	Tqsys_bUseExhTempProt_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CoClLASl_ModuleVersion_Major_MP
+	CoClLASl_ModuleVersion_Minor_MP
+	CoPt_bAcvAntiStallBrk
+	CoPt_bAcvAntiStallNEng
+	CoPt_bAcvAntiStallNGrd
+	CoPt_bAcvAntiStallRaw
+	CoPt_bAcvAntiStallSpdVeh
+	CoPt_bAcvAntiStallStPt
+	CoPt_bAuthAcvAntiStall
+	EngLim_tqIdcAirLimAfterRes_irv
+	EngLim_tqIdcAirLim_irv_MP
+	EngLim_tqIdcLimDsl
+	EngLim_tqIdcLimGsl
+	EngLim_tqIdcMaxNRegDsl
+	EngLim_tqIdcMaxNRegGsl
+	IdlSys_tqIdcIdlAirSBPA_irv_MP
+	IdlSys_tqIdcIdlAvSBPA
+	TqCll_bAcvCllPrev
+	TqCll_bAcvCllRaw
+	TqCll_bReqCll
+	TqCll_bReqCllGbl
+	TqCll_bTmrOff
+	TqCll_bTranAdvMin
+	TqCll_bTranCha
+	TqCll_bTranCll
+	TqCll_bTranDriv
+	TqCll_bTranEngReq
+	TqCll_bTranForc
+	TqCll_bTranIdl
+	TqCll_bTranLim
+	TqCll_bTranOpl
+	TqCll_bTranRes
+	TqCll_bTranTra
+	TqCll_tiAdvMinRun
+	TqCll_tiChaRun
+	TqCll_tiDrivRun
+	TqCll_tiEngReqRun
+	TqCll_tiForcRun
+	TqCll_tiIdlRun
+	TqCll_tiLimRun
+	TqCll_tiOplRun
+	TqCll_tiResRun
+	TqCll_tiTraRun
+	TqCll_tiTranOpl
+	TqCll_tqCllTranRaw_MP
+	TqCll_tqCllTran_MP
+	TqCll_tqDifCll
+	TqCll_tqDifOpl
+	TqCll_tqIdcCllRaw_MP
+	TqCll_tqIncAdvMinRaw
+	TqCll_tqIncChaRaw
+	TqCll_tqIncCha_MP
+	TqCll_tqIncDrivRaw
+	TqCll_tqIncDriv_MP
+	TqCll_tqIncEngReqRaw
+	TqCll_tqIncForc
+	TqCll_tqIncForcRaw
+	TqCll_tqIncIdlRaw
+	TqCll_tqIncIdl_MP
+	TqCll_tqIncLimRaw
+	TqCll_tqIncLim_MP
+	TqCll_tqIncOpl
+	TqCll_tqIncOplRaw
+	TqCll_tqIncOplVld
+	TqCll_tqIncRaw
+	TqCll_tqIncResRaw
+	TqCll_tqIncRes_MP
+	TqCll_tqIncTraRaw
+	TqCll_tqIncTra_MP
+	TqCll_tqIncVld
+	TqCll_tqOplTranRaw_MP
+	TqCll_tqOplTran_MP
+	TqSys_bAcvAntiStallAut_irv_MP
+	TqSys_bAcvAntiStallClc
+	TqSys_bAcvRegAntiStall
+	TqSys_bAntiStallAuth
+	TqSys_bDiAntiStall
+	TqSys_bEnaAntiStall
+	TqSys_nCkGrdDly
+	TqSys_nErrAntiStall_MP
+	TqSys_stAntiStallLvl
+	TqSys_tiDlyDiAntiStall
+	TqSys_tiDlyEnaAntiStall
+	TqSys_tiIniDiAntiStall
+	TqSys_tiIniEnaAntiStall
+	TqSys_tqCkAOSCordUnLim
+	TqSys_tqCkEngLimCordPrev
+	TqSys_tqCkEngLimCordRaw
+	TqSys_tqIdcEngLimCordRaw
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE CoClLASl ------------------------------------*/

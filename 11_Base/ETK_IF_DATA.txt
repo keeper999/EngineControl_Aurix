@@ -1,0 +1,114 @@
+		/begin IF_DATA ETK 
+ 		
+ 			/begin TP_BLOB
+ 				0x01000104
+ 				INTERFACE_SPEED_100MBIT
+ 				0xFFFFFFF7
+ 		
+ 				/begin DISTAB_CFG
+ 					13
+ 					0x0122
+ 					0x1
+ 					0x00000000
+ 					0x01010100
+ 					TRG_MOD 0x0 0xFF 0x0 0x0 0x0
+ 				/end DISTAB_CFG
+ 		
+ 				ETK_CFG		0x10 0x17 0x69 0x00 0x00 0xFF 0xFF 0x6F 0xD0 0x71 0x9D 0x70 0x79 0x64 0x0B 0x74 0xC9 0x72 0xC7 0x73 0xBA 0x75 0xC5 
+ 		
+ 				ETK_MAILBOX
+ 				0x46535052
+ 				EXRAM
+ 				0xFFFBE020
+ 				0x00000014
+ 				EXRAM
+ 				0xFFFBE020
+ 				0x00000014
+ 				0x00000002
+ 				0x00000100
+ 		
+ 				RESERVED_DISTAB_MEMORY
+ 				0x00000060
+ 				0x00000008
+ 				INTERN
+ 				MEASUREMENT
+ 				CHECKSUM_EXCLUDE_ONLY
+ 				-1 -1 -1 -1 -1
+ 			
+ 				/begin COLDSTART_HANDSHAKE
+ 					0xFFFBD000
+ 					WAIT  0x57 0x41 0x49 0x54
+ 					READY 0x52 0x45 0x44 0x59
+ 				/end COLDSTART_HANDSHAKE
+ 		
+ 			/end TP_BLOB
+ 		
+ 			/begin SOURCE
+ 				"Synchro PMH"
+ 				103
+ 				1
+ 				QP_BLOB
+ 				0x102
+ 				1
+ 				INDIRECT
+ 				32
+ 				MEASUREMENT
+ 				0xFFFBD78C
+ 				0x3C0
+ 				0xFFFBD004
+ 				0xFFFBD3CC
+ 				0
+ 				0x0
+ 				0x0
+ 				3500
+ 				0xC8
+ 				0x0
+ 				1
+ 			/end SOURCE
+ 		
+ 			/begin SOURCE
+ 				"5 ms"
+ 				3
+ 				5
+ 				QP_BLOB
+ 				0x102
+ 				1
+ 				INDIRECT
+ 				31
+ 				MEASUREMENT
+ 				0xFFFBDF1C
+ 				0x3C0
+ 				0xFFFBD794
+ 				0xFFFBDB5C
+ 				0
+ 				0x0
+ 				0x0
+ 				4750
+ 				0xC8
+ 				0x0
+ 				2
+ 			/end SOURCE
+ 		
+ 			/begin SOURCE
+ 				"100 ms"
+ 				3
+ 				100
+ 				QP_BLOB
+ 				0x102
+ 				2
+ 				INDIRECT
+ 				30
+ 				MEASUREMENT
+ 				0xFFFBE6AC
+ 				0x3C0
+ 				0xFFFBDF24
+ 				0xFFFBE2EC
+ 				0
+ 				0x0
+ 				0x0
+ 				95000
+ 				0xC8
+ 				0x0
+ 				3
+ 			/end SOURCE
+ 		/end IF_DATA 

@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+AIRTQSTRUCTMNGT_StructState|I|();|FCT1.8|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|Le stateflow gère l’ensemble des passages entre le mode bouclé et débouclé.
+AIRTQSTRUCTMNGT_vidCalcSecCrOffs|B|();|FCT1.2|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|cette fonction fait appel à AIRTQSTRUCTMGT_vidInitSecCrOffset et AIRTQSTRUCTMGT_vidCompDtcSecOffDel
+AIRTQSTRUCTMNGT_vidCalObjPres|C|();|FCT1.6|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|Ce module calcule l’objectif de ratio de la pression collecteur ainsi q’un seuil à partir duquel on déboucle.
+AIRTQSTRUCTMNGT_vidDtcSecOffDel|B|();|FCT1.4|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|décrementer la valeur de Dtc_second_crank_offset_delay.
+AIRTQSTRUCTMNGT_vidFcDeTranToCyc|C|();|FCT2.2|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|calculer le coeficient Coef_de_transition_air dans l'état de bouclage.
+AIRTQSTRUCTMNGT_vidFcSurfStart|F|();|FCT2.1|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|initialiser la valeur de Coef_de_transition_air au demarrage
+AIRTQSTRUCTMNGT_vidFcTransToCycl|F|();|FCT2.3|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|On souhaite converger vers la structure couple, on calcule donc des coefficients qui permettent de filtrer les consignes.
+AIRTQSTRUCTMNGT_vidFcTransToStop|A|();|FCT2.5|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|Lors d’une séquence d’arrêt, le coefficient de transition d’air prend une valeur calibrable spécifique à un arrêt STT.
+AIRTQSTRUCTMNGT_vidFcTranToDecyc|B|();|FCT2.4|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|On calcule un coefficient de filtrage sur les consignes d’air et d’avance débouclées. Le booléen Manu_inh_dtc_filtrage_air permet de l’inhiber.
+AIRTQSTRUCTMNGT_vidInitOutput|G|();|FCT1.1|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|initialisation des sorties
+AIRTQSTRUCTMNGT_vidInitSecCrOffs|C|();|FCT1.3|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|cette fonction permet de calculer Dtc_second_crank_offset_delay à partir de la valeur de Temperature_eau.
+AIRTQSTRUCTMNGT_vidManager|B|();|FCT1.5|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|2 sections effectives sont calculées suivant que l’on soit en ou hors structure couple.. Le passage filtré de l’une vers l’autre et géré par un stateflow (Manager) à l’aide de coefficients sur l’air et sur l’avance.
+AIRTQSTRUCTMNGT_vidStructInit|D|();|FCT1.7|AIRTQSTRUCTMNGT|0|PTS DOC 5015877||||0|0|0|0|initialisation de l'état de la structure
+CrkMgt_EveRst_AirTqStructMngt|C|();|SCH.1|AIRTQSTRUCTMNGT|1|PTS DOC 5015877||||0|0|0|0|évenement reset
+CrkMgt_SdlFast_AirTqStructMngt|C|();|SCH.3|AIRTQSTRUCTMNGT|1|PTS DOC 5015877||||0|0|0|0|moniteur rapide
+CrkMgt_SdlMid_AirTqStructMngt|C|();|SCH.2|AIRTQSTRUCTMNGT|1|PTS DOC 5015877||||0|0|0|0|moniteur moyen
+GDGAR_bGetFRM|B|(argin uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0|
+SWFAIL_vidSoftwareErrorHook|A|();|3|HEADER|1|NONE||||0|0|0|0|

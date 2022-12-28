@@ -1,0 +1,37 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+ActivateTask|A|(argin uint8 Taskid);|2|HEADER|1|NONE||||0|0|0|0||
+DIOHAL_vidWrite|A|(uint8 u8Channel, boolean bVal);|3|HEADER|1|NONE||||0|0|0|0|gestion du shutdown|
+ECUMNG_NVMSRV_vidInit|B|();|FCT2.9|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|La variable EcuSt_ctHotRst_Count est initialisée à la réinitialisation  de l' EEPROM avec la calibrationEcuSt_ctHotRst_Count_Init.|
+ECUMNG_vidAPCConfig|B|();|FCT2.8|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|cette fonction permet d'assurer le calcul de l'état UCE_stSt selon la configuration APC.|
+ECUMNG_vidbisAcvDiagHotRst|A|();|FCT3.1|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|When a hot reset is detected (hot reset = software reset or hardware reset) the EcuSt_bDgoHotRst flag is  validated.|
+ECUMNG_vidbRstSrvRstEepromCount|B|();|FCT2.10|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|In case of a software reset Boolean (Srv_bRstSw_DiagSrv ) rising edge,the counter of maximum delay required to write in EEPROM Rcd_wait_wr_in_eeprom_count is reset to calibration Rcd_wait_wr_in_eeprom_delay.|
+ECUMNG_vidEcuMng_Init|C|();|FCT1.1|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Init function|
+ECUMNG_vidFctPrinDegrad|C|();|FCT1.5|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|This function, called in POWER_ON (EcuSt_SdlMid_EcuMng_3), produces a flag gathering the conditions to set the ECU in degraded main awakening.|
+ECUMNG_vidInitOutput|B|();|FCT1.8|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|initialisation des sorties|
+ECUMNG_vidInterneCmm|C|();|FCT2.6|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|This function is called after the main awakening to inform the BSI if the ECU is in partial awakening, in internal partial awakening, or simply transient.|
+ECUMNG_vidManagePowerOn|C|();|FCT1.2|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|On Key on event, Power_conditions_state is set to POWER_ON state and the immobilizer event SAIMMO_Init is generated.|
+ECUMNG_vidManager|I|();|FCT1.3|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Manager d’état.|
+ECUMNG_vidPowerOnTrans|G|();|FCT2.2|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Fonction de gestion de transition de l'état POWER_ON|
+ECUMNG_vidPwrLatchDelayTrans|L|();|FCT2.4|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Fonction de gestion de transition de l'état Waiting_for_power_latch_delay|
+ECUMNG_vidPwrlEndAuth|B|();|FCT1.6|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|On EcuSt_EvePwrlEnd_EcuMng, the Powerlatch end is authorized.|
+ECUMNG_vidRCDConfig|B|();|FCT2.7|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|cette fonction permet d'assurer le calcul de l'état UCE_stSt selon la configuration RCD.|
+ECUMNG_vidRcdStateSelection|C|();|FCT1.7|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|The Rcd state is selected between the state determinated by the Valeo strategy or by RCD software component.This selection is realized on reset event, Key On event, Key Of event and on middle timing event.|
+ECUMNG_vidSleepingTrans|F|();|FCT2.5|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Dans cet état le calculateur demande au LDB la coupure du relais principal. La demande de coupure du relais principal par l'API DIOHAL_vidWrite(MAIN_RELAY, STD_OFF) entraine l'arret de l'OS et de toutes les IT|
+ECUMNG_vidSurveillance|B|();|FCT1.4|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|After RCD signal deactivating and awakening requests by the BSI, the ECU monitors their progress during a minimum period before going to SLEEPING state.|
+ECUMNG_vidWaitAnticipationTrans|F|();|FCT2.1|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Fonction de gestion de transition de l'état WAITING_FOR_ANTICIPATION|
+ECUMNG_vidWaitRstrtDelayTrans|I|();|FCT2.3|ECUMNG|0|PTS_DOC_6642215||||0|0|0|0|Fonction de gestion de transition de l'état Waiting_for_restart_delay|
+EcuSt_EveEcuSt_EcuMng|A|();|4|HEADER|1|NONE||||0|0|0|0|Fonction d'accroche à l'evenement de transmission de la trame 788|
+EcuSt_EveFct_WaitForPwrl|A|();|7|HEADER|1|NONE||||0|0|0|0||
+EcuSt_EveKOf_EcuMng|F|();|SCH.5|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Fonction d'accroche à l'event EcuSt_EveKOf_EcuMng|
+EcuSt_EveKOn_EcuMng|F|();|SCH.4|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Focntion d'accroche à l'event EcuSt_EveKOn_EcuMnG|
+EcuSt_EvePtlWku_Wku|B|();|SCH.3|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Focntion d'accroche à l'event EcuSt_EvePtlWku_Wku|
+EcuSt_EvePwrlEnd_EcuMng|E|();|SCH.6|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Evénement d'entrée dans la tâche d’écriture en EEPROM en fin de powerlatch|
+EcuSt_EveRst_EcuMng|G|();|SCH.1|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Foonction d'accroche à l'event EcuSt_EveRst_EcuMng.|
+EcuSt_SdlMid_EcuMng|F|();|SCH.2|ECUMNG|1|PTS_DOC_6642215||||0|0|0|0|Fonction d'accroche à l'event EcuSt_SdlMid_EcuMng|
+GDGAR_bGetFRM|B|(argin uint16 u16Channel)boolean;|2|HEADER|1|NONE||||0|0|0|0|Gestion FRM|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|8|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+NVMSRV_bAllSaved|A|()boolean;|5|HEADER|1|NONE||||0|0|0|0||
+RSTSRV_udtReadResetState|A|(void)uint8;|1|HEADER|1|NONE||||0|0|0|0|RSTSRV_tudtResetType RSTSRV_udtReadResetState(void)|
+RSTSRV_vidPerformReset|A|(argin RSTSRV_tudtResetType udtRequestedResetType);|6|HEADER|1|NONE||||0|0|0|0||
+SAIMMO_init|A|();|HD|HEADER|1|HEADER||||0|0|0|0|HD|
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|ErrorHook routine|

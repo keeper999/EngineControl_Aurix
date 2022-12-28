@@ -1,0 +1,4380 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : agInjSp                                                 */
+/* !Description     : agInjSp : INJECTION ANGLE SETPOINTS                     */
+/*                                                                            */
+/* !Module          : agInjSp                                                 */
+/*                                                                            */
+/* !File            : agInjSp.a2l                                             */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed Nov 16 18:31:21 2011                              */
+/*   Model name       : agInjSp_AUTOCODE.mdl                                  */
+/*   Model version    : 1.142                                                 */
+/*   Root subsystem   : /agInjSp                                              */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/agInjSp/5-SOFT-LIV/agInjSp.a$*/
+/* $Revision::   1.1                                                         $*/
+/* $Author::   adelvare                               $$Date::   25 Nov 2011 $*/
+/******************************************************************************/
+
+
+/begin MODULE agInjSp  "agInjSp"
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT agInjSp_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpETB_M
+    /* Long Identifier        */      "map for ETB first injection angle set point"
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      5.2428E+002
+      AXIS_PTS_REF                    Ext_pDsThrMesSIY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      Ext_pDsThrMesSIY_A
+    /* Long Identifier        */      "Manifold pressure measured axis for ETB mode"
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_2
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.2428E+002
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      Ext_nEngX_A
+    /* Long Identifier        */      "Engine speed axis for ETB mode"
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpETB_M
+    /* Long Identifier        */      "map for ETB second injection angle set point"
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      5.2428E+002
+      AXIS_PTS_REF                    Ext_pDsThrMesSIY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpETB_M
+    /* Long Identifier        */      "map for ETB third injection angle set point"
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      5.2428E+002
+      AXIS_PTS_REF                    Ext_pDsThrMesSIY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    Ext_nEngX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal1_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 1 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal1Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal1X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal1Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 1 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal1X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 1 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal2_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 2 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal2Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal2X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal2Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 2 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal2X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 2 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal3_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 3 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal3Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal3X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal3Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 3 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal3X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 3 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal4_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 4 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal4Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal4X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal4Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 4 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal4X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 4 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal5_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 5 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal5Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal5X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal5Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 5 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal5X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 5 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal6_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 6 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal6Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal6X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal6Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 6 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal6X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 6 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal7_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 7 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal7Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal7X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal7Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 7 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal7X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 7 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal8_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 8 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal8Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal8X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal8Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 8 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal8X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 8 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal9_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 9 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal9Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal9X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal9Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 9 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal9X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 9 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal10_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 10 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal10Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal10X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal10Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 10 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal10X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 10 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal11_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 11 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal11Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal11X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal11Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 11 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal11X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 11 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal12_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 12 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal12Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal12X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal12Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 12 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal12X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 12 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal13_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 13 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal13Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal13X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal13Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 13 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal13X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 13 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal14_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 14 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal14Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal14X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal14Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 14 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal14X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 14 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj1SpCal15_M
+    /* Long Identifier        */      "Injection 1 phasing set point calibration 15 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal15Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal15X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_mAirInjSpCal15Y_A
+    /* Long Identifier        */      "Air mass axis for injection set point calibration 15 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      7.8118807983398444E+000
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      InjSys_nEngInjSpCal15X_A
+    /* Long Identifier        */      "Engine speed axis for injection set point calibration 15 "
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      agInjSp_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal1_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 1 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal1Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal1X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal2_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 2 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal2Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal2X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal3_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 3 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal3Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal3X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal4_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 4 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal4Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal4X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal5_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 5 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal5Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal5X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal6_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 6 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal6Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal6X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal7_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 7 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal7Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal7X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal8_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 8 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal8Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal8X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal9_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 9 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal9Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal9X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal10_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 10 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal10Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal10X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal11_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 11 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal11Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal11X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal12_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 12 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal12Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal12X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal13_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 13 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal13Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal13X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal14_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 14 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal14Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal14X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj2SpCal15_M
+    /* Long Identifier        */      "Injection 2 phasing set point calibration 15 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal15Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal15X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal1_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 1 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal1Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal1X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal2_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 2 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal2Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal2X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal3_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 3 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal3Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal3X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal4_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 4 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal4Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal4X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal5_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 5 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal5Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal5X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal6_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 6 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal6Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal6X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal7_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 7 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal7Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal7X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal8_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 8 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal8Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal8X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal9_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 9 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal9Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal9X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal10_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 10 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal10Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal10X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal11_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 11 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal11Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal11X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal12_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 12 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal12Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal12X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal13_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 13 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal13Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal13X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal14_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 14 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal14Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal14X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      InjSys_agInj3SpCal15_M
+    /* Long Identifier        */      "Injection 3 phasing set point calibration 15 "
+    /* Chracteristic Type     */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points (horizontal axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0.0
+      /* Upper Limit          */      7.8118807983398444E+000
+      AXIS_PTS_REF                    InjSys_mAirInjSpCal15Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR                 
+      /* Description of Y-Axis Points (vertical axis) */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      agInjSp_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    InjSys_nEngInjSpCal15X_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_agInj1SpETB_C
+    /* Long Identifier        */      "Injection 1 phasing set point for engine test bench"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_agInj2SpETB_C
+    /* Long Identifier        */      "Injection 2 phasing set point for engine test bench"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_agInj3SpETB_C
+    /* Long Identifier        */      "Injection 1 phasing set point for engine test bench"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_idxModAgInjSatMax_C
+    /* Long Identifier        */      "Max Saturation of the mode index for injection phasing "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_5
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      32.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_idxModAgInjSatMin_C
+    /* Long Identifier        */      "Min Saturation of the mode index for injection phasing "
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_5
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      32.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_noETBSelagInj1Sp_C
+    /* Long Identifier        */      "Selection of engine test bench mode for the first injection angle set point"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_noETBSelagInj2Sp_C
+    /* Long Identifier        */      "Selection of engine test bench mode for the second injection angle set point"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_noETBSelagInj3Sp_C
+    /* Long Identifier        */      "Selection of engine test bench mode for the third injection angle set point"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      InjSys_bAcvETBagInjSp_C
+    /* Long Identifier        */      "Activation boolean for fuel pressure ETB mode"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      agInjSp_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      agInjSp_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_agInj1SpCal
+    /* Long identifier        */      "Calibration array for injection 1 phasing set point "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpBas1ModCur
+    /* Long identifier        */      "Injection 1 phasing set point for current mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpBas2ModCur
+    /* Long identifier        */      "Injection 1 phasing set point for current mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpBas1ModTar
+    /* Long identifier        */      "Injection 1 phasing set point for target mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpBas2ModTar
+    /* Long identifier        */      "Injection 1 phasing set point for target mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpModTar_MP
+    /* Long identifier        */      "Target mode injection 1 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpModCur_MP
+    /* Long identifier        */      "Current mode injection 1 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_agInj2SpCal
+    /* Long identifier        */      "Calibration array for injection 2 phasing set point "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpBas1ModCur
+    /* Long identifier        */      "Injection 2 phasing set point for current mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpBas2ModCur
+    /* Long identifier        */      "Injection 2 phasing set point for current mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpBas1ModTar
+    /* Long identifier        */      "Injection 2 phasing set point for target mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpBas2ModTar
+    /* Long identifier        */      "Injection 2 phasing set point for target mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpModTar_MP
+    /* Long identifier        */      "Target mode injection 2 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpModCur_MP
+    /* Long identifier        */      "Current mode injection 2 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_agInj3SpCal
+    /* Long identifier        */      "Calibration array for injection 3 phasing set point "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpBas1ModCur
+    /* Long identifier        */      "Injection 3 phasing set point for current mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpBas2ModCur
+    /* Long identifier        */      "Injection 3 phasing set point for current mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpBas1ModTar
+    /* Long identifier        */      "Injection 3 phasing set point for target mode Base 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpBas2ModTar
+    /* Long identifier        */      "Injection 3 phasing set point for target mode Base 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpModTar_MP
+    /* Long identifier        */      "Target mode injection 3 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpModCur_MP
+    /* Long identifier        */      "Current mode injection 3 phasing "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal15
+    /* Long identifier        */      "Injection 3 phasing set point calibration 15 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal14
+    /* Long identifier        */      "Injection 3 phasing set point calibration 14 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal13
+    /* Long identifier        */      "Injection 3 phasing set point calibration 13 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal12
+    /* Long identifier        */      "Injection 3 phasing set point calibration 12 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal11
+    /* Long identifier        */      "Injection 3 phasing set point calibration 11 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal10
+    /* Long identifier        */      "Injection 3 phasing set point calibration 10 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal9
+    /* Long identifier        */      "Injection 3 phasing set point calibration 9 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal8
+    /* Long identifier        */      "Injection 3 phasing set point calibration 8 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal7
+    /* Long identifier        */      "Injection 3 phasing set point calibration 7 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal6
+    /* Long identifier        */      "Injection 3 phasing set point calibration 6 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal5
+    /* Long identifier        */      "Injection 3 phasing set point calibration 5 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal4
+    /* Long identifier        */      "Injection 3 phasing set point calibration 4 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal3
+    /* Long identifier        */      "Injection 3 phasing set point calibration 3 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal2
+    /* Long identifier        */      "Injection 3 phasing set point calibration 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3SpCal1
+    /* Long identifier        */      "Injection 3 phasing set point calibration 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal15
+    /* Long identifier        */      "Injection 2 phasing set point calibration 15 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal14
+    /* Long identifier        */      "Injection 2 phasing set point calibration 14 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal13
+    /* Long identifier        */      "Injection 2 phasing set point calibration 13 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal12
+    /* Long identifier        */      "Injection 2 phasing set point calibration 12 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal11
+    /* Long identifier        */      "Injection 2 phasing set point calibration 11 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal10
+    /* Long identifier        */      "Injection 2 phasing set point calibration 10 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal9
+    /* Long identifier        */      "Injection 2 phasing set point calibration 9 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal8
+    /* Long identifier        */      "Injection 2 phasing set point calibration 8 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal7
+    /* Long identifier        */      "Injection 2 phasing set point calibration 7 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal6
+    /* Long identifier        */      "Injection 2 phasing set point calibration 6 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal5
+    /* Long identifier        */      "Injection 2 phasing set point calibration 5 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal4
+    /* Long identifier        */      "Injection 2 phasing set point calibration 4 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal3
+    /* Long identifier        */      "Injection 2 phasing set point calibration 3 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal2
+    /* Long identifier        */      "Injection 2 phasing set point calibration 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2SpCal1
+    /* Long identifier        */      "Injection 2 phasing set point calibration 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal15
+    /* Long identifier        */      "Injection 1 phasing set point calibration 15 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal14
+    /* Long identifier        */      "Injection 1 phasing set point calibration 14 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal13
+    /* Long identifier        */      "Injection 1 phasing set point calibration 13 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal12
+    /* Long identifier        */      "Injection 1 phasing set point calibration 12 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal11
+    /* Long identifier        */      "Injection 1 phasing set point calibration 11 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal10
+    /* Long identifier        */      "Injection 1 phasing set point calibration 10 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal9
+    /* Long identifier        */      "Injection 1 phasing set point calibration 9 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal8
+    /* Long identifier        */      "Injection 1 phasing set point calibration 8 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal7
+    /* Long identifier        */      "Injection 1 phasing set point calibration 7 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal6
+    /* Long identifier        */      "Injection 1 phasing set point calibration 6 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal5
+    /* Long identifier        */      "Injection 1 phasing set point calibration 5 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal4
+    /* Long identifier        */      "Injection 1 phasing set point calibration 4 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal3
+    /* Long identifier        */      "Injection 1 phasing set point calibration 3 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal2
+    /* Long identifier        */      "Injection 1 phasing set point calibration 2 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1SpCal1
+    /* Long identifier        */      "Injection 1 phasing set point calibration 1 "
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      agInjSp_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj1Sp
+    /* Long identifier        */      "First injection phasing set point "
+    /* Data type              */      UWORD
+    /* Conversion method      */      agInjSp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj2Sp
+    /* Long identifier        */      "Second injection phasing set point "
+    /* Data type              */      UWORD
+    /* Conversion method      */      agInjSp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_agInj3Sp
+    /* Long identifier        */      "Third injection phasing set point "
+    /* Data type              */      UWORD
+    /* Conversion method      */      agInjSp_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_bAcvAgInj1SpCal
+    /* Long identifier        */      "Boolean activation array for injection 1 phasing calibrations "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal1
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 1 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal2
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 2 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal11
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 11 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal12
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 12 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal13
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 13 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal14
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 14 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal15
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 15 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal3
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 3 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal4
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 4 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal5
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 5 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal6
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 6 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal7
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 7 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal8
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 8 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal9
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 9 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj1SpCal10
+    /* Long identifier        */      "Activation Boolean for injection 1 phasing calibration 10 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_bAcvAgInj2SpCal
+    /* Long identifier        */      "Boolean activation array for injection 2 phasing calibrations "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal1
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 1 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal2
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 2 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal11
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 11 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal12
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 12 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal13
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 13 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal14
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 14 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal15
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 15 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal3
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 3 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal5
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 5 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal4
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 4 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal6
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 6 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal7
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 7 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal8
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 8 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal9
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 9 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj2SpCal10
+    /* Long identifier        */      "Activation Boolean for injection 2 phasing calibration 10 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_prm_bAcvAgInj3SpCal
+    /* Long identifier        */      "Boolean activation array for injection 3 phasing calibrations "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    /* Array Size             */
+    MATRIX_DIM                        1 15 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal1
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 1 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal2
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 2 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal11
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 11 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal12
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 12 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal13
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 13 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal14
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 14 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal15
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 15 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal3
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 3 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal4
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 4 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal5
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 5 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal6
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 6 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal7
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 7 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal8
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 8 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal9
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 9 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bAcvAgInj3SpCal10
+    /* Long identifier        */      "Activation Boolean for injection 3 phasing calibration 10 "
+    /* Data type              */      UBYTE
+    /* Conversion method      */      agInjSp_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_1
+    /* Long identifier        */      "Q = V*10.666666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 10.666666666667 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_2
+    /* Long identifier        */      "Q = V*125.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "kPa"
+    /* Coefficients           */      COEFFS 0 125.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "RPM"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_4
+    /* Long identifier        */      "Q = V*8389.144905273937"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "g"
+    /* Coefficients           */      COEFFS 0 8389.144905273937 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_5
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF agInjSp_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      agInjSp_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      agInjSp_CM_7
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin FUNCTION agInjSp
+    "V01NT1006217.001"
+    
+    /begin IN_MEASUREMENT
+      Ext_nEng
+      Ext_pDsThrMesSI
+      InjSys_facBasModCurAgInj
+      InjSys_facBasModTarAgInj
+      InjSys_facTranModAgInj
+      InjSys_idxBas1ModCurAgInj
+      InjSys_idxBas1ModTarAgInj
+      InjSys_idxBas2ModCurAgInj
+      InjSys_idxBas2ModTarAgInj
+      InjSys_mAirPredInjSp
+      InjSys_nEngInjSp
+    /end IN_MEASUREMENT
+    
+    /begin LOC_MEASUREMENT
+      InjSys_agInj1SpBas1ModCur
+      InjSys_agInj1SpBas1ModTar
+      InjSys_agInj1SpBas2ModCur
+      InjSys_agInj1SpBas2ModTar
+      InjSys_agInj1SpCal1
+      InjSys_agInj1SpCal10
+      InjSys_agInj1SpCal11
+      InjSys_agInj1SpCal12
+      InjSys_agInj1SpCal13
+      InjSys_agInj1SpCal14
+      InjSys_agInj1SpCal15
+      InjSys_agInj1SpCal2
+      InjSys_agInj1SpCal3
+      InjSys_agInj1SpCal4
+      InjSys_agInj1SpCal5
+      InjSys_agInj1SpCal6
+      InjSys_agInj1SpCal7
+      InjSys_agInj1SpCal8
+      InjSys_agInj1SpCal9
+      InjSys_agInj1SpModCur_MP
+      InjSys_agInj1SpModTar_MP
+      InjSys_agInj2SpBas1ModCur
+      InjSys_agInj2SpBas1ModTar
+      InjSys_agInj2SpBas2ModCur
+      InjSys_agInj2SpBas2ModTar
+      InjSys_agInj2SpCal1
+      InjSys_agInj2SpCal10
+      InjSys_agInj2SpCal11
+      InjSys_agInj2SpCal12
+      InjSys_agInj2SpCal13
+      InjSys_agInj2SpCal14
+      InjSys_agInj2SpCal15
+      InjSys_agInj2SpCal2
+      InjSys_agInj2SpCal3
+      InjSys_agInj2SpCal4
+      InjSys_agInj2SpCal5
+      InjSys_agInj2SpCal6
+      InjSys_agInj2SpCal7
+      InjSys_agInj2SpCal8
+      InjSys_agInj2SpCal9
+      InjSys_agInj2SpModCur_MP
+      InjSys_agInj2SpModTar_MP
+      InjSys_agInj3SpBas1ModCur
+      InjSys_agInj3SpBas1ModTar
+      InjSys_agInj3SpBas2ModCur
+      InjSys_agInj3SpBas2ModTar
+      InjSys_agInj3SpCal1
+      InjSys_agInj3SpCal10
+      InjSys_agInj3SpCal11
+      InjSys_agInj3SpCal12
+      InjSys_agInj3SpCal13
+      InjSys_agInj3SpCal14
+      InjSys_agInj3SpCal15
+      InjSys_agInj3SpCal2
+      InjSys_agInj3SpCal3
+      InjSys_agInj3SpCal4
+      InjSys_agInj3SpCal5
+      InjSys_agInj3SpCal6
+      InjSys_agInj3SpCal7
+      InjSys_agInj3SpCal8
+      InjSys_agInj3SpCal9
+      InjSys_agInj3SpModCur_MP
+      InjSys_agInj3SpModTar_MP
+      InjSys_bAcvAgInj1SpCal1
+      InjSys_bAcvAgInj1SpCal10
+      InjSys_bAcvAgInj1SpCal11
+      InjSys_bAcvAgInj1SpCal12
+      InjSys_bAcvAgInj1SpCal13
+      InjSys_bAcvAgInj1SpCal14
+      InjSys_bAcvAgInj1SpCal15
+      InjSys_bAcvAgInj1SpCal2
+      InjSys_bAcvAgInj1SpCal3
+      InjSys_bAcvAgInj1SpCal4
+      InjSys_bAcvAgInj1SpCal5
+      InjSys_bAcvAgInj1SpCal6
+      InjSys_bAcvAgInj1SpCal7
+      InjSys_bAcvAgInj1SpCal8
+      InjSys_bAcvAgInj1SpCal9
+      InjSys_bAcvAgInj2SpCal1
+      InjSys_bAcvAgInj2SpCal10
+      InjSys_bAcvAgInj2SpCal11
+      InjSys_bAcvAgInj2SpCal12
+      InjSys_bAcvAgInj2SpCal13
+      InjSys_bAcvAgInj2SpCal14
+      InjSys_bAcvAgInj2SpCal15
+      InjSys_bAcvAgInj2SpCal2
+      InjSys_bAcvAgInj2SpCal3
+      InjSys_bAcvAgInj2SpCal4
+      InjSys_bAcvAgInj2SpCal5
+      InjSys_bAcvAgInj2SpCal6
+      InjSys_bAcvAgInj2SpCal7
+      InjSys_bAcvAgInj2SpCal8
+      InjSys_bAcvAgInj2SpCal9
+      InjSys_bAcvAgInj3SpCal1
+      InjSys_bAcvAgInj3SpCal10
+      InjSys_bAcvAgInj3SpCal11
+      InjSys_bAcvAgInj3SpCal12
+      InjSys_bAcvAgInj3SpCal13
+      InjSys_bAcvAgInj3SpCal14
+      InjSys_bAcvAgInj3SpCal15
+      InjSys_bAcvAgInj3SpCal2
+      InjSys_bAcvAgInj3SpCal3
+      InjSys_bAcvAgInj3SpCal4
+      InjSys_bAcvAgInj3SpCal5
+      InjSys_bAcvAgInj3SpCal6
+      InjSys_bAcvAgInj3SpCal7
+      InjSys_bAcvAgInj3SpCal8
+      InjSys_bAcvAgInj3SpCal9
+      InjSys_prm_agInj1SpCal
+      InjSys_prm_agInj2SpCal
+      InjSys_prm_agInj3SpCal
+      InjSys_prm_bAcvAgInj1SpCal
+      InjSys_prm_bAcvAgInj2SpCal
+      InjSys_prm_bAcvAgInj3SpCal
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      InjSys_agInj1Sp
+      InjSys_agInj2Sp
+      InjSys_agInj3Sp
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      Ext_nEngX_A
+      Ext_pDsThrMesSIY_A
+      InjSys_agInj1SpCal10_M
+      InjSys_agInj1SpCal11_M
+      InjSys_agInj1SpCal12_M
+      InjSys_agInj1SpCal13_M
+      InjSys_agInj1SpCal14_M
+      InjSys_agInj1SpCal15_M
+      InjSys_agInj1SpCal1_M
+      InjSys_agInj1SpCal2_M
+      InjSys_agInj1SpCal3_M
+      InjSys_agInj1SpCal4_M
+      InjSys_agInj1SpCal5_M
+      InjSys_agInj1SpCal6_M
+      InjSys_agInj1SpCal7_M
+      InjSys_agInj1SpCal8_M
+      InjSys_agInj1SpCal9_M
+      InjSys_agInj1SpETB_C
+      InjSys_agInj1SpETB_M
+      InjSys_agInj2SpCal10_M
+      InjSys_agInj2SpCal11_M
+      InjSys_agInj2SpCal12_M
+      InjSys_agInj2SpCal13_M
+      InjSys_agInj2SpCal14_M
+      InjSys_agInj2SpCal15_M
+      InjSys_agInj2SpCal1_M
+      InjSys_agInj2SpCal2_M
+      InjSys_agInj2SpCal3_M
+      InjSys_agInj2SpCal4_M
+      InjSys_agInj2SpCal5_M
+      InjSys_agInj2SpCal6_M
+      InjSys_agInj2SpCal7_M
+      InjSys_agInj2SpCal8_M
+      InjSys_agInj2SpCal9_M
+      InjSys_agInj2SpETB_C
+      InjSys_agInj2SpETB_M
+      InjSys_agInj3SpCal10_M
+      InjSys_agInj3SpCal11_M
+      InjSys_agInj3SpCal12_M
+      InjSys_agInj3SpCal13_M
+      InjSys_agInj3SpCal14_M
+      InjSys_agInj3SpCal15_M
+      InjSys_agInj3SpCal1_M
+      InjSys_agInj3SpCal2_M
+      InjSys_agInj3SpCal3_M
+      InjSys_agInj3SpCal4_M
+      InjSys_agInj3SpCal5_M
+      InjSys_agInj3SpCal6_M
+      InjSys_agInj3SpCal7_M
+      InjSys_agInj3SpCal8_M
+      InjSys_agInj3SpCal9_M
+      InjSys_agInj3SpETB_C
+      InjSys_agInj3SpETB_M
+      InjSys_bAcvETBagInjSp_C
+      InjSys_idxModAgInjSatMax_C
+      InjSys_idxModAgInjSatMin_C
+      InjSys_mAirInjSpCal10Y_A
+      InjSys_mAirInjSpCal11Y_A
+      InjSys_mAirInjSpCal12Y_A
+      InjSys_mAirInjSpCal13Y_A
+      InjSys_mAirInjSpCal14Y_A
+      InjSys_mAirInjSpCal15Y_A
+      InjSys_mAirInjSpCal1Y_A
+      InjSys_mAirInjSpCal2Y_A
+      InjSys_mAirInjSpCal3Y_A
+      InjSys_mAirInjSpCal4Y_A
+      InjSys_mAirInjSpCal5Y_A
+      InjSys_mAirInjSpCal6Y_A
+      InjSys_mAirInjSpCal7Y_A
+      InjSys_mAirInjSpCal8Y_A
+      InjSys_mAirInjSpCal9Y_A
+      InjSys_nEngInjSpCal10X_A
+      InjSys_nEngInjSpCal11X_A
+      InjSys_nEngInjSpCal12X_A
+      InjSys_nEngInjSpCal13X_A
+      InjSys_nEngInjSpCal14X_A
+      InjSys_nEngInjSpCal15X_A
+      InjSys_nEngInjSpCal1X_A
+      InjSys_nEngInjSpCal2X_A
+      InjSys_nEngInjSpCal3X_A
+      InjSys_nEngInjSpCal4X_A
+      InjSys_nEngInjSpCal5X_A
+      InjSys_nEngInjSpCal6X_A
+      InjSys_nEngInjSpCal7X_A
+      InjSys_nEngInjSpCal8X_A
+      InjSys_nEngInjSpCal9X_A
+      InjSys_noETBSelagInj1Sp_C
+      InjSys_noETBSelagInj2Sp_C
+      InjSys_noETBSelagInj3Sp_C
+    /end DEF_CHARACTERISTIC
+    
+  /end FUNCTION
+  
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+

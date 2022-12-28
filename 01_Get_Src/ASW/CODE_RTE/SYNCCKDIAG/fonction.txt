@@ -1,0 +1,36 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+CAMHAL_vidSetTrueEdgePos|A|(argin CAMHAL_tudtChannel udtChannelName, argio uint16 *pau16CamEdgePositionTable);|5|HEADER|1|NONE||||0|0|0|0||
+CRKHAL_udtReadMode|A|func_CRKHAL_udtReadMode|6|HEADER|1|NONE||||0|0|0|0||
+CRKHAL_udtReadStatus|A|func_CRKHAL_udtReadStatus|4|HEADER|1|NONE||||0|0|0|0||
+CRKHAL_vidSetMode|A|(argin CRKHAL_tenuMode enuMode);|3|HEADER|1|NONE||||0|0|0|0||
+DGOHAL_bfRead|A|func_DGOHAL_bfRead|2|HEADER|1|NONE||||0|0|0|0||
+Sync_EveCkLTo_CkDiagSts|C|();|SCH.6|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement correspondant au passage de la dent longue|
+Sync_EveCkOf_CkDiagSts|B|();|SCH.13|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|EveCkOff|
+Sync_EveCkSnOf_CkDiagSts|C|();|SCH.7|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement d'appel de tâche "synchro perdue" du CMM (à la perte de synchro et au calage)|
+Sync_EveCkSnOn_CkDiagSts|C|();|SCH.5|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise|
+Sync_EveCrTSt_CkDiagSts|C|();|SCH.9|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement CRANKING vers STALL|
+Sync_EveKOn_CkDiagSts|B|();|SCH.11|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evènement associé au passage de clef OFF à clef ON|
+Sync_EveRst_CkDiagSts|C|();|SCH.2|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|fonction  Reset|
+Sync_EveRTCr_CkDiagSts|C|();|SCH.8|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement RUNNING vers CRANKING|
+Sync_EveStTCr_CkDiagSts|C|();|SCH.3|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evenement correspondante à l'évenement STALL vers CRANKING|
+Sync_EveStTR_CkDiagSts|C|();|SCH.4|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_tournant|
+Sync_SdlFast_CkDiagSts|B|();|SCH.12|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Moniteur rapide de la fonction Sync|
+Sync_SdlMid_CkDiagSts|C|();|SCH.1|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Monitor moyen de la fonction Sync|
+Sync_SdlSlow_CkDiagSts|C|();|SCH.10|SYNCCKDIAG|1|PTS_DOC_6886036||||0|0|0|0|Moniteur lent de la fonction Sync|
+SYNCCKDIAG_vidAcvDwgMode|B|();|FCT2.6|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|Appel de l’API permettant le changement de mode|
+SYNCCKDIAG_vidBackUpMode|B|();|FCT2.1|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|En cas de demande d’activation du back-up mode vilebrequin, on effectue une  préparation pour le passage en mode dégradé, puis on vient lire le mode de fonctionnement en cours et on active enfin le mode de back-up.|
+SYNCCKDIAG_vidCkAcqVld|C|();|FCT1.10|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|cette fonction spécifie la validité de l’acquisition du capteur vilebrequin.|
+SYNCCKDIAG_vidCkStsAcq|E|();|FCT1.6|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|L’appel au service CrkHALRead nous retourne des booléens pour : le signal vilebrequin détecté,  le passage à moteur tournant via le signal vilebrequin, la synchronisation du moteur.|
+SYNCCKDIAG_vidCrkDgnUpdateInReq|C|();|FCT1.3|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|Le composant DGO possède quatre voies qui permettent de diagnostiquer quatre défaillances|
+SYNCCKDIAG_vidCrkInvalTeethDiag|C|();|FCT1.8|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|fonction de a non détection de la dent longue ou de plusieurs dents consécutives dans un tour vilebrequin|
+SYNCCKDIAG_vidCrkInvalToothDiag|C|();|FCT1.7|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|fonction de la non détection d’une dent dans un tour vilebrequin|
+SYNCCKDIAG_vidCrkLngLtoo1Diag|C|();|FCT1.9|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|fonction de la non reconnaissance de la dent longue lors de la synchronisation moteur, le défaut NoGap et l’autorisation de diagnostic sont calculés à l’événement Event_crk_dgn_no_gap_det|
+SYNCCKDIAG_vidCrkLngToothTmpDiag|C|();|FCT1.4|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|fonction de la non reconnaissance de la dent longue lors de la synchronisation moteur, le défaut NoGap et l’autorisation de diagnostic sont calculés à l’événement Event_crk_dgn_no_gap_t_det|
+SYNCCKDIAG_vidEventGeneration|C|();|FCT1.2|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|cette fonction  génère les évènements selon quand le moteur n’est pas synchronisé.|
+SYNCCKDIAG_vidExCamSig|B|();|FCT2.4|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|utiliser le signal échappement qui définit le signal arbre à cames.|
+SYNCCKDIAG_vidInCamSig|B|();|FCT2.3|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|utiliser le signal admission  qui définit le signal arbre à cames|
+SYNCCKDIAG_vidInitOutput|C|();|FCT1.1|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|fonction d'initialisation des sorties.|
+SYNCCKDIAG_vidInitSelectCkMode|B|();|FCT2.7|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|Initialisation du mode de selection|
+SYNCCKDIAG_vidReadCkMode|B|();|FCT2.5|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|lire le mode vilebrequin qui est actif|
+SYNCCKDIAG_vidResetDiag|C|();|FCT1.5|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|cette fonction initialise les défauts et les autorisations de diagnostic à 0 au Reset.|
+SYNCCKDIAG_vidSetEdgePos|B|();|FCT2.2|SYNCCKDIAG|0|PTS_DOC_6886036||||0|0|0|0|Lorsqu’une demande de passage en mode de back-up vilebrequin est activée on envoie au LDB la position apprise des fronts arbre à cames.|

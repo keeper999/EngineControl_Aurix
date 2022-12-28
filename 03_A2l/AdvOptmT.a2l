@@ -1,0 +1,2589 @@
+﻿/begin MODULE AdvOptmT  "AdvOptmT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvOptmT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facWup_tCo_M
+    /* Long Identifier        */      " Coefficient en fonction du temps après départ et de la températur eau"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_tiEngRunWup_MP
+      /* Conversion Method    */      AdvOptmT_CM_2
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      0
+      /* Upper Limit          */      60000.0
+      AXIS_PTS_REF                    IgSys_tiEngRunWupY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_3
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    IgSys_tCoWupX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tiEngRunWupY_A
+    /* Long Identifier        */      " Point dappui temps moteur tournant, facteur avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_tiEngRunWup_MP
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_2
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      60000.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tCoWupX_A
+    /* Long Identifier        */      " Point dappui température d'eau, facteur avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_3
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facWup_tAir_M
+    /* Long Identifier        */      " Coefficient en fonction du régime et du remplissage"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdWupY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nCkFilWupX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLdWupY_A
+    /* Long Identifier        */      " Point d'appui remplissage, avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nCkFilWupX_A
+    /* Long Identifier        */      " Point d'appui régime moteur, avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgWupOfs_tAir_M
+    /* Long Identifier        */      " Cartographie offset avance warm up"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_3
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      100.0
+      AXIS_PTS_REF                    IgSys_tAirWupOfsY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nCkFilWupOfsX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tAirWupOfsY_A
+    /* Long Identifier        */      " Point d'appui température d'air, offset avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_3
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      100.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nCkFilWupOfsX_A
+    /* Long Identifier        */      " Point d'appui régime moteur, offset avance warm up"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgOptmRef_M
+    /* Long Identifier        */      "avance opti de reference"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_AgIgOptmRefY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_AgIgOptmRefX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_AgIgOptmRefY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_AgIgOptmRefX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agCkMFB5Ref_M
+    /* Long Identifier        */      "angle MFB5 de référence"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_AgCkMFB5RefY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_AgCkMFB5RefX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_AgCkMFB5RefY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_AgCkMFB5RefX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agCkMFB50Ref_M
+    /* Long Identifier        */      "angle MFB50 de référence"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_AgCkMFB50RefY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_AgCkMFB50RefX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_AgCkMFB50RefY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_AgCkMFB50RefX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facCmbRef_M
+    /* Long Identifier        */      "constante combustion de reference"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5000.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_FacCmbRefY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_FacCmbRefX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_FacCmbRefY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_FacCmbRefX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facIniRef_M
+    /* Long Identifier        */      " Constante d'initialisation de référence"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      131072.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_FacIniRefY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_FacIniRefX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_FacIniRefY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_FacIniRefX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_volCylIVCRef1_T
+    /* Long Identifier        */      "volume de la chambre à IVC 0.5 mm"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_6
+    /* Lower Limit            */      1.0E-006
+    /* Upper Limit            */      0.001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_agCkClsInVlvEstimRef1
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      360.0
+      AXIS_PTS_REF                    IgSys_agCkClsInVlvEstimRef1_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agCkClsInVlvEstimRef1_A
+    /* Long Identifier        */      " angle fermeture soupape d'admission à 0.5mm"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_agCkClsInVlvEstimRef1
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      360.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_volCylMFB50Ref_T
+    /* Long Identifier        */      "volume de la chambre au MBF50 de référence"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_6
+    /* Lower Limit            */      1.0E-006
+    /* Upper Limit            */      0.001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_agCkMFB50Ref
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -36.0
+      /* Upper Limit          */      60.0
+      AXIS_PTS_REF                    IgSys_agCkMFB50_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agCkMFB50_A
+    /* Long Identifier        */      "angle MFB50"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_agCkMFB50Ref
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_velLamiFlameT0_T
+    /* Long Identifier        */      "vitesse de flamme laminaire T0"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      100.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_rlamSel
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      12
+      /* Lower Limit          */      0
+      /* Upper Limit          */      14.68
+      AXIS_PTS_REF                    IgSys_rlamSel_VelLamiFlameT0_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rlamSel_VelLamiFlameT0_A
+    /* Long Identifier        */      "richesse selectionnée (pour la vitesse de flamme laminaire T0)"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_rlamSel
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      12
+    /* Lower Limit            */      0
+    /* Upper Limit            */      14.68
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facAeroCor_M
+    /* Long Identifier        */      "correction de la vitesse piston par la prise en compte de l'aerodynamisme"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0.01
+    /* Upper Limit            */      30.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_agCkClsInVlvEstimRef1
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      8
+      /* Lower Limit          */      0
+      /* Upper Limit          */      360.0
+      AXIS_PTS_REF                    IgSys_agCkClsInVlvRef1Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_FacAeroCorX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agCkClsInVlvRef1Y_A
+    /* Long Identifier        */      " angle fermeture soupape d'admission à 0.5mm"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_agCkClsInVlvEstimRef1
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      360.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_FacAeroCorX_A
+    /* Long Identifier        */      " régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_volCylSAOptm_T
+    /* Long Identifier        */      "volume de la chambre l'allumage"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_6
+    /* Lower Limit            */      1.0E-006
+    /* Upper Limit            */      0.001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_agIgOptmSel
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -36.0
+      /* Upper Limit          */      60.0
+      AXIS_PTS_REF                    IgSys_agIgOptm_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agIgOptm_A
+    /* Long Identifier        */      "avance allumage opti"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_agIgOptmSel
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_volCylAgCkIni_T
+    /* Long Identifier        */      "volume de la chambre à l'initialisation"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_6
+    /* Lower Limit            */      1.0E-006
+    /* Upper Limit            */      0.001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -36.0
+      /* Upper Limit          */      60.0
+      AXIS_PTS_REF                    IgSys_agCkIni_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agCkIni_A
+    /* Long Identifier        */      " angle moyen d'initialisation"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_volCylMFB5_T
+    /* Long Identifier        */      "volume de la chambre au MBF5"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_6
+    /* Lower Limit            */      1.0E-006
+    /* Upper Limit            */      0.001
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_agCkMFB5Sel
+      /* Conversion Method    */      AdvOptmT_CM_5
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -36.0
+      /* Upper Limit          */      60.0
+      AXIS_PTS_REF                    IgSys_agCkMFB5_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_agCkMFB5_A
+    /* Long Identifier        */      "angle MFB5"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_agCkMFB5Sel
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLawGma1_M
+    /* Long Identifier        */      " loi en puissance gamma -1"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      3.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      12
+      /* Lower Limit          */      -1.0
+      /* Upper Limit          */      0.41
+      AXIS_PTS_REF                    IgSys_gma1Y_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_rVolCmprSAOSel_MP
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      1.0
+      /* Upper Limit          */      15.0
+      AXIS_PTS_REF                    IgSys_rVolCmprX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_gma1Y_A
+    /* Long Identifier        */      " gamma-1"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      12
+    /* Lower Limit            */      -1.0
+    /* Upper Limit            */      0.41
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rVolCmprX_A
+    /* Long Identifier        */      "taux de compression effectif"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_rVolCmprSAOSel_MP
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      15.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_visDInMixt_T
+    /* Long Identifier        */      "viscosite dynamique"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_8
+    /* Lower Limit            */      1.0E-005
+    /* Upper Limit            */      0.2
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_tMixtCylIni
+      /* Conversion Method    */      AdvOptmT_CM_9
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      243.0
+      /* Upper Limit          */      2200.0
+      AXIS_PTS_REF                    IgSys_tMixtCyl_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tMixtCyl_A
+    /* Long Identifier        */      "temperature du mélange"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_tMixtCylIni
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_9
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      243.0
+    /* Upper Limit            */      2200.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLawDeltaIni_T
+    /* Long Identifier        */      "loi en puissance delta"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rItBurnRateCor_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rItBurnRateCor_A
+    /* Long Identifier        */      "taux de GBR"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLawAlpha_M
+    /* Long Identifier        */      "loi en puissance alpha"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      100.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_rlamSel
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      12
+      /* Lower Limit          */      0.8
+      /* Upper Limit          */      1.3
+      AXIS_PTS_REF                    IgSys_rAfrSelY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_tMixtCylIni
+      /* Conversion Method    */      AdvOptmT_CM_9
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      243.0
+      /* Upper Limit          */      2200.0
+      AXIS_PTS_REF                    IgSys_tMixtCylX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAfrSelY_A
+    /* Long Identifier        */      "richesse selectionnée"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_rlamSel
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      12
+    /* Lower Limit            */      0.8
+    /* Upper Limit            */      1.3
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tMixtCylX_A
+    /* Long Identifier        */      "temperature du mélange"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_tMixtCylIni
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_9
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      243.0
+    /* Upper Limit            */      2200.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLawBeta_M
+    /* Long Identifier        */      "loi en puissance beta"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_rlamSel
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      12
+      /* Lower Limit          */      0.8
+      /* Upper Limit          */      1.3
+      AXIS_PTS_REF                    IgSys_rAfrSelY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      IgSys_pMixtCylIni
+      /* Conversion Method    */      AdvOptmT_CM_10
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      5000.0
+      /* Upper Limit          */      1.5E+007
+      AXIS_PTS_REF                    IgSys_pMixtCylX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_pMixtCylX_A
+    /* Long Identifier        */      "pression dans le cylindre"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      IgSys_pMixtCylIni
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_10
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      5000.0
+    /* Upper Limit            */      1.5E+007
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLaw033Prod_T
+    /* Long Identifier        */      "loi en puissance 1/3"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      0.2
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      1.0E-007
+      /* Upper Limit          */      0.001
+      AXIS_PTS_REF                    IgSys_facVisKFacAeroCorProd_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_facVisKFacAeroCorProd_A
+    /* Long Identifier        */      "Produit de la viscosite cinematique par la vitesse moyenne piston"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      1.0E-007
+    /* Upper Limit            */      0.001
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLaw067Prod_T
+    /* Long Identifier        */      "loi en puissance 2/3"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      100.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      127.0
+      AXIS_PTS_REF                    IgSys_facDstCylVelLamiDiv_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_facDstCylVelLamiDiv_A
+    /* Long Identifier        */      "hauteur de chambre sur vitesse laminaire"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      127.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPwLawDeltaCmb_T
+    /* Long Identifier        */      "loi en puissance delta"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup1D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rItBurnRateCor_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgOptmOfs_M
+    /* Long Identifier        */      "decalage d'avance pour prise en compte temperature moteur"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_FLOAT32_IEEE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_1
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLd_AgIgOptmOfsY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvOptmT_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    IgSys_tCoMes_AgIgOptmOfsX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLd_AgIgOptmOfsY_A
+    /* Long Identifier        */      "charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tCoMes_AgIgOptmOfsX_A
+    /* Long Identifier        */      "temperature d'eau"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvOptmT_RL_Lookup2D_X_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Eng_rAfs_C
+    /* Long Identifier        */      "coefficient stoechiométrique (rapport masse d'air sur masse de carburant pour une richesse de 1)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      4.0
+    /* Upper Limit            */      25.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agCkClsInVlvRef1Delta_C
+    /* Long Identifier        */      " décalage a appliquer entre la fermeture soupape à 1mm et 0.5mm"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      120.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agCkMFB5MBSatOfs_C
+    /* Long Identifier        */      "offset d'angle pour la saturation du CA5"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agCkOpClsInVlvDelta_C
+    /* Long Identifier        */      "décalage à appliquer entre ouverture et fermetre soupape admission"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      360.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgOptmMBSatOfs_C
+    /* Long Identifier        */      "offset d'angle pour la saturation de l'avance optimale"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_5
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      60.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facPCI_C
+    /* Long Identifier        */      " PCI"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      100.0
+    /* Upper Limit            */      1.0E+005
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rlamMaxMsFuCyl_C
+    /* Long Identifier        */      "saturation par un indice de richesse de la masse de carburant participant à la combustion"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      14.68
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_surProjPist_C
+    /* Long Identifier        */      "Surface projetée du piston"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_11
+    /* Lower Limit            */      1.0E-005
+    /* Upper Limit            */      0.05
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tAirWup_C
+    /* Long Identifier        */      " Valeur de refuge pour la température air"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_3
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      100.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tCoWup_C
+    /* Long Identifier        */      " Valeur de refuge pour la température eau"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_FLOAT32_IEEE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_3
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ADVOPTMT_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de BYPASS"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bFlexOptmOfs_C
+    /* Long Identifier        */      "choix d'activation du mode de calcul de l'AAO pour le Flex Fuel"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bGasOptmOfs_C
+    /* Long Identifier        */      "choix d'activation du mode de calcul de l'AAO pour le Gaz"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bLamEng_C
+    /* Long Identifier        */      "choix entre le lambda de consigne et calculé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgBas_B
+    /* Long Identifier        */      "Avance de base (BYPASS)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_13
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgOptm_B
+    /* Long Identifier        */      "Avance optimale (BYPASS)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvOptmT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvOptmT_CM_13
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      AdvOptmT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvOptmT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvOptmT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvOptmT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvOptmT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvOptmT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmWiFlexCor_MP
+    /* Long identifier        */      "point de mesure, Avance otimale sans correction"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmWiCor
+    /* Long identifier        */      "angle d'avance à l'allumage optimum avec correction"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmCalcSat
+    /* Long identifier        */      "angle d'avance à l'allumage optimum calculé avec saturation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB5CalcSat
+    /* Long identifier        */      "angle CA5 calculé avec saturation (i.e. 5% de mélange brulé)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB5MFB50Delta_MP
+    /* Long identifier        */      "délai de combustion calculé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      120.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmCalc
+    /* Long identifier        */      "angle d'avance à l'allumage optimum calculé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_dstCylMFB5Calc
+    /* Long identifier        */      "hauteur de chambre au point CA5 calculé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_14
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0001
+    /* Upper limit            */      0.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_velLamiFlameCmb
+    /* Long identifier        */      "vitesse de flamme laminaire pendant la phase de combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      100.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facPwLaw033ProdCmb
+    /* Long identifier        */      "resultat de loi en puissance un tiers"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      0.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_visKCmb_MP
+    /* Long identifier        */      "point de mesure, viscosité cinematique du melange pendant la combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_15
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylCmb
+    /* Long identifier        */      "température du mélange dans le cylindre pour le calcul du délai de combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_pMixtCylCmb
+    /* Long identifier        */      "pression du mélange dans le cylindre pour le calcul du délai de combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      5000.0
+    /* Upper limit            */      1.5E+007
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylMFB50RefwCmb_MP
+    /* Long identifier        */      "température théorique du mélange dans le cylindre au point 50% de gaz brulé sans combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylMFB50
+    /* Long identifier        */      "température du mélange dans le cylindre au point CA50"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_pMixtCylMFB50
+    /* Long identifier        */      "pression du mélange estimée dans le cylindre au point CA50"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      5000.0
+    /* Upper limit            */      1.5E+007
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rVolCmprMFB50Ref_MP
+    /* Long identifier        */      " rapport volumique de compression au point CA50 de reference"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      15.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkSAOptmMFB5DeltaCalc
+    /* Long identifier        */      "délai d'initialisation calculé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      120.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB5Calc
+    /* Long identifier        */      "angle CA5 calculé (i.e. 5% de mélange brulé)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_velLamiFlameIni
+    /* Long identifier        */      "vitesse de flamme laminaire pendant la phase d'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      100.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_visKIni
+    /* Long identifier        */      "viscosité cinématique pendant la phase d'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_15
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_densMixtIni_MP
+    /* Long identifier        */      "masse volumique du mélange calculé à l'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      20.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylIni
+    /* Long identifier        */      "température du mélange dans le cylindre pour le calcul du délai d'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_pMixtCylIni
+    /* Long identifier        */      "pression du mélange dans le cylindre pour le calcul du délai d'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      5000.0
+    /* Upper limit            */      1.5E+007
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylMFB5wCmb_MP
+    /* Long identifier        */      " température du mélange dans le cylindre au point 5% de gaz brulé sans combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylMFB5
+    /* Long identifier        */      "température du mélange dans le cylindre au point CA5 pour le calcul du délai de combustion"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_pMixtCylMFB5
+    /* Long identifier        */      "pression du mélange estimée dans le cylindre au point CA50"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      5000.0
+    /* Upper limit            */      1.5E+007
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rVolCmprMFB5Sel_MP
+    /* Long identifier        */      "rapport volumique de compression au point CA5 sélectionné"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      15.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylSAOptm
+    /* Long identifier        */      "température du mélange dans le cylindre a l'allumage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_pMixtCylSAOptm
+    /* Long identifier        */      "pression du mélange dans le cylindre a l'allumage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      5000.0
+    /* Upper limit            */      1.5E+007
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rVolCmprSAOSel_MP
+    /* Long identifier        */      "rapport volumique de compression a l'allumage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0
+    /* Upper limit            */      15.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_volCylSAOptmSel
+    /* Long identifier        */      "volume de la chambre au point d'allumage"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_volCylIni
+    /* Long identifier        */      "volume de la chambre moyen à l'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_volCylMFB5Sel
+    /* Long identifier        */      "volume de la chambre au point CA5 sélectionné"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_6
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_dstCylIni
+    /* Long identifier        */      "hauteur de chambre moyen à l'initialisation"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_14
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0001
+    /* Upper limit            */      0.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmSel
+    /* Long identifier        */      "angle d'avance à l'allumage optimum sélectionné"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB5Sel
+    /* Long identifier        */      "angle CA5 sélectionné"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_ra
+    /* Long identifier        */      "constante des gaz parfaits"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      8.314
+    /* Upper limit            */      8.314
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facPCI
+    /* Long identifier        */      " constante PCI"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_17
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0E+005
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_velLamiFlameT0
+    /* Long identifier        */      " paramètre SL_T0 pour le calcul de la vitesse de flamme"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      100.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facAeroCor
+    /* Long identifier        */      "facteur de correction aérodynamique"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.01
+    /* Upper limit            */      30.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_volCylIVCRef1
+    /* Long identifier        */      " volume de la chambre a la fermeture des soupapes d'admission (0.5 mm)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_volCylMFB50Ref
+    /* Long identifier        */      "volume de la chambre au point de référence 50% de gaz brulé"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_18
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-006
+    /* Upper limit            */      0.001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_surProjPist
+    /* Long identifier        */      "surface projetée du piston"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      1.0E-005
+    /* Upper limit            */      0.05
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_dstCylMFB50Ref
+    /* Long identifier        */      " hauteur de chambre au point CA50 de reference"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_14
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0001
+    /* Upper limit            */      0.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facCmbRef
+    /* Long identifier        */      " constante de combustion de référence"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      5000.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facIniRef
+    /* Long identifier        */      " constante d'initialisation de référence"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      131072.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgOptmRef
+    /* Long identifier        */      "angle d'avance à l'allumage optimum de référence"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB5Ref
+    /* Long identifier        */      "angle CA5 de référence (i.e. 5% de mélange brulé)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkMFB50Ref
+    /* Long identifier        */      "angle CA50 de référence (i.e 50% de mélange brulé)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tMixtCylIVCRef1
+    /* Long identifier        */      "température du mélange dans le cylindre a la fermeture des soupapes d'admission 0.5 mm"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      243.0
+    /* Upper limit            */      2200.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agCkClsInVlvEstimRef1
+    /* Long identifier        */      "angle de fermeture de soupape admission a 0.5 mm"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      360.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_mMixtCyl
+    /* Long identifier        */      " masse du mélange dans le cylindre"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_19
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      0.00781
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_mFuCyl
+    /* Long identifier        */      " masse de carburant dans le cylindre"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_19
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      0.007812
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rlamSel
+    /* Long identifier        */      "richesse sélectionnée"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      14.68
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tiEngRunWup_MP
+    /* Long identifier        */      " Point test temps moteur tournant, avance warm up"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      60000.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgWup_nEng_MP
+    /* Long identifier        */      "Point test davance warm up en fonction de la température air"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgWup_IRV_MP
+    /* Long identifier        */      "Avance Warm up (IRV_MP)"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvOptmT_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      60.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAcvAdvOptm
+    /* Long identifier        */      "flag d'activation du calcul d'avance à l'allumage optimale"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvOptmT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAcvWup
+    /* Long identifier        */      " Flag d'activation du calcul de la fonction"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvOptmT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAcvClsLoop_IRV_MP
+    /* Long identifier        */      "Boolean for activation of closed loop."
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvOptmT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "PMH"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_4
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "RPM"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_5
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_6
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m^3"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_7
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/m/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_9
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_10
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_11
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF AdvOptmT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      AdvOptmT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_13
+    /* Long identifier        */      "Q = (V+36)*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 2.66666666667 96 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_14
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_15
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m²/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_16
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg/m^3"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_17
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "KJ/kg"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_18
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "m3"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvOptmT_CM_19
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "kg"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION AdvOptmT_FCT_AdvOptmT
+    "CHARACTERISTIC and MEASUREMENT of AdvOptmT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      AdvOptmT_ModuleVersion_Major_MP 
+      AdvOptmT_ModuleVersion_Minor_MP 
+      AdvOptmT_ModuleVersion_Patch_MP 
+      IgSys_agCkClsInVlvEstimRef1
+      IgSys_agCkMFB50Ref
+      IgSys_agCkMFB5Calc
+      IgSys_agCkMFB5CalcSat
+      IgSys_agCkMFB5MFB50Delta_MP
+      IgSys_agCkMFB5Ref
+      IgSys_agCkMFB5Sel
+      IgSys_agCkSAOptmMFB5DeltaCalc
+      IgSys_agIgOptmCalc
+      IgSys_agIgOptmCalcSat
+      IgSys_agIgOptmRef
+      IgSys_agIgOptmSel
+      IgSys_agIgOptmWiCor
+      IgSys_agIgOptmWiFlexCor_MP
+      IgSys_agIgWup_IRV_MP
+      IgSys_agIgWup_nEng_MP
+      IgSys_bAcvAdvOptm
+      IgSys_bAcvClsLoop_IRV_MP
+      IgSys_bAcvWup
+      IgSys_densMixtIni_MP
+      IgSys_dstCylIni
+      IgSys_dstCylMFB50Ref
+      IgSys_dstCylMFB5Calc
+      IgSys_facAeroCor
+      IgSys_facCmbRef
+      IgSys_facIniRef
+      IgSys_facPCI
+      IgSys_facPwLaw033ProdCmb
+      IgSys_mFuCyl
+      IgSys_mMixtCyl
+      IgSys_pMixtCylCmb
+      IgSys_pMixtCylIni
+      IgSys_pMixtCylMFB5
+      IgSys_pMixtCylMFB50
+      IgSys_pMixtCylSAOptm
+      IgSys_rVolCmprMFB50Ref_MP
+      IgSys_rVolCmprMFB5Sel_MP
+      IgSys_rVolCmprSAOSel_MP
+      IgSys_ra
+      IgSys_rlamSel
+      IgSys_surProjPist
+      IgSys_tMixtCylCmb
+      IgSys_tMixtCylIVCRef1
+      IgSys_tMixtCylIni
+      IgSys_tMixtCylMFB5
+      IgSys_tMixtCylMFB50
+      IgSys_tMixtCylMFB50RefwCmb_MP
+      IgSys_tMixtCylMFB5wCmb_MP
+      IgSys_tMixtCylSAOptm
+      IgSys_tiEngRunWup_MP
+      IgSys_velLamiFlameCmb
+      IgSys_velLamiFlameIni
+      IgSys_velLamiFlameT0
+      IgSys_visKCmb_MP
+      IgSys_visKIni
+      IgSys_volCylIVCRef1
+      IgSys_volCylIni
+      IgSys_volCylMFB50Ref
+      IgSys_volCylMFB5Sel
+      IgSys_volCylSAOptmSel
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      ADVOPTMT_ACTIVE_BYP_C
+      Eng_rAfs_C
+      IgSys_agCkClsInVlvEstimRef1_A
+      IgSys_agCkClsInVlvRef1Delta_C
+      IgSys_agCkClsInVlvRef1Y_A
+      IgSys_agCkIni_A
+      IgSys_agCkMFB50Ref_M
+      IgSys_agCkMFB50_A
+      IgSys_agCkMFB5MBSatOfs_C
+      IgSys_agCkMFB5Ref_M
+      IgSys_agCkMFB5_A
+      IgSys_agCkOpClsInVlvDelta_C
+      IgSys_agIgBas_B
+      IgSys_agIgOptmMBSatOfs_C
+      IgSys_agIgOptmOfs_M
+      IgSys_agIgOptmRef_M
+      IgSys_agIgOptm_A
+      IgSys_agIgOptm_B
+      IgSys_agIgWupOfs_tAir_M
+      IgSys_bFlexOptmOfs_C
+      IgSys_bGasOptmOfs_C
+      IgSys_bLamEng_C
+      IgSys_facAeroCor_M
+      IgSys_facCmbRef_M
+      IgSys_facDstCylVelLamiDiv_A
+      IgSys_facIniRef_M
+      IgSys_facPCI_C
+      IgSys_facPwLaw033Prod_T
+      IgSys_facPwLaw067Prod_T
+      IgSys_facPwLawAlpha_M
+      IgSys_facPwLawBeta_M
+      IgSys_facPwLawDeltaCmb_T
+      IgSys_facPwLawDeltaIni_T
+      IgSys_facPwLawGma1_M
+      IgSys_facVisKFacAeroCorProd_A
+      IgSys_facWup_tAir_M
+      IgSys_facWup_tCo_M
+      IgSys_gma1Y_A
+      IgSys_nCkFilWupOfsX_A
+      IgSys_nCkFilWupX_A
+      IgSys_nEng_AgCkMFB50RefX_A
+      IgSys_nEng_AgCkMFB5RefX_A
+      IgSys_nEng_AgIgOptmRefX_A
+      IgSys_nEng_FacAeroCorX_A
+      IgSys_nEng_FacCmbRefX_A
+      IgSys_nEng_FacIniRefX_A
+      IgSys_pMixtCylX_A
+      IgSys_rAfrSelY_A
+      IgSys_rAirLdWupY_A
+      IgSys_rAirLd_AgCkMFB50RefY_A
+      IgSys_rAirLd_AgCkMFB5RefY_A
+      IgSys_rAirLd_AgIgOptmOfsY_A
+      IgSys_rAirLd_AgIgOptmRefY_A
+      IgSys_rAirLd_FacCmbRefY_A
+      IgSys_rAirLd_FacIniRefY_A
+      IgSys_rItBurnRateCor_A
+      IgSys_rVolCmprX_A
+      IgSys_rlamMaxMsFuCyl_C
+      IgSys_rlamSel_VelLamiFlameT0_A
+      IgSys_surProjPist_C
+      IgSys_tAirWupOfsY_A
+      IgSys_tAirWup_C
+      IgSys_tCoMes_AgIgOptmOfsX_A
+      IgSys_tCoWupX_A
+      IgSys_tCoWup_C
+      IgSys_tMixtCylX_A
+      IgSys_tMixtCyl_A
+      IgSys_tiEngRunWupY_A
+      IgSys_velLamiFlameT0_T
+      IgSys_visDInMixt_T
+      IgSys_volCylAgCkIni_T
+      IgSys_volCylIVCRef1_T
+      IgSys_volCylMFB50Ref_T
+      IgSys_volCylMFB5_T
+      IgSys_volCylSAOptm_T
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+/* ------------------------------ END OF MODULE AdvOptmT ------------------------------------*/

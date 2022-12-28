@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Misf_EveCkSnOf_MisfWinAcq|A|();|SCH.4|MISFWINACQ|1|V02 NT 09 05081||||0|0|0|0|Evénement d'appel de tâche "synchro perdue" du CMM (à la perte de synchro et au calage)|
+Misf_EveCkSnOn_MisfWinAcq|A|();|SCH.2|MISFWINACQ|1|V02 NT 09 05081||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise|
+Misf_EveMisf_MisfWinAcq|A|();|SCH.5|MISFWINACQ|1|V02 NT 09 05081||||0|0|0|0|événement misfire pour la stratégie d'acquisition des fenêtres|
+Misf_EveRst_MisfWinAcq|A|();|SCH.1|MISFWINACQ|1|V02 NT 09 05081||||0|0|0|0|événement Reset pour la stratégie d'acquisition des fenêtres|
+Misf_SdlFast_MisfWinAcq|A|();|SCH.3|MISFWINACQ|1|V02 NT 09 05081||||0|0|0|0|Moniteur rapide pour la fonction Misfire|
+MISFWINACQ_MisfAcqDesactive|A|();|FCT1.7|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Ce bloc désactive l’API PTMHAL .|
+MISFWINACQ_vidAcqLdbWinDuration|A|();|FCT1.9|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Ce bloc récupère le nombre de durées acquises Misf_cntWinAcq, ainsi que les durées de fenêtre mesurées par le LdB, sous forme d’un tableau contenant, dans l’ordre défini par le LdB :|
+MISFWINACQ_vidInitOuput|A|();|FCT1.1|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Fonction d'initialisation|
+MISFWINACQ_vidinitWintiDly|A|();|FCT1.2|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|ce bloc permet  d'intialiser les  durées des fenêtres.|
+MISFWINACQ_vidMisfAcqActive|A|();|FCT1.5|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|ce bloc permet  l’activation de PTMHAL.|
+MISFWINACQ_vidMisfAcqDesactive|A|();|FCT1.6|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Ce bloc désactive l’API PTMHAL si le moteur perd sa synchronisation et que l’API était préalablement activé.|
+MISFWINACQ_vidMisfAcqSdlActive|A|();|FCT1.4|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Dans le cas où l’API ne s’est pas activé lors de la synchronisation du moteur, ce bloc permet de relancer, à récurrence temporelle, l’activation de PTMHAL.|
+MISFWINACQ_vidMisfAcqSyncActive|A|();|FCT1.3|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|Au moment où le moteur se synchronise, on vérifie l’état de l’API : si  E_OK, l’API est activé,  et si E_NOT_OK, l’API n’est pas activé.|
+MISFWINACQ_vidReadWintiDly|A|();|FCT1.8|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|L’acquisition des fenêtres par le LdB est autorisée si PTMHAL est actif. Les valeurs acquises sont prises en compte sous certaines conditions.|
+MISFWINACQ_vidWinDuration|A|();|FCT1.10|MISFWINACQ|0|V02 NT 09 05081||||0|0|0|0|La prise en compte des mesures LdB est soumise à trois conditions :le régime doit être supérieur à un seuil,le statut d’activation renvoyé par le LdB doit être OK, le moteur doit être synchronisé, le nombre de durées acquises doit être égal Misf_win_nbr_c|
+PTMHAL_u8GetAllPacksDuration|A|(argin uint8 u8MaxTableSize,argio uint32 *pau32PacksDurationTable)uint8;|3|HEADER|1|NONE||||0|0|0|0||
+PTMHAL_udtDisable|A|()Std_ReturnType;|2|HEADER|1|NONE||||0|0|0|0|API permet de stopper les ressources utilisées pour la fonction. Renvoie toujours E_OK|
+PTMHAL_udtEnable|A|()Std_ReturnType;|1|HEADER|1|NONE||||0|0|0|0|API permet de  mettre la fonctionnalité en marche|

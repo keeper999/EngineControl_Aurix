@@ -1,0 +1,31 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+SPDHAL_vidDisable|A|();|2|HEADER|1|NONE||||0|0|0|0||
+SPDHAL_vidEnable|A|();|1|HEADER|1|NONE||||0|0|0|0||
+SPDHAL_vidGetPulseInformation|A|(argout uint16 *pu16PulseCounter, argout uint32 *pu32LastPulseDate);|3|HEADER|1|NONE||||0|0|0|0||
+VehSpd_EveRst_AcqVehSpdSen|C|();|SCH.1|VEHSPDACQ|1|PTS_DOC_5455394||||0|0|0|0|Reset|
+VehSpd_EveVSTop_AcqVehSpdSen|B|();|SCH.2|VEHSPDACQ|1|PTS_DOC_5455394||||0|0|0|0|Evènement Top notifiant de la détection par le LDB (bloc SPDHAL) d'une nouvelle impulsion du capteur vitesse|
+VehSpd_SdlFast_AcqVehSpdSen|B|();|SCH.3|VEHSPDACQ|1|PTS_DOC_5455394||||0|0|0|0|Moniteur rapide de la fonction acquisition vitesse véhicule|
+VEHSPDACQ_vidAccelComputation|E|();|FCT2.8|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Le calcul de l’accélération est obtenu en faisant le rapport entre la différence de vitesse entre deux impulsions et le temps écoulé entre ces deux impulsions.|
+VEHSPDACQ_vidAccelMoyenCompt|C|();|FCT2.9|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|elle permet le calcul de l’accélération en faisant le rapport entre la différence de vitesse entre deux impulsions et le temps écoulé entre ces deux impulsions puis la  moyenne des huit dernières valeurs obtenues|
+VEHSPDACQ_vidAcvEveVSTopCall|E|();|FCT1.2|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|L’évènement VehSpd_EveVSTop_SpdAcq n’est propagé que si l’on n’est ni en ABS ni en ESP.|
+VEHSPDACQ_vidAcvSdlFastCall|E|();|FCT1.3|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|L’évènement VehSpd_SdlFast_AcqVehSpdSen n’est propagé que si l’on n’est ni en ABS ni en ESP.|
+VEHSPDACQ_vidChkBatt|C|();|FCT1.6|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|La calibration VehSpd_bEnaChkBattVolt_C, lorsqu’elle vaut 1, permet d’activer la vérification des conditions d’alimentation de la batterie. Lorsqu’elle vaut 0, la vérification n’est pas faite et le booléen VehSpd_bBattVoltOK est mis à 1.|
+VEHSPDACQ_vidChkCondCalc|C|();|FCT1.7|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ici, on vérifie que la tension d’alimentation du capteur se situe entre un seuil bas et un seuil haut que l’on peut régler par calibration. Le résultat est stocké dans un booléen.|
+VEHSPDACQ_vidCoveredDistance|B|();|FCT2.10|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Le calcul de la distance parcourue est fait en additionnant à la valeur précédente la distance parcourue depuis la dernière impulsion vue.|
+VEHSPDACQ_vidDataAcquisition|C|();|FCT1.8|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Le premier bloc permet de faire l’acquisition des informations relatives aux impulsions qui sont transmises par le LDB. Le second permet de calculer l’intervalle de temps entre les deux dernières impulsions.|
+VEHSPDACQ_vidDateOvfMng|C|();|FCT2.4|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ce bloc permet le calcul de l’intervalle de temps entre deux impulsions dans le cas où un Overflow serait survenu.|
+VEHSPDACQ_vidDynFil|E|();|FCT3.3|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ce bloc réalise une moyenne glissante sur les VehSpd_NbPlsCalcMean_C derniers signaux.|
+VEHSPDACQ_vidInit|E|();|FCT1.4|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Les différentes variables sont initialisées à 0.|
+VEHSPDACQ_vidInitDistance|B|();|FCT1.5|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Initialisation de la distance parcourue. Celle si n’est faite qu’au reset, et pas lors de la détection d’un arrêt véhicule comme c’est le cas pour les autres variables.|
+VEHSPDACQ_vidInitOutput|E|();|FCT1.1|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Initialisation des variables internes de la spec.|
+VEHSPDACQ_vidMeanComputation|D|();|FCT3.4|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ce bloc réalise une moyenne glissante sur les VehSpd_NbPlsCalcMean_SC derniers signaux.|
+VEHSPDACQ_vidReadCtrAndDate|C|();|FCT1.9|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Lorsque les conditions d’alimentation du capteur sont bonnes, la date et le compteur d’impulsion sont transmis par le Logiciel de Base vers l’applicatif.|
+VEHSPDACQ_vidSpdComputation|C|();|FCT2.7|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ici, on réalise le calcul de la vitesse en réalisant un filtrage dynamique. Lorsque le Buffer est réinitialisé, par exemple après un reset, le calcul de la vitesse ne peut se faire que lorsqu’on a reçu au moins deux impulsions ;|
+VEHSPDACQ_vidSPDHALAcq|E|();|FCT2.3|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Compteur et date correspondent à la dernière impulsion|
+VEHSPDACQ_vidSPDHALDis|B|();|FCT2.2|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Désactivation du driver du capteur vitesse filaire.|
+VEHSPDACQ_vidSPDHALEna|B|();|FCT2.1|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Activation du driver du capteur vitesse filaire.|
+VEHSPDACQ_vidStopDetection|E|();|FCT3.1|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ce bloc permet d’effectuer la détection d’un arrêt du véhicule.|
+VEHSPDACQ_vidTiIntlComputation|C|();|FCT1.10|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Si l’on en est à la première impulsion reçue, on ne peut pas réaliser de calcul d’intervalle de temps ; on renvoie donc 0.|
+VEHSPDACQ_vidTransmission|D|();|FCT3.2|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ici, on effectue la transmission du signal à la fréquence VehSpd_SdlFast_SpdAcq_1.|
+VEHSPDACQ_vidVehSpdBuf|F|();|FCT2.6|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Ce bloc effectue la gestion du Buffer.|
+VEHSPDACQ_vidVehSpdComputation|D|();|FCT2.5|VEHSPDACQ|0|PTS_DOC_5455394||||0|0|0|0|Le premier bloc gère le traitement du Buffer et le second le calcul de la vitesse.  Plus bas, on calcule la distance parcourue par le véhicule.|

@@ -1,0 +1,4281 @@
+﻿/begin MODULE
+    EOMGsl /* Name */ 
+    "EOMGsl version 4.0" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        EOMGsl_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        EOMGsl_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOMGsl_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        EOMGsl_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bSpcInjMod_B /* Name */ 
+        "Flag d'indication d'activation de passage en mode simple injection" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bTranMod_B /* Name */ 
+        "Flag d'indication d'un état transitoire (1 quand transition)" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bTWCHeatPha_B /* Name */ 
+        "Flag d'indication d'activation de la chauffe catalyseur" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_facBasModCur_B /* Name */ 
+        "Vecteur des facteurs d'interpolation entre les bases du mode courant" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_EQ_RES_0_0078125 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_facBasModTar_B /* Name */ 
+        "Vecteur des facteur d'interpolation entre les bases du mode consigne" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_EQ_RES_0_0078125 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_facTranMod_B /* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_EQ_RES_0_0078125 /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_idxBas1ModCur_B /* Name */ 
+        "Vecteur des numéros de calibration à utiliser pour la base 1 mode courant" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        1 /* LowerLimit */ 
+        32 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 		
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_idxBas1ModTar_B /* Name */ 
+        "Vecteur des numéros de calibration à utiliser pour la base 1 mode consigne" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        1 /* LowerLimit */ 
+        32 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_idxBas2ModCur_B /* Name */ 
+        "Vecteur des numéros de calibration à utiliser pour la base 2 mode courant" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        1 /* LowerLimit */ 
+        32 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_prm_idxBas2ModTar_B /* Name */ 
+        "Vecteur des numéros de calibration à utiliser pour la base 2 mode consigne" /* LongIdentifier */ 
+        VAL_BLK  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        1 /* LowerLimit */ 
+        32 /* UpperLimit */ 
+		MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOMGSL_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module EOMGsl" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        EOMGsl_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_CM_Byp_EQ_RES_0_0078125 /* Name */ 
+        "Phys = Num * 2^-7" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%10.7" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "EOMGsl_CM_VOID_SCALING_VersionModule"    /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EOMGsl_FCT_Byp    /* Name */ 
+        "EOMGsl_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_bSpcInjMod_B /* Identifier */ 
+            EOM_bTranMod_B /* Identifier */ 
+            EOM_bTWCHeatPha_B /* Identifier */ 
+            EOM_prm_facBasModCur_B /* Identifier */ 
+            EOM_prm_facBasModTar_B /* Identifier */ 
+            EOM_prm_facTranMod_B /* Identifier */ 
+            EOM_prm_idxBas1ModCur_B /* Identifier */ 
+            EOM_prm_idxBas1ModTar_B /* Identifier */ 
+            EOM_prm_idxBas2ModCur_B /* Identifier */ 
+            EOM_prm_idxBas2ModTar_B /* Identifier */ 
+            EOMGSL_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            EOMGsl_ModuleVersion_Major_MP      /* Identifier */ 
+            EOMGsl_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bAcvCmbPrfMod_C	/* Name */ 
+        "Perfo request activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bAcvTmpSecu_C	/* Name */ 
+        "Perfo mode safety delay activation booleen"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bDeltaPosnExVlvReq_M	/* Name */ 
+        "Scavenging limitation request calibration for exhaust VVT scavenging limitation"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_nEng_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_agCkDeltaPosnExVlvReq_MP	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -96	/* LowerLimit */ 
+            96	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_agCkDeltaPosnExVlvReq_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bDeltaPosnInVlvReq_M	/* Name */ 
+        "Scavenging limitation request calibration for intake VVT scavenging limitation"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_nEng_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_agCkDeltaPosnInVlvReq_MP	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -96	/* LowerLimit */ 
+            96	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_agCkDeltaPosnInVlvReq_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bEnaCmbModManSel_C	/* Name */ 
+        "Request mode number test bench activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bEnaDiTranManSel_C	/* Name */ 
+        "Direct transition test bench activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bInhGasModReq_C	/* Name */ 
+        "Gas request inhibition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bInhSpcInjModReq_C	/* Name */ 
+        "Special injection request inhibition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bInhVlvPosnRblModReq_C	/* Name */ 
+        "Scavenging limitation request inhibition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bInhVlvPosnVacModReq_C	/* Name */ 
+        "Vacuum mode request inhibition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bManEngModReq_C	/* Name */ 
+        "Test bench activation for priority request"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_ColdMod_C	/* Name */ 
+        "Cold Mode Coolant Temperature Activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_a	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_deltaAgCkHysExVlv_C	/* Name */ 
+        "Backlash hysteresis for exhaust VVT delta"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_deltaAgCkHysInVlv_C	/* Name */ 
+        "Backlash hysteresis for intake VVT delta"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_deltaPThdCmbModPrf_C	/* Name */ 
+        " Intake/Exhaust pressure delta threshold calibration for perfo mode activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_8	/* Conversion */ 
+        -262144	/* LowerLimit */ 
+        262144	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_deltaRatAirLdThdModPrf_M	/* Name */ 
+        "Air load delta threshold for perfo mode inhibition"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        -1	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_6_103515625em05_f	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            3	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_rAirLdCor_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_nEng_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_deltaRatAirThdHysModPrf_C	/* Name */ 
+        "Additionnal offset of air load delta threshold for perfo mode activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SLONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        -1	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_dstVehFoutMod_C	/* Name */ 
+        "Total vehicule distance threshold calibration for fade out statement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        16777214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlTypSel_C	/* Name */ 
+        "Idle state type choice"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_nEngThdHiModPrf_C	/* Name */ 
+        "Engine speed high threshold hysteresis for perfo mode activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_nEngThdLoModPrf_C	/* Name */ 
+        "Engine speed low threshold hysteresis for perfo mode activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_nIdlEngHiThd_C	/* Name */ 
+        "engine speed hysterisis high threshold for idle state condition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_nIdlEngLoThd_C	/* Name */ 
+        "engine speed hysterisis  low threshold for idle state condition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noAcvNomModPrio_C	/* Name */ 
+        "Nominal mode request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noBlby_bdilution1Prio_C	/* Name */ 
+        "Dilution mode 1 request priority level"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noBlby_bdilution2Prio_C	/* Name */ 
+        "Dilution mode 2 request priority level"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noCoHeat_bAcvHeatPrio_C	/* Name */ 
+        "Heater activation request priority level"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noDeltaPosnVlvPrio_C	/* Name */ 
+        "Scavenging limitation request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noDftPrio_C	/* Name */ 
+        "Default mode 1 request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noGasPrio_C	/* Name */ 
+        "Gas mode request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noHiLvlDftPrio_C	/* Name */ 
+        "Default mode 2 request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noSpcInjPrio_C	/* Name */ 
+        "Special injection mode request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noSTTStopPrio_C	/* Name */ 
+        "SST stop mode request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noTWCHeatPhaPrio_C	/* Name */ 
+        "Cat Heating mode request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noVlvposnRblPrio_C	/* Name */ 
+        "Rumble limitation request priority level "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_noVlvposnVacPrio_C	/* Name */ 
+        "Vacuum mode request priority level"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stCmbModManSel_C	/* Name */ 
+        "Request mode test bench number"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stCoHeat_bAcvHeatMod_C	/* Name */ 
+        "Heater activation mode number"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stDeltaPosnVlvMod_C	/* Name */ 
+        "Scavenging limitation mode number "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stManEngModReq_C	/* Name */ 
+        "Priority mode number for test bench mode "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stVlvPosnRblMod_C	/* Name */ 
+        "Rumble limitation mode number "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stVlvPosnVacMod_C	/* Name */ 
+        "Vacuum mode number"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoDft_C	/* Name */ 
+        "Default coolant temperature value"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_a	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoHysBand1_C	/* Name */ 
+        "EOM_tCoHysBand1_C"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_a	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoThdCmbModPrf_C	/* Name */ 
+        "Coolant temperature threshold for perfo mode activation"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_a	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyInhCmbPrfMod_C	/* Name */ 
+        "Safety delay for perfo mode inhibition"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_e	/* Conversion */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffDeltaPosnExVlv_C	/* Name */ 
+        "Exhaust scavenging limitation request annulation delay "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffDeltaPosnInVlv_C	/* Name */ 
+        "Intake scavenging limitation request annulation delay "	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffSpcInjModInjSys1_C	/* Name */ 
+        "Special injection request annulation delay 1"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffSpcInjModInjSys2_C	/* Name */ 
+        "Special injection request annulation delay 2"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffSpcInjModInjSys3_C	/* Name */ 
+        "Special injection request annulation delay 3"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffSpcInjModInjSys4_C	/* Name */ 
+        "Special injection request annulation delay 4"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffVlvRblModInjSys_C	/* Name */ 
+        "Rumble limitation request annulation delay"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiDlyOffVlvVacModInjSys_C	/* Name */ 
+        "Vacuum mode request annulation delay"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiSdlFast_C	/* Name */ 
+        "Time between two function calcul steps"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        EOM_agCkDeltaPosnExVlvReq_A	/* Name */ 
+        "Exhaust VVT request delta axis for EOM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        EOM_agCkDeltaPosnExVlvReq_MP	/* InputQuantity */ 
+        EOMGsl_002_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_agCkDeltaPosnInVlvReq_A	/* Name */ 
+        "Intake VVT request delta axis for EOM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        EOM_agCkDeltaPosnInVlvReq_MP	/* InputQuantity */ 
+        EOMGsl_002_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        -96	/* LowerLimit */ 
+        96	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_nEng_A	/* Name */ 
+        "Engine speed axis for EOM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_rAirLdCor_A	/* Name */ 
+        "Air load axis for EOM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_002_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05_f	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        EOM_agCkDeltaPosnExVlvReq_MP	/* Name */ 
+        "Test point exhaust VVT request delta"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -16384	/* LowerLimit */ 
+        16383.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_agCkDeltaPosnInVlvReq_MP	/* Name */ 
+        "Test point intake VVT request delta"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -16384	/* LowerLimit */ 
+        16383.5	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bAcvSpcInjModReq	/* Name */ 
+        "Special injection request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bColdModReq	/* Name */ 
+        "Cold mode request boleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bDeltaPosnVlvModReq	/* Name */ 
+        "Scavenging limitation mode request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bDiTranNotSel	/* Name */ 
+        "Slow transition annulation before test bench mode"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bGasModReq	/* Name */ 
+        "Gas request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bIdlModReq	/* Name */ 
+        "Idle state booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bLdTranModReq	/* Name */ 
+        "Perfo request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bLdTranModReqRaw_MP	/* Name */ 
+        "Test point: perfo request raw booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bTWCHeatPhaModReq	/* Name */ 
+        "Cat Heating request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bVlvPosnRblModReq	/* Name */ 
+        "Rumble limitation mode request booleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bVlvPosnVacModReq	/* Name */ 
+        "Vaccum mode request boleen"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_deltaRatAirLdThdPrf_MP	/* Name */ 
+        "Test point air load delta threshold for perfo mode inhibition"	/* LongIdentifier */ 
+        SLONG	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -1	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_noPrioMax_MP	/* Name */ 
+        "Test point max of priorities"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_stCmbModReqNotSel	/* Name */ 
+        "Combustion target mode number before test bench mode"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tCoCor_Cold	/* Name */ 
+        "Coolant temperature corrected"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -32768	/* LowerLimit */ 
+        32767	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOMGSL_stEngModReq	/* Name */ 
+        "Engine target request number"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_EOM_bDiTran_out	/* Name */ 
+        "Flag d'annulation de transition lente (0=transition lente; 1=transition directe)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_EOM_bEnaCmbModChg_in	/* Name */ 
+        "Flag d'autorisation de changement de mode (1 quand autorisation)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_EOM_bFdoutModReq_out	/* Name */ 
+        "Booléen d'état encrassé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE002_EOM_stCmbModReq_out	/* Name */ 
+        "Numéro du mode cible"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_0_002	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_0_002"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.3"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.002 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_0_5	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_0_5"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.1"	/* Format */ 
+        "°Ck"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.0"	/* Format */ 
+        "km"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1_a	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1_a"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1_c	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1_c"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1_d	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1_d"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1_e	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1_e"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_1_OFF_1	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_1_OFF_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 -1 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_6_103515625em05"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%21.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 6.103515625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_6_103515625em05_f	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_6_103515625em05_f"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 6.103515625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_EQ_LSB_8	/* Name */ 
+        "EOMGsl_002_CM_EQ_LSB_8"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.0"	/* Format */ 
+        "Pa"	/* Unit */ 
+        COEFFS 0 1 0 0 0 8 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_002_CM_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EOMGsl_002_FCT_EOMGsl_002_TEV_fct	/* Name */ 
+        "EOMGsl_002_FCT_EOMGsl_002_TEV_fct"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_dstVehFoutMod_C	/* Identifier */ 
+            EOM_ColdMod_C	/* Identifier */ 
+            EOM_tCoHysBand1_C	/* Identifier */ 
+            EOM_bEnaCmbModManSel_C	/* Identifier */ 
+            EOM_bEnaDiTranManSel_C	/* Identifier */ 
+            EOM_stCmbModManSel_C	/* Identifier */ 
+            EOM_stDeltaPosnVlvMod_C	/* Identifier */ 
+            EOM_stVlvPosnRblMod_C	/* Identifier */ 
+            EOM_stVlvPosnVacMod_C	/* Identifier */ 
+            EOM_stCoHeat_bAcvHeatMod_C	/* Identifier */ 
+            EOM_bManEngModReq_C	/* Identifier */ 
+            EOM_noAcvNomModPrio_C	/* Identifier */ 
+            EOM_noDeltaPosnVlvPrio_C	/* Identifier */ 
+            EOM_noDftPrio_C	/* Identifier */ 
+            EOM_noGasPrio_C	/* Identifier */ 
+            EOM_noHiLvlDftPrio_C	/* Identifier */ 
+            EOM_noSTTStopPrio_C	/* Identifier */ 
+            EOM_noSpcInjPrio_C	/* Identifier */ 
+            EOM_noTWCHeatPhaPrio_C	/* Identifier */ 
+            EOM_noVlvposnRblPrio_C	/* Identifier */ 
+            EOM_noVlvposnVacPrio_C	/* Identifier */ 
+            EOM_noCoHeat_bAcvHeatPrio_C	/* Identifier */ 
+            EOM_noBlby_bdilution1Prio_C	/* Identifier */ 
+            EOM_noBlby_bdilution2Prio_C	/* Identifier */ 
+            EOM_stManEngModReq_C	/* Identifier */ 
+            EOM_bInhVlvPosnVacModReq_C	/* Identifier */ 
+            EOM_tiDlyOffVlvVacModInjSys_C	/* Identifier */ 
+            EOM_bAcvCmbPrfMod_C	/* Identifier */ 
+            EOM_bAcvTmpSecu_C	/* Identifier */ 
+            EOM_deltaPThdCmbModPrf_C	/* Identifier */ 
+            EOM_deltaRatAirThdHysModPrf_C	/* Identifier */ 
+            EOM_nEngThdHiModPrf_C	/* Identifier */ 
+            EOM_nEngThdLoModPrf_C	/* Identifier */ 
+            EOM_tCoThdCmbModPrf_C	/* Identifier */ 
+            EOM_tiDlyInhCmbPrfMod_C	/* Identifier */ 
+            EOM_tiSdlFast_C	/* Identifier */ 
+            EOM_deltaRatAirLdThdModPrf_M	/* Identifier */ 
+            EOM_rAirLdCor_A	/* Identifier */ 
+            EOM_nEng_A	/* Identifier */ 
+            EOM_deltaAgCkHysExVlv_C	/* Identifier */ 
+            EOM_deltaAgCkHysInVlv_C	/* Identifier */ 
+            EOM_tiDlyOffDeltaPosnExVlv_C	/* Identifier */ 
+            EOM_tiDlyOffDeltaPosnInVlv_C	/* Identifier */ 
+            EOM_bDeltaPosnInVlvReq_M	/* Identifier */ 
+            EOM_agCkDeltaPosnInVlvReq_A	/* Identifier */ 
+            EOM_bDeltaPosnExVlvReq_M	/* Identifier */ 
+            EOM_agCkDeltaPosnExVlvReq_A	/* Identifier */ 
+            EOM_bInhVlvPosnRblModReq_C	/* Identifier */ 
+            EOM_tiDlyOffVlvRblModInjSys_C	/* Identifier */ 
+            EOM_bInhGasModReq_C	/* Identifier */ 
+            EOM_bInhSpcInjModReq_C	/* Identifier */ 
+            EOM_tiDlyOffSpcInjModInjSys1_C	/* Identifier */ 
+            EOM_tiDlyOffSpcInjModInjSys2_C	/* Identifier */ 
+            EOM_tiDlyOffSpcInjModInjSys3_C	/* Identifier */ 
+            EOM_tiDlyOffSpcInjModInjSys4_C	/* Identifier */ 
+            EOM_idxIdlTypSel_C	/* Identifier */ 
+            EOM_nIdlEngHiThd_C	/* Identifier */ 
+            EOM_nIdlEngLoThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin REF_CHARACTERISTIC 
+            EOM_tCoDft_C	/* Identifier */ 
+        /end REF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_bColdModReq	/* Identifier */ 
+            EOM_tCoCor_Cold	/* Identifier */ 
+            EOM_bDiTranNotSel	/* Identifier */ 
+            EOM_stCmbModReqNotSel	/* Identifier */ 
+            EOMGSL_stEngModReq	/* Identifier */ 
+            RE002_EOM_bEnaCmbModChg_in	/* Identifier */ 
+            EOM_bIdlModReq	/* Identifier */ 
+            EOM_bLdTranModReq	/* Identifier */ 
+            EOM_bAcvSpcInjModReq	/* Identifier */ 
+            EOM_bDeltaPosnVlvModReq	/* Identifier */ 
+            EOM_bGasModReq	/* Identifier */ 
+            EOM_bTWCHeatPhaModReq	/* Identifier */ 
+            EOM_bVlvPosnRblModReq	/* Identifier */ 
+            EOM_bVlvPosnVacModReq	/* Identifier */ 
+            EOM_noPrioMax_MP	/* Identifier */ 
+            EOM_bLdTranModReqRaw_MP	/* Identifier */ 
+            EOM_deltaRatAirLdThdPrf_MP	/* Identifier */ 
+            EOM_agCkDeltaPosnExVlvReq_MP	/* Identifier */ 
+            EOM_agCkDeltaPosnInVlvReq_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin IN_MEASUREMENT 
+            RE002_EOM_bEnaCmbModChg_in	/* Identifier */ 
+        /end IN_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE002_EOM_bDiTran_out	/* Identifier */ 
+            RE002_EOM_bFdoutModReq_out	/* Identifier */ 
+            RE002_EOM_stCmbModReq_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_SLONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SLONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_ULONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_002_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin CHARACTERISTIC 
+        EOM_bSeltCotyp_C	/* Name */ 
+        "Selection between corriged coolant temperature for EOM and corriged coolant temperature for cold mode"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_facColdTCoBas_M	/* Name */ 
+        "Interpolation MAP between additionnal mode 1 bases"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            16	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 16 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            8	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 8 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_facTCoBas_M	/* Name */ 
+        "Interpolation MAP between nominal outside idle mode bases"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            16	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 16 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_tCoCor	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tCoCor_idxMod_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_facTCoFdoutBas_M	/* Name */ 
+        "Interpolation MAP between fade out nominal outside idle mode bases"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            16	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 16 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_tCoCor	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tCoCor_idxMod_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_facTCoIdlBas_M	/* Name */ 
+        "Interpolation MAP between nominal idle mode bases"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            16	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 16 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_tCoCor	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tCoCor_idxMod_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_facTCoIdlFdoutBas_M	/* Name */ 
+        "Interpolation MAP between fade out nominal idle mode bases"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            FIX_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            16	/* UpperLimit */ 
+            FIX_AXIS_PAR_DIST 0 1 16 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_tCoCor	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            8	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tCoCor_idxMod_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxBas1_T	/* Name */ 
+        "Calibrations numbers array used to nominal outside idle mode base 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxBas2_T	/* Name */ 
+        "Calibrations numbers array used to nominal outside idle mode base 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxBlbydilution1Mod_T	/* Name */ 
+        "Calibrations numbers array used to blowby dilution mode 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxBlbydilution2Mod_T	/* Name */ 
+        "Calibrations numbers array used to blowby dilution mode 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxColdBas1_T	/* Name */ 
+        "Calibrations numbers array used to additionnal mode 1 base 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxDftMod1_T	/* Name */ 
+        "Calibrations numbers array used to default mode 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxDftMod2_T	/* Name */ 
+        "Calibrations numbers array used to default mode 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxFdoutBas1_T	/* Name */ 
+        "Calibrations numbers array used to fade out nominal outside idle mode base 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxFdoutBas2_T	/* Name */ 
+        "Calibrations numbers array used to fade out nominal outside idle mode base 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxGasMod_T	/* Name */ 
+        "Calibrations numbers array used to gas mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlBas1_T	/* Name */ 
+        "Calibrations numbers array used to nominal idle mode base 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlBas2_T	/* Name */ 
+        "Calibrations numbers array used to nominal idle mode base 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlFdoutBas1_T	/* Name */ 
+        "Calibrations numbers array used to fade out nominal idle mode base 1"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlFdoutBas2_T	/* Name */ 
+        "Calibrations numbers array used to fade out nominal idle mode base 2"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlHeatPha1Cold_T	/* Name */ 
+        "Calibrations numbers array used to cold phase 1 Cat Heating idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlHeatPha1Warm_T	/* Name */ 
+        "Calibrations numbers array used to phase 1 Cat Heating idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxIdlHeatPha2Warm_T	/* Name */ 
+        "Calibrations numbers array used to phase 2 Cat Heating idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxSpcInjMod_T	/* Name */ 
+        "Calibrations numbers array used to special injection mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxSTTEs_T	/* Name */ 
+        "Calibrations numbers array used to STT stop mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxTran_T	/* Name */ 
+        "Calibrations numbers array used to performance mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxTWCHeatPha1Cold_T	/* Name */ 
+        "Calibrations numbers array used to cold phase 1 Cat Heating outside idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxTWCHeatPha1Warm_T	/* Name */ 
+        "Calibrations numbers array used to phase 1 Cat Heating outside idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxTWCHeatPha2Warm_T	/* Name */ 
+        "Calibrations numbers array used to phase 2 Cat Heating outside idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_idxTWCHeatPha3Warm_T	/* Name */ 
+        "Calibrations numbers array used to phase 3 Cat Heating outside idle mode"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        MATRIX_DIM  16 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoCold_C	/* Name */ 
+        "Calibration coolant temperature for cold start"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoHysBand_C	/* Name */ 
+        "Corriged coolant temperature hysteresis value"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoOfs_C	/* Name */ 
+        "Offset for corriged coolant temperature for cold mode"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tCoThd_M	/* Name */ 
+        "Interpolation MAP between coolant temperature"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_SWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            EOM_tCoCor	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tCoCor_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF Ext_tCoStrtMes_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiStrtThd_M	/* Name */ 
+        "Interpolation MAP for time threshold cold mode"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_003_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1_024	/* Conversion */ 
+        0	/* LowerLimit */ 
+        67107.84	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            -40	/* LowerLimit */ 
+            214	/* UpperLimit */ 
+            AXIS_PTS_REF Ext_tCoStrtMes_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_003_CM_EQ_LSB_1_c	/* Conversion */ 
+            9	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            864000	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_tiEngStop_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        EOM_tCoCor_A	/* Name */ 
+        "Corriged coolant temperature axis"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        EOM_tCoCor	/* InputQuantity */ 
+        EOMGsl_003_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_tCoCor_idxMod_A	/* Name */ 
+        "Corriged coolant temperature axis"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_003_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        8	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_tiEngStop_A	/* Name */ 
+        "Engine stopped time axis"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_003_RL_ULONG_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1_c	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        864000	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        Ext_tCoStrtMes_A	/* Name */ 
+        "Coolant temperature at start axis"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_003_RL_SWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        9	/* MaxAxisPoints */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facBasModCurNotSync	/* Name */ 
+        "Interpolation factors array between not synchronised current mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facBasModTarNotSync	/* Name */ 
+        "Interpolation factors array between not synchronised target mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facColdTCoBas	/* Name */ 
+        "Coolant temperature interpolation factors array between additionnal cold mode bases"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facTCoBas	/* Name */ 
+        "Coolant temperature interpolation factors array between nominal outside idle mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facTCoFdoutBas	/* Name */ 
+        "Coolant temperature interpolation factors array between fade out nominal outside idle mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facTCoIdlBas	/* Name */ 
+        "Coolant temperature interpolation factors array between nominal idle mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_facTCoIdlFdoutBas	/* Name */ 
+        "Coolant temperature interpolation factors array between fade out nominal idle mode bases  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1.9921875	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas1	/* Name */ 
+        "Calibrations numbers array used to nominal outside idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas1ModCurNotSync	/* Name */ 
+        "Calibrations numbers array used to not synchronised current mode base 1 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas1ModTarNotSync	/* Name */ 
+        "Calibrations numbers array used to not synchronised target mode base 1 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas2	/* Name */ 
+        "Calibrations numbers array used to nominal outside idle mode base2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas2ModCurNotSync	/* Name */ 
+        "Calibrations numbers array used to not synchronised current mode base 2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBas2ModTarNotSync	/* Name */ 
+        "Calibrations numbers array used to not synchronised target mode base 2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBlbydilution1ModBas1	/* Name */ 
+        "Calibrations numbers array used to blowby dilution mode 1 base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxBlbydilution2ModBas1	/* Name */ 
+        "Calibrations numbers array used to blowby dilution mode 2 base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxColdBas1	/* Name */ 
+        "Calibrations numbers array used to additionnal cold mode base1"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxColdBas2	/* Name */ 
+        "Calibrations numbers array used to additionnal cold mode base2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxDftMod1Bas1	/* Name */ 
+        "Calibrations numbers array used to default mode 1 base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxDftMod2Bas1	/* Name */ 
+        "Calibrations numbers array used to default mode 2 base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxFdoutBas1	/* Name */ 
+        "Calibrations numbers array used to fade out nominal outside idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxFdoutBas2	/* Name */ 
+        "Calibrations numbers array used to fade out nominal outside idle mode base2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxGasModBas1	/* Name */ 
+        "Calibrations numbers array used to gas mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlBas1	/* Name */ 
+        "Calibrations numbers array used to nominal idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlBas2	/* Name */ 
+        "Calibrations numbers array used to nominal idle mode base2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlFdoutBas1	/* Name */ 
+        "Calibrations numbers array used to fade out nominal idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlFdoutBas2	/* Name */ 
+        "Calibrations numbers array used to fade out nominal idle mode base2 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        32	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlHeatPha1CBas1	/* Name */ 
+        "Calibrations numbers array used to cold phase 1 Cat Heating idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlHeatPha1WBas1	/* Name */ 
+        "Calibrations numbers array used to phase 1 Cat Heating idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxIdlHeatPha2WBas1	/* Name */ 
+        "Calibrations numbers array used to phase 2 Cat Heating idle mode base1"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxSpcInjModBas1	/* Name */ 
+        "Calibrations numbers array used to special injection mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxSTTEsBas1	/* Name */ 
+        "Calibrations numbers array used to STT stop mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxTranBas1	/* Name */ 
+        "Calibrations numbers array used to performance mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxTWCHeatPha1CBas1	/* Name */ 
+        "Calibrations numbers array used to cold phase 1 Cat Heating outside idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxTWCHeatPha1WBas1	/* Name */ 
+        "Calibrations numbers array used to phase 1 Cat Heating outside idle mode base1  "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxTWCHeatPha2WBas1	/* Name */ 
+        "Calibrations numbers array used to phase 2 Cat Heating outside idle mode base1 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_prm_idxTWCHeatPha3WBas1	/* Name */ 
+        "Calibrations numbers array used to phase 3 Cat Heating outside idle mode base1 "	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM  16 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tCoCor	/* Name */ 
+        "Corriged coolant temperature for EOM"	/* LongIdentifier */ 
+        SWORD	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        -40	/* LowerLimit */ 
+        214	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_01_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_02_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_03_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_04_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_05_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_06_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_07_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_08_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_09_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_10_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_11_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_12_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_13_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_14_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_15_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_prm_facTranModNotSync_16_in	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_stCmbModCur_in	/* Name */ 
+        "Numéro du mode courant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_EOM_stCmbModTar_in	/* Name */ 
+        "Numéro du mode consigne"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_003_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_0_0078125	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_0_0078125"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_0_0078125_a	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_0_0078125_a"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_1	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "°C"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_1_024	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_1_024"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.3"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1.024 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_1_c	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_1_c"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.0"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_1_OFF_0	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_EQ_LSB_1_OFF_1	/* Name */ 
+        "EOMGsl_003_CM_EQ_LSB_1_OFF_1"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 -1 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_003_CM_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_EOMGsl_003_TEV_fct	/* Name */ 
+        "EOMGsl_003_FCT_EOMGsl_003_TEV_fc"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+            EOM_tCoDft_C	/* Identifier */ 
+            EOM_tCoHysBand_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facBasModCurNotSync	/* Identifier */ 
+            EOM_prm_facBasModTarNotSync	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_01_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_02_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_03_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_04_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_05_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_06_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_15_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_16_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_07_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_08_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_09_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_10_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_11_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_12_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_13_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_14_in	/* Identifier */ 
+            EOM_prm_idxBas1ModCurNotSync	/* Identifier */ 
+            EOM_prm_idxBas1ModTarNotSync	/* Identifier */ 
+            EOM_prm_idxBas2ModCurNotSync	/* Identifier */ 
+            EOM_prm_idxBas2ModTarNotSync	/* Identifier */ 
+            RE003_EOM_stCmbModCur_in	/* Identifier */ 
+            RE003_EOM_stCmbModTar_in	/* Identifier */ 
+            EOM_tCoCor	/* Identifier */ 
+            EOM_prm_idxBlbydilution1ModBas1	/* Identifier */ 
+            EOM_prm_idxBlbydilution2ModBas1	/* Identifier */ 
+            EOM_prm_facColdTCoBas	/* Identifier */ 
+            EOM_prm_facTCoBas	/* Identifier */ 
+            EOM_prm_facTCoFdoutBas	/* Identifier */ 
+            EOM_prm_facTCoIdlBas	/* Identifier */ 
+            EOM_prm_facTCoIdlFdoutBas	/* Identifier */ 
+            EOM_prm_idxBas1	/* Identifier */ 
+            EOM_prm_idxBas2	/* Identifier */ 
+            EOM_prm_idxColdBas1	/* Identifier */ 
+            EOM_prm_idxColdBas2	/* Identifier */ 
+            EOM_prm_idxDftMod1Bas1	/* Identifier */ 
+            EOM_prm_idxDftMod2Bas1	/* Identifier */ 
+            EOM_prm_idxFdoutBas1	/* Identifier */ 
+            EOM_prm_idxFdoutBas2	/* Identifier */ 
+            EOM_prm_idxGasModBas1	/* Identifier */ 
+            EOM_prm_idxIdlBas1	/* Identifier */ 
+            EOM_prm_idxIdlBas2	/* Identifier */ 
+            EOM_prm_idxIdlFdoutBas1	/* Identifier */ 
+            EOM_prm_idxIdlFdoutBas2	/* Identifier */ 
+            EOM_prm_idxIdlHeatPha1CBas1	/* Identifier */ 
+            EOM_prm_idxIdlHeatPha1WBas1	/* Identifier */ 
+            EOM_prm_idxIdlHeatPha2WBas1	/* Identifier */ 
+            EOM_prm_idxSTTEsBas1	/* Identifier */ 
+            EOM_prm_idxSpcInjModBas1	/* Identifier */ 
+            EOM_prm_idxTWCHeatPha1CBas1	/* Identifier */ 
+            EOM_prm_idxTWCHeatPha1WBas1	/* Identifier */ 
+            EOM_prm_idxTWCHeatPha2WBas1	/* Identifier */ 
+            EOM_prm_idxTWCHeatPha3WBas1	/* Identifier */ 
+            EOM_prm_idxTranBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin IN_MEASUREMENT 
+            RE003_EOM_prm_facTranModNotSync_01_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_02_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_03_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_04_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_05_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_06_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_07_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_08_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_09_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_10_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_11_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_12_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_13_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_14_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_15_in	/* Identifier */ 
+            RE003_EOM_prm_facTranModNotSync_16_in	/* Identifier */ 
+            RE003_EOM_stCmbModCur_in	/* Identifier */ 
+            RE003_EOM_stCmbModTar_in	/* Identifier */ 
+        /end IN_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            EOMGsl_003_FCT_S00327_F23_Col__tside_Idle_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00323_F19_Blo___dilution2_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00322_F18_Blo___dilution1_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00321_F17_Default_Mode_2	/* Identifier */ 
+            EOMGsl_003_FCT_S00320_F16_Default_Mode_1	/* Identifier */ 
+            EOMGsl_003_FCT_S00319_F15_STT_Engine_Stop_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00318_F14_Spe___Injection_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00317_F13_Gas_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00316_F12_TWC__ld_Phase_1_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00315_F11_TWC__ld_Phase_1_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00314_F10_TWC__le_Phase_3_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00313_F09_TWC__le_Phase_2_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00312_F08_TWC__le_Phase_2_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00311_F07_TWC__le_Phase_1_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S00310_F06_TWC__le_Phase_1_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S0039_F05_Performance_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S0038_F04_nomi__clean_Idle_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S0037_F03_Nomi__tside_idle_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S0036_F02_Nominal_Idle_Mode	/* Identifier */ 
+            EOMGsl_003_FCT_S0035_F01_Nomi__tside_Idle_Mode	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00310_F06_TWC__le_Phase_1_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00310_F06_TWC__le_Phase_1_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxTWCHeatPha1Warm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxTWCHeatPha1WBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00311_F07_TWC__le_Phase_1_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00311_F07_TWC__le_Phase_1_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxIdlHeatPha1Warm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxIdlHeatPha1WBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00312_F08_TWC__le_Phase_2_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00312_F08_TWC__le_Phase_2_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxTWCHeatPha2Warm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxTWCHeatPha2WBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00313_F09_TWC__le_Phase_2_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00313_F09_TWC__le_Phase_2_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxIdlHeatPha2Warm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxIdlHeatPha2WBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00314_F10_TWC__le_Phase_3_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00314_F10_TWC__le_Phase_3_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxTWCHeatPha3Warm_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxTWCHeatPha3WBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00315_F11_TWC__ld_Phase_1_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00315_F11_TWC__ld_Phase_1_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxTWCHeatPha1Cold_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxTWCHeatPha1CBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00316_F12_TWC__ld_Phase_1_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00316_F12_TWC__ld_Phase_1_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxIdlHeatPha1Cold_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxIdlHeatPha1CBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00317_F13_Gas_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00317_F13_Gas_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxGasMod_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxGasModBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00318_F14_Spe___Injection_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00318_F14_Spe___Injection_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxSpcInjMod_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxSpcInjModBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00319_F15_STT_Engine_Stop_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00319_F15_STT_Engine_Stop_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxSTTEs_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxSTTEsBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00320_F16_Default_Mode_1	/* Name */ 
+        "EOMGsl_003_FCT_S00320_F16_Default_Mode_1"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxDftMod1_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxDftMod1Bas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00321_F17_Default_Mode_2	/* Name */ 
+        "EOMGsl_003_FCT_S00321_F17_Default_Mode_2"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxDftMod2_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxDftMod2Bas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00322_F18_Blo___dilution1_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00322_F18_Blo___dilution1_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxBlbydilution1Mod_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxBlbydilution1ModBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00323_F19_Blo___dilution2_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00323_F19_Blo___dilution2_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxBlbydilution2Mod_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxBlbydilution2ModBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00327_F23_Col__tside_Idle_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S00327_F23_Col__tside_Idle_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxBas2_T	/* Identifier */ 
+            EOM_idxColdBas1_T	/* Identifier */ 
+            EOM_bSeltCotyp_C	/* Identifier */ 
+            EOM_facColdTCoBas_M	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facColdTCoBas	/* Identifier */ 
+            EOM_tCoCor	/* Identifier */ 
+            EOM_prm_idxColdBas1	/* Identifier */ 
+            EOM_prm_idxColdBas2	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            EOMGsl_003_FCT_S00331_If_Action_Subsystem1	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S00331_If_Action_Subsystem1	/* Name */ 
+        "EOMGsl_003_FCT_S00331_If_Action_Subsystem1"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_tCoCold_C	/* Identifier */ 
+            EOM_tCoOfs_C	/* Identifier */ 
+            EOM_tCoCor_A	/* Identifier */ 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+            EOM_tCoThd_M	/* Identifier */ 
+            Ext_tCoStrtMes_A	/* Identifier */ 
+            EOM_tiEngStop_A	/* Identifier */ 
+            EOM_tiStrtThd_M	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_tCoCor	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S0035_F01_Nomi__tside_Idle_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S0035_F01_Nomi__tside_Idle_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxBas1_T	/* Identifier */ 
+            EOM_idxBas2_T	/* Identifier */ 
+            EOM_facTCoBas_M	/* Identifier */ 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facTCoBas	/* Identifier */ 
+            EOM_prm_idxBas1	/* Identifier */ 
+            EOM_prm_idxBas2	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S0036_F02_Nominal_Idle_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S0036_F02_Nominal_Idle_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxIdlBas1_T	/* Identifier */ 
+            EOM_idxIdlBas2_T	/* Identifier */ 
+            EOM_facTCoIdlBas_M	/* Identifier */ 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facTCoIdlBas	/* Identifier */ 
+            EOM_prm_idxIdlBas1	/* Identifier */ 
+            EOM_prm_idxIdlBas2	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S0037_F03_Nomi__tside_idle_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S0037_F03_Nomi__tside_idle_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxFdoutBas1_T	/* Identifier */ 
+            EOM_idxFdoutBas2_T	/* Identifier */ 
+            EOM_facTCoFdoutBas_M	/* Identifier */ 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facTCoFdoutBas	/* Identifier */ 
+            EOM_prm_idxFdoutBas1	/* Identifier */ 
+            EOM_prm_idxFdoutBas2	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S0038_F04_nomi__clean_Idle_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S0038_F04_nomi__clean_Idle_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxIdlFdoutBas1_T	/* Identifier */ 
+            EOM_idxIdlFdoutBas2_T	/* Identifier */ 
+            EOM_facTCoIdlFdoutBas_M	/* Identifier */ 
+            EOM_tCoCor_idxMod_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_facTCoIdlFdoutBas	/* Identifier */ 
+            EOM_prm_idxIdlFdoutBas1	/* Identifier */ 
+            EOM_prm_idxIdlFdoutBas2	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_003_FCT_S0039_F05_Performance_Mode	/* Name */ 
+        "EOMGsl_003_FCT_S0039_F05_Performance_Mode"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_idxTran_T	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_prm_idxTranBas1	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_003_RL_SWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_003_RL_SWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_003_RL_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_003_RL_ULONG_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_003_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin CHARACTERISTIC 
+        EOM_stTranTyp_M	/* Name */ 
+        "Transition type choice calibration"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_VOID_SCALING_a	/* Conversion */ 
+        0	/* LowerLimit */ 
+        11	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_004_CM_EQ_LSB_1	/* Conversion */ 
+            21	/* MaxAxisPoints */ 
+            1	/* LowerLimit */ 
+            256	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_stCmdModCur_stTranTypX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            EOMGsl_004_CM_EQ_LSB_1	/* Conversion */ 
+            21	/* MaxAxisPoints */ 
+            1	/* LowerLimit */ 
+            256	/* UpperLimit */ 
+            AXIS_PTS_REF EOM_stCmdModTar_stTranTypY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiIgSysTranDly_T	/* Name */ 
+        "Transition delay calibration for ignition angle"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiInjPFuTranDly_T	/* Name */ 
+        "Transition delay calibration for rail pressure"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiInjTranDly_T	/* Name */ 
+        "Transition delay calibration for injection"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpIgSys_T	/* Name */ 
+        "Ramp times calibration for ignition angle"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpInjSys_T	/* Name */ 
+        "Ramp times calibration for injection"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpPFu_T	/* Name */ 
+        "Ramp times calibration for rail pressure"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpRateMixt_T	/* Name */ 
+        "Ramp times calibration for rate mixture"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpTarIdl_T	/* Name */ 
+        "Ramp times calibration for target idle"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpTEx_T	/* Name */ 
+        "Ramp times calibration for exhaust temperature out of cylinder head"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpTqRes_T	/* Name */ 
+        "Ramp times calibration for torque reserves"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiRmpVlvSys_T	/* Name */ 
+        "Ramp times calibration for VVT"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiTarIdlTranDly_T	/* Name */ 
+        "Transition delay calibration for target idle"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiTExTranDly_T	/* Name */ 
+        "Transition delay calibration for exhaust temperature out of cylinder head"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiTqResTranDly_T	/* Name */ 
+        "Transition delay calibration for torque reserves"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiTranMax_C	/* Name */ 
+        "Maximal transition time calibration"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiTRateMixtTranDly_T	/* Name */ 
+        "Transition delay calibration for rate mixture"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        EOM_tiVlvTranDly_T	/* Name */ 
+        "Transition delay calibration for VVT"	/* LongIdentifier */ 
+        VAL_BLK	/* Type */ 
+        0x0 /* Address */ 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        0	/* LowerLimit */ 
+        130	/* UpperLimit */ 
+        MATRIX_DIM  12 1 1 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        EOM_stCmdModCur_stTranTypX_A	/* Name */ 
+        "Axis X of transition type choice calibration"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_004_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_1	/* Conversion */ 
+        21	/* MaxAxisPoints */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        EOM_stCmdModTar_stTranTypY_A	/* Name */ 
+        "Axis Y of transition type choice calibration"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        EOMGsl_004_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        EOMGsl_004_CM_EQ_LSB_1	/* Conversion */ 
+        21	/* MaxAxisPoints */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        EOM_bEnaCmbModChgNotDly	/* Name */ 
+        "Mode change authorization of the last calcul"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bRmpTranEnd	/* Name */ 
+        "Transition end indicator"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_bRmpTranEndDly	/* Name */ 
+        "Transition end indicator of the last calcul"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_stTranTyp	/* Name */ 
+        "Transition type"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        11	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiIgSysRmp	/* Name */ 
+        "Transition time intermediary calcul for ignition angle"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiInjRmp	/* Name */ 
+        "Transition time intermediary calcul for injection"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiPFuRmp	/* Name */ 
+        "Transition time intermediary calcul for rail pressure"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRateMixtRmp	/* Name */ 
+        "Transition time intermediary calcul for rate mixture"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpIgSys	/* Name */ 
+        "Transition rampe time for ignition angle"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpInjSys	/* Name */ 
+        "Transition rampe time for injection"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpPFu	/* Name */ 
+        "Transition rampe time for rail pressure"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpRateMixt	/* Name */ 
+        "Transition rampe time for rate mixture"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpTarIdl	/* Name */ 
+        "Transition rampe time for target idle"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpTEx	/* Name */ 
+        "Transition rampe time for exhaust température out of cylinder head"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpTqRes	/* Name */ 
+        "Transition rampe time for torque reserves"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiRmpVlvSys	/* Name */ 
+        "Transition rampe time for VVT"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiTarIdlRmp	/* Name */ 
+        "Transition time intermediary calcul for target idle"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiTExRmp	/* Name */ 
+        "Transition time intermediary calcul for exhaust temperature out of cylinder head"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiTqResRmp	/* Name */ 
+        "Transition time intermediary calcul for torque reserves"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiTran	/* Name */ 
+        "Transition time"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        EOM_tiVlvRmp	/* Name */ 
+        "Transition time intermediary calcul for VVT"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        131.07	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_bDiTran_in	/* Name */ 
+        "Flag d'annulation de transition lente (0=transition lente; 1=transition directe)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_bEnaCmbModChg_out	/* Name */ 
+        "Flag d'autorisation de changement de mode (1 quand autorisation)"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_bFdoutModReq_in	/* Name */ 
+        "Booléen d'état encrassé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_01_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_02_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_03_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_04_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_05_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_06_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_07_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_08_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_09_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_10_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_11_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_12_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_13_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_14_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_15_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_prm_facTranModNotSync_16_out	/* Name */ 
+        "Vecteur des facteurs d'interpolation transition de modes non synchronisés"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_stCmbModCur_out	/* Name */ 
+        "Numéro du mode courant"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_stCmbModReq_in	/* Name */ 
+        "Numéro du mode cible"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_EOM_stCmbModTar_out	/* Name */ 
+        "Numéro du mode consigne"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        EOMGsl_004_CM_EQ_LSB_1_OFF_1	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        256	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_EQ_LSB_0_002	/* Name */ 
+        "EOMGsl_004_CM_EQ_LSB_0_00"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.3"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.002 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_EQ_LSB_0_0078125	/* Name */ 
+        "EOMGsl_004_CM_EQ_LSB_0_007812"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.7"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_EQ_LSB_1	/* Name */ 
+        "EOMGsl_004_CM_EQ_LSB_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_EQ_LSB_1_OFF_1	/* Name */ 
+        "EOMGsl_004_CM_EQ_LSB_1_OFF_"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 -1 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        EOMGsl_004_CM_VOID_SCALING_a	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        EOMGsl_004_FCT_EOMGsl_004_TEV_fct	/* Name */ 
+        "EOMGsl_004_FCT_EOMGsl_004_TEV_fc"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_tiRmpIgSys_T	/* Identifier */ 
+            EOM_tiRmpInjSys_T	/* Identifier */ 
+            EOM_tiRmpPFu_T	/* Identifier */ 
+            EOM_tiRmpRateMixt_T	/* Identifier */ 
+            EOM_tiRmpTEx_T	/* Identifier */ 
+            EOM_tiRmpTarIdl_T	/* Identifier */ 
+            EOM_tiRmpTqRes_T	/* Identifier */ 
+            EOM_tiRmpVlvSys_T	/* Identifier */ 
+            EOM_tiIgSysTranDly_T	/* Identifier */ 
+            EOM_tiInjPFuTranDly_T	/* Identifier */ 
+            EOM_tiInjTranDly_T	/* Identifier */ 
+            EOM_tiTExTranDly_T	/* Identifier */ 
+            EOM_tiTRateMixtTranDly_T	/* Identifier */ 
+            EOM_tiTarIdlTranDly_T	/* Identifier */ 
+            EOM_tiTqResTranDly_T	/* Identifier */ 
+            EOM_tiVlvTranDly_T	/* Identifier */ 
+            EOM_tiTranMax_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_bRmpTranEnd	/* Identifier */ 
+            EOM_tiTran	/* Identifier */ 
+            EOM_stTranTyp	/* Identifier */ 
+            EOM_tiIgSysRmp	/* Identifier */ 
+            EOM_tiInjRmp	/* Identifier */ 
+            EOM_tiPFuRmp	/* Identifier */ 
+            EOM_tiRateMixtRmp	/* Identifier */ 
+            EOM_tiRmpIgSys	/* Identifier */ 
+            EOM_tiRmpInjSys	/* Identifier */ 
+            EOM_tiRmpPFu	/* Identifier */ 
+            EOM_tiRmpRateMixt	/* Identifier */ 
+            EOM_tiRmpTEx	/* Identifier */ 
+            EOM_tiRmpTarIdl	/* Identifier */ 
+            EOM_tiRmpTqRes	/* Identifier */ 
+            EOM_tiRmpVlvSys	/* Identifier */ 
+            EOM_tiTExRmp	/* Identifier */ 
+            EOM_tiTarIdlRmp	/* Identifier */ 
+            EOM_tiTqResRmp	/* Identifier */ 
+            EOM_tiVlvRmp	/* Identifier */ 
+            RE004_EOM_bDiTran_in	/* Identifier */ 
+            RE004_EOM_bFdoutModReq_in	/* Identifier */ 
+            RE004_EOM_stCmbModReq_in	/* Identifier */ 
+            EOM_bEnaCmbModChgNotDly	/* Identifier */ 
+            EOM_bRmpTranEndDly	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin IN_MEASUREMENT 
+            RE004_EOM_bDiTran_in	/* Identifier */ 
+            RE004_EOM_bFdoutModReq_in	/* Identifier */ 
+            RE004_EOM_stCmbModReq_in	/* Identifier */ 
+        /end IN_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE004_EOM_bEnaCmbModChg_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_01_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_02_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_03_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_04_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_05_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_06_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_07_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_08_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_09_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_10_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_11_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_12_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_13_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_14_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_15_out	/* Identifier */ 
+            RE004_EOM_prm_facTranModNotSync_16_out	/* Identifier */ 
+            RE004_EOM_stCmbModCur_out	/* Identifier */ 
+            RE004_EOM_stCmbModTar_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            EOMGsl_004_FCT_S00413_2D_InterOptim_TL	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        EOMGsl_004_FCT_S00413_2D_InterOptim_TL	/* Name */ 
+        "EOMGsl_004_FCT_S00413_2D_InterOptim_TL"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            EOM_stTranTyp_M	/* Identifier */ 
+            EOM_stCmdModCur_stTranTypX_A	/* Identifier */ 
+            EOM_stCmdModTar_stTranTypY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            EOM_stTranTyp	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_004_RL_UBYTE_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_004_RL_UWORD_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        EOMGsl_004_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE EOMGsl ------------------------------------*/

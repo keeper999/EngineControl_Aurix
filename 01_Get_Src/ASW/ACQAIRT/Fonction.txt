@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+ACQAIRT_vidAirTemperatureAcqui|E|();|FCT1.2|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Temperature_air_mesuree qui correspond à la conversion du  signal électrique en une température d’air en °C. Ceci se fait par le biais d’une cartographie avec points d’appui calibrables.|
+ACQAIRT_vidAirTemperatureMeas|E|();|FCT1.5|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Si le diagnostic électrique est correct, on effectue un slew rate sur la température d’air, sinon on passe dans la gestion d’un mode défaut.|
+ACQAIRT_vidElectricFailDetection|F|();|FCT1.3|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|detection des defauts electriques.|
+ACQAIRT_vidFunctionalDiagnosis|E|();|FCT1.6|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Le diagnostic fonctionnel est inhibé sur la demande de reconfiguration issue du GAR.|
+ACQAIRT_vidGradientTest|E|();|FCT1.8|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Le test sur le gradient est effectué sur le signal  échantillonné. L'accroissement de la température d'air ne doit pas être supérieur à une calibration (en °C/s).|
+ACQAIRT_vidGradientTestParams|D|();|FCT1.7|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Temperature_air_mesuree_prev doit être initialisée à la valeur deTemperature_air_mesuree.|
+ACQAIRT_vidInitOutput|E|();|FCT1.1|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|initialisation des sorties.|
+ACQAIRT_vidResetAirIntakeTemp|E|();|FCT1.4|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Cette initialisation est réalisée à la mise sous tension du calculateur (RESET).|
+ACQAIRT_vidThrMesTempAir|B|();|FCT1.9|ACQAIRT|0|PTS_DOC_6535285||||0|0|0|0|Fonction qui permet la production de la variable Température d’air mesurée après papillon au démarrage (Ext_tDsThrstrtMes).|
+AirT_EveCrTR_AcqAirT|C|();|SCH.3|ACQAIRT|1|PTS_DOC_6535285||||0|0|0|0|Evénement CRANKING vers RUNNING|
+AirT_EveRst_AcqAirT|F|();|SCH.1|ACQAIRT|1|PTS_DOC_6535285||||0|0|0|0|fonction d'accroche moniteur a l'evenement   AirT_EveRst_AcqAirT.|
+AirT_SdlMid_AcqAirT|F|();|SCH.2|ACQAIRT|1|PTS_DOC_6535285||||0|0|0|0|Fonction d'accroche moniteur a l'evenement  AirT_SdlMid_AcqAirT|
+GDGAR_bGetFRM|B|(argin uint16 u16channel)boolean;|1|HEADER|1|NONE||||0|0|0|0|Fonction de production de variables FRM|
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait) ;|2|HEADER|1|NONE||||0|0|0|0||

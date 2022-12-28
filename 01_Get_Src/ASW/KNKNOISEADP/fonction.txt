@@ -1,0 +1,15 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|B|func_FRM_bGetFRM|1|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|3|HEADER|1|NONE||||0|0|0|0||
+KNKNOISEADP_vidActivationCond|D|();|FCT1.3|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|Le calcul de l'adaptatif du bruit cliquetis n'est autorisé que si le bruit moyen est représentatif de ce qui est mesuré en conditions normales. Il faut donc que certaines conditions soient réunies sur le régime, charge, température eau et signal cliquetis|
+KNKNOISEADP_vidAdaptation|A|();|FCT1.4|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|On ne calcule l’adaptatif que si les conditions le requièrent (Knk_noi_ad_cdn_ok_uavb0=1) .|
+KNKNOISEADP_vidComputeAdapt|D|();|FCT1.5|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|L'adaptatif est mis à jour selon l'itération suivante :  Adaptatif(k) = Adaptatif(k-1) + Gain_filtre × (Consigne - BruitMoyen).|
+KNKNOISEADP_vidDiagnostic|D|();|FCT1.6|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|Après une durée calibrable déterminée à compter de l'événement moteur_tournant et sous la condition que la température d'eau soit supérieure à un certain seuil, le diagnostic de l'adaptatif est réalisé à la fréquence SdlSlow.|
+KNKNOISEADP_vidDiagResult|A|();|FCT1.8|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|Le résultat du diagnostic est positif lorsque l’adaptatif de l’un des N cylindres est saturé ou diverge vers sa limite. On a alors l’indicateur correspondant qui vaut 1.|
+KNKNOISEADP_vidDiagTimer|A|();|FCT1.7|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|Cette attente est nécessaire afin de laisser à l'adaptation le temps de converger avant de commencer le diagnostic.|
+KNKNOISEADP_vidInitialization|A|();|FCT1.2|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|On calcule un adaptatif par cylindre. Les variables visualisables sont Knk_noi_ad_gain_cyl1_uavn0 (respectivement _cyl2_, _cyl3_, _cyl4_).|
+KNKNOISEADP_vidInitOutput|A|();|FCT1.1|KNKNOISEADP|0|V02 NT 08 05725||||0|0|0|0|Fonction d'initialisation|
+KnkTreat_EveKnk_NoiseAdp|A|();|SCH.2|KNKNOISEADP|1|V02 NT 08 05725||||0|0|0|0|Tâche de calcul du niveau de cliquetis pour le cylindre en cours|
+KnkTreat_EveRst_NoiseAdp|A|();|SCH.1|KNKNOISEADP|1|V02 NT 08 05725||||0|0|0|0|Evénement reset du calculateur|
+KnkTreat_SdlSlow_NoiseAdp|A|();|SCH.3|KNKNOISEADP|1|V02 NT 08 05725||||0|0|0|0|Moniteur lent|
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||

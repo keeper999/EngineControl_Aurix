@@ -1,0 +1,12 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0|Fonction de production des variables GDGAR.|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0||
+VlvAct_EveRst_InCmd|C|();|SCH.1|VLVACTINCMD|1|PTS_DOC_6588664||||0|0|0|0|Evènement reset du calculateur|
+VlvAct_SdlFast_InCmd|C|();|SCH.3|VLVACTINCMD|1|PTS_DOC_6588664||||0|0|0|0|Moniteur rapide pour la fonction VVT|
+VlvAct_SdlMid_InCmd|C|();|SCH.2|VLVACTINCMD|1|PTS_DOC_6588664||||0|0|0|0|Moniteur moyen pour la fonction VVT|
+VLVACTINCMD_vidBatteryComp|D|();|FCT1.4|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|Pour éviter que les variations de la tension batterie ne perturbent la commande on a trois mode de compensation: pas de compensation, compensation linéaire, compensation du second ordre.|
+VLVACTINCMD_vidDiagnostic|D|();|FCT1.6|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|Fonction de diagnostique défaut du driver de la VVT admission.|
+VLVACTINCMD_vidEnablePwm|C|();|FCT1.3|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|Lors de la demande de fonctionnement de la VVT admission (Demande_vvt_adm_dormant = 0), on active le driver de la VVT admission (Autorisation_pwm_adm = 1) si la tension batterie se situe dans la plage de fonctionnement prédéfinie.|
+VLVACTINCMD_vidInitialization|B|();|FCT1.2|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|A l’initialisation de l’ECU, la valeur de consigne RCO appliquée est nulle ; la fréquence du signal RCO est configurable par calibration et mise à jour uniquement à ce moment.|
+VLVACTINCMD_vidInitOutput|A|();|FCT1.1|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|Initialisation des sorties.|
+VLVACTINCMD_vidPwmCommand|F|();|FCT1.5|VLVACTINCMD|0|PTS_DOC_6588664||||0|0|0|0|Lorsque le driver est activé, le module PWM correspondant à la commande VVT admission est réglé pour générer le signal RCO désiré.|

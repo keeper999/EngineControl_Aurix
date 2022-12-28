@@ -1,0 +1,84 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+CAMHAL_udtEnableDetection|A|func_CAMHAL_udtEnableDetection|0x0F|HEADER|1|NONE||||0|0|0|0|
+CAMHAL_udtReadEventPosition|A|func_CAMHAL_udtReadEventPos|0x10|HEADER|1|NONE||||0|0|0|0|
+CAMHAL_udtReadSignalLevel|A|func_CAMHAL_udtReadSignalLevel|0x13|HEADER|1|NONE||||0|0|0|0|
+CAMHAL_udtReadStatus|A|func_CAMHAL_udtReadStatus|0x07|HEADER|1|NONE||||0|0|0|0|
+CAMHAL_udtReadToothPeriod|A|func_CAMHAL_udtReadToothPeriod|0x12|HEADER|1|NONE||||0|0|0|0|
+CAMHAL_vidSetMode|A|(argin CAMHAL_tudtChannel udtChannelName, argin CAMHAL_tenuMode enuMode);|0x06|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_u16GetEngineAngle|A|func_CRKHAL_u16GetEngineAngle|0x14|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtDisableBwdRotation|A|()argret Std_ReturnType;|0x0A|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtDisableQuickSynchro|A|()argret Std_ReturnType;|0x11|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtEnableBwdRotation|A|()argret Std_ReturnType;|0x0B|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtEnableDetection|A|func_CRKHAL_udtEnableDetection|0x04|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtEnableQuickSynchro|A|()argret Std_ReturnType;|0x09|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtGetEngStopPosition|A|(argin uint8 u8EngStopPositionType, argio uint16 *pu16EngStopPosition)argret Std_ReturnType;|0x0D|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtGetToothInfo|A|(argin uint8 u8MaxTableSize, argio uint32 *pau32ToothInfoTable)argret Std_ReturnType;|0x0C|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtReadLastToothDuration|A|func_CRKHAL_udtRLTD|0x01|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtReadStatus|A|(argin uint8 u8Channel, argio boolean *pbStatus)argret Std_ReturnType;|0x0E|HEADER|1|NONE||||0|0|0|0|
+CRKHAL_udtWriteEnaToothTskRpmThd|A|(argin uint16 u16EngineSpeedThd)argret Std_ReturnType;|0x08|HEADER|1|NONE||||0|0|0|0|
+DGOHAL_bfRead|A|func_DGOHAL_bfRead|0x05|HEADER|1|NONE||||0|0|0|0|
+LAYERSYNC_vidAcq|A|();|FCT2.4|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Afin de délivrer des informations pertinentes et d’économiser de la charge CPU, les booléens d’états et leur flag de validité ne sont acquis que si le capteur arbre à cames admission est présent sur le moteur.
+LAYERSYNC_vidAcqExPos|A|();|FCT4.5|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'acquisition de l'angle du vilbrequin, la période entre les dents ainsi que l'état du front AAC échappement
+LAYERSYNC_vidAcqInPos|A|();|FCT4.6|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'acquisition de l'angle du vilbrequin, la période entre les dents ainsi que l'état du front AAC admission
+LAYERSYNC_vidAcquiDureeDent|A|();|FCT1.2|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|La durée dent est désormais également calculée sur la tâche calé tournant (Event_tache_cale_tournant)
+LAYERSYNC_vidAcquiPeriodeMoteur|A|();|FCT1.3|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'aquisition de la période du moteur
+LAYERSYNC_vidBwdRotMng|A|();|FCT2.9|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|On autorise la rotation du moteur en sens inverse jusqu’à  un seuil de régime défini par Sync_nEngEnaBwdRotThd_C. Si le régime dépasse ce seuil on appelle alors l’API qui permet de désactiver la rotation en sens inverse.
+LAYERSYNC_vidCallAPI|A|();|FCT2.6|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Au reset du calculateur on  fournit  la valeur de régime (Sync_AcvAgEng_C) en dessous duquel la tache CRKHAL_TOOTH_EVENT sera produite.
+LAYERSYNC_vidChangeOfMind|A|();|FCT3.7|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de ll'état de a position angulaire du moteur sur l’évènement N_Inv_Off.
+LAYERSYNC_vidCkOff|A|();|FCT4.1|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Lors de la perte de la synchronisation par le LDB,  ou lors d’un arrêt moteur, sur l’événement Crank Off, on réinitialise SyncAcq_bCalcOk.
+LAYERSYNC_vidCtEdgeCmExRstrt|A|();|FCT3.9|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de la position angulaire du front AAC échappement
+LAYERSYNC_vidCtEdgeCmExStrt|A|();|FCT3.6|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de la position angulaire du front AAC échappement
+LAYERSYNC_vidCtEdgeCmInRstrt|A|();|FCT3.8|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de la position angulaire du front AAC admission.
+LAYERSYNC_vidCtEdgeCmInStrt|A|();|FCT3.5|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de la position angulaire du front AAC admission.
+LAYERSYNC_vidDiagExCm|A|();|FCT1.6|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction responsable du diagnostic.
+LAYERSYNC_vidDiagInCm|A|();|FCT2.1|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction responsable du diagnostic.
+LAYERSYNC_vidDisBwdRot|A|();|FCT2.10|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|API qui permet de désactiver la rotation en sens inverse.
+LAYERSYNC_vidDisQuickSync|A|();|FCT2.8|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|API d’interdiction de synchronisation rapide
+LAYERSYNC_vidEnaBwdRot|A|();|FCT3.1|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|API qui autorise la rotation du moteur en sens inverse.
+LAYERSYNC_vidEnaQuickSync|A|();|FCT2.7|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|API d’autorisation de synchronisation rapide
+LAYERSYNC_vidEngStopPosn|A|();|FCT3.10|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet d'effectuer la lecture de l’API donnant la position  d’arrêt moteur calculée.
+LAYERSYNC_vidEngStopPosnAfter|A|();|FCT3.3|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Lors de la détection de la singularité du signal vilebrequin on effectue la lecture de l’API donnant la position d’arrêt du moteur calculée à posteriori.
+LAYERSYNC_vidExAcq|A|();|FCT1.9|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Afin de délivrer des informations pertinentes et d’économiser de la charge CPU, les booléens d’états et leurflag de validité ne sont acquis que si le capteur arbre à cames echappement est présent sur le moteur.
+LAYERSYNC_vidExCmSt|A|();|FCT1.10|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction de diagnostique du  signal arbre à cames echappement.
+LAYERSYNC_vidInCmSt|B|();|FCT2.5|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Ce bloc permet le diagnostic du signal arbre à cames admission
+LAYERSYNC_vidIniAcq|A|();|FCT2.2|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Au réveil du calculateur, les booléens d’états et leur indicateur de validité sont forcés à 0
+LAYERSYNC_vidIniExAcq|A|();|FCT1.7|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Au réveil du calculateur, les booléens d’états et leur  indicateur de validité sont forcés à 0.
+LAYERSYNC_vidIniExAcqPos|A|();|FCT4.3|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction pour le reset du calculateur
+LAYERSYNC_vidIniExCmAcq|A|();|FCT1.8|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction d'initialisation de L'API CAMHAL
+LAYERSYNC_vidIniInAcqPos|A|();|FCT4.4|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction pour la  reset du calculateur
+LAYERSYNC_vidIniInCmAcq|A|();|FCT2.3|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction d'initialisation de L'API CAMHAL
+LAYERSYNC_vidInit|A|();|FCT4.2|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'initialisation des outputs
+LAYERSYNC_vidInitAPI|A|();|FCT1.1|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|L’autorisation de recherche de détection de front du signal vilebrequin se fait uniquement après que les tests  fonctionnels aient été effectués.
+LAYERSYNC_vidIniTDCCnt|A|();|FCT3.2|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet la lecture de la position angulaire du moteur lors de la synchronisation moteur.
+LAYERSYNC_vidInitOutput|A|();|FCT4.7|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'initialisation des sorties
+LAYERSYNC_vidPhaseCylEch|A|();|FCT1.5|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'acquisition de l'angle du crankshaft
+LAYERSYNC_vidReadToothInfo|A|();|FCT3.4|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction de lecture des variables de synchronisation provenant du LdB.
+LAYERSYNC_vidTrouverPhaseMoteur|A|();|FCT1.4|LAYERSYNC|0|PTS_DOC_6944973||||0|0|0|0|Fonction qui permet l'acquisition de la valeur du compteur PMH
+Sync_EveBDC_AcqCkMngIf|A|();|SCH1.6|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evénement Point Mort Bas (PMB / BDC)
+Sync_EveCkLTo_AcqSyncSTT|A|();|SCH2.7|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement dent longue
+Sync_EveCkOff_AcqSyncSTT|A|();|SCH2.3|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement  Crk off
+Sync_EveCkSnOf_AcqSyncSTT|A|();|SCH2.4|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement synchronisation perdue
+Sync_EveCkSnOn_AcqCkMngIf|A|();|SCH1.1|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement Synchro trouvée
+Sync_EveCkTo_AcqSyncSTT|A|();|SCH2.2|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement dent vilebrequin activé si le régime est inférieur à un seuil
+Sync_EveExCamEdge_AcqSyncSTT|A|();|SCH2.1|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement détection d'un front arbre à cames échappement pour la fonction Synchro
+Sync_EveExCmToo_AcqExCmSts|A|();|SCH1.8|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement Dent AAC
+Sync_EveInCamEdge_AcqSyncSTT|A|();|SCH1.14|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement détection d'un front arbre à cames admission pour la fonction Synchro
+Sync_EveInCmToo_AcqInCmSts|A|();|SCH1.11|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement arbre à cames admission
+Sync_EveKOn_AcqCkMngIf|A|();|SCH1.4|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement clé Off -> On
+Sync_EveNInvOff_AcqSyncSTT|A|();|SCH2.8|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evénement indiquant le retour à une rotation en sens avant du moteur
+Sync_EveRst_AcqSyncSTT|A|();|SCH2.5|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement reset
+Sync_EveRst_ExCmStsIf|A|();|SCH1.9|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement reset du calculateur
+Sync_EveRst_InCmStsIf|A|();|SCH1.12|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement reset du calculateur
+Sync_EveStTR_AcqCkMngIf|A|();|SCH1.5|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement Stall To Rot
+Sync_EveSyncAccu_AcqSyncSTT|A|();|SCH2.9|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evénement indiquant le passage en synchronisation précise du moteur
+Sync_EveTDC_AcqCkMngIf|A|();|SCH1.2|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Interruption PMH
+Sync_EveTestEnd_AcqCkMngIf|A|();|SCH1.3|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement indiquant la fin des tests fonctionnels
+Sync_SdlFast_AcqCkMngIf|A|();|SCH1.7|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Moniteur rapide de la fonction Sync
+Sync_SdlMid_AcqSyncSTT|A|();|SCH2.6|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Moniteur moyen
+Sync_SdlSlow_AcqExCmSts|A|();|SCH1.10|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Moniteur lent de la fonction Sync
+Sync_SdlSlow_AcqInCmSts|A|();|SCH1.13|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Moniteur lent de la fonction Sync
+TDCHAL_udtGetCounter|A|func_TDCHAL_udtGetCounter|0x03|HEADER|1|NONE||||0|0|0|0|
+TDCHAL_udtGetPeriod|A|func_TDCHAL_udtGetPeriod|0x02|HEADER|1|NONE||||0|0|0|0|
+VlVAct_EveExCmToo_AcqVlVActPos|A|();|SCH2.11|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement dent AAC échappemen
+VlVAct_EveInCmToo_AcqVlVActPos|A|();|SCH2.12|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement dent AAC admission
+VlvAct_EveRst_AcqVlVActPos|A|();|SCH2.10|LAYERSYNC|1|PTS_DOC_6944973||||0|0|0|0|Evènement Reset

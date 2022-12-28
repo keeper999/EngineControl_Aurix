@@ -1,0 +1,1096 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : HPPmpFctDiag                                            */
+/* !Description     : HPPmpFctDiag– DIAGNOSTIC FONCTIONNEL DE LA REGULATION PRESSION RAIL*/
+/*                                                                            */
+/* !Module          : HPPmpFctDiag                                            */
+/*                                                                            */
+/* !File            : HPPmpFctDiag.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Wed Jul 23 18:15:05 2014                              */
+/*   Model name       : HPPmpFctDiag_AUTOCODE.mdl                             */
+/*   Model version    : 1.358                                                 */
+/*   Root subsystem   : /HPPmpFctDiag                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/HPPmpFctDiag/5-SOFT-LIV/HPPm$*/
+/* $Revision::   1.12                                                        $*/
+/* $Author::   adelvare                               $$Date::   24 Jul 2014 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   HPPmpFctDiag
+    /*   LongIdentifier */   "HPPmpFctDiag Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpFctDiag_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuRailINegThdDetDe_T
+       /*   LongIdentifier */   "Seuil de détection négatif de dépassement du terme intégral de la régulation de pression rail dépendant de température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_1
+       /*   LowerLimit     */   -5.1199218750000006E+002
+       /*   UpperLimit     */   0.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             PFuCtl_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FuRailNegDifColdTcoThd_T
+       /*   LongIdentifier */   "Detection threshold of negative rail pressure error depending on cold coolant temperature"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_3
+       /*   LowerLimit     */   -100.0
+       /*   UpperLimit     */   0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_4
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FuRailNegDifHotTcoThd_T
+       /*   LongIdentifier */   "Detection threshold of negative rail pressure error depending on warm coolant temperature"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_3
+       /*   LowerLimit     */   -100.0
+       /*   UpperLimit     */   0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_4
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiAftrCutOff_C
+       /*   LongIdentifier */   "Duration after a Cut Off"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.99999E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiORngDly_C
+       /*   LongIdentifier */   "Tunable duration to inhibate the over range pressure diagnosis after start"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.99999E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPFuRailMes_C
+       /*   LongIdentifier */   "Duration after detecting a transition"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.99999E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiThdDetDeICtl_C
+       /*   LongIdentifier */   "Durée pour confirmer détection d'un défaut sur le terme intégral de la régulation de pression rail pour confirmation du défaut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.99999E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiTransPFuReq_C
+       /*   LongIdentifier */   "Duration for rail pressure transient"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.99999E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngMin_C
+       /*   LongIdentifier */   "Engine speed minimum threshold to activate fonctional diagnosis of high pressure pump"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuRailIPosThdDetDe_T
+       /*   LongIdentifier */   "Seuil de détection positif de dépassement du terme intégral de la régulation de pression rail dépendant de température d'eau"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             PFuCtl_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuRailMesThd_C
+       /*   LongIdentifier */   "Seuil de pression pour activer le compteur de temps passer en haute pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuReqMax_C
+       /*   LongIdentifier */   "Consigne de pression rail max permise"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuReqMin_C
+       /*   LongIdentifier */   "Minimum setpoint rail pressure threshold to activate diagnosis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailSpDiff_C
+       /*   LongIdentifier */   "Threshold of rail pressure stable"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FuRailPosDifColdTcoThd_T
+       /*   LongIdentifier */   "Detection threshold of positive rail pressure error depending on cold coolant temperature"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_4
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FuRailPosDifHotTcoThd_T
+       /*   LongIdentifier */   "Detection threshold of positive rail pressure error depending on warm coolant temperature"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   100.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpFctDiag_CM_4
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   HPPMPFCTDIAG_u8Inhib
+       /*   LongIdentifier */   ""
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tCoMesThd_C
+       /*   LongIdentifier */   "Seuil de température d'eau"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpFctDiag_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_2
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_tCoMes_A
+       /*   LongIdentifier */   "Table de points d'appuis en température d'eau"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_pFuReq_A
+       /*   LongIdentifier */   "Required rail pressure breakpoints"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpFctDiag_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpFctDiag_CM_4
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_pFuReqDiff
+       /*   LongIdentifier     */   "Required rail pressure difference betweend TDC"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   HPPmpFctDiag_CM_15
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   5.1199218750000006E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_PrailLoopErr
+       /*   LongIdentifier     */   "Ecart de boucle"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   HPPmpFctDiag_CM_16
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -100.0
+       /*   UpperLimit         */   100.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiPrailOvrThd_prev
+       /*   LongIdentifier     */   "Valeur précédente du temps passé avec une pression dans le rail supérieure à un seuil donné"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.294967295E+006
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiTransPFuReqDly
+       /*   LongIdentifier     */   "Duration for rail pressure transient"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.99999E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiAftrCutOffDly
+       /*   LongIdentifier     */   "Duration after a cut off"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.99999E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiPFuRailMesDly
+       /*   LongIdentifier     */   "Duration after detecting a transition"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.99999E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiThdDetDeICtlDlyPos
+       /*   LongIdentifier     */   "Durée pour confirmer détection d'un défaut positif sur le terme intégral de la régulation de pression rail pour confirmation du défaut"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.99999E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_tiThdDetDeICtlDlyNeg
+       /*   LongIdentifier     */   "Durée pour confirmer détection d'un défaut négatif sur le terme intégral de la régulation de pression rail pour confirmation du défaut"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   HPPmpFctDiag_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.99999E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngIFrz_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating a rail pressure control error when the integral-term of PID controller is frozen"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bMonRunORngDifI_PFuCtl
+       /*   LongIdentifier     */   "Flag of integral term value of PID controller too high diagnostic activated"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bMonRunORngNeg_PFuCtl
+       /*   LongIdentifier     */   "Flag of negative rail pressure erro diagnostic activated"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bMonRunORngIFrz_PFuCtl
+       /*   LongIdentifier     */   "Flag of rail pressure error diagnostic activated (for an integral-term of PID frozen)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bMonRunORngPos_PFuCtl
+       /*   LongIdentifier     */   "Flag of positive rail pressure error diagnostic activated"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bMonRunORngMax_PFuCtl
+       /*   LongIdentifier     */   "Flag of rail pressure over range activated"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bTransPFuReq
+       /*   LongIdentifier     */   "Boolean indicating stabilisation of rail pressure"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDlyAftrCutOff
+       /*   LongIdentifier     */   "Booléen indiquant que la temporisation d'activation du diagnostic après une coupure injection est écoulé"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDiagAcvCond
+       /*   LongIdentifier     */   "Activation conditions of the different diagnosis"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bTransDiagAcvCond
+       /*   LongIdentifier     */   "Activation condition of the diagnosis taking account the transient of the rail pressure"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngMax_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating over range of the rail pressure measurement"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngPos_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating a positive rail pressure control error"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngNeg_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating a negative rail pressure control error"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bAcvDecCntDeICtlNeg
+       /*   LongIdentifier     */   "Booléen d'activation de la décrémentation du compteur pour le diagnostic fonctionnel négatif sur le terme intégral du régulateur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngNegDifI_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating the detection of integral-term negative value of PID controller too high"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bAcvDecCntDeICtlPos
+       /*   LongIdentifier     */   "Booléen d'activation de la décrémentation du compteur pour le diagnostic fonctionnel positif sur le terme intégral du régulateur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   PFuCtl_bDgoORngPosDifI_PFuCtl
+       /*   LongIdentifier     */   "Flag indicating the detection of integral-term positive value of PID controller too high"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   HPPmpFctDiag_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_1
+       /*   LongIdentifier */   "Q = (V+511.9921875)*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 65535 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_2
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_3
+       /*   LongIdentifier */   "Q = (V+100)*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 100 10000 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_4
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_5
+       /*   LongIdentifier */   "Q = V*1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_7
+       /*   LongIdentifier */   "Q = V*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            HPPmpFctDiag_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_11
+       /*   LongIdentifier */   "Q = V*8388608"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 8388608 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_12
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_13
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_14
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_15
+       /*   LongIdentifier */   "Q = V*100000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 100000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpFctDiag_CM_16
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   HPPmpFctDiag_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   HPPmpFctDiag
+       /*   LongIdentifier */   "PTS_DOC_5307784.007"
+
+       /begin DEF_CHARACTERISTIC
+          HPPMPFCTDIAG_u8Inhib
+          PFuCtl_FuRailNegDifColdTcoThd_T
+          PFuCtl_FuRailNegDifHotTcoThd_T
+          PFuCtl_FuRailPosDifColdTcoThd_T
+          PFuCtl_FuRailPosDifHotTcoThd_T
+          PFuCtl_nEngMin_C
+          PFuCtl_pFuRailINegThdDetDe_T
+          PFuCtl_pFuRailIPosThdDetDe_T
+          PFuCtl_pFuRailMesThd_C
+          PFuCtl_pFuReqMax_C
+          PFuCtl_pFuReqMin_C
+          PFuCtl_pFuReq_A
+          PFuCtl_pPrailSpDiff_C
+          PFuCtl_tCoMesThd_C
+          PFuCtl_tCoMes_A
+          PFuCtl_tiAftrCutOff_C
+          PFuCtl_tiORngDly_C
+          PFuCtl_tiPFuRailMes_C
+          PFuCtl_tiThdDetDeICtl_C
+          PFuCtl_tiTransPFuReq_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          PFuCtl_PrailLoopErr
+          PFuCtl_bAcvDecCntDeICtlNeg
+          PFuCtl_bAcvDecCntDeICtlPos
+          PFuCtl_bDgoORngIFrz_PFuCtl
+          PFuCtl_bDgoORngMax_PFuCtl
+          PFuCtl_bDgoORngNegDifI_PFuCtl
+          PFuCtl_bDgoORngNeg_PFuCtl
+          PFuCtl_bDgoORngPosDifI_PFuCtl
+          PFuCtl_bDgoORngPos_PFuCtl
+          PFuCtl_bDiagAcvCond
+          PFuCtl_bDlyAftrCutOff
+          PFuCtl_bMonRunORngDifI_PFuCtl
+          PFuCtl_bMonRunORngIFrz_PFuCtl
+          PFuCtl_bMonRunORngMax_PFuCtl
+          PFuCtl_bMonRunORngNeg_PFuCtl
+          PFuCtl_bMonRunORngPos_PFuCtl
+          PFuCtl_bTransDiagAcvCond
+          PFuCtl_bTransPFuReq
+          PFuCtl_pFuReqDiff
+          PFuCtl_tiAftrCutOffDly
+          PFuCtl_tiPFuRailMesDly
+          PFuCtl_tiPrailOvrThd_prev
+          PFuCtl_tiThdDetDeICtlDlyNeg
+          PFuCtl_tiThdDetDeICtlDlyPos
+          PFuCtl_tiTransPFuReqDly
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

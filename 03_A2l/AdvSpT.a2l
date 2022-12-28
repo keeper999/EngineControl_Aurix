@@ -1,0 +1,907 @@
+﻿/begin MODULE AdvSpT  "AdvSpT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvSpT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgTarOfs_OfsAgIg_T
+    /* Long Identifier        */      "Courbe de rendement d'avance inverse"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvSpT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      95.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvSpT_CM_2
+      /* Number of Axis Pts   */      104
+      /* Lower Limit          */      0
+      /* Upper Limit          */      1.0
+      AXIS_PTS_REF                    IgSys_rTar_OfsAgIg_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rTar_OfsAgIg_A
+    /* Long Identifier        */      "Point d'appui avance, rendement d'avance inverse"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvSpT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_2
+    /* Number of Axis Pts     */      104
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tCoMesSftyVal_C
+    /* Long Identifier        */      "Valeur de refuge température d'eau"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_3
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tCoThd_CutOff_C
+    /* Long Identifier        */      "seuil de température, coupure selective"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_3
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_nEngThd_CutOff_C
+    /* Long Identifier        */      "Seuil de régime, coupure selective"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tqIdcEngCurMinThdNoRcvSC_C
+    /* Long Identifier        */      "Seuil de protection de la coupure pour des zones mortes de faible amplitude"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_5
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tqIdcEngCurMinThd_NoRcv_C
+    /* Long Identifier        */      "Seuil de protection de la remise pour des zones mortes de faible amplitude"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_5
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tqIdcEngCurMinThd_Rcv_C
+    /* Long Identifier        */      "Seuil de protection de la remise pour des zones de recouvrement de faible amplitude"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_5
+    /* Lower Limit            */      -2000.0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tOxCThdMax_CutOff_C
+    /* Long Identifier        */      "Seuil max température catalyseur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_6
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      2270.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tOxCThdMin_CutOff_C
+    /* Long Identifier        */      "Seuil min température catalyseur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_6
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      2270.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_r80PercTq_C
+    /* Long Identifier        */      "-"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_2
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_noCylCutOffTar_B
+    /* Long Identifier        */      "Consigne de coupure sélective (bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_noCylMaxCutOff_C
+    /* Long Identifier        */      "Nombre max de cylindres coupés"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ADVSPT_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bInh_SelCutOff_C
+    /* Long Identifier        */      "Inhibition de la coupure sélective"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIg80PercTq_B
+    /* Long Identifier        */      "Avance 80% de couple (bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_9
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgOfs80PrecTq_B
+    /* Long Identifier        */      "Dégradation d'avance 80 % de rendement (bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_9
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgTarWiCllTar_B
+    /* Long Identifier        */      "Avance de consigne avec prise en compte de débouclage de la stucture couple(bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_9
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgTarWoutAntiJerk_B
+    /* Long Identifier        */      "Avance de consigne hors agrément curatif (bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_9
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rtqIdcEngCurMinNoRcvSC_C
+    /* Long Identifier        */      "Ratio permettant la variation de l'hystérésis pour la coupure en zone morte"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rtqIdcEngCurMin_NoRcv_C
+    /* Long Identifier        */      "Ratio permettant la variation de l'hystérésis pour la remise en zone morte"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rtqIdcEngCurMin_Rcv_C
+    /* Long Identifier        */      "Ratio permettant la variation de l'hystérésis pour la remise en zone de recouvrement"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvSpT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvSpT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      AdvSpT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvSpT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvSpT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvSpT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tSelTCoUsr_MP
+    /* Long identifier        */      "Point de test selection de la température de l'eau"
+    /* Data type              */      SWORD
+    /* Conversion method      */      AdvSpT_CM_3
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -40.0
+    /* Upper limit            */      214.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rTarEfcWoutAntiJerk_IRV_MP
+    /* Long identifier        */      "Rendement de consigne hors agrément curatif (IRV_MP)"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvSpT_CM_2
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rTarEfc_IRV_MP
+    /* Long identifier        */      "Rendement de consigne (IRV_MP)"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvSpT_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rTarEfcMux_MP
+    /* Long identifier        */      "Point de test rendement de consigne mux (dimension 2)"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvSpT_CM_12
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Array Size             */
+    MATRIX_DIM                        1 2 1
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facAgCorSwtTar_MP
+    /* Long identifier        */      "Point de mesure"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvSpT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facTarAgCorSwtAntiJ_MP
+    /* Long identifier        */      "Point de mesure"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvSpT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgTar_AgIg_MP
+    /* Long identifier        */      "Point de mesure avance de consigne"
+    /* Data type              */      SWORD
+    /* Conversion method      */      AdvSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -95.625
+    /* Upper limit            */      95.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIg_AntiJerk_MP
+    /* Long identifier        */      "Point de mesure avance de consigne"
+    /* Data type              */      SWORD
+    /* Conversion method      */      AdvSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -95.625
+    /* Upper limit            */      95.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgTar_MP
+    /* Long identifier        */      "Point de mesure"
+    /* Data type              */      SWORD
+    /* Conversion method      */      AdvSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -95.625
+    /* Upper limit            */      95.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_noCylCutOffSwt_MP
+    /* Long identifier        */      "Point de test Inhibition de la coupure sélective"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_noCylCutOff_MP
+    /* Long identifier        */      "Point de test nombre de cylindres coupés"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_noCylCutOffInc_MP
+    /* Long identifier        */      "Point de test incrémentation nombre de cylindres coupés"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_noCylCutOffDlyOut
+    /* Long identifier        */      "Retard à prendre en compte sur la sortie coupure"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_noCylCutOffDly
+    /* Long identifier        */      "Retard à prendre en compte sur la coupure"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_7
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bCylCutOffTrig
+    /* Long identifier        */      "Flag cylindre coupé trigger"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      InjSys_bCylCutOff
+    /* Long identifier        */      "Flag cylindre coupé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgTarOfs_MP
+    /* Long identifier        */      "Point de mesure offset d'avance allumage 1"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      95.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgAntiJerkOfs_MP
+    /* Long identifier        */      "Point de mesure offset d'avance allumage 2"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvSpT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      95.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_1
+    /* Long identifier        */      "Q = V*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 2.66666666667 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_2
+    /* Long identifier        */      "Q = V*1024"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1024 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_3
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_4
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_5
+    /* Long identifier        */      "Q = V*16"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "N.m"
+    /* Coefficients           */      COEFFS 0 16 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_6
+    /* Long identifier        */      "Q = (V-223)*32"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 32 -7136 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_7
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF AdvSpT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      AdvSpT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_9
+    /* Long identifier        */      "Q = (V+36)*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 2.66666666667 96 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_10
+    /* Long identifier        */      "Q = V*100"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 100 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_11
+    /* Long identifier        */      "Q = V*1024"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1024 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_12
+    /* Long identifier        */      "Q = V*1000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvSpT_CM_13
+    /* Long identifier        */      "Q = V*128.205128205"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 128.205128205 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION AdvSpT_FCT_AdvSpT
+    "CHARACTERISTIC and MEASUREMENT of AdvSpT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      AdvSpT_ModuleVersion_Major_MP 
+      AdvSpT_ModuleVersion_Minor_MP 
+      AdvSpT_ModuleVersion_Patch_MP 
+      IgSys_agIgAntiJerkOfs_MP
+      IgSys_agIgTarOfs_MP
+      IgSys_agIgTar_AgIg_MP
+      IgSys_agIgTar_MP
+      IgSys_agIg_AntiJerk_MP
+      IgSys_facAgCorSwtTar_MP
+      IgSys_facTarAgCorSwtAntiJ_MP
+      IgSys_noCylCutOffInc_MP
+      IgSys_noCylCutOffSwt_MP
+      IgSys_noCylCutOff_MP
+      IgSys_rTarEfcMux_MP
+      IgSys_rTarEfcWoutAntiJerk_IRV_MP
+      IgSys_rTarEfc_IRV_MP
+      IgSys_tSelTCoUsr_MP
+      InjSys_bCylCutOff
+      InjSys_bCylCutOffTrig
+      InjSys_noCylCutOffDly
+      InjSys_noCylCutOffDlyOut
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      ADVSPT_ACTIVE_BYP_C
+      IgSys_agIg80PercTq_B
+      IgSys_agIgOfs80PrecTq_B
+      IgSys_agIgTarOfs_OfsAgIg_T
+      IgSys_agIgTarWiCllTar_B
+      IgSys_agIgTarWoutAntiJerk_B
+      IgSys_bInh_SelCutOff_C
+      IgSys_nEngThd_CutOff_C
+      IgSys_noCylCutOffTar_B
+      IgSys_noCylMaxCutOff_C
+      IgSys_r80PercTq_C
+      IgSys_rTar_OfsAgIg_A
+      IgSys_rtqIdcEngCurMinNoRcvSC_C
+      IgSys_rtqIdcEngCurMin_NoRcv_C
+      IgSys_rtqIdcEngCurMin_Rcv_C
+      IgSys_tCoMesSftyVal_C
+      IgSys_tCoThd_CutOff_C
+      IgSys_tOxCThdMax_CutOff_C
+      IgSys_tOxCThdMin_CutOff_C
+      IgSys_tqIdcEngCurMinThdNoRcvSC_C
+      IgSys_tqIdcEngCurMinThd_NoRcv_C
+      IgSys_tqIdcEngCurMinThd_Rcv_C
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+/* ------------------------------ END OF MODULE AdvSpT ------------------------------------*/

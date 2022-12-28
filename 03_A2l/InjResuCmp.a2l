@@ -1,0 +1,948 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjResuCmp                                              */
+/* !Description     : InjResuCmp : INJECTION COMPENSATION AFTER CUT OFF       */
+/*                                                                            */
+/* !Module          : InjResuCmp                                              */
+/*                                                                            */
+/* !File            : InjResuCmp.a2l                                          */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Mon Dec 02 18:06:23 2013                              */
+/*   Model name       : InjResuCmp_AUTOCODE.mdl                               */
+/*   Model version    : 1.293                                                 */
+/*   Root subsystem   : /InjResuCmp                                           */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/InjResuCmp/5-SOFT-LIV/InjRes$*/
+/* $Revision::   1.6                                                         $*/
+/* $Author::   adelvare                               $$Date::   03 Dec 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjResuCmp
+    /*   LongIdentifier */   "InjResuCmp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjResuCmp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_ctAntCmpStop_T
+       /*   LongIdentifier */   "Combustion number for anticipated compensation stop map"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_1
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   65535.0
+          AXIS_PTS_REF             InjSys_ctAntCmpStop_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuCorIntrSTT_M
+       /*   LongIdentifier */   "Cartographie de correction de la compensation en réattelage lors d'une interruption de la séquence d'arrêt STT à haut régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facInjResuCorY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facInjResuCorX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuCor_M
+       /*   LongIdentifier */   "Map for correction of the injection resume compensation"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_3
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAir_facInjResuCorY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_2
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_facInjResuCorX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuIdlCmp_T
+       /*   LongIdentifier */   "Basis injection resume compensation for idle speed injection resume request (Table)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_1
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   65535.0
+          AXIS_PTS_REF             InjSys_ct_facInjResuIdlCmp_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuIntrSTT_T
+       /*   LongIdentifier */   "Compensation en réattelage pour une interruption de la séquence d'arrêt STT à haut régime"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_1
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   65535.0
+          AXIS_PTS_REF             InjSys_ct_facInjResuIntrSTT_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuTCorIntrSTT_T
+       /*   LongIdentifier */   "Cartographie de correction en température de la compensation en réattelage lors d'une interruption de la phase d'arrêt STT à haut régime"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facInjResuTCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuTCor_T
+       /*   LongIdentifier */   "Table for temperature correction of the injection resume compensation"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_7
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCo_facInjResuTCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facInjResuTqCmp_T
+       /*   LongIdentifier */   "Basis injection resume compensation for torque injection resume request (Table)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.4999771118164061E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjResuCmp_CM_1
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   65535.0
+          AXIS_PTS_REF             InjSys_ct_facInjResuTqCmp_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJRESUCMP_u8Inhib
+       /*   LongIdentifier */   "inhibition of module INJRESUCMP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvInjResuCmp_C
+       /*   LongIdentifier */   "Boolean for injection resume compensation function activation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjResuCmp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ctAntCmpStop_A
+       /*   LongIdentifier */   "Combustion number for anticipated compensation stop axis"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_1
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAir_facInjResuCorY_A
+       /*   LongIdentifier */   "Air Load axis for injection resume compensation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_3
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEng_facInjResuCorX_A
+       /*   LongIdentifier */   "Engine speed axis for injection resume compensation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_2
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ct_facInjResuIdlCmp_A
+       /*   LongIdentifier */   "Basis injection resume compensation for idle speed injection resume request (Axis)"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_1
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ct_facInjResuIntrSTT_A
+       /*   LongIdentifier */   "Compensation en réattelage lors d'un interruption de la séquence d'arrêt STT à haut régime"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_1
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_tCo_facInjResuTCor_A
+       /*   LongIdentifier */   "Axis for temperature correction of the injection resume compensation"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_7
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_ct_facInjResuTqCmp_A
+       /*   LongIdentifier */   "Basis injection resume compensation for torque injection resume request (Axis)"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjResuCmp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjResuCmp_CM_1
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facInjResuTCor_MP
+       /*   LongIdentifier     */   "Table output for temperature correction of the injection resume compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_facTCorIntrSTT_MP
+       /*   LongIdentifier     */   "Sortie de la table de correction en température de la compensation en réattelage pour une interruption de la séquence d'arrêt STT à haut régime"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjResuCor_MP
+       /*   LongIdentifier     */   "Map output for correction of the injection resume compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facCorIntrSTT_MP
+       /*   LongIdentifier     */   "Map output for correction of the injection resume compensation for STOP interruption"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjResuIdlCmp_MP
+       /*   LongIdentifier     */   "Basis injection resume compensation for idle speed injection resume request"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjResuTqCmp_MP
+       /*   LongIdentifier     */   "Basis injection resume compensation for torque injection resume request"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjResuIntrSTT_MP
+       /*   LongIdentifier     */   "Basis injection resume compensation for STOP interruption"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facResuIdl_MP
+       /*   LongIdentifier     */   "Cylinder array of injection resume compensation for idle speed regulation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facResuTq_MP
+       /*   LongIdentifier     */   "Cylinder array of injection resume compensation for torque request"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facGslResuCyl
+       /*   LongIdentifier     */   "Cylinder array of gasoline injection resume compensation"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_ctInjResuCyl
+       /*   LongIdentifier     */   "Cylinder array of combustion counter in injection resume compensation"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_ctAntCmpStopCyl
+       /*   LongIdentifier     */   "Cylinder array of combustion number for anticipated compensation stop"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_ctNbCmbCutOffCyl
+       /*   LongIdentifier     */   "Cylinder array of combustion counter in injection cut off"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   InjResuCmp_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_facInjResuCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindre) des compensations après coupure"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   InjResuCmp_CM_4
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.4999771118164061E+001
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_bDetStall
+       /*   LongIdentifier     */   "Detection du Run To Stall"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   InjResuCmp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_bInjResuCyl
+       /*   LongIdentifier     */   "Cylinder array of injection resume compensation activation"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   InjResuCmp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjSys_prm_bDetStall
+       /*   LongIdentifier     */   "Vecteur cylindre de détection d'un calage lors de la dernière coupure du cylindre"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   InjResuCmp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_3
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_4
+       /*   LongIdentifier */   "Q = V*4369.06666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 4369.06666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjResuCmp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_7
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_8
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjResuCmp_CM_11
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjResuCmp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjResuCmp
+       /*   LongIdentifier */   "V02NT1101569.002"
+
+       /begin DEF_CHARACTERISTIC
+          INJRESUCMP_u8Inhib
+          InjSys_bAcvInjResuCmp_C
+          InjSys_ctAntCmpStop_A
+          InjSys_ctAntCmpStop_T
+          InjSys_ct_facInjResuIdlCmp_A
+          InjSys_ct_facInjResuIntrSTT_A
+          InjSys_ct_facInjResuTqCmp_A
+          InjSys_facInjResuCorIntrSTT_M
+          InjSys_facInjResuCor_M
+          InjSys_facInjResuIdlCmp_T
+          InjSys_facInjResuIntrSTT_T
+          InjSys_facInjResuTCorIntrSTT_T
+          InjSys_facInjResuTCor_T
+          InjSys_facInjResuTqCmp_T
+          InjSys_mAir_facInjResuCorY_A
+          InjSys_nEng_facInjResuCorX_A
+          InjSys_tCo_facInjResuTCor_A
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjSys_bDetStall
+          InjSys_facInjResuTCor_MP
+          InjSys_facTCorIntrSTT_MP
+          InjSys_prm_bDetStall
+          InjSys_prm_bInjResuCyl
+          InjSys_prm_ctAntCmpStopCyl
+          InjSys_prm_ctInjResuCyl
+          InjSys_prm_ctNbCmbCutOffCyl
+          InjSys_prm_facCorIntrSTT_MP
+          InjSys_prm_facGslResuCyl
+          InjSys_prm_facInjResuCor_MP
+          InjSys_prm_facInjResuIdlCmp_MP
+          InjSys_prm_facInjResuIntrSTT_MP
+          InjSys_prm_facInjResuTqCmp_MP
+          InjSys_prm_facResuIdl_MP
+          InjSys_prm_facResuTq_MP
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_prm_facInjResuCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,62 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetEndDiagStrt|A|func_GDGAR_bGetEndDiagStrt|API.10|HEADER|1|NONE||||0|0|0|0|Value of EndDiagStrt|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|API.2|HEADER|1|NONE||||0|0|0|0|FRM|
+GDGAR_tenuGetStDgo|A|func_GDGAR_tenuGetStDgo|API.5|HEADER|1|NONE||||0|0|0|0|Values of the GDU states|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|API.1|HEADER|1|NONE||||0|0|0|0|GDGAR|
+Inj_EveRst_InjTiCor|F|();|SCH.1|INJTICOR|1|PTS_DOC_5147608||||0|0|0|0|Reset du calculateur.|
+Inj_EveRTSt_InjTiCor|B|();|SCH.4|INJTICOR|1|PTS_DOC_5147608||||0|0|0|0|Evénement correspondant au passage à 0 de la variable Moteur_tournant|
+Inj_SdlFast_InjTiCor|F|();|SCH.2|INJTICOR|1|PTS_DOC_5147608||||0|0|0|0|Moniteur rapide de la fonction Inj.|
+Inj_SdlMid_InjTiCor|G|();|SCH.3|INJTICOR|1|PTS_DOC_5147608||||0|0|0|0|Moniteur moyen de la fonction Inj.|
+INJTICOR_vidAcvDiagEngineRunning|B|();|FCT5.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Ce bloc ne doit être vérifié que si le moteur est tournant.|
+INJTICOR_vidbDgoAlimLeanFuel|C|();|FCT5.10|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction traite le cas d'un Défaut injecteur pauvre : Lfbk_on_enrich_clamp est à l'état ON et Sonde_riche_aval est à l'état OFF.|
+INJTICOR_vidbDgoAlimRichFuel|D|();|FCT6.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction traite le cas d'un Défaut injecteur riche : Lfbk_on_enrich_clamp est à l'état OFF et Sonde_riche_aval est à l'état ON.|
+INJTICOR_vidbDgoSen02AmLeanBlo|C|();|FCT6.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction traite le cas d'un Défaut sonde amont bloquée pauvre : Lfbk_on_enrich_clamp et Sonde_riche_aval sont à l'état ON.|
+INJTICOR_vidbDgoSen02AmRichBlo|D|();|FCT6.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction traite le cas d'un Défaut sonde amont bloquée riche : Lfbk_on_enrich_clamp et Sonde_riche_aval sont à l'état OFF.|
+INJTICOR_vidClampDiagnosis|B|();|FCT3.9|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Ce bloc est activé si la régulation de richesse revient en butée pendant la temporisation Lfbk_fuelling_clamp_delay_c, et remonte instantanément le booléen de défaillance.|
+INJTICOR_vidClampTstNotPerformed|M|();|FCT1.6|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet de détecter la régulation de richesse en butée. Il est désactivé  si la correction sur la chaîne d'injection est en cours.|
+INJTICOR_vidComputation|M|();|FCT1.5|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Les diagnostics de surveillance de la régulation de richesse doivent être activés si la régulation de richesse est en boucle fermée depuis une temporisation calibrable les diagnostics ne sont pas inhibés et la température moteur est > à un seuil.|
+INJTICOR_vidCtrlLfbkMonitoring|I|();|FCT1.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|la stratégie de surveillance de la régulation de richesse est active s'il n'y a pas d'inhibition manuelle, via le FRM, et si le diagnostic dans la totalité n'a pas encore été réalisé.|
+INJTICOR_vidDiagComputation|C|();|FCT4.10|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque les conditions de diagnostic sont réunies, la régulation est surveillée.|
+INJTICOR_vidDiagEngineRunning|B|();|FCT5.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque le moteur est tournant, la stratégie regarde le résultat des 6 diagnostics. Pour que les défauts soient pris en compte dans le GDGAR, il faut la présence d’un  défaut de butée et la présence d’un défaut incriminant les sondes ou les injecteurs.|
+INJTICOR_vidDiagnostic|B|();|FCT5.9|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette partie de la surveillance du FuelSystem utilise la cohérence entre le signal de la sonde  aval et l’état de la régulation de richesse, sans utiliser une modification de l’injection via le « Diag_trim ».|
+INJTICOR_vidDiagTrim|B|();|FCT1.8|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Le booléen Lfbk_diag_completed passe à 1 lorsque la temporisation de validation du diagnostic de régulation de richesse en butée est arrivée à son terme.|
+INJTICOR_vidEndOfDlyPeriodCntDec|B|();|FCT3.8|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Pendant la temporisation, si la régulation de richesse revient en butée (Clamp_operated = 1) alors on active Check_fuelling_fault, ce qui a pour conséquence de sortir de ce bloc et de rentrer dans 02_clamp_diagnosis.|
+INJTICOR_vidEndOfDlyPeriodCntMgr|C|();|FCT3.7|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Le booléen Lfbk_clamp_tests_aborted indique que la régulation de richesse n'est pas revenue en butée durant la temporisation Lfbk_fuelling_clamp_delay_c. Et lediagnostic est toujours actif au cas où la régulation revienne en butée.|
+INJTICOR_vidFailureManager|B|();|FCT4.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsqu'une panne Inj_bDgoStuckLfbk remonte, c'est-à-dire que la régulation ne peut pas être décollée de la butée, Lfbk_cor_completed passe à 1, et le diagnostic est fini jusqu'au prochain reset.|
+INJTICOR_vidFailuresCalculations|C|();|FCT2.8|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque une panne de la surveillance de la régulation de richesse est remontée, la correction agissant sur la chaîne d'injection, Diag_trim, est activée.|
+INJTICOR_vidFuelAdjustment|B|();|FCT3.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Ajustement de carburant|
+INJTICOR_vidInitGasMod|B|();|FCT5.5|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Initialiser le compteur du temps d'établissement à la calibration du temps d'établissement (pour application gaz).|
+INJTICOR_vidInitGslMod|B|();|FCT5.4|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Initialiser le compteur du temps d'établissement à la calibration du temps d'établissement.|
+INJTICOR_vidInitializeCorrection|D|();|FCT2.7|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette initialisation signifie que la première étape de la correction est autorisée par Oxy_sensor_test, la deuxième partie de la correction Check_fuelling_fault sera autorisée ou non dans la suite du diagnostic.|
+INJTICOR_vidInitLfbkMonitoring|G|();|FCT1.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Initialisation des variables à l'événement reset.|
+INJTICOR_vidInitLfbkSwitchGslGas|B|();|FCT5.6|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet d’initialiser correctement les variables dépendantes de la présence d’une application Gaz et le cas échéant, du mode carburant utilisé au moment de la réception de la première trame Gaz.|
+INJTICOR_vidInitOutput|I|();|FCT1.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Initialisation des sorties.|
+INJTICOR_vidInjTimeCorSwitchLean|C|();|FCT3.5|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet de décrémenter Diag_trim.|
+INJTICOR_vidInjTimeCorSwitchRich|C|();|FCT3.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet d'incrémenter Diag_trim.|
+INJTICOR_vidLeanFuelCalc|E|();|FCT1.9|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet le calcul de Lfbk_mod_6_var en butée d'appauvrissement|
+INJTICOR_vidLfbkInitGas|B|();|FCT5.7|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet d’initialiser correctement les variables dépendantes de la présence d’une application Gaz|
+INJTICOR_vidLfbkInitGsl|B|();|FCT5.8|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet d’initialiser correctement les variables dépendantes de la présence d’une application Gsl|
+INJTICOR_vidLfbkMod6NoFailure|F|();|FCT2.4|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|le système doit renvoyer le dernier résultat des tests de surveillance de la régulation de  richesse au mode$06 du scantool.|
+INJTICOR_vidLowFuelTempo|H|();|FCT2.5|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque le niveau de carburant minimum est atteint, si la stratégie détecte un défaut de régulation de richesse en butée d’enrichissement (système bloqué pauvre), une temporisation est lancée.|
+INJTICOR_vidNoFailure|C|();|FCT4.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|si les conditions d'activation du diagnostic sont présentes et qu'il n'y a pas de panne, les booléens de sortie de la partie curative sont à 0.|
+INJTICOR_vidOnEnleanClampDiag|B|();|FCT4.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque cette fonction est activé, Lfbk_stuck_rich prend la valeur 1.|
+INJTICOR_vidOnEnrichClampDiag|B|();|FCT3.10|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque cette fonction est activé Lfbk_stuck_lean prend la valeur 1.|
+INJTICOR_vidOxySensorTPerformed|D|();|FCT2.10|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|orsque la partie curative est lancée, la chaîne d'injection est corrigée par le Diag_trim.|
+INJTICOR_vidPerformClampTests|D|();|FCT2.6|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|La partie curative du diagnostic de la régulation de richesse en butée  est active si : Elle n'est pas inhibée manuellement, la surveillance de régulation de richesse a remonté une panne ou si la partie curative n'a pas été réalisée.|
+INJTICOR_vidReinitFarStraMon|B|();|FCT5.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque le Gestionnaire des Stratégies n’autorise pas le diagnostics de régulation de richesse en butée, les booléens de diagnostics de butées sont réinitialisés à 0.|
+INJTICOR_vidResetCorrection|B|();|FCT2.9|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Si la régulation de richesse quitte la butée, la correction est arrêtée.|
+INJTICOR_vidResetDelayCount|E|();|FCT2.1|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Si les conditions d'activation sont perdues ou bien que la régulation de richesse n'est plus en butée, la demande de diagnostic ainsi que la temporisation sont initialisées.|
+INJTICOR_vidResetDiag|D|();|FCT1.4|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet d'initialiser la correction sur la chaîne d'injection ainsi que la demande de diagnostic.|
+INJTICOR_vidResetDiagTempo|C|();|FCT2.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|si la correction sur la chaîne d'injection est en cours et que les conditions d'activation sont perdues, alors les variables sont réinitialisées.|
+INJTICOR_vidRichFuelCalc|F|();|FCT1.10|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction permet le calcul de Lfbk_mod_6_var en butée d'enrichissement.|
+INJTICOR_vidSeqDftFuAfl|D|();|FCT4.4|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse bloquee pauvre a cause de l'injection.|
+INJTICOR_vidSeqDftFuAfr|D|();|FCT4.7|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse bloquee riche a cause de l'injection.|
+INJTICOR_vidSeqDftSenO2Afl|D|();|FCT4.5|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse bloquee pauvre a cause des sondes O2|
+INJTICOR_vidSeqDftSenO2Afr|D|();|FCT4.8|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse bloquee riche a cause des sondes O2.|
+INJTICOR_vidSeqORngLfbkAfl|E|();|FCT4.6|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse en butee pauvre.|
+INJTICOR_vidSeqORngLfbkAfr|D|();|FCT4.9|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Diagnostic de la regulation de richesse en butee riche.|
+INJTICOR_vidSwitchLeanCalc|C|();|FCT3.4|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|La correction sur la chaîne d'injection Diag_trim est décrémentée d'un pas de Lfbk_enlean_extra_c jusqu'au seuil Lfbk_enlean_max_c, où le booléen de défaillance Inj_bDgoStuckLfbk_SwitchLean passe à 1.|
+INJTICOR_vidSwitchRichCalc|C|();|FCT3.2|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|La correction sur la chaîne d'injection Diag_trim est incrémentée d'un pas de Lfbk_enrich_extra_c jusqu'au seuil Lfbk_enrich_max_c, où le booléen de défaillance Inj_bDgoStuckLfbk_SwitchRich passe à 1.|
+INJTICOR_vidTempoNoFailure|E|();|FCT2.3|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Cette fonction contient la temporisation de validation du diagnostic sans défaut.|
+INJTICOR_vidWaitAbortFuelCheck|B|();|FCT3.6|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Lorsque la correction 02_oxy_sensor_test_performed est interrompue, un passage par le bloc 01_re_initialization annule la requête de correction (Performing_oxy_sensor_test = 0) et la stratégie entre dans le bloc 03_wait_abort_fuel_check.|
+INJTICOR_vidWaitApplyInitAdjust|E|();|FCT1.7|INJTICOR|0|PTS_DOC_5147608||||0|0|0|0|Le booléen Lfbk_mon_diag_test_request  passe à 1 pour indiquer que la régulation de richesse est en butée et donc que la temporisation de validation du défaut est en cours.|

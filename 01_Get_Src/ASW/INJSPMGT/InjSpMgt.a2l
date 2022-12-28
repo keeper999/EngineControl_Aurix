@@ -1,0 +1,3180 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : InjSpMgt                                                */
+/* !Description     : InjSpMgt– INJECTION PARAMETERS MANAGER                  */
+/*                                                                            */
+/* !Module          : InjSpMgt                                                */
+/*                                                                            */
+/* !File            : InjSpMgt.a2l                                            */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Mar 07 15:35:56 2013                              */
+/*   Model name       : InjSpMgt_AUTOCODE.mdl                                 */
+/*   Model version    : 1.1004                                                */
+/*   Root subsystem   : /InjSpMgt                                             */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/InjSpMgt/5-SOFT-LIV/InjSpMgt$*/
+/* $Revision::   1.13                                                        $*/
+/* $Author::   adelvare                               $$Date::   11 Mar 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   InjSpMgt
+    /*   LongIdentifier */   "InjSpMgt Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   InjSpMgt_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_facConvTiToagWdStall_C
+       /*   LongIdentifier */   "Facteur de conversion du temps d'injection en durée angulaire lors d'un STT STOP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rMFuReqLPFu_C
+       /*   LongIdentifier */   "Ratio de masse à injecter quand la pression rail est faible appliqué quand le bypass est actif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Eng_AgCkOffFuInjStrt_T
+       /*   LongIdentifier */   "Distance minimale depuis la position d'arrêt moteur pour la première injection en redémarrage STT"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   720.0
+          AXIS_PTS_REF             Sync_agEs_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Eng_tiAgCkInjPhd_M
+       /*   LongIdentifier */   "Zone d'interdiction d'injection pour la première injection en redémarrage STT"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_7
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_DifInjr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_AgCkInjPhd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInjH1SpcInjMod_M
+       /*   LongIdentifier */   "Cartographie régime - charge définissant le phasage du début de l'injection H1 en mode défaut"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_6
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   7.8118807983398444E+000
+          AXIS_PTS_REF             InjSys_mAirInjSpMgt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInjH2HiThd_T
+       /*   LongIdentifier */   "Seuil haut de l'angle de basculement en injection H2"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInjH2LoThd_T
+       /*   LongIdentifier */   "Seuil bas de l'angle de basculement en injection H2"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agBegInjSpcModLP_C
+       /*   LongIdentifier */   "Angle de début d'injection spécifique quand la pression rail est basse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agEndInjSpcModMaxLP_M
+       /*   LongIdentifier */   "Cartographie d'angle de fin d'injection maximal quand la pression rail est faible"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   720.0
+          AXIS_PTS_REF             InjSys_agCkClsInVlvEstimRef1_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjH1SpHiThd_C
+       /*   LongIdentifier */   "Seuil haut du phasage du début de l'injection H1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjH1SpLoThd_C
+       /*   LongIdentifier */   "Seuil bas du phasage du début de l'injection H1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjH2SpMax_C
+       /*   LongIdentifier */   "Seuil maximal du phasage du début de l'injection H2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjH2SpMin_C
+       /*   LongIdentifier */   "Saturation minimale du phasage de la fin de l'injection H2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjH2SpcInjMod_C
+       /*   LongIdentifier */   "Phasage du début de l'injection H2 en mode défaut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS1SpMax_C
+       /*   LongIdentifier */   "Seuil maximal du phasage du début de l'injection S1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS1SpcInjMod_C
+       /*   LongIdentifier */   "Consigne de phasage de fin de l'injection S1 en mode défaut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS2SpMax_C
+       /*   LongIdentifier */   "Seuil maximal du phasage du début de l'injection S2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS2SpMinLP_T
+       /*   LongIdentifier */   "Saturation minimal du phasage de la fin de l'injection S2 quand la pression rail est basse"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS2SpMin_C
+       /*   LongIdentifier */   "Saturation minimale du phasage de la fin de l'injection S2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agInjS2SpcInjMod_C
+       /*   LongIdentifier */   "Consigne de phasage de fin de l'injection S2 en mode défaut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agOfsPhaIg_T
+       /*   LongIdentifier */   "Table définissant l'offset angulaire entre l'injection S2 et l'avance à l'allumage"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_agOfsPhaInj_T
+       /*   LongIdentifier */   "Table définissant l'offset angulaire entre les injections"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiInjMinHys_T
+       /*   LongIdentifier */   "Table définissant l'hystérésis concernant le temps d'injection minimum admissible"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_tiInjMinLoThd_T
+       /*   LongIdentifier */   "Table définissant le seuil bas concernant le temps d'injection minimum admissible"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_5
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_mAirCrkSpRef_C
+       /*   LongIdentifier */   "Masse d'air pompée estimée sous démarreur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuGrdNeg_C
+       /*   LongIdentifier */   "Pente décroissante maximum de la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuGrdPos_C
+       /*   LongIdentifier */   "Pente croissante maximum de la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuRailIni_T
+       /*   LongIdentifier */   "Array of rail pressure initial value"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_12
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   -40.0
+          /*   UpperLimit     */   214.0
+          AXIS_PTS_REF             InjSys_tCoMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuRailMin_C
+       /*   LongIdentifier */   "Limite basse de pression rail pour la limitation de l'angle de fin d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuReqMaxDft_C
+       /*   LongIdentifier */   "Saturation haute de la consigne de pression rail en cas de défaut déclaré"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuReqMax_C
+       /*   LongIdentifier */   "Saturation haute de la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_pFuReqMin_C
+       /*   LongIdentifier */   "Saturation basse de la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   INJSPMGT_u8Inhib
+       /*   LongIdentifier */   "Inhibition Mechanism"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bAcvTiInjETB_C
+       /*   LongIdentifier */   "Booléen sélectionnant le mode banc du calcul du temps d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bEnaPresFuGrdLim_C
+       /*   LongIdentifier */   "Boolen d'activation du limiteur de pente de la consigne de pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhCorInjPhaSIgSp_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la correction du phasage de fin de l'injection S2 en cas de recouvrement avec l'allumage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_bInhrMFuReqLPFu_C
+       /*   LongIdentifier */   "Bypass du ratio de masse à injecter quand la pression rail est faible"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjSys_rFilGainPFuReq_T
+       /*   LongIdentifier */   "Table définissant le gain sur la consigne brute de pression rail en fonction du régime"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_11
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   99.609375
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   InjSpMgt_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjSys_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   Sync_agEs_A
+       /*   LongIdentifier */   "Table de points d'appui pour l'angle d'arrêt moteur calculé"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_10
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_DifInjr_A
+       /*   LongIdentifier */   "Table de points d'appui en différence de pression au nez de l'injecteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEng_AgCkInjPhd_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur pour la cartographie définissant la zone d'interdiction pour la première injection"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_nEng_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_mAirInjSpMgt_A
+       /*   LongIdentifier */   "Table de point d'appui en masse d'air pompée prédite"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_6
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_agCkClsInVlvEstimRef1_A
+       /*   LongIdentifier */   "Table de point d'appui de l'angle de fermeture estimé de la soupape d'admission"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjSys_pFuRailMes_A
+       /*   LongIdentifier */   "Table de points d'appui en pression rail mesurée"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   InjSpMgt_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rFilGainPFuReq
+       /*   LongIdentifier */   "Gain sur le filtre de la consigne brute de pression rail"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   99.609375
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuReqRaw
+       /*   LongIdentifier */   "Consigne brute de pression rail"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_25
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facGainInjH1
+       /*   LongIdentifier */   "Gain injecteur courant de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facGainInjH2
+       /*   LongIdentifier */   "Gain injecteur courant de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facGainInjS1
+       /*   LongIdentifier */   "Gain injecteur courant de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_facGainInjS2
+       /*   LongIdentifier */   "Gain injecteur courant de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_26
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjOfsInjH1
+       /*   LongIdentifier */   "Temps mort injecteur pour l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjOfsInjH2
+       /*   LongIdentifier */   "Temps mort injecteur pour l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjOfsInjS1
+       /*   LongIdentifier */   "Temps mort injecteur pour l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjOfsInjS2
+       /*   LongIdentifier */   "Temps mort injecteur pour l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agFrstInjSTTSp
+       /*   LongIdentifier */   "Vecteur de début de première injection en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH1SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage de fin de première injection H1 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH1SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage du début de première injection H1 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH2SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage de fin de première injection H2 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH2SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage du début de première injection H2 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS1SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage de fin de première injection S1 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS1SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage du début de première injection S1 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS2SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage de fin de première injection S2 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS2SpSTT
+       /*   LongIdentifier */   "Vecteur de consigne corrigée de phasage du début de première injection S2 en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Eng_AgCkOffFuInjStrt
+       /*   LongIdentifier */   "Distance minimale depuis la position d'arrêt moteur pour la première injection en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agMaxFrstInjSTT
+       /*   LongIdentifier */   "Consigne d'angle maximale pour la première injection en STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agFrstInjSTTReq
+       /*   LongIdentifier */   "Phasage du début de la première injection en redémarrage STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agOfsFrstInjSTT
+       /*   LongIdentifier */   "Vecteur d'offset angulaire de décalage pour la première injection en STT"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjH1Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage de la fin de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH1Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage du début de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjH2Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage de la fin de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH2Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage du début de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjS1Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage de la fin de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjS1Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage du début de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjS2Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage de la fin de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjS2Sp
+       /*   LongIdentifier */   "Consigne corrigée de phasage du début de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agOfsPhaInjS2
+       /*   LongIdentifier */   "Offset angulaire entre l'injection S2 et l'avance à l'allumage"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agOfsPhaInjH2
+       /*   LongIdentifier */   "Offset angulaire entre les injections H2 et S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agOfsPhaInjH1
+       /*   LongIdentifier */   "Offset angulaire entre les injections H1 et H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agOfsPhaInjS1
+       /*   LongIdentifier */   "Offset angulaire entre les injections S1 et S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agWdInjS1Sp
+       /*   LongIdentifier */   "Durée angulaire de l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agWdInjH2Sp
+       /*   LongIdentifier */   "Durée angulaire de l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agWdInjH1Sp
+       /*   LongIdentifier */   "Durée angulaire de l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agWdInjS2Sp
+       /*   LongIdentifier */   "Durée angulaire de l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjH2Sp
+       /*   LongIdentifier */   "Temps d'injection reconstitué  pour le calcul de la durée angulaire de H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895343999989E+007
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjH1Sp
+       /*   LongIdentifier */   "Temps d'injection reconstitué pour le calcul de la durée angulaire de H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895343999989E+007
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjS1Sp
+       /*   LongIdentifier */   "Temps d'injection reconstitué  pour le calcul de la durée angulaire de S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895343999989E+007
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjS2Sp
+       /*   LongIdentifier */   "Temps d'injection reconstitué  pour le calcul de la durée angulaire de S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895343999989E+007
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH2Sp
+       /*   LongIdentifier */   "Consigne corrigée de fractionnement de la masse de carburant pour l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH1Sp
+       /*   LongIdentifier */   "Consigne corrigée de fractionnement de la masse de carburant pour l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS2Sp
+       /*   LongIdentifier */   "Consigne corrigée de fractionnement de la masse de carburant pour l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS1Sp
+       /*   LongIdentifier */   "Consigne corrigée de fractionnement de la masse de carburant pour l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjResi
+       /*   LongIdentifier */   "Somme des consignes résiduelles de fractionnement de la masse de carburant"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjMinLoThd
+       /*   LongIdentifier */   "Seuil bas concernant le temps d'injection minimum admissible"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjMinHiThd
+       /*   LongIdentifier */   "Seuil haut concernant le temps d'injection minimum admissible"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH1Resi
+       /*   LongIdentifier */   "Consigne résiduelle de fractionnement de la masse de carburant pour l'injection H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH2Resi
+       /*   LongIdentifier */   "Consigne résiduelle de fractionnement de la masse de carburant pour l'injection H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjH2TmpSat
+       /*   LongIdentifier */   "Temps d'injection H2 après test du ti min"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjH1TmpSat
+       /*   LongIdentifier */   "Temps d'injection H1 après test du ti min"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS1Resi
+       /*   LongIdentifier */   "Consigne résiduelle de fractionnement de la masse de carburant pour l'injection S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjS1TmpSat
+       /*   LongIdentifier */   "Temps d'injection S1 après test du ti min"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS2Resi
+       /*   LongIdentifier */   "Consigne résiduelle de fractionnement de la masse de carburant pour l'injection S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_tiInjS2TmpSat
+       /*   LongIdentifier */   "Temps d'injection S2 après test du ti min"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_27
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH2Tmp
+       /*   LongIdentifier */   "Consigne temporaire de phasage du début de H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH2Tmp
+       /*   LongIdentifier */   "Consigne temporaire de fractionnement de la masse de carburant de H2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH1Tmp
+       /*   LongIdentifier */   "Consigne temporaire de fractionnement de la masse de carburant de H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS2Tmp
+       /*   LongIdentifier */   "Consigne temporaire de fractionnement de la masse de carburant de S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS1Tmp
+       /*   LongIdentifier */   "Consigne temporaire de fractionnement de la masse de carburant de S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_24
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH1Tmp
+       /*   LongIdentifier */   "Consigne temporaire de phasage du début de H1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjS2Tmp
+       /*   LongIdentifier */   "Consigne temporaire de phasage de fin de S2"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjS1Tmp
+       /*   LongIdentifier */   "Consigne temporaire de phasage du début de S1"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_28
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mFuSpMgt
+       /*   LongIdentifier */   "Masse de carburant à injecter sur le prochain cylindre en admission"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   InjSpMgt_CM_29
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjH1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjH2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjS1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjS2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rMFuReqLPFu
+       /*   LongIdentifier */   "Vecteur (n cylindres) du facteur correcteur de masse à injecter quand la pression rail est faible"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rMFuReqLPFuPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) du facteur correcteur de masse à injecter quand la pression rail est faible au pas précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjH1ReqCylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour H1 au pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjS2ReqCylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour S2 au pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjS1ReqCylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour S1 au pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_rInjH2ReqCylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) de la consigne de fractionnement de la masse de carburant pour H2 au pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH2Req
+       /*   LongIdentifier */   "Consigne finale de fractionnement de la masse de carburant pour l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjH1Req
+       /*   LongIdentifier */   "Consigne finale de fractionnement de la masse de carburant pour l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS2Req
+       /*   LongIdentifier */   "Consigne finale de fractionnement de la masse de carburant pour l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rInjS1Req
+       /*   LongIdentifier */   "Consigne finale de fractionnement de la masse de carburant pour l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_rMFuReqLPFu
+       /*   LongIdentifier */   "Ratio de masse à injecter quand la pression rail est faible"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_3
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection S1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection S1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjS2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection S2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjS2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection S2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjH1Req
+       /*   LongIdentifier */   "Consigne finale de phasage de la fin de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH1Req
+       /*   LongIdentifier */   "Consigne finale de phasage du début de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjH2Req
+       /*   LongIdentifier */   "Consigne finale de phasage de la fin de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjH2Req
+       /*   LongIdentifier */   "Consigne finale de phasage du début de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjS1Req
+       /*   LongIdentifier */   "Consigne finale de phasage de la fin de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjS1Req
+       /*   LongIdentifier */   "Consigne finale de phasage du début de l'injection S1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agEndInjS2Req
+       /*   LongIdentifier */   "Consigne finale de phasage de la fin de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_agBegInjS2Req
+       /*   LongIdentifier */   "Consigne finale de phasage du début de l'injection S2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_mAirSpMgt
+       /*   LongIdentifier */   "Masse d'air pompée prédite en phase d'admission"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_6
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7.8118807983398444E+000
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuReq
+       /*   LongIdentifier */   "Consigne de pression rail"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuReqPrev
+       /*   LongIdentifier */   "Consigne de pression rail au pas précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages du début de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH1ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection H1"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages du début de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH2ReqCyl
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection H2"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection H2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH2CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection H2 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agEndInjH1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de fin de l'injection H1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_agBegInjH1CylPrev
+       /*   LongIdentifier */   "Vecteur (n cylindres) des phasages de début de l'injection H1 du pas de temps précédent"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   InjSpMgt_CM_30
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       MATRIX_DIM               1 6 1
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noInCylStopSTT
+       /*   LongIdentifier */   "Numéro du cylindre en phase d'admission durant le STOP STT"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_13
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noCmprCylStopSTT
+       /*   LongIdentifier */   "Numéro du cylindre en phase de compression durant l'arrêt STT"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_13
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_noCylInjSp
+       /*   LongIdentifier */   "Numéro du cylindre mis à jour"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_13
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   6.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bInhFrstInjSTT
+       /*   LongIdentifier */   "Vecteur d'inhibition de la première injection en redémarrage STT"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_prm_bInhFrstInjSTTPrev
+       /*   LongIdentifier */   "Valeur précédente de InjSys_prm_bInhFrstInjSTT"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       MATRIX_DIM               1 2 1
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bAcvSpcInjModOvlp
+       /*   LongIdentifier */   "Booléen d'activation d'un mode spécifique d'injection en cas de recouvrement."
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetBegInjMaxThd
+       /*   LongIdentifier */   "Booléen de détection de dépassement du seuil maximum autorisé du phasage du début d'une des injection"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetInjOvlp
+       /*   LongIdentifier */   "Booléen de détection de recouvrement d'injections"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetCylInjSp
+       /*   LongIdentifier */   "Booléen de détection du cylindre mis à jour"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bHPFuRail
+       /*   LongIdentifier */   "Indicateur d'haute pression de pression rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPhaInjH1Max
+       /*   LongIdentifier */   "Booléen de détection de dépassement du seuil maximal du phasage de l'angle de début de l'injection H1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetSatInjH1Min
+       /*   LongIdentifier */   "Booléen de détection de saturation minimale du phasage de l'angle de fin de l'injection H1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetSatInjH2Min
+       /*   LongIdentifier */   "Booléen de détection de saturation minimale du phasage de l'angle de fin de l'injection H2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPhaInjH2Max
+       /*   LongIdentifier */   "Booléen de détection de dépassement du seuil maximal du phasage de l'angle de début de l'injection H2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetSatInjS1Min
+       /*   LongIdentifier */   "Booléen de détection de saturation minimale du phasage de l'angle de fin de l'injection S1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPhaInjS1Max
+       /*   LongIdentifier */   "Booléen de détection de dépassement du seuil maximal du phasage de l'angle de début de l'injection S1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetSatInjS2Min
+       /*   LongIdentifier */   "Booléen de détection de saturation minimale du phasage de l'angle de fin de l'injection S2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bDetPhaInjS2Max
+       /*   LongIdentifier */   "Booléen de détection de dépassement du seuil maximal du phasage de l'angle de début de l'injection S2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bVldInjH1
+       /*   LongIdentifier */   "Booléen de détection de validité de l'injection H1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bVldInjH2
+       /*   LongIdentifier */   "Booléen de détection de validité de l'injection H2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bVldInjS1
+       /*   LongIdentifier */   "Booléen de détection de validité de l'injection S1"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_bVldInjS2
+       /*   LongIdentifier */   "Booléen de détection de validité de l'injection S2"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   InjSpMgt_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck/s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_3
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_4
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_5
+       /*   LongIdentifier */   "Q = V*312.5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 312.5 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_6
+       /*   LongIdentifier */   "Q = V*8389.14490527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 8389.14490527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_7
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_8
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            InjSpMgt_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_10
+       /*   LongIdentifier */   "Q = V/3"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 1 0 0 0 3
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_11
+       /*   LongIdentifier */   "Q = V*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_12
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_13
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_14
+       /*   LongIdentifier */   "Q = V*64"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 64 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_15
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_16
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_17
+       /*   LongIdentifier */   "Q = (V+36)*2.66666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 2.66666666667 96 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_18
+       /*   LongIdentifier */   "Q = V*8389144.90527"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 8389144.90527 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_19
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_20
+       /*   LongIdentifier */   "Q = V/6"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 1 0 0 0 6
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_21
+       /*   LongIdentifier */   "Q = V*312500"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 312500 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_22
+       /*   LongIdentifier */   "Q = (V-84)*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 -896 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_23
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_24
+       /*   LongIdentifier */   "Q = V/100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 1 0 0 0 100
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_25
+       /*   LongIdentifier */   "Q = V*100000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 100000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_26
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_27
+       /*   LongIdentifier */   "Q = V/1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 1 0 0 0 1000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_28
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_29
+       /*   LongIdentifier */   "Q = V/1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "g"
+       COEFFS                   0 1 0 0 0 1000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   InjSpMgt_CM_30
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   InjSpMgt_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   InjSpMgt
+       /*   LongIdentifier */   "PTS_DOC_5056002.04"
+
+       /begin DEF_CHARACTERISTIC
+          Eng_AgCkOffFuInjStrt_T
+          Eng_tiAgCkInjPhd_M
+          INJSPMGT_u8Inhib
+          InjSys_DifInjr_A
+          InjSys_agBegInjH1SpcInjMod_M
+          InjSys_agBegInjH2HiThd_T
+          InjSys_agBegInjH2LoThd_T
+          InjSys_agBegInjSpcModLP_C
+          InjSys_agCkClsInVlvEstimRef1_A
+          InjSys_agEndInjSpcModMaxLP_M
+          InjSys_agInjH1SpHiThd_C
+          InjSys_agInjH1SpLoThd_C
+          InjSys_agInjH2SpMax_C
+          InjSys_agInjH2SpMin_C
+          InjSys_agInjH2SpcInjMod_C
+          InjSys_agInjS1SpMax_C
+          InjSys_agInjS1SpcInjMod_C
+          InjSys_agInjS2SpMax_C
+          InjSys_agInjS2SpMinLP_T
+          InjSys_agInjS2SpMin_C
+          InjSys_agInjS2SpcInjMod_C
+          InjSys_agOfsPhaIg_T
+          InjSys_agOfsPhaInj_T
+          InjSys_bAcvTiInjETB_C
+          InjSys_bEnaPresFuGrdLim_C
+          InjSys_bInhCorInjPhaSIgSp_C
+          InjSys_bInhrMFuReqLPFu_C
+          InjSys_facConvTiToagWdStall_C
+          InjSys_mAirCrkSpRef_C
+          InjSys_mAirInjSpMgt_A
+          InjSys_nEng_A
+          InjSys_nEng_AgCkInjPhd_A
+          InjSys_pFuGrdNeg_C
+          InjSys_pFuGrdPos_C
+          InjSys_pFuRailIni_T
+          InjSys_pFuRailMes_A
+          InjSys_pFuRailMin_C
+          InjSys_pFuReqMaxDft_C
+          InjSys_pFuReqMax_C
+          InjSys_pFuReqMin_C
+          InjSys_rFilGainPFuReq_T
+          InjSys_rMFuReqLPFu_C
+          InjSys_tiInjMinHys_T
+          InjSys_tiInjMinLoThd_T
+          Sync_agEs_A
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Eng_AgCkOffFuInjStrt
+          InjSys_agBegInjH1Req
+          InjSys_agBegInjH1Sp
+          InjSys_agBegInjH1Tmp
+          InjSys_agBegInjH2Req
+          InjSys_agBegInjH2Sp
+          InjSys_agBegInjH2Tmp
+          InjSys_agBegInjS1Req
+          InjSys_agBegInjS1Sp
+          InjSys_agBegInjS1Tmp
+          InjSys_agBegInjS2Req
+          InjSys_agBegInjS2Sp
+          InjSys_agEndInjH1Req
+          InjSys_agEndInjH1Sp
+          InjSys_agEndInjH2Req
+          InjSys_agEndInjH2Sp
+          InjSys_agEndInjS1Req
+          InjSys_agEndInjS1Sp
+          InjSys_agEndInjS2Req
+          InjSys_agEndInjS2Sp
+          InjSys_agEndInjS2Tmp
+          InjSys_agFrstInjSTTReq
+          InjSys_agOfsPhaInjH1
+          InjSys_agOfsPhaInjH2
+          InjSys_agOfsPhaInjS1
+          InjSys_agOfsPhaInjS2
+          InjSys_agWdInjH1Sp
+          InjSys_agWdInjH2Sp
+          InjSys_agWdInjS1Sp
+          InjSys_agWdInjS2Sp
+          InjSys_bDetCylInjSp
+          InjSys_bDetPhaInjH1Max
+          InjSys_bDetPhaInjH2Max
+          InjSys_bDetPhaInjS1Max
+          InjSys_bDetPhaInjS2Max
+          InjSys_bDetSatInjH1Min
+          InjSys_bDetSatInjH2Min
+          InjSys_bDetSatInjS1Min
+          InjSys_bDetSatInjS2Min
+          InjSys_bHPFuRail
+          InjSys_bVldInjH1
+          InjSys_bVldInjH2
+          InjSys_bVldInjS1
+          InjSys_bVldInjS2
+          InjSys_facGainInjH1
+          InjSys_facGainInjH2
+          InjSys_facGainInjS1
+          InjSys_facGainInjS2
+          InjSys_mAirSpMgt
+          InjSys_mFuSpMgt
+          InjSys_noCmprCylStopSTT
+          InjSys_noCylInjSp
+          InjSys_pFuReqPrev
+          InjSys_pFuReqRaw
+          InjSys_prm_agBegInjH1CylPrev
+          InjSys_prm_agBegInjH1SpSTT
+          InjSys_prm_agBegInjH2CylPrev
+          InjSys_prm_agBegInjH2SpSTT
+          InjSys_prm_agBegInjS1CylPrev
+          InjSys_prm_agBegInjS1SpSTT
+          InjSys_prm_agBegInjS2CylPrev
+          InjSys_prm_agBegInjS2SpSTT
+          InjSys_prm_agEndInjH1CylPrev
+          InjSys_prm_agEndInjH1SpSTT
+          InjSys_prm_agEndInjH2CylPrev
+          InjSys_prm_agEndInjH2SpSTT
+          InjSys_prm_agEndInjS1CylPrev
+          InjSys_prm_agEndInjS1SpSTT
+          InjSys_prm_agEndInjS2CylPrev
+          InjSys_prm_agEndInjS2SpSTT
+          InjSys_prm_agFrstInjSTTSp
+          InjSys_prm_agMaxFrstInjSTT
+          InjSys_prm_agOfsFrstInjSTT
+          InjSys_prm_bInhFrstInjSTTPrev
+          InjSys_prm_rInjH1ReqCylPrev
+          InjSys_prm_rInjH2ReqCylPrev
+          InjSys_prm_rInjS1ReqCylPrev
+          InjSys_prm_rInjS2ReqCylPrev
+          InjSys_prm_rMFuReqLPFuPrev
+          InjSys_rFilGainPFuReq
+          InjSys_rInjH1Req
+          InjSys_rInjH1Resi
+          InjSys_rInjH1Sp
+          InjSys_rInjH1Tmp
+          InjSys_rInjH2Req
+          InjSys_rInjH2Resi
+          InjSys_rInjH2Sp
+          InjSys_rInjH2Tmp
+          InjSys_rInjResi
+          InjSys_rInjS1Req
+          InjSys_rInjS1Resi
+          InjSys_rInjS1Sp
+          InjSys_rInjS1Tmp
+          InjSys_rInjS2Req
+          InjSys_rInjS2Resi
+          InjSys_rInjS2Sp
+          InjSys_rInjS2Tmp
+          InjSys_rMFuReqLPFu
+          InjSys_tiInjH1Sp
+          InjSys_tiInjH1TmpSat
+          InjSys_tiInjH2Sp
+          InjSys_tiInjH2TmpSat
+          InjSys_tiInjMinHiThd
+          InjSys_tiInjMinLoThd
+          InjSys_tiInjOfsInjH1
+          InjSys_tiInjOfsInjH2
+          InjSys_tiInjOfsInjS1
+          InjSys_tiInjOfsInjS2
+          InjSys_tiInjS1Sp
+          InjSys_tiInjS1TmpSat
+          InjSys_tiInjS2Sp
+          InjSys_tiInjS2TmpSat
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjSys_bAcvSpcInjModOvlp
+          InjSys_bDetBegInjMaxThd
+          InjSys_bDetInjOvlp
+          InjSys_noInCylStopSTT
+          InjSys_pFuReq
+          InjSys_prm_agBegInjH1ReqCyl
+          InjSys_prm_agBegInjH2ReqCyl
+          InjSys_prm_agBegInjS1ReqCyl
+          InjSys_prm_agBegInjS2ReqCyl
+          InjSys_prm_agEndInjH1ReqCyl
+          InjSys_prm_agEndInjH2ReqCyl
+          InjSys_prm_agEndInjS1ReqCyl
+          InjSys_prm_agEndInjS2ReqCyl
+          InjSys_prm_bInhFrstInjSTT
+          InjSys_prm_rInjH1ReqCyl
+          InjSys_prm_rInjH2ReqCyl
+          InjSys_prm_rInjS1ReqCyl
+          InjSys_prm_rInjS2ReqCyl
+          InjSys_prm_rMFuReqLPFu
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

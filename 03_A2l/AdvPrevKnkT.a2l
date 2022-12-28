@@ -1,0 +1,1769 @@
+/begin MODULE AdvPrevKnkT  "AdvPrevKnkT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       "-"
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       "-"
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT AdvPrevKnkT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facFil1DeltaAirLdDyn_T
+    /* Long Identifier        */      "Cartographie facteur de filtrage 1"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_1
+    /* Lower Limit            */      0.01
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_facFilDeltaAir_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_facFilDeltaAir_A
+    /* Long Identifier        */      "Axe regime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facFil2DeltaAirLdDyn_T
+    /* Long Identifier        */      "Cartographie facteur de filtrage 2"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_1
+    /* Lower Limit            */      0.01
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_facFilDeltaAir_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tiAirLdDynDet_T
+    /* Long Identifier        */      "Cartographie maintien flag dynamique de charge"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_AirLdDet_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_AirLdDet_A
+    /* Long Identifier        */      "Axe regime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rDeltaAirLdDynThd_T
+    /* Long Identifier        */      "Cartographie seuil de remplissage flag dynamique de charge"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_AirLdDet_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facFilAirLdDyn_M
+    /* Long Identifier        */      "Cartographie coefficient de filtrage du remplissage dynamique modifié"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_5
+    /* Lower Limit            */      0.01
+    /* Upper Limit            */      1.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_6
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      524280.0
+      AXIS_PTS_REF                    IgSys_pDsThr_facFilAirLdDynY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_facFilAirldDynX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_pDsThr_facFilAirLdDynY_A
+    /* Long Identifier        */      "Axe en pression répartiteur pour le coefficient de filtrage du remplissage modifié"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_6
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_facFilAirldDynX_A
+    /* Long Identifier        */      "Axe régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_noDlyCalcAirLdDyn_T
+    /* Long Identifier        */      "Cartographie nombre de retard pour remplissage dynamique modifie"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_noDlyCalcAirLd_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_noDlyCalcAirLd_A
+    /* Long Identifier        */      "Axe regime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevDynOfs_M
+    /* Long Identifier        */      "Cartographie régime charge pour offset préventif dynamique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_4
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdCor_PrevDynY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevDynX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLdCor_PrevDynY_A
+    /* Long Identifier        */      "Axe remplissage"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_4
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_PrevDynX_A
+    /* Long Identifier        */      "Axe régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rCorPrevDyn1Ofs_M
+    /* Long Identifier        */      "Cartographie Adaptatif cliq / température soupape pour correctif offset préventif dynamique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_BYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_9
+    /* Lower Limit            */      -5.0
+    /* Upper Limit            */      5.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_10
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      223.0
+      /* Upper Limit          */      734.0
+      AXIS_PTS_REF                    IgSys_tAirUsInVlv_PrevDynY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_8
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -36.0
+      /* Upper Limit          */      59.625
+      AXIS_PTS_REF                    IgSys_knkAdp_PrevDynX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tAirUsInVlv_PrevDynY_A
+    /* Long Identifier        */      "Axe température soupape"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_10
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      734.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_knkAdp_PrevDynX_A
+    /* Long Identifier        */      "Axe adaptatif cliquetis du préventif dynamique de charge"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rCorPrevDyn2Ofs_M
+    /* Long Identifier        */      "Cartographie vitesse véhicule/rapport boite pour correctif offset préventif dynamique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_BYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_9
+    /* Lower Limit            */      -5.0
+    /* Upper Limit            */      5.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_11
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      0
+      /* Upper Limit          */      500.0
+      AXIS_PTS_REF                    IgSys_spdVeh_PrevDynY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_7
+      /* Number of Axis Pts   */      6
+      /* Lower Limit          */      1.0
+      /* Upper Limit          */      6.0
+      AXIS_PTS_REF                    IgSys_noEgdGearCord_PrevDynX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_spdVeh_PrevDynY_A
+    /* Long Identifier        */      "Axe vitesse véhicule"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_11
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      500.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_noEgdGearCord_PrevDynX_A
+    /* Long Identifier        */      "Axe rapport de boite"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_7
+    /* Number of Axis Pts     */      6
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      6.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevStatLamOfs_M
+    /* Long Identifier        */      "Cartographie régime charge pour offset préventif statique richesse"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_12
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      14.679
+      AXIS_PTS_REF                    IgSys_rLamEngCorReq_PrevStaY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rLamEngCorReq_PrevStaY_A
+    /* Long Identifier        */      "Axe lambda consigne"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_12
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      14.679
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_nEng_PrevStatX_A
+    /* Long Identifier        */      "Axe régime"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_2
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevEGROfs_M
+    /* Long Identifier        */      "Cartograhie offset de correctif d'EGR pour offset préventif statique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_13
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_4
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdCor_PrevStatY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_rAirLdCor_PrevStatY_A
+    /* Long Identifier        */      "Axe remplissage"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_4
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rCorPrevStatPOfs_T
+    /* Long Identifier        */      "Cartographie correctif Patmo pour offset avance preventif statique"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_BYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_14
+    /* Lower Limit            */      -5.0
+    /* Upper Limit            */      5.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_6
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      524280.0
+      AXIS_PTS_REF                    IgSys_pAirExtMes_PrevStat_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_pAirExtMes_PrevStat_A
+    /* Long Identifier        */      "Axe Pression atmospherique"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_6
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevStatPOfs_M
+    /* Long Identifier        */      "Cartographie régime charge correctif pression atmo pour offset préventif statique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_4
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdCor_PrevStatY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rCorPrevStatTOfs_M
+    /* Long Identifier        */      "Cartographie correctif température air et eau pour offset préventif statique"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_BYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_14
+    /* Lower Limit            */      -5.0
+    /* Upper Limit            */      5.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_4
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdCor_PrevStatY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevStatTOfs_M
+    /* Long Identifier        */      "Cartographie régime charge pour offset préventif statique correction températures"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_10
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      223.0
+      /* Upper Limit          */      734.0
+      AXIS_PTS_REF                    IgSys_tAirUsInVlv_PrevStatY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_15
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      -40.0
+      /* Upper Limit          */      214.0
+      AXIS_PTS_REF                    IgSys_tCoMes_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tAirUsInVlv_PrevStatY_A
+    /* Long Identifier        */      "Axe température soupape"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_10
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      734.0
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      IgSys_tCoMes_PrevStatX_A
+    /* Long Identifier        */      "Axe température eau"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_X_WORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_15
+    /* Number of Axis Pts     */      9
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tRefTAirUsInVlvEstim_M
+    /* Long Identifier        */      "Cartographie temperature soupape reference pour gain conso"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Lookup2D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_10
+    /* Lower Limit            */      223.0
+    /* Upper Limit            */      734.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_4
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      3.0
+      AXIS_PTS_REF                    IgSys_rAirLdCor_PrevStatY_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      AdvPrevKnkT_CM_2
+      /* Number of Axis Pts   */      9
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    IgSys_nEng_PrevStatX_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_pAirExtMesDft_C
+    /* Long Identifier        */      "Reconfiguration de Patmo en FRM"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      524280.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_rAirLdClc_B
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      3.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tDifTAirUsInVlvEstim_B
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_17
+    /* Lower Limit            */      -256.0
+    /* Upper Limit            */      255.9921875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgPrevDynIncOfs_C
+    /* Long Identifier        */      "Delta de remontée de pente de l'avance préventif dynamique"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_18
+    /* Lower Limit            */      0
+    /* Upper Limit            */      100.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_idxModRatAirLdCalc_C
+    /* Long Identifier        */      "Choix du remplissage pour calcul remplissage modifié dynamique"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      ADVPREVKNKT_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bAcvAirLdDynDet_C
+    /* Long Identifier        */      "Inihibition du flag de détection de dynamique de charge pour avance max dynamique"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bAcvAirLdDynPrevDet_C
+    /* Long Identifier        */      "Inihibition de la détection de dynamique de charge pour correctif préventif dynamique"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bAirLdDynDet_B
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bModDeltaAirLdDet_C
+    /* Long Identifier        */      "Choix du mode de calcul du delta de remplissage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_bSelFilTypAirLd_C
+    /* Long Identifier        */      "Choix du type de détection de dynamique de charge"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgKnkPrevOfs_B
+    /* Long Identifier        */      "Calibration de bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgMaxPrevKnkOfsSat_C
+    /* Long Identifier        */      "Saturation maximale du correctif préventif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_agIgMinPrevKnkOfsSat_C
+    /* Long Identifier        */      "Saturation minimale du correctif préventif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_8
+    /* Lower Limit            */      -36.0
+    /* Upper Limit            */      59.625
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_facFilDeltaAirLdDyn_C
+    /* Long Identifier        */      "Coefficient de filtrage final pour détection du delta de remplissage"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_1
+    /* Lower Limit            */      0.01
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      IgSys_tCoMesDft_C
+    /* Long Identifier        */      "Reconfiguration de Teau en FRM"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      AdvPrevKnkT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      AdvPrevKnkT_CM_20
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      214.0
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      AdvPrevKnkT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvPrevKnkT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvPrevKnkT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvPrevKnkT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      AdvPrevKnkT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      AdvPrevKnkT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevDynSlopDrivInc
+    /* Long identifier        */      "Pente de remontée d'avance du préventif dynamique"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvPrevKnkT_CM_21
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      100.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevDynCalcOfs
+    /* Long identifier        */      "Amplitude de l'offset d'avance à appliquer au préventif dynamique"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      AdvPrevKnkT_CM_22
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rDeltaAirLdDyn
+    /* Long identifier        */      "Delta de remplissage pour detection de dynamique de charge"
+    /* Data type              */      ULONG
+    /* Conversion method      */      AdvPrevKnkT_CM_23
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rAirLdDynWoutFil
+    /* Long identifier        */      "Remplissage dynamique modifié non filtré"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvPrevKnkT_CM_24
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rAirLdClcRef
+    /* Long identifier        */      "Remplissage choisi pour le calcul remplissage dynamique modifié"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvPrevKnkT_CM_16
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_tiAirLdDynDet
+    /* Long identifier        */      "Temps de maintien flag dynamique de charge"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvPrevKnkT_CM_25
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      10.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_noDlyClcAirLdDyn
+    /* Long identifier        */      "Nombre de retard pour le calcul du remplissage dynamique modifié"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_26
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      8.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAirLdDynDetWoutTmr
+    /* Long identifier        */      "Flag de detection dynamique de charge sans temps de maintien"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAirLdDynPrevDynDet
+    /* Long identifier        */      "Flag de détection dynamique de charge pour correctif dynamique"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAcvKnkPrev
+    /* Long identifier        */      "Flag d'activation de la fonction Préventif cliquetis"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatOfs
+    /* Long identifier        */      "Offset d'avance du préventif statique"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatTOfs
+    /* Long identifier        */      "Offset de correctif de température pour l'avance préventif statique cliquetis"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatPOfs
+    /* Long identifier        */      "Offset de correctif de pression pour l'avance préventif statique cliquetis"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevEGROfs
+    /* Long identifier        */      "Offset de correctif d'EGR pour l'avance préventif statique cliquetis"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatLamOfs
+    /* Long identifier        */      "Offset de correctif de richesse pour l'avance préventif statique cliquetis"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevDynOfs
+    /* Long identifier        */      "Offset d'avance du préventif dynamique"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_facFilAirLdDyn
+    /* Long identifier        */      "Coefficient de filtrage du remplissage dynamique"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.01
+    /* Upper limit            */      1.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rFil1DeltaAir_MP
+    /* Long identifier        */      "Point de mesure, delta de remplissage filtrée 2"
+    /* Data type              */      ULONG
+    /* Conversion method      */      AdvPrevKnkT_CM_27
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rFil2DeltaAir_MP
+    /* Long identifier        */      "Point de mesure, delta de remplissage filtrée 1"
+    /* Data type              */      ULONG
+    /* Conversion method      */      AdvPrevKnkT_CM_27
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rDeltaAirLdMod2_MP
+    /* Long identifier        */      "Point de mesure delta de remplissage pour dynamique Mode 2"
+    /* Data type              */      ULONG
+    /* Conversion method      */      AdvPrevKnkT_CM_23
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rDeltaAirLdMod1_MP
+    /* Long identifier        */      "Point de mesure delta de remplissage pour dynamique Mode 1"
+    /* Data type              */      ULONG
+    /* Conversion method      */      AdvPrevKnkT_CM_23
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.0
+    /* Upper limit            */      3.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rCorPrevStatTOfs_MP
+    /* Long identifier        */      "Point de mesure sortie carto IgSys_rCorPrevStatT2Ofs_M"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvPrevKnkT_CM_14
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      5.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_rCorPrevStatPOfs_MP
+    /* Long identifier        */      "Point de mesure sortie carto IgSys_rCorPrevStatP2Ofs_T"
+    /* Data type              */      UWORD
+    /* Conversion method      */      AdvPrevKnkT_CM_14
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      5.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_bAcvAirLdDynDet2_MP
+    /* Long identifier        */      "Point de mesure état intermédiaire de l'activation du flag de dyn de charge"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatTOfs_MP
+    /* Long identifier        */      "Point de mesure sortie carto IgSys_agIgPrevStatT1Ofs_M"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevStatPOfs_MP
+    /* Long identifier        */      "Point de mesure sortie carto IgSys_agIgPrevStatP1Ofs_M"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      IgSys_agIgPrevDynOfsCor_MP
+    /* Long identifier        */      "Point de mesure, de l'offset d'avance partiel à appliquer au préventif dynamique"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      AdvPrevKnkT_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -36.0
+    /* Upper limit            */      59.625
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_1
+    /* Long identifier        */      "Q = V*100"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " -"
+    /* Coefficients           */      COEFFS 0 100 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Rpm"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_3
+    /* Long identifier        */      "Q = V*1000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 1000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_4
+    /* Long identifier        */      "Q = V*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " -"
+    /* Coefficients           */      COEFFS 0 16384 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_5
+    /* Long identifier        */      "Q = V*100"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " - "
+    /* Coefficients           */      COEFFS 0 100 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_6
+    /* Long identifier        */      "Q = V/8"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Pa"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 8
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_7
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " -"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_8
+    /* Long identifier        */      "Q = (V+36)*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 2.66666666667 96 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_9
+    /* Long identifier        */      "Q = V*25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 25 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_10
+    /* Long identifier        */      "Q = (V-223)*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 128 -28544 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_11
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "km/h"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_12
+    /* Long identifier        */      "Q = V*4464.30517711"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 4464.30517711 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_13
+    /* Long identifier        */      "Q = (V+36)*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Ck"
+    /* Coefficients           */      COEFFS 0 2.66666666667 96 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_14
+    /* Long identifier        */      "Q = V*25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " -"
+    /* Coefficients           */      COEFFS 0 25 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_15
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_16
+    /* Long identifier        */      "Q = V*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 16384 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_17
+    /* Long identifier        */      "Q = V*128"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "K"
+    /* Coefficients           */      COEFFS 0 128 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_18
+    /* Long identifier        */      "Q = V*2.66666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck/s"
+    /* Coefficients           */      COEFFS 0 2.66666666667 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "-"
+    /* Ref to conversion table*/      COMPU_TAB_REF AdvPrevKnkT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      AdvPrevKnkT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_20
+    /* Long identifier        */      "Q = (V+40)"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 40 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_21
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck/PMH"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_22
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_23
+    /* Long identifier        */      "Q = (V+3)*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " -"
+    /* Coefficients           */      COEFFS 0 16384 49152 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_24
+    /* Long identifier        */      "Q = V*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " - "
+    /* Coefficients           */      COEFFS 0 16384 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_25
+    /* Long identifier        */      "Q = V*1000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "S"
+    /* Coefficients           */      COEFFS 0 1000 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_26
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      AdvPrevKnkT_CM_27
+    /* Long identifier        */      "Q = (V+3)*16384"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 16384 49152 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION AdvPrevKnkT_FCT_AdvPrevKnkT
+    "CHARACTERISTIC and MEASUREMENT of AdvPrevKnkT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      AdvPrevKnkT_ModuleVersion_Major_MP 
+      AdvPrevKnkT_ModuleVersion_Minor_MP 
+      AdvPrevKnkT_ModuleVersion_Patch_MP 
+      IgSys_agIgPrevDynCalcOfs
+      IgSys_agIgPrevDynOfs
+      IgSys_agIgPrevDynOfsCor_MP
+      IgSys_agIgPrevDynSlopDrivInc
+      IgSys_agIgPrevEGROfs
+      IgSys_agIgPrevStatLamOfs
+      IgSys_agIgPrevStatOfs
+      IgSys_agIgPrevStatPOfs
+      IgSys_agIgPrevStatPOfs_MP
+      IgSys_agIgPrevStatTOfs
+      IgSys_agIgPrevStatTOfs_MP
+      IgSys_bAcvAirLdDynDet2_MP
+      IgSys_bAcvKnkPrev
+      IgSys_bAirLdDynDetWoutTmr
+      IgSys_bAirLdDynPrevDynDet
+      IgSys_facFilAirLdDyn
+      IgSys_noDlyClcAirLdDyn
+      IgSys_rAirLdClcRef
+      IgSys_rAirLdDynWoutFil
+      IgSys_rCorPrevStatPOfs_MP
+      IgSys_rCorPrevStatTOfs_MP
+      IgSys_rDeltaAirLdDyn
+      IgSys_rDeltaAirLdMod1_MP
+      IgSys_rDeltaAirLdMod2_MP
+      IgSys_rFil1DeltaAir_MP
+      IgSys_rFil2DeltaAir_MP
+      IgSys_tiAirLdDynDet
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      ADVPREVKNKT_ACTIVE_BYP_C
+      IgSys_agIgKnkPrevOfs_B
+      IgSys_agIgMaxPrevKnkOfsSat_C
+      IgSys_agIgMinPrevKnkOfsSat_C
+      IgSys_agIgPrevDynIncOfs_C
+      IgSys_agIgPrevDynOfs_M
+      IgSys_agIgPrevEGROfs_M
+      IgSys_agIgPrevStatLamOfs_M
+      IgSys_agIgPrevStatPOfs_M
+      IgSys_agIgPrevStatTOfs_M
+      IgSys_bAcvAirLdDynDet_C
+      IgSys_bAcvAirLdDynPrevDet_C
+      IgSys_bAirLdDynDet_B
+      IgSys_bModDeltaAirLdDet_C
+      IgSys_bSelFilTypAirLd_C
+      IgSys_facFil1DeltaAirLdDyn_T
+      IgSys_facFil2DeltaAirLdDyn_T
+      IgSys_facFilAirLdDyn_M
+      IgSys_facFilDeltaAirLdDyn_C
+      IgSys_idxModRatAirLdCalc_C
+      IgSys_knkAdp_PrevDynX_A
+      IgSys_nEng_AirLdDet_A
+      IgSys_nEng_PrevDynX_A
+      IgSys_nEng_PrevStatX_A
+      IgSys_nEng_facFilAirldDynX_A
+      IgSys_nEng_facFilDeltaAir_A
+      IgSys_nEng_noDlyCalcAirLd_A
+      IgSys_noDlyCalcAirLdDyn_T
+      IgSys_noEgdGearCord_PrevDynX_A
+      IgSys_pAirExtMesDft_C
+      IgSys_pAirExtMes_PrevStat_A
+      IgSys_pDsThr_facFilAirLdDynY_A
+      IgSys_rAirLdClc_B
+      IgSys_rAirLdCor_PrevDynY_A
+      IgSys_rAirLdCor_PrevStatY_A
+      IgSys_rCorPrevDyn1Ofs_M
+      IgSys_rCorPrevDyn2Ofs_M
+      IgSys_rCorPrevStatPOfs_T
+      IgSys_rCorPrevStatTOfs_M
+      IgSys_rDeltaAirLdDynThd_T
+      IgSys_rLamEngCorReq_PrevStaY_A
+      IgSys_spdVeh_PrevDynY_A
+      IgSys_tAirUsInVlv_PrevDynY_A
+      IgSys_tAirUsInVlv_PrevStatY_A
+      IgSys_tCoMesDft_C
+      IgSys_tCoMes_PrevStatX_A
+      IgSys_tDifTAirUsInVlvEstim_B
+      IgSys_tRefTAirUsInVlvEstim_M
+      IgSys_tiAirLdDynDet_T
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+
+/* ------------------------------ END OF MODULE AdvPrevKnkT ------------------------------------*/

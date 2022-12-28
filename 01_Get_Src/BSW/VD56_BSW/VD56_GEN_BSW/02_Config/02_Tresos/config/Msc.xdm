@@ -1,0 +1,582 @@
+<?xml version='1.0'?>
+<datamodel version="3.0" 
+           xmlns="http://www.tresos.de/_projects/DataModel2/08/root.xsd" 
+           xmlns:a="http://www.tresos.de/_projects/DataModel2/08/attribute.xsd" 
+           xmlns:v="http://www.tresos.de/_projects/DataModel2/06/schema.xsd" 
+           xmlns:d="http://www.tresos.de/_projects/DataModel2/06/data.xsd">
+
+  <d:ctr type="AUTOSAR" factory="autosar" 
+         xmlns:ad="http://www.tresos.de/_projects/DataModel2/08/admindata.xsd" 
+         xmlns:icc="http://www.tresos.de/_projects/DataModel2/08/implconfigclass.xsd" 
+         xmlns:mt="http://www.tresos.de/_projects/DataModel2/11/multitest.xsd" >
+    <d:lst type="TOP-LEVEL-PACKAGES">
+      <d:ctr name="Msc" type="AR-PACKAGE">
+        <d:lst type="ELEMENTS">
+          <d:chc name="Msc" type="AR-ELEMENT" value="MODULE-CONFIGURATION">
+            <d:ctr type="MODULE-CONFIGURATION">
+              <a:a name="DEF" value="ASPath:/AURIX/Msc"/>
+              <d:var name="IMPLEMENTATION_CONFIG_VARIANT" type="ENUMERATION" 
+                     value="VariantPostBuildSelectable">
+                <a:a name="IMPORTER_INFO" value="@DEF"/>
+              </d:var>
+              <d:ctr name="MscGeneral" type="IDENTIFIABLE">
+                <d:var name="MscDevErrorDetect" type="BOOLEAN" value="true"/>
+                <d:var name="MscVersionInfoApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MscPassiveFrameCounterApi" type="BOOLEAN" 
+                       value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MscDeInitApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MscEmergencyDataApi" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MscPBFixedAddress" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="MscDebugSupport" type="BOOLEAN" value="false">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+              </d:ctr>
+              <d:lst name="MscConfigSet" type="MAP">
+                <d:ctr name="MscConfigSet_0" type="IDENTIFIABLE">
+                  <d:lst name="MscModuleConfiguration" type="MAP">
+                    <d:ctr name="MscModuleConfiguration_0" type="IDENTIFIABLE">
+                      <d:ctr name="MscClockConfiguration" type="IDENTIFIABLE">
+                        <d:var name="MscClockStepValue" type="INTEGER" 
+                               value="1021"/>
+                        <d:var name="MscClockDividerMode" type="ENUMERATION" 
+                               value="NORMAL_DIVIDER_MODE"/>
+                        <d:var name="MscSleepMode" type="ENUMERATION" 
+                               value="SLEEP_DISABLE"/>
+                      </d:ctr>
+                      <d:ctr name="MscTxConfiguration" type="IDENTIFIABLE">
+                        <d:var name="MscTxClockType" type="ENUMERATION" 
+                               value="CLOCK_ALWAYS">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="MscTxBaudRate" type="ENUMERATION" 
+                               value="MSC_CLOCK_DIV_2">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:ctr name="MscTxSignalTypeConfiguration" 
+                               type="IDENTIFIABLE">
+                          <d:var name="MscTxClockSignalType" type="ENUMERATION" 
+                                 value="SIGNAL_INVERT_OFF">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscTxDataSignalType" type="ENUMERATION" 
+                                 value="SIGNAL_INVERT_OFF">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscTxChipSelectSignalType" 
+                                 type="ENUMERATION" value="SIGNAL_INVERT_ON"/>
+                        </d:ctr>
+                        <d:ctr name="MscCmdFrameConfiguration" 
+                               type="IDENTIFIABLE">
+                          <d:var name="MscCmdFrameIntPtr" type="ENUMERATION" 
+                                 value="INTRPTR_SR0"/>
+                          <d:var name="MscCmdFrameNotification" 
+                                 type="FUNCTION-NAME" 
+                                 value="TLE8718_vidMc0TxCmdFrameNotif"/>
+                          <d:var name="MscCmdFrameLen" type="INTEGER" value="16"/>
+                          <d:var name="MscAutomaticDataInsertionEnable" 
+                                 type="ENUMERATION" 
+                                 value="MSC_AUTO_DATA_INSERTION_DISABLE"/>
+                          <d:var name="MscCmdPassivePhaseLen" type="INTEGER" 
+                                 value="2">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="MscTimeFrameConfiguration" 
+                               type="IDENTIFIABLE">
+                          <d:var name="MscTimeFrameIntPtr" type="ENUMERATION" 
+                                 value="INTR_DISABLE">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscTimeFrameNotification" 
+                                 type="FUNCTION-NAME" value="NULL_PTR">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscTimeFrameCount" type="INTEGER" 
+                                 value="0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                        </d:ctr>
+                        <d:ctr name="MscDataFrameConfiguration" 
+                               type="IDENTIFIABLE">
+                          <d:var name="MscDataFrameIntrInput" 
+                                 type="ENUMERATION" value="INTR_DISABLE">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscDataFrameIntrPtr" type="ENUMERATION" 
+                                 value="INTRPTR_SR0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscDataFrameNotification" 
+                                 type="FUNCTION-NAME" value="NULL_PTR">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscDataFrameTxMode" type="ENUMERATION" 
+                                 value="TX_REPEATMODE"/>
+                          <d:var name="MscSelectionBitHighEnable" 
+                                 type="ENUMERATION" 
+                                 value="TX_DATAFRM_SELBIT_ABSENT"/>
+                          <d:var name="MscSelectionBitLowEnable" 
+                                 type="ENUMERATION" 
+                                 value="TX_DATAFRM_SELBIT_PRESENT"/>
+                          <d:var name="MscPassivePhaseLen" type="INTEGER" 
+                                 value="2">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP0Enable" type="ENUMERATION" 
+                                 value="PIN0_INJECTION_DISABLE">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP0Pos" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP0EmergencyValue" 
+                                 type="ENUMERATION" 
+                                 value="INJP0_EMERGENCY_LOGICAL_LOW">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP1Enable" type="ENUMERATION" 
+                                 value="PIN1_INJECTION_DISABLE">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP1Pos" type="INTEGER" value="0">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscInjP1EmergencyValue" 
+                                 type="ENUMERATION" 
+                                 value="INJP1_EMERGENCY_LOGICAL_LOW">
+                            <a:a name="IMPORTER_INFO" value="@DEF"/>
+                          </d:var>
+                          <d:var name="MscExtensionEnableValue" 
+                                 type="ENUMERATION" value="EXTENSION_DISABLE"/>
+                          <d:lst name="MscDataBitLowConfiguration" type="MAP">
+                            <d:ctr name="MscDataBitLow0_TLE8718Out1" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="0">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow1_TLE8718Out3" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="1">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow2_TLE8718Out5" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="2">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow3_TLE8718Out7" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="3">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow4_TLE8718Out9" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="4">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow5_TLE8718Out11" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="5">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow6_TLE8718Out13" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="6">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow7_TLE8718Out17" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="7">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow8_TLE8718Out2" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="8">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow9_TLE8718Out4" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="9">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow10_TLE8718Out6" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="10">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow11_TLE8718Out8" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="11">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow12_TLE8718Out10" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="12">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow13_TLE8718Out12" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="13">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow14_TLE8718Out16" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="14">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                            <d:ctr name="MscDataBitLow15_TLE8718Out18" 
+                                   type="IDENTIFIABLE">
+                              <d:var name="MscDataBitIndex" type="INTEGER" 
+                                     value="15">
+                                <a:a name="IMPORTER_INFO">
+                                  <a:v>@DEF</a:v>
+                                  <a:v>@CALC</a:v>
+                                </a:a>
+                              </d:var>
+                              <d:var name="MscDataBitSrc" type="ENUMERATION" 
+                                     value="SRC_DOWNSTREAMDATA"/>
+                              <d:var name="MscDataBitEmergencyStopActive" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCYSTOP_DISABLE">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                              <d:var name="MscDataBitEmergencyValue" 
+                                     type="ENUMERATION" 
+                                     value="EMERGENCY_DATA_LOGICAL_LOW">
+                                <a:a name="IMPORTER_INFO" value="@DEF"/>
+                              </d:var>
+                            </d:ctr>
+                          </d:lst>
+                          <d:lst name="MscDataBitHighConfiguration" type="MAP"/>
+                        </d:ctr>
+                      </d:ctr>
+                      <d:ctr name="MscRxConfiguration" type="IDENTIFIABLE">
+                        <d:var name="MscRxBaudRate" type="ENUMERATION" 
+                               value="MSC_CLOCK_DIV_64"/>
+                        <d:var name="MscRxFrameType" type="ENUMERATION" 
+                               value="RX_ADDR_ABSENT">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="MscRxFrameIntrInput" type="ENUMERATION" 
+                               value="INTR_TRIG_RX_ALL"/>
+                        <d:var name="MscRxFrameIntrPtr" type="ENUMERATION" 
+                               value="INTRPTR_SR1"/>
+                        <d:var name="MscRxFrameNotification" 
+                               type="FUNCTION-NAME" 
+                               value="Msc_Interrupt_HandlerMSC0RxFrame"/>
+                        <d:var name="MscRxParityType" type="ENUMERATION" 
+                               value="RX_EVEN_PARITY">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="MscRxDataSignalType" type="ENUMERATION" 
+                               value="SIGNAL_INVERT_OFF">
+                          <a:a name="IMPORTER_INFO" value="@DEF"/>
+                        </d:var>
+                        <d:var name="MscRxIntDelayEnabled" type="ENUMERATION" 
+                               value="RX_INTERRUPT_DELAY_ENABLE"/>
+                        <d:var name="MscUpstreamTimeoutPrescalar" 
+                               type="INTEGER" value="4"/>
+                        <d:var name="MscUpstreamTimeoutValue" type="INTEGER" 
+                               value="7"/>
+                      </d:ctr>
+                    </d:ctr>
+                  </d:lst>
+                </d:ctr>
+              </d:lst>
+              <d:ctr name="MscPublishedInformation" type="IDENTIFIABLE"/>
+              <d:ctr name="CommonPublishedInformation" type="IDENTIFIABLE">
+                <d:var name="ArMajorVersion" type="INTEGER" value="0"/>
+                <d:var name="ArMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="ArPatchVersion" type="INTEGER" value="0"/>
+                <d:var name="SwMajorVersion" type="INTEGER" value="1"/>
+                <d:var name="SwMinorVersion" type="INTEGER" value="0"/>
+                <d:var name="SwPatchVersion" type="INTEGER" value="1"/>
+                <d:var name="ModuleId" type="INTEGER" value="255">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorId" type="INTEGER" value="17">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="VendorApiInfix" type="STRING" value="">
+                  <a:a name="IMPORTER_INFO" value="@DEF"/>
+                </d:var>
+                <d:var name="Release" type="STRING" value="_TRICORE_TC297">
+                  <a:a name="IMPORTER_INFO">
+                    <a:v>@DEF</a:v>
+                    <a:v>@CALC</a:v>
+                  </a:a>
+                </d:var>
+              </d:ctr>
+            </d:ctr>
+          </d:chc>
+        </d:lst>
+      </d:ctr>
+    </d:lst>
+  </d:ctr>
+
+</datamodel>

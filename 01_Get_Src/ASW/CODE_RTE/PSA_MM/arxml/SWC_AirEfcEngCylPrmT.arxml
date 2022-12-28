@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<!-- ******************************************************************************* -->
+<!-- *                           P. C. A.                                            -->
+<!-- *                                                                               -->
+<!-- *                    Peugeot Citroen Automobile                                 -->
+<!-- *                                                                               -->
+<!-- *        This file is the property of PCA. All rights are reserved              -->
+<!-- *        by PCA and this file must not be copied or disclosed                   -->
+<!-- *       (in whole or in part) without prior written consent of PCA.             -->
+<!-- *                                                                               -->
+<!-- ******************************************************************************* -->
+<!--  -->
+<!-- %name: SWC_AirEfcEngCylPrmT.arxml % -->
+<!--  -->
+<!-- %version: 1.0 % -->
+<!--  -->
+<!-- %date_modified: Wed Aug 13 11:31:34 2014 % -->
+<!--  -->
+<!--  -->
+<!-- %derived_by: e446745 % -->
+<!-- %release: % -->
+<!-- %full_filespec: % -->
+<!--  -->
+<!-- ******************************************************************************/-->
+<!--  -->
+<!--Created with SystemDesk 3.1.7.5149-->
+<AUTOSAR xmlns="http://autosar.org/3.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.1.2 autosar.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Components</SHORT-NAME>
+      <ELEMENTS />
+      <SUB-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>SWC_AirEfcEngCylPrmT</SHORT-NAME>
+          <ELEMENTS>
+            <APPLICATION-SOFTWARE-COMPONENT-TYPE UUID="a6da7112-795d-1014-a821-e695ef0de0bc">
+              <SHORT-NAME>AIREFCENGCYLPRMT</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">AirEfcEngCylPrmT</L-4>
+              </LONG-NAME>
+              <PORTS>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>P_LibAirEfc</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_LibAirEfc</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <SERVER-COM-SPEC>
+                      <OPERATION-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibAirEfc/OP_LibAirEfc</OPERATION-REF>
+                      <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                    </SERVER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Interfaces/IF_LibAirEfc</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>P_LibEngCylPrm</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_LibEngCylPrm</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <SERVER-COM-SPEC>
+                      <OPERATION-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibEngCylPrm/OP_LibEngCylPrm</OPERATION-REF>
+                      <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                    </SERVER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Interfaces/IF_LibEngCylPrm</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE>
+                  <SHORT-NAME>P_LibVlvBasChg</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_LibVlvBasChg</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <SERVER-COM-SPEC>
+                      <OPERATION-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibVlvBasChg/OP_LibVlvBasChg</OPERATION-REF>
+                      <QUEUE-LENGTH>1</QUEUE-LENGTH>
+                    </SERVER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Interfaces/IF_LibVlvBasChg</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+              </PORTS>
+            </APPLICATION-SOFTWARE-COMPONENT-TYPE>
+            <INTERNAL-BEHAVIOR UUID="a6fa0674-795d-1014-91c0-df710570039d">
+              <SHORT-NAME>IB_AirEfcEngCylPrmT</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">IB_AirEfcEngCylPrmT</L-4>
+              </LONG-NAME>
+              <COMPONENT-REF DEST="APPLICATION-SOFTWARE-COMPONENT-TYPE">/Components/SWC_AirEfcEngCylPrmT/AIREFCENGCYLPRMT</COMPONENT-REF>
+              <EVENTS>
+                <OPERATION-INVOKED-EVENT UUID="a7460d4c-795d-1014-a0e7-cb6b3411f46c">
+                  <SHORT-NAME>EV_LibVlvBasChg</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">EV_LibVlvBasChg</L-4>
+                  </LONG-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_AirEfcEngCylPrmT/IB_AirEfcEngCylPrmT/OP_LibVlvBasChg</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_AirEfcEngCylPrmT/AIREFCENGCYLPRMT/P_LibVlvBasChg</P-PORT-PROTOTYPE-REF>
+                    <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibVlvBasChg/OP_LibVlvBasChg</OPERATION-PROTOTYPE-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+                <OPERATION-INVOKED-EVENT UUID="a72ab6b8-795d-1014-a08c-8258ab01d58f">
+                  <SHORT-NAME>EV_LibEngCylPrm</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">EV_LibEngCylPrm</L-4>
+                  </LONG-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_AirEfcEngCylPrmT/IB_AirEfcEngCylPrmT/OP_LibEngCylPrm</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_AirEfcEngCylPrmT/AIREFCENGCYLPRMT/P_LibEngCylPrm</P-PORT-PROTOTYPE-REF>
+                    <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibEngCylPrm/OP_LibEngCylPrm</OPERATION-PROTOTYPE-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+                <OPERATION-INVOKED-EVENT UUID="a7129810-795d-1014-9302-99e321733e11">
+                  <SHORT-NAME>EV_LibAirEfc</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">EV_LibAirEfc</L-4>
+                  </LONG-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_AirEfcEngCylPrmT/IB_AirEfcEngCylPrmT/OP_LibAirEfc</START-ON-EVENT-REF>
+                  <OPERATION-IREF>
+                    <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_AirEfcEngCylPrmT/AIREFCENGCYLPRMT/P_LibAirEfc</P-PORT-PROTOTYPE-REF>
+                    <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Interfaces/IF_LibAirEfc/OP_LibAirEfc</OPERATION-PROTOTYPE-REF>
+                  </OPERATION-IREF>
+                </OPERATION-INVOKED-EVENT>
+              </EVENTS>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="a777f7a2-795d-1014-8018-f548ab891bd1">
+                  <SHORT-NAME>OP_LibEngCylPrm</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">OP_LibEngCylPrm</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SYMBOL>OP_LibEngCylPrm</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="a75ece52-795d-1014-8e1d-9570c6f4fe6f">
+                  <SHORT-NAME>OP_LibAirEfc</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">OP_LibAirEfc</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>true</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SYMBOL>OP_LibAirEfc</SYMBOL>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="a793c42c-795d-1014-b001-fa10967ba352">
+                  <SHORT-NAME>OP_LibVlvBasChg</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">OP_LibVlvBasChg</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <SYMBOL>OP_LibVlvBasChg</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </INTERNAL-BEHAVIOR>
+            <SWC-IMPLEMENTATION>
+              <SHORT-NAME>Imp_AirEfcEngCylPrmT</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">Imp_AirEfcEngCylPrmT</L-4>
+              </LONG-NAME>
+              <CODE-DESCRIPTORS>
+                <CODE UUID="3a7cd025-7265-4225-9d3f-ae0bb05256d2">
+                  <SHORT-NAME>CodeDescriptor</SHORT-NAME>
+                  <TYPE>SRC</TYPE>
+                </CODE>
+              </CODE-DESCRIPTORS>
+              <CODE-GENERATOR>Real-Time Workshop Embedded Coder 5.5 (R2010a) 25-Jan-2010</CODE-GENERATOR>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/Components/SWC_AirEfcEngCylPrmT/IB_AirEfcEngCylPrmT</BEHAVIOR-REF>
+            </SWC-IMPLEMENTATION>
+          </ELEMENTS>
+        </AR-PACKAGE>
+      </SUB-PACKAGES>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

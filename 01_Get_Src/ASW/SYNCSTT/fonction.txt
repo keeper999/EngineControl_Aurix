@@ -1,0 +1,51 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_bGetFRM|B|func_FRM_bGetFRM|.1|HEADER|1|NONE||||0|0|0|0|Get FRM Value
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|.14|HEADER|1|NONE||||0|0|0|0|fonction  GDGAR
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|
+Sync_EveCkLTo_SyncSTT|G|();|SCH.1|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement correspondant au passage de la dent longue du vilebrequin
+Sync_EveCkLTo1_SyncSTT|F|();|SCH.11|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement indiquant la première détection de la singularité vilebrequin
+Sync_EveCkOff_SyncSTT|E|();|SCH.2|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement correspondant à la détection de l'arrêt moteur
+Sync_EveCkOn_SyncSTT|D|();|SCH.3|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement correspondant à la détection de la rotation du moteur
+Sync_EveCkSnOf_SyncSTT|C|();|SCH.4|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement synchronisation perdue
+Sync_EveCkTo_SyncSTT|E|();|SCH.5|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement dent vilebrequin activé si le régime est inférieur à un seuil
+Sync_EveExCamEdge_SyncSTT|G|();|SCH.6|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement détection d'un front arbre à cames échappement pour la fonction  Synchro
+Sync_EveInCamEdge_SyncSTT|G|();|SCH.7|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement détection d'un front arbre à cames admission pour la fonction  Synchro
+Sync_EveNInvOff_SyncSTT|C|();|SCH.12|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evénement indiquant le retour à une rotation en sens avant du moteur
+Sync_EveRst_SyncSTT|E|();|SCH.8|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Evènement reset du calculateur
+Sync_EveSyncAccu_SyncSTT|A|();|.12|HEADER|1|NONE||||0|0|0|0|
+Sync_EveSyncNotAccu_SyncSTT|A|();|.13|HEADER|1|NONE||||0|0|0|0|
+Sync_EveTDC_SyncSTT|D|();|SCH.9|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Interruption PMH
+Sync_SdlFast_SyncSTT|D|();|SCH.13|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Moniteur rapide de la fonction Sync
+Sync_SdlMid_SyncSTT|D|();|SCH.10|SYNCSTT|1|PTS_DOC_6912870||||0|0|0|0|Moniteur moyen de la fonction Sync
+SYNCSTT_vidBackUpAcv|A|();|FCT1.5|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Il permet de générer les booléens d’activation des back-up mode vilebrequin et arbre à cames.
+SYNCSTT_vidBackUpCk|A|();|FCT1.6|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Active  la demande de passage en mode de back-up vilebrequin.
+SYNCSTT_vidBackUpCm|A|();|FCT1.7|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Active  la demande de passage en mode de back-up du signal arbre à cames.
+SYNCSTT_vidChangeOfMind|C|();|FCT3.7|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Sur l’évènement N_Inv_Off on vient vérifier si la position angulaire du moteur est connue. Si c’est le cas alors es variables de synchronisation reste à 1.
+SYNCSTT_vidCkOff|E|();|FCT4.6|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lors de la perte de la synchronisation par le LDB,  ou lors  d’un arrêt moteur, sur l’événement Crank Off, on réinitialise les variables de synchronisation.
+SYNCSTT_vidCkOn|B|();|FCT2.1|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Fonction pour remise à zero du Sync_bDetEs
+SYNCSTT_vidCnt|C|();|FCT3.3|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|On incrémente le compteur de dents vilebrequin sur l’évènement dent vilebrequin.
+SYNCSTT_vidctEdgeCmExRstrt|C|();|FCT4.2|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|A chaque détection de front AAC échappement, la fonction vérifie que la position de ce front est située à moins de Sync_agWinAgCmThLrn_C de sa position apprise.  Si c’est le cas on incrémente le compteur de fronts AAC correspondant à ce critère.
+SYNCSTT_vidctEdgeCmExStrt|C|();|FCT3.6|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|A chaque détection de front AAC échappement, la fonction vérifie que la position de ce front est située à moins de Sync_agWinAgCmTh_C de sa position théorique.  Si c’est le cas on incrémente le compteur de fronts AAC correspondant à ce critère.
+SYNCSTT_vidctEdgeCmInRstrt|C|();|FCT4.1|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|A chaque détection de front AAC admission, la fonction vérifie que la position de ce front est située à moins de Sync_agWinAgCmThLrn_C de sa position apprise.  Si c’est le cas on incrémente le compteur de fronts AAC correspondant à ce critère.
+SYNCSTT_vidctEdgeCmInStrt|C|();|FCT3.5|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|A chaque détection de front AAC admission, la fonction vérifie que la position de ce front est située à moins de Sync_agWinAgCmTh_C de sa position théorique.  Si c’est le cas on incrémente le compteur de fronts AAC correspondant à ce critère.
+SYNCSTT_vidDetLTo|B|();|FCT3.1|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lors de la détection de la singularité vilebrequin, on passe les variables Sync_bDetLTo et Sync_bDetLTo2  à 1.
+SYNCSTT_vidDiag|B|();|FCT2.5|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|fonction de calcul de defaut DistSig
+SYNCSTT_vidDiagAuth|B|();|FCT2.3|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|fonction de calcul de Sync_bMonRunDistSig
+SYNCSTT_vidDiagResult|B|();|FCT2.4|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|fonction de calcul de Sync_bDgoDistSig
+SYNCSTT_vidEngStopPosn|C|();|FCT4.4|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lors de la détection d’arrêt moteur on force la variable Sync_bVldAgEs à la valeur de Sync_bEngSyncAccu.  On effectue également la lecture de l’API donnant la position d’arrêt moteur calculée.
+SYNCSTT_vidEngStopPosnAfter|D|();|FCT2.6|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lors de la détection de la singularité du signal vilebrequin on effectue la lecture de l’API donnant la position d’arrêt du moteur calculée à posteriori.
+SYNCSTT_vidEveProd|C|();|FCT4.7|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|On crée un évènement lorsque la synchro non précise est trouvée pour permettre l’autorisation d’injection, ainsi qu’un évènement lorsque la synchro précise est trouvée pour permettre l’autorisation de l’allumage.
+SYNCSTT_vidForcSyncOff|C|();|FCT4.5|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Fonction permettant en cas de défaillance du signal vilebrequin ou sur demande de désynchronisation forcée, on passe les  variables de synchronisation à 0.
+SYNCSTT_vidInit|D|();|FCT1.3|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|fonction d'initialisation des variables au reset du calculateur
+SYNCSTT_vidIniTDCCnt|D|();|FCT2.2|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lors de la synchronisation moteur, .on vient lire la position angulaire du moteur. A partir de la position d’arrêt moteur on détermine l’angle moteur parcouru entre la position d’arrêt et la position de synchronisation.
+SYNCSTT_vidInitOutput|D|();|FCT1.4|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|focntion d'initialisation des varaibles produites
+SYNCSTT_vidOS1|B|();|FCT1.1|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|On crée 2 évènements qui permettent d’activer soit la stratégie en cas de premier démarrage soit la stratégie en cas de redémarrage après un arrêt sans coupure du calculateur et lorsque le signal AAC admission est valide.
+SYNCSTT_vidOS2|B|();|FCT1.2|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|On crée 2 évènements qui permettent d’activer soit la stratégie en cas de premier démarrage soit la stratégie en cas de redémarrage après un arrêt sans coupure du calculateur et lorsque le signal AAC échappement est valide.
+SYNCSTT_vidReadToothInfo|D|();|FCT2.7|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Fonction de lecture des variables de synchronisation provenant du LdB.
+SYNCSTT_vidRstSyncVar|B|();|FCT3.8|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Si la position angulaire du moteur n’est plus connue par le LDB, on force les variables de synchronisation à 0
+SYNCSTT_vidRstTeethCnt|B|();|FCT3.4|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Lorsqu’on a détecté la dent longue de la cible vilebrequin, on effectue un reset du compteur de dent vilebrequin et de la variable permettant la détection de la singularité vilebrequin dès la dent suivante.
+SYNCSTT_vidSync_SdlMid_SyncSTT|C|();|FCT4.8|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Fonction d'appel de l' événement Sync_SdlMid_SyncSTT
+SYNCSTT_vidSyncCalcRstrt|D|();|FCT4.3|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Après un redémarrage, la variable Sync_bEngSyncAccu prend la valeur 1 dans le cas ou on a détecté la  singularité vilebrequin ou si on a comptabilisé au moins Sync_noEdgeCmAccuRstrt_C fronts AAC à une  position proche de leur valeur théorique.
+SYNCSTT_vidSyncCalcStrt|C|();|FCT3.9|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|Ce bloc permet de calculer les variables de synchronisation précise et imprécise après un démarrage. Il est  appelé par un évènement interne qui dépend de différentes conditions d’activatio
+SYNCSTT_vidTDCCnt|C|();|FCT2.8|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|On incrémente le compteur de PMH à chaque évènement PMH, uniquement à partir du moment où la position, de ceux-ci est connue, c'est-à-dire lorsque la synchro est OK.
+SYNCSTT_vidTeethCnt|B|();|FCT3.2|SYNCSTT|0|PTS_DOC_6912870||||0|0|0|0|donction de compteur de dents vilebrequin

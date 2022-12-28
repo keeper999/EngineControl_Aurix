@@ -1,0 +1,12 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+CoFan_EveRst_ECTReq|B|();|SCH.1|ECTREQ|1|PTS_DOC_6886129||||0|0|0|0|Evénement Reset de l'ECU.|
+CoFan_SdlSlow_ECTReq|B|();|SCH.2|ECTREQ|1|PTS_DOC_6886129||||0|0|0|0|Control flow for the ECT|
+ECTREQ_vidCmdRCO_Cor|B|();|FCT1.5|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|In this block the ECT command is first corrected with the value of the filtered battery voltage and then saturated  between two values.|
+ECTREQ_vidDiagnosis|A|();|FCT1.7|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|In this block we make the electrical diagnosis of the ECT command.|
+ECTREQ_vidDrvCmd|A|();|FCT1.6|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|Here we make a conversion of the corrected and saturated ECT command and we send this final value to the  LDB.  The PWM request can be inverted using the calibration ECTReq_bInvDuCy_C if it is required.|
+ECTREQ_vidFiltBatt|A|();|FCT1.4|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|Here we make an average on the two last values of battery voltage to use it for the correction.|
+ECTREQ_vidInitialization|A|();|FCT1.2|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|In this block the initialization of the output command is done and the PWM frequency is communicated to the  LDB.|
+ECTREQ_vidInitOutput|A|();|FCT1.1|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|Fonction qui initialise les sorties des blocs dynamique et les sorties non initlialisée.|
+ECTREQ_vidTreatment|A|();|FCT1.3|ECTREQ|0|PTS_DOC_6886129||||0|0|0|0|In this block we make a treatment on the ECT command in order to send to the hardware driver a corrected and  saturated value.|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|3|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|Get the value of the GDU States.|

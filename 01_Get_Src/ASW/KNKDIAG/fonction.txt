@@ -1,0 +1,11 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean bDiagStWait);|1|HEADER|1|NONE||||0|0|0|0|Fonction de gestion des pannes|
+KNKDIAG_vidDiagnosticConditions|C|();|FCT1.5|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|Ce module est activé lorsque le diagnostic est requis. On doit alors s’assurer que les conditions de régime, température d’eau et position papillon sont bien réunies pour le passage en mode diagnostic. Le diagnostic est inhibé lors de coupure d'injection.|
+KNKDIAG_vidDiagStateManagement|C|();|FCT1.4|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|Ce module gère les opérations menées dans chaque état du diagramme et les conditions qui déclenchent les transitions d’un état à un autre.|
+KNKDIAG_vidDiagStrategy|B|();|FCT1.3|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|La stratégie de diagnostic cliquetis peut se trouver dans quatre états différents, gérés dans un diagramme d’états: DIAG_NOT_REQUESTED, DIAG_REQUIRED, DIAG_RUNNING et DIAG_ENDING.|
+KNKDIAG_vidEndDiag|C|();|FCT1.6|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|Lorsque les bruits de tous les cylindres ont été additionnés, on compare la moyenne de bruit à un seuil calibrable. On considère qu’en dessous de ce seuil, le capteur est en panne.|
+KNKDIAG_vidEntryInit|B|();|SCH.1|KNKDIAG|1|PTS_DOC_5307525||||0|0|0|0|Evènement RESET de scheduler.|
+KNKDIAG_vidInitOutput|B|();|FCT1.1|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|Fonction d'initialisation des variables produites par la spec.|
+KNKDIAG_vidTreatment|D|();|FCT1.2|KNKDIAG|0|PTS_DOC_5307525||||0|0|0|0|La calibration Cliq_diag_knk_tdc_nr est à double emploi : Positionnée à zéro, elle inhibe la stratrégie de diagnostic et toute valeur strictement positive désigne le nombre de PMH que l’on souhaite laisser entre deux passages  en mode diagnostic.|
+KnkTreat_EveKnk_KnkDiag|C|();|SCH.2|KNKDIAG|1|PTS_DOC_5307525||||0|0|0|0|Tâche de cacul du niveau de cliquetis pour le cylindre en cours.|
+SWFAIL_vidSoftwareErrorHook|B|();|2|HEADER|1|PTS_DOC_5307525||||0|0|0|0|Defaut logiciel.|

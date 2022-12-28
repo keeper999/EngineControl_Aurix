@@ -1,0 +1,1728 @@
+/begin MODULE
+    TqTreat /* Name */
+    "TqTreat" /* LongIdentifier */
+
+    /begin A2ML
+        block "IF_DATA" taggedunion if_data {
+        };
+    /end A2ML
+
+    /begin MOD_PAR
+        "-" /* Comment */
+        NO_OF_INTERFACES 0
+    /end MOD_PAR
+
+    /begin MOD_COMMON
+        "-" /* Comment */
+        ALIGNMENT_BYTE 1
+        ALIGNMENT_WORD 2
+        ALIGNMENT_LONG 4
+        ALIGNMENT_FLOAT32_IEEE 4
+        ALIGNMENT_FLOAT64_IEEE 4
+        DEPOSIT ABSOLUTE
+    /end MOD_COMMON
+
+
+    /begin MEASUREMENT
+        TqTreat_002_Ext_nEngAvr_in /* Name */
+        "Régime moteur moyenné sur 4 PMH - Mean engine speed on 4 TDC" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_008_TqDem_facGainFilTrv_nCk_in /* Name */
+        "Gain de filtrage du régime moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_0009765625 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_008_Ext_tiTDC_in /* Name */
+        "Temps entre 2 PMH (1-2 tour moteur)" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_001 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        0.1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_CoPTSt_stEng_in /* Name */
+        "Etats moteur thermique" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in29 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        1 /* LowerLimit */
+        15 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_EOM_facItpolCur_in /* Name */
+        "Facteur général d'interpolation actuel" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_0009765625 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_EOM_idxBas1InjCur_in /* Name */
+        "Indice de la baseline injection N°1 actuelle" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        1 /* LowerLimit */
+        32 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_EOM_idxBas2InjCur_in /* Name */
+        "Indice de la baseline injection N°2 actuelle" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        1 /* LowerLimit */
+        32 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_002_Ext_nEng_in /* Name */
+        "Régime moteur mesuré sur une phase moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING_a /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        7500 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_Ext_nEng_in /* Name */
+        "Régime moteur mesuré sur une phase moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        7500 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_006_Ext_nEng_in /* Name */
+        "Régime moteur mesuré sur une phase moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        7500 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_008_Ext_nEng_in /* Name */
+        "Régime moteur mesuré sur une phase moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        7500 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_006_Ext_nEngClc_in /* Name */
+        "régime recentré, valeur de remplacement : Ext_nEng," /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_006_Ext_noCylEng_in /* Name */
+        "Nombre de cylindres du moteur" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        1 /* LowerLimit */
+        12 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_Ext_stFuTypCf_in /* Name */
+        "Type de carburant" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in36 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        7 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_Ext_stVSCtlRegCf_in /* Name */
+        "Configuration fonctionnelle xVV" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        3 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_Ext_tCoMes_in /* Name */
+        "Teau post traitement envoyée à l'applicatif" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING_b /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -40 /* LowerLimit */
+        214 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_VSCtl_stTqPTMaxCtl_in /* Name */
+        "Etat pilotage couple GMP XVV max" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in39 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        2 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_VSCtl_stTqPTMinCtl_in /* Name */
+        "Etat pilotage couple GMP XVV min" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in40 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        2 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_VSCtl_stVSLim_in /* Name */
+        "Etat de fonctionnement de la fonction LVV dans le contrôle GMP" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in41 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        5 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_VSCtl_stVSMax_in /* Name */
+        "Etat de fonctionnement de la fonction BVV dans le contrôle GMP" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in42 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        4 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_004_VSCtl_stVSReg_in /* Name */
+        "Etat de fonctionnement de la fonction RVV dans le contrôle GMP" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in43 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        4 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_002_TreatTDC_nCkFil_in /* Name */
+        "Régime moteur filtré au PMH" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_002_TreatTDC_nCkGrd_in /* Name */
+        "Dérivée de régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_002_TreatTDC_nCkGrdFil_in /* Name */
+        "Dérivée filtrée de régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_002_TreatTDC_nCkTDCDelta_in /* Name */
+        "Gradient de Régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_010_Brk_bBrkAuto_in /* Name */
+        "Freinage automatique en cours" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_010_Ext_bBrkPedPrss_in /* Name */
+        "Détection d'un appui conducteur sur la pédale de frein" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in50 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqTreat_010_Ext_bSecBrkPedPrssMes_in /* Name */
+        "Etat de la pédale de frein filaire" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_in51 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Eng_nCkFil_out /* Name */
+        "Régime moteur filtré envoyé à 10ms" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTenms_nCkRaw_out /* Name */
+        "régime moteur brut au pmh envoyé à 10ms" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTenms_nCkGrd_out /* Name */
+        "Dérivée du régime moteur au pmh envoyé à 10ms." /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTenms_nCkTDCDelta_out /* Name */
+        "Gradient de régime moteur au pmh envoyé à 10ms." /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTenms_nCkGrdFil_out /* Name */
+        "Dérivée filtrée du régime moteur au pmh envoyé à 10ms" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTDC_nCkFil_out /* Name */
+        "Régime moteur filtré au PMH" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTDC_nCkTDCDelta_out /* Name */
+        "Gradient de Régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTDC_nCkGrd_out /* Name */
+        "Dérivée de régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TreatTDC_nCkGrdFil_out /* Name */
+        "Dérivée filtrée de régime moteur au PMH" /* LongIdentifier */
+        SWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        EOM_tiEngModStp_out /* Name */
+        "temps passé depuis que le moteur est arrêté" /* LongIdentifier */
+        ULONG /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        65536 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Ext_nEng1_out /* Name */
+        "Valeur précédente de Ext_nEng" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Ext_nEng2_out /* Name */
+        "Valeur précédente de Ext_nEng" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        EOM_tiEngCrankStrt_out /* Name */
+        "Temps passé depuis que le régime moteur est non nul" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        655 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        EOM_tiEngRun_out /* Name */
+        "Temps passé depuis le démarrage" /* LongIdentifier */
+        ULONG /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING_c /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        4294967295 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        EOM_tiEngRunStrt_out /* Name */
+        "Temps passé depuis le démarrage (résolution plus précise)" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        655 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Ext_nEngAvr_out /* Name */
+        "Régimé moyen sur le nombre de cylindre" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Ext_nEngClc0_out /* Name */
+        "Régime recentré recalculé entre 2 synchro moteur" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        Ext_nEngClc1_out /* Name */
+        "Régime recentré recalculé entre 2 synchro moteur retardé d'une tache" /* LongIdentifier */
+        UWORD /* Datatype */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqSys_bAcvVehSpdCtlLim_out /* Name */
+        "Activation de LVV-BVV" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqSys_bAcvVehSpdCtlReg_out /* Name */
+        "Activation de RVV-ACC" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqSys_bTypFu_out /* Name */
+        "Type de carburant retraité et simplifié" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_out26 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqSys_idxTqAccu_out /* Name */
+        "Indice de précision de couple" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        1 /* LowerLimit */
+        10 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        TqSys_stTypPwtCf_out /* Name */
+        "Type de GMP présent" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_Table_out28 /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        2 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+        CoBrk_bAcvBrk_out /* Name */
+        "Flux frein coordonné" /* LongIdentifier */
+        UBYTE /* Datatype */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* Resolution */
+        100 /* Accuracy */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+        ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC
+        Eng_nCkFil_B /* Name */
+        "Régime moteur filtré envoyé à 10ms" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTenms_nCkRaw_B /* Name */
+        "régime moteur brut au pmh envoyé à 10ms" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTenms_nCkGrd_B /* Name */
+        "Dérivée du régime moteur au pmh envoyé à 10ms." /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTenms_nCkTDCDelta_B /* Name */
+        "Gradient de régime moteur au pmh envoyé à 10ms." /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTenms_nCkGrdFil_B /* Name */
+        "Dérivée filtrée du régime moteur au pmh envoyé à 10ms" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTDC_nCkFil_B /* Name */
+        "Régime moteur filtré au PMH" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTDC_nCkTDCDelta_B /* Name */
+        "Gradient de Régime moteur au PMH" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTDC_nCkGrd_B /* Name */
+        "Dérivée de régime moteur au PMH" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TreatTDC_nCkGrdFil_B /* Name */
+        "Dérivée filtrée de régime moteur au PMH" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_SWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Conversion */
+        -8000 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        EOM_tiEngModStp_B /* Name */
+        "temps passé depuis que le moteur est arrêté" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_ULONG_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        0 /* LowerLimit */
+        65536 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        Ext_nEng1_B /* Name */
+        "Valeur précédente de Ext_nEng" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        Ext_nEng2_B /* Name */
+        "Valeur précédente de Ext_nEng" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        EOM_tiEngCrankStrt_B /* Name */
+        "Temps passé depuis que le régime moteur est non nul" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        0 /* LowerLimit */
+        655 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        EOM_tiEngRun_B /* Name */
+        "Temps passé depuis le démarrage" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_ULONG_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING_c /* Conversion */
+        0 /* LowerLimit */
+        4294967295 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        EOM_tiEngRunStrt_B /* Name */
+        "Temps passé depuis le démarrage (résolution plus précise)" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Conversion */
+        0 /* LowerLimit */
+        655 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        Ext_nEngAvr_B /* Name */
+        "Régimé moyen sur le nombre de cylindre" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        Ext_nEngClc0_B /* Name */
+        "Régime recentré recalculé entre 2 synchro moteur" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        Ext_nEngClc1_B /* Name */
+        "Régime recentré recalculé entre 2 synchro moteur retardé d'une tache" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UWORD_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Conversion */
+        0 /* LowerLimit */
+        8000 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_bAcvVehSpdCtlLim_B /* Name */
+        "Activation de LVV-BVV" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_bAcvVehSpdCtlReg_B /* Name */
+        "Activation de RVV-ACC" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_bTypFu_B /* Name */
+        "Type de carburant retraité et simplifié" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_Table_out26_a /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_idxTqAccu_B /* Name */
+        "Indice de précision de couple" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        1 /* LowerLimit */
+        10 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_stTypPwtCf_B /* Name */
+        "Type de GMP présent" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_Table_out28_a /* Conversion */
+        0 /* LowerLimit */
+        2 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        CoBrk_bAcvBrk_B /* Name */
+        "Flux frein coordonné" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TQTREAT_ACTIVE_BYP_C /* Name */
+        "Bypass du module TqTreat" /* LongIdentifier */
+        VALUE  /* Type */
+        0x0 /* Address */
+        TqTreat_RL_UBYTE_COL_DIRECT /* Deposit */
+        0   /* MaxDiff */
+        TqTreat_CM_Byp_VOID_SCALING /* Conversion */
+        0 /* LowerLimit */
+        1 /* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_EQ_RES_0_25 /* Name */
+        "Phys = Num * 2^-2" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%5.2" /* Format */
+        "RPM" /* Unit */
+        COEFFS 0 1 0 0 0 0.25
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_EQ_RES_0_0009765625 /* Name */
+        "Phys = Num * 2^-10" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%13.10" /* Format */
+        "-" /* Unit */
+        COEFFS 0 1 0 0 0 0.0009765625
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_EQ_RES_0_001 /* Name */
+        "Phys = Num * 0.001" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%6.3" /* Format */
+        "s" /* Unit */
+        COEFFS 0 1 0 0 0 0.001
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in29 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in29
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_VOID_SCALING /* Name */
+        "Phys = Num" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_VOID_SCALING_a /* Name */
+        "Phys = Num" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%3.0" /* Format */
+        "RPM" /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in36 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in36
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_VOID_SCALING_b /* Name */
+        "Phys = Num" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%3.0" /* Format */
+        "°C" /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in39 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in39
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in40 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in40
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in41 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in41
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in42 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in42
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in43 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in43
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_EQ_RES_0_25_a /* Name */
+        "Phys = Num * 2^-2" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%5.2" /* Format */
+        "RPM/s" /* Unit */
+        COEFFS 0 1 0 0 0 0.25
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in50 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in50
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_in51 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_in51
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_EQ_RES_0_01 /* Name */
+        "Phys = Num * 0,01" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%5.2" /* Format */
+        "s" /* Unit */
+        COEFFS 0 1 0 0 0 0.01
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_VOID_SCALING_c /* Name */
+        "Phys = Num" /* LongIdentifier */
+        RAT_FUNC /* ConversionType */
+        "%3.0" /* Format */
+        "s" /* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_out26 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_out26
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_out28 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_out28
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_out26_a /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_out26
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_CM_Byp_Table_out28_a /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        "%3.0" /* Format */
+        "-" /* Unit */
+        COMPU_TAB_REF TqTreat_CV_CONV_TAB_Table_out28
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in29 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        15 /* NumberValuePairs */
+        1 /* InVal */
+        "Coupé calé" /* OutVal */
+        2 /* InVal */
+        "Préparation" /* OutVal */
+        3 /* InVal */
+        "Démarrage entraîné" /* OutVal */
+        4 /* InVal */
+        "Démarrage autonome" /* OutVal */
+        5 /* InVal */
+        "Moteur tournant" /* OutVal */
+        6 /* InVal */
+        "Arrêt" /* OutVal */
+        7 /* InVal */
+        "Redémarrage entraîné" /* OutVal */
+        8 /* InVal */
+        "Redémarrage autonome" /* OutVal */
+        9 /* InVal */
+        "Réservé" /* OutVal */
+        10 /* InVal */
+        "Réservé" /* OutVal */
+        11 /* InVal */
+        "Réservé" /* OutVal */
+        12 /* InVal */
+        "Réservé" /* OutVal */
+        13 /* InVal */
+        "Réservé" /* OutVal */
+        14 /* InVal */
+        "Réservé" /* OutVal */
+        15 /* InVal */
+        "Réservé" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in36 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        8 /* NumberValuePairs */
+        0 /* InVal */
+        "Diesel" /* OutVal */
+        1 /* InVal */
+        "Essence" /* OutVal */
+        2 /* InVal */
+        "Hybride Diesel" /* OutVal */
+        3 /* InVal */
+        "Hybride Essence" /* OutVal */
+        4 /* InVal */
+        "XXX1" /* OutVal */
+        5 /* InVal */
+        "XXX2" /* OutVal */
+        6 /* InVal */
+        "XXX3" /* OutVal */
+        7 /* InVal */
+        "XXX4" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in39 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        3 /* NumberValuePairs */
+        0 /* InVal */
+        "Inactif" /* OutVal */
+        1 /* InVal */
+        "Actif effectif" /* OutVal */
+        2 /* InVal */
+        "Actif non effectif" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in40 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        3 /* NumberValuePairs */
+        0 /* InVal */
+        "Inactif" /* OutVal */
+        1 /* InVal */
+        "Actif effectif" /* OutVal */
+        2 /* InVal */
+        "Actif non effectif" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in41 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        6 /* NumberValuePairs */
+        0 /* InVal */
+        "Inhibee" /* OutVal */
+        1 /* InVal */
+        "Attente" /* OutVal */
+        2 /* InVal */
+        "Active non effective" /* OutVal */
+        3 /* InVal */
+        "Active effective" /* OutVal */
+        4 /* InVal */
+        "Reprise" /* OutVal */
+        5 /* InVal */
+        "Defaut" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in42 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        5 /* NumberValuePairs */
+        0 /* InVal */
+        "Inhibee" /* OutVal */
+        1 /* InVal */
+        "Attente" /* OutVal */
+        2 /* InVal */
+        "Active non effective" /* OutVal */
+        3 /* InVal */
+        "Active effective" /* OutVal */
+        4 /* InVal */
+        "Defaut" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in43 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        5 /* NumberValuePairs */
+        0 /* InVal */
+        "Inhibee" /* OutVal */
+        1 /* InVal */
+        "Attente" /* OutVal */
+        2 /* InVal */
+        "Active" /* OutVal */
+        3 /* InVal */
+        "Reprise" /* OutVal */
+        4 /* InVal */
+        "Defaut" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in50 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        2 /* NumberValuePairs */
+        0 /* InVal */
+        "Pédale de frein relâchée" /* OutVal */
+        1 /* InVal */
+        "Pédale de frein enfoncée" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_in51 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        2 /* NumberValuePairs */
+        0 /* InVal */
+        "Pédale de frein relâchée" /* OutVal */
+        1 /* InVal */
+        "Appui sur pédale de frein" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_out26 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        2 /* NumberValuePairs */
+        0 /* InVal */
+        "Diesel" /* OutVal */
+        1 /* InVal */
+        "Essence" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin COMPU_VTAB
+        TqTreat_CV_CONV_TAB_Table_out28 /* Name */
+        "Conversion table" /* LongIdentifier */
+        TAB_VERB /* ConversionType */
+        3 /* NumberValuePairs */
+        0 /* InVal */
+        "GMP THERMIQUE PUR" /* OutVal */
+        1 /* InVal */
+        "GMP HYBRIDE" /* OutVal */
+        2 /* InVal */
+        "GMP ELEC" /* OutVal */
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+        TqTreat_FCT_Byp    /* Name */
+        "TqTreat_FCT_Byp"    /* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            Eng_nCkFil_B /* Identifier */
+            TreatTenms_nCkRaw_B /* Identifier */
+            TreatTenms_nCkGrd_B /* Identifier */
+            TreatTenms_nCkTDCDelta_B /* Identifier */
+            TreatTenms_nCkGrdFil_B /* Identifier */
+            TreatTDC_nCkFil_B /* Identifier */
+            TreatTDC_nCkTDCDelta_B /* Identifier */
+            TreatTDC_nCkGrd_B /* Identifier */
+            TreatTDC_nCkGrdFil_B /* Identifier */
+            EOM_tiEngModStp_B /* Identifier */
+            Ext_nEng1_B /* Identifier */
+            Ext_nEng2_B /* Identifier */
+            EOM_tiEngCrankStrt_B /* Identifier */
+            EOM_tiEngRun_B /* Identifier */
+            EOM_tiEngRunStrt_B /* Identifier */
+            Ext_nEngAvr_B /* Identifier */
+            Ext_nEngClc0_B /* Identifier */
+            Ext_nEngClc1_B /* Identifier */
+            TqSys_bAcvVehSpdCtlLim_B /* Identifier */
+            TqSys_bAcvVehSpdCtlReg_B /* Identifier */
+            TqSys_bTypFu_B /* Identifier */
+            TqSys_idxTqAccu_B /* Identifier */
+            TqSys_stTypPwtCf_B /* Identifier */
+            CoBrk_bAcvBrk_B /* Identifier */
+            TQTREAT_ACTIVE_BYP_C /* Identifier */
+        /end DEF_CHARACTERISTIC
+        /begin LOC_MEASUREMENT
+            TqTreat_002_Ext_nEngAvr_in /* Identifier */
+            TqTreat_008_TqDem_facGainFilTrv_nCk_in /* Identifier */
+            TqTreat_008_Ext_tiTDC_in /* Identifier */
+            TqTreat_004_CoPTSt_stEng_in /* Identifier */
+            TqTreat_004_EOM_facItpolCur_in /* Identifier */
+            TqTreat_004_EOM_idxBas1InjCur_in /* Identifier */
+            TqTreat_004_EOM_idxBas2InjCur_in /* Identifier */
+            TqTreat_002_Ext_nEng_in /* Identifier */
+            TqTreat_004_Ext_nEng_in /* Identifier */
+            TqTreat_006_Ext_nEng_in /* Identifier */
+            TqTreat_008_Ext_nEng_in /* Identifier */
+            TqTreat_006_Ext_nEngClc_in /* Identifier */
+            TqTreat_006_Ext_noCylEng_in /* Identifier */
+            TqTreat_004_Ext_stFuTypCf_in /* Identifier */
+            TqTreat_004_Ext_stVSCtlRegCf_in /* Identifier */
+            TqTreat_004_Ext_tCoMes_in /* Identifier */
+            TqTreat_004_VSCtl_stTqPTMaxCtl_in /* Identifier */
+            TqTreat_004_VSCtl_stTqPTMinCtl_in /* Identifier */
+            TqTreat_004_VSCtl_stVSLim_in /* Identifier */
+            TqTreat_004_VSCtl_stVSMax_in /* Identifier */
+            TqTreat_004_VSCtl_stVSReg_in /* Identifier */
+            TqTreat_002_TreatTDC_nCkFil_in /* Identifier */
+            TqTreat_002_TreatTDC_nCkGrd_in /* Identifier */
+            TqTreat_002_TreatTDC_nCkGrdFil_in /* Identifier */
+            TqTreat_002_TreatTDC_nCkTDCDelta_in /* Identifier */
+            TqTreat_010_Brk_bBrkAuto_in /* Identifier */
+            TqTreat_010_Ext_bBrkPedPrss_in /* Identifier */
+            TqTreat_010_Ext_bSecBrkPedPrssMes_in /* Identifier */
+            Eng_nCkFil_out /* Identifier */
+            TreatTenms_nCkRaw_out /* Identifier */
+            TreatTenms_nCkGrd_out /* Identifier */
+            TreatTenms_nCkTDCDelta_out /* Identifier */
+            TreatTenms_nCkGrdFil_out /* Identifier */
+            TreatTDC_nCkFil_out /* Identifier */
+            TreatTDC_nCkTDCDelta_out /* Identifier */
+            TreatTDC_nCkGrd_out /* Identifier */
+            TreatTDC_nCkGrdFil_out /* Identifier */
+            EOM_tiEngModStp_out /* Identifier */
+            Ext_nEng1_out /* Identifier */
+            Ext_nEng2_out /* Identifier */
+            EOM_tiEngCrankStrt_out /* Identifier */
+            EOM_tiEngRun_out /* Identifier */
+            EOM_tiEngRunStrt_out /* Identifier */
+            Ext_nEngAvr_out /* Identifier */
+            Ext_nEngClc0_out /* Identifier */
+            Ext_nEngClc1_out /* Identifier */
+            TqSys_bAcvVehSpdCtlLim_out /* Identifier */
+            TqSys_bAcvVehSpdCtlReg_out /* Identifier */
+            TqSys_bTypFu_out /* Identifier */
+            TqSys_idxTqAccu_out /* Identifier */
+            TqSys_stTypPwtCf_out /* Identifier */
+            CoBrk_bAcvBrk_out /* Identifier */
+        /end LOC_MEASUREMENT
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        TqTreat_RL_UBYTE_COL_DIRECT    /* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_RL_UWORD_COL_DIRECT     /* Name */
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_RL_SWORD_COL_DIRECT     /* Name */
+        FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_RL_ULONG_COL_DIRECT    /* Name */
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+
+    /begin CHARACTERISTIC
+        TreatTenms_bNCkSel_C	/* Name */
+        "Calibration permettrant de diffuser le régime moyenné sur 4 tours ou le régime filtré par un Low pass filter"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        TqTreat_2166_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2166_CM_VOID_SCALING	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin COMPU_METHOD
+        TqTreat_2166_CM_VOID_SCALING	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%1.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        TqTreat_2166_FCT_S0023_F01_CSMT_CGMT06_2166_v3_0	/* Name */
+        "TqTreat_2166_FCT_S0023_F01_CSMT_CGMT06_2166_v3_0"	/* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            TreatTenms_bNCkSel_C	/* Identifier */
+        /end DEF_CHARACTERISTIC
+    /end FUNCTION
+
+    /begin FUNCTION
+        TqTreat_2166_FCT_TqTreat_002_TEV_fct	/* Name */
+        "TqTreat_2166_FCT_TqTreat_002_TEV_fct"	/* LongIdentifier */
+        /begin SUB_FUNCTION
+            TqTreat_2166_FCT_S0023_F01_CSMT_CGMT06_2166_v3_0	/* Identifier */
+        /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        TqTreat_2166_RL_UBYTE_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+        TreatTDC_tiFilNCkGrd_C	/* Name */
+        "Calibration de la constante de temps du filtre temporel"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        TqTreat_2171_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2171_CM_EQ_LSB_0_0009765625	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin COMPU_METHOD
+        TqTreat_2171_CM_EQ_LSB_0_0009765625	/* Name */
+        "TqTreat_2171_CM_EQ_LSB_0_0009765625"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%12.10"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 0.0009765625
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        TqTreat_2171_FCT_S0082_F01_CSMT_CGMT06_2171_v3_0	/* Name */
+        "TqTreat_2171_FCT_S0082_F01_CSMT_CGMT06_2171_v3_0"	/* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            TreatTDC_tiFilNCkGrd_C	/* Identifier */
+        /end DEF_CHARACTERISTIC
+    /end FUNCTION
+
+    /begin FUNCTION
+        TqTreat_2171_FCT_TqTreat_008_DRE_fct	/* Name */
+        "TqTreat_2171_FCT_TqTreat_008_DRE_fct"	/* LongIdentifier */
+        /begin SUB_FUNCTION
+            TqTreat_2171_FCT_S0082_F01_CSMT_CGMT06_2171_v3_0	/* Identifier */
+        /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        TqTreat_2171_RL_UWORD_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+        TqSys_bTypTqAccuSel_C	/* Name */
+        "Choix du type de dépendance pour le calcul de l'indice de précision"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        TqTreat_2409_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_VOID_SCALING	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_facItpolThd_C	/* Name */
+        "Seuil de facteur d'interpolation entre les modes de combustion pour changer de zone"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        TqTreat_2409_RL_UWORD_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_EQ_LSB_0_0009765625	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_idxTqAccuBasInj_T	/* Name */
+        "Vecteur d'indice de précision en fonction de l'indice de mode de combustion"	/* LongIdentifier */
+        CURVE	/* Type */
+        0x0 /* Address */
+        TqTreat_2409_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_VOID_SCALING_a	/* Conversion */
+        1	/* LowerLimit */
+        10	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            TqTreat_2409_CM_VOID_SCALING_a	/* Conversion */
+            32	/* MaxAxisPoints */
+            1	/* LowerLimit */
+            32	/* UpperLimit */
+            AXIS_PTS_REF TqSys_idxTqAccuBasInj_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+        TqSys_idxTqAccuTCo_T	/* Name */
+        "Vecteur d'indice de précision en fonction de la température d'eau"	/* LongIdentifier */
+        CURVE	/* Type */
+        0x0 /* Address */
+        TqTreat_2409_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_VOID_SCALING_a	/* Conversion */
+        1	/* LowerLimit */
+        10	/* UpperLimit */
+        /begin AXIS_DESCR
+            COM_AXIS	/* Attribute */
+            NO_INPUT_QUANTITY	/* InputQuantity */
+            TqTreat_2409_CM_VOID_SCALING_b	/* Conversion */
+            10	/* MaxAxisPoints */
+            -40	/* LowerLimit */
+            214	/* UpperLimit */
+            AXIS_PTS_REF TqSys_tCoTqAccu_A
+        /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+        TqSys_idxTqAccuBasInj_A	/* Name */
+        "Bkpts d'indice de mode de combustion"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        TqTreat_2409_RL_UBYTE_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_VOID_SCALING_a	/* Conversion */
+        32	/* MaxAxisPoints */
+        1	/* LowerLimit */
+        32	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+        TqSys_tCoTqAccu_A	/* Name */
+        "Bkpts de température d'eau"	/* LongIdentifier */
+        0x0 /* Address */
+        NO_INPUT_QUANTITY	/* InputQuantity */
+        TqTreat_2409_RL_SWORD_X_INCR_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2409_CM_VOID_SCALING_b	/* Conversion */
+        10	/* MaxAxisPoints */
+        -40	/* LowerLimit */
+        214	/* UpperLimit */
+    /end AXIS_PTS
+
+    /begin COMPU_METHOD
+        TqTreat_2409_CM_EQ_LSB_0_0009765625	/* Name */
+        "TqTreat_2409_CM_EQ_LSB_0_0009765625"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%12.10"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 0.0009765625
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_2409_CM_VOID_SCALING	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%1.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_2409_CM_VOID_SCALING_a	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%3.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+        TqTreat_2409_CM_VOID_SCALING_b	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%5.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        TqTreat_2409_FCT_TqTreat_004_TEV_fct	/* Name */
+        "TqTreat_2409_FCT_TqTreat_004_TEV_fct"	/* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            TqSys_bTypTqAccuSel_C	/* Identifier */
+            TqSys_facItpolThd_C	/* Identifier */
+            TqSys_idxTqAccuBasInj_T	/* Identifier */
+            TqSys_idxTqAccuBasInj_A	/* Identifier */
+            TqSys_idxTqAccuTCo_T	/* Identifier */
+            TqSys_tCoTqAccu_A	/* Identifier */
+        /end DEF_CHARACTERISTIC
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        TqTreat_2409_RL_SWORD_X_INCR_DIRECT	/* Name */
+        AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_2409_RL_UBYTE_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_2409_RL_UBYTE_X_INCR_DIRECT	/* Name */
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+        TqTreat_2409_RL_UWORD_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+        TqSys_bNEngSel_C	/* Name */
+        "Choix du régime calculé pour le curatif"	/* LongIdentifier */
+        VALUE	/* Type */
+        0x0 /* Address */
+        TqTreat_2410_RL_UBYTE_COL_DIRECT	/* Deposit */
+        0	/* MaxDiff */
+        TqTreat_2410_CM_VOID_SCALING	/* Conversion */
+        0	/* LowerLimit */
+        1	/* UpperLimit */
+    /end CHARACTERISTIC
+
+    /begin COMPU_METHOD
+        TqTreat_2410_CM_VOID_SCALING	/* Name */
+        "Void scaling for unscaled variables"	/* LongIdentifier */
+        RAT_FUNC	/* ConversionType */
+        "%1.0"	/* Format */
+        "-"	/* Unit */
+        COEFFS 0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin FUNCTION
+        TqTreat_2410_FCT_S0063_F02_Calc___Synchro_Moteur	/* Name */
+        "TqTreat_2410_FCT_S0063_F02_Calc___Synchro_Moteur"	/* LongIdentifier */
+        /begin DEF_CHARACTERISTIC
+            TqSys_bNEngSel_C	/* Identifier */
+        /end DEF_CHARACTERISTIC
+    /end FUNCTION
+
+    /begin FUNCTION
+        TqTreat_2410_FCT_TqTreat_006_DRE_fct	/* Name */
+        "TqTreat_2410_FCT_TqTreat_006_DRE_fct"	/* LongIdentifier */
+        /begin SUB_FUNCTION
+            TqTreat_2410_FCT_S0063_F02_Calc___Synchro_Moteur	/* Identifier */
+        /end SUB_FUNCTION
+    /end FUNCTION
+
+    /begin RECORD_LAYOUT
+        TqTreat_2410_RL_UBYTE_COL_DIRECT	/* Name */
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+/end MODULE
+
+/* ------------------------------ END OF MODULE TqTreat ------------------------------------*/

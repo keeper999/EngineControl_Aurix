@@ -1,0 +1,872 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : pCylM                                                   */
+/* !Description     : CYLINDER PRESSURE ESTIMATOR                             */
+/*                                                                            */
+/* !Module          : pCylM                                                   */
+/*                                                                            */
+/* !File            : pCylM.a2l                                               */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Tue Dec 06 14:44:34 2011                              */
+/*   Model name       : pCylM_AUTOCODE.mdl                                    */
+/*   Model version    : 1.181                                                 */
+/*   Root subsystem   : /pCylM                                                */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/PCYLM/pCylM.a2v           $*/
+/* $Revision::   1.4                                                         $*/
+/* $Author::   HHAMLAOU                               $$Date::   08 Dec 2011 $*/
+/******************************************************************************/
+
+
+/begin MODULE pCylM  "pCylM"
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT pCylM_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      CylM_facCorPresCylNEng_T
+    /* Long Identifier        */      "Cartographie du gain corrigeant la pression cylindre en fonction du régime"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      pCylM_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.9999694824218750E+000
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      pCylM_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      7500.0
+      AXIS_PTS_REF                    CylM_nEng_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      CylM_nEng_A
+    /* Long Identifier        */      "Table de points d'appuis en régime"
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      pCylM_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_2
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      7500.0
+  /end AXIS_PTS
+  
+  
+  
+  /begin CHARACTERISTIC      
+    /* Name                   */      CylM_vCylInjPha_T
+    /* Long Identifier        */      "Volume cylindre au centre de l'injection stratifiée à la puissance gamma"
+    /* Characteristic Type    */      CURVE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Lookup1D_UWORD
+    /* Maxdiff                */      0
+    /* Conversion Method      */      pCylM_CM_3
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      1.9999694824218750E+000
+    /begin AXIS_DESCR                 
+      /* Description of X-Axis Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      pCylM_CM_4
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      720.0
+      AXIS_PTS_REF                    CylM_agInjPha_A
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      CylM_agInjPha_A
+    /* Long Identifier        */      "Table de points d'appuis en phasage injection"
+    /* Memory Adress          */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      pCylM_RL_Lookup1D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_4
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      720.0
+  /end AXIS_PTS
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_pCylEstimInjH1ETB_C
+    /* Long Identifier        */      "Valeur de la pression cylindre moyenne au cours de l'injection H1 en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_5
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.1199218750000006E+002
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_pCylEstimInjH2ETB_C
+    /* Long Identifier        */      "Valeur de la pression cylindre moyenne au cours de l'injection H2 en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_5
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.1199218750000006E+002
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_pCylEstimInjS1ETB_C
+    /* Long Identifier        */      "Valeur de la pression cylindre moyenne au cours de l'injection S1 en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_5
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.1199218750000006E+002
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_pCylEstimInjS2ETB_C
+    /* Long Identifier        */      "Valeur de la pression cylindre moyenne au cours de l'injection S2 en mode banc"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_5
+    /* Lower Limit            */      0.0
+    /* Upper Limit            */      5.1199218750000006E+002
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_agOfsConvVlvRef_C
+    /* Long Identifier        */      "Offset de conversion pour le phasage du FA de la soupape admission"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_4
+    /* Lower Limit            */      -720.0
+    /* Upper Limit            */      720.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_facConvVlvRef_C
+    /* Long Identifier        */      "Facteur de conversion pour le phasage du FA de la soupape admission"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_BYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_6
+    /* Lower Limit            */      -1.0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_bAcvETBCylPresEstim1_C
+    /* Long Identifier        */      "Booléen d'activation du mode banc pour l'estimation de la pression cylindre"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CylM_bAcvETBCylPresEstim2_C
+    /* Long Identifier        */      "Booléen d'activation du mode banc pour l'estimation de la pression cylindre"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      pCylM_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      pCylM_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agBegInjH1ReqRef
+    /* Long identifier        */      "Phasage de référence pour le début de l'injection H1"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agEndInjH1ReqRef
+    /* Long identifier        */      "Phasage de référence pour la fin de l'injection H1"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agBegInjH2ReqRef
+    /* Long identifier        */      "Phasage de référence du début de l'injection H2"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agEndInjH2ReqRef
+    /* Long identifier        */      "Phasage de référence pour la fin de l'injection H2"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agBegInjS1ReqRef
+    /* Long identifier        */      "Phasage de référence du début de l'injection S1."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agEndInjS1ReqRef
+    /* Long identifier        */      "Phasage de référence pour la fin de l'injection S1"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agBegInjS2ReqRef
+    /* Long identifier        */      "Phasage de référence du début de l'injection S2."
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agEndInjS2ReqRef
+    /* Long identifier        */      "Phasage de référence pour la fin de l'injection S2"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_agCkClsInVlvEstimRef1
+    /* Long identifier        */      "Angle de référence 1 (0.5mm) pour la fermeture admission de la soupape admission"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_8
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      720.0
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pDsThrPredRefIn
+    /* Long identifier        */      "Pression collecteur prédite sur le cylindre en cours d'admission"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.2428E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pDsThrPredRefCmpr
+    /* Long identifier        */      "Pression collecteur prédite sur le cylindre en cours de compression"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      pCylM_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.2428E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pCylEstimInjH1
+    /* Long identifier        */      "Estimation de la pression cylindre moyenne au cours de l'injection H1"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pCylEstimInjH2
+    /* Long identifier        */      "Estimation de la pression cylindre moyenne au cours de l'injection H2"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pCylEstimInjS1
+    /* Long identifier        */      "Estimation de la pression cylindre moyenne au cours de l'injection S1"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_pCylEstimInjS2
+    /* Long identifier        */      "Estimation de la pression cylindre moyenne au cours de l'injection S2"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimInjH1Cyl
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection H1"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimInjH2Cyl
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection H2"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimInjS1Cyl
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection S1"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimInjS2Cyl
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection S2"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimH1CylPrev
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection H1 du pas de temps précédent"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimH2CylPrev
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection H2 du pas de temps précédent"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimS1CylPrev
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection S1 du pas de temps précédent"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CylM_prm_pCylEstimS2CylPrev
+    /* Long identifier        */      "Vecteur (n cylindres) d'estimation de la pression cylindre moyenne au cours de l'injection S2 du pas de temps précédent"
+    /* Data type              */      UWORD
+    /* Conversion method      */      pCylM_CM_5
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0.0
+    /* Upper limit            */      5.1199218750000006E+002
+    /* Array Size             */
+    MATRIX_DIM                        1 6 1
+    READ_WRITE
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_1
+    /* Long identifier        */      "Q = V*32768.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 32768.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_2
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "RPM"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_3
+    /* Long identifier        */      "Q = V*32768.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "L"
+    /* Coefficients           */      COEFFS 0 32768.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_4
+    /* Long identifier        */      "Q = V*10.666666666667"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 10.666666666667 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_5
+    /* Long identifier        */      "Q = V*128.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "bar"
+    /* Coefficients           */      COEFFS 0 128.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_6
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF pCylM_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      pCylM_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_8
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "°Ck"
+    /* Coefficients           */      COEFFS 0 1.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      pCylM_CM_9
+    /* Long identifier        */      "Q = V*1000.000000000000"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.3"
+    /* Units                  */      "kPa"
+    /* Coefficients           */      COEFFS 0 1000.000000000000 0.000000000000 0 0 1.000000000000
+  /end COMPU_METHOD
+  
+  /begin FUNCTION pCylM
+    "V01NT1008118.001"
+    
+    /begin IN_MEASUREMENT
+      EngM_agCkClsInVlvEstimRef1
+      Eng_noCmprCyl
+      Eng_noInCyl
+      Eng_noInNxtCyl
+      Ext_nEng
+      Ext_pDsThrMesSI
+      InM_prm_pDsThrPredCyl
+      InjSys_prm_agBegInjH1ReqCyl
+      InjSys_prm_agBegInjH2ReqCyl
+      InjSys_prm_agBegInjS1ReqCyl
+      InjSys_prm_agBegInjS2ReqCyl
+      InjSys_prm_agEndInjH1ReqCyl
+      InjSys_prm_agEndInjH2ReqCyl
+      InjSys_prm_agEndInjS1ReqCyl
+      InjSys_prm_agEndInjS2ReqCyl
+      UsThrM_pAirExt
+    /end IN_MEASUREMENT
+    
+    /begin LOC_MEASUREMENT
+      CylM_agBegInjH1ReqRef
+      CylM_agBegInjH2ReqRef
+      CylM_agBegInjS1ReqRef
+      CylM_agBegInjS2ReqRef
+      CylM_agCkClsInVlvEstimRef1
+      CylM_agEndInjH1ReqRef
+      CylM_agEndInjH2ReqRef
+      CylM_agEndInjS1ReqRef
+      CylM_agEndInjS2ReqRef
+      CylM_pDsThrPredRefCmpr
+      CylM_pDsThrPredRefIn
+      CylM_prm_pCylEstimH1CylPrev
+      CylM_prm_pCylEstimH2CylPrev
+      CylM_prm_pCylEstimS1CylPrev
+      CylM_prm_pCylEstimS2CylPrev
+    /end LOC_MEASUREMENT
+    
+    /begin OUT_MEASUREMENT
+      CylM_pCylEstimInjH1
+      CylM_pCylEstimInjH2
+      CylM_pCylEstimInjS1
+      CylM_pCylEstimInjS2
+      CylM_prm_pCylEstimInjH1Cyl
+      CylM_prm_pCylEstimInjH2Cyl
+      CylM_prm_pCylEstimInjS1Cyl
+      CylM_prm_pCylEstimInjS2Cyl
+    /end OUT_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      CylM_agInjPha_A
+      CylM_agOfsConvVlvRef_C
+      CylM_bAcvETBCylPresEstim1_C
+      CylM_bAcvETBCylPresEstim2_C
+      CylM_facConvVlvRef_C
+      CylM_facCorPresCylNEng_T
+      CylM_nEng_A
+      CylM_pCylEstimInjH1ETB_C
+      CylM_pCylEstimInjH2ETB_C
+      CylM_pCylEstimInjS1ETB_C
+      CylM_pCylEstimInjS2ETB_C
+      CylM_vCylInjPha_T
+    /end DEF_CHARACTERISTIC
+    
+  /end FUNCTION
+  
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/
+

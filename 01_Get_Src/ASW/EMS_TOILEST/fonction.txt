@@ -1,0 +1,18 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+Eng_EveIni_tOilEstim|E|();|SCH.1|TOILEST|1|PTS_DOC_5050596||||0|0|0|0|Fonction d'accroche au moniteur de Reset.|
+Eng_EvePwL_tOilEstim|C|();|SCH.3|TOILEST|1|PTS_DOC_5050596||||0|0|0|0|Evènement Power Latch.|
+Eng_Sdl100ms_tOilEstim|E|();|SCH.2|TOILEST|1|PTS_DOC_5050596||||0|0|0|0|Fonction d'accroche au moniteur moyen.|
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|NONE|HEADER|1|NONE||||0|0|0|0||
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|NONE|HEADER|1|NONE||||0|0|0|0||
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|HEADER||||0|0|0|0||
+TOILEST_vidCalcThuilBruteMotTour|B|();|FCT1.5|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|La température d’huile estimée moteur tournant est fonction de la température d’eau, selon l’activation ou non de la pompe à eau pilotée. Ensuite, cette température est corrigée en fonction de la charge du moteur et des conditions extérieures.|
+TOILEST_vidCalcThuileInit|G|();|FCT2.2|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette fonction estime la température de l'huile à l’initialisation du calculateur.|
+TOILEST_vidCalcThuileMoteurCoupe|G|();|FCT1.6|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette fonction estime la température d'huile moteur coupé.|
+TOILEST_vidCalcThuileMotTournant|H|();|FCT1.4|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette fonction permet de calculer la température d’huile moteur tournant.|
+TOILEST_vidCalculerThuile|E|();|FCT1.3|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Une fois le calculateur initialisé, le calcul est effectué dans 2 situations distinctes : 1. Moteur tournant, 2. Moteur coupé.|
+TOILEST_vidCalculEtatEstimateur|B|();|FCT2.1|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette fonction permet de déterminer l’état de calcul de l’estimateur de température d’huile ainsi qu’un flag activant l’initialisation du modèle.|
+TOILEST_vidInitialiser|B|();|FCT1.2|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette sous-fonction positionne la température d’huile à une valeur calibrable à l’initialisation du calculateur|
+TOILEST_vidInitOutput|H|();|FCT1.1|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Initialisation des sorties du module.|
+TOILEST_vidPowerLatch|D|();|FCT1.9|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette sous-fonction permet de recopier les dernières valeurs de la température d’huile estimée, de la température d’eau et de la température extérieure de l'air avant leur sauvegarde en EEPROM lors du power-latch.|
+TOILEST_vidReconfigurerThuile|J|();|FCT1.8|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette fonction permet de saturer et/ou de reconfigurer la température d’huile estimée. Si elle atteint le maximum admissible, elle est saturée et un défaut est remonté au GD-GAR. Si on ne peut l'estimer correctement, elle bascule sur une valeur de repli.|
+TOILEST_vidSelectionnerThuile|F|();|FCT1.7|TOILEST|0|PTS_DOC_5050596||||0|0|0|0|Cette sous-fonction permet de sélectionner la température d’huile correspondant à l’état du moteur.|

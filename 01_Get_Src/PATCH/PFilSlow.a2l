@@ -1,0 +1,523 @@
+/begin MODULE  PFilSlow "PFilSlow 11.0"
+
+    /begin CHARACTERISTIC CoCha_bAcvCllIt_B "Bypass de CoCha_bAcvCllIt"
+      VALUE 0x0 PFILSLOW_RL_UBYTE 1 PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_bProtDfltAcv_C "Booléen d activation de la limitation protection différentiel sur la branche Air."
+      VALUE 0x0 PFILSLOW_RL_UBYTE 1 PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tiTranCllIt_B "Bypass de CoCha_tiTranCllIt"
+      VALUE 0x0 PFILSLOW_RL_UWORD 5 PFILSLOW_CM_2 /* s:0.01: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tiTranCll_C "Temporisation maximum de transition debouclage vers bouclage."
+      VALUE 0x0 PFILSLOW_RL_UWORD 5 PFILSLOW_CM_2 /* s:0.01: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoCha_tqAirMax_MP "Couple max entre MSR et branche air."
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoCha_tqAirMin_MP "Couple min entre MSR après traitement et ASR."
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC CoCha_tqEfcAirReq_B "Bypass de CoCha_tqEfcAirReq"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqIncCllIt_B "Bypass de CoCha_tqIncCllIt"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC CoCha_tqIncCll_C "Increment de la transition debouclage vers bouclage."
+      VALUE 0x0 PFILSLOW_RL_UWORD 2000 PFILSLOW_CM_4 /* Nm/s:0.0625: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT CoCha_tqReqASR_MP "Couple ASR après traitement."
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT CoCha_tqReqMSR_MP "Couple MSR après traitement."
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC PFILSLOW_ACTIVE_BYP_C "Booleen d activation des bypass des sorties du module PFILSLOW."
+      VALUE 0x0 PFILSLOW_RL_UBYTE 1 PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT PFilSlow_ModuleVersion_Major_MP "PFilSlow_ModuleVersion_Major_MP"
+      UBYTE PFILSLOW_CM_5 /* :1: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT PFilSlow_ModuleVersion_Minor_MP "PFilSlow_ModuleVersion_Minor_MP"
+      UBYTE PFILSLOW_CM_5 /* :1: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceAirAcv "Indique l activation du filtrage en acceleration"
+      UBYTE PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bAcceAirReq "Demande d activation du filtrage en accélération"
+      UBYTE PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDeceAirAcv "Indique l activation du filtrage en deceleration"
+      UBYTE PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDeceAirReq "Demande d activation du filtrage en décélération"
+      UBYTE PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_bDrivFilAirAcv "Filtre preventif branche air active"
+      UBYTE PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_bDrivFilAir_C "Activation du filtrage preventif branche avance"
+      VALUE 0x0 PFILSLOW_RL_UBYTE 1 PFILSLOW_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facScaAirAcceC1WghX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_SWORD_AXIS 16000 PFILSLOW_CM_6 /* rpm:0.25: */ 10 -8000 8000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facScaAirAcceC1Wgh_M "Facteur de ponderation 1 en configuration 1 an acceleration fonction du regime et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 10 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAirAcceC1WghX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirAcceC1_nEng_M "Coefficient 1 pour reserves en configuration 1 en acceleration en fonction du regime et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirAcceC1_rAcc_M "Coefficient 2 pour reserves en configuration 1 en acceleration en fonction du couple filtre branche avance et de la position pedale"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqAirX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_8 /* %:0.0078125: */ 10 0 100
+    AXIS_PTS_REF TqSys_facScaAirAcce_rAccY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirAcceC1_tq_M "Coefficient 3 pour reserves en configuration 1 en acceleration en fonction du rapport de boite et du delta entre couple max et couple filtre branche avance"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_facScaAir_tqX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirAcceC2_nEng_M "Coefficient 1 pour reserves en configuration 2 en acceleration en fonction du regime et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facScaAirAcce_rAccY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_UWORD_AXIS 100 PFILSLOW_CM_8 /* %:0.0078125: */ 10 0 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_facScaAirDeceC1Wgh_M "Facteur de ponderation 1 en configuration 1 an deceleration fonction du regime memorise et du rapport de boite memorise"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirDeceC1_nEng_M "Coefficient 1 pour reserves en configuration 1 en deceleration en fonction du regime memorise et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirDeceC1_tqDece_M "Coefficient 1 pour reserves en configuration 1 en acceleration en fonction du couple filtre branche avance et de la position pedale."
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqAirX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_facScaAirDece_tqDeceY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirDeceC1_tq_M "Coefficient 3 pour reserves en configuration 1 en deceleration en fonction du rapport de boite memorise et du delta entre couple max et couple filtre branche avance"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_facScaAir_tqX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facScaAirDeceC2_nEng_M "Coefficient 1 pour reserves en configuration 2 en deceleration en fonction du regime memorise et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 3 PFILSLOW_CM_7 /* :0.0078125: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facScaAirDece_tqDeceY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_SWORD_AXIS 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_facScaAir_nEngX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_SWORD_AXIS 16000 PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_facScaAir_tqX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_SWORD_AXIS 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_facWghAcceAirC1 "Facteur de ponderation de la configuration 1 en acceleration"
+      UWORD PFILSLOW_CM_7 /* :0.0078125: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facWghAcceAirC2 "Facteur de ponderation de la configuration 1 en acceleration pour la configuration 2"
+      UWORD PFILSLOW_CM_7 /* :0.0078125: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facWghDeceAirC1 "Facteur de ponderation de la configuration 1 en deceleration"
+      UWORD PFILSLOW_CM_7 /* :0.0078125: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_facWghDeceAirC2 "Facteur de ponderation de la configuration 1 en deceleration pour la configuration 2"
+      UWORD PFILSLOW_CM_7 /* :0.0078125: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqAirX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_SWORD_AXIS 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqAirY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY PFILSLOW_RL_UWORD_AXIS 6 PFILSLOW_CM_5 /* :1: */ 7 0 6
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_tqCkDeltaLim "Ecart entre le couple Max et le couple filtre branche avance"
+      UWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 0 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEfcAirFil_B "Bypass de TqSys_tqCkEfcAirFil"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaMinAirAcce_M "Delta minimum entre le couple non filtre et le couple filtre branche avance pour activer le filtrage en acceleration"
+      MAP 0x0 PFILSLOW_RL_UWORD 2000 PFILSLOW_CM_3 /* Nm:0.0625: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaMinAirDece_M "Delta minimum entre le couple non filtre et le couple filtre branche avance pour activer le filtrage en deceleration"
+      MAP 0x0 PFILSLOW_RL_UWORD 2000 PFILSLOW_CM_3 /* Nm:0.0625: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_6 /* rpm:0.25: */ 12 -8000 8000
+    AXIS_PTS_REF TqSys_facScaAir_nEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaOfsAirAcce_C "Offset ajoute au delta minimum de couple pour l activation de l acceleration au dessus du seuil de jeux"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqDeltaOfsAirDece_C "Offset ajoute au delta minimum de couple pour l activation de la deceleration pour les couples importants"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqEfcAirFilUnSat "Couple filtre branche air avant saturation"
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqOfsAcceAir "Reserves de couple en acceleration"
+      UWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 0 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqOfsAcceAirC1 "Reserves de couple en acceleration configuration 1"
+      UWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 0 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqOfsAir "Reserves de couple avant saturation et limitation"
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqOfsAirAcceC1_M "Reserves de base en configuration 1 en acceleration en fonction du couple filtre branche avance et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_UWORD 2000 PFILSLOW_CM_3 /* Nm:0.0625: */ 0 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqAirX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqOfsAirDeceC1_M "Reserves de base en configuration 1 en deceleration en fonction du couple filtre branche avance et du rapport de boite"
+      MAP 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_3 /* Nm:0.0625: */ 12 -2000 2000
+    AXIS_PTS_REF TqSys_tqAirX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY PFILSLOW_CM_5 /* :1: */ 7 0 6
+    AXIS_PTS_REF TqSys_tqAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqOfsDeceAir "Reserves de couple en deceleration"
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqOfsDeceAirC1 "Reserves de couple en deceleration configuration 1"
+      SWORD PFILSLOW_CM_3 /* Nm:0.0625: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqThd_tqDeltaAirDece_C "Seuil de couple pour application de l offset sur le seuil d activation en deceleration"
+      VALUE 0x0 PFILSLOW_RL_SWORD 4000 PFILSLOW_CM_3 /* Nm:0.0625: */ -2000 2000
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT PFILSLOW_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT PFILSLOW_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD PFILSLOW_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF PFILSLOW_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB PFILSLOW_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD PFILSLOW_CM_2 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 1 0 0 0 0.01
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_3 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 1 0 0 0 0.0625
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_4 "conversion_method"
+
+RAT_FUNC "%.2" "Nm/s"
+COEFFS 0 1 0 0 0 0.0625
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_6 "conversion_method"
+
+RAT_FUNC "%.2" "rpm"
+COEFFS 0 1 0 0 0 0.25
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_7 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 1 0 0 0 0.0078125
+/end COMPU_METHOD
+
+/begin COMPU_METHOD PFILSLOW_CM_8 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 1 0 0 0 0.0078125
+/end COMPU_METHOD
+
+/begin FUNCTION PFILSLOW_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	CoCha_bAcvCllIt_B
+	CoCha_bProtDfltAcv_C
+	CoCha_tiTranCllIt_B
+	CoCha_tiTranCll_C
+	CoCha_tqEfcAirReq_B
+	CoCha_tqIncCllIt_B
+	CoCha_tqIncCll_C
+	PFILSLOW_ACTIVE_BYP_C
+	TqSys_bDrivFilAir_C
+	TqSys_facScaAirAcceC1Wgh_M
+	TqSys_facScaAirAcceC1_nEng_M
+	TqSys_facScaAirAcceC1_rAcc_M
+	TqSys_facScaAirAcceC1_tq_M
+	TqSys_facScaAirAcceC2_nEng_M
+	TqSys_facScaAirDeceC1Wgh_M
+	TqSys_facScaAirDeceC1_nEng_M
+	TqSys_facScaAirDeceC1_tqDece_M
+	TqSys_facScaAirDeceC1_tq_M
+	TqSys_facScaAirDeceC2_nEng_M
+	TqSys_tqCkEfcAirFil_B
+	TqSys_tqDeltaMinAirAcce_M
+	TqSys_tqDeltaMinAirDece_M
+	TqSys_tqDeltaOfsAirAcce_C
+	TqSys_tqDeltaOfsAirDece_C
+	TqSys_tqOfsAirAcceC1_M
+	TqSys_tqOfsAirDeceC1_M
+	TqSys_tqThd_tqDeltaAirDece_C
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	CoCha_tqAirMax_MP
+	CoCha_tqAirMin_MP
+	CoCha_tqReqASR_MP
+	CoCha_tqReqMSR_MP
+	PFilSlow_ModuleVersion_Major_MP
+	PFilSlow_ModuleVersion_Minor_MP
+	TqSys_bAcceAirAcv
+	TqSys_bAcceAirReq
+	TqSys_bDeceAirAcv
+	TqSys_bDeceAirReq
+	TqSys_bDrivFilAirAcv
+	TqSys_facWghAcceAirC1
+	TqSys_facWghAcceAirC2
+	TqSys_facWghDeceAirC1
+	TqSys_facWghDeceAirC2
+	TqSys_tqCkDeltaLim
+	TqSys_tqEfcAirFilUnSat
+	TqSys_tqOfsAcceAir
+	TqSys_tqOfsAcceAirC1
+	TqSys_tqOfsAir
+	TqSys_tqOfsDeceAir
+	TqSys_tqOfsDeceAirC1
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE PFilSlow ------------------------------------*/

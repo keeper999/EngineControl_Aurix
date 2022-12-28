@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+EngSt_EveRst_EngStab|A|();|SCH.1|ENGSTAB|1|V02 NT 09 03216||||0|0|0|0|Evénement reset du calculateur
+EngSt_SdlMid_EngStab|A|();|SCH.2|ENGSTAB|1|V02 NT 09 03216||||0|0|0|0|Moniteur moyen de la fonction EngSt.
+ENGSTAB_vidCalcEngineStabilised|A|();|FCT1.2|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction qui gère l’ensemble de la stratégie en fonction des conditions véhicule.
+ENGSTAB_vidCheckEngineLoadStable|A|();|FCT1.5|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|La variable Engine_load_not_stable passe à 0 si au bout du temps Engine_load_e_s_window_c la variable Engine_load n’a pas dépassé la valeur précédente +- Engine_load_e_s_limit_c.
+ENGSTAB_vidCheckGearEngagedStab|A|();|FCT1.8|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction permettant la mise de la variable Gear_engaged_not_stable à 0 si au bout du temps Gear_engaged_e_s_window_c, la variable Gear_engaged n’a pas évolué.
+ENGSTAB_vidEngCondTimer|A|();|FCT2.4|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction renfermant un compteur décroissant. EngStab_SampleTiMid_SC représente la période d’appel de la tache.
+ENGSTAB_vidEngCondTimerOut|A|();|FCT2.5|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction de mise à 1 du booléen Engine_stabilised, si le délai Engine_stable_t_d_c est écoulé.
+ENGSTAB_vidEngineConditions|B|();|FCT2.1|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Cette fonction détermine la stabitilité du moteur : Si une seule de ces conditions est validée alors cela signifie que le moteur n’est pas stable.
+ENGSTAB_vidEngineCondNotStable|A|();|FCT2.2|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction permettant la mise à 0 des conditions de stabilité du moteur et le rebouclage pour un fonctionnement autonome du test des conditions de stabilité.
+ENGSTAB_vidEngineCondStable|A|();|FCT2.3|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Si au bout de la durée Engine_stable_delay_c les conditions de stabilité sont toujours validées, le booléen Engine_stabilised passe à 1.
+ENGSTAB_vidEngLoadTimer|A|();|FCT1.6|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Cette fonction représente un compteur décroissant. EngStab_SampleTiMid_SC représente la période d’appel de la tache.
+ENGSTAB_vidEngLoadTimerOut|A|();|FCT1.7|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction qui permet la mise à 0 de la variable Engine_load_not_stable dans le cas où le compteur est nul et la variable Engine_load est comprise dans l’intervalle Engine_load_last +- Engine_load_e_s_limit_c.
+ENGSTAB_vidGearEngagedTimer|A|();|FCT1.9|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction représentant un compteur décroissant. EngStab_SampleTiMid_SC représente la période d’appel de la tache.
+ENGSTAB_vidGearEngagedTimerOut|A|();|FCT1.10|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction permettant la mise de booléen gear_engaged_not_stable à 0, si au bout du temps Gear_engaged_e_s_window_c la variable Gear_engaged n’a pas évolué.
+ENGSTAB_vidInitEngineStabilised|A|();|FCT1.1|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction qui permet la réinitialisation des variables internes la à chaque reset du calculateur.
+ENGSTAB_vidVehicleNotRunning|A|();|FCT2.6|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Lorsque les conditions qui permettent de juger la stabilité du moteur ne sont pas remplies, on recopie les variables Engine_load et Gear_engaged dans des plages mémoire qui permettront ensuite de suivre leur évolution.
+ENGSTAB_vidVehicleRunning|A|();|FCT1.4|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Les conditions de traitement de la variable Engine_stabilised sont remplies, les sous systèmes Check_gear_engaged_stable et Check_engine_load_stable traitent les informations issues des variables Gear_engaged et Engine_load.
+ENGSTAB_vidVehicleRunningCond|A|();|FCT1.3|ENGSTAB|0|V02 NT 09 03216||||0|0|0|0|Fonction qui détermine l'état RUNNING du véhicule

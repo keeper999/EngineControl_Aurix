@@ -1,0 +1,17 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+FuPmp_EveRst_PropFuPmp|C|();|SCH.1|PROPFUPMP|1|PTS_DOC_6562300||||0|0|0|0|ECU Event Reset.
+FuPmp_SdlFast_PropFuPmp|E|();|SCH.2|PROPFUPMP|1|PTS_DOC_6562300||||0|0|0|0|Fast scheduler.
+FuPmp_SdlSlow_PropFuPmp|A|();|SCH.3|PROPFUPMP|1|PTS_DOC_6562300||||0|0|0|0|Moniteur lent de la fonction FuPmp.
+GDGAR_bGetFRM|A|(uint16 u16ldxDft) boolean;|1|HEADER|1|NONE||||0|0|0|0|gestion des variables FRM
+GDGAR_vidGdu|A|(uint16 u16IdxDft, boolean bDgo, boolean bMonRun, boolean Ns_bMonWait);|API.1|HEADER|1|NONE||||0|0|0|0|Gets the value of the GDU states.
+PROPFUPMP_vidCmdPropFuPmp|C|();|FCT1.3|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The PWM signal request is linearized then sent to the BSW. If the actuator test is in progress, then it’s the actuator test set point value which is sent to the BSW.
+PROPFUPMP_vidCmdPropFuPmpNull|C|();|FCT2.1|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|When Ctrl_bAcv_FuTnkPmp = 0  a Null PWM command is sent.
+PROPFUPMP_vidDiag_rSt|C|();|FCT1.9|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The diagnosis results depend on the status of the PWM and on the frequency of diagnosis signal.
+PROPFUPMP_vidDiagPropFuPmp|A|();|FCT1.5|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|According to the PWM and the frequency of the diagnosis signal of proportional fuel pump sent by the BSW, we determine the pump status.
+PROPFUPMP_vidInit|D|();|FCT1.1|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The following outputs Ext_rFlowFuTnkPmp and Ext_stDftFuTnkPmp are initialized at event reset. The command frequency of proportional fuel pump is sent to BSW only at reset event of ECU.
+PROPFUPMP_vidInitOutput|B|();|FCT1.2|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|initialisation des sorties.
+PROPFUPMP_vidPropFuPmp_DiagHw|C|();|FCT1.4|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The driver electrical diagnosis results are directly sent by the BSW. The authorization flow for the electrical diagnosis are set to 1, if there is no diagnosis inhibition requested and if the power command relay is closed.
+PROPFUPMP_vidPropFuPmp_Sel|A|();|FCT1.10|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|If a failure is detected on the diagnosis signal, the pump status is frozen to its last valid value. If a failure is confirmed, the status is set to a recovery value.
+PROPFUPMP_vidPropFuPmpDiag_Acq|A|();|FCT1.6|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The BSW send the value of PWM and the frequency of the diagnosis signal of the proportional fuel pump.
+PROPFUPMP_vidPropfuPmpDiag_Conv|A|();|FCT1.7|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The proportional fuel pump status is built from the PWM sent by the MJP module using the following cartography.
+PROPFUPMP_vidPropFuPmpDiag_Diag|A|();|FCT1.8|PROPFUPMP|0|PTS_DOC_6562300||||0|0|0|0|The diagnosis are authorized if there is no inhibition requested and if the power command relay is closed since a calibrated time.

@@ -1,0 +1,1983 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : tiFuSp                                                  */
+/* !Description     : CALCUL DU TEMPS D INJECTION                             */
+/*                                                                            */
+/* !Module          : tiFuSp                                                  */
+/*                                                                            */
+/* !File            : tiFuSp.a2l                                              */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Sun Nov 17 20:13:35 2013                              */
+/*   Model name       : tiFuSp_AUTOCODE.mdl                                   */
+/*   Model version    : 1.766                                                 */
+/*   Root subsystem   : /tiFuSp                                               */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/FUSYS/TIFUSP/tiFuSp.a2v         $*/
+/* $Revision::   1.23                                                        $*/
+/* $Author::   HHAMLAOU                               $$Date::   19 Nov 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   tiFuSp
+    /*   LongIdentifier */   "tiFuSp Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   tiFuSp_RL_Lookup2D_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS1CorH2_M
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S1 par rapport à l'offset sur H2 en cas de multiinjection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_1
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   1.0485439999999990E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   InjrSys_prm_tiWoutInjPrevS1
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   2.0971199999999990E+002
+          AXIS_PTS_REF             InjrSys_tiBtwnInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   InjrSys_prm_tiOfsH2Cor
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -1.0485759999999999E+002
+          /*   UpperLimit     */   104.8544
+          AXIS_PTS_REF             InjrSys_tiOfsCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS2CorS1_M
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S2 par rapport à l'offset sur S1 en cas de multiinjection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_1
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   1.0485439999999990E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   InjrSys_prm_tiWoutInjPrevS2
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   2.0971199999999990E+002
+          AXIS_PTS_REF             InjrSys_tiBtwnInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   InjrSys_prm_tiOfsS2CorPrev
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -1.0485759999999999E+002
+          /*   UpperLimit     */   104.8544
+          AXIS_PTS_REF             InjrSys_tiOfsCor_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsH2CorPFu_T
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection H2 en fonction de la pression rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjrSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS1CorPFu_T
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S1 en fonction de la pression rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjrSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS2CorPFu_T
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S2 en fonction de la pression rail"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjrSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiInjTotETB_C
+       /*   LongIdentifier */   "Temps d'injection en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895344000001E+007
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiInjTotETB_M
+       /*   LongIdentifier */   "Cartographie en mode banc du temps d'injection en fonction du régime et de la pression collecteur"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895344000001E+007
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_6
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.2428E+002
+          AXIS_PTS_REF             Ext_pDsThrMesSIY_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             Ext_nEngX_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiInjMin_C
+       /*   LongIdentifier */   "Saturation basse du temps d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiInjMin_M
+       /*   LongIdentifier */   "Cartographie d'estimation du temps d'injection minimum en fontion de la pression rail et du profil d'injection courant"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_10
+          /*   MaxAxisPoints  */   8
+          /*   LowerLimit     */   1.0
+          /*   UpperLimit     */   8.0
+          AXIS_PTS_REF             InjrSys_IdxInjrMdlInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjrSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_agEndInjSpcModMax_M
+       /*   LongIdentifier */   "Cartographie d'angle de fin d'injection maximal quand le mode spécifique est activé"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   720.0
+          AXIS_PTS_REF             InjSys_agCkClsInVlvEstimRef1_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjSys_pFuRailMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_mFuInjEstimETB_M
+       /*   LongIdentifier */   "Cartographie d'estimation de masse injectée en fontion de la pression rail et du temps d'injection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_8
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   1.3743895344000001E+007
+          AXIS_PTS_REF             InjrSys_tiInjTotETB_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             InjrSys_pFuRailSplMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsH2Cor_M
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection H2 en cas de multi-injection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   2.0971199999999990E+002
+          AXIS_PTS_REF             InjrSys_tiBtwnInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   1.3743895344000001E+007
+          AXIS_PTS_REF             InjrSys_tiInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS1Cor_M
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S1 en cas de multi-injection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   2.0971199999999990E+002
+          AXIS_PTS_REF             InjrSys_tiBtwnInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   1.3743895344000001E+007
+          AXIS_PTS_REF             InjrSys_tiInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_tiOfsS2Cor_M
+       /*   LongIdentifier */   "Cartographie pour la correction du temps mort injecteur de l'injection S2 en cas de multi-injection"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   2.0971199999999990E+002
+          AXIS_PTS_REF             InjrSys_tiBtwnInj_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   1.3743895344000001E+007
+          AXIS_PTS_REF             InjrSys_tiInj_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_rTiInjH2ETB_C
+       /*   LongIdentifier */   "Ratio de fractionnement en mode banc du temps d'injection pour H2 pour le cylindre en admission"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_rTiInjS1ETB_C
+       /*   LongIdentifier */   "Ratio de fractionnement en mode banc du temps d'injection pour S1pour le cylindre en compression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_rTiInjS2ETB_C
+       /*   LongIdentifier */   "Ratio de fractionnement en mode banc du temps d'injection pour S2 pour le cylindre en compression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_noETBSelMassFuEstim_C
+       /*   LongIdentifier */   "Mode de sélection de la masse injectée estimée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_noETBSelMassFuReq_C
+       /*   LongIdentifier */   "Choix en mode banc de la détermination du temps d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   TIFUSP_u8Inhib
+       /*   LongIdentifier */   "inhibition of model tiFuSp"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_bAcvMFuInjCmprCyl_C
+       /*   LongIdentifier */   "Booléen d'activation de la prise en compte du cylindre en compression pour le calcul de la masse estimée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_bAcvTiInjETB_C
+       /*   LongIdentifier */   "Booléen sélectionnant le mode banc du calcul du temps d'injection"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl1_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 1"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl2_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 2"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl3_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 3"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl4_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 4"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl5_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 5"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facCorInjETBCyl6_C
+       /*   LongIdentifier */   "Facteur de pondération en mode banc du temps d'injection pour le Cylindre 6"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   InjrSys_facFuSysCor_M
+       /*   LongIdentifier */   "Correctif sur le temps d'injection pour la prise en compte des ondes de pression dans le rail"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9921875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   1.3743895344000001E+007
+          AXIS_PTS_REF             InjrSys_ti_facCorInjGain_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   tiFuSp_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             InjrSys_nEng_facCorInjGain_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_tiBtwnInj_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps entre deux injections"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   InjrSys_prm_tiWoutInjPrevS1
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   2.0971199999999990E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_tiOfsCor_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps pour la correction du temps mort injecteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   InjrSys_prm_tiOfsH2Cor
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   -1.0485759999999999E+002
+       /*   UpperLimit     */   104.8544
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_pFuRailMes_A
+       /*   LongIdentifier */   "Table de points d'appui en pression rail"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_4
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_IdxInjrMdlInj_A
+       /*   LongIdentifier */   "Table de points d'appuis de la cartographie selectionnée en fonction du type de profil d'injection et de la classe injecteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_10
+       /*   MaxAxisPoints  */   8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   8.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_tiInjTotETB_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps d'injection"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895344000001E+007
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_pFuRailSplMes_A
+       /*   LongIdentifier */   "Table de points d'appuis en pression rail mesurée à l'évènement Spill"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_4
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_tiInj_A
+       /*   LongIdentifier */   "Table de points d'appuis en temps d'injection"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895344000001E+007
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_ti_facCorInjGain_A
+       /*   LongIdentifier */   "Table de points d'appuis en gain injecteur brut"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.3743895344000001E+007
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   InjrSys_nEng_facCorInjGain_A
+       /*   LongIdentifier */   "Table de points d'appuis en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   tiFuSp_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   tiFuSp_CM_5
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_mFuInjReq
+       /*   LongIdentifier     */   "Vecteur (n injections) de consignes de masse de carburant"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_22
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_facGain
+       /*   LongIdentifier     */   "Vecteur (n injections) des gains injecteur"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_23
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agEndInjH1
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour la fin de l'injection H1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agEndInjH2
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour la fin de l'injection H2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agEndInjS1
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour la fin de l'injection S1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_agBegInjH1
+       /*   LongIdentifier     */   "Phasage pour le début de l'injection H1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_facGainCor
+       /*   LongIdentifier     */   "Vecteur (n injections) des gains injecteur finaux"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_23
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_agWdInjSpcModMax
+       /*   LongIdentifier     */   "Largeur d'angle d'injection maximale en mode spécifique"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_tiInjSpcModMax
+       /*   LongIdentifier     */   "Durée d'injection max en mode spécifique"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_25
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895343999000E+007
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjReqSat
+       /*   LongIdentifier     */   "Vecteur (n injections)  des temps d'injection saturés"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_25
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895343999000E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiEfcInj_MP
+       /*   LongIdentifier     */   "Vecteur (n injections) du temps d'injection effectif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_25
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjReqSatMin
+       /*   LongIdentifier     */   "Vecteur (n injections)  des temps d'injection saturés par le ti min"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_25
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895343999000E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agEndInjS2Prev
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage (fin) pour l'injection précédant S2"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agEndInjS1Prev
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage (fin) pour l'injection précédant S1"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   tiFuSp_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjMFu
+       /*   LongIdentifier     */   "Vecteur (n injections) des consignes de temps d'injection pour l'estimation de la masse d'essence injectée"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjH1TmpCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection H1 (sans ICLC)"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjH2ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection H2"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjS1ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection S1"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjS2ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection S2"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjH1ReqCyl
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection H1"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInj
+       /*   LongIdentifier     */   "Vecteur (n injections) des consignes de temps d'injection"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_26
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.3743895344000000E+004
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjH1TmpCylPrev
+       /*   LongIdentifier     */   "Valeur précédente du Vecteur (n cylindres) des temps d'injection pour l'injection H1 (sans ICLC)"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiH2ReqCylPrev
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection H2 du pas de temps précédent"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiS1ReqCylPrev
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection S1du pas de temps précédent"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiS2ReqCylPrev
+       /*   LongIdentifier     */   "Vecteur (n cylindres) des temps d'injection pour l'injection S2 du pas de temps précédent"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjReq
+       /*   LongIdentifier     */   "Vecteur (n injections)  des temps d'injection"
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   1.3743895344000001E+007
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiWoutInjPrevS2
+       /*   LongIdentifier     */   "Vecteur en temps indiquant la durée sans injection avant S2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   2.0971199999999990E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiWoutInjPrevS1
+       /*   LongIdentifier     */   "Vecteur en temps indiquant la durée sans injection avant S1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   2.0971199999999990E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiWoutInjPrevH2
+       /*   LongIdentifier     */   "Vecteur en temps indiquant la durée sans injection avant H2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   2.0971199999999990E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjH1
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour le début de l'injection H1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjH2
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour le début de l'injection H2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjS1
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour le début de l'injection S1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjS2
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage pour le début de l'injection S2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjS2Prev
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage (début) pour l'injection précédant S2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_agBegInjS1Prev
+       /*   LongIdentifier     */   "Vecteur de consignes de phasage (début) pour l'injection précédant S1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_7
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   720.0
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_mFuInjH2Req
+       /*   LongIdentifier     */   "Vecteur de consignes de masse pour l'injection H2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_mFuInjS1Req
+       /*   LongIdentifier     */   "Vecteur de consignes de masse pour l'injection S1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_mFuInjS2Req
+       /*   LongIdentifier     */   "Vecteur de consignes de masse pour l'injection S2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_mFuInjEstim
+       /*   LongIdentifier     */   "Masse de carburant injectée avec prise en compte des saturations injecteurs"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   tiFuSp_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   4.8827379941940308E+002
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjOfs
+       /*   LongIdentifier     */   "Vecteur (n injections) des temps mort injecteur"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiInjOfsCor
+       /*   LongIdentifier     */   "Vecteur (n injections) du temps mort de l'injecteur corrigé"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiOfsCor
+       /*   LongIdentifier     */   "Vecteur (n injections) du correctif sur le temps mort injecteur en cas de multi-injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiOfsS2Cor
+       /*   LongIdentifier     */   "Vecteur de temps permettant la correction du temps mort injecteur de l'injection S2 en cas de multi-injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiOfsS1Cor
+       /*   LongIdentifier     */   "Vecteur de temps permettant la correction du temps mort injecteur de l'injection S1 en cas de multi-injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiOfsS2CorPrev
+       /*   LongIdentifier     */   "Vecteur de temps permettant la correction du temps mort injecteur de l'injection précédant S2 en cas de multi-injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_tiOfsH2Cor
+       /*   LongIdentifier     */   "Vecteur de temps permettant la correction du temps mort injecteur de l'injection H2 en cas de multi-injection"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   tiFuSp_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -1.0485759999999999E+002
+       /*   UpperLimit         */   104.8544
+       MATRIX_DIM                   1 2 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_bAcvRstrtSTT
+       /*   LongIdentifier     */   "Booléen d'activation des consignes de Ti en cas de redémarrage STT"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   tiFuSp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_facCorInjETBIn
+       /*   LongIdentifier     */   "Facteur de pondération en mode banc du temps d'injection pour le cylindre en admission"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   tiFuSp_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9921875
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_facCorInjETBCmpr
+       /*   LongIdentifier     */   "Facteur de pondération en mode banc du temps d'injection pour le cylindre en compression"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   tiFuSp_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9921875
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   InjrSys_prm_bDettiInjMin
+       /*   LongIdentifier     */   "Vecteur de booleen de detection d'atteinte du ti min"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   tiFuSp_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 6 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_1
+       /*   LongIdentifier */   "Q = (V+104.8576)*312.5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 312.5 32768 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_2
+       /*   LongIdentifier */   "Q = V*312.5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 312.5 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_3
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_4
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_6
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_7
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_8
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_9
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_10
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            tiFuSp_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_13
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   ""
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_14
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_15
+       /*   LongIdentifier */   "Q = V*134217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kg"
+       COEFFS                   0 134217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_16
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_17
+       /*   LongIdentifier */   "Q = V*64"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 64 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_18
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "etat"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_19
+       /*   LongIdentifier */   "Q = V/3.2"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "µs"
+       COEFFS                   0 1 0 0 0 3.2
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_20
+       /*   LongIdentifier */   "Q = (V-84)*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 10.6666666667 -896 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_21
+       /*   LongIdentifier */   "Q = (V+36)*2.66666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 2.66666666667 96 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_22
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_23
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s/kg"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_24
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Ck"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_25
+       /*   LongIdentifier */   "Q = V/1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ms"
+       COEFFS                   0 1 0 0 0 1000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   tiFuSp_CM_26
+       /*   LongIdentifier */   "Q = V*312500"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 312500 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   tiFuSp_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   tiFuSp
+       /*   LongIdentifier */   "PTS_DOC_5182663.009"
+
+       /begin DEF_CHARACTERISTIC
+          InjrSys_IdxInjrMdlInj_A
+          InjrSys_agEndInjSpcModMax_M
+          InjrSys_bAcvMFuInjCmprCyl_C
+          InjrSys_bAcvTiInjETB_C
+          InjrSys_facCorInjETBCyl1_C
+          InjrSys_facCorInjETBCyl2_C
+          InjrSys_facCorInjETBCyl3_C
+          InjrSys_facCorInjETBCyl4_C
+          InjrSys_facCorInjETBCyl5_C
+          InjrSys_facCorInjETBCyl6_C
+          InjrSys_facFuSysCor_M
+          InjrSys_mFuInjEstimETB_M
+          InjrSys_nEng_facCorInjGain_A
+          InjrSys_noETBSelMassFuEstim_C
+          InjrSys_noETBSelMassFuReq_C
+          InjrSys_pFuRailMes_A
+          InjrSys_pFuRailSplMes_A
+          InjrSys_rTiInjH2ETB_C
+          InjrSys_rTiInjS1ETB_C
+          InjrSys_rTiInjS2ETB_C
+          InjrSys_tiBtwnInj_A
+          InjrSys_tiInjMin_C
+          InjrSys_tiInjMin_M
+          InjrSys_tiInjTotETB_A
+          InjrSys_tiInjTotETB_C
+          InjrSys_tiInjTotETB_M
+          InjrSys_tiInj_A
+          InjrSys_tiOfsCor_A
+          InjrSys_tiOfsH2CorPFu_T
+          InjrSys_tiOfsH2Cor_M
+          InjrSys_tiOfsS1CorH2_M
+          InjrSys_tiOfsS1CorPFu_T
+          InjrSys_tiOfsS1Cor_M
+          InjrSys_tiOfsS2CorPFu_T
+          InjrSys_tiOfsS2CorS1_M
+          InjrSys_tiOfsS2Cor_M
+          InjrSys_ti_facCorInjGain_A
+          TIFUSP_u8Inhib
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          InjrSys_agBegInjH1
+          InjrSys_agWdInjSpcModMax
+          InjrSys_bAcvRstrtSTT
+          InjrSys_facCorInjETBCmpr
+          InjrSys_facCorInjETBIn
+          InjrSys_prm_agBegInjH1
+          InjrSys_prm_agBegInjH2
+          InjrSys_prm_agBegInjS1
+          InjrSys_prm_agBegInjS1Prev
+          InjrSys_prm_agBegInjS2
+          InjrSys_prm_agBegInjS2Prev
+          InjrSys_prm_agEndInjH1
+          InjrSys_prm_agEndInjH2
+          InjrSys_prm_agEndInjS1
+          InjrSys_prm_agEndInjS1Prev
+          InjrSys_prm_agEndInjS2Prev
+          InjrSys_prm_bDettiInjMin
+          InjrSys_prm_facGain
+          InjrSys_prm_facGainCor
+          InjrSys_prm_mFuInjH2Req
+          InjrSys_prm_mFuInjReq
+          InjrSys_prm_mFuInjS1Req
+          InjrSys_prm_mFuInjS2Req
+          InjrSys_prm_tiEfcInj_MP
+          InjrSys_prm_tiH2ReqCylPrev
+          InjrSys_prm_tiInjH1TmpCyl
+          InjrSys_prm_tiInjH1TmpCylPrev
+          InjrSys_prm_tiInjMFu
+          InjrSys_prm_tiInjOfs
+          InjrSys_prm_tiInjOfsCor
+          InjrSys_prm_tiInjReq
+          InjrSys_prm_tiInjReqSat
+          InjrSys_prm_tiInjReqSatMin
+          InjrSys_prm_tiOfsCor
+          InjrSys_prm_tiOfsH2Cor
+          InjrSys_prm_tiOfsS1Cor
+          InjrSys_prm_tiOfsS2Cor
+          InjrSys_prm_tiOfsS2CorPrev
+          InjrSys_prm_tiS1ReqCylPrev
+          InjrSys_prm_tiS2ReqCylPrev
+          InjrSys_prm_tiWoutInjPrevH2
+          InjrSys_prm_tiWoutInjPrevS1
+          InjrSys_prm_tiWoutInjPrevS2
+          InjrSys_tiInjSpcModMax
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          InjrSys_mFuInjEstim
+          InjrSys_prm_tiInj
+          InjrSys_prm_tiInjH1ReqCyl
+          InjrSys_prm_tiInjH2ReqCyl
+          InjrSys_prm_tiInjS1ReqCyl
+          InjrSys_prm_tiInjS2ReqCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

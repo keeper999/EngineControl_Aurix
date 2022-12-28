@@ -1,0 +1,21 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+INJCRK_ANTIFLOOD_vidConfAntFlood|C|();|FCT2.3|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la fonction INJCRK_ANTIFLOOD_vidPosPedNok si Dv_position_pedale_relative est inférieur ou égale à la différence entre Anti_flood_pedale_limit et Anti_flood_pedale_hysteresis, sinon INJCRK_ANTIFLOOD_vidPosPedOk sera appelé
+INJCRK_ANTIFLOOD_vidCranking|B|();|FCT1.5|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la fonction INJCRK_ANTIFLOOD_vidEngSpdOk si Regime_moteur_32 est inférieur à Anti_flood_regime_reinj, sinon INJCRK_ANTIFLOOD_vidEngSpdNok sera appelé
+INJCRK_ANTIFLOOD_vidCrkFuelling|B|();|FCT1.2|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction qui active la fonction INJCRK_ANTIFLOOD_vidInitAntFlood si Vehicle_active_state et VS_CRANKING sont égaux
+INJCRK_ANTIFLOOD_vidDetAntiFlood|B|();|FCT2.1|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la focntions INJCRK_ANTIFLOOD_vidIniAntiFlood si Dv_position_pedale_relative est supérieur à Anti_flood_pedale_limit
+INJCRK_ANTIFLOOD_vidEngSpdNok|A|();|FCT1.7|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation à 0 de Disable_inj_for_anti_flood et de Function_anti_flood
+INJCRK_ANTIFLOOD_vidEngSpdOk|B|();|FCT1.6|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la focntions INJCRK_ANTIFLOOD_vidDetAntiFlood si Function_anti_flood égale à 1, sinon INJCRK_ANTIFLOOD_vidConfAntFlood sera appelé
+INJCRK_ANTIFLOOD_vidEntryInit|B|();|SCH.1|INJCRK_ANTIFLOOD|1|V02 NT 08 04908||||0|0|0|0|Fonction d'accroche à l'evenement Reset
+INJCRK_ANTIFLOOD_vidIniRunToCrnk|A|();|FCT1.8|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation à 0 de Disable_inj_for_anti_flood et de Function_anti_flood
+INJCRK_ANTIFLOOD_vidInitAntiFlood|B|();|FCT2.2|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Initialisation à 1 de Function_anti_flood et affectation de la valeur de Anti_flood_delay à Anti_flood_delay_counter
+INJCRK_ANTIFLOOD_vidInitCrkFlood|A|();|FCT1.3|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation à 0 de Disable_inj_for_anti_flood et de Function_anti_flood
+INJCRK_ANTIFLOOD_vidInitOutput|A|();|FCT1.1|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation des sorties
+INJCRK_ANTIFLOOD_vidMngAntiFlood|B|();|FCT1.4|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la focntions INJCRK_ANTIFLOOD_vidCranking si Vehicle_active_state repasse dans l'état VS_CRANKING, sinon INJCRK_ANTIFLOOD_vidNotCranking sera appelé
+INJCRK_ANTIFLOOD_vidNotCranking|B|();|FCT2.5|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Appel de la focntions INJCRK_ANTIFLOOD_vidRestAntFlood si Regime_moteur_32 est supérieur à Anti_flood_regime_reinj
+INJCRK_ANTIFLOOD_vidPosPedNok|A|();|FCT2.7|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation à 0 de Disable_inj_for_anti_flood et de Function_anti_flood
+INJCRK_ANTIFLOOD_vidPosPedOk|B|();|FCT2.4|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|calcule de Anti_flood_delay_counter et de Disable_inj_for_anti_flood
+INJCRK_ANTIFLOOD_vidRestAntFlood|A|();|FCT2.6|INJCRK_ANTIFLOOD|0|V02 NT 08 04908||||0|0|0|0|Fonction d'initialisation à 0 de Disable_inj_for_anti_flood et de Function_anti_flood
+InjCrk_EveKOn_AntiFlood|A|();|SCH.3|INJCRK_ANTIFLOOD|1|V02 NT 08 04908||||0|0|0|0|Fonction d'accroche à l'evenement InjCrk_EveKOn_AntiFlood
+InjCrk_EveRTCr_AntiFlood|A|();|SCH.4|INJCRK_ANTIFLOOD|1|V02 NT 08 04908||||0|0|0|0|Fonction d'accroche à l'evenement InjCrk_EveRTCr_AntiFlood
+InjCrk_EveStTCr_AntiFlood|A|();|SCH.2|INJCRK_ANTIFLOOD|1|V02 NT 08 04908||||0|0|0|0|Fonction d'accroche à l'evenement InjCrk_EveStTCr_AntiFlood
+InjCrk_SdlFast_AntiFlood|A|();|SCH.5|INJCRK_ANTIFLOOD|1|V02 NT 08 04908||||0|0|0|0|Fonction d'accroche à l'evenement InjCrk_SdlFast_AntiFlood

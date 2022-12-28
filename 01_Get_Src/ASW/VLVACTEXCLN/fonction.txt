@@ -1,0 +1,26 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|1|HEADER|1|NONE||||0|0|0|0|GDGAR
+VlvAct_EveKOf_ExCln|C|();|SCH.3|VLVACTEXCLN|1|V02 NT 08 08235||||0|0|0|0|Evénement associé au passage de clef ON à clef OFF
+VlvAct_EveRst_ExCln|A|();|SCH.1|VLVACTEXCLN|1|V02 NT 08 08235||||0|0|0|0|Evènement reset du calculateur
+VlvAct_SdlFast_ExCln|D|();|SCH.2|VLVACTEXCLN|1|V02 NT 08 08235||||0|0|0|0|Moniteur rapide de la fonction VVT
+VLVACTEXCLN_vidClnAlgCalc|C|();|FCT2.1|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|calculer la durée de chaque impulsion de la commande envoyée pour le nettoyage et selectionner le mode (préventif ou curatif).
+VLVACTEXCLN_vidClnCnd|E|();|FCT2.2|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|selectionner le mode curatif ou préventif.
+VLVACTEXCLN_vidClnInCnteFrstcln|A|();|FCT1.5|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Ce bloc incrémente l’index de temps utilisé dans la cartographie générant la commande de nettoyage en mode préventif.
+VLVACTEXCLN_vidClnIndTiCnt|C|();|FCT1.2|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Index du compteur pour le mode curatif et le mode préventif.
+VLVACTEXCLN_vidClnIndTmCntPct|A|();|FCT1.4|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Ce bloc incrémente l’index de temps utilisé dans la cartographie générant la commande de nettoyage en mode préventif.
+VLVACTEXCLN_vidClnIndTmCntRct|A|();|FCT1.3|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Ce bloc incrémente l’index de temps utilisé dans la cartographie générant la commande de nettoyage en mode curatif.
+VLVACTEXCLN_vidCmdCalc|F|();|FCT1.9|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Le nettoyage (mode préventif, mode curatif, sortie usine) se fait suivant un profil de commande définit par les cartographies VlvAct_ExNormClnCmd_M, VlvAct_ExHealClnCmd_M et VlvAct_ExFrstClnCmd_M.
+VLVACTEXCLN_vidCmdcmp|D|();|FCT1.8|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Activation du nettoyage de l'électrovanne VVT échappement
+VLVACTEXCLN_vidErrCntRst|B|();|FCT2.4|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Quand l’erreur Vcpe_cam_position_error est revenue dans des limites acceptables le compteur de nettoyages en mode curatif est réinitialisé.
+VLVACTEXCLN_vidErrCountRst|C|();|FCT1.6|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|remise à zero de la variable VlvAct_CtInHealClnErr
+VLVACTEXCLN_vidFrstCleaCond|A|();|FCT1.10|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Le mode de nettoyage sortie usine « nettoyage moteur neuf » doit permettre l’élimination des copeaux d’usinage présents dans le circuit d’huile qui n’auraient pas pu être supprimés lors du nettoyage réalisé après le montage du moteur à l’usine moteur.
+VLVACTEXCLN_vidFrstCleanVarUpdte|A|();|FCT2.10|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Mise à jour de VlvAct_ctExFrstClnCyc
+VLVACTEXCLN_vidhealClnMngTimeRst|A|();|FCT3.1|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Réinitialisation de la durée de surveillance de l'erreur pour la VVT échappement en mode curatif
+VLVACTEXCLN_vidInitOutput|I|();|FCT1.1|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|initialisation
+VLVACTEXCLN_vidManCleanVarUpdate|A|();|FCT2.9|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Mise à jour de la variable  VlvAct_bExManClnEnaIdc
+VLVACTEXCLN_vidPctClnVarUdt|C|();|FCT2.8|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|mise à jour des variables VlvAct_tiExNormClnIdc et VlvAct_bExNormClnEnd.
+VLVACTEXCLN_vidPctcnd|F|();|FCT2.7|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Le nettoyage en mode préventif se déroule lors de phases impactant peu le fonctionnement moteur (ralenti,coupure d’injection).Il est lancé suivant une récurrence définit par la calibration VlvAct_tiExNormClnDly_C.
+VLVACTEXCLN_vidRctClnUdt|A|();|FCT1.7|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Mise à jour des variables liées aux nettoyages curatifs
+VLVACTEXCLN_vidRctClnVarUdt|E|();|FCT2.5|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|A chaque fois qu’un cycle de nettoyage en mode curatif se termine on incrémente le compteur VlvAct_CtExHealClnErr.
+VLVACTEXCLN_vidRctCnd|I|();|FCT2.3|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Le nettoyage en mode curatif est lancé lorsque l’erreur Vcpe_cam_position_error est supérieure à un seuil durant une certaine période.
+VLVACTEXCLN_vidRctCndFrtcln|D|();|FCT2.6|VLVACTEXCLN|0|V02 NT 08 08235||||0|0|0|0|Le nettoyage en mode curatif est lancé lorsque l’erreur Vcpe_cam_position_error est supérieure à un seuil.

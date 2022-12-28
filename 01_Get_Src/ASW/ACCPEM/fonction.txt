@@ -1,0 +1,19 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+AccP_EveKOf_AccPEM|A|();|SCH.2|ACCPEM|1|PTS_DOC_5021748||||0|0|0|0|Evénement clef On_Off
+AccP_EveRst_AccPEM|A|();|SCH.1|ACCPEM|1|PTS_DOC_5021748||||0|0|0|0|Event reset.
+AccP_SdlFast_AccPEM|A|();|SCH.3|ACCPEM|1|PTS_DOC_5021748||||0|0|0|0|Moniteur rapide de la fonction pédale d'accélérateur
+ACCPEM_vidAccPCohAuth|A|();|FCT1.6|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Le test de cohérence est autorisé lorsqu’on est au Key ON. Il est inhibé lorsque le défaut pédale bloquée passe en état fugitif pendant un temps calibrable.
+ACCPEM_vidAccPCohDiag|B|();|FCT1.7|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Si la position pédale pour Easy Move est supérieure à la position pédale AccP_rAccP et si le paramètre P334 n’est pas à la valeur invalide, on lève un diagnostic de cohérence.
+ACCPEM_vidAccPReinfPos|A|();|FCT2.1|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Cete fonction permet de calculer une position pédale robuste à partir du minimum des 3 dernières valeurs des positions pédales brutes recalées des capteurs 1 et 2.
+ACCPEM_vidAccPSatPos|A|();|FCT2.2|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Cette fonction  permet d’effectuer un bouclage de la position pédale robuste à sa dernière valeur lorsqu’un défaut électrique sur les capteurs de position pédale est en état ponctuel présent et de saturer cette position pédale à 99.5
+ACCPEM_vidDiagCoh|A|();|FCT1.3|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|test de cohérence des enfoncements pédale entre la variable position pédale et la position pédale pour Easy Move.
+ACCPEM_vidInit|A|();|FCT1.8|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Cette fonction permet d'initialiser l'indicateur de l'invalidité et la sortie AccPEM_rAccP.
+ACCPEM_vidInitOutput|B|();|FCT1.1|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Initialisation des sorties
+ACCPEM_vidPosPedFinale|A|();|FCT1.2|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|En cas de défaut pédale bloquée confirmé l’enfoncement pédale est forcé à 0.
+ACCPEM_vidPosPedKOff|A|();|FCT1.5|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Au Key-Off, si le paramètre P334 n’est pas à sa valeur invalide alors on force sa valeur à 0.
+ACCPEM_vidPosPedRst|A|();|FCT1.9|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Cette fonction permet d'ecrire en mémoire sur évènement.
+ACCPEM_vidPosPedValid|A|();|FCT1.4|ACCPEM|0|PTS_DOC_5021748||||0|0|0|0|Forcer la variable AccPEM_rAccP à sa valeur invalide avant de la transmettre sur le CAN en cas de défaut électrique , ou en cas de  défaut de cohérence entre les enfoncements pédale,
+GDGAR_bGetFRM|A|(argin uint16 u16IndexFRM)boolean;|2|HEADER|1|NONE||||0|0|0|0|
+GDGAR_tenuGetStDgo|A|func_GDGAR_tenuGetStDgo|3|HEADER|1|NONE||||0|0|0|0|Get Value of the GDU states
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|6|HEADER|1|NONE||||0|0|0|0|
+NVMSRV_vidWrite|A|(argin NVMSRV_tudtObjectList udtObject, argin boolean bMode);|1|HEADER|1|NONE||||0|0|0|0|

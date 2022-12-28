@@ -1,0 +1,1008 @@
+﻿/begin MODULE  VSCo "VSCo 12.1"
+
+    /begin CHARACTERISTIC VSCO_ACTIVE_BYP_C "Activation Bypass"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCo_ModuleVersion_Major_MP "VSCo_ModuleVersion_Major_MP"
+      UBYTE VSCO_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCo_ModuleVersion_Minor_MP "VSCo_ModuleVersion_Minor_MP"
+      UBYTE VSCO_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aResErr_aVehPot_Hys_C "Acceleration resistante mesuree lors du gel consignes potentiel acceleration vehicule"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aResFil "Acceleration resistante filtree"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aResRef_aVehPot "Acceleration resistante mesuree lors du gel consignes potentiel acceleration vehicule"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_aRes_aVehRsvHysHi_A "Axis description"
+      0x0 VSCtl_aRes VSCO_RL_SWORD_AXIS 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_aRes_aVehRsvHysLo_A "Axis description"
+      0x0 VSCtl_aRes VSCO_RL_SWORD_AXIS 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_aVehCordVSLimReqSat "Consigne acceleration vehicule coordonnee LVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehCordVSLimReq_B "Bypass de VSCtl_aVehCordVSLimReq"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehCordVSRegReqSat "Consigne acceleration vehicule coordonnee RVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehCordVSRegReq_B "Bypass de VSCtl_aVehCordVSRegReq"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehDVSRegReqSat "Consigne acceleration vehicule ACC saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSLim_HysHi_C "Seuil haut décart daccélération véhicule de reprise accélération en LVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSLim_HysLo_C "Seuil bas décart daccélération véhicule de reprise accélération en LVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSMax_HysHi_C "Seuil haut décart daccélération véhicule de reprise accélération en BVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSMax_HysLo_C "Seuil bas décart daccélération véhicule de reprise accélération en BVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSReg_HysHi2_C "Seuil haut décart daccélération véhicule de reprise accélération 2 en RVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSReg_HysHi_C "Seuil haut décart daccélération véhicule de reprise accélération en RVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSReg_HysLo2_C "Seuil bas décart daccélération véhicule de reprise accélération 2 en RVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehEDrvOvdVSReg_HysLo_C "Seuil bas décart daccélération véhicule de reprise accélération en RVV"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehMaxReq "Consigne acceleration vehicule max"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehMinReq "Consigne acceleration vehicule min"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotMaxReq "Consigne potentiel acceleration vehicule max"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotMinReq "Consigne potentiel acceleration vehicule min"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotReq "Consigne potentiel acceleration vehicule coordonnee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPotReqRaw "Consigne potentiel acceleration vehicule coordonnee brut"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehPreCoVSCtlReqSat "Consigne acceleration vehicule pre-coordination XVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVehReq_B "Bypass de VSCtl_aVehReq"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_aVehReq_jrkVehTranLim_A "Axis description"
+      0x0 VSCtl_aVehReq VSCO_RL_SWORD_AXIS 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_aVehRsvHysHi_aRes_T "Reserve d acceleration haute"
+      CURVE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aRes VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aRes_aVehRsvHysHi_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVehRsvHysLo_aRes_T "Reserve d acceleration basse"
+      CURVE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aRes VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aRes_aVehRsvHysLo_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_aVehRsv_HysHi "Seuil haut de reserve dacceleration vehicule applique"
+      UWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehRsv_HysLo "Seuil bas de reserve dacceleration vehicule applique"
+      UWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSLimReqSat "Consigne acceleration vehicule LVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSMaxReqSat "Consigne acceleration vehicule BVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehVSRegReqSat "Consigne acceleration vehicule RVV saturee"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_aVehWhlMinSat "Saturation limite de l acceleration GMP"
+      SWORD VSCO_CM_3 /* m/s2:0.0009765625:0: */ 1 0 -10 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_aVhEDrvOvdDVSReg_HysHi2_C "Seuil haut décart daccélération véhicule de reprise accélération 2 en ACC"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVhEDrvOvdDVSReg_HysHi_C "Seuil haut décart daccélération véhicule de reprise accélération en ACC"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVhEDrvOvdDVSReg_HysLo2_C "Seuil bas décart daccélération véhicule de reprise accélération 2 en ACC"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_aVhEDrvOvdDVSReg_HysLo_C "Seuil bas décart daccélération véhicule de reprise accélération en ACC"
+      VALUE 0x0 VSCO_RL_SWORD 20 VSCO_CM_3 /* m/s2:0.0009765625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVeh "Activation filtrage acceleration vehicule"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_aVehPot "Activation des filtres sur le potentiel d acceleration"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvRsv_tqWhlMax "Activation application reserve couple roue max"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvRsv_tqWhlMin "Activation application reserve couple roue min"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcv_aVehMinSat "Activation filtrage saturation limite acceleration vehicule"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAuthAntTqWhlMax_B "Bypass de VSCtl_bAuthAntTqWhlMax"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAuthAntTqWhlMin_B "Bypass de VSCtl_bAuthAntTqWhlMin"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTPotPre_no3 "Disponibilite couple roue GMP potentiel numero 3 precedent"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAvlTqWhlPTPrev_no3 "Disponibilite couple roue GMP numero 3 precedent"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_aVeh "Effectivite contrôle acceleration vehicule XVV"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_aVehMax "Effectivite contrôle acceleration vehicule XVV max"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_aVehMaxPrev "Effectivite contrôle acceleration vehicule XVV max sauvegarde"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_aVehMin "Effectivite contrôle acceleration vehicule XVV min"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_aVehMinPrev "Effectivite contrôle acceleration vehicule XVV min sauvegarde"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_tqMax "Effectivite contrôle couple XVV max"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_tqMin "Effectivite contrôle couple XVV min"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDeacAResErr_C "Désactivation de la prise en compte variation accélération résistante en mode gel"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacHld_aVehPotReq_C "Désactivation de la stratégie de gel consigne potentiel accélération véhicule (global)"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacHld_aVehReq_C "Désactivation de la stratégie de gel consignes accélération véhicule"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacPosnGBxLev_C "Désactivation de la prise en compte mode automatique uniquement en mode gel"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacSatCordVSRegReq_C "Desactivation de la saturation BVV de la coordination d accel RVV"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacSpdVehErr_C "Désactivation de la prise en compte variation vitesse véhicule en mode gel"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdDVSRegInt_aVeh "Reprise acceleration interne ACC"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDrvOvrdDVSReg_aVeh_B "Bypass de VSCtl_bDrvOvrdDVSReg_aVeh"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDrvOvrdVSLim_aVeh_B "Bypass de VSCtl_bDrvOvrdVSLim_aVeh"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDrvOvrdVSMax_aVeh_B "Bypass de VSCtl_bDrvOvrdVSMax_aVeh"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bDrvOvrdVSRegInt_aVeh "Reprise acceleration interne RVV"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bDrvOvrdVSReg_aVeh_B "Bypass de VSCtl_bDrvOvrdVSReg_aVeh"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bEndTranVSLim_B "Bypass de VSCtl_bEndTranVSLim"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bEndTranVSMax_B "Bypass de VSCtl_bEndTranVSMax"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bEndTranVSReg_B "Bypass de VSCtl_bEndTranVSReg"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bHld_aVehPotReq "Demande de gel du potentiel d acceleration"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bHld_aVehReq "Gel consignes acceleration vehicule"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bKdAuth_B "Bypass de VSCtl_bKdAuth"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bTqWhlMinSat_B "Bypass de VSCtl_bTqWhlMinSat"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bTqWhlThPTMinMod_no2_C "Mode de prise en compte du couple thermique dans calcul de l acceleration vehicule min en saturation n°2"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_ctSIPChg_aVehPot "Compteur de detection SIP multiple"
+      UBYTE VSCO_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_ctSIPChg_aVehPot_C "Nombre maxi de prise de changement rapport en phase 1 & 2"
+      VALUE 0x0 VSCO_RL_UBYTE 255 VSCO_CM_2 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehReq "Consigne de jerk vehicule"
+      SWORD VSCO_CM_4 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_jrkVehTranLim_aVehReq_T "Jerk de transistion de la desactivation de la saturation limite de l acceleration GMP"
+      CURVE 0x0 VSCO_RL_SWORD 200 VSCO_CM_4 /* m/s3:0.0078125:0: */ -100 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehReq VSCO_CM_3 /* m/s2:0.0009765625:0: */ 8 -10 10
+    AXIS_PTS_REF VSCtl_aVehReq_jrkVehTranLim_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_jrkVehWhlMinSat "Jerk de la saturation limite de l acceleration GMP"
+      SWORD VSCO_CM_4 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehWhlMinSatRaw1 "Jerk de la saturation limite de l acceleration GMP brut 1"
+      SWORD VSCO_CM_4 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_jrkVehWhlMinSatRaw2 "Jerk de la saturation limite de l acceleration GMP brut 2"
+      SWORD VSCO_CM_4 /* m/s3:0.0078125:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_rCtlTqWhlPotMax "Taux application potentiel couple roue GMP max"
+      UWORD VSCO_CM_5 /* %:0.0625:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_rCtlTqWhlPotMin "Taux application potentiel couple roue GMP min"
+      UWORD VSCO_CM_5 /* %:0.0625:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_sgnTqWhlPotMax "Signe de la consignes couple roue max"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_sgnTqWhlPotMin "Signe de la consignes couple roue min"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehErrRef_aVehPot_1 "Ecart de vitesse vehicule degel consignes potentiel acceleration vehicule 1"
+      UWORD VSCO_CM_6 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_spdVehErrRef_aVehPot_2 "Ecart de vitesse vehicule degel consignes potentiel acceleration vehicule 2"
+      UWORD VSCO_CM_6 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_spdVehErr_aVehPot_SlopN_C "Seuil de variation de vitesse (en descente) désactivant le gel de la consigne de potentiel d accélération"
+      VALUE 0x0 VSCO_RL_SWORD 510 VSCO_CM_6 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehErr_aVehPot_SlopP_C "Seuil de variation de vitesse (en monté) désactivant le gel de la consigne de potentiel d accélération"
+      VALUE 0x0 VSCO_RL_SWORD 510 VSCO_CM_6 /* km/h:0.0078125:0: */ -255 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehHldaVehReqHysHi_C "Seuil haut de vitesse de la stratégie de gel de la consigne d accélération"
+      VALUE 0x0 VSCO_RL_UWORD 255 VSCO_CM_6 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_spdVehHldaVehReqHysLo_C "Seuil bas de vitesse de la stratégie de gel de la consigne d accélération"
+      VALUE 0x0 VSCO_RL_UWORD 255 VSCO_CM_6 /* km/h:0.0078125:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_spdVehRef_aVehPot "Vitesse vehicule de reference du mode de calcul du potentiel d acceleration vehicule"
+      UWORD VSCO_CM_6 /* km/h:0.0078125:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_TqWhlCutOff_aVeh "Gestion de la bande morte pour la consigne d acceleration"
+      UBYTE VSCO_CM_7 /* FT_enumeration1:((0=ARRET_INDETERMINE)(1=PILOTAGE_HAUT)(2=PILOTAGE_BAS)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_aVeh "Etat contrôle acceleration vehicule"
+      UBYTE VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_aVehPot "Etat contrôle consignes acceleration vehicule"
+      UBYTE VSCO_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stCtl_tqWhlMax_B "Bypass de VSCtl_stCtl_tqWhlMax"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stCtl_tqWhlMin_B "Bypass de VSCtl_stCtl_tqWhlMin"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stCtl_tqWhlPotMax_B "Bypass de VSCtl_stCtl_tqWhlPotMax"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stCtl_tqWhlPotMin_B "Bypass de VSCtl_stCtl_tqWhlPotMin"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stCtl_tqWhlPot_B "Bypass de VSCtl_stCtl_tqWhlPot"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_8 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stCtlaVehMinSat "Etat contrôle limitation acceleration vehicule"
+      UBYTE VSCO_CM_9 /* FT_enumeration1:((0=ARRET)(1=ACTIVATION_31)(2=CONTROLE_31)(3=DESACTIVATION_31)) */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stHld_aVehPot "Etat du mode de contrôle gel consignes potentiel acceleration vehicule"
+      UBYTE VSCO_CM_10 /* FT_enumeration1:((0=PAS_GEL)(1=GEL_1_INIT)(2=GEL_1)(3=GEL_2_MONTE)(4=GEL_2_DESCENTE)(5=GEL_INHIBITION)) */ 1 0 0 5
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stTqWhlCutOffReqPrev "Etat pilotage couple GMP XVV bande morte precedent"
+      UBYTE VSCO_CM_11 /* FT_enumeration1:((0=ARRET)(1=PILOTAGE_HAUT)(2=PILOTAGE_BAS)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnTqMaxReq_B "Bypass de VSCtl_tiCfmSdwnTqMaxReq"
+      VALUE 0x0 VSCO_RL_UWORD 16 VSCO_CM_12 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnTqMinReq_B "Bypass de VSCtl_tiCfmSdwnTqMinReq"
+      VALUE 0x0 VSCO_RL_UWORD 16 VSCO_CM_12 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupTqMaxReq_B "Bypass de VSCtl_tiCfmSupTqMaxReq"
+      VALUE 0x0 VSCO_RL_UWORD 16 VSCO_CM_12 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupTqMinReq_B "Bypass de VSCtl_tiCfmSupTqMinReq"
+      VALUE 0x0 VSCO_RL_UWORD 16 VSCO_CM_12 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlAVehMinSat "Temps caracteristique de letat de contrôle de la saturation limite acceleration de desactivation"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFilStCtlAVehMinSat_C "Valeur du temps caractéristique de létat de contrôle de la saturation limite accélération de désactivation"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_aVehPotReq_C "Constante de filtrage numerique acceleration resistante"
+      VALUE 0x0 VSCO_RL_UWORD 1 VSCO_CM_13 /* :0.001:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_jrkVehReq_C "Valeur du filtrage numerique de la consigne de jerk vehicule"
+      VALUE 0x0 VSCO_RL_UBYTE 1 VSCO_CM_14 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHldMax_aVehPotReq "Temps de gel max consignes potentiel acceleration vehicule"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHldMax_aVehPotReq_C "Temps maximum de gel de la consigne potentiel acceleration"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHldMax_aVehReq "Temps absolu de gel consignes acceleration vehicule"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHldMax_aVehReq_C "Temps maximum de gel de la consigne accélération véhicule"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHldMin_aVehPotReq "Temps de gel min consignes potentiel acceleration vehicule"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHldMin_aVehPotReq_C "Temps minimum de gel de la consigne potentiel acceleration"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHld_stCtl_aVehCutOff "Temps de passage de la bande morte"
+      UBYTE VSCO_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiKdAuth "Temporisation confirmation autorisation KD"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiNotHldMin_aVehPot "Temps minimum de gels consecutifs consignes potentiel acceleration et couple roue"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiNotHldMin_aVehPot_C "Temps minimum d interdiction du gel de la consigne potentiel accélération véhicule consécutif à un gel"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiNotHldMin_aVehReq "Temps de non gel de la consigne d acceleration"
+      UWORD VSCO_CM_2 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiNotHldMin_aVehReq_C "Temps minimum de non gel de la consigne accélération véhicule"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTolDft_bKdAuthVSLim_C "Temps de la temporisation 1 sur lautorisation Kick Down xVV"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiTol_bKdAuthVSLim_C "Temps de la temporisation 2 sur lautorisation Kick Down xVV"
+      VALUE 0x0 VSCO_RL_UWORD 65535 VSCO_CM_2 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMaxReq_B "Bypass de VSCtl_tqWhlMaxReq"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMinReq_B "Bypass de VSCtl_tqWhlMinReq"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMinSat_B "Bypass de VSCtl_tqWhlMinSat"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMinSat_SatMax_C "Saturation max de la saturation limite du couple roue GMP"
+      VALUE 0x0 VSCO_RL_SWORD 40000 VSCO_CM_16 /* Nm:1:0: */ -20000 20000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMinSat_SatMin_C "Saturation min de la saturation limite du couple roue GMP"
+      VALUE 0x0 VSCO_RL_SWORD 40000 VSCO_CM_16 /* Nm:1:0: */ -20000 20000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMaxReqRaw "Consigne potentiel couple roue max brut"
+      SWORD VSCO_CM_15 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMaxReq_B "Bypass de VSCtl_tqWhlPotMaxReq"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMaxRsvHiThd_B "Bypass de VSCtl_tqWhlPotMaxRsvHiThd"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMaxRsvLoThd_B "Bypass de VSCtl_tqWhlPotMaxRsvLoThd"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMinReqRaw "Consigne potentiel couple roue min brut"
+      SWORD VSCO_CM_15 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMinReq_B "Bypass de VSCtl_tqWhlPotMinReq"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMinRsvHiThd_B "Bypass de VSCtl_tqWhlPotMinRsvHiThd"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotMinRsvLoThd_B "Bypass de VSCtl_tqWhlPotMinRsvLoThd"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPotReq_B "Bypass de VSCtl_tqWhlPotReq"
+      VALUE 0x0 VSCO_RL_SWORD 32000 VSCO_CM_15 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+/begin RECORD_LAYOUT VSCO_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSCO_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD VSCO_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_2 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_3 "conversion_method"
+
+RAT_FUNC "%.4" "m/s2"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_4 "conversion_method"
+
+RAT_FUNC "%.3" "m/s3"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_5 "conversion_method"
+
+RAT_FUNC "%.2" "%"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_6 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_7 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_7
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_7 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET_INDETERMINE"
+	 1 "PILOTAGE_HAUT"
+	 2 "PILOTAGE_BAS"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_8 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_8
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_8 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "CONTROLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_9 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_9
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_9 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "ARRET"
+	 1 "ACTIVATION_31"
+	 2 "CONTROLE_31"
+	 3 "DESACTIVATION_31"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_10 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_10
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_10 "conversion_vtab"
+
+    TAB_VERB 6
+	 0 "PAS_GEL"
+	 1 "GEL_1_INIT"
+	 2 "GEL_1"
+	 3 "GEL_2_MONTE"
+	 4 "GEL_2_DESCENTE"
+	 5 "GEL_INHIBITION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_11 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSCO_CV_11
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSCO_CV_11 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "PILOTAGE_HAUT"
+	 2 "PILOTAGE_BAS"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSCO_CM_12 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_13 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_14 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_15 "conversion_method"
+
+RAT_FUNC "%.1" "Nm"
+COEFFS 0 2 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSCO_CM_16 "conversion_method"
+
+RAT_FUNC "%.0" "Nm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION VSCO_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	VSCO_ACTIVE_BYP_C
+	VSCtl_aResErr_aVehPot_Hys_C
+	VSCtl_aRes_aVehRsvHysHi_A
+	VSCtl_aRes_aVehRsvHysLo_A
+	VSCtl_aVehCordVSLimReq_B
+	VSCtl_aVehCordVSRegReq_B
+	VSCtl_aVehEDrvOvdVSLim_HysHi_C
+	VSCtl_aVehEDrvOvdVSLim_HysLo_C
+	VSCtl_aVehEDrvOvdVSMax_HysHi_C
+	VSCtl_aVehEDrvOvdVSMax_HysLo_C
+	VSCtl_aVehEDrvOvdVSReg_HysHi2_C
+	VSCtl_aVehEDrvOvdVSReg_HysHi_C
+	VSCtl_aVehEDrvOvdVSReg_HysLo2_C
+	VSCtl_aVehEDrvOvdVSReg_HysLo_C
+	VSCtl_aVehReq_B
+	VSCtl_aVehReq_jrkVehTranLim_A
+	VSCtl_aVehRsvHysHi_aRes_T
+	VSCtl_aVehRsvHysLo_aRes_T
+	VSCtl_aVhEDrvOvdDVSReg_HysHi2_C
+	VSCtl_aVhEDrvOvdDVSReg_HysHi_C
+	VSCtl_aVhEDrvOvdDVSReg_HysLo2_C
+	VSCtl_aVhEDrvOvdDVSReg_HysLo_C
+	VSCtl_bAuthAntTqWhlMax_B
+	VSCtl_bAuthAntTqWhlMin_B
+	VSCtl_bDeacAResErr_C
+	VSCtl_bDeacHld_aVehPotReq_C
+	VSCtl_bDeacHld_aVehReq_C
+	VSCtl_bDeacPosnGBxLev_C
+	VSCtl_bDeacSatCordVSRegReq_C
+	VSCtl_bDeacSpdVehErr_C
+	VSCtl_bDrvOvrdDVSReg_aVeh_B
+	VSCtl_bDrvOvrdVSLim_aVeh_B
+	VSCtl_bDrvOvrdVSMax_aVeh_B
+	VSCtl_bDrvOvrdVSReg_aVeh_B
+	VSCtl_bEndTranVSLim_B
+	VSCtl_bEndTranVSMax_B
+	VSCtl_bEndTranVSReg_B
+	VSCtl_bKdAuth_B
+	VSCtl_bTqWhlMinSat_B
+	VSCtl_bTqWhlThPTMinMod_no2_C
+	VSCtl_ctSIPChg_aVehPot_C
+	VSCtl_jrkVehTranLim_aVehReq_T
+	VSCtl_spdVehErr_aVehPot_SlopN_C
+	VSCtl_spdVehErr_aVehPot_SlopP_C
+	VSCtl_spdVehHldaVehReqHysHi_C
+	VSCtl_spdVehHldaVehReqHysLo_C
+	VSCtl_stCtl_tqWhlMax_B
+	VSCtl_stCtl_tqWhlMin_B
+	VSCtl_stCtl_tqWhlPotMax_B
+	VSCtl_stCtl_tqWhlPotMin_B
+	VSCtl_stCtl_tqWhlPot_B
+	VSCtl_tiCfmSdwnTqMaxReq_B
+	VSCtl_tiCfmSdwnTqMinReq_B
+	VSCtl_tiCfmSupTqMaxReq_B
+	VSCtl_tiCfmSupTqMinReq_B
+	VSCtl_tiFilStCtlAVehMinSat_C
+	VSCtl_tiFil_aVehPotReq_C
+	VSCtl_tiFil_jrkVehReq_C
+	VSCtl_tiHldMax_aVehPotReq_C
+	VSCtl_tiHldMax_aVehReq_C
+	VSCtl_tiHldMin_aVehPotReq_C
+	VSCtl_tiNotHldMin_aVehPot_C
+	VSCtl_tiNotHldMin_aVehReq_C
+	VSCtl_tiTolDft_bKdAuthVSLim_C
+	VSCtl_tiTol_bKdAuthVSLim_C
+	VSCtl_tqWhlMaxReq_B
+	VSCtl_tqWhlMinReq_B
+	VSCtl_tqWhlMinSat_B
+	VSCtl_tqWhlMinSat_SatMax_C
+	VSCtl_tqWhlMinSat_SatMin_C
+	VSCtl_tqWhlPotMaxReq_B
+	VSCtl_tqWhlPotMaxRsvHiThd_B
+	VSCtl_tqWhlPotMaxRsvLoThd_B
+	VSCtl_tqWhlPotMinReq_B
+	VSCtl_tqWhlPotMinRsvHiThd_B
+	VSCtl_tqWhlPotMinRsvLoThd_B
+	VSCtl_tqWhlPotReq_B
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	VSCo_ModuleVersion_Major_MP
+	VSCo_ModuleVersion_Minor_MP
+	VSCtl_aResFil
+	VSCtl_aResRef_aVehPot
+	VSCtl_aVehCordVSLimReqSat
+	VSCtl_aVehCordVSRegReqSat
+	VSCtl_aVehDVSRegReqSat
+	VSCtl_aVehMaxReq
+	VSCtl_aVehMinReq
+	VSCtl_aVehPotMaxReq
+	VSCtl_aVehPotMinReq
+	VSCtl_aVehPotReq
+	VSCtl_aVehPotReqRaw
+	VSCtl_aVehPreCoVSCtlReqSat
+	VSCtl_aVehRsv_HysHi
+	VSCtl_aVehRsv_HysLo
+	VSCtl_aVehVSLimReqSat
+	VSCtl_aVehVSMaxReqSat
+	VSCtl_aVehVSRegReqSat
+	VSCtl_aVehWhlMinSat
+	VSCtl_bAcvFil_aVeh
+	VSCtl_bAcvFil_aVehPot
+	VSCtl_bAcvRsv_tqWhlMax
+	VSCtl_bAcvRsv_tqWhlMin
+	VSCtl_bAcv_aVehMinSat
+	VSCtl_bAvlTqWhlPTPotPre_no3
+	VSCtl_bAvlTqWhlPTPrev_no3
+	VSCtl_bCtlEfc_aVeh
+	VSCtl_bCtlEfc_aVehMax
+	VSCtl_bCtlEfc_aVehMaxPrev
+	VSCtl_bCtlEfc_aVehMin
+	VSCtl_bCtlEfc_aVehMinPrev
+	VSCtl_bCtlEfc_tqMax
+	VSCtl_bCtlEfc_tqMin
+	VSCtl_bDrvOvrdDVSRegInt_aVeh
+	VSCtl_bDrvOvrdVSRegInt_aVeh
+	VSCtl_bHld_aVehPotReq
+	VSCtl_bHld_aVehReq
+	VSCtl_ctSIPChg_aVehPot
+	VSCtl_jrkVehReq
+	VSCtl_jrkVehWhlMinSat
+	VSCtl_jrkVehWhlMinSatRaw1
+	VSCtl_jrkVehWhlMinSatRaw2
+	VSCtl_rCtlTqWhlPotMax
+	VSCtl_rCtlTqWhlPotMin
+	VSCtl_sgnTqWhlPotMax
+	VSCtl_sgnTqWhlPotMin
+	VSCtl_spdVehErrRef_aVehPot_1
+	VSCtl_spdVehErrRef_aVehPot_2
+	VSCtl_spdVehRef_aVehPot
+	VSCtl_stCtl_TqWhlCutOff_aVeh
+	VSCtl_stCtl_aVeh
+	VSCtl_stCtl_aVehPot
+	VSCtl_stCtlaVehMinSat
+	VSCtl_stHld_aVehPot
+	VSCtl_stTqWhlCutOffReqPrev
+	VSCtl_tiFilStCtlAVehMinSat
+	VSCtl_tiHldMax_aVehPotReq
+	VSCtl_tiHldMax_aVehReq
+	VSCtl_tiHldMin_aVehPotReq
+	VSCtl_tiHld_stCtl_aVehCutOff
+	VSCtl_tiKdAuth
+	VSCtl_tiNotHldMin_aVehPot
+	VSCtl_tiNotHldMin_aVehReq
+	VSCtl_tqWhlPotMaxReqRaw
+	VSCtl_tqWhlPotMinReqRaw
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE VSCo ------------------------------------*/

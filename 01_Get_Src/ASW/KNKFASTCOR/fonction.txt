@@ -1,0 +1,18 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|A|(argin uint16 u16channel)boolean;|1|HEADER|1|NONE||||0|0|0|0|Fonction de production de variables FRM|
+IgLim_EveBDC_FastCor|C|();|SCH.4|KNKFASTCOR|1|PTS_DOC_5059533||||0|0|0|0|Interruption PMB|
+IgLim_EveCrTR_FastCor|C|();|SCH.2|KNKFASTCOR|1|PTS_DOC_5059533||||0|0|0|0|Evénement CRANKING vers RUNNING|
+IgLim_EveRst_FastCor|C|();|SCH.1|KNKFASTCOR|1|PTS_DOC_5059533||||0|0|0|0|Evénement reset du calculateur|
+IgLim_EveRTCr_FastCor|C|();|SCH.3|KNKFASTCOR|1|PTS_DOC_5059533||||0|0|0|0|Evénement RUNNING vers CRANKING|
+KNKFASTCOR_vidCorNotInGearChange|B|();|FCT1.5|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|Après un changement de rapport BVA ou BVMP, hors panne cliquetis, la correction finale d’avance Cliquetis_cor_avance est ramenée à la correction  courante Correction_boucle_rapide par un filtre pendant le délai Cliquetis_cor_avance_delay.|
+KNKFASTCOR_vidCorrInGearChange|C|();|FCT1.6|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|En changement de rapport BVA ou BVMP (accompagné d’un fort retrait d’avance dans le cas de la BVMP), la correction est filtrée vers 0 par un filtre du premier ordre.|
+KNKFASTCOR_vidDecrementation|C|();|FCT2.3|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|La temporisation Tempo_boucle_rapide est décrémentée tous les N PMH pour un cylindre donné (Ou N est le nombre de cylindres du moteur).|
+KNKFASTCOR_vidFastCorrDecre|C|();|FCT2.2|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|Une fois le délai de maintien écoulé, on décrémente la correction d’avance d’une valeur interpolée dans la carto Cliq_cor_boucle_rapide_dec_map(Régime_moteur) tous les X PMH (où X est issu de la carto : Duree_decrem_boucle_rapide_map(Régime_moteur)).|
+KNKFASTCOR_vidFastCorrection|D|();|FCT1.4|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|En cas de détection ou de détection palliative de cliquetis, ou de détection de super cliquetis, une correction rapide sur le cylindre concerné est appliquée.|
+KNKFASTCOR_vidFastCorrectionCalc|D|();|FCT1.2|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|On ne peut appliquer de correction rapide d’avance qu’en cas de zone critique et si les acquisitions du capteur cliquetis sont autorisées|
+KNKFASTCOR_vidFastCorrIncre|G|();|FCT2.1|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|On applique une correction rapide Cliq_pas_boucle_rapide_map que l’on maintient pendant un délai Duree_maintien_boucle_rapide_map. Cette tempo est calibrée en cycles moteur de façon à être générique N cylindres.|
+KNKFASTCOR_vidFastCorrOnCritZone|B|();|FCT1.3|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|Hors changement de rapport BVA ou BVMP, la correction rapide appliquée a l'allure suivante (elle est calculée positivement puis retranchée par la suite)|
+KNKFASTCOR_vidFastCorrOutCritZon|B|();|FCT1.8|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|La correction rapide d’avance n'est pas appliquée lorsque la zone n'est pas critique ou lorsque les acquisitions du capteur cliquetis ne sont pas autorisées.|
+KNKFASTCOR_vidInitOutput|E|();|FCT1.1|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|Fonction d'initialisation des sorties du module|
+KNKFASTCOR_vidUncertainPhase|B|();|FCT1.7|KNKFASTCOR|0|PTS_DOC_5059533||||0|0|0|0|En cas de phase incertaine (Cipd_phase_calculated_uncertain = 1), la Correction_boucle_rapide est forcée à 0 afin que la correction auto-adaptative, qui est basée sur la Correction_boucle_rapide n’apprenne pas de retrait adaptatif (Av_bmax <> 0).|
+SWFAIL_vidSoftwareErrorHook|A|();|2|HEADER|1|NONE||||0|0|0|0||

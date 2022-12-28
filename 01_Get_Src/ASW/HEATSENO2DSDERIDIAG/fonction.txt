@@ -1,0 +1,34 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetEndDiagStrt|A|func_GDGAR_bGetEndDiagStrt|5|HEADER|1|NONE||||0|0|0|0|Value of EndDiagStrt|
+GDGAR_bGetFRM|A|func_FRM_bGetFRM|2|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_tenuGetStDgo|A|func_GDGAR_tenuGetStDgo|1|HEADER|1|NONE||||0|0|0|0|Value of the GDU states|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft,argin boolean bDgo,argin boolean bMonRun,argin boolean Ns_bMonWait);|3|HEADER|1|NONE||||0|0|0|0|Diagnostic des defauts.|
+HEATSENO2DSDERIDIAG_vidAvgEwma|D|();|FCT2.1|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Calcul de la moyenne de type EWMA (Exponentially Weighted Moving Average)|
+HEATSENO2DSDERIDIAG_vidAvgPnd|E|();|FCT1.10|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Calcul de la moyenne pondérée de la tension sonde aval|
+HEATSENO2DSDERIDIAG_vidCalcAvg|D|();|FCT1.9|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Pour chaque mesure réussie de la décroissance de la tension sonde aval, le bloc de calcul s’active une fois et effectue le calcul des moyennes et la synthése de diagnostic.|
+HEATSENO2DSDERIDIAG_vidDiag|E|();|FCT2.7|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Un nombre calibrable (Ldsd_trk_sonde_ok_thresh) indique le nombre de fois où le compteur (cf bloc 1_Ldsd_trk_pannes) doit être incrémenté pour déclarer la sonde sans défaut.|
+HEATSENO2DSDERIDIAG_vidDiagSO2Ok|D|();|FCT2.4|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Ce bloc renvoie la dernière valeur de la moyenne EWMA supérieure au seuil Ldsd_trk_ewma_thresh.|
+HEATSENO2DSDERIDIAG_vidDiaSO2Nok|D|();|FCT2.5|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Ce bloc renvoie la dernière valeur de la moyenne EWMA inférieure au seuil Ldsd_trk_ewma_thresh.|
+HEATSENO2DSDERIDIAG_vidFacMes|B|();|FCT3.3|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|La valeur envoyée au ScanTool mode06 est mise à jour lorsque le résultat du diag est disponible (autrement dit bMonRun à 1)|
+HEATSENO2DSDERIDIAG_vidFirstDiag|E|();|FCT2.3|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|A la fin du roulage, la valeur de EWMA(t) est stockée en EEPROM pour servir de conditions initiales pour le prochain roulage.|
+HEATSENO2DSDERIDIAG_vidFirstTime|D|();|FCT2.2|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Lors du premier roulage, la valeur initiale de la moyenne EWMA est fixée à la première valeur calculée de la moyenne pondérée.|
+HEATSENO2DSDERIDIAG_vidGasGsl|C|();|FCT1.4|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|La valeur de la moyenne des pente enregistrée en EEPROM Ldsd_trk_ewma_eep est initialisée à sa valeur maximum 5000 (FFFF en Hexadécimal) afin de différencier le premier cycle de roulage.|
+HEATSENO2DSDERIDIAG_vidGslGas|C|();|FCT1.3|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|La valeur de la moyenne des pente enregistrée en EEPROM Ldsd_trk_ewma_eep est initialisée à sa valeur maximum 5000 (FFFF en Hexadécimal) afin de différencier le premier cycle de roulage.|
+HEATSENO2DSDERIDIAG_vidIniOutput|E|();|FCT1.1|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Fonction d'initialisation|
+HEATSENO2DSDERIDIAG_vidInitGaz|C|();|FCT3.2|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Cette fonction permet d’initialiser la valeur de la moyenne de tension de type EWMA.|
+HEATSENO2DSDERIDIAG_vidInitGsl|C|();|FCT3.1|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Cette fonction permet d’initialiser correctement les variables de la fonction diagnostic  dérivée sonde aval ainsi qu'elle indique si on effectue le premier roulage.|
+HEATSENO2DSDERIDIAG_vidInitTran|C|();|FCT1.2|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Ce bloc permet la réinitialisation du diagnostic lors des transitions essence ver gaz, ou gaz vers essence lorsque l’application gaz est applicable.|
+HEATSENO2DSDERIDIAG_vidSavePwrl|C|();|FCT2.9|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Sauvegarde en  EEPROM de la moyenne de tension Ldsd_trk_ewma_eep au powerlatch.|
+HEATSENO2DSDERIDIAG_vidSeqDiag|E|();|FCT2.8|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Le booléen de calibration SenO2Ds_bAcvSeqSigGrdDiag_C permet d'inhiber le séquencement.Le booléen SenO2Ds_bAcvSeqSigGrdDiag indique que le séquenceur est actif.|
+HEATSENO2DSDERIDIAG_vidSigEuro6|B|();|FCT3.4|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Les variables finales envoyées au Mode06 (FacMes, FacMin) sont gelées lorsque la panne est présente mais non encore confirmée par le GD/GAR|
+HEATSENO2DSDERIDIAG_vidSwitch|C|();|FCT2.10|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Cette fonction permet d’initialiser les variables dépendantes de la présence d’une application Gaz et le cas échéant, du mode carburant utilisé au moment de la réception de la première trame Gaz.|
+HEATSENO2DSDERIDIAG_vidTrkCond|G|();|FCT1.6|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Ce bloc regroupe les conditions d’activation à vérifier pour valider le démarrage de la fonction diagnostic|
+HEATSENO2DSDERIDIAG_vidTrkDiag|D|();|FCT1.8|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Le diagnostic s’active lorsque l’on est dans l’état LDSD_TRK_DIAG_THRESH_MIN, ce qui correspond à la fin d’une pente, la valeur de la pente sera alors rajoutée à la moyenne générale et au bout d’un certain nombre de pentes calculées.|
+HEATSENO2DSDERIDIAG_vidTrkInit|E|();|FCT1.5|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|La valeur de la moyenne des pente enregistrée en EEPROM Ldsd_trk_ewma_eep est initialisée à sa valeur maximum 5000 afin de différencier le premier cycle de roulage.|
+HEATSENO2DSDERIDIAG_vidTrkMgr|G|();|FCT1.7|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|Ce bloc mesure les paramètres nécessaires au calcul de la dérivée de la décroissance de la tension sonde aval|
+HEATSENO2DSDERIDIAG_vidTrkNormal|E|();|FCT2.6|HEATSENO2DSDERIDIAG|0|PTS_DOC_5012852||||0|0|0|0|A la fin du roulage, la valeur de EWMA(t) est stockée en EEPROM pour servir de conditions initiales pour le prochain roulage.|
+SenO2Ds_EvePwrl_SigGrdDiag|D|();|SCH.4|HEATSENO2DSDERIDIAG|1|PTS_DOC_5012852||||0|0|0|0|Evènement powerlatch du calculateur|
+SenO2Ds_EveRst_SigGrdDiag|G|();|SCH.1|HEATSENO2DSDERIDIAG|1|PTS_DOC_5012852||||0|0|0|0|Evènement reset du calculateur pour la fonction SenO2Ds|
+SenO2Ds_SdlFast_SigGrdDiag|H|();|SCH.3|HEATSENO2DSDERIDIAG|1|PTS_DOC_5012852||||0|0|0|0|Moniteur rapide de la fonction SenO2Ds|
+SenO2Ds_SdlMid_SigGrdDiag|H|();|SCH.2|HEATSENO2DSDERIDIAG|1|PTS_DOC_5012852||||0|0|0|0|Moniteur moyen de la fonction SenO2Ds|
+SWFAIL_vidSoftwareErrorHook|A|();|4|HEADER|1|NONE||||0|0|0|0||

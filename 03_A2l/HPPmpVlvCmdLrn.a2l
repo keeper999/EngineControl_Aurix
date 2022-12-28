@@ -1,0 +1,1742 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : HPPmpVlvCmdLrn                                          */
+/* !Description     : HPPMPVLVCMDLRN - LEARNING STRATEGY OF THE HP PUMP SPILL VALVE COMMAND PROFILE*/
+/*                                                                            */
+/* !Module          : HPPmpVlvCmdLrn                                          */
+/*                                                                            */
+/* !File            : HPPmpVlvCmdLrn.a2l                                      */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Sun Mar 31 19:11:05 2013                              */
+/*   Model name       : HPPmpVlvCmdLrn_AUTOCODE.mdl                           */
+/*   Model version    : 1.471                                                 */
+/*   Root subsystem   : /HPPmpVlvCmdLrn                                       */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/EB_DT/LOG/ASW/Ref/modules/PFUCTL/HPPMPVLVCMDLRN/HPPmpVlvCm$*/
+/* $Revision::   1.10                                                        $*/
+/* $Author::   etsasson                               $$Date::   03 Apr 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   HPPmpVlvCmdLrn
+    /*   LongIdentifier */   "HPPmpVlvCmdLrn Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpVlvCmdLrn_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_OfsNrProfCmd_M
+       /*   LongIdentifier */   "Cartographie d'offset du profil de commande en tension batterie"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_1
+       /*   LowerLimit     */   -250.0
+       /*   UpperLimit     */   250.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             PFuCtl_uBatt_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   Ext_uBattLrn
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             PFuCtl_uBattLrn_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiTransLrn_C
+       /*   LongIdentifier */   "Durée autorisée lorsque l'apprentissage n'est plus en cours"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   10000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiTransPrail_M
+       /*   LongIdentifier */   "Délai d'attente avant autorisation de detection de raté de coup de pompe après une transition de consigne"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   10000.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_tiTrans_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pRailSpDifAbs_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FaildPmpStk_C
+       /*   LongIdentifier */   "Offset à appliquer sur le profil de commande en cas de raté de coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   -250.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_NrAppl_T
+       /*   LongIdentifier */   "Number of times the same profile must be applied"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_8
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   4.8827379941940308E+002
+          AXIS_PTS_REF             PFuCtl_mFuInjEstim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_NrLrnCond_C
+       /*   LongIdentifier */   "Nombre de ralenti avant d'autoriser l'apprentissage (apprentissage espacé)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngDiff_C
+       /*   LongIdentifier */   "Variation max autorisée pour le régime durant l'apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngHiLrnThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur max du régime moteur au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngHiLrnThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur min du régime moteur au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngLoLrnThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur max du régime moteur au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngLoLrnThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur min du régime moteur au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesDiff_C
+       /*   LongIdentifier */   "Variation de pression collecteur max autorisée durant l'apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesHiLrnThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur max de la pression collecteur mesurée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesHiLrnThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur min de la pression collecteur mesurée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesLoLrnThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur max de la pression collecteur mesurée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesLoLrnThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur min de la pression collecteur mesurée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuRailMesDiff_C
+       /*   LongIdentifier */   "Seuil de différence de pression depuis le début de l'apprentissage pour le test de montée en pression"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pFuReqDiff_C
+       /*   LongIdentifier */   "Variation max de consigne de pression rail autorisée durant l'apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailDiffThd_C
+       /*   LongIdentifier */   "Valeu max autorisée de la différence entre mesure et consigne de la pression rail pour entrer en apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailHiDiffThdPmpStk_C
+       /*   LongIdentifier */   "Seuil haut de différence de pression pour le raté de coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailLoDiffThdPmpStk_C
+       /*   LongIdentifier */   "Seuil bas de différence de pression pour le raté de coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailSpDiffThdHi_C
+       /*   LongIdentifier */   "Différence maximum de variation autorisée en deux consignes de Prail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_uBattDiff_C
+       /*   LongIdentifier */   "Variation max de la tension batterie autorisée durant l'apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_uBattHiLrnThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur max  de la tension batterie au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_uBattHiLrnThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur min  de la tension batterie au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_uBattLoLrnThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur max de la tension batterie au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_uBattLoLrnThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur min  de la tension batterie au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   HPPMPVLVCMDLRN_u8Inhib
+       /*   LongIdentifier */   "inhibition of module HPPmpVlvCmdLrn"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_CmdProfCor_C
+       /*   LongIdentifier */   "Offset numero de profil à envoyer lorsque l'apprentissage est en cours"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_CmdProfETB_C
+       /*   LongIdentifier */   "Profil de commande à envoyer en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_CmdProfiNoIdle_C
+       /*   LongIdentifier */   "Profil de commande par défaut à appliquer dehors du ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_CmdProfilInit_C
+       /*   LongIdentifier */   "Profil de commande initiale"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_CmdProfilTst_C
+       /*   LongIdentifier */   "Profil de commande sur lequel est réalisé test sur l'augmentation de la pression rail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_FaildCndProfilInc_C
+       /*   LongIdentifier */   "Offset du Profil de commande de la pompe en cas d'echec des conditions"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_LrnPmpCmdProfMax_C
+       /*   LongIdentifier */   "Valeur max du profil de commande"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_LrnPmpCmdProfMin_C
+       /*   LongIdentifier */   "Valeur min du profil de commande"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_NoSplRazFailPmpStk_C
+       /*   LongIdentifier */   "Nombre de spill pour remettre à zero le booléen raté de coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_NrSpilEvePerCycle_C
+       /*   LongIdentifier */   "Nombre de Spill Event par cycle"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_PmpCmdDftProfil_T
+       /*   LongIdentifier */   "Default command profile depending on battery voltage"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             PFuCtl_uBatt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_PmpCmdProfDft_C
+       /*   LongIdentifier */   "Profil de commande en mode défaut"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_PmpCmdProfMax_C
+       /*   LongIdentifier */   "Valeur max du profil de commande final"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_PmpCmdProfMin_C
+       /*   LongIdentifier */   "Valeur min du profil de commande final"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bAcvETBHPPmpVlvCmdLrn_C
+       /*   LongIdentifier */   "Booléen d'activation du mode banc pour la stratégie d'apprentissage du profil de commande de la spill valve"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bForcAcvLrn_C
+       /*   LongIdentifier */   "Booléen permettant de forcer les conditions d'entrée en apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bForcIntLrn_C
+       /*   LongIdentifier */   "Booléen forcant l'interruption de l'apprentissage"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tAirHiLrnThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur max de la température d'air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tAirHiLrnThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur min de la température d'air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tAirLoLrnThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur max de la température d'air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tAirLoLrnThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur min de la température d'air"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   100.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tCoMesHiLrnThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur max de la température d'eau au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tCoMesHiLrnThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la valeur min de la température d'eau au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tCoMesLoLrnThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur max de la température d'eau au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tCoMesLoLrnThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la valeur min de la température d'eau au ralenti"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_11
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_uBatt_A
+       /*   LongIdentifier */   "Table Points d'appui en Tension batterie"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_uBattLrn_A
+       /*   LongIdentifier */   "Table de points d'appui en tension batterie en apprentissage"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   Ext_uBattLrn
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_nEng_tiTrans_A
+       /*   LongIdentifier */   "Table de points d'appui en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_pRailSpDifAbs_A
+       /*   LongIdentifier */   "Table de points d'appui pour PFuCtl_pRailSpDifAbs"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_mFuInjEstim_A
+       /*   LongIdentifier */   "Breakpoints table for the estimation of the fuel mass injected"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpVlvCmdLrn_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_8
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.8827379941940308E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tideltaT
+       /*   LongIdentifier */   "Calcul de période de spill event"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_15
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   10000.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_ctNrLrnInProgs
+       /*   LongIdentifier */   "Compteur du nombre de fois où la stratégie est entrée en apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_ctNrLrnVld
+       /*   LongIdentifier */   "Compteur du nombre d'apprentissage réussi"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrAppl
+       /*   LongIdentifier */   "Nombre de fois que l'on applique le profil courant"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_ctNrAppl
+       /*   LongIdentifier */   "Compteur du nombre de fois que l'on applique le même profil"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrLrnIt_prev
+       /*   LongIdentifier */   "Précédent nombre de ralenti avant d'autoriser l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrLrnIt
+       /*   LongIdentifier */   "Nombre de ralenti avant d'autoriser l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Ext_nEngLrn
+       /*   LongIdentifier */   "Régime moteur durant l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_5
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Ext_pDsThrMesSILrn
+       /*   LongIdentifier */   "Pression collecteur durant l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_6
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.2428E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_pRailSpDifAbs
+       /*   LongIdentifier */   "Différence entre mesure et consigne de la pression rail pour entrer en apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   InjSys_pFuReqLrn
+       /*   LongIdentifier */   "Consigne de pression rail durant l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Ext_pFuRailSplMesLrn
+       /*   LongIdentifier */   "Mesure de la pression rail au spill event au début de l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   Ext_uBattLrn
+       /*   LongIdentifier */   "Tension batterie durant l'apprentissage"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_2
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_OfsNrProfCmd
+       /*   LongIdentifier */   "Offset à ajouter sur le profil de commande appris"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_1
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -250.0
+       /*   UpperLimit     */   250.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrProfCmd
+       /*   LongIdentifier */   "Valeur du profil de commande donné par la stratégie d'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrProfCmdRaw_prev
+       /*   LongIdentifier */   "Valeur précédente du numéro de profil après saturation"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrProfCmdRaw
+       /*   LongIdentifier */   "Numéro de profil de commande appris avant saturation"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_NrProfCmdRawSat
+       /*   LongIdentifier */   "Numéro de profil appris après saturation"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_4
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvLrnInProgs
+       /*   LongIdentifier */   "Booléen d'indication de l'état de l'apprentissage (1 : apprentissage en cours)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvHPPmpVlvLrnCond
+       /*   LongIdentifier */   "Boolean indiquant que les conditions environnementales d'apprentissage sont réunies"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvLowNoiseZone
+       /*   LongIdentifier */   "Booléen d'indication d'entrée dans la zone ralenti pour l'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bFaildPmpStk
+       /*   LongIdentifier */   "Booléen d'indication d'un raté de coup de pompe"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bHPPmpVlvCmdLrnVld
+       /*   LongIdentifier */   "Booléan d'indication de réussite de l'apprentissage (1 : apprentissage réussi)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bHPPmpVlvCmdLrnVld_prev
+       /*   LongIdentifier */   "Valeur précédente du booléan d'indication de réussite de l'apprentissage (1 : apprentissage réussi)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bHPPmpVlvCmdLrnIt_prev
+       /*   LongIdentifier */   "Valeur antérieure du booléen indiquant l'interruption de l'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvFaildPmpStk
+       /*   LongIdentifier */   "Booleen indiquant la fin de l'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvFaildPmpStks
+       /*   LongIdentifier */   "Booleen indiquant un coup de pompe raté hors apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bHPPmpVlvCmdLrnFaild
+       /*   LongIdentifier */   "Booléan d'indication de raté de l'apprentissage (1 : apprentissage raté)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bHPPmpVlvCmdLrnIt
+       /*   LongIdentifier */   "Booléen indiquant l'interruption de l'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvRstLrnPFuInc
+       /*   LongIdentifier */   "Booléen de reset de l'apprentissage à cause du test d'augmentation de la pression"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvLrnInProgs_prev
+       /*   LongIdentifier */   "Valeur précédente du booléen d'indication de l'état de l'apprentissage (1 : apprentissage en cours)"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvPFuIncTst
+       /*   LongIdentifier */   "Booléen d'activation du test sur l'augmentation de pression rail"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvHPPmpBgnLrn
+       /*   LongIdentifier */   "Booleen d'autorization d'apprentisage en cas nominal"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bLrnVldFaildPmpStk
+       /*   LongIdentifier */   "Booléen d'indication d'un raté de coup de pompe hors apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bRunHPPmpLrn
+       /*   LongIdentifier */   "Booléen d'indication d'un raté de coup de pompe en cours de roulage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bPmpCmdLrnRst
+       /*   LongIdentifier */   "Boolean indiquant une forte variation d'une des conditions environnementales pendant l'apprentissage"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_1
+       /*   LongIdentifier */   "Q = (V+250)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 250 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_2
+       /*   LongIdentifier */   "Q = V*42.3728813559"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "V"
+       COEFFS                   0 42.3728813559 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_3
+       /*   LongIdentifier */   "Q = V*1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1000 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_6
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_7
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_8
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            HPPmpVlvCmdLrn_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_11
+       /*   LongIdentifier */   "Q = (V+40)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_12
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_13
+       /*   LongIdentifier */   "Q = (V+7812.5)*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 1048576 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_14
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpVlvCmdLrn_CM_15
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   HPPmpVlvCmdLrn_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   HPPmpVlvCmdLrn
+       /*   LongIdentifier */   "PTS_DOC_5144356.05"
+
+       /begin DEF_CHARACTERISTIC
+          HPPMPVLVCMDLRN_u8Inhib
+          PFuCtl_CmdProfCor_C
+          PFuCtl_CmdProfETB_C
+          PFuCtl_CmdProfiNoIdle_C
+          PFuCtl_CmdProfilInit_C
+          PFuCtl_CmdProfilTst_C
+          PFuCtl_FaildCndProfilInc_C
+          PFuCtl_FaildPmpStk_C
+          PFuCtl_LrnPmpCmdProfMax_C
+          PFuCtl_LrnPmpCmdProfMin_C
+          PFuCtl_NoSplRazFailPmpStk_C
+          PFuCtl_NrAppl_T
+          PFuCtl_NrLrnCond_C
+          PFuCtl_NrSpilEvePerCycle_C
+          PFuCtl_OfsNrProfCmd_M
+          PFuCtl_PmpCmdDftProfil_T
+          PFuCtl_PmpCmdProfDft_C
+          PFuCtl_PmpCmdProfMax_C
+          PFuCtl_PmpCmdProfMin_C
+          PFuCtl_bAcvETBHPPmpVlvCmdLrn_C
+          PFuCtl_bForcAcvLrn_C
+          PFuCtl_bForcIntLrn_C
+          PFuCtl_mFuInjEstim_A
+          PFuCtl_nEngDiff_C
+          PFuCtl_nEngHiLrnThdHi_C
+          PFuCtl_nEngHiLrnThdLo_C
+          PFuCtl_nEngLoLrnThdHi_C
+          PFuCtl_nEngLoLrnThdLo_C
+          PFuCtl_nEng_tiTrans_A
+          PFuCtl_pDsThrMesDiff_C
+          PFuCtl_pDsThrMesHiLrnThdHi_C
+          PFuCtl_pDsThrMesHiLrnThdLo_C
+          PFuCtl_pDsThrMesLoLrnThdHi_C
+          PFuCtl_pDsThrMesLoLrnThdLo_C
+          PFuCtl_pFuRailMesDiff_C
+          PFuCtl_pFuReqDiff_C
+          PFuCtl_pPrailDiffThd_C
+          PFuCtl_pPrailHiDiffThdPmpStk_C
+          PFuCtl_pPrailLoDiffThdPmpStk_C
+          PFuCtl_pPrailSpDiffThdHi_C
+          PFuCtl_pRailSpDifAbs_A
+          PFuCtl_tAirHiLrnThdHi_C
+          PFuCtl_tAirHiLrnThdLo_C
+          PFuCtl_tAirLoLrnThdHi_C
+          PFuCtl_tAirLoLrnThdLo_C
+          PFuCtl_tCoMesHiLrnThdHi_C
+          PFuCtl_tCoMesHiLrnThdLo_C
+          PFuCtl_tCoMesLoLrnThdHi_C
+          PFuCtl_tCoMesLoLrnThdLo_C
+          PFuCtl_tiTransLrn_C
+          PFuCtl_tiTransPrail_M
+          PFuCtl_uBattDiff_C
+          PFuCtl_uBattHiLrnThdHi_C
+          PFuCtl_uBattHiLrnThdLo_C
+          PFuCtl_uBattLoLrnThdHi_C
+          PFuCtl_uBattLoLrnThdLo_C
+          PFuCtl_uBattLrn_A
+          PFuCtl_uBatt_A
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Ext_nEngLrn
+          Ext_pDsThrMesSILrn
+          Ext_pFuRailSplMesLrn
+          Ext_uBattLrn
+          InjSys_pFuReqLrn
+          PFuCtl_NrAppl
+          PFuCtl_NrLrnIt
+          PFuCtl_NrLrnIt_prev
+          PFuCtl_NrProfCmdRaw
+          PFuCtl_NrProfCmdRawSat
+          PFuCtl_NrProfCmdRaw_prev
+          PFuCtl_OfsNrProfCmd
+          PFuCtl_bAcvFaildPmpStk
+          PFuCtl_bAcvFaildPmpStks
+          PFuCtl_bAcvHPPmpBgnLrn
+          PFuCtl_bAcvLrnInProgs_prev
+          PFuCtl_bAcvPFuIncTst
+          PFuCtl_bAcvRstLrnPFuInc
+          PFuCtl_bHPPmpVlvCmdLrnFaild
+          PFuCtl_bHPPmpVlvCmdLrnIt
+          PFuCtl_bHPPmpVlvCmdLrnIt_prev
+          PFuCtl_bHPPmpVlvCmdLrnVld_prev
+          PFuCtl_bLrnVldFaildPmpStk
+          PFuCtl_bPmpCmdLrnRst
+          PFuCtl_bRunHPPmpLrn
+          PFuCtl_ctNrAppl
+          PFuCtl_pRailSpDifAbs
+          PFuCtl_tideltaT
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          PFuCtl_NrProfCmd
+          PFuCtl_bAcvHPPmpVlvLrnCond
+          PFuCtl_bAcvLowNoiseZone
+          PFuCtl_bAcvLrnInProgs
+          PFuCtl_bFaildPmpStk
+          PFuCtl_bHPPmpVlvCmdLrnVld
+          PFuCtl_ctNrLrnInProgs
+          PFuCtl_ctNrLrnVld
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

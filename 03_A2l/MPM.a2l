@@ -1,0 +1,2779 @@
+/begin MODULE
+    MPM /* Name */ 
+    "Version 2.0" /* LongIdentifier */ 
+ 
+    /begin A2ML 
+        block "IF_DATA" taggedunion if_data { 
+        }; 
+    /end A2ML 
+ 
+    /begin MOD_PAR 
+        "-" /* Comment */ 
+        NO_OF_INTERFACES 0 
+    /end MOD_PAR 
+ 
+    /begin MOD_COMMON 
+        "-" /* Comment */ 
+        ALIGNMENT_BYTE 1 
+        ALIGNMENT_WORD 2 
+        ALIGNMENT_LONG 4 
+        ALIGNMENT_FLOAT32_IEEE 4 
+        ALIGNMENT_FLOAT64_IEEE 4 
+        DEPOSIT ABSOLUTE 
+    /end MOD_COMMON 
+ 
+    /begin MEASUREMENT 
+        MPM_ModuleVersion_Major_MP              /* Name */ 
+        "Version Majeure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        MPM_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_ModuleVersion_Minor_MP              /* Name */ 
+        "Version Mineure du module"         /* LongIdentifier */ 
+        UBYTE                       /* Datatype */ 
+        MPM_CM_VOID_SCALING_VersionModule   /* Conversion */ 
+        1                           /* Resolution */ 
+        100                         /* Accuracy */ 
+        0                           /* LowerLimit */ 
+        255                         /* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bLdLimReq_B /* Name */ 
+        "Flag de demande de limitation de la charge maximale pour dépassement d'un ou plusieurs seuils d'endommagement" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bMPMInh_B /* Name */ 
+        "Flag d'arrêt définitif de la stratégie MPM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bOvbStop_B /* Name */ 
+        "Flag de demande d'arrêt de l'overboost provenant de la fonction MPM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_facOvbReq_B /* Name */ 
+        "Facteur d'overboost appliqué lors d'une période d'overboost provenant d'une fonction MPM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_EQ_RES_0_000030517578125_OFF_1 /* Conversion */ 
+        1 /* LowerLimit */ 
+        2.99996948242188 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_rLdMax_B /* Name */ 
+        "Remplissage maximal spécifique MPM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_EQ_RES_0_00006103515625 /* Conversion */ 
+        0 /* LowerLimit */ 
+        3.99993896484375 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_ACTIVE_BYP_C /* Name */ 
+        "Bypass du module MPM" /* LongIdentifier */ 
+        VALUE  /* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT /* Deposit */ 
+        0   /* MaxDiff */ 
+        MPM_CM_Byp_VOID_SCALING /* Conversion */ 
+        0 /* LowerLimit */ 
+        1 /* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_Byp_VOID_SCALING /* Name */ 
+        "Phys = Num" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%3.0" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_Byp_EQ_RES_0_000030517578125_OFF_1 /* Name */ 
+        "Phys = Num * 2^-15 + 1" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%18.15" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 -1 0 0 0.000030517578125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_Byp_EQ_RES_0_00006103515625 /* Name */ 
+        "Phys = Num * 2^-14" /* LongIdentifier */ 
+        RAT_FUNC /* ConversionType */ 
+        "%17.14" /* Format */ 
+        "-" /* Unit */ 
+        COEFFS 0 1 0 0 0 0.00006103515625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_VOID_SCALING_VersionModule       /* Name */ 
+        "-"                            /* LongIdentifier */ 
+        RAT_FUNC                        /* ConversionType */ 
+        "%3.0"                          /* Format */ 
+        "-"                        /* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Byp    /* Name */ 
+        "MPM_FCT_Byp"    /* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_bLdLimReq_B /* Identifier */ 
+            DmgMSI_bMPMInh_B /* Identifier */ 
+            MPM_bOvbStop_B /* Identifier */ 
+            MPM_facOvbReq_B /* Identifier */ 
+            MPM_rLdMax_B /* Identifier */ 
+            MPM_ACTIVE_BYP_C /* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_VersionModule          /* Name */ 
+        " Fonction regroupant Constantes de la version du Module " /* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            MPM_ModuleVersion_Major_MP      /* Identifier */ 
+            MPM_ModuleVersion_Minor_MP      /* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_UBYTE_COL_DIRECT    /* Name */ 
+        FNC_VALUES 1 UBYTE COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_UWORD_COL_DIRECT     /* Name */ 
+        FNC_VALUES 1 UWORD COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+ 
+    /begin CHARACTERISTIC 
+        DmgM_pCylBlockMecStrgth_C	/* Name */ 
+        "Résistance du matériau"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_e	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bAcvDmgCylBlock_C	/* Name */ 
+        "Flag d'activation de l'estimation de l'endommagement du fond de filet"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bAcvDmgCylHd_C	/* Name */ 
+        "Flag d'activation de l'estimation de l'endommagement du pontet culasse"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bAcvDmgCylHdInj_C	/* Name */ 
+        "Flag d'activation de l'estimation de l'endommagement du noyau d'eau culasse"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bAcvDmgExMnf_C	/* Name */ 
+        "Flag d'activation de l'estimation de l'endommagement du collecteur échappement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_bAcvDmgTrbCase_C	/* Name */ 
+        "Flag d'activation de l'estimation de l'endommagement du carter turbine"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_dstVehThdLdLim_C	/* Name */ 
+        "Seuil de la distance véhicule pour autorisation de la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_500	/* Conversion */ 
+        0	/* LowerLimit */ 
+        300000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_dstVehThdMPMInh_C	/* Name */ 
+        "Seuil de la distance véhicule pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_500	/* Conversion */ 
+        0	/* LowerLimit */ 
+        300000	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_pCylBlockMecStrgthEqu_M	/* Name */ 
+        "Taux de cisaillement"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_5	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2000	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            3	/* UpperLimit */ 
+            AXIS_PTS_REF DmgMSI_rAirLdPCylBlockX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_32	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7520	/* UpperLimit */ 
+            AXIS_PTS_REF DmgMSI_nEngPCylBlockY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylBlockDmgThdLdLim_C	/* Name */ 
+        "Seuil d'endommagement du fond de filet pour la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0001	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylBlockDmgThdMPMInh_C	/* Name */ 
+        "Seuil d'endommagement du fond de filet pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0001	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylHdDmgThdLdLim_C	/* Name */ 
+        "Seuil d'endommagement du pontet culasse pour la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylHdDmgThdMPMInh_C	/* Name */ 
+        "Seuil d'endommagement du pontet culasse pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylHdInjDmg_M	/* Name */ 
+        "carto d'endommagement du noyau d'eau culasse"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Conversion */ 
+        0	/* LowerLimit */ 
+        0.00020000000000663931	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_256	/* Conversion */ 
+            12	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            25000192	/* UpperLimit */ 
+            AXIS_PTS_REF DmgMSI_pCylMaxRCylHdInjDmgX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            10	/* UpperLimit */ 
+            AXIS_PTS_REF DmgMSI_pwrCylRCylHdInjDmgY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylHdInjDmgThdLdLim_C	/* Name */ 
+        "Seuil d'endommagement du noyau d'eau pour la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rCylHdInjDmgThdMPMInh_C	/* Name */ 
+        "Seuil d'endommagement du noyau d'eau pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rExMnfDmgThdLdLim_C	/* Name */ 
+        "Seuil d'endommagement du collecteur pour la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rExMnfDmgThdMPMInh_C	/* Name */ 
+        "Seuil d'endommagement du collecteur pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rTrbCaseDmgThdLdLim_C	/* Name */ 
+        "Seuil d'endommagement du carter turbine pour la limitation de remplissage"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        DmgMSI_rTrbCaseDmgThdMPMInh_C	/* Name */ 
+        "Seuil d'endommagement du carter turbine pour l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bAcvBedModDft_C	/* Name */ 
+        "Flag d'activation du mode banc défaut"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bAcvBedModDmgThd_C	/* Name */ 
+        "Flag d'activation des dépassements de seuil"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bAuthRvInterBas_C	/* Name */ 
+        "Flag d'autorisation de réversibilité de la réduction de charge Intermédiaire vers la charge de  Base"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bAuthRvMPMInter_C	/* Name */ 
+        "Flag d'autorisation de réversibilité de la réduction de charge Maximale MPM vers la charge intermédiaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bInhMPM_C	/* Name */ 
+        "Flag du mode banc permettant de simuler un dépassement de seuil maximal d'endommagement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_bLdLim_C	/* Name */ 
+        "Flag du mode banc permettant de simuler un dépassement d'endommagement de seuil intermédiaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_facOvbRLdInh_M	/* Name */ 
+        "Facteur d'overboost du remplissage maximal de la fonction Overboost"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_3_0517578125em05_a	/* Conversion */ 
+        1	/* LowerLimit */ 
+        2.9999694824200001	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            223	/* LowerLimit */ 
+            734	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_tThrFacRLdInhX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngFacRLdInhY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_facOvbRLdInter_M	/* Name */ 
+        "Facteur d'overboost du remplissage Intermédiaire de la fonction Overboost"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_3_0517578125em05_a	/* Conversion */ 
+        1	/* LowerLimit */ 
+        2.9999694824200001	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            223	/* LowerLimit */ 
+            734	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_tThrFacRLdInterX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngFacRLdInterY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_facOvbRLdMax_M	/* Name */ 
+        "Facteur d'overboost du remplissage lorsque la stratégie MPM est arrêtée"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_3_0517578125em05_a	/* Conversion */ 
+        1	/* LowerLimit */ 
+        2.9999694824200001	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+            4	/* MaxAxisPoints */ 
+            223	/* LowerLimit */ 
+            734	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_tThrFacRLdMaxX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            6	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngFacRLdMaxY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_nEngThd_C	/* Name */ 
+        "Seuil en régime moteur pour la réactivation de la stratégie MPM après un défaut levé"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_rLdInhMPM_T	/* Name */ 
+        "Remplissage maximal lorsque la stratégie MPM est arrêtée"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3.99993896484375	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngRLdInh_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_rLdInter_T	/* Name */ 
+        "Remplissage maximal lorsque l'état MPM est à son niveau intermédiaire"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3.99993896484375	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngRLdInter_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_rLdMax_T	/* Name */ 
+        "Remplissage maximal lorsque l'état MPM est à son niveau maximal"	/* LongIdentifier */ 
+        CURVE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        0	/* LowerLimit */ 
+        3.99993896484375	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_1	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            7500	/* UpperLimit */ 
+            AXIS_PTS_REF MPM_nEngRLdMax_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tExMnfThdHi_C	/* Name */ 
+        "Seuil en température échappement pour l'arrêt de l'overboost"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_d	/* Conversion */ 
+        223	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tExMnfThdLo_C	/* Name */ 
+        "Seuil en température échappement pour la reprise de l'autorisation de l'overboost"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_d	/* Conversion */ 
+        223	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tiDecInterBas_C	/* Name */ 
+        "Temps de décroissante du facteur de passage de l'état Intermédiaire à l'état base"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        240	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tiDecMPMInter_C	/* Name */ 
+        "Temps de décroissante du facteur de passage de l'état MPM à l'état Intermédiaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        240	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tiIncInterBas_C	/* Name */ 
+        "Temps de croissante du facteur de passage de l'état Intermédiaire à l'état base"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        240	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        MPM_tiIncMPMInter_C	/* Name */ 
+        "Temps de croissante du facteur de passage de l'état MPM à l'état Intermédiaire"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1_c	/* Conversion */ 
+        0	/* LowerLimit */ 
+        240	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_noAcvCylHd_C	/* Name */ 
+        "Numéro de la carto correspondant a l'endommagement du pontet culasse"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_noAcvExMnf_C	/* Name */ 
+        "Numéro de la carto correspondant a l'endommagement du collecteur échappement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_noAcvTrbCase_C	/* Name */ 
+        "Numéro de la carto correspondant a l'endommagement du carter turbine"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UBYTE_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        0	/* LowerLimit */ 
+        5	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_pwrDeltaThd_C	/* Name */ 
+        "Seuil d'amplitude du flux thermique pour la prise en compte d'un endommagement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_rDmgCylHd_M	/* Name */ 
+        "Cartographie  d'endommagement du pontet culasse"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            10	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_pwrDelta_rDmgCylHdX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+            20	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            10	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_pwrAvr_rDmgCylHdY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_rDmgExMnf_M	/* Name */ 
+        "Cartographie d'endommagement du collecteur d'échappement"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1523	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_tDelta_rDmgExMnfX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+            20	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1523	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_tAvr_rDmgExMnfY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_rDmgTrbCase_M	/* Name */ 
+        "Cartographie  d'endommagement du carter turbine"	/* LongIdentifier */ 
+        MAP	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_ULONG_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+            16	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1523	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_tDelta_rDmgTrbCaseX_A 
+        /end AXIS_DESCR 
+        /begin AXIS_DESCR 
+            COM_AXIS	/* Attribute */ 
+            NO_INPUT_QUANTITY	/* InputQuantity */ 
+            MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+            20	/* MaxAxisPoints */ 
+            0	/* LowerLimit */ 
+            1523	/* UpperLimit */ 
+            AXIS_PTS_REF RFL_tAvr_rDmgTrbCaseY_A 
+        /end AXIS_DESCR 
+    /end CHARACTERISTIC 
+ 
+    /begin CHARACTERISTIC 
+        RFL_tDeltaThd_C	/* Name */ 
+        "Seuil d'amplitude de la température pour la prise en compte d'un endommagement"	/* LongIdentifier */ 
+        VALUE	/* Type */ 
+        0x0 /* Address */ 
+        MPM_RL_UWORD_COL_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0625_h	/* Conversion */ 
+        0	/* LowerLimit */ 
+        200	/* UpperLimit */ 
+    /end CHARACTERISTIC 
+ 
+    /begin AXIS_PTS 
+        DmgMSI_nEngPCylBlockY_A	/* Name */ 
+        "Points d'appuis en régime moteur pour l'estimation taux de cisaillement"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UBYTE_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_32	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7520	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        DmgMSI_pCylMaxRCylHdInjDmgX_A	/* Name */ 
+        "Points d'appui en pression cylindre max pour l'estimation de l'endommagement du noyau d'eau culasse"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_ULONG_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_256	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        25000192	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        DmgMSI_pwrCylRCylHdInjDmgY_A	/* Name */ 
+        "Points d'appui en flux thermique culasse pour l'estimation de l'endommagement du noyau d'eau culasse"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        DmgMSI_rAirLdPCylBlockX_A	/* Name */ 
+        "Points d'appui en remplissage pour l'estimation du taux de cisaillement"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        12	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngFacRLdInhY_A	/* Name */ 
+        "Points d'appuis en régime moteur du facteur d'overboost du remplissage maximal de la fonction MPM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngFacRLdInterY_A	/* Name */ 
+        "Points d'appuis en régime moteur du facteur d'overboost intermédiaire de la fonction MPM"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngFacRLdMaxY_A	/* Name */ 
+        "Points d'appuis en régime moteur du facteur d'overboost lorsque la stratégie MPM est arrêtée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        6	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngRLdInh_A	/* Name */ 
+        "Points d'appuis en régime moteur du remplissage lorsque la stratégie MPM est arrêtée"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngRLdInter_A	/* Name */ 
+        "Points d'appuis en régime moteur du remplissage maximal lorsque l'état MPM est à son niveau intermédiaire"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_nEngRLdMax_A	/* Name */ 
+        "Points d'appuis en régime moteur du remplissage maximal lorsque qu'aucun seuil d'endommagement n'est atteint"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_1	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        7500	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_tThrFacRLdInhX_A	/* Name */ 
+        "Points d'appuis en température d'admission (plénum admission) du facteur d'overboost"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_ULONG_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        223	/* LowerLimit */ 
+        734	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_tThrFacRLdInterX_A	/* Name */ 
+        "Points d'appuis en température d'admission (plénum admission) du facteur d'overboost"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_ULONG_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        223	/* LowerLimit */ 
+        734	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        MPM_tThrFacRLdMaxX_A	/* Name */ 
+        "Points d'appuis en température d'admission (plénum admission) du facteur d'overboost"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_ULONG_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0078125	/* Conversion */ 
+        4	/* MaxAxisPoints */ 
+        223	/* LowerLimit */ 
+        734	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_pwrAvr_rDmgCylHdY_A	/* Name */ 
+        "Points d'appui en flux thermique culasse moyen de la cartographie  d'endommagement du pontet culasse"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+        20	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_pwrDelta_rDmgCylHdX_A	/* Name */ 
+        "Points d'appui en amplitude de flux thermique culasse de la cartographie d'endommagement du pontet culasse"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_tAvr_rDmgExMnfY_A	/* Name */ 
+        "Points d'appui en température collecteur d'échappement moyenne de la cartographie  d'endommagement du collecteur d'échappement"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+        20	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_tAvr_rDmgTrbCaseY_A	/* Name */ 
+        "Points d'appui en température carter turbine moyenne de la cartographie  d'endommagement du carter turbine"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+        20	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_tDelta_rDmgExMnfX_A	/* Name */ 
+        "Points d'appui en amplitude température collecteur d'échappement de la cartographie d'endommagement du collecteur d'échappement"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin AXIS_PTS 
+        RFL_tDelta_rDmgTrbCaseX_A	/* Name */ 
+        "Points d'appui en amplitude température carter turbine de la cartographie d'endommagement du carter turbine"	/* LongIdentifier */ 
+        0x0 /* Address */ 
+        NO_INPUT_QUANTITY	/* InputQuantity */ 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Deposit */ 
+        0	/* MaxDiff */ 
+        MPM_CM_EQ_LSB_0_0625	/* Conversion */ 
+        16	/* MaxAxisPoints */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+    /end AXIS_PTS 
+ 
+    /begin MEASUREMENT 
+        Afts_bRstCntReq	/* Name */ 
+        "Flag de remise à zéro du compteur d'endommagement"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgM_bAuthMPMInh	/* Name */ 
+        "Flag d'autorisation de l'arrêt de la stratégie MPM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvLdLimCylBlock	/* Name */ 
+        "Flag activation de la limitation du remplissage maximal lorsque l'endommagement du fond de palier a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvLdLimCylHd	/* Name */ 
+        "Flag activation de la limitation du remplissage maximal lorsque l'endommagement du pontet culasse a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvLdLimCylHdInj	/* Name */ 
+        "Flag activation de la limitation du remplissage maximal lorsque l'endommagement du noyau d'eau a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvLdLimExMnf	/* Name */ 
+        "Flag activation de la limitation du remplissage maximal lorsque l'endommagement du collecteur échappement a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvLdLimTrbCase	/* Name */ 
+        "Flag activation de la limitation du remplissage maximal lorsque l'endommagement du carter turbine a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvMPMInhCylBlock	/* Name */ 
+        "Flag d'arrêt de la stratégie MPM lorsque l'endommagement du fond de palier a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvMPMInhCylHd	/* Name */ 
+        "Flag d'arrêt de la stratégie MPM lorsque l'endommagement du pontet culasse a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvMPMInhCylHdInj	/* Name */ 
+        "Flag d'arrêt de la stratégie MPM lorsque l'endommagement du noyau d'eau a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvMPMInhExMnf	/* Name */ 
+        "Flag d'arrêt de la stratégie MPM lorsque l'endommagement du collecteur échappement a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAcvMPMInhTrbCase	/* Name */ 
+        "Flag d'arrêt de la stratégie MPM lorsque l'endommagement du carter turbine a atteint son seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bAuthLdLim	/* Name */ 
+        "Flag d'autorisation de la limitation du remplissage maximal"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_bCylHdInjDmgMv	/* Name */ 
+        "Flag de réinitialisation du compteur intermédiaire du noyau d'eau culasse"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_ctCylHdInjDmgInter	/* Name */ 
+        "Compteur d'endommagement intermédiaire avant prise en compte de la réinitialisation"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.00024414062494315658	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_rCylBlockDmg_MP	/* Name */ 
+        "Point de mesure Endommage du fond de filet estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_1em08	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_rCylHdInjDmg	/* Name */ 
+        "Endommage du noyau d'eau culasse courant"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.00024414062494315658	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        DmgMSI_rCylHdInjDmgInter	/* Name */ 
+        "Endommage intermédiaire du noyau d'eau culasse estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.00024414062494315658	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        LibCallNum	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        255	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_bLdLimReq	/* Name */ 
+        "Flag de demande de réduction de la charge maximale MPM pour dépassement du seuil intermédiaire"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_bMPMDft	/* Name */ 
+        "Flag d'inhibition de la fonction MPM pour défaut confirmé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_bMPMInh	/* Name */ 
+        "Flag d'arrêt de la fonction MPM pour dépassement de seuil"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_facOvbInter_MP	/* Name */ 
+        "Point de mesure du facteur intermédiaire de la fonction MPM"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_3_0517578125em05_a	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_facTranInterBas	/* Name */ 
+        "Facteur de transition niveau intermédiaire vers niveau de base (et inversement)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_3_0517578125em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_facTranMPMInter	/* Name */ 
+        "Facteur de transition niveau maximal vers niveau intermédiaire (et inversement)"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_3_0517578125em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_rLdMaxInter_MP	/* Name */ 
+        "Point de mesure du remplissage maximal intermédiaire de la fonction MPM"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3.99993896484375	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_16BIT.DmgMSI_rCylHdInjDmgCnt_NV	/* Name */ 
+        "Contiens l'endommage principal du noyau d'eau culasse estimé"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylBlockDmg_NV	/* Name */ 
+        "Contiens l'endommage du fond de filet estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_1em08	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdDmg_NV	/* Name */ 
+        "Contiens l'endommage estimé du pontet culasse"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdInjDmgInter_NV	/* Name */ 
+        "Contiens l'endommage intermédiaire du noyau d'eau culasse estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        0.00020000000000663931	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_32BIT_1.DmgMSI_rTrbCaseDmg_NV	/* Name */ 
+        "Contiens l'endommage du carter turbine estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_sNV_Z1_CST_32BIT_2.DmgMSI_rExMnfDmg_NV	/* Name */ 
+        "Contiens l'endommage du collecteur échappement estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        MPM_stCtl	/* Name */ 
+        "Etat du superviseur MPM"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE003_DmgMSI_rTrbCaseDmg_out	/* Name */ 
+        "Endommage du carter turbine estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER DmgMSI_rTrbCaseDmg 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE004_DmgMSI_rExMnfDmg_out	/* Name */ 
+        "Endommage du collecteur échappement estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER DmgMSI_rExMnfDmg 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE005_DmgMSI_rCylHdDmg_out	/* Name */ 
+        "Endommage estimé du pontet culasse"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER DmgMSI_rCylHdDmg 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE006_DmgMSI_rCylBlockDmg_out	/* Name */ 
+        "Endommage du fond de filet estimé"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_1em08	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER DmgMSI_rCylBlockDmg 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RE006_DmgMSI_rCylHdInjDmgCnt_out	/* Name */ 
+        "Endommage principal du noyau d'eau culasse estimé"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        DISPLAY_IDENTIFIER DmgMSI_rCylHdInjDmgCnt 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_bAcvSelMod	/* Name */ 
+        "Flag de prise en compte de la stratégie de sélection de la méthode Rainflow"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING_b	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_idxPrm	/* Name */ 
+        "Indice de la dernière valeur enregistré dans le vecteur de référence"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_idxPrmCylHd	/* Name */ 
+        "Indice de la dernière valeur du flux thermique culasse enregistré"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_idxPrmExMnf	/* Name */ 
+        "Indice de la dernière température du collecteur échappement enregistré"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_idxPrmPrev	/* Name */ 
+        "Indice de la dernière valeur enregistré dans le vecteur de référence au pas précédent"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_idxPrmTrbCase	/* Name */ 
+        "Indice de la dernière température du carter turbine enregistré"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        20	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_noAcvMap	/* Name */ 
+        "Numéro de la carto d'endommagement selon l'élément surveillé"	/* LongIdentifier */ 
+        UBYTE	/* Datatype */ 
+        MPM_CM_VOID_SCALING	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        1	/* LowerLimit */ 
+        3	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_prm_tWallPwrFlow	/* Name */ 
+        "Vecteur de température ou de flux thermique de référence"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_0_03125_f	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 20 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_prm_tWallPwrFlowCylHd	/* Name */ 
+        "Vecteur d'enregistrement du flux thermique culasse"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_0_03125	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        10	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 20 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_prm_tWallPwrFlowExMnf	/* Name */ 
+        "Vecteur d'enregistrement de la température du collecteur échappement"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_0_03125_j	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 20 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_prm_tWallPwrFlowPrev	/* Name */ 
+        "Vecteur de température ou de flux thermique de référence pas de calcul précédent"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_0_03125_f	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 20 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_prm_tWallPwrFlowTrbCase	/* Name */ 
+        "Vecteur d'enregistrement de la température du carter turbine"	/* LongIdentifier */ 
+        UWORD	/* Datatype */ 
+        MPM_CM_EQ_LSB_0_03125_j	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        1523	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+        MATRIX_DIM 20 1 1 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_rDmg	/* Name */ 
+        "Valeur du compteur d'endommagement par la méthode Rainflow"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin MEASUREMENT 
+        RFL_rDmgPrev	/* Name */ 
+        "Valeur du compteur d'endommagement par la méthode Rainflow à pas de calcul précédent"	/* LongIdentifier */ 
+        ULONG	/* Datatype */ 
+        MPM_CM_EQ_LSB_7_4505805969238281em09_g	/* Conversion */ 
+        1	/* Resolution */ 
+        100	/* Accuracy */ 
+        0	/* LowerLimit */ 
+        2	/* UpperLimit */ 
+        ECU_ADDRESS 0x0 
+    /end MEASUREMENT 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_0001	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%6.4"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0001 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_0078125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.7"	/* Format */ 
+        "K"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0078125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_03125	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "kW"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_03125_f	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "K or kW"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_03125_j	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%10.5"	/* Format */ 
+        "K"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.03125 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_0625	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "K ou kW"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_0625_h	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%9.4"	/* Format */ 
+        "K"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.0625 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_0_5	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%7.1"	/* Format */ 
+        "Pa"	/* Unit */ 
+        COEFFS 0 1 0 0 0 0.5 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_1	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_1_c	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "s"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_1_d	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "K"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_1_e	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%5.0"	/* Format */ 
+        "Pa"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_1em08	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%11.8"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1e-08 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_256	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%13.0"	/* Format */ 
+        "Pa"	/* Unit */ 
+        COEFFS 0 1 0 0 0 256 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_3_0517578125em05	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%17.15"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 3.0517578125e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_3_0517578125em05_a	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%22.15"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 3.0517578125e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_32	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%4.0"	/* Format */ 
+        "RPM"	/* Unit */ 
+        COEFFS 0 1 0 0 0 32 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_5_6843418860808015em14	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.15"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 5.6843418860808015e-14 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_500	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%8.0"	/* Format */ 
+        "Km"	/* Unit */ 
+        COEFFS 0 1 0 0 0 500 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_6_103515625em05	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%16.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 6.103515625e-05 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_7_4505805969238281em09	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%17.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 7.4505805969238281e-09 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_EQ_LSB_7_4505805969238281em09_g	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%17.14"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 7.4505805969238281e-09 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_VOID_SCALING	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%3.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin COMPU_METHOD 
+        MPM_CM_VOID_SCALING_b	/* Name */ 
+        "Void scaling for unscaled variables"	/* LongIdentifier */ 
+        RAT_FUNC	/* ConversionType */ 
+        "%1.0"	/* Format */ 
+        "-"	/* Unit */ 
+        COEFFS 0 1 0 0 0 1 
+    /end COMPU_METHOD 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RE006_DmgMSI_rCylBlockDmg_out	/* Identifier */ 
+            RE005_DmgMSI_rCylHdDmg_out	/* Identifier */ 
+            RE006_DmgMSI_rCylHdInjDmgCnt_out	/* Identifier */ 
+            RE004_DmgMSI_rExMnfDmg_out	/* Identifier */ 
+            RE003_DmgMSI_rTrbCaseDmg_out	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_MPM_007_TEV_fct	/* Identifier */ 
+            MPM_FCT_MPM_002_TEV_fct	/* Identifier */ 
+            MPM_FCT_MPM_006_DRE_fct	/* Identifier */ 
+            MPM_FCT_MPM_005_TEV_fct	/* Identifier */ 
+            MPM_FCT_MPM_004_TEV_fct	/* Identifier */ 
+            MPM_FCT_MPM_003_TEV_fct	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_002_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_dstVehThdLdLim_C	/* Identifier */ 
+            DmgMSI_dstVehThdMPMInh_C	/* Identifier */ 
+            DmgMSI_rCylBlockDmgThdLdLim_C	/* Identifier */ 
+            DmgMSI_rCylBlockDmgThdMPMInh_C	/* Identifier */ 
+            DmgMSI_rCylHdDmgThdLdLim_C	/* Identifier */ 
+            DmgMSI_rCylHdDmgThdMPMInh_C	/* Identifier */ 
+            DmgMSI_rCylHdInjDmgThdLdLim_C	/* Identifier */ 
+            DmgMSI_rCylHdInjDmgThdMPMInh_C	/* Identifier */ 
+            DmgMSI_rExMnfDmgThdLdLim_C	/* Identifier */ 
+            DmgMSI_rExMnfDmgThdMPMInh_C	/* Identifier */ 
+            DmgMSI_rTrbCaseDmgThdLdLim_C	/* Identifier */ 
+            DmgMSI_rTrbCaseDmgThdMPMInh_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            DmgMSI_bAcvLdLimCylBlock	/* Identifier */ 
+            DmgMSI_bAcvLdLimCylHd	/* Identifier */ 
+            DmgMSI_bAcvLdLimCylHdInj	/* Identifier */ 
+            DmgMSI_bAcvLdLimExMnf	/* Identifier */ 
+            DmgMSI_bAcvLdLimTrbCase	/* Identifier */ 
+            DmgMSI_bAcvMPMInhCylBlock	/* Identifier */ 
+            DmgMSI_bAcvMPMInhCylHd	/* Identifier */ 
+            DmgMSI_bAcvMPMInhCylHdInj	/* Identifier */ 
+            DmgMSI_bAcvMPMInhExMnf	/* Identifier */ 
+            DmgMSI_bAcvMPMInhTrbCase	/* Identifier */ 
+            DmgMSI_bAuthLdLim	/* Identifier */ 
+            DmgM_bAuthMPMInh	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_003_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmTrbCase	/* Identifier */ 
+            RFL_prm_tWallPwrFlowTrbCase	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT_1.DmgMSI_rTrbCaseDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE003_DmgMSI_rTrbCaseDmg_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb12_F02_Scheduler_Compute	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_004_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmExMnf	/* Identifier */ 
+            RFL_prm_tWallPwrFlowExMnf	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT_2.DmgMSI_rExMnfDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE004_DmgMSI_rExMnfDmg_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb17_F02_Scheduler_Compute	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_005_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmCylHd	/* Identifier */ 
+            RFL_prm_tWallPwrFlowCylHd	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE005_DmgMSI_rCylHdDmg_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb22_F02_Scheduler_Compute	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_006_DRE_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            DmgMSI_rCylHdInjDmgInter	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdInjDmgInter_NV	/* Identifier */ 
+            MPM_sNV_Z1_CST_16BIT.DmgMSI_rCylHdInjDmgCnt_NV	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylBlockDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin OUT_MEASUREMENT 
+            RE006_DmgMSI_rCylBlockDmg_out	/* Identifier */ 
+            RE006_DmgMSI_rCylHdInjDmgCnt_out	/* Identifier */ 
+        /end OUT_MEASUREMENT  
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb29_F02_Compute	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_007_TEV_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb45_MPM_007	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_LibRFLDmg_fct	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmTrbCase	/* Identifier */ 
+            RFL_prm_tWallPwrFlowTrbCase	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS2_LibRFLDmgMod	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_LibRFLDmg_fct_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmExMnf	/* Identifier */ 
+            RFL_prm_tWallPwrFlowExMnf	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS2_LibRFLDmgMod_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_MPM_LibRFLDmg_fct_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmCylHd	/* Identifier */ 
+            RFL_prm_tWallPwrFlowCylHd	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS2_LibRFLDmgMod_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb12_F02_Scheduler_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_MPM_LibRFLDmg_fct	/* Identifier */ 
+            MPM_FCT_Sb15_F02_Compute	/* Identifier */ 
+            MPM_FCT_Sb13_F03_Layer_Input	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb13_F03_Layer_Input	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_bAcvDmgTrbCase_C	/* Identifier */ 
+            RFL_noAcvTrbCase_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_32BIT_1.DmgMSI_rTrbCaseDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb15_F02_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmTrbCase	/* Identifier */ 
+            RFL_prm_tWallPwrFlowTrbCase	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb17_F02_Scheduler_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_MPM_LibRFLDmg_fct_2	/* Identifier */ 
+            MPM_FCT_Sb20_F02_Compute	/* Identifier */ 
+            MPM_FCT_Sb18_F03_Layer_Input	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb18_F03_Layer_Input	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_bAcvDmgExMnf_C	/* Identifier */ 
+            RFL_noAcvExMnf_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_32BIT_2.DmgMSI_rExMnfDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb20_F02_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmExMnf	/* Identifier */ 
+            RFL_prm_tWallPwrFlowExMnf	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb22_F02_Scheduler_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_MPM_LibRFLDmg_fct_3	/* Identifier */ 
+            MPM_FCT_Sb25_F02_Compute	/* Identifier */ 
+            MPM_FCT_Sb23_F03_Layer_Input	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb23_F03_Layer_Input	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_bAcvDmgCylHd_C	/* Identifier */ 
+            RFL_noAcvCylHd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdDmg_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb25_F02_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrmCylHd	/* Identifier */ 
+            RFL_prm_tWallPwrFlowCylHd	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb29_F02_Compute	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_bAcvDmgCylBlock_C	/* Identifier */ 
+            DmgMSI_bAcvDmgCylHdInj_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylBlockDmg_NV	/* Identifier */ 
+            MPM_sNV_Z1_CST_16BIT.DmgMSI_rCylHdInjDmgCnt_NV	/* Identifier */ 
+            DmgMSI_rCylHdInjDmgInter	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdInjDmgInter_NV	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb31_F02_Fond_de_filet	/* Identifier */ 
+            MPM_FCT_Sb30_F01_Fissu__u_d_eau_culasse	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb30_F01_Fissu__u_d_eau_culasse	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_16BIT.DmgMSI_rCylHdInjDmgCnt_NV	/* Identifier */ 
+            DmgMSI_rCylHdInjDmgInter	/* Identifier */ 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylHdInjDmgInter_NV	/* Identifier */ 
+            DmgMSI_bCylHdInjDmgMv	/* Identifier */ 
+            DmgMSI_rCylHdInjDmg	/* Identifier */ 
+            DmgMSI_ctCylHdInjDmgInter	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb35_DmgMSI_rCylHdInjDmg_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb31_F02_Fond_de_filet	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgM_pCylBlockMecStrgth_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_sNV_Z1_CST_32BIT.DmgMSI_rCylBlockDmg_NV	/* Identifier */ 
+            DmgMSI_rCylBlockDmg_MP	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb39_DmgMSI_pC__kMecStrgthEqu_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb35_DmgMSI_rCylHdInjDmg_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_rCylHdInjDmg_M	/* Identifier */ 
+            DmgMSI_pCylMaxRCylHdInjDmgX_A	/* Identifier */ 
+            DmgMSI_pwrCylRCylHdInjDmgY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            DmgMSI_rCylHdInjDmg	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb39_DmgMSI_pC__kMecStrgthEqu_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            DmgMSI_pCylBlockMecStrgthEqu_M	/* Identifier */ 
+            DmgMSI_rAirLdPCylBlockX_A	/* Identifier */ 
+            DmgMSI_nEngPCylBlockY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb45_MPM_007	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_tiDecInterBas_C	/* Identifier */ 
+            MPM_tiDecMPMInter_C	/* Identifier */ 
+            MPM_tiIncInterBas_C	/* Identifier */ 
+            MPM_tiIncMPMInter_C	/* Identifier */ 
+            MPM_bAuthRvMPMInter_C	/* Identifier */ 
+            MPM_bAuthRvInterBas_C	/* Identifier */ 
+            MPM_nEngThd_C	/* Identifier */ 
+            MPM_tExMnfThdHi_C	/* Identifier */ 
+            MPM_tExMnfThdLo_C	/* Identifier */ 
+            MPM_bAcvBedModDft_C	/* Identifier */ 
+            MPM_bAcvBedModDmgThd_C	/* Identifier */ 
+            MPM_bInhMPM_C	/* Identifier */ 
+            MPM_bLdLim_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+        /begin LOC_MEASUREMENT 
+            MPM_facTranInterBas	/* Identifier */ 
+            MPM_facTranMPMInter	/* Identifier */ 
+            MPM_facOvbInter_MP	/* Identifier */ 
+            MPM_rLdMaxInter_MP	/* Identifier */ 
+            MPM_stCtl	/* Identifier */ 
+            MPM_bMPMDft	/* Identifier */ 
+            MPM_bLdLimReq	/* Identifier */ 
+            MPM_bMPMInh	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_Sb56_MPM_facOvbRLdMax_M	/* Identifier */ 
+            MPM_FCT_Sb55_MPM_facOvbRLdInter_M	/* Identifier */ 
+            MPM_FCT_Sb54_MPM_facOvbRLdInh_M	/* Identifier */ 
+            MPM_FCT_Sb53_MPM_rLdMax_T	/* Identifier */ 
+            MPM_FCT_Sb52_MPM_rLdInter_T	/* Identifier */ 
+            MPM_FCT_Sb51_MPM_rLdInhMPM_T	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb51_MPM_rLdInhMPM_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_rLdInhMPM_T	/* Identifier */ 
+            MPM_nEngRLdInh_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb52_MPM_rLdInter_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_rLdInter_T	/* Identifier */ 
+            MPM_nEngRLdInter_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb53_MPM_rLdMax_T	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_rLdMax_T	/* Identifier */ 
+            MPM_nEngRLdMax_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb54_MPM_facOvbRLdInh_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_facOvbRLdInh_M	/* Identifier */ 
+            MPM_tThrFacRLdInhX_A	/* Identifier */ 
+            MPM_nEngFacRLdInhY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb55_MPM_facOvbRLdInter_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_facOvbRLdInter_M	/* Identifier */ 
+            MPM_tThrFacRLdInterX_A	/* Identifier */ 
+            MPM_nEngFacRLdInterY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_Sb56_MPM_facOvbRLdMax_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            MPM_facOvbRLdMax_M	/* Identifier */ 
+            MPM_tThrFacRLdMaxX_A	/* Identifier */ 
+            MPM_nEngFacRLdMaxY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS12_F01_Write_Array	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_pwrDeltaThd_C	/* Identifier */ 
+            RFL_tDeltaThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS12_F01_Write_Array_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_pwrDeltaThd_C	/* Identifier */ 
+            RFL_tDeltaThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS12_F01_Write_Array_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_pwrDeltaThd_C	/* Identifier */ 
+            RFL_tDeltaThd_C	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS2_LibRFLDmgMod	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS3_F01_LibRFLDmgMod	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS2_LibRFLDmgMod_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS3_F01_LibRFLDmgMod_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS2_LibRFLDmgMod_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS3_F01_LibRFLDmgMod_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS3_F01_LibRFLDmgMod	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrm	/* Identifier */ 
+            RFL_prm_tWallPwrFlow	/* Identifier */ 
+            RFL_rDmg	/* Identifier */ 
+            Afts_bRstCntReq	/* Identifier */ 
+            LibCallNum	/* Identifier */ 
+            RFL_idxPrmPrev	/* Identifier */ 
+            RFL_noAcvMap	/* Identifier */ 
+            RFL_prm_tWallPwrFlowPrev	/* Identifier */ 
+            RFL_rDmgPrev	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS45_F03_DmgEstim_CylHd	/* Identifier */ 
+            MPM_FCT_SRSS44_F02_DmgEstim_TrbCase	/* Identifier */ 
+            MPM_FCT_SRSS43_F01_DmgEstim_ExMnf	/* Identifier */ 
+            MPM_FCT_SRSS6_F01_Extraction	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS3_F01_LibRFLDmgMod_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrm	/* Identifier */ 
+            RFL_prm_tWallPwrFlow	/* Identifier */ 
+            RFL_rDmg	/* Identifier */ 
+            Afts_bRstCntReq	/* Identifier */ 
+            LibCallNum	/* Identifier */ 
+            RFL_idxPrmPrev	/* Identifier */ 
+            RFL_noAcvMap	/* Identifier */ 
+            RFL_prm_tWallPwrFlowPrev	/* Identifier */ 
+            RFL_rDmgPrev	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS45_F03_DmgEstim_CylHd_2	/* Identifier */ 
+            MPM_FCT_SRSS44_F02_DmgEstim_TrbCase_2	/* Identifier */ 
+            MPM_FCT_SRSS43_F01_DmgEstim_ExMnf_2	/* Identifier */ 
+            MPM_FCT_SRSS6_F01_Extraction_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS3_F01_LibRFLDmgMod_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_idxPrm	/* Identifier */ 
+            RFL_prm_tWallPwrFlow	/* Identifier */ 
+            RFL_rDmg	/* Identifier */ 
+            Afts_bRstCntReq	/* Identifier */ 
+            LibCallNum	/* Identifier */ 
+            RFL_idxPrmPrev	/* Identifier */ 
+            RFL_noAcvMap	/* Identifier */ 
+            RFL_prm_tWallPwrFlowPrev	/* Identifier */ 
+            RFL_rDmgPrev	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS45_F03_DmgEstim_CylHd_3	/* Identifier */ 
+            MPM_FCT_SRSS44_F02_DmgEstim_TrbCase_3	/* Identifier */ 
+            MPM_FCT_SRSS43_F01_DmgEstim_ExMnf_3	/* Identifier */ 
+            MPM_FCT_SRSS6_F01_Extraction_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS43_F01_DmgEstim_ExMnf	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS47_RFL_rDmgExMnf_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS43_F01_DmgEstim_ExMnf_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS47_RFL_rDmgExMnf_M_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS43_F01_DmgEstim_ExMnf_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS47_RFL_rDmgExMnf_M_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS44_F02_DmgEstim_TrbCase	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS48_RFL_rDmgTrbCase_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS44_F02_DmgEstim_TrbCase_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS48_RFL_rDmgTrbCase_M_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS44_F02_DmgEstim_TrbCase_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS48_RFL_rDmgTrbCase_M_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS45_F03_DmgEstim_CylHd	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS49_RFL_rDmgCylHd_M	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS45_F03_DmgEstim_CylHd_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS49_RFL_rDmgCylHd_M_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS45_F03_DmgEstim_CylHd_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS49_RFL_rDmgCylHd_M_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS47_RFL_rDmgExMnf_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgExMnf_M	/* Identifier */ 
+            RFL_tDelta_rDmgExMnfX_A	/* Identifier */ 
+            RFL_tAvr_rDmgExMnfY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS47_RFL_rDmgExMnf_M_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgExMnf_M	/* Identifier */ 
+            RFL_tDelta_rDmgExMnfX_A	/* Identifier */ 
+            RFL_tAvr_rDmgExMnfY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS47_RFL_rDmgExMnf_M_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgExMnf_M	/* Identifier */ 
+            RFL_tDelta_rDmgExMnfX_A	/* Identifier */ 
+            RFL_tAvr_rDmgExMnfY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS48_RFL_rDmgTrbCase_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgTrbCase_M	/* Identifier */ 
+            RFL_tDelta_rDmgTrbCaseX_A	/* Identifier */ 
+            RFL_tAvr_rDmgTrbCaseY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS48_RFL_rDmgTrbCase_M_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgTrbCase_M	/* Identifier */ 
+            RFL_tDelta_rDmgTrbCaseX_A	/* Identifier */ 
+            RFL_tAvr_rDmgTrbCaseY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS48_RFL_rDmgTrbCase_M_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgTrbCase_M	/* Identifier */ 
+            RFL_tDelta_rDmgTrbCaseX_A	/* Identifier */ 
+            RFL_tAvr_rDmgTrbCaseY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS49_RFL_rDmgCylHd_M	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgCylHd_M	/* Identifier */ 
+            RFL_pwrDelta_rDmgCylHdX_A	/* Identifier */ 
+            RFL_pwrAvr_rDmgCylHdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS49_RFL_rDmgCylHd_M_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgCylHd_M	/* Identifier */ 
+            RFL_pwrDelta_rDmgCylHdX_A	/* Identifier */ 
+            RFL_pwrAvr_rDmgCylHdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS49_RFL_rDmgCylHd_M_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin DEF_CHARACTERISTIC 
+            RFL_rDmgCylHd_M	/* Identifier */ 
+            RFL_pwrDelta_rDmgCylHdX_A	/* Identifier */ 
+            RFL_pwrAvr_rDmgCylHdY_A	/* Identifier */ 
+        /end DEF_CHARACTERISTIC 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS6_F01_Extraction	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_bAcvSelMod	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS12_F01_Write_Array	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS6_F01_Extraction_2	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_bAcvSelMod	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS12_F01_Write_Array_2	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION 
+ 
+    /begin FUNCTION 
+        MPM_FCT_SRSS6_F01_Extraction_3	/* Name */ 
+        "-"	/* LongIdentifier */ 
+        /begin LOC_MEASUREMENT 
+            RFL_bAcvSelMod	/* Identifier */ 
+        /end LOC_MEASUREMENT 
+        /begin SUB_FUNCTION 
+            MPM_FCT_SRSS12_F01_Write_Array_3	/* Identifier */ 
+        /end SUB_FUNCTION 
+    /end FUNCTION  
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_UBYTE_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_ULONG_COL_DIRECT	/* Name */ 
+        FNC_VALUES 1 ULONG COLUMN_DIR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_ULONG_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+ 
+    /begin RECORD_LAYOUT 
+        MPM_RL_UWORD_X_INCR_DIRECT	/* Name */ 
+        AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT 
+    /end RECORD_LAYOUT 
+/end MODULE 
+
+/* ------------------------------ END OF MODULE MPM ------------------------------------*/

@@ -1,0 +1,3404 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : CatPasDiagT                                             */
+/* !Description     : CatPasDiagT software component                          */
+/*                                                                            */
+/* !Module          : CatPasDiagT.a2l                                         */
+/* !Description     : CatPasDiagT software component ASAP2 file               */
+/*                                                                            */
+/* !File            : CatPasDiagT.a2l                                         */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   Model name       : CatPasDiagT_AUTOSAR.mdl                               */
+/*   Root subsystem   : /CatPasDiagT                                          */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBPSA/LOG/REF/SWC_PSA/3.1/CATMON/CATPASDIAGT/CatP$*/
+/* $Revision::   1.10                                                        $*/
+/* $Author::   etsasson                               $$Date::   09 Dec 2013 $*/
+/******************************************************************************/
+
+/begin MODULE CatPasDiagT  "CatPasDiagT Software Component"
+  
+  /begin MOD_PAR
+    /* Comment                */       ""
+    /* define your hardware interface here */
+  /end MOD_PAR
+  
+  /begin MOD_COMMON
+    /* Comment                */       ""
+    BYTE_ORDER                         MSB_FIRST
+  /end MOD_COMMON
+  
+  
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_BOOLEAN
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_SWORD
+    FNC_VALUES 1 SWORD COLUMN_DIR DIRECT
+  /end RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Scalar_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_SLONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_FLOAT32_IEEE
+    AXIS_PTS_X  1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup1D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_UBYTE
+    FNC_VALUES  1 UBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_UBYTE
+    AXIS_PTS_X  1 UBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_BYTE
+    FNC_VALUES  1 SBYTE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_BYTE
+    AXIS_PTS_X  1 SBYTE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_UWORD
+    FNC_VALUES  1 UWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_UWORD
+    AXIS_PTS_X  1 UWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_WORD
+    FNC_VALUES  1 SWORD COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_WORD
+    AXIS_PTS_X  1 SWORD INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_ULONG
+    FNC_VALUES  1 ULONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_ULONG
+    AXIS_PTS_X  1 ULONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_LONG
+    FNC_VALUES  1 SLONG COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_LONG
+    AXIS_PTS_X  1 SLONG INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_FLOAT32_IEEE
+    FNC_VALUES  1 FLOAT32_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_FLOAT32_IEEE
+    AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_FLOAT64_IEEE
+    FNC_VALUES  1 FLOAT64_IEEE COLUMN_DIR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin RECORD_LAYOUT CatPasDiagT_RL_Lookup2D_X_FLOAT64_IEEE
+    AXIS_PTS_X 1 FLOAT64_IEEE INDEX_INCR DIRECT
+  /end   RECORD_LAYOUT
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_obd_gas_map
+    /* Long Identifier        */      "Cartographie des seuils de puissance du cata OBD (pour application gaz)"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CatPasDiagT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      254.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      1997.96875
+      AXIS_PTS_REF                    Cat_temperature_bkpt_map
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Cat_pumped_gas_bkpt_map
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin AXIS_PTS
+    /* Name                   */      Cat_temperature_bkpt_map
+    /* Long Identifier        */      "Table de points d'appui en température cata"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end AXIS_PTS
+  
+  /begin AXIS_PTS
+    /* Name                   */      Cat_pumped_gas_bkpt_map
+    /* Long Identifier        */      "Table de points d'appui en débit"
+    /* Memory Address         */      0x0
+    /* Input Quantity         */      NO_INPUT_QUANTITY
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_X_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Number of Axis Pts     */      16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end AXIS_PTS
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_obd_map
+    /* Long Identifier        */      "Cartographie des seuils de puissance du cata OBD"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CatPasDiagT_CM_1
+    /* Lower Limit            */      0
+    /* Upper Limit            */      254.0
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      1997.96875
+      AXIS_PTS_REF                    Cat_temperature_bkpt_map
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Cat_pumped_gas_bkpt_map
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_fac_inc_map
+    /* Long Identifier        */      "Cartographie de facteur sur l'incrémentation en fonction de l'indice de confiance sur le point de fonctionnement"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CatPasDiagT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.98828125
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      1997.96875
+      AXIS_PTS_REF                    Cat_temperature_bkpt_map
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Cat_pumped_gas_bkpt_map
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_fac_dec_map
+    /* Long Identifier        */      "Cartographie de facteur sur la décrémentation en fonction de l'indice de confiance sur le point de fonctionnement"
+    /* Characteristic Type    */      MAP
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Lookup2D_UBYTE
+    /* Maxdiff                */      0
+    /* Conversion Method      */      CatPasDiagT_CM_4
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.98828125
+    /begin AXIS_DESCR
+      /* Description of X-Axis (horizontal axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_2
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      -50.0
+      /* Upper Limit          */      1997.96875
+      AXIS_PTS_REF                    Cat_temperature_bkpt_map
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      /* Description of Y-Axis (vertical axis) Points */
+      /* Axis Type            */      COM_AXIS
+      /* Reference to Input   */      NO_INPUT_QUANTITY
+      /* Conversion Method    */      CatPasDiagT_CM_3
+      /* Number of Axis Pts   */      16
+      /* Lower Limit          */      0
+      /* Upper Limit          */      9.9998474121093750E-001
+      AXIS_PTS_REF                    Cat_pumped_gas_bkpt_map
+    /end AXIS_DESCR
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_regime_moteur_seuil
+    /* Long Identifier        */      "Intervalle de stabilité sur le régime moteur."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      65535.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_regime_moteur_seuil_g
+    /* Long Identifier        */      "Intervalle de stabilité sur le régime moteur. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      65535.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_nEngTmrPasIntr_C
+    /* Long Identifier        */      "Seuil en régime moteur pour la décrémentation de la temporisation OxC_tiTmrPasIntr"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_5
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8191.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_max
+    /* Long Identifier        */      "Seuil supérieur de température catalyseur permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_max_gas
+    /* Long Identifier        */      "Seuil supérieur de température catalyseur permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_max_idle
+    /* Long Identifier        */      "Seuil supérieur de T° catalyseur permettant de déclarer les conditions stables pour le diag ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_max_idle_gas
+    /* Long Identifier        */      "Seuil supérieur de T° catalyseur permettant de déclarer les conditions stables pour le diag ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_min
+    /* Long Identifier        */      "Seuil inférieur de température catalyseur permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_min_gas
+    /* Long Identifier        */      "Seuil inférieur de température catalyseur permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_min_idle
+    /* Long Identifier        */      "Seuil inférieur de T° catalyseur permettant de déclarer les conditions stables pour le diag ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_min_idle_gas
+    /* Long Identifier        */      "Seuil inférieur de T° catalyseur permettant de déclarer les conditions stables pour le diag ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_temperature_moy_B
+    /* Long Identifier        */      "Bypass: Température cata moyenne sur le temps de calcul de la puissance"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_2
+    /* Lower Limit            */      -50.0
+    /* Upper Limit            */      1997.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_flow_rate_max
+    /* Long Identifier        */      "Seuil supérieur du débit d'air permettant de déclarer les conditions stables pour le diag cata"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_flow_rate_max_gas
+    /* Long Identifier        */      "Seuil supérieur du débit d'air permettant de déclarer les conditions stables pour le diag cata (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_flow_rate_min
+    /* Long Identifier        */      "Seuil inférieur du débit d'air permettant de déclarer les conditions stables pour le diag cata"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_flow_rate_min_gas
+    /* Long Identifier        */      "Seuil inférieur du débit d'air permettant de déclarer les conditions stables pour le diag cata (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_4
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 4 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_4_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 4 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_4_idle
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 4 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_4_idle_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 4 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_6
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_debit_gaz_moy_B
+    /* Long Identifier        */      "Bypass: Débit de gaz moyen sur le temps de calcul de la puissance"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_3
+    /* Lower Limit            */      0
+    /* Upper Limit            */      9.9998474121093750E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_engine_load_seuil
+    /* Long Identifier        */      "Intervalle de stabilité sur la charge appliquée au moteur."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.9999694824218750E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_engine_load_seuil_gas
+    /* Long Identifier        */      "Intervalle de stabilité sur la charge appliquée au moteur. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_7
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.9999694824218750E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_mO2StgIniGas_Obd6Mod_C
+    /* Long Identifier        */      "OSC correspondant au basculement passif - intrusif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_mO2StgIni_Obd6Mod_C
+    /* Long Identifier        */      "OSC correspondant au basculement passif - intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_mO2StgThdGas_C
+    /* Long Identifier        */      "Seuil OBD d'OSC corrigé en débit, richesse et température (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_mO2StgThd_C
+    /* Long Identifier        */      "Seuil OBD d'OSC corrigé en débit, richesse et température"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_8
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1023.984375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMaxPas_Obd6Mod_C
+    /* Long Identifier        */      "Valeur maximale du diagnostic passif utilisée pour le mode$06"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMax_Obd6Mod_B
+    /* Long Identifier        */      "Valeur maximale envoyée au mode$06(Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMes_Obd6Mod_B
+    /* Long Identifier        */      "Valeur mesurée envoyée au mode$06(Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMinPas_Obd6Mod_C
+    /* Long Identifier        */      "Valeur minimale du diagnostic passif utilisée pour le mode$06"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMinStep_Obd6Mod_C
+    /* Long Identifier        */      "Valeur à ajouter ou supprimer au seuil minimal pour le diagnostic passif utilisée pour le mode$06"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_facMin_Obd6Mod_B
+    /* Long Identifier        */      "Valeur minimale envoyée au mode$06(Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_9
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.5599609375000000E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_tiDlyAuthInjAcvDiag_C
+    /* Long Identifier        */      "Durée minimale d'authorisation d'injection pour que le le diagnostique catalyseur soit réactivé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.6214E+003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_tiDlyInjCutInhDiag_C
+    /* Long Identifier        */      "Durée de coupure d'injection maximale, au delà de la quelle, le diagnostique catalyseur est inhibé"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.6214E+003
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_tiInhDiag_C
+    /* Long Identifier        */      "Temporisation inhibant les diagnostics catalyseur après une transision essence/gaz"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_11
+    /* Lower Limit            */      0
+    /* Upper Limit            */      500.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_tiTmrPasIntr_C
+    /* Long Identifier        */      "Calibration de la temporisation de transition entre le diagnostic catalyseur passif et le diagnostic catalyseur intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2000.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_temperature_seuil
+    /* Long Identifier        */      "Intervalle de stabilité sur la température catalyseur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_12
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2047.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_delta_temperature_seuil_gas
+    /* Long Identifier        */      "Intervalle de stabilité sur la température catalyseur (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_12
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2047.96875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_inf
+    /* Long Identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré bon"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_inf_gas
+    /* Long Identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré bon (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_inf_idle
+    /* Long Identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré présent ou imprégné"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_inf_idle_g
+    /* Long Identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré présent ou imprégné (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_sup
+    /* Long Identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré défectueux"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_sup_gas
+    /* Long Identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré défectueux (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_sup_idle
+    /* Long Identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré absent ou non imprégné"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_seuil_degradation_sup_idle_g
+    /* Long Identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré absent ou non imprégné (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_SWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      -3.2768E+002
+    /* Upper Limit            */      3.2767E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_1
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 1 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_14
+    /* Lower Limit            */      2.0
+    /* Upper Limit            */      2.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_1_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 1 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_14
+    /* Lower Limit            */      2.0
+    /* Upper Limit            */      2.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_2
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 2 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_14
+    /* Lower Limit            */      2.0
+    /* Upper Limit            */      2.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_2_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 2 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_14
+    /* Lower Limit            */      2.0
+    /* Upper Limit            */      2.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_3
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 3 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_15
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      1.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_3_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 3 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_15
+    /* Lower Limit            */      1.0
+    /* Upper Limit            */      1.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_0
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 0 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_0_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 0 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_2
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 2 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_2_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 2 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_4
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 4 pour le filtre du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_4_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 4 pour le filtre du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_16
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546869E-001
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_1_idle
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 1 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_17
+    /* Lower Limit            */      3.0
+    /* Upper Limit            */      3.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_1_idle_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 1 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_17
+    /* Lower Limit            */      3.0
+    /* Upper Limit            */      3.9999847412109371E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_2_idle
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 2 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_18
+    /* Lower Limit            */      5.625
+    /* Upper Limit            */      6.6249847412109366E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_2_idle_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 2 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_18
+    /* Lower Limit            */      5.625
+    /* Upper Limit            */      6.6249847412109366E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_3_idle
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 3 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_19
+    /* Lower Limit            */      3.6875
+    /* Upper Limit            */      4.6874847412109366E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_den_ordre_3_idle_gas
+    /* Long Identifier        */      "Coefficient du dénominateur d'ordre 3 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_19
+    /* Lower Limit            */      3.6875
+    /* Upper Limit            */      4.6874847412109366E+000
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_0_idle
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 0 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_20
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.9999542236328121E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_0_idle_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 0 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_20
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.9999542236328121E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_4_idle
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 4 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_20
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.9999542236328121E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_4_idle_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 4 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_20
+    /* Lower Limit            */      0
+    /* Upper Limit            */      2.9999542236328121E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_2_idle
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 2 pour le filtre du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_21
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546868E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_coef_num_ordre_2_idle_gas
+    /* Long Identifier        */      "Coefficient du numérateur d'ordre 2 pour le filtre du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_21
+    /* Lower Limit            */      0
+    /* Upper Limit            */      4.9999237060546868E-002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_dec
+    /* Long Identifier        */      "Décrément du compteur de dégradation"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_dec_gas
+    /* Long Identifier        */      "Décrément du compteur de dégradation (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_dec_idle
+    /* Long Identifier        */      "Décrément du compteur de dégradation du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_dec_idle_gas
+    /* Long Identifier        */      "Décrément du compteur de dégradation du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_inc
+    /* Long Identifier        */      "Incrément du compteur de dégradation"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_inc_gas
+    /* Long Identifier        */      "Incrément du compteur de dégradation (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_inc_idle
+    /* Long Identifier        */      "Incrément du compteur de dégradation du diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_degradation_inc_idle_gas
+    /* Long Identifier        */      "Incrément du compteur de dégradation du diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UWORD
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_13
+    /* Lower Limit            */      0
+    /* Upper Limit            */      6.5535E+002
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_noSelModMaxCnt_C
+    /* Long Identifier        */      "Choix du mode de status lorsque le compteur calcul de puissance a atteint le maximum"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_22
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_calcul_count_max
+    /* Long Identifier        */      "Nombre maximal de calcul de puissance réalisé avant d'activer le diagnostic intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_23
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_gear_engaged_max_idle
+    /* Long Identifier        */      "Rapport de boîte engagé maximal autorisé pour le diagnostic ralenti."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_gear_engaged_max_idle_gas
+    /* Long Identifier        */      "Rapport de boîte engagé maximal autorisé pour le diagnostic ralenti. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      5.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_acqui_min
+    /* Long Identifier        */      "Nombre d'acquisition minimum permettant d'activer le compteur de dégradation catalyseur passif."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_acqui_min_gas
+    /* Long Identifier        */      "Nombre d'acquisition minimum permettant d'activer le compteur de dégradation catalyseur passif. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_acqui_min_idle
+    /* Long Identifier        */      "Nombre d'acquisition minimum permettant d'activer le compteur de dégradation catalyseur ralenti."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_acqui_min_idle_gas
+    /* Long Identifier        */      "Nombre d'acquisition minimum permettant d'activer le compteur de dégradation catalyseur ralenti. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_echant
+    /* Long Identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_echant_gas
+    /* Long Identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_echant_idle
+    /* Long Identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_nombre_echant_idle_gas
+    /* Long Identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_24
+    /* Lower Limit            */      0
+    /* Upper Limit            */      255.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CATPASDIAGT_ACTIVE_BYP_C
+    /* Long Identifier        */      "Calibration de Bypass"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bAcvEuro6Cat_C
+    /* Long Identifier        */      "Calibration permettant l'envoie des données Mode6 selon les exigences Euro6 pour le diag cata"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bAcvSeqMemORng_Cat_B
+    /* Long Identifier        */      "Booléen indiquant que le séquenceur a été actif au moins une fois depuis le reset(ByPass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bAcvSeqORngCat_C
+    /* Long Identifier        */      "Calibration d'activation du séquenceur"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bAcvSeqORng_Cat_B
+    /* Long Identifier        */      "Booléen indiquant que le séquenceur est actif(ByPass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bEnaIntrGas_C
+    /* Long Identifier        */      "Booléen d'activation du diagnostic intrusif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bEnaIntr_C
+    /* Long Identifier        */      "Booléen d'activation du diagnostic intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bEnaPasGas_C
+    /* Long Identifier        */      "Booléen d'activation du diagnostic passif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bEnaPas_C
+    /* Long Identifier        */      "Booléen d'activation du diagnostic passif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bInhDiagPresScav_C
+    /* Long Identifier        */      "Calibration inhibant la prise en compte du balayage pour inhiber les diagnostics OBD"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      CatMon_bInhMonWait_Cat_C
+    /* Long Identifier        */      "Calibration permettant de ne pas utiliser le bMonWait pour le diag cata"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_diag_continu_manu_inh
+    /* Long Identifier        */      "Booléen d'inhibition du diagnostic catalyseur en continu."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_diag_continu_manu_inh_gas
+    /* Long Identifier        */      "Booléen d'inhibition du diagnostic catalyseur en continu. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_diag_continu_manu_inh_idle
+    /* Long Identifier        */      "Booléen d'inhibition du diagnostic catalyseur ralenti en continu."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_diag_continu_manu_inh_idle_g
+    /* Long Identifier        */      "Booléen d'inhibition du diagnostic catalyseur ralenti en continu. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_mon_inhibe_fast_tracking_B
+    /* Long Identifier        */      "Indicateur d'inhibition du fast tracking en présence de diagnostic catalyseur.(Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_priorite_intrusif
+    /* Long Identifier        */      "Si égal à 0, nécessité de la réalisation d'un diag ralenti avant la requête d'un diag intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_priorite_intrusif_gas
+    /* Long Identifier        */      "Si égal à 0, nécessité de la réalisation d'un diag ralenti avant la requête d'un diag intrusif (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Flex_bInhDiagCatPasDiagAlcEst_C
+    /* Long Identifier        */      "Interdit la prise en compte de l'indicateur de demande d'inhibition du diagnostic Catalyseur passif dû à une estimation du taux d'alcool en cours"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Flex_bInhDiagCatPasDiagAlcRate_C
+    /* Long Identifier        */      "Interdit la prise en compte de l'indicateur de demande d'inhibition du diagnostic Catalyseur passif dû à un taux d'alcool hors butée"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Flex_bInhDiagCatPasDiagBlby_C
+    /* Long Identifier        */      "Interdit la prise en compte de l'indicateur de demande d'inhibition du diagnostic Catalyseur passif dû à la présence de blow-by"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_bEnaTmrPasIntr_C
+    /* Long Identifier        */      "Booléen d'inhibition de la temporisation de transition entre le diagnostic catalyseur passif et le diagnostic catalyseur intrusif"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      OxC_bMonReqORngIntr_B
+    /* Long Identifier        */      "Booléen de requête d'activation du diagnostic intrusif du catalyseur, demandée par le diagnostic passif(Bypass)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_BOOLEAN
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_Boolean
+    /* Lower Limit            */      0
+    /* Upper Limit            */      1.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_max
+    /* Long Identifier        */      "Seuil supérieur du régime moteur permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_max_gas
+    /* Long Identifier        */      "Seuil supérieur du régime moteur permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_max_idle
+    /* Long Identifier        */      "Seuil supérieur du régime moteur permettant de déclarer les cond° stables pour le diag ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_max_idle_gas
+    /* Long Identifier        */      "Seuil supérieur du régime moteur permettant de déclarer les cond° stables pour le diag ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_min
+    /* Long Identifier        */      "Seuil inférieur du régime moteur permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_min_gas
+    /* Long Identifier        */      "Seuil inférieur du régime moteur permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_min_idle
+    /* Long Identifier        */      "Seuil inférieur du régime moteur permettant de déclarer les cond° stables pour le diag ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_regime_moteur_min_idle_gas
+    /* Long Identifier        */      "Seuil inférieur du régime moteur permettant de déclarer les cond° stables pour le diag ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_26
+    /* Lower Limit            */      0
+    /* Upper Limit            */      8160.0
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_temp_thresh
+    /* Long Identifier        */      "Température d'air minimale pour activer la stratégie"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_temp_thresh_gas
+    /* Long Identifier        */      "Température d'air minimale pour activer la stratégie (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_temp_thresh_idle
+    /* Long Identifier        */      "Température d'air minimale pour activer la stratégie de diagnostique ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_air_temp_thresh_idle_gas
+    /* Long Identifier        */      "Température d'air minimale pour activer la stratégie de diagnostique ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_water_temp_thresh
+    /* Long Identifier        */      "Température d'eau minimale pour activer la stratégie"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_water_temp_thresh_gas
+    /* Long Identifier        */      "Température d'eau minimale pour activer la stratégie (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_water_temp_thresh_idle
+    /* Long Identifier        */      "Température d'eau minimale pour activer la stratégie pour le diagnostic ralenti"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_water_temp_thresh_idle_gas
+    /* Long Identifier        */      "Température d'eau minimale pour activer la stratégie pour le diagnostic ralenti (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_27
+    /* Lower Limit            */      -40.0
+    /* Upper Limit            */      119.375
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_stable_conditions_1_delay
+    /* Long Identifier        */      "Délai de temporisation pour les conditions de stabilité de richesse, de l'état moteur et T° cata"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.2
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_stable_conditions_1_delay_g
+    /* Long Identifier        */      "Délai de temporisation pour les conditions de stabilité de richesse, de l'état moteur et T° cata (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.2
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_stable_conditions_2_delay
+    /* Long Identifier        */      "Délai de temporisation pour les conditions de stabilité sur les dérivées du régime et de la charge."
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.2
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_stable_conditions_2_delay_g
+    /* Long Identifier        */      "Délai de temporisation pour les conditions de stabilité sur les dérivées du régime et de la charge. (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_10
+    /* Lower Limit            */      0
+    /* Upper Limit            */      10.2
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_engine_load_max
+    /* Long Identifier        */      "Seuil supérieur de la charge appliquée permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_28
+    /* Lower Limit            */      0
+    /* Upper Limit            */      199.21875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_engine_load_max_gas
+    /* Long Identifier        */      "Seuil supérieur de la charge appliquée permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_28
+    /* Lower Limit            */      0
+    /* Upper Limit            */      199.21875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_engine_load_min
+    /* Long Identifier        */      "Seuil inférieur de la charge appliquée permettant de déclarer les conditions stables pour le diag"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_28
+    /* Lower Limit            */      0
+    /* Upper Limit            */      199.21875
+  /end CHARACTERISTIC
+  
+  /begin CHARACTERISTIC
+    /* Name                   */      Cat_engine_load_min_gas
+    /* Long Identifier        */      "Seuil inférieur de la charge appliquée permettant de déclarer les conditions stables pour le diag (pour application gaz)"
+    /* Type                   */      VALUE
+    /* Memory Address         */      0x0
+    /* Record Layout          */      CatPasDiagT_RL_Scalar_UBYTE
+    /* Maximum Difference     */      0
+    /* Conversion Method      */      CatPasDiagT_CM_28
+    /* Lower Limit            */      0
+    /* Upper Limit            */      199.21875
+  /end CHARACTERISTIC
+  
+  /begin MEASUREMENT 
+     /* Name                   */      CatPasDiagT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatPasDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      CatPasDiagT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatPasDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      CatPasDiagT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatPasDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMax_Obd6ModRaw
+    /* Long identifier        */      "Valeur maximale brute envoyée au mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMin_Obd6ModRaw
+    /* Long identifier        */      "Valeur minimale brute envoyée au mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMes_Obd6ModRaw
+    /* Long identifier        */      "Valeur mesurée brute envoyée au mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMaxIntr_Obd6Mod
+    /* Long identifier        */      "Valeur maximale du diagnostic intrusif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMinIntr_Obd6Mod
+    /* Long identifier        */      "Valeur minimale du diagnostic intrusif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMesIntr_Obd6Mod
+    /* Long identifier        */      "Valeur mesurée du diagnostic intrusif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMaxPas_Obd6Mod
+    /* Long identifier        */      "Valeur maximale dud diagnostic passif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMesPas_Obd6Mod
+    /* Long identifier        */      "Valeur mesurée du diagnostic passif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_facMinPas_Obd6Mod
+    /* Long identifier        */      "Valeur minimale du diagnostic passif utilisée pour le mode$06"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_9
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.5599609375000000E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_tiInhDiag
+    /* Long identifier        */      "Temporisation inhibant les diagnostics catalyseur après une transision essence/gaz"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_11
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      500.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_tiDlyInjCutInhDiag
+    /* Long identifier        */      "Temporisation inhibant les diagnostics catalyseur après une coupure d'injection"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.6214E+003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_tiDlyAuthInjAcvDiag
+    /* Long identifier        */      "Durée d'authorisation d'injection restante requise pour que le le diagnostique catalyseur soit réactivé"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2.6214E+003
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      OxC_tiTmrPasIntr_IRV_MP
+    /* Long identifier        */      "Temporisation de transition entre le diagnostic catalyseur passif et le diagnostic catalyseur intrusif"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      2000.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_degradation_count_IRV_MP
+    /* Long identifier        */      "Compteur de dégradation du catalyseur (IRV_MP)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_degradation_count_idle
+    /* Long identifier        */      "Compteur de dégradation du catalyseur pour le diagnostic ralenti (IRV_MP)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_seuil_degradation_sup_temp
+    /* Long identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré défectueux (variable intermédiaire)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_seuil_degradation_inf_temp
+    /* Long identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré bon (variable intermédiaire)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_seuil_degradation_sup_idle_t
+    /* Long identifier        */      "Seuil de dégradation au-dessus duquel le cata est considéré absent ou non imprégné (variable intermédiaire)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_seuil_degradation_inf_idle_t
+    /* Long identifier        */      "Seuil de dégradation en dessous duquel le cata est considéré présent ou imprégné (variable temporaire)"
+    /* Data type              */      SWORD
+    /* Conversion method      */      CatPasDiagT_CM_13
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      -3.2768E+002
+    /* Upper limit            */      3.2767E+002
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_calcul_count_IRV_MP
+    /* Long identifier        */      "Nombre de calcul de puissance réalisé(IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_23
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      255.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_energ_inst_aval
+    /* Long identifier        */      "Signal sonde filtré"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      254.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_nombre_echant_idle_temp
+    /* Long identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic ralenti (variable intermédiaire)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_24
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      255.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_nombre_echant_temp
+    /* Long identifier        */      "Nombre d'acquisitions pour le calcul de la puissance en diagnostic passif (variable intermédiaire)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_24
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      255.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_state
+    /* Long identifier        */      "Etat représentatif du calcul en cours"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_24
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      255.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_nombre_acqui
+    /* Long identifier        */      "Compteur du nombre d'acquisitions pour le calcul de la puissance"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_24
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      255.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bDgoORngPasIdle
+    /* Long identifier        */      "Defaut unitaire du diagnostic catalyseur passif au ralenti"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bDgoORngPas
+    /* Long identifier        */      "Defaut unitaire du diagnostic catalyseur passif"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bMonRunORngPas
+    /* Long identifier        */      "Diagnostic passif du catalyseur actif"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bMonRunORngPasIdle
+    /* Long identifier        */      "Diagnostic passif au ralenti du catalyseur actif"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bMonRunORngRaw_Cat
+    /* Long identifier        */      "Diagnostic OBD du catalyseur actif au sens large"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      CatMon_bMonWaitORngRaw_Cat
+    /* Long identifier        */      "Diagnostic OBD du catalyseur en attente en interne spec"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_reinit_degrad_count_idle
+    /* Long identifier        */      "Condition de réinitialisation du compteur de dégradation du diagnostic passif ralenti"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_reinit_degrad_count
+    /* Long identifier        */      "Condition de réinitialisation du compteur de dégradation du diagnostic passif nominal"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_passif
+    /* Long identifier        */      "Booléen indiquant quel diagnostic passif est en cours"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Seuil_obd_depasse
+    /* Long identifier        */      "Booléen indiquant si le seuil OBD a été dépassé"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_analyse_autorisee
+    /* Long identifier        */      "Booléen autorisant la modification du compteur de dégradation"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cond_for_somme
+    /* Long identifier        */      "Condition de déclenchement du bloc 2_Somme"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cond_for_init
+    /* Long identifier        */      "Condition de déclenchement du bloc 1_Init"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cond_for_calcul
+    /* Long identifier        */      "Condition de déclenchement du bloc 3_Calcul"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_puissance_calculee
+    /* Long identifier        */      "Booléen indiquant qu'une puissance du signal sonde vient d'être calculée"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diag_continu_manu_inh_temp
+    /* Long identifier        */      "Booléen d'inhibition du diagnostic catalyseur en continu. (variable intermédiaire)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diag_continu_manu_inh_idle_t
+    /* Long identifier        */      "Booléen d'inhibition du diagnostic catalyseur ralenti en continu. (variable intermédiaire)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_cycle_end_IRV_MP
+    /* Long identifier        */      "Indicateur de fin de cycle de diagnostic catalyseur. (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_etat_defectueux_IRV_MP
+    /* Long identifier        */      "Booléen indiquant si le catalyseur est défectueux (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_effectue_idle
+    /* Long identifier        */      "Booléen indiquant si le diagnostic ralenti est terminé sur le catalyseur (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diag_cycle_end_idle_IRV_MP
+    /* Long identifier        */      "Indicateur de fin de cycle de diagnostic catalyseur ralenti. (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_etat_defectueux_idle_IRV_MP
+    /* Long identifier        */      "Booléen indiquant si le catalyseur est absent ou non imprégné (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_effectue_IRV_MP
+    /* Long identifier        */      "Booléen indiquant si le diagnostic est terminé sur le catalyseur (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_ralenti
+    /* Long identifier        */      "Booléen indiquant quel diagnostic (passif ou ralenti) est en cours"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_conditions_diagnostic
+    /* Long identifier        */      "Booléen indiquant si les conditions de stabilité pour le diagnostic passif nominal sont vérifiées"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_conditions_diagnostic_idle
+    /* Long identifier        */      "Booléen indiquant si les conditions pour le diag. catalyseur ralenti sont vérifiées"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_cond_activ_idle
+    /* Long identifier        */      "Booléen indiquant si les condition d'activation sont vérifiées pour le diag catalyseur ralenti"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_conditions_activ
+    /* Long identifier        */      "Booléen indiquant si les conditions de stabilité sans temporisation  sont vérifiées"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_stable_cond_temperature
+    /* Long identifier        */      "Booléen indiquant que les conditions de stabilité sur la température catalyseur sont présentes"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_stable_cond_engine_load
+    /* Long identifier        */      "Booléen indiquant que les conditions de stabilité sur la charge appliquée sont présentes."
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_stable_cond_regime_moteur
+    /* Long identifier        */      "Booléen indiquant que les conditions de stabilité sur le régime moteur sont présentes."
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_conditions_stab
+    /* Long identifier        */      "Booléen indiquant si les conditions de stabilité avec temporisation  sont vérifiées"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_diagnostic_autorise_IRV_MP
+    /* Long identifier        */      "Booléen d'autorisation de la stratégie (IRV_MP)"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_Boolean
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      1.0
+    /* Bit Mask               */
+    BIT_MASK                          0x01
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_stable_conditions_1_tempo
+    /* Long identifier        */      "Variable de temporisation pour les conditions de stabilité de richesse, de l'état moteur et T° cata"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      10.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_stable_conditions_2_tempo
+    /* Long identifier        */      "Variable de temporisation pour les conditions de stabilité sur les dérivées du régime et charge"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_10
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      10.2
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_debit_gaz_sum
+    /* Long identifier        */      "Débit de gaz cumulé sur le temps de calcul de la puissance"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CatPasDiagT_CM_29
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      6.3999023437500000E+001
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_temperature_sum
+    /* Long identifier        */      "Température cata cumulée sur le temps de calcul de la puissance"
+    /* Data type              */      FLOAT32_IEEE
+    /* Conversion method      */      CatPasDiagT_CM_30
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      262140.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_energ_aval
+    /* Long identifier        */      "Signal sonde cumulé pendant le calcul de la puissance"
+    /* Data type              */      UWORD
+    /* Conversion method      */      CatPasDiagT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      65534.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin MEASUREMENT
+    /* Name                   */      Cat_puissance
+    /* Long identifier        */      "Puissance du signal sonde aval"
+    /* Data type              */      UBYTE
+    /* Conversion method      */      CatPasDiagT_CM_1
+    /* Resolution (Not used)  */      0
+    /* Accuracy (Not used)    */      0
+    /* Lower limit            */      0
+    /* Upper limit            */      254.0
+    ECU_ADDRESS                       0x0
+  /end MEASUREMENT
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_1
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "mV"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_2
+    /* Long identifier        */      "Q = (V+50)*32"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 32 1600 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_3
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Kg/s"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_4
+    /* Long identifier        */      "Q = V*85.3333333333"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 85.3333333333 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_5
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "tr/min"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_6
+    /* Long identifier        */      "Q = V*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_7
+    /* Long identifier        */      "Q = V*327.68"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 327.68 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_8
+    /* Long identifier        */      "Q = V*64"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "mg"
+    /* Coefficients           */      COEFFS 0 64 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_9
+    /* Long identifier        */      "Q = V*256"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 256 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_10
+    /* Long identifier        */      "Q = V*25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "s"
+    /* Coefficients           */      COEFFS 0 25 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_11
+    /* Long identifier        */      "Q = V*25"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      " s"
+    /* Coefficients           */      COEFFS 0 25 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_12
+    /* Long identifier        */      "Q = V*32"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 32 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_13
+    /* Long identifier        */      "Q = V*100"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 100 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_14
+    /* Long identifier        */      "Q = (V-2)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -131072 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_15
+    /* Long identifier        */      "Q = (V-1)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -65536 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_16
+    /* Long identifier        */      "Q = V*131072"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 131072 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_17
+    /* Long identifier        */      "Q = (V-3)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -196608 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_18
+    /* Long identifier        */      "Q = (V-5.625)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -368640 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_19
+    /* Long identifier        */      "Q = (V-3.6875)*65536"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 65536 -241664 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_20
+    /* Long identifier        */      "Q = V*2184533.33333"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 2184533.33333 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_21
+    /* Long identifier        */      "Q = V*1310720"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1310720 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_22
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "su"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_23
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      ""
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_24
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_Boolean
+    /* Long identifier        */      "Boolean"
+    /* Conversion Type        */      TAB_VERB
+    /* Format                 */      "%0.0"
+    /* Units                  */      "bool"
+    /* Ref to conversion table*/      COMPU_TAB_REF CatPasDiagT_CV_Boolean
+  /end COMPU_METHOD
+  
+  /begin COMPU_VTAB
+    /* Name of CompuVTab      */      CatPasDiagT_CV_Boolean
+    /* Long identifier        */      "Boolean values"
+    /* Conversion Type        */      TAB_VERB
+    /* Nb pairs of values     */      2
+    /* Pair 1                 */      0 "FALSE"
+    /* Pair 2                 */      1 "TRUE"
+  /end COMPU_VTAB
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_26
+    /* Long identifier        */      "Q = V/32"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "tr/min"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 32
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_27
+    /* Long identifier        */      "Q = (V+40)*1.6"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1.6 64 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_28
+    /* Long identifier        */      "Q = V*1.28"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "%"
+    /* Coefficients           */      COEFFS 0 1.28 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_29
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "Kg/s"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatPasDiagT_CM_30
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "°C"
+    /* Coefficients           */      COEFFS 0 1 0 0 0 1
+  /end COMPU_METHOD
+  
+  /begin FUNCTION CatPasDiagT_FCT_CatPasDiagT
+    "CHARACTERISTIC and MEASUREMENT of CatPasDiagT Software Component"
+    
+    /begin LOC_MEASUREMENT
+      CatPasDiagT_ModuleVersion_Major_MP 
+      CatPasDiagT_ModuleVersion_Minor_MP 
+      CatPasDiagT_ModuleVersion_Patch_MP 
+      CatMon_bDgoORngPas
+      CatMon_bDgoORngPasIdle
+      CatMon_bMonRunORngPas
+      CatMon_bMonRunORngPasIdle
+      CatMon_bMonRunORngRaw_Cat
+      CatMon_bMonWaitORngRaw_Cat
+      CatMon_facMaxIntr_Obd6Mod
+      CatMon_facMaxPas_Obd6Mod
+      CatMon_facMax_Obd6ModRaw
+      CatMon_facMesIntr_Obd6Mod
+      CatMon_facMesPas_Obd6Mod
+      CatMon_facMes_Obd6ModRaw
+      CatMon_facMinIntr_Obd6Mod
+      CatMon_facMinPas_Obd6Mod
+      CatMon_facMin_Obd6ModRaw
+      CatMon_tiDlyAuthInjAcvDiag
+      CatMon_tiDlyInjCutInhDiag
+      CatMon_tiInhDiag
+      Cat_analyse_autorisee
+      Cat_calcul_count_IRV_MP
+      Cat_cond_activ_idle
+      Cat_conditions_activ
+      Cat_conditions_diagnostic
+      Cat_conditions_diagnostic_idle
+      Cat_conditions_stab
+      Cat_debit_gaz_sum
+      Cat_degradation_count_IRV_MP
+      Cat_degradation_count_idle
+      Cat_diag_continu_manu_inh_idle_t
+      Cat_diag_continu_manu_inh_temp
+      Cat_diag_cycle_end_idle_IRV_MP
+      Cat_diagnostic_autorise_IRV_MP
+      Cat_diagnostic_cycle_end_IRV_MP
+      Cat_diagnostic_effectue_IRV_MP
+      Cat_diagnostic_effectue_idle
+      Cat_diagnostic_passif
+      Cat_diagnostic_ralenti
+      Cat_diagnostic_state
+      Cat_energ_aval
+      Cat_energ_inst_aval
+      Cat_etat_defectueux_IRV_MP
+      Cat_etat_defectueux_idle_IRV_MP
+      Cat_nombre_acqui
+      Cat_nombre_echant_idle_temp
+      Cat_nombre_echant_temp
+      Cat_puissance
+      Cat_puissance_calculee
+      Cat_reinit_degrad_count
+      Cat_reinit_degrad_count_idle
+      Cat_seuil_degradation_inf_idle_t
+      Cat_seuil_degradation_inf_temp
+      Cat_seuil_degradation_sup_idle_t
+      Cat_seuil_degradation_sup_temp
+      Cat_stable_cond_engine_load
+      Cat_stable_cond_regime_moteur
+      Cat_stable_cond_temperature
+      Cat_stable_conditions_1_tempo
+      Cat_stable_conditions_2_tempo
+      Cat_temperature_sum
+      Cond_for_calcul
+      Cond_for_init
+      Cond_for_somme
+      OxC_tiTmrPasIntr_IRV_MP
+      Seuil_obd_depasse
+    /end LOC_MEASUREMENT
+    
+    /begin DEF_CHARACTERISTIC
+      CATPASDIAGT_ACTIVE_BYP_C
+      CatMon_bAcvEuro6Cat_C
+      CatMon_bAcvSeqMemORng_Cat_B
+      CatMon_bAcvSeqORngCat_C
+      CatMon_bAcvSeqORng_Cat_B
+      CatMon_bEnaIntrGas_C
+      CatMon_bEnaIntr_C
+      CatMon_bEnaPasGas_C
+      CatMon_bEnaPas_C
+      CatMon_bInhDiagPresScav_C
+      CatMon_bInhMonWait_Cat_C
+      CatMon_facMaxPas_Obd6Mod_C
+      CatMon_facMax_Obd6Mod_B
+      CatMon_facMes_Obd6Mod_B
+      CatMon_facMinPas_Obd6Mod_C
+      CatMon_facMinStep_Obd6Mod_C
+      CatMon_facMin_Obd6Mod_B
+      CatMon_mO2StgIniGas_Obd6Mod_C
+      CatMon_mO2StgIni_Obd6Mod_C
+      CatMon_noSelModMaxCnt_C
+      CatMon_tiDlyAuthInjAcvDiag_C
+      CatMon_tiDlyInjCutInhDiag_C
+      CatMon_tiInhDiag_C
+      Cat_air_flow_rate_max
+      Cat_air_flow_rate_max_gas
+      Cat_air_flow_rate_min
+      Cat_air_flow_rate_min_gas
+      Cat_air_temp_thresh
+      Cat_air_temp_thresh_gas
+      Cat_air_temp_thresh_idle
+      Cat_air_temp_thresh_idle_gas
+      Cat_calcul_count_max
+      Cat_coef_den_ordre_1
+      Cat_coef_den_ordre_1_gas
+      Cat_coef_den_ordre_1_idle
+      Cat_coef_den_ordre_1_idle_gas
+      Cat_coef_den_ordre_2
+      Cat_coef_den_ordre_2_gas
+      Cat_coef_den_ordre_2_idle
+      Cat_coef_den_ordre_2_idle_gas
+      Cat_coef_den_ordre_3
+      Cat_coef_den_ordre_3_gas
+      Cat_coef_den_ordre_3_idle
+      Cat_coef_den_ordre_3_idle_gas
+      Cat_coef_den_ordre_4
+      Cat_coef_den_ordre_4_gas
+      Cat_coef_den_ordre_4_idle
+      Cat_coef_den_ordre_4_idle_gas
+      Cat_coef_num_ordre_0
+      Cat_coef_num_ordre_0_gas
+      Cat_coef_num_ordre_0_idle
+      Cat_coef_num_ordre_0_idle_gas
+      Cat_coef_num_ordre_2
+      Cat_coef_num_ordre_2_gas
+      Cat_coef_num_ordre_2_idle
+      Cat_coef_num_ordre_2_idle_gas
+      Cat_coef_num_ordre_4
+      Cat_coef_num_ordre_4_gas
+      Cat_coef_num_ordre_4_idle
+      Cat_coef_num_ordre_4_idle_gas
+      Cat_debit_gaz_moy_B
+      Cat_degradation_dec
+      Cat_degradation_dec_gas
+      Cat_degradation_dec_idle
+      Cat_degradation_dec_idle_gas
+      Cat_degradation_inc
+      Cat_degradation_inc_gas
+      Cat_degradation_inc_idle
+      Cat_degradation_inc_idle_gas
+      Cat_delta_engine_load_seuil
+      Cat_delta_engine_load_seuil_gas
+      Cat_delta_regime_moteur_seuil
+      Cat_delta_regime_moteur_seuil_g
+      Cat_delta_temperature_seuil
+      Cat_delta_temperature_seuil_gas
+      Cat_diag_continu_manu_inh
+      Cat_diag_continu_manu_inh_gas
+      Cat_diag_continu_manu_inh_idle
+      Cat_diag_continu_manu_inh_idle_g
+      Cat_engine_load_max
+      Cat_engine_load_max_gas
+      Cat_engine_load_min
+      Cat_engine_load_min_gas
+      Cat_fac_dec_map
+      Cat_fac_inc_map
+      Cat_gear_engaged_max_idle
+      Cat_gear_engaged_max_idle_gas
+      Cat_mon_inhibe_fast_tracking_B
+      Cat_nombre_acqui_min
+      Cat_nombre_acqui_min_gas
+      Cat_nombre_acqui_min_idle
+      Cat_nombre_acqui_min_idle_gas
+      Cat_nombre_echant
+      Cat_nombre_echant_gas
+      Cat_nombre_echant_idle
+      Cat_nombre_echant_idle_gas
+      Cat_priorite_intrusif
+      Cat_priorite_intrusif_gas
+      Cat_pumped_gas_bkpt_map
+      Cat_regime_moteur_max
+      Cat_regime_moteur_max_gas
+      Cat_regime_moteur_max_idle
+      Cat_regime_moteur_max_idle_gas
+      Cat_regime_moteur_min
+      Cat_regime_moteur_min_gas
+      Cat_regime_moteur_min_idle
+      Cat_regime_moteur_min_idle_gas
+      Cat_seuil_degradation_inf
+      Cat_seuil_degradation_inf_gas
+      Cat_seuil_degradation_inf_idle
+      Cat_seuil_degradation_inf_idle_g
+      Cat_seuil_degradation_sup
+      Cat_seuil_degradation_sup_gas
+      Cat_seuil_degradation_sup_idle
+      Cat_seuil_degradation_sup_idle_g
+      Cat_seuil_obd_gas_map
+      Cat_seuil_obd_map
+      Cat_stable_conditions_1_delay
+      Cat_stable_conditions_1_delay_g
+      Cat_stable_conditions_2_delay
+      Cat_stable_conditions_2_delay_g
+      Cat_temperature_bkpt_map
+      Cat_temperature_max
+      Cat_temperature_max_gas
+      Cat_temperature_max_idle
+      Cat_temperature_max_idle_gas
+      Cat_temperature_min
+      Cat_temperature_min_gas
+      Cat_temperature_min_idle
+      Cat_temperature_min_idle_gas
+      Cat_temperature_moy_B
+      Cat_water_temp_thresh
+      Cat_water_temp_thresh_gas
+      Cat_water_temp_thresh_idle
+      Cat_water_temp_thresh_idle_gas
+      Flex_bInhDiagCatPasDiagAlcEst_C
+      Flex_bInhDiagCatPasDiagAlcRate_C
+      Flex_bInhDiagCatPasDiagBlby_C
+      OxC_bEnaTmrPasIntr_C
+      OxC_bMonReqORngIntr_B
+      OxC_mO2StgThdGas_C
+      OxC_mO2StgThd_C
+      OxC_nEngTmrPasIntr_C
+      OxC_tiTmrPasIntr_C
+    /end DEF_CHARACTERISTIC
+  /end FUNCTION
+/end MODULE
+
+/*-------------------------------- end of file -------------------------------*/

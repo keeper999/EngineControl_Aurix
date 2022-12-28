@@ -1,0 +1,36 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+GDGAR_bGetFRM|B|(argin uint16 u16IndexFRM)boolean;|1|HEADER|1|NONE||||0|0|0|0|Get FRM Value|
+GDGAR_tenuGetStDgo|C|func_GDGAR_tenuGetStDgo|3|HEADER|1|NONE||||0|0|0|0|Value of the GDU states|
+GDGAR_vidGdu|A|(argin uint16 u16IdxDft, argin boolean bDgo, argin boolean bMonRun, argin boolean Ns_bMonWait);|2|HEADER|1|NONE||||0|0|0|0|API permettant d'appeler la fonction de gestion du GDU. Elle verifie les paramètres passés en arguments et si il y un problème, elle sort sans executer la fonction.|
+VlvAct_EveCkSnOn_ExEndStop|K|();|SCH.4|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Evénement de synchronisation|
+VlvAct_EveExCmToo_ExEndStop|L|();|SCH.5|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Evènement dent AAC  échappement.|
+VlvAct_EveKOn_ExEndStop|J|();|SCH.2|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Evénement associé au passage de clef OFF à clef ON|
+VlvAct_EvePwrl_ExEndStop|E|();|SCH.8|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Evénement powerlatch|
+VlvAct_EveRst_ExEndStop|J|();|SCH.1|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Evènement reset du calculateur|
+VlvAct_EveRstVVT_ExEndStop|D|();|SCH.7|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Runnable Demande de reset apprentissage VVT|
+VlvAct_SdlFast_ExEndStop|J|();|SCH.6|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Moniteur rapide pour la fonction VVT|
+VlvAct_SdlSlow_ExEndStop|J|();|SCH.3|VLVACTEXENDSTOP|1|PTS_DOC_5885665||||0|0|0|0|Moniteur Lent pour la fonction VVT|
+VLVACTEXENDSTOP_ExtOffIndUpdate|C|();|FCT2.10|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Mise à jour de l'etat de l'apprentissage des butées de l'AAC échappement.|
+VLVACTEXENDSTOP_ExtOffIndUpdate1|E|();|FCT3.2|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Cette fonction permet le forçage à 1 de l'indicateur Vcpe_cam_offsets_are_learned lorsque les conditions d'apprentissage sont perdues.|
+VLVACTEXENDSTOP_vidEepromWrite|C|();|FCT3.1|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Fonction d'écriture dans EEPROM|
+VLVACTEXENDSTOP_vidExhaustOff|L|();|FCT2.1|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Ce bloc calcule la valeur de décalage de l’AAC de l'échappement en soustrayant à la dernière valeur acquise de l’angle vilebrequin une valeur de référence apprise ou calibrée pour chacune des dents de la cible AAC.|
+VLVACTEXENDSTOP_vidExOffReset|E|();|FCT1.9|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|exhaust offset reset.|
+VLVACTEXENDSTOP_vidExOffsets|M|();|FCT2.2|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Lors  d'un  apprentissage  en  fonctionnement  si  le  contrôle  moteur  demande  un  décalage  on  sort  de l'apprentissage  pour  revenir  en  mode  asservi. L'apprentissage  en  fonctionnement  se  fera  lors  du  prochain passage au ralenti.|
+VLVACTEXENDSTOP_vidExtAllowLearn|I|();|FCT1.8|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Ce bloc détermine quand peut commencer l'apprentissage des offsets après démarrage. Il y a trois conditions calibrables: un seuil de régime, un délai après synchronisation et un délai après que la consigne soit nulle.|
+VLVACTEXENDSTOP_vidExtAllowLrng|H|();|FCT1.7|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Condition pour commencer l'apprentissage des offsets après démarrage.|
+VLVACTEXENDSTOP_vidFrstOffLrnCon|J|();|FCT2.9|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Le premier apprentissage est réalisé si et seulement si plusieurs conditions (température  et pression d’huile, température d’eau, régime et pas de mode dégradé pour la VVT  admission)  sont réalisées.|
+VLVACTEXENDSTOP_vidFrtLrnWtDfCpt|B|();|FCT3.3|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Cette   fonction est active dés que FRM_bInhVlvActExFrstLrnIdc égale à 0.|
+VLVACTEXENDSTOP_vidInitDiagSrv|D|();|FCT1.10|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Ce bloc procède à l’initialisation des variables suivantes suite à une demande APV : - Valeur apprentissage butée basse déphaseur AAC échappement - Etat apprentissage déphaseur AAC échappement - Etat apprentissage roulage en cours échappement|
+VLVACTEXENDSTOP_vidInitFailure|D|();|FCT1.2|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Les pannes VVT présentes sont initialisées sur clé off-on afin de ne pas rester figées entre le clé on et le démarrage du moteur.|
+VLVACTEXENDSTOP_vidInitOutput|H|();|FCT1.1|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Initialisation des sorties au reset.|
+VLVACTEXENDSTOP_vidLearningDiag|K|();|FCT2.3|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Les offsets mesurés sont appris en EEPROM si on n'a pas eu de panne, si le moteur est chaud et si on pas eu de fonctionnement 3 dents pendant cet apprentissage. Cette fonction permet d'actualiser la variable offset.|
+VLVACTEXENDSTOP_vidLearningReset|D|();|FCT1.4|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|apprentissage des offsets en cours d'utilisation|
+VLVACTEXENDSTOP_vidLstLrnTmpCntr|D|();|FCT1.5|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|On décrémente la temporisation depuis le dernier apprentissage.|
+VLVACTEXENDSTOP_vidMemoirisaCond|D|();|FCT2.7|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|condition de mémoirisation|
+VLVACTEXENDSTOP_vidMemoirisation|B|();|FCT2.8|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Mémoirisation des valeurs de la butée  de repos de la VVT admission pour chaque dent came du précédent apprentissage.|
+VLVACTEXENDSTOP_vidOffAvrgComp|B|();|FCT2.6|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Offsets average computation.|
+VLVACTEXENDSTOP_vidOffCons|B|();|FCT2.5|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|On  réalise  dans  ce  bloc  un  test  pour  vérifier  que  l'écart  entre  les  valeurs  précédemment  acquises  et  les actuelles reste dans les tolérances fixées.|
+VLVACTEXENDSTOP_vidOffLrnErrDet|C|(argin uint16 u16Margin,argin uint16 *u16ExhaustAngle,uint16 *u16OffMes,argout boolean *bErrDet);|FCT2.4|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Controler l'écart entre les valeurs précédemment acquises et les actuelles pour détecter un problème.|
+VLVACTEXENDSTOP_vidOffsetsReset|K|();|FCT1.3|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Possibilités pour lancer un apprentissage des offsets en cours d'utilisation|
+VLVACTEXENDSTOP_vidPrvLrnErDetec|B|();|FCT3.4|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Cette fonction réalize un test pour vérifier que  l'écart entre les valeurs précédemment acquises et  les actuelles reste dans les tolérances fixées.|
+VLVACTEXENDSTOP_vidReset|L|();|FCT1.6|VLVACTEXENDSTOP|0|PTS_DOC_5885665||||0|0|0|0|Vcpe_cam_offsets: angles de référence ou offsets appris précédemment --> offsets de position. Vcpe_cam_offsets_are_learned: flag fin d’apprentissage|

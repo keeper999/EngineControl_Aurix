@@ -1,0 +1,1881 @@
+﻿/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : HPPmpMdl                                                */
+/* !Description     :  HPPmpMdl- Modèle de la pompe haute pression            */
+/*                                                                            */
+/* !Module          : HPPmpMdl                                                */
+/*                                                                            */
+/* !File            : HPPmpMdl.a2l                                            */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Thu Apr 04 17:41:39 2013                              */
+/*   Model name       : HPPmpMdl_AUTOCODE.mdl                                 */
+/*   Model version    : 1.167                                                 */
+/*   Root subsystem   : /HPPmpMdl                                             */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/HPPmpMdl/5-SOFT-LIV/HPPmpMdl$*/
+/* $Revision::   1.9                                                         $*/
+/* $Author::   adelvare                               $$Date::   08 Apr 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   HPPmpMdl
+    /*   LongIdentifier */   "HPPmpMdl Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   HPPmpMdl_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_dens_T
+       /*   LongIdentifier */   "Carto de masse volumique fonction de la température carburant"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -4.0149999999999977E+001
+          /*   UpperLimit     */   2.1485000000000002E+002
+          AXIS_PTS_REF             PFuCtl_tFuEstim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_rVolEfcPmp_M
+       /*   LongIdentifier */   "Cartographie de rendement volumétrique de la pompe HP en fonction du régime moteur et de la pression rail"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_3
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuRailSplMes_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_rVolEfcPmpCor_T
+       /*   LongIdentifier */   "Carto corrective de rendement volumétrique de la pompe HP en fonction de la température carburant"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_3
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.9999694824218750E+000
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -4.0149999999999977E+001
+          /*   UpperLimit     */   2.1485000000000002E+002
+          AXIS_PTS_REF             PFuCtl_tFuEstim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_OfsVolPmpCor_T
+       /*   LongIdentifier */   "Carto en volume carburant supplémentaire à introduire dans la pompe HP lié au volume mort"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_6
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_4
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   5.1199218750000006E+002
+          AXIS_PTS_REF             PFuCtl_pFuRailSplMes_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdReqOpl_T
+       /*   LongIdentifier */   "Durée angulaire du coup de pompe en configuration boucle ouverte"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -4.0149999999999977E+001
+          /*   UpperLimit     */   2.1485000000000002E+002
+          AXIS_PTS_REF             PFuCtl_tFuEstim_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdReq_T
+       /*   LongIdentifier */   "Cartographie angle de fermeture pompe en fonction du volume efficace carburant à introduire"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   PFuCtl_volFuReqEfc
+          /*   Conversion     */   HPPmpMdl_CM_6
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -1.5625000000000002E+001
+          /*   UpperLimit     */   1.5625000000000002E+001
+          AXIS_PTS_REF             PFuCtl_volFuReqEfc_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmdReqRawBum_T
+       /*   LongIdentifier */   "Durée d'application de la commande électrovanne pompe HP en cas de mode dégradé sur l'AAC"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiOfsPmpCmdHyd_M
+       /*   LongIdentifier */   "Cartographie de temps mort hydraulique en fonction du volume demandé et du régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   PFuCtl_volFuReqEfc
+          /*   Conversion     */   HPPmpMdl_CM_6
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -1.5625000000000002E+001
+          /*   UpperLimit     */   1.5625000000000002E+001
+          AXIS_PTS_REF             PFuCtl_volFuReqEfc_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiOfsPmpCmdN_M
+       /*   LongIdentifier */   "Cartographie de correction angulaire de fermeture pompe HP en fonction de la tension batterie et du profil de commande"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_9
+          /*   MaxAxisPoints  */   25
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   250.0
+          AXIS_PTS_REF             PFuCtl_NrProfCmd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             Ext_uBatt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmdLo_M
+       /*   LongIdentifier */   "Cartographie de durée d'application de la commande électropvanne pompe HP en fonction du régime moteur et de la tension batterie"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             Ext_uBatt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmd_M
+       /*   LongIdentifier */   "Cartographie de durée d'application de la commande électropvanne pompe HP en fonction du régime moteur et de la tension batterie"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_10
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1546.626
+          AXIS_PTS_REF             Ext_uBatt_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_volFuReqEfc_T
+       /*   LongIdentifier */   "Carto en volume efficace pompe HP dependant de l'angle de commande de fermeture SV"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_6
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_7
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   720.0
+          AXIS_PTS_REF             PFuCtl_agWdPmpCmdReq_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agPmpCmdDecelReq_T
+       /*   LongIdentifier */   "Table de l'angle de début pulse de deceleration après PMH pompe"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmdDecel_T
+       /*   LongIdentifier */   "Table de durée d'application de la commande électropvanne pompe HP en fonction du régime moteur et de la charge"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPeakDurnCmd_T
+       /*   LongIdentifier */   "Table de durée de pic du profil de commande appris"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_9
+          /*   MaxAxisPoints  */   25
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   250.0
+          AXIS_PTS_REF             PFuCtl_NumProfilCmd_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmdDecelGap_M
+       /*   LongIdentifier */   "Marge permise entre la fin de commande du premier pulse et début du pulse suivant"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -4.0149999999999977E+001
+          /*   UpperLimit     */   2.1485000000000002E+002
+          AXIS_PTS_REF             PFuCtl_tFuUsPmp_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   HPPmpMdl_CM_5
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             PFuCtl_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngHiDecelThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la borne max du régime"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngHiDecelThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la borne min du régime"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngLoDecelThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la borne max du régime"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_nEngLoDecelThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la borne min du régime"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agPmpCmdMin_C
+       /*   LongIdentifier */   "Début de commande minimal de la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pHiThdPresTiPmpCmd_C
+       /*   LongIdentifier */   "Seuil haut de pression pour le calcul de la durée du pulse de commande"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pLoThdPresTiPmpCmd_C
+       /*   LongIdentifier */   "Seuil bas de pression pour le calcul de la durée du pulse de commande"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pPrailThdMFuPmpEstim_C
+       /*   LongIdentifier */   "Différence maximum de variation autorisée entre deux mesures de Prail"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_4
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesHiDecelThdHi_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la borne max de la pression collecteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_11
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.24272E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesHiDecelThdLo_C
+       /*   LongIdentifier */   "Seuil haut autorisé pour la borne min de la pression collecteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_11
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.24272E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesLoDecelThdHi_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la borne max de la pression collecteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_11
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.24272E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_pDsThrMesLoDecelThdLo_C
+       /*   LongIdentifier */   "Seuil bas autorisé pour la borne min de la pression collecteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_11
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.24272E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agPmpCmdReqIni_C
+       /*   LongIdentifier */   "Angle de commande de la Spill valve au réveil à l'initialisation"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agPmpCmdReqRawBum_C
+       /*   LongIdentifier */   "Angle brut de commande de la pompe HP en cas de mode dégradé sur l'AAC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdMax_C
+       /*   LongIdentifier */   "Angle maximal de commande du coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdMin_C
+       /*   LongIdentifier */   "Angle minimal de commande du coup de pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdReqRawBum_C
+       /*   LongIdentifier */   "Durée angulaire brute de la commande pompe HP en cas de mode dégradé sur l'AAC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_agWdPmpCmdSpil_C
+       /*   LongIdentifier */   "Ecart angulaire entre l'événement de remplissage pompe et  le PMH pompe (\"Spill event\")"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiCmdEndTDCPmp_C
+       /*   LongIdentifier */   "Garde de sécurité entre fin commande SV et PMH pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPeakDurnOfs_C
+       /*   LongIdentifier */   "Offset de protection pour la durée de pic"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_tiPmpCmdReqIni_C
+       /*   LongIdentifier */   "Valeur de la durée d'application de la commande de l'électrovanne de la pompe HP au Stall to Rot"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_mFuPmpCtlMin_C
+       /*   LongIdentifier */   "Masse minimale autorisée à pomper (seuil contraint par la précision du modèle pompe à faible masse)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_12
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   9.7654759883880615E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   HPPMPMDL_u8Inhib
+       /*   LongIdentifier */   "inhibition of module HPPmpMdl."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_noSplInLrnCond_C
+       /*   LongIdentifier */   "Nombre de spill avant prise en compte de la condition d'apprentissage en cours"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bAcvLrnCondPmpCmdLim_C
+       /*   LongIdentifier */   "Booléen d'activation de la prise en compte de l'apprentissage Low Noise"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bAcvPmpCmdEndTDC_C
+       /*   LongIdentifier */   "Booléen pour activer la prise en compte de la capacité minimale de la pompe HP"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bAcvPmpMinFrzI_C
+       /*   LongIdentifier */   "Booléen pour activer le figeage du terme intégral en cas de détection limite min de la pompe"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bChoCmdAg_C
+       /*   LongIdentifier */   "Booléen qui permet de choisir la variable à imposer en cas de mode dégradé sur l'AAC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bForcAcvDecelZone_C
+       /*   LongIdentifier */   "Booléen permettant de forcer l'entrée dans la zone d'application du pulse de deceleration"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   PFuCtl_bmFuPmpEstim_C
+       /*   LongIdentifier */   "Passage en mode pour l'estimation de la masse pompée par cycle"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   HPPmpMdl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_tFuEstim_A
+       /*   LongIdentifier */   "Table de points d'appuis en température carburant"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   -4.0149999999999977E+001
+       /*   UpperLimit     */   2.1485000000000002E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_pFuRailSplMes_A
+       /*   LongIdentifier */   "Table de points d'appuis en pression rail mesurée"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_4
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   5.1199218750000006E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_nEng_A
+       /*   LongIdentifier */   "Table de points d'appuis en régime moteur"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_5
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_volFuReqEfc_A
+       /*   LongIdentifier */   "Table de points d'appuis en volume efficace pompe HP"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   PFuCtl_volFuReqEfc
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_X_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_6
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_NrProfCmd_A
+       /*   LongIdentifier */   "Table de points d'appuis en profil de commande"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_9
+       /*   MaxAxisPoints  */   25
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   Ext_uBatt_A
+       /*   LongIdentifier */   "Table de points d'appuis en tension batterie"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_10
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1546.626
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_agWdPmpCmdReq_A
+       /*   LongIdentifier */   "Table de points d'appuis en l'angle de fermeture pompe"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_NumProfilCmd_A
+       /*   LongIdentifier */   "Table de points d'appuis en profil de commande"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_9
+       /*   MaxAxisPoints  */   25
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   250.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   PFuCtl_tFuUsPmp_A
+       /*   LongIdentifier */   "Température carburant en amont de la pompe"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   HPPmpMdl_RL_Lookup2D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   HPPmpMdl_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   -4.0149999999999977E+001
+       /*   UpperLimit     */   2.1485000000000002E+002
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_mFuPmpEstimErrRaw
+       /*   LongIdentifier */   "Différence entre la masse injectée et la masse demandée"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_18
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agPmpCmdOfs
+       /*   LongIdentifier */   "Durée angulaire de dépassement de commande Spill Valve par rapport à Spill Event"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agWdPmpCmdMin
+       /*   LongIdentifier */   "Durée angulaire minimale de la commande pompe"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agPmpCmdEfcReqRaw
+       /*   LongIdentifier */   "Angle réel brut de commande de la pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agOfsPmpCmdDly
+       /*   LongIdentifier */   "Temps de réponse d'acionneurs pompe HP"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agPmpCmdReqRaw
+       /*   LongIdentifier */   "Angle brut de commande de la pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_19
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_densEstim
+       /*   LongIdentifier */   "Masse volumique du carburant dépendant de la température carburant"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_20
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_rVolEfcPmp
+       /*   LongIdentifier */   "Rendement volumétrique de la pompe HP"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_9
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   1.9999694824218750E+000
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_OfsVolPmpCor
+       /*   LongIdentifier */   "Volume carburant supplémentaire à introduire dans la pompe HP lié au volume mort"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_21
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_volFuReq
+       /*   LongIdentifier */   "Volume carburant objectif à introduire dans la pompe HP"
+       /*   Datatype       */   FLOAT32_IEEE
+       /*   Conversion     */   HPPmpMdl_CM_21
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_mFuPmpEstimRaw
+       /*   LongIdentifier */   "Calcul provenant du régulateur PI de la quantité de carburant de la pompe HP"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   HPPmpMdl_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_mFuPmpEstim
+       /*   LongIdentifier */   "Estimation de la masse pompée par cycle"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   HPPmpMdl_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_mFuPmpEstimTmp
+       /*   LongIdentifier */   "Estimation de la masse pompée par cycle"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   HPPmpMdl_CM_16
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   7812.5
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_volFuReqEfc
+       /*   LongIdentifier */   "Volume efficace carburant objectif à introduire dans la pompe HP"
+       /*   Datatype       */   ULONG
+       /*   Conversion     */   HPPmpMdl_CM_6
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -1.5625000000000002E+001
+       /*   UpperLimit     */   1.5625000000000002E+001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agBeg2PulseDif
+       /*   LongIdentifier */   "Angle d'activation du pulse de deceleration par rapport au début du pulse de commande"
+       /*   Datatype       */   SWORD
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   -720.0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agPmpCmdReq
+       /*   LongIdentifier */   "Angle de commande de la pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agPmpCmdEfcReq
+       /*   LongIdentifier */   "Angle réel de commande de la pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agWdPmpCmdReq
+       /*   LongIdentifier */   "Durée angulaire de la commande pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_agWdPmpCmdReqRaw
+       /*   LongIdentifier */   "Durée angulaire brute de la commande pompe HP (fermeture de la \"spill valve\")"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_7
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   720.0
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmdReq
+       /*   LongIdentifier */   "Durée d'application de la commande électrovanne pompe HP"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiBeg2PulseDif
+       /*   LongIdentifier */   "Temps entre le début du pulse de commande et le début d'activation du pulse de deceleration"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPeakDurnCmd
+       /*   LongIdentifier */   "Durée de pic du profil de commande appris"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmdDecelGap
+       /*   LongIdentifier */   "Marge permise entre la fin de commande du premier pulse et début du pulse suivant"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmdDecelReq
+       /*   LongIdentifier */   "Durée nécessaire d'application du pulse de deceleration de l'electrovanne de la pompe HP"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmdReq_prev
+       /*   LongIdentifier */   "NS: Durée d'application de la commande électrovanne pompe HP au pas antérieur"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmdReqRaw
+       /*   LongIdentifier */   "Variable intermedaire pour la durée nécessaire d'application de la commande électrovanne pompe HP"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiOfsPmpCmd
+       /*   LongIdentifier */   "Temps mort electrique/hydraulique de l'electovanne de la pompe HP"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_tiPmpCmd
+       /*   LongIdentifier */   "Durée nécessaire d'application de la commande électrovanne pompe HP"
+       /*   Datatype       */   UWORD
+       /*   Conversion     */   HPPmpMdl_CM_8
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.1942399999999991E-001
+       ECU_ADDRESS              0x0
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bDetAgWdPmpCmdLim
+       /*   LongIdentifier */   "Flag de détection limite des capacité de remplissage de la pompe HP atteinte"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bPmpCmdDecelZone
+       /*   LongIdentifier */   "Booleen indiquand si on est dans la zone d'application du pulse de deceleration"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bDetAgWdPmpCmdMax
+       /*   LongIdentifier */   "Flag de détection limite des capacité max de remplissage de la pompe HP atteinte"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bAcvLrnCondPmpCmdLim
+       /*   LongIdentifier */   "Booléen de detection d'un apprentissage lancé depuis un temps suffisement long"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bDetAgWdPmpCmdMin
+       /*   LongIdentifier */   "Flag de détection limite de capacité minimale de remplissage de la pompe HP atteinte"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name           */   PFuCtl_bInhPmpCmdMinDet
+       /*   LongIdentifier */   "Flag d'annulation de commande en cas de détection de capacité minimale pompe HP atteinte"
+       /*   Datatype       */   UBYTE
+       /*   Conversion     */   HPPmpMdl_CM_Boolean
+       /*   Resolution     */   0
+       /*   Accuracy       */   0
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+       ECU_ADDRESS              0x0
+       BIT_MASK                 0x01
+       READ_WRITE               
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_1
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Kg/l"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_2
+       /*   LongIdentifier */   "Q = (V+40.15)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 40.15 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_3
+       /*   LongIdentifier */   "Q = V*32768"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 32768 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_4
+       /*   LongIdentifier */   "Q = V*128"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "bar"
+       COEFFS                   0 128 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_5
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_6
+       /*   LongIdentifier */   "Q = (V+15.625)*134217.728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ml"
+       COEFFS                   0 134217.728 2097152 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_7
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_8
+       /*   LongIdentifier */   "Q = V*156250"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "s"
+       COEFFS                   0 156250 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_10
+       /*   LongIdentifier */   "Q = V*42.3728813559"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "V"
+       COEFFS                   0 42.3728813559 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_11
+       /*   LongIdentifier */   "Q = V*125"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "kPa"
+       COEFFS                   0 125 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_12
+       /*   LongIdentifier */   "Q = V*67.108864"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 67.108864 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_13
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            HPPmpMdl_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_15
+       /*   LongIdentifier */   "Q = (V+7812.5)*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 1048576 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_16
+       /*   LongIdentifier */   "Q = V*134.217728"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 134.217728 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_17
+       /*   LongIdentifier */   "Q = V*10.6666666667"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°vil"
+       COEFFS                   0 10.6666666667 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_18
+       /*   LongIdentifier */   "Q = V/1000000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "mg"
+       COEFFS                   0 1 0 0 0 1000000
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_19
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "°Vil"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_20
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "Kg/l"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   HPPmpMdl_CM_21
+       /*   LongIdentifier */   "Q = V/1000"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "ml"
+       COEFFS                   0 1 0 0 0 1000
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   HPPmpMdl_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   HPPmpMdl
+       /*   LongIdentifier */   "PTS_DOC_5149850.003"
+
+       /begin DEF_CHARACTERISTIC
+          Ext_uBatt_A
+          HPPMPMDL_u8Inhib
+          PFuCtl_NrProfCmd_A
+          PFuCtl_NumProfilCmd_A
+          PFuCtl_OfsVolPmpCor_T
+          PFuCtl_agPmpCmdDecelReq_T
+          PFuCtl_agPmpCmdMin_C
+          PFuCtl_agPmpCmdReqIni_C
+          PFuCtl_agPmpCmdReqRawBum_C
+          PFuCtl_agWdPmpCmdMax_C
+          PFuCtl_agWdPmpCmdMin_C
+          PFuCtl_agWdPmpCmdReqOpl_T
+          PFuCtl_agWdPmpCmdReqRawBum_C
+          PFuCtl_agWdPmpCmdReq_A
+          PFuCtl_agWdPmpCmdReq_T
+          PFuCtl_agWdPmpCmdSpil_C
+          PFuCtl_bAcvLrnCondPmpCmdLim_C
+          PFuCtl_bAcvPmpCmdEndTDC_C
+          PFuCtl_bAcvPmpMinFrzI_C
+          PFuCtl_bChoCmdAg_C
+          PFuCtl_bForcAcvDecelZone_C
+          PFuCtl_bmFuPmpEstim_C
+          PFuCtl_dens_T
+          PFuCtl_mFuPmpCtlMin_C
+          PFuCtl_nEngHiDecelThdHi_C
+          PFuCtl_nEngHiDecelThdLo_C
+          PFuCtl_nEngLoDecelThdHi_C
+          PFuCtl_nEngLoDecelThdLo_C
+          PFuCtl_nEng_A
+          PFuCtl_noSplInLrnCond_C
+          PFuCtl_pDsThrMesHiDecelThdHi_C
+          PFuCtl_pDsThrMesHiDecelThdLo_C
+          PFuCtl_pDsThrMesLoDecelThdHi_C
+          PFuCtl_pDsThrMesLoDecelThdLo_C
+          PFuCtl_pFuRailSplMes_A
+          PFuCtl_pHiThdPresTiPmpCmd_C
+          PFuCtl_pLoThdPresTiPmpCmd_C
+          PFuCtl_pPrailThdMFuPmpEstim_C
+          PFuCtl_rVolEfcPmpCor_T
+          PFuCtl_rVolEfcPmp_M
+          PFuCtl_tFuEstim_A
+          PFuCtl_tFuUsPmp_A
+          PFuCtl_tiCmdEndTDCPmp_C
+          PFuCtl_tiOfsPmpCmdHyd_M
+          PFuCtl_tiOfsPmpCmdN_M
+          PFuCtl_tiPeakDurnCmd_T
+          PFuCtl_tiPeakDurnOfs_C
+          PFuCtl_tiPmpCmdDecelGap_M
+          PFuCtl_tiPmpCmdDecel_T
+          PFuCtl_tiPmpCmdLo_M
+          PFuCtl_tiPmpCmdReqIni_C
+          PFuCtl_tiPmpCmdReqRawBum_T
+          PFuCtl_tiPmpCmd_M
+          PFuCtl_volFuReqEfc_A
+          PFuCtl_volFuReqEfc_T
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          PFuCtl_OfsVolPmpCor
+          PFuCtl_agBeg2PulseDif
+          PFuCtl_agOfsPmpCmdDly
+          PFuCtl_agPmpCmdEfcReqRaw
+          PFuCtl_agPmpCmdOfs
+          PFuCtl_agPmpCmdReqRaw
+          PFuCtl_agWdPmpCmdMin
+          PFuCtl_agWdPmpCmdReqRaw
+          PFuCtl_bAcvLrnCondPmpCmdLim
+          PFuCtl_bDetAgWdPmpCmdMax
+          PFuCtl_bDetAgWdPmpCmdMin
+          PFuCtl_bInhPmpCmdMinDet
+          PFuCtl_bPmpCmdDecelZone
+          PFuCtl_densEstim
+          PFuCtl_mFuPmpEstimErrRaw
+          PFuCtl_mFuPmpEstimTmp
+          PFuCtl_rVolEfcPmp
+          PFuCtl_tiOfsPmpCmd
+          PFuCtl_tiPmpCmd
+          PFuCtl_tiPmpCmdReqRaw
+          PFuCtl_tiPmpCmdReq_prev
+          PFuCtl_volFuReq
+          PFuCtl_volFuReqEfc
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          PFuCtl_agPmpCmdEfcReq
+          PFuCtl_agPmpCmdReq
+          PFuCtl_agWdPmpCmdReq
+          PFuCtl_bDetAgWdPmpCmdLim
+          PFuCtl_mFuPmpEstim
+          PFuCtl_mFuPmpEstimRaw
+          PFuCtl_tiBeg2PulseDif
+          PFuCtl_tiPeakDurnCmd
+          PFuCtl_tiPmpCmdDecelGap
+          PFuCtl_tiPmpCmdDecelReq
+          PFuCtl_tiPmpCmdReq
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

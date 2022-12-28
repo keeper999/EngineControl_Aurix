@@ -1,0 +1,10 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+Thr_EveOplCllEna_ThrAbsSpPosn|A|();|SCH.4|THRABSSPPOSN|1|V02 NT 08 04493||||0|0|0|0|Evenement de passage d'une commande en boucle ouverte à une commande  en boucle ferme du papillon.
+Thr_EveRst_AbsSpPosn|B|();|SCH.1|THRABSSPPOSN|1|V02 NT 08 04493||||0|0|0|0|Sched reset
+Thr_SdlMid_AbsSpPosn|A|();|SCH.3|THRABSSPPOSN|1|V02 NT 08 04493||||0|0|0|0|Moniteur moyen pour la fonction papillon
+Thr_SdlSlow_AbsSpPosn|B|();|SCH.2|THRABSSPPOSN|1|V02 NT 08 04493||||0|0|0|0|Moniteur lent pour la fonction papillon
+THRABSSPPOSN_vidCompOpenThresh|C|();|FCT1.3|THRABSSPPOSN|0|V02 NT 08 04493||||0|0|0|0|Le seuil maximal de position de consigne papillon est soumis à deux contraintes : garde par rapport à la butée  haute et consommation de courant pour des températures ECU extrêmes.
+THRABSSPPOSN_vidComputeAbsRef|D|();|FCT1.4|THRABSSPPOSN|0|V02 NT 08 04493||||0|0|0|0|Ce processus est calculé chaque 8ms ou sur front descendant de  Tpac_open_loop_control et  fourni la consigne absolue de position papillon en fonction de la garde à la butée basse, de la garde à la butée haute et de l’état de l’automate d'asservissement.
+THRABSSPPOSN_vidInitOutput|B|();|FCT1.1|THRABSSPPOSN|0|V02 NT 08 04493||||0|0|0|0|Module initialization
+THRABSSPPOSN_vidInitThrotPosRef|B|();|FCT1.2|THRABSSPPOSN|0|V02 NT 08 04493||||0|0|0|0|Sur Reset, on initialise la consigne absolue à la somme de la consigne relative et de la position de la butée basse. La consigne relative étant initialisée à la position corrigée, on démarre ainsi l’asservissement à partir de la position papillon.
+THRABSSPPOSN_vidModifThrustPos|B|();|FCT1.5|THRABSSPPOSN|0|V02 NT 08 04493||||0|0|0|0|Apprentissage en boucle fermée, les valeurs des butées haute et basse sont modifiées afin de pouvoir générer une consigne en dehors de la zone délimitée. Cela permet d’assurer le contact et de contrôler le « couple appliqué » sur la butée concernée.

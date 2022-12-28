@@ -1,0 +1,1402 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!--  -->
+<!-- ******************************************************************************* -->
+<!-- *                           P. C. A.                                            -->
+<!-- *                                                                               -->
+<!-- *                    Peugeot Citroen Automobile                                 -->
+<!-- *                                                                               -->
+<!-- *        This file is the property of PCA. All rights are reserved              -->
+<!-- *        by PCA and this file must not be copied or disclosed                   -->
+<!-- *       (in whole or in part) without prior written consent of PCA.             -->
+<!-- *                                                                               -->
+<!-- ******************************************************************************* -->
+<!--  -->
+<!-- %name: SWC_TrbActMgt.arxml % -->
+<!--  -->
+<!-- %version: 1.0 % -->
+<!--  -->
+<!-- %date_modified: Wed Aug 13 11:31:34 2014 % -->
+<!--  -->
+<!--  -->
+<!-- %derived_by: e446745 % -->
+<!-- %release: % -->
+<!-- %full_filespec: % -->
+<!--  -->
+<!-- ******************************************************************************/-->
+<!--  -->
+<!--Created with SystemDesk 3.1.7.5149-->
+<AUTOSAR xmlns="http://autosar.org/3.1.2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://autosar.org/3.1.2 autosar.xsd">
+  <TOP-LEVEL-PACKAGES>
+    <AR-PACKAGE>
+      <SHORT-NAME>Components</SHORT-NAME>
+      <ELEMENTS />
+      <SUB-PACKAGES>
+        <AR-PACKAGE>
+          <SHORT-NAME>SWC_TrbActMgt</SHORT-NAME>
+          <ELEMENTS>
+            <APPLICATION-SOFTWARE-COMPONENT-TYPE UUID="3428a8a4-7e94-1014-b6a5-841bc1d2cebd">
+              <SHORT-NAME>TRBACTMGT</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">TrbActMgt</L-4>
+              </LONG-NAME>
+              <PORTS>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_UCE_stWkuMainRelSt</SHORT-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UCE_stWkuMainRelSt</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bInhPosnTrbActMod</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bInhPosnTrbActMod</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bInhSenCtl</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bInhSenCtl</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE>
+                  <SHORT-NAME>R_FRM_bInhTrbActCmd</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_FRM_bInhTrbActCmd</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="CLIENT-SERVER-INTERFACE">/Fim_Package/FunctionInhibition</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="3449160a-7e94-1014-84fa-fead28601be9">
+                  <SHORT-NAME>P_TrbAct_bAcvTrbActCmd</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_bAcvTrbActCmd</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bAcvTrbActCmd/TrbAct_bAcvTrbActCmd</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/ConstantValue/ConstantValue</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bAcvTrbActCmd</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="3464e216-7e94-1014-8dd2-d1c7e6f99526">
+                  <SHORT-NAME>P_TrbAct_bBoostPresClCtlAcv</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_bBoostPresClCtlAcv</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv/TrbAct_bBoostPresClCtlAcv</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/BooleanInitValue/BooleanInitValue</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="347db3d8-7e94-1014-a033-ad82c674896e">
+                  <SHORT-NAME>P_TrbAct_bInhICor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_bInhICor</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhICor/TrbAct_bInhICor</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/BooleanInitValue1/BooleanInitValue1</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bInhICor</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="349624c0-7e94-1014-8903-e04363c3cb5f">
+                  <SHORT-NAME>P_TrbAct_bPosnTrbActMod</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_bPosnTrbActMod</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bPosnTrbActMod/TrbAct_bPosnTrbActMod</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/BooleanInitValue3/BooleanInitValue3</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bPosnTrbActMod</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="34ae5398-7e94-1014-baab-c8080e7a72de">
+                  <SHORT-NAME>P_TrbAct_facPresAltiCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_facPresAltiCor</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_facPresAltiCor/TrbAct_facPresAltiCor</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/UInt16InitValue/UInt16InitValue</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_facPresAltiCor</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="34c6829a-7e94-1014-bd99-beeb101f55b6">
+                  <SHORT-NAME>P_TrbAct_pUsThrCorReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_pUsThrCorReq</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrCorReq/TrbAct_pUsThrCorReq</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue5/ConstantValue5</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_pUsThrCorReq</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="34deb1f0-7e94-1014-9890-ccce4e90e194">
+                  <SHORT-NAME>P_TrbAct_pUsThrFil</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_pUsThrFil</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrFil/TrbAct_pUsThrFil</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue7/ConstantValue7</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_pUsThrFil</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="34f7837a-7e94-1014-9a10-ce720d6961b5">
+                  <SHORT-NAME>P_TrbAct_rRCOPIDCorReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_rRCOPIDCorReq</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOPIDCorReq/TrbAct_rRCOPIDCorReq</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue9/ConstantValue9</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_rRCOPIDCorReq</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <P-PORT-PROTOTYPE UUID="351043d8-7e94-1014-a551-e99fe30d0d53">
+                  <SHORT-NAME>P_TrbAct_rRCOICorReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">P_TrbAct_rRCOICorReq</L-4>
+                  </LONG-NAME>
+                  <PROVIDED-COM-SPECS>
+                    <UNQUEUED-SENDER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOICorReq/TrbAct_rRCOICorReq</DATA-ELEMENT-REF>
+                      <CAN-INVALIDATE>false</CAN-INVALIDATE>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue11/ConstantValue11</INIT-VALUE-REF>
+                    </UNQUEUED-SENDER-COM-SPEC>
+                  </PROVIDED-COM-SPECS>
+                  <PROVIDED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_rRCOICorReq</PROVIDED-INTERFACE-TREF>
+                </P-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="352cd7c6-7e94-1014-bf7b-f9d00a3a1598">
+                  <SHORT-NAME>R_AfuA_rEthWoutExct</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AfuA_rEthWoutExct</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AfuA_rEthWoutExct/AfuA_rEthWoutExct</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/UInt8InitValue/UInt8InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AfuA_rEthWoutExct</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="3545f49e-7e94-1014-bba7-e61124a12970">
+                  <SHORT-NAME>R_AirSys_bAcvFrzMod</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_bAcvFrzMod</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_bAcvFrzMod/AirSys_bAcvFrzMod</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/ConstantValue13/ConstantValue13</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_bAcvFrzMod</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="355e3c4a-7e94-1014-abd8-c2207918c6d1">
+                  <SHORT-NAME>R_AirSys_pUsThrReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_pUsThrReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_pUsThrReq/AirSys_pUsThrReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue15/ConstantValue15</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_pUsThrReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35775578-7e94-1014-9f1b-b4898218eb2c">
+                  <SHORT-NAME>R_AirSys_pUsThrReqFil</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_pUsThrReqFil</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_pUsThrReqFil/AirSys_pUsThrReqFil</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue17/ConstantValue17</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_pUsThrReqFil</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35904372-7e94-1014-a402-8f5d4d51a47c">
+                  <SHORT-NAME>R_AirSys_prm_pInMnfReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_AirSys_prm_pInMnfReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_prm_pInMnfReq/AirSys_prm_pInMnfReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="ARRAY-SPECIFICATION">/Components/SWC_TrbActMgt/ArrayConstantValue/ArrayConstantValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_AirSys_prm_pInMnfReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35ab9cde-7e94-1014-baa7-f3e5b8f10222">
+                  <SHORT-NAME>R_Ext_nEng</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_nEng</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEng/Ext_nEng</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue19/ConstantValue19</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_nEng</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35d8f75a-7e94-1014-8257-d7157aea8f92">
+                  <SHORT-NAME>R_Ext_nEngGrd</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_nEngGrd</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEngGrd/Ext_nEngGrd</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/SInt8InitValue/SInt8InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_nEngGrd</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="35fcfa14-7e94-1014-955d-a1ae53d7c092">
+                  <SHORT-NAME>R_Ext_pOilMesSI</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_pOilMesSI</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_pOilMesSI/Ext_pOilMesSI</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/UInt16InitValue21/UInt16InitValue21</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_pOilMesSI</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="361d62e2-7e94-1014-b73d-94519c3a3076">
+                  <SHORT-NAME>R_Ext_tCoMes</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_tCoMes</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_tCoMes/Ext_tCoMes</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/SInt16InitValue/SInt16InitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_tCoMes</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36378c3e-7e94-1014-b535-dacff060e12b">
+                  <SHORT-NAME>R_Ext_tiStrt</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_Ext_tiStrt</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_tiStrt/Ext_tiStrt</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/UInt16InitValue23/UInt16InitValue23</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_Ext_tiStrt</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36504d98-7e94-1014-b333-d2c563844274">
+                  <SHORT-NAME>R_TqCmp_tAir</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TqCmp_tAir</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TqCmp_tAir/TqCmp_tAir</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/SInt8InitValue25/SInt8InitValue25</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TqCmp_tAir</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36682e4a-7e94-1014-a97a-c5e6c72c3208">
+                  <SHORT-NAME>R_TrbAct_bBoostPresClCtlAcv</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_bBoostPresClCtlAcv</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv/TrbAct_bBoostPresClCtlAcv</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/BooleanInitValue/BooleanInitValue</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36802496-7e94-1014-ae13-afb8b57428b0">
+                  <SHORT-NAME>R_TrbAct_bInhTrbActCtl</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_bInhTrbActCtl</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhTrbActCtl/TrbAct_bInhTrbActCtl</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="BOOLEAN-LITERAL">/Components/SWC_TrbActMgt/ConstantValue27/ConstantValue27</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_bInhTrbActCtl</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="369b0aac-7e94-1014-816b-9e5f63049b18">
+                  <SHORT-NAME>R_TrbAct_pUsThrCorReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_pUsThrCorReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrCorReq/TrbAct_pUsThrCorReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue29/ConstantValue29</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_pUsThrCorReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36b4e3ce-7e94-1014-9daa-816ca72dfec2">
+                  <SHORT-NAME>R_TrbAct_rOpTrbActReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_rOpTrbActReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rOpTrbActReq/TrbAct_rOpTrbActReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue31/ConstantValue31</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_rOpTrbActReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36cdc4fc-7e94-1014-9907-9f7fe63484a4">
+                  <SHORT-NAME>R_UsThrM_facPresAltiCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_facPresAltiCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_facPresAltiCor/UsThrM_facPresAltiCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/UInt16InitValue33/UInt16InitValue33</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_facPresAltiCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="36e80dd8-7e94-1014-bdd6-d91b7f753dea">
+                  <SHORT-NAME>R_UsThrM_pAirExt</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pAirExt</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pAirExt/UsThrM_pAirExt</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue35/ConstantValue35</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pAirExt</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="3702e068-7e94-1014-b521-c33be2fc7941">
+                  <SHORT-NAME>R_UsThrM_pDsThrMesCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pDsThrMesCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsThrMesCor/UsThrM_pDsThrMesCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue37/ConstantValue37</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pDsThrMesCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="371d7f90-7e94-1014-9ec8-c178b67e19ac">
+                  <SHORT-NAME>R_UsThrM_pUsThrMesCor</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_UsThrM_pUsThrMesCor</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsThrMesCor/UsThrM_pUsThrMesCor</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue39/ConstantValue39</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_UsThrM_pUsThrMesCor</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="373b9b00-7e94-1014-b12d-d8956be22d99">
+                  <SHORT-NAME>R_TrbAct_pUsThrFil</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_pUsThrFil</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrFil/TrbAct_pUsThrFil</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue41/ConstantValue41</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_pUsThrFil</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="3759a11c-7e94-1014-921c-8b96243cadd3">
+                  <SHORT-NAME>R_EcuM_CurrentMode</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_EcuM_CurrentMode</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Ecu_Package/EcuM_CurrentMode</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+                <R-PORT-PROTOTYPE UUID="377aafc8-7e94-1014-946b-e2908f0e0021">
+                  <SHORT-NAME>R_TrbAct_rRCOReq</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">R_TrbAct_rRCOReq</L-4>
+                  </LONG-NAME>
+                  <REQUIRED-COM-SPECS>
+                    <UNQUEUED-RECEIVER-COM-SPEC>
+                      <DATA-ELEMENT-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOReq/TrbAct_rRCOReq</DATA-ELEMENT-REF>
+                      <ALIVE-TIMEOUT>0</ALIVE-TIMEOUT>
+                      <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/ConstantValue43/ConstantValue43</INIT-VALUE-REF>
+                      <RESYNC-TIME>0</RESYNC-TIME>
+                    </UNQUEUED-RECEIVER-COM-SPEC>
+                  </REQUIRED-COM-SPECS>
+                  <REQUIRED-INTERFACE-TREF DEST="SENDER-RECEIVER-INTERFACE">/Interfaces/IF_TrbAct_rRCOReq</REQUIRED-INTERFACE-TREF>
+                </R-PORT-PROTOTYPE>
+              </PORTS>
+            </APPLICATION-SOFTWARE-COMPONENT-TYPE>
+            <CONSTANT-SPECIFICATION UUID="fb0744ec-5eb2-45e0-ae8b-f01a3592af25">
+              <SHORT-NAME>ArrayConstantValue</SHORT-NAME>
+              <VALUE>
+                <ARRAY-SPECIFICATION>
+                  <SHORT-NAME>ArrayConstantValue</SHORT-NAME>
+                  <TYPE-TREF DEST="ARRAY-TYPE">/Interfaces/Datatypes/rt_Array_UInt16_2_m2</TYPE-TREF>
+                  <ELEMENTS>
+                    <INTEGER-LITERAL>
+                      <SHORT-NAME>Const</SHORT-NAME>
+                      <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_prm_pInMnfReq</TYPE-TREF>
+                      <VALUE>0</VALUE>
+                    </INTEGER-LITERAL>
+                    <INTEGER-LITERAL>
+                      <SHORT-NAME>Const1</SHORT-NAME>
+                      <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_prm_pInMnfReq</TYPE-TREF>
+                      <VALUE>0</VALUE>
+                    </INTEGER-LITERAL>
+                  </ELEMENTS>
+                </ARRAY-SPECIFICATION>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>BooleanInitValue</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>BooleanInitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_TrbAct_bBoostPresClCtlAcv</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>BooleanInitValue1</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>BooleanInitValue1</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_TrbAct_bInhICor</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>BooleanInitValue3</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>BooleanInitValue3</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_TrbAct_bPosnTrbActMod</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="d45b79d5-a138-4dcb-a68f-8aa23940101c">
+              <SHORT-NAME>ConstantValue</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>ConstantValue</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_TrbAct_bAcvTrbActCmd</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="b22371ec-3b56-4d9c-97eb-09d18642f76b">
+              <SHORT-NAME>ConstantValue11</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue11</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_rRCOICorReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="d48cff94-90c0-4e3d-ba8d-31b39ebb0b67">
+              <SHORT-NAME>ConstantValue13</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>ConstantValue13</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_AirSys_bAcvFrzMod</TYPE-TREF>
+                  <VALUE>false</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="6964de6a-3313-49f7-9c70-4dab443e9157">
+              <SHORT-NAME>ConstantValue15</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue15</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_pUsThrReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="666fc3f3-5091-4d59-a597-267c29e95c00">
+              <SHORT-NAME>ConstantValue17</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue17</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AirSys_pUsThrReqFil</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="da35d6f0-73cf-47c8-824c-6d564547b5d6">
+              <SHORT-NAME>ConstantValue19</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue19</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_nEng</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="d2ceb7e0-b746-4488-9c2c-710ba7e2a206">
+              <SHORT-NAME>ConstantValue27</SHORT-NAME>
+              <VALUE>
+                <BOOLEAN-LITERAL>
+                  <SHORT-NAME>ConstantValue27</SHORT-NAME>
+                  <TYPE-TREF DEST="BOOLEAN-TYPE">/Interfaces/Datatypes/DT_TrbAct_bInhTrbActCtl</TYPE-TREF>
+                  <VALUE>true</VALUE>
+                </BOOLEAN-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="32e2ac0d-61d3-4c1b-8f4c-ab595c22c367">
+              <SHORT-NAME>ConstantValue29</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue29</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_pUsThrCorReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="0f94ccb0-e66a-480a-9c6c-6027e258ba9a">
+              <SHORT-NAME>ConstantValue31</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue31</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_rOpTrbActReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="d9ba2c13-9115-48b3-bd53-3960da56de72">
+              <SHORT-NAME>ConstantValue35</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue35</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pAirExt</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="aef3ff06-d77c-4e50-aaf4-8bc792240204">
+              <SHORT-NAME>ConstantValue37</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue37</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pDsThrMesCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="5866fb4e-8713-490f-9193-3662056c9d0a">
+              <SHORT-NAME>ConstantValue39</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue39</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_pUsThrMesCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="5411fc4e-10e9-4116-9016-c088e6aa95eb">
+              <SHORT-NAME>ConstantValue41</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue41</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_pUsThrFil</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="11f3f111-4bf4-45a6-8ee5-6ee77a683ad5">
+              <SHORT-NAME>ConstantValue43</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue43</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_rRCOReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="c58328d8-5a9f-4c97-a01c-317796e61dea">
+              <SHORT-NAME>ConstantValue5</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue5</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_pUsThrCorReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="78f05a06-dc4c-4eba-8748-5eccd94b4329">
+              <SHORT-NAME>ConstantValue7</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue7</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_pUsThrFil</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION UUID="d21185f3-3032-4a6c-ad2a-147536d6d538">
+              <SHORT-NAME>ConstantValue9</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>ConstantValue9</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_rRCOPIDCorReq</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>InitValue_SInt16_0</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>InitValue_SInt16_0</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Components/SWC_TrbActMgt/TrbActMgt_IRVDatatypes/DT_TrbAct_pUsThrICorReq_irv</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>SInt16InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>SInt16InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_tCoMes</TYPE-TREF>
+                  <VALUE>20</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>SInt8InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>SInt8InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_nEngGrd</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>SInt8InitValue25</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>SInt8InitValue25</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TqCmp_tAir</TYPE-TREF>
+                  <VALUE>-40</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_TrbAct_facPresAltiCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue21</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue21</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_pOilMesSI</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue23</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue23</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_Ext_tiStrt</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt16InitValue33</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt16InitValue33</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_UsThrM_facPresAltiCor</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <CONSTANT-SPECIFICATION>
+              <SHORT-NAME>UInt8InitValue</SHORT-NAME>
+              <VALUE>
+                <INTEGER-LITERAL>
+                  <SHORT-NAME>UInt8InitValue</SHORT-NAME>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Interfaces/Datatypes/DT_AfuA_rEthWoutExct</TYPE-TREF>
+                  <VALUE>0</VALUE>
+                </INTEGER-LITERAL>
+              </VALUE>
+            </CONSTANT-SPECIFICATION>
+            <INTERNAL-BEHAVIOR UUID="379ca3ec-7e94-1014-95de-dd52dff3d111">
+              <SHORT-NAME>IB_TrbActMgt</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">IB_TrbActMgt</L-4>
+              </LONG-NAME>
+              <COMPONENT-REF DEST="APPLICATION-SOFTWARE-COMPONENT-TYPE">/Components/SWC_TrbActMgt/TRBACTMGT</COMPONENT-REF>
+              <EVENTS>
+                <TIMING-EVENT UUID="37ba5234-7e94-1014-914f-c0ef887cdc2c">
+                  <SHORT-NAME>EV_TrbActMgt_002_TEV</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_TrbActMgt/IB_TrbActMgt/RE_TrbActMgt_002_TEV</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+                <TIMING-EVENT UUID="37d89902-7e94-1014-94ca-8159d7ad001f">
+                  <SHORT-NAME>EV_TrbActMgt_003_TEV</SHORT-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_TrbActMgt/IB_TrbActMgt/RE_TrbActMgt_003_TEV</START-ON-EVENT-REF>
+                  <PERIOD>0.01</PERIOD>
+                </TIMING-EVENT>
+                <MODE-SWITCH-EVENT UUID="37f5a8a4-7e94-1014-8962-d6030abca6c1">
+                  <SHORT-NAME>EV_TrbActMgt_001_MSE</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">EV_TrbActMgt_001_MSE</L-4>
+                  </LONG-NAME>
+                  <START-ON-EVENT-REF DEST="RUNNABLE-ENTITY">/Components/SWC_TrbActMgt/IB_TrbActMgt/RE_TrbActMgt_001_MSE</START-ON-EVENT-REF>
+                  <ACTIVATION>ENTRY</ACTIVATION>
+                  <MODE-IREF>
+                    <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_EcuM_CurrentMode</R-PORT-PROTOTYPE-REF>
+                    <MODE-DECLARATION-GROUP-PROTOTYPE-REF DEST="MODE-DECLARATION-GROUP-PROTOTYPE">/Ecu_Package/EcuM_CurrentMode/currentMode</MODE-DECLARATION-GROUP-PROTOTYPE-REF>
+                    <MODE-DECLARATION-REF DEST="MODE-DECLARATION">/Ecu_Package/EcuM_Mode/RUN</MODE-DECLARATION-REF>
+                  </MODE-IREF>
+                </MODE-SWITCH-EVENT>
+              </EVENTS>
+              <INTER-RUNNABLE-VARIABLES>
+                <INTER-RUNNABLE-VARIABLE UUID="38134ca4-7e94-1014-8d31-c2ca6f3a6f7f">
+                  <SHORT-NAME>TrbAct_pUsThrICorReq_irv</SHORT-NAME>
+                  <ADMIN-DATA>
+                    <SDGS>
+                      <SDG GID="edve:A2LExtensions">
+                        <SD GID="edve:uniqueName">$c_Irv_$e</SD>
+                        <SD GID="edve:variableGroup">$c</SD>
+                      </SDG>
+                    </SDGS>
+                  </ADMIN-DATA>
+                  <SW-DATA-DEF-PROPS>
+                    <SW-CALIBRATION-ACCESS>READ-WRITE</SW-CALIBRATION-ACCESS>
+                    <DISPLAY-FORMAT />
+                  </SW-DATA-DEF-PROPS>
+                  <TYPE-TREF DEST="INTEGER-TYPE">/Components/SWC_TrbActMgt/TrbActMgt_IRVDatatypes/DT_TrbAct_pUsThrICorReq_irv</TYPE-TREF>
+                  <COMMUNICATION-APPROACH>EXPLICIT</COMMUNICATION-APPROACH>
+                  <INIT-VALUE-REF DEST="INTEGER-LITERAL">/Components/SWC_TrbActMgt/InitValue_SInt16_0/InitValue_SInt16_0</INIT-VALUE-REF>
+                </INTER-RUNNABLE-VARIABLE>
+              </INTER-RUNNABLE-VARIABLES>
+              <RUNNABLES>
+                <RUNNABLE-ENTITY UUID="3bcb290a-7e94-1014-b554-e3ac5b670cc4">
+                  <SHORT-NAME>RE_TrbActMgt_001_MSE</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">RE_TrbActMgt_001_MSE</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-READ-ACCESSS />
+                  <DATA-RECEIVE-POINTS>
+                    <DATA-RECEIVE-POINT UUID="1268cf0a-d2cb-4277-abec-6bc79c8560f9">
+                      <SHORT-NAME>dr_UsThrM_pAirExt</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_UsThrM_pAirExt</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pAirExt/UsThrM_pAirExt</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                  </DATA-RECEIVE-POINTS>
+                  <DATA-SEND-POINTS>
+                    <DATA-SEND-POINT UUID="14788e39-867f-4b8f-abb7-68381c9b8a54">
+                      <SHORT-NAME>ds_TrbAct_pUsThrCorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_pUsThrCorReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrCorReq/TrbAct_pUsThrCorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="eb71f2a9-10d3-4fc8-baee-b26227a2f8cb">
+                      <SHORT-NAME>ds_TrbAct_pUsThrFil</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_pUsThrFil</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrFil/TrbAct_pUsThrFil</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="6d7639b2-8b8d-4ed7-9c00-cb5a601083fb">
+                      <SHORT-NAME>ds_TrbAct_rRCOICorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_rRCOICorReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOICorReq/TrbAct_rRCOICorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="3ca7fe84-7e94-1014-999e-c0ce6c077399">
+                      <SHORT-NAME>ds_TrbAct_bInhICor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bInhICor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bInhICor</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhICor/TrbAct_bInhICor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="3c638f28-7e94-1014-b375-b7b978a53e07">
+                      <SHORT-NAME>ds_TrbAct_facPresAltiCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_facPresAltiCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_facPresAltiCor</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_facPresAltiCor/TrbAct_facPresAltiCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="3cc529a8-7e94-1014-a0eb-8a56e40e4f57">
+                      <SHORT-NAME>ds_TrbAct_bBoostPresClCtlAcv</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bBoostPresClCtlAcv</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bBoostPresClCtlAcv</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv/TrbAct_bBoostPresClCtlAcv</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="f0ddc084-632f-4954-b504-edc1600da6c5">
+                      <SHORT-NAME>ds_TrbAct_rRCOPIDCorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_rRCOPIDCorReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOPIDCorReq/TrbAct_rRCOPIDCorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="0f4669fe-e199-4fbd-ab7e-07e2461c522d">
+                      <SHORT-NAME>ds_TrbAct_bAcvTrbActCmd</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bAcvTrbActCmd</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bAcvTrbActCmd/TrbAct_bAcvTrbActCmd</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="3c87c6ee-7e94-1014-bd18-d28231ac062c">
+                      <SHORT-NAME>ds_TrbAct_bPosnTrbActMod</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bPosnTrbActMod</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bPosnTrbActMod</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bPosnTrbActMod/TrbAct_bPosnTrbActMod</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS />
+                  <SYMBOL>RE_TrbActMgt_001_MSE</SYMBOL>
+                  <WRITTEN-VARIABLE-REFS>
+                    <WRITTEN-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_TrbActMgt/IB_TrbActMgt/TrbAct_pUsThrICorReq_irv</WRITTEN-VARIABLE-REF>
+                  </WRITTEN-VARIABLE-REFS>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="39f30b42-7e94-1014-aea6-ec72d009ced1">
+                  <SHORT-NAME>RE_TrbActMgt_003_TEV</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">RE_TrbActMgt_003_TEV</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-READ-ACCESSS />
+                  <DATA-RECEIVE-POINTS>
+                    <DATA-RECEIVE-POINT UUID="8f68b6c1-76cb-4276-81c3-62d50294aeaa">
+                      <SHORT-NAME>dr_TrbAct_pUsThrFil</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_pUsThrFil</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrFil/TrbAct_pUsThrFil</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="3b045c78-7e94-1014-aa47-dffaa568e8af">
+                      <SHORT-NAME>dr_Ext_nEngGrd</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Ext_nEngGrd</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_nEngGrd</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEngGrd/Ext_nEngGrd</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="326733a5-d864-4062-b754-94ae2771f5f8">
+                      <SHORT-NAME>dr_Ext_nEng</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_nEng</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEng/Ext_nEng</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="54705b12-22f3-4917-9a95-ca8d30405e63">
+                      <SHORT-NAME>dr_AirSys_pUsThrReqFil</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AirSys_pUsThrReqFil</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_pUsThrReqFil/AirSys_pUsThrReqFil</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="93a4b44e-b89a-49be-8826-fbfcf813b40b">
+                      <SHORT-NAME>dr_UsThrM_pAirExt</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_UsThrM_pAirExt</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pAirExt/UsThrM_pAirExt</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="e28d7583-34cc-4969-829f-0ac98027d2a2">
+                      <SHORT-NAME>dr_TrbAct_rOpTrbActReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_rOpTrbActReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rOpTrbActReq/TrbAct_rOpTrbActReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="1c90cdc6-0e7e-47dc-aed2-2f178ae4afac">
+                      <SHORT-NAME>dr_UsThrM_pDsThrMesCor</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_UsThrM_pDsThrMesCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pDsThrMesCor/UsThrM_pDsThrMesCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="27255018-14f3-47d7-9b4c-eb9dbf6472df">
+                      <SHORT-NAME>dr_TrbAct_pUsThrCorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_pUsThrCorReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrCorReq/TrbAct_pUsThrCorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="d3b4a69f-9dc2-4e29-8b44-33af26a1c0f1">
+                      <SHORT-NAME>dr_TrbAct_bInhTrbActCtl</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_bInhTrbActCtl</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhTrbActCtl/TrbAct_bInhTrbActCtl</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="f2d81c35-5bcd-48ee-8532-8e82415f1fc2">
+                      <SHORT-NAME>dr_AirSys_bAcvFrzMod</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AirSys_bAcvFrzMod</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_bAcvFrzMod/AirSys_bAcvFrzMod</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="3aebe030-7e94-1014-8fa2-d544c71a34d3">
+                      <SHORT-NAME>dr_TrbAct_bBoostPresClCtlAcv</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_TrbAct_bBoostPresClCtlAcv</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_bBoostPresClCtlAcv</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv/TrbAct_bBoostPresClCtlAcv</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="c5c3c795-def1-46e1-8d4b-8a7300793fe4">
+                      <SHORT-NAME>dr_TrbAct_rRCOReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_rRCOReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOReq/TrbAct_rRCOReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="3a241f38-7e94-1014-8e7f-f6f7c430d030">
+                      <SHORT-NAME>dr_AfuA_rEthWoutExct</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_AfuA_rEthWoutExct</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AfuA_rEthWoutExct</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AfuA_rEthWoutExct/AfuA_rEthWoutExct</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                  </DATA-RECEIVE-POINTS>
+                  <DATA-SEND-POINTS>
+                    <DATA-SEND-POINT UUID="3a08ad82-6f98-42f5-a961-a93d7d97b376">
+                      <SHORT-NAME>ds_TrbAct_rRCOPIDCorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_rRCOPIDCorReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOPIDCorReq/TrbAct_rRCOPIDCorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="eaa12075-275c-4ed8-88b5-abe711c70d3a">
+                      <SHORT-NAME>ds_TrbAct_rRCOICorReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_rRCOICorReq</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_rRCOICorReq/TrbAct_rRCOICorReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="3bb2fdce-7e94-1014-9231-e7c17b9256cf">
+                      <SHORT-NAME>ds_TrbAct_bInhICor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bInhICor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bInhICor</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhICor/TrbAct_bInhICor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS />
+                  <READ-VARIABLE-REFS>
+                    <READ-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_TrbActMgt/IB_TrbActMgt/TrbAct_pUsThrICorReq_irv</READ-VARIABLE-REF>
+                  </READ-VARIABLE-REFS>
+                  <SYMBOL>RE_TrbActMgt_003_TEV</SYMBOL>
+                  <WRITTEN-VARIABLE-REFS>
+                    <WRITTEN-VARIABLE-REF DEST="INTER-RUNNABLE-VARIABLE">/Components/SWC_TrbActMgt/IB_TrbActMgt/TrbAct_pUsThrICorReq_irv</WRITTEN-VARIABLE-REF>
+                  </WRITTEN-VARIABLE-REFS>
+                </RUNNABLE-ENTITY>
+                <RUNNABLE-ENTITY UUID="382c70b4-7e94-1014-80ed-ec980cbdf97e">
+                  <SHORT-NAME>RE_TrbActMgt_002_TEV</SHORT-NAME>
+                  <LONG-NAME>
+                    <L-4 L="FOR-ALL">RE_TrbActMgt_002_TEV</L-4>
+                  </LONG-NAME>
+                  <CAN-BE-INVOKED-CONCURRENTLY>false</CAN-BE-INVOKED-CONCURRENTLY>
+                  <DATA-READ-ACCESSS />
+                  <DATA-RECEIVE-POINTS>
+                    <DATA-RECEIVE-POINT UUID="4340245d-b7eb-4c8c-89c0-2dbd49c14100">
+                      <SHORT-NAME>dr_UsThrM_pUsThrMesCor</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_UsThrM_pUsThrMesCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_pUsThrMesCor/UsThrM_pUsThrMesCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="38a82524-7e94-1014-94de-8c937be151ff">
+                      <SHORT-NAME>dr_TqCmp_tAir</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_TqCmp_tAir</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TqCmp_tAir</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TqCmp_tAir/TqCmp_tAir</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="38470ee0-7e94-1014-bc71-a0348abc97f6">
+                      <SHORT-NAME>dr_AfuA_rEthWoutExct</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_AfuA_rEthWoutExct</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AfuA_rEthWoutExct</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AfuA_rEthWoutExct/AfuA_rEthWoutExct</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="38c05426-7e94-1014-8a26-f40d033d9d99">
+                      <SHORT-NAME>dr_Ext_tiStrt</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Ext_tiStrt</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_tiStrt</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_tiStrt/Ext_tiStrt</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="09a364d7-b2d8-4fc7-a9f4-d25ad3374f9e">
+                      <SHORT-NAME>dr_AirSys_prm_pInMnfReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AirSys_prm_pInMnfReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_prm_pInMnfReq/AirSys_prm_pInMnfReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="38d85688-7e94-1014-8e67-872b0d9dacb9">
+                      <SHORT-NAME>dr_Ext_tCoMes</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Ext_tCoMes</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_tCoMes</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_tCoMes/Ext_tCoMes</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="38f07036-7e94-1014-9f48-cede9c169cd7">
+                      <SHORT-NAME>dr_Ext_pOilMesSI</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_Ext_pOilMesSI</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_pOilMesSI</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_pOilMesSI/Ext_pOilMesSI</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="f38162ef-3de2-4b05-9235-c3c2bd2473cc">
+                      <SHORT-NAME>dr_AirSys_bAcvFrzMod</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AirSys_bAcvFrzMod</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_bAcvFrzMod/AirSys_bAcvFrzMod</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="7d38c0a1-29fc-4a71-bec3-3c578a0e0db1">
+                      <SHORT-NAME>dr_Ext_nEng</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_Ext_nEng</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_Ext_nEng/Ext_nEng</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="3877fbae-7e94-1014-9aef-adae14f1fd72">
+                      <SHORT-NAME>dr_UsThrM_facPresAltiCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">dr_UsThrM_facPresAltiCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_UsThrM_facPresAltiCor</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_UsThrM_facPresAltiCor/UsThrM_facPresAltiCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="6418878a-e3ed-4999-bfba-01dcdc7cb1bd">
+                      <SHORT-NAME>dr_TrbAct_bInhTrbActCtl</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_TrbAct_bInhTrbActCtl</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bInhTrbActCtl/TrbAct_bInhTrbActCtl</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                    <DATA-RECEIVE-POINT UUID="ab0b2f47-b0e5-45bb-a077-3cfdcbc49955">
+                      <SHORT-NAME>dr_AirSys_pUsThrReq</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_AirSys_pUsThrReq</R-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_AirSys_pUsThrReq/AirSys_pUsThrReq</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-RECEIVE-POINT>
+                  </DATA-RECEIVE-POINTS>
+                  <DATA-SEND-POINTS>
+                    <DATA-SEND-POINT UUID="b59a0425-e9de-4d39-9c50-3b496832ea58">
+                      <SHORT-NAME>ds_TrbAct_bAcvTrbActCmd</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bAcvTrbActCmd</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bAcvTrbActCmd/TrbAct_bAcvTrbActCmd</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="39a8bb3a-7e94-1014-864a-e92454bad7ef">
+                      <SHORT-NAME>ds_TrbAct_bPosnTrbActMod</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bPosnTrbActMod</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bPosnTrbActMod</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bPosnTrbActMod/TrbAct_bPosnTrbActMod</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="732c540d-90bc-4a1f-a9ae-3eb0212e93ea">
+                      <SHORT-NAME>ds_TrbAct_pUsThrFil</SHORT-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_pUsThrFil</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_pUsThrFil/TrbAct_pUsThrFil</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="39c142d4-7e94-1014-a71d-ffe8f1705313">
+                      <SHORT-NAME>ds_TrbAct_bBoostPresClCtlAcv</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_bBoostPresClCtlAcv</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_bBoostPresClCtlAcv</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_bBoostPresClCtlAcv/TrbAct_bBoostPresClCtlAcv</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                    <DATA-SEND-POINT UUID="398d2fb6-7e94-1014-8e4c-a07848fa6282">
+                      <SHORT-NAME>ds_TrbAct_facPresAltiCor</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ds_TrbAct_facPresAltiCor</L-4>
+                      </LONG-NAME>
+                      <DATA-ELEMENT-IREF>
+                        <P-PORT-PROTOTYPE-REF DEST="P-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/P_TrbAct_facPresAltiCor</P-PORT-PROTOTYPE-REF>
+                        <DATA-ELEMENT-PROTOTYPE-REF DEST="DATA-ELEMENT-PROTOTYPE">/Interfaces/IF_TrbAct_facPresAltiCor/TrbAct_facPresAltiCor</DATA-ELEMENT-PROTOTYPE-REF>
+                      </DATA-ELEMENT-IREF>
+                    </DATA-SEND-POINT>
+                  </DATA-SEND-POINTS>
+                  <DATA-WRITE-ACCESSS />
+                  <SERVER-CALL-POINTS>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bInhSenCtl</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bInhSenCtl</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_FRM_bInhSenCtl</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bInhPosnTrbActMod</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bInhPosnTrbActMod</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_FRM_bInhPosnTrbActMod</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                    <SYNCHRONOUS-SERVER-CALL-POINT>
+                      <SHORT-NAME>ssp_FRM_bInhTrbActCmd</SHORT-NAME>
+                      <LONG-NAME>
+                        <L-4 L="FOR-ALL">ssp_FRM_bInhTrbActCmd</L-4>
+                      </LONG-NAME>
+                      <OPERATION-IREFS>
+                        <OPERATION-IREF>
+                          <R-PORT-PROTOTYPE-REF DEST="R-PORT-PROTOTYPE">/Components/SWC_TrbActMgt/TRBACTMGT/R_FRM_bInhTrbActCmd</R-PORT-PROTOTYPE-REF>
+                          <OPERATION-PROTOTYPE-REF DEST="OPERATION-PROTOTYPE">/Fim_Package/FunctionInhibition/GetFunctionPermission</OPERATION-PROTOTYPE-REF>
+                        </OPERATION-IREF>
+                      </OPERATION-IREFS>
+                    </SYNCHRONOUS-SERVER-CALL-POINT>
+                  </SERVER-CALL-POINTS>
+                  <SYMBOL>RE_TrbActMgt_002_TEV</SYMBOL>
+                </RUNNABLE-ENTITY>
+              </RUNNABLES>
+              <SUPPORTS-MULTIPLE-INSTANTIATION>false</SUPPORTS-MULTIPLE-INSTANTIATION>
+            </INTERNAL-BEHAVIOR>
+            <SWC-IMPLEMENTATION>
+              <SHORT-NAME>Imp_TrbActMgt</SHORT-NAME>
+              <LONG-NAME>
+                <L-4 L="FOR-ALL">Imp_TrbActMgt</L-4>
+              </LONG-NAME>
+              <CODE-DESCRIPTORS>
+                <CODE UUID="7b72f966-a60c-4b3c-b23b-1e5e08eddd2a">
+                  <SHORT-NAME>CodeDescriptor</SHORT-NAME>
+                  <TYPE>SRC</TYPE>
+                  <XFILES>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_Version_c</SHORT-NAME>
+                      <URL>TrbActMgt_Version.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_import_h</SHORT-NAME>
+                      <URL>TrbActMgt_import.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_Def_c</SHORT-NAME>
+                      <URL>TrbActMgt_Def.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_data_c</SHORT-NAME>
+                      <URL>TrbActMgt_data.c</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_types_h</SHORT-NAME>
+                      <URL>TrbActMgt_types.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_h</SHORT-NAME>
+                      <URL>TrbActMgt.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_MemMap_h</SHORT-NAME>
+                      <URL>TrbActMgt_MemMap.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_Version_h</SHORT-NAME>
+                      <URL>TrbActMgt_Version.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_private_h</SHORT-NAME>
+                      <URL>TrbActMgt_private.h</URL>
+                    </XFILE>
+                    <XFILE>
+                      <SHORT-NAME>TrbActMgt_c</SHORT-NAME>
+                      <URL>TrbActMgt.c</URL>
+                    </XFILE>
+                  </XFILES>
+                </CODE>
+              </CODE-DESCRIPTORS>
+              <CODE-GENERATOR>Real-Time Workshop Embedded Coder 5.5 (R2010a) 25-Jan-2010</CODE-GENERATOR>
+              <PROGRAMMING-LANGUAGE>C</PROGRAMMING-LANGUAGE>
+              <BEHAVIOR-REF DEST="INTERNAL-BEHAVIOR">/Components/SWC_TrbActMgt/IB_TrbActMgt</BEHAVIOR-REF>
+            </SWC-IMPLEMENTATION>
+          </ELEMENTS>
+          <SUB-PACKAGES>
+            <AR-PACKAGE>
+              <SHORT-NAME>TrbActMgt_IRVDatatypes</SHORT-NAME>
+              <ELEMENTS>
+                <INTEGER-TYPE UUID="f75284ab-5533-4f82-a80b-2952aca8af18">
+                  <SHORT-NAME>DT_TrbAct_pUsThrICorReq_irv</SHORT-NAME>
+                  <SW-DATA-DEF-PROPS>
+                    <BASE-TYPE-REF DEST="SW-BASE-TYPE">/BaseTypeGeneric/int16</BASE-TYPE-REF>
+                  </SW-DATA-DEF-PROPS>
+                  <LOWER-LIMIT INTERVAL-TYPE="CLOSED">-32768</LOWER-LIMIT>
+                  <UPPER-LIMIT INTERVAL-TYPE="CLOSED">32767</UPPER-LIMIT>
+                </INTEGER-TYPE>
+              </ELEMENTS>
+            </AR-PACKAGE>
+          </SUB-PACKAGES>
+        </AR-PACKAGE>
+      </SUB-PACKAGES>
+    </AR-PACKAGE>
+  </TOP-LEVEL-PACKAGES>
+</AUTOSAR>

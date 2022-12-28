@@ -1,0 +1,3508 @@
+﻿/begin MODULE  TqAdpCmp "TqAdpCmp 12.2"
+
+    /begin MEASUREMENT AltCtl_iAltSel "Courant dexcitation de linducteur traite"
+      UWORD TQADPCMP_CM_1 /* A:0.0625:0: */ 1 0 0 25.4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT AltCtl_idxAltClasSel "Classe de lalternateur traite"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT AltCtl_idxAltMdlSel "Nom du fournisseur de lalternateur traite"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 10
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Ext_rAltStdCycOpSel "RCO dexcitation de linducteur traite"
+      UBYTE TQADPCMP_CM_3 /* %:1:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stg_bDftStgPmpLnrMes "Inhibition de la compensation DA lineaire"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stg_bDftStgPmpThdMes "Inhibition de la compensation DA On Off"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stg_bStgPmpThdMesSel "Booleen du mano contact apres bloc de traitement des entrees"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT Stg_pStgPmpLnrMesSel "Pression apres bloc de traitement des entrees"
+      UWORD TQADPCMP_CM_5 /* bar:0.25:0: */ 1 0 0 150
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TQADPCMP_ACTIVE_BYP_C "Bypass"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdpCmp_ModuleVersion_Major_MP "TqAdpCmp_ModuleVersion_Major_MP"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_ModuleVersion_Minor_MP "TqAdpCmp_ModuleVersion_Minor_MP"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_16BIT.TqAdp_prm_tqCorLrnDragRed_NV "Vecteur par zone des couples de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    DISPLAY_IDENTIFIER TqAdp_prm_tqCorLrnDragRed_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_16BIT.TqAdp_prm_tqCorLrnNeut_NV "Vecteur par zone des couples de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    DISPLAY_IDENTIFIER TqAdp_prm_tqCorLrnNeut_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_16BIT_r.TqAdp_prm_tqCorLrnDragRed_NV "Vecteur par zone des couples de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_16BIT_r.TqAdp_prm_tqCorLrnNeut_NV "Vecteur par zone des couples de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_32BIT.TqAdp_dstVehHld_NV "Distance vehicule parcourue entre deux forfaits kilometriques detectes (inhibition du stop STT)"
+      ULONG TQADPCMP_CM_7 /* km:1:: */ 1 0 0 500000
+    ECU_ADDRESS 0x0
+    DISPLAY_IDENTIFIER TqAdp_dstVehHld_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_32BIT_r.TqAdp_dstVehHld_NV "Distance vehicule parcourue entre deux forfaits kilometriques detectes (inhibition du stop STT)"
+      ULONG TQADPCMP_CM_7 /* km:1:: */ 1 0 0 500000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT.TqAdp_ctDst_NV "Compteur du nombre de forfaits kilometriques effectues (inhibition du stop STT) (lecture / ecriture EEPROM)"
+      UBYTE TQADPCMP_CM_2 /* :1:: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    DISPLAY_IDENTIFIER TqAdp_ctDst_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT.TqCmp_tAirDifMem_NV "Delta de temperature d air memorisee au powerlatch"
+      SBYTE TQADPCMP_CM_8 /* deg C:1:: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    DISPLAY_IDENTIFIER TqCmp_tAirDifMem_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT.TqCmp_tAirEstimMem_NV "Temperature d air estimee memorisee au powerlatch"
+      SBYTE TQADPCMP_CM_8 /* deg C:1:: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    DISPLAY_IDENTIFIER TqCmp_tAirEstimMem_NV
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT_r.TqAdp_ctDst_NV "Compteur du nombre de forfaits kilometriques effectues (inhibition du stop STT) (lecture / ecriture EEPROM)"
+      UBYTE TQADPCMP_CM_2 /* :1:: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT_r.TqCmp_tAirDifMem_NV "Delta de temperature d air memorisee au powerlatch"
+      SBYTE TQADPCMP_CM_8 /* deg C:1:: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdpCmp_sNV_Z1_CST_8BIT_r.TqCmp_tAirEstimMem_NV "Temperature d air estimee memorisee au powerlatch"
+      SBYTE TQADPCMP_CM_8 /* deg C:1:: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bAcvAdp_MP "Booleen dautorisation globale de lapprentissage"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bAuthAdpAC_T "Table de cartographie dautorisation de l apprentissage avec climatisation sur zone de temperature moteur"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bAuthAdpGBx "Booleen dautorisation de lapprentissage sur conditions boite"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bAuthAdpTqAccuOn_T "Table de cartographie d autorisation de l apprentissage sur precision de couple"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqAdp_idxTqAccu_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bAuthInhEngStop "Booleen d autorisation d inhibition du stop STT avant validation (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bAuthInhSTT_T "Table de cartographie dautorisation de l inhibition du stop STT sur zone de temperature moteur (inhibition du stop STT)"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bAuxOff "Booleen dautorisation de lapprentissage sur conditions accessoires"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bAvlACExt "Booléen d activation de la fonction Estimation Puissance Clim4."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bAvlACInt "Booléen d activation de la fonction Estimation Puissance Clim3."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCdn1RstInhSTT_MP "Booleen de reset de l inhibition du stop STT sur nombre d apprentissages effectues (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCdn2RstInhSTT_MP "Booleen de reset de l inhibition du stop STT sur convergence de l apprentissage (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bCfTEng_C "Choix de la reference temperature moteur (temperature d huile ou temperature d eau)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_bCluCfSel_C "Choix de la configuration d autorisation d apprentissage en BVMP (condition sur embrayage)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bCorLrnAC "Booleen de convergence de l apprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnCdnAC "Booleen dautorisation globale de lapprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnDragRed "Booleen de convergence de l apprentissage en reduction de trainee utilise par la fonction d inhibition du stop STT"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnDragRedAC "Booleen de convergence de l apprentissage en reduction de trainee utilise pour l activation de l apprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnDragRedCdn "Booleen dautorisation globale de lapprentissage en reduction de trainee"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnIrvAC "Booleen d activation de la reinitialisation de lapprentissage avec climatisation retarde"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnIrvACPrev "Booleen d activation de la reinitialisation de lapprentissage avec climatisation retarde"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNEngMvCdn "Booleen dautorisation de lapprentissage sur conditions moteur (regime moteur stable au ralenti)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNEngMvCdn1_MP "Booleen dautorisation de lapprentissage sur conditions moteur (regime moteur stable au ralenti)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNEngMvCdn2_MP "Booleen dautorisation de lapprentissage sur conditions moteur (gradient de regime moteur inferieur au seuil maximum admissible)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNEngMvCdn3_MP "Booleen dautorisation de lapprentissage sur conditions moteur (regime moteur inferieur au seuil maximum admissible)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNeut "Booleen de convergence de l apprentissage au neutre utilise par la fonction d inhibition du stop STT"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNeutAC "Booleen de convergence de l apprentissage au neutre utilise pour l activation de l apprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnNeutCdn "Booleen dautorisation globale de lapprentissage au neutre"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnSTT "Booleen de convergence de l apprentissage au neutre ou en reduction de trainee"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bCorLrnWoutAC "Booleen de prise en compte de la climatisation pour l apprentissage"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bDragRed "Booleen de detection de transmission de couple en BVA"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bDragRedCf_C "Etat de la réduction de trainée hors BVA"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bFrzAdpACExtECUOnCf "Booléen interdisant lapprentissage de ladaptatif de pertes en cas dembrayage ou de débrayage du compresseur de climatisation de type 4, avant variantage."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bFrzAdpACExtECUOn_irv_MP "IRV mesure point"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bFrzAdpACItECUOnCf "Booléen interdisant lapprentissage de ladaptatif de pertes en cas dembrayage ou de débrayage du compresseur de climatisation de type 3, avant variantage."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bFrzAdpACItECUOn_irv_MP "IRV mesure point"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bFrzAdpACOn_B "Bypass de TqAdp_bFrzAdpACOn"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_bFrzAdpAltOn_B "Bypass de TqAdp_bFrzAdpAltOn"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bFrzAdpAlt_MP "Booleen d interdiction d apprentissage de l adaptatif."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bFrzAdpCnvOn_B "Bypass de TqAdp_bFrzAdpCnvOn"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_bFrzAdpElProdOn_T "Table de cartographie d interdiction d apprentissage fonction de l etat de lestage"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 4 0 3
+    AXIS_PTS_REF TqAdp_stElProd_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bFrzAdpStgPmpOnCf "Booléen interdisant lapprentissage de ladaptatif de pertes, avant."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_bFrzAdpStgPmpOn_B "Bypass de TqAdp_bFrzAdpStgPmpOn"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_bInhEngStop_B "Bypass de TqAdp_bInhEngStop"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_bMonRunCdnNxtCkgLrn "Booleen d activation du diagnostic de criticite du prochain demarrage (criticite du prochain demarrage)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bMonRunORngSTT "Booleen d activation de l apprentissage au neutre ou en reduction de trainee"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bNbKm "Booleen de detecion de forfaits kilometriques parcourus (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bRstAdpLrn "Booleen de reset de la convergence de l apprentissage sur nombre de forfaits kilometriques parcourus (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bRstInhSTT_MP "Booleen de reset de l inhibition du stop STT sur convergence de l apprentissage et nombre d apprentissages effectues (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_bSyntCorLrnCdnAC "Booleen d activation de l apprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_ctDstClc_MP "Compteur du nombre de forfaits kilometriques effectues (inhibition du stop STT) (lecture / ecriture EEPROM)"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_dstVehHldClc_MP "Distance vehicule parcourue entre deux forfaits kilometriques detectes (inhibition du stop STT)"
+      ULONG TQADPCMP_CM_7 /* km:1:0: */ 1 0 0 500000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_dstVeh_C "Kilometrage de reference pour l initialisation du compteur de forfaits kilometriques (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_ULONG 500000 TQADPCMP_CM_7 /* km:1:0: */ 0 500000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_dstVeh_MP "Distance vehicule parcourue utilisee pour le comptage des forfaits kilometriques effectues (inhibition du stop STT)"
+      ULONG TQADPCMP_CM_7 /* km:1:0: */ 1 0 0 500000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_facCorLrnIrvAC "Facteur d attenuation irreversible de l apprentissage avec climatisation"
+      UBYTE TQADPCMP_CM_9 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_facFilTqCkIdl_C "Coefficient de filtrage du couple ralenti"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_idxDragRedGain_T "Table de cartographie des choix de gain du filtrage de l apprentissage en reduction de trainee"
+      CURVE 0x0 TQADPCMP_RL_UWORD 2 TQADPCMP_CM_2 /* :1:0: */ 1 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_idxNeutGain_T "Table de cartographie des choix de gain du filtrage de l apprentissage au neutre"
+      CURVE 0x0 TQADPCMP_RL_UWORD 2 TQADPCMP_CM_2 /* :1:0: */ 1 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_idxTEng "Indice de zone de temperature moteur"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 1 8
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_idxTEngRaw "Indice brut de zone de temperature moteur"
+      UWORD TQADPCMP_CM_9 /* :0.0078125:0: */ 1 0 1 8
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqAdp_idxTEng_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 7 TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqAdp_idxTEng_T "Table de cartographie des zones de temperature moteur"
+      CURVE 0x0 TQADPCMP_RL_UWORD 7 TQADPCMP_CM_9 /* :0.0078125:0: */ 1 8
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 16 -50 200
+    AXIS_PTS_REF TqAdp_tEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_idxTqAccu_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 9 TQADPCMP_CM_2 /* :1:0: */ 10 1 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqAdp_nCkFil_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 16 0 8000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_nDeltaNEngNTarIdl_MP "Valeur absolue du delta entre regime cible de ralenti et regime moteur"
+      UWORD TQADPCMP_CM_10 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_nEngMvGrdMax_MP "Gradient de regime moteur maximum autorise pour lapprentissage a la temperature courante"
+      UWORD TQADPCMP_CM_10 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_nEngMvGrdMax_T "Table de cartographie des gradients de regime moteur maximums autorises pour lapprentissage"
+      CURVE 0x0 TQADPCMP_RL_UWORD 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 0 8000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 2 -50 200
+    AXIS_PTS_REF TqAdp_tCoMes_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_nEngMvMax_C "Regime moteur maximal autorise pour l apprentissage"
+      VALUE 0x0 TQADPCMP_RL_UWORD 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_nEngMvStabThd_C "Ecart de regime maximal autorise pour considerer le moteur au ralenti"
+      VALUE 0x0 TQADPCMP_RL_UWORD 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 0 8000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_nGrdNEng_MP "Valeur absolue du gradient de regime moteur"
+      UWORD TQADPCMP_CM_10 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_noAdpLrn_C "Nombre d apprentissages avant reset de l inhibition du stop STT (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 20 TQADPCMP_CM_2 /* :1:0: */ 0 20
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_noAdpLrn_MP "Nombre d apprentissages effectues consolides (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 20
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_noAdp_MP "Nombre d apprentissages effectues (inhibition du stop STT)"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 20
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_noKmRst_C "Nombre de forfaits kilometriques avant reset du compteur de forfaits kilometriques (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 20 TQADPCMP_CM_2 /* :1:0: */ 0 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_noKmThd_C "Nombre de forfaits kilometriques avant reset de la convergence de l apprentissage (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 20 TQADPCMP_CM_2 /* :1:0: */ 0 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_noNbKm_C "Forfait kilometrique de reference (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_ULONG 500000 TQADPCMP_CM_7 /* km:1:0: */ 0 500000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnDragRed "Vecteur par zone des couples de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnDragRedIni "Vecteur par zone des couples de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnDragRedOn "Sortie du filtre d apprentissage en reduction de trainee (vecteur des couples de recalage de base en reduction de trainee applicable avant correction)"
+      SWORD TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnDragRedPrev "Vecteur par zone retarde des couples de recalage de base en reduction de trainee applicable avant correction"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnNeut "Vecteur par zone des couples de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnNeutIni "Vecteur par zone des couples de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnNeutOn "Sortie du filtre d apprentissage au neutre (vecteur des couples de recalage de base au neutre applicable avant correction)"
+      SWORD TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqCorLrnNeutPrev "Vecteur par zone retarde des couples de recalage de base au neutre applicable avant correction"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqLrnDragRedOn_MP "Sortie 32 bits du filtre d apprentissage en réduction de traînée (vecteur des couples de recalage de base en réduction de traînée applicable avant correction)"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_prm_tqLrnNeutOn_MP "Sortie 32 bits du filtre d apprentissage au neutre (vecteur des couples de recalage de base au neutre applicable avant correction)"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    MATRIX_DIM 8 1 1
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_rCorAdpACNCkFil_MP "Correction de l apprentissage avec climatisation fonction du regime moteur"
+      UBYTE TQADPCMP_CM_9 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_rCorAdpACNCkFil_T "Table de cartographie de la correction de l apprentissage avec climatisation fonction du regime moteur"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqAdp_nCkFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_rCorAdpACSpdVeh_MP "Correction de l apprentissage avec climatisation fonction de la vitesse vehicule"
+      UBYTE TQADPCMP_CM_9 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_rCorAdpACSpdVeh_T "Table de cartographie de la correction de l apprentissage avec climatisation fonction de la vitesse vehicule"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 16 0 500
+    AXIS_PTS_REF TqAdp_spdVeh_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_rCorAdpNCkFil_MP "Correction de l apprentissage de base fonction du regime moteur"
+      UBYTE TQADPCMP_CM_9 /* :0.0078125:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_rCorAdpNCkFil_T "Table de cartographie de la correction de l apprentissage de base fonction du regime moteur"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 16 0 8000
+    AXIS_PTS_REF TqAdp_nCkFil_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_rEfcACGain_M "Table de la cartographie des gains de filtrage de l apprentissage avec climatisation"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcACX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqDeltaACY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_rEfcACGain_MP "Gain du filtre d apprentissage avec climatisation"
+      UWORD TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 1 0 0 0.00390625
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_rEfcDragRedGain1_M "Table de cartographie des gains de filtrage de l apprentissage en reduction de trainee (Gain1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcDragRedX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaDragRedY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_rEfcDragRedGain2_M "Table de cartographie des gains de filtrage de l apprentissage en reduction de trainee (Gain2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcDragRedX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaDragRedY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_rEfcDragRedGain3_M "Table de cartographie des gains de filtrage de l apprentissage en reduction de trainee (Gain3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcDragRedX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaDragRedY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_rEfcDragRedGain_MP "Gain du filtre d apprentissage en reduction de trainee"
+      UWORD TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 1 0 0 0.00390625
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_rEfcNeutGain1_M "Table de cartographie des gains de filtrage de l apprentissage au neutre (Gain1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcNeutX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaNeutY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_rEfcNeutGain2_M "Table de cartographie des gains de filtrage de l apprentissage au neutre (Gain2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcNeutX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaNeutY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_rEfcNeutGain3_M "Table de cartographie des gains de filtrage de l apprentissage au neutre (Gain3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 0.00390625 TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 0 0.00390625
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    AXIS_PTS_REF TqAdp_tqEfcNeutX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    AXIS_PTS_REF TqAdp_tqDeltaNeutY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_rEfcNeutGain_MP "Gain du filtre d apprentissage au neutre"
+      UWORD TQADPCMP_CM_13 /* :3.814697265625e-006:0: */ 1 0 0 0.00390625
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_spdCorLrnSpdVehThd_C "Seuil de vitesse pour reinitialisation de l apprentissage avec climatisation"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_spdVehThd_C "Vitesse vehicule maximale autorisee pour l apprentissage"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_spdVeh_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 16 0 500
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_stCdnNxtCkgLrnOn "Criticite du prochain demarrage avant consolidation SDF"
+      UBYTE TQADPCMP_CM_15 /* FT_enumeration1:((0=NOMINAL)(1=FAVORABLE)(2=DEFAVORABLE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_stCdnNxtCkg_B "Bypass de TqAdp_stCdnNxtCkg"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 2 TQADPCMP_CM_15 /* FT_enumeration1:((0=NOMINAL)(1=FAVORABLE)(2=DEFAVORABLE)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_stElProd_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 3 TQADPCMP_CM_2 /* :1:0: */ 4 0 3
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqAdp_tCoMes_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_16 /* deg C:0.25:0: */ 2 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqAdp_tCoThdInhStop_C "Seuil de temperature d eau avant inhibition du stop STT (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_SWORD 250 TQADPCMP_CM_17 /* degC:0.25:0: */ -50 200
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_tEng_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_16 /* deg C:0.25:0: */ 16 -50 200
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tEng_MP "Temperature moteur choisie comme reference"
+      SWORD TQADPCMP_CM_17 /* degC:0.25:0: */ 1 0 -50 200
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tiCorLrnSpdVeh_C "Pente de la rampe d attenuation de l apprentissage avec climatisation"
+      VALUE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyACDeac_C "Delai apres lequel le retour a un apprentissage de base est autorise"
+      VALUE 0x0 TQADPCMP_RL_ULONG 65535 TQADPCMP_CM_18 /* s:0.01:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyAdpLrn_C "Delai apres lequel un apprentissage est valide (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_UWORD 255 TQADPCMP_CM_18 /* s:0.01:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyAst_C "Delai apres demarrage apres lequel l apprentissage est autorise"
+      VALUE 0x0 TQADPCMP_RL_UWORD 50 TQADPCMP_CM_18 /* s:0.01:0: */ 0 50
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyCdn_C "Delai apres lequel les conditions d apprentissage sont considerees stabilisees"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 15 TQADPCMP_CM_19 /* s:1:0: */ 0 15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyCorLrnSpdVeh_C "Delai apres lequel le depassement de vitesse pour reinitialisation de l apprentissage avec climatisation est valide"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_19 /* s:1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyDirAsiDeac_C "Delai apres lequel la direction assistee est consideree desactivee"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 15 TQADPCMP_CM_20 /* s:0.1:0: */ 0 15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyMonRunCdnNxtCkg_C "Delai apres lequel le diagnostic de criticite du prochain demarrage est desactive (criticite du prochain demarrage)"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 2 TQADPCMP_CM_18 /* s:0.01:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiDlyStabTEng_C "Delai apres lequel la temperature d eau est consideree stabilisee (inhibition du stop STT)"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1500 TQADPCMP_CM_19 /* s:1:0: */ 0 1500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tiNEngMvStab_C "Delai apres lequel le regime moteur est considere stabilise"
+      VALUE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_18 /* s:0.01:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqACThd_T "Table de cartographie des seuils de couple compresseur maximums autorises pour lapprentissage de base"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCkIdlFil_MP "Couple ralenti filtré"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorAdpTqAccu_T "Table de cartographie de la correction de l apprentissage de base fonction de la precision du couple"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 10 1 10
+    AXIS_PTS_REF TqAdp_idxTqAccu_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCorLrnAC "Sortie du filtre d apprentissage avec climatisation (couple de recalage de climatisation applicable avant correction)"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnACCor "Couple de recalage de climatisation applicable apres correction"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnACMax_C "Limite superieure de l apprentissage avec climatisation"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnACMin_C "Limite inferieure de l apprentissage avec climatisation"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnDecMax_C "Decrement du slew rate de limitation de pente applique a l apprentissage applicable"
+      VALUE 0x0 TQADPCMP_RL_SWORD 2000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 0
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni1_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 1 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni2_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 2 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni3_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 3 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni4_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 4 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni5_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 5 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni6_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 6 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni7_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 7 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedIni8_MP "Couple de recalage de base en reduction de trainee applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 8 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnDragRedMax_C "Limite superieure de l apprentissage en reduction de trainee"
+      VALUE 0x0 TQADPCMP_RL_SWORD 100 TQADPCMP_CM_11 /* Nm:0.001953125:0: */ -50 50
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnDragRedMin_C "Limite inferieure de l apprentissage en reduction de trainee"
+      VALUE 0x0 TQADPCMP_RL_SWORD 100 TQADPCMP_CM_11 /* Nm:0.001953125:0: */ -50 50
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedOn "Sortie du filtre d apprentissage en reduction de trainee (couple de recalage de base en reduction de trainee applicable avant correction)"
+      SWORD TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnDragRedSel_MP "Sortie retardee du filtre d apprentissage en reduction de trainee (couple de recalage de base en reduction de trainee applicable avant correction)"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnIncMax_C "Increment du slew rate de limitation de pente applique a l apprentissage applicable"
+      VALUE 0x0 TQADPCMP_RL_SWORD 2000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCorLrnIrvAC "Couple de recalage de climatisation retarde avant correction sur demande de reinitialisation de lapprentissage de climatisation"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnIrvACPrev "Couple de recalage de climatisation retarde avant correction sur demande de reinitialisation de lapprentissage de climatisation"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnItpol_MP "Couple de recalage de base courant applicable apres interpolation"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni1_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 1 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni2_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 2 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni3_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 3 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni4_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 4 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni5_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 5 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni6_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 6 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni7_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 7 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutIni8_MP "Couple de recalage de base au neutre applicable avant correction (lecture EEPROM a l initialisation calculateur pour la zone 8 de temperature moteur)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnNeutMax_C "Limite superieure de l apprentissage au neutre"
+      VALUE 0x0 TQADPCMP_RL_SWORD 100 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -50 50
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnNeutMin_C "Limite inferieure de l apprentissage au neutre"
+      VALUE 0x0 TQADPCMP_RL_SWORD 100 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -50 50
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutOn "Sortie du filtre d apprentissage au neutre (couple de recalage de base au neutre applicable avant correction)"
+      SWORD TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqCorLrnNeutSel_MP "Sortie retarde du filtre d apprentissage au neutre (couple de recalage de base au neutre applicable avant correction)"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnThdAC_T "Table de cartographie des seuils de convergence de l apprentissage avec climatisation"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnThdDragRed_T "Table de cartographie des seuils de convergence de l apprentissage en reduction de trainee utilise par la fonction d inhibition du stop STT"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqCorLrnThdNeut_T "Table de cartographie des seuils de convergence de l apprentissage au neutre utilise par la fonction d inhibition du stop STT"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_tqDeltaACY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqDeltaAC_MP "Difference entre entree et sortie retardee du filtre d apprentissage avec climatisation moins l apprentissage de base courant"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqDeltaDB "Difference de couple entre la demande du regulateur de ralenti et l estimateur des pertes (zone morte appliquee)"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqAdp_tqDeltaDragRedY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 100 TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqDeltaDragRed_MP "Difference entre entree et sortie retardee du filtre d apprentissage en reduction de trainee"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqAdp_tqDeltaNeutY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 100 TQADPCMP_CM_11 /* Nm:0.001953125:0: */ 7 -50 50
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqDeltaNeut_MP "Difference entre entree et sortie retardee du filtre d apprentissage au neutre"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -50 50
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqDeltaTqIdlTqLoss_MP "Delta entre le couple demande par le regulateur de ralenti et le couple de pertes estime"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqDeltaTqIdlTqLoss_T "Table de cartographie des limites de couple maximums admissibles sans apprentissage"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqAdp_tqEfcACX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqEfcAC_MP "Gradient du couple d entree du filtre d apprentissage avec climatisation"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqAdp_tqEfcDragRedX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqEfcDragRed_MP "Gradient du couple d entree du filtre d apprentissage en reduction de trainee"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqAdp_tqEfcNeutX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 7 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqAdp_tqEfcNeut_MP "Gradient du couple d entree du filtre d apprentissage au neutre"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqEngCor "Couple de recalage de base courant applicable après correction"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqAdp_tqLrnAC_MP "Sortie 32 bits du filtre d apprentissage avec climatisation (couple de recalage de climatisation applicable avant correction)"
+      SLONG TQADPCMP_CM_12 /* Nm:3.814697265625e-006:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqAdp_tqThdCritNxtCkgDragRed_T "Table de cartographie des couples admissibles fonction de la temperature moteur en reduction de trainee (criticite du prochain demarrage)"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqThdCritNxtCkgNeut_T "Table de cartographie des couples admissibles fonction de la temperature moteur au neutre (criticite du prochain demarrage)"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqThdDragRedAC_T "Table de cartographie des seuils de convergence de l apprentissage en reduction de trainee utilise pour l activation de l apprentissage avec climatisation"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqThdHysACDeac_C "Offset des seuils de couple compresseur minimums autorises pour lapprentissage de base"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqAdp_tqThdNeutAC_T "Table de cartographie des seuils de convergence de l apprentissage au neutre utilise pour l activation de l apprentissage avec climatisation"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_2 /* :1:0: */ 8 1 8
+    AXIS_PTS_REF TqAdp_idxTEng_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bACClu "Flag embrayage du compresseur avec prise en compte de la valeur dinhibition."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bACCluAuthSel "Booleen temporise dautorisation de lembrayage du compresseur"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bACCluSel "Flag embrayage du compresseur temporise"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bACExtECUOfDftSelOn_irv_MP "IRV mesure point"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bACExtECUOffDftSelOnCf "Requête de débrayage du compresseur en cas dincohérence des variables dentrée (puissance nulle alors que le flag embrayage est non nul), avant variantage."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_bACOffDftSelOn_B "Bypass de TqCmp_bACOffDftSelOn"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bACOnPrem "Booleen validant un premier enclenchement"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bAdpTAirInter "Booleen d activation de l adaptation de Tinter"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bAltTypDft "Booleen de defaut d identification de l alternateur GAP."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bCnvLossNewClc "Choix du mode de calcul du couple de pertes convertisseur BVA."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_bCnvLossNewClc_C "Choix du mode de calcul du couple de pertes convertisseur BVA."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bDftAltFilAcv "Booleen dactivation du coefficient specifique de filtrage du couple en cas de defaut alternateur."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bDftAltTyp_MP "Booleen de defaut didentification de lalternateur GAP temporise"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bDftIdfAlt "Booleen dactivation des valeurs definies comme refuge pour le type alternateur en cas dincompatibilite de lidentification avec les calibrations"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bDgo_tqAltRvIt "Etat du diag fonctionnel de la coherence du couple ALT vis-a-vis de letat de lalternateur (utilise dans le cas de calcul interne de la structure couple)"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bEngCold "Flag indiquant que le moteur est froid"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bEngStrtReqAlt "Demande de demarrage moteur"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_bEngStrtReq_B "Bypass de TqCmp_bEngStrtReq"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bFrzAdpAC "Flag coordonne de demande de figeage de l adaptation"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_bInhTqTraCdn_C "Inhibition de la prise en compte de la transmission de couple dans le calcul des pertes convertisseur."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bNCkTypSel_C "Choix du regime a prendre en compte pour le calcul du glissement"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bSpdVldAdpTAirDsl_MP "Booléen d activation de l adaptation de la Tamb Diesel"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bStgPmpAvl "Booléen d activation de la fonction estimation du couple DA-H"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bStrtAltFilAcv "Booleen dactivation du coefficient specifique de filtrage du couple en cas de depart"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_bSumACLossCmp_C "Prise en compte du couple preleve par le compresseur de climatisation dans le couple compense."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumACLossEstim_C "Prise en compte du couple preleve par le compresseur de climatisation dans le couple estime."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumAltLossCmp_C "Prise en compte du couple preleve par lalternateur dans le couple compense."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumAltLossEstim_C "Prise en compte du couple preleve par lalternateur dans le couple estime."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumAuxLossCmp_C "Prise en compte du couple preleve par un accessoire auxiliaire dans le couple compense."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumAuxLossEstim_C "Prise en compte du couple preleve par un accessoire auxiliaire dans le couple estime."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumLossCmpAdp_C "Prise en compte du couple calcule par ladaptatif des pertes dans le calcul du couple des pertes globales a compenser."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumLossCmpCnv_C "Prise en compte du couple convertisseur dans le calcul du couple des pertes globales a compenser."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumStgPmpLossCmp_C "Prise en compte du couple preleve par la pompe de direction assistee hydraulique dans le couple compense."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bSumStgPmpLossEstim_C "Prise en compte du couple preleve par la pompe de direction assistee dans le couple estime."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_bTAirChk_B "Bypass de TqCmp_bTAirChk"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_bTqACLossMax "Flag indiquant que le couple preleve est limite par sa borne MAX"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bTqAltLossMax "Booleen limite de couple max de limitation du couple preleve atteint"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bTqAltLossMin "Booleen limite de couple min de limitation du couple preleve atteint"
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_bTqAltLossOff "Booleen de desactivation du calcul de couple en fonction de l information de la charge alternateur."
+      UBYTE TQADPCMP_CM_4 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_ctAltRvDft_C "Compteur de non coherence entre le couple preleve et l etat de la machine electrique"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 255 TQADPCMP_CM_2 /* :1:0: */ 0 255
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facACFilAcv_T "Facteur du filtre à lenclenchement fonction du delta de pression du circuit clim"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_30 /* mbar:1:0: */ 4 0 31000
+    AXIS_PTS_REF TqCmp_pDeltaACflow_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facACItECULd_T "Coefficient de remplissage (prend en compte le rendement du compresseur)"
+      CURVE 0x0 TQADPCMP_RL_UWORD 3 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACItECU_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facCnvPwrTq_M "Table des coefficients de conversion puissance en couple"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_23 /* W:1:0: */ 8 0 5000
+    AXIS_PTS_REF TqCmp_pwrACLoss_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facCnvTqPwr_M "Cartographie de conversion couple/puissance"
+      MAP 0x0 TQADPCMP_RL_UWORD 5000 TQADPCMP_CM_23 /* W:1:0: */ 0 5000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_21 /* Nm:0.0625:0: */ 8 0 500
+    AXIS_PTS_REF TqCmp_tqRawACItECUX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACItECU_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilACItECULoss_C "Coefficient de filtrage du couple de base apres cyclage"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilACItECUSelOn_C "Coefficient de filtrage du couple a lenclenchement"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilAltCycOpRate_C "Coefficient de filtrage du RCO alternateur ICCP"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilDftTqAltLoss_C "Coefficient de filtrage du couple en cas de defaut alternateur."
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilSpdVeh_T "Vecteur de coef de filtrage de DeltaT statique en Teau"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_32 /* km/h:1:0: */ 6 0 500
+    AXIS_PTS_REF TqCmp_tiTAirInterX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilStrtTqAltLoss_C "Coefficient de filtrage du couple apres depart."
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_facFilTCo_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 254 TQADPCMP_CM_24 /* degC:1:0: */ 6 -40 214
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_facFilTCo_T "Vecteur de coef de filtrage de DeltaT statique en Teau"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 6 -40 214
+    AXIS_PTS_REF TqCmp_facFilTCo_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqACExtECUOff_C "Coefficient de filtrage du couple calcule"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqACLossDown_T "Coefficient de filtrage du couple lorsque celui-ci est croissant."
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqACLossUp_T "Coefficient de filtrage du couple lorsque celui-ci est croissant."
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqAltExt_C "Coefficient de filtrage du couple preleve calcule en externe de la structure couple"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqAltLossDown_T "Coefficient de filtrage du couple lorsque celui-ci est decroissant"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqAltLossUp_T "Coefficient de filtrage du couple lorsque celui-ci est croissant"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_facFilTqAltLoss_MP "Coefficient de filtrage du couple"
+      UWORD TQADPCMP_CM_22 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_facFilTqCnvLossDown_T "Coefficient de filtrage du couple lorsque celui-ci est decroissant"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqCnvLossUp_T "Coefficient de filtrage du couple lorsque celui-ci est croissant"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqStgLossDown_T "Coefficient de filtrage du couple DA decroissant en fonction du regime filtre."
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 5 0 8000
+    AXIS_PTS_REF TqCmp_nCkStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facFilTqStgLossUp_T "Coefficient de filtrage du couple DA croissant en fonction du regime filtre."
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 5 0 8000
+    AXIS_PTS_REF TqCmp_nCkStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facPndTqAlt_C "Coefficient de demultiplication du couple preleve calcule en externe de la structure couple"
+      VALUE 0x0 TQADPCMP_RL_SWORD 20 TQADPCMP_CM_25 /* :0.0625:0: */ -10 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facStgPmpLnrLossNEng_T "Estompage du couple DA Lineaire en fonction du regime"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 5 0 8000
+    AXIS_PTS_REF TqCmp_nCkStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facStgPmpLnrLossSpd_T "Estompage du couple DA Lineaire en fonction de la vitesse vehicule"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 5 0 500
+    AXIS_PTS_REF TqCmp_spdVehStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facStgPmpThdLossNEng_T "Estompage du couple DA On-Off en fonction du regime"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 5 0 8000
+    AXIS_PTS_REF TqCmp_nCkStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facStgPmpThdLossSpd_T "Estompage du couple DA On-Off en fonction de la vitesse vehicule"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 5 0 500
+    AXIS_PTS_REF TqCmp_spdVehStgPmp_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqACItECU_C "Coefficient multiplicatif du couple de base"
+      VALUE 0x0 TQADPCMP_RL_UWORD 10 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqAltSign_C "Signe pour prendre en compte la convention du couple ALT recu"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 2 TQADPCMP_CM_2 /* :1:0: */ -1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvDrvNEng_T "Table de modelisation de l effet du regime moteur sur le couple preleve par le convertisseur en drive a chaud."
+      CURVE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvDrvRatNCk_T "Table de modelisation de leffet de glissement dans le convertisseur sur le couple preleve en drive."
+      CURVE 0x0 TQADPCMP_RL_UWORD 3 TQADPCMP_CM_26 /* :0.00390625:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    AXIS_PTS_REF TqCmp_rNCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvDrvTOilGBx_T "Table de modelisation de l effet de la temperature dhuile de boite sur le couple preleve par le convertisseur en drive."
+      CURVE 0x0 TQADPCMP_RL_UWORD 4 TQADPCMP_CM_27 /* :0.015625:0: */ 0 4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 5 -50 200
+    AXIS_PTS_REF TqCmp_tOilGBxCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvLossSpdVeh_T "Estompage du couple preleve en fonction de la vitesse vehicule"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 5 0 500
+    AXIS_PTS_REF TqCmp_spdVehCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvNeut_T "Table de modélisation de l effet de la température dhuile de boîte sur le couple prélevé par le convertisseur au neutre"
+      CURVE 0x0 TQADPCMP_RL_UWORD 4 TQADPCMP_CM_27 /* :0.015625:0: */ 0 4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 5 -50 200
+    AXIS_PTS_REF TqCmp_tOilGBxCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvRatNCk_M "Table de modélisation de l effet du régime et du glissement dans le convertisseur sur le couple prélevé."
+      MAP 0x0 TQADPCMP_RL_SWORD 1000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -500 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnvX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    AXIS_PTS_REF TqCmp_rNCkCnvY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvRatNeut_M "Table de modélisation de l effet du régime et du glissement dans le convertisseur au neutre sur le couple prélevé"
+      MAP 0x0 TQADPCMP_RL_SWORD 1000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -500 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 8 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnvX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    AXIS_PTS_REF TqCmp_rNCkCnvY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvRedNEng_T "Table de modelisation de l effet du regime moteur sur le couple preleve par le convertisseur en reduction de trainee a chaud."
+      CURVE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvRedRatNCk_T "Table de modelisation de leffet de glissement dans le convertisseur sur le couple preleve en neutre."
+      CURVE 0x0 TQADPCMP_RL_UWORD 3 TQADPCMP_CM_26 /* :0.00390625:0: */ 0 3
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    AXIS_PTS_REF TqCmp_rNCkCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_facTqCnvRedTOilGBx_T "Table de modelisation de l effet de la temperature dhuile de boite sur le couple preleve par le convertisseur en reduction de trainee."
+      CURVE 0x0 TQADPCMP_RL_UWORD 4 TQADPCMP_CM_27 /* :0.015625:0: */ 0 4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 5 -50 200
+    AXIS_PTS_REF TqCmp_tOilGBxCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_iAltX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 25.4 TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_iDftComAltLoss_T "Intensite de reconfiguration en cas de defaut de COM de linformation"
+      CURVE 0x0 TQADPCMP_RL_UWORD 25.4 TQADPCMP_CM_1 /* A:0.0625:0: */ 0 25.4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_iDftElAltLoss_T "Intensite de reconfiguration en cas de defaut dELECTRIQUE de linformation"
+      CURVE 0x0 TQADPCMP_RL_UWORD 25.4 TQADPCMP_CM_1 /* A:0.0625:0: */ 0 25.4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_iDftMecAltLoss_T "Intensite de reconfiguration en cas de defaut de MECANIQUE de l information."
+      CURVE 0x0 TQADPCMP_RL_UWORD 25.4 TQADPCMP_CM_1 /* A:0.0625:0: */ 0 25.4
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltClasDft_C "Classe a prendre en consideration pour le choix de la cartographie d interpolation du couple alternateur lorsque cette information n est pas fournie par l alternateur (cette calibration peut etre telecodable)."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 100 TQADPCMP_CM_2 /* :1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapClas1_C "Classe correspondant a un Indice de classe de type 1."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 100 TQADPCMP_CM_2 /* :1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapClas2_C "Classe correspondant a un Indice de classe de type 2."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 100 TQADPCMP_CM_2 /* :1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapClas3_C "Classe correspondant a un Indice de classe de type 3."
+      VALUE 0x0 TQADPCMP_RL_UBYTE 100 TQADPCMP_CM_2 /* :1:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapMdl1_C "Fournisseur correspondant a un Indice de fournisseur de type 1"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 10 TQADPCMP_CM_2 /* :1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapMdl2_C "Fournisseur correspondant a un Indice de fournisseur de type 2"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 10 TQADPCMP_CM_2 /* :1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltGapMdl3_C "Fournisseur correspondant a un Indice de fournisseur de type 3"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 10 TQADPCMP_CM_2 /* :1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltMdlDft_C "Fournisseur a prendre en consideration pour le choix de la cartographie dinterpolation du couple alternateur lorsque cette information nest pas fournie par lalternateur"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 10 TQADPCMP_CM_2 /* :1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxAltStdClas_T "Classe a prendre en consideration pour le choix de la cartographie dinterpolation du couple alternateur ICCP"
+      VAL_BLK 0x0 TQADPCMP_RL_UBYTE 2 TQADPCMP_CM_2 /* :1:0: */ 0 2
+    MATRIX_DIM 8 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_idxCnvTyp_C "Choix de la source destimation du couple preleve par le convertisseur"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 2 TQADPCMP_CM_2 /* :1:0: */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_idxFacFilTqAltLoss_MP "Type de filtrage demande"
+      UBYTE TQADPCMP_CM_2 /* :1:0: */ 1 0 0 3
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_mfMinLrn_C "Seuil de debit horaire d air mini pour activation du calcul de Tinter"
+      VALUE 0x0 TQADPCMP_RL_UWORD 300 TQADPCMP_CM_28 /* g/s:0.0078125:0: */ 0 300
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_nCkACItECU_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_nCkACLoss_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_nCkCnvX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 8 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_nCkCnv_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_nCkEngX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_nCkFil "Regime moteur pris en compte pour le calcul du glissement du convertisseur."
+      UWORD TQADPCMP_CM_10 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCmp_nCkStgPmp_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 8000 TQADPCMP_CM_10 /* rpm:0.25:0: */ 5 0 8000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_nTrb "Regime turbine pris en compte pour le calcul du glissement du convertisseur."
+      UWORD TQADPCMP_CM_10 /* rpm:0.25:0: */ 1 0 0 8000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pACMes "Pression Refri coordonnee"
+      UWORD TQADPCMP_CM_30 /* mbar:1:0: */ 1 0 0 31000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCmp_pDeltaACflow_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 31000 TQADPCMP_CM_30 /* mbar:1:0: */ 4 0 31000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_pFlowSatPres_T "Pression de saturation de la climatisation"
+      CURVE 0x0 TQADPCMP_RL_UWORD 31000 TQADPCMP_CM_30 /* mbar:1:0: */ 0 31000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 4 -40 100
+    AXIS_PTS_REF TqCmp_tAirFlowPres_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_pMesACItECU_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 31000 TQADPCMP_CM_30 /* mbar:1:0: */ 6 0 31000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_pStgPmpThd_C "Seuil de pression pour figer ladaptation du couple de pertes."
+      VALUE 0x0 TQADPCMP_RL_UWORD 150 TQADPCMP_CM_5 /* bar:0.25:0: */ 0 150
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_pwrAC "Puissance prelevee par le compresseur de climatisation avec prise en compte de la valeur dinhibition."
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 6350
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pwrACExtECULossCf "Puissance calculé prélevé par le système de Clim de type 4, avant variantage."
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 5000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pwrACExtECULoss_irv_MP "Puissance calcule preleve par le systeme de Clim de type 4"
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 5000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pwrACItECULossCf "Puissance prélevé par le système de Clim de type 3, avant variantage."
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 5000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pwrACItECULoss_irv_MP "Puissance preleve par le systeme de Clim de type 3."
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 5000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_pwrACLossFil "Puissance filtree prelevee par le compresseur de climatisation"
+      UWORD TQADPCMP_CM_23 /* W:1:0: */ 1 0 0 5000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCmp_pwrACLoss_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 5000 TQADPCMP_CM_23 /* W:1:0: */ 8 0 5000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_pwrACLoss_B "Bypass de TqCmp_pwrACLoss"
+      VALUE 0x0 TQADPCMP_RL_UWORD 5000 TQADPCMP_CM_23 /* W:1:0: */ 0 5000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_pwrThdDiFil_C "Seuil en dessous duquel on reset le filtre"
+      VALUE 0x0 TQADPCMP_RL_UWORD 6325 TQADPCMP_CM_23 /* W:1:0: */ 0 6325
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_rAltCycOpRateX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 100 TQADPCMP_CM_3 /* %:1:0: */ 10 0 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_rDftComAltStdLoss_T "Valeur de RCO d excitation en cas de defaut de l information"
+      CURVE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_3 /* %:1:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_rNCkCnvY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 1 TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_rNCkCnv_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 1 TQADPCMP_CM_31 /* :0.03125:0: */ 8 0 1
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_spdVehCnvSel "Vitesse vehicule avec valeur refuge"
+      UWORD TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCmp_spdVehCnv_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 5 0 500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_spdVehDftCnv_C "Valeur refuge de la vitesse vehicule"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_spdVehDftStgPmp_C "Vitesse vehicule a prendre en compte en cas de defaut"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_spdVehStgPmp_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 500 TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 5 0 500
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_spdVehStgSel "Vitesse vehicule apres bloc de traitement des entrees"
+      UWORD TQADPCMP_CM_14 /* km/h:0.0078125:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_spdVehThr_C "Vitesse minimum pour prise en compte de la T1 (temperature debitmetre) lors dun roulage en km/h"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_32 /* km/h:1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tAirACItECU_T "Estimation de la temperature du fluide refrigerant en fonction de la pression refri"
+      CURVE 0x0 TQADPCMP_RL_SWORD 180 TQADPCMP_CM_8 /* deg C:1:0: */ -40 140
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_30 /* mbar:1:0: */ 6 0 31000
+    AXIS_PTS_REF TqCmp_pMesACItECU_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tAirDft_C "Valeur refuge de la tAir en cas de defaut de la temperature adimission"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 140 TQADPCMP_CM_24 /* degC:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tAirDif "Delta de temperature d air"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tAirDly "Temperature ambiante retardee"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tAirEstimDsl "Temperature ambiante estimee diesel"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tAirEstimGsl "Temperature ambiante estimee essence"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tAirEstimRaw "Temperature ambiante estimee brute"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tAirEstim_B "Bypass de TqCmp_tAirEstim"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 140 TQADPCMP_CM_8 /* deg C:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tAirFlowPres_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 140 TQADPCMP_CM_24 /* degC:1:0: */ 4 -40 100
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_tAirInter "Temperature intermediaire"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tAirMax_C "Temperature dair ambiant maximale"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 140 TQADPCMP_CM_24 /* degC:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tAirMin_C "Temperature dair ambiant minimale"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 140 TQADPCMP_CM_24 /* degC:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tAirSelThr_C "Seuil de temperature admission pour detection de moteur froid"
+      VALUE 0x0 TQADPCMP_RL_SWORD 250 TQADPCMP_CM_24 /* degC:1:0: */ -50 200
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tAirStatDif_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 140 TQADPCMP_CM_24 /* degC:1:0: */ 6 -40 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_tAirStatDif_T "Vecteur de DeltaT statique en fonction de la temperature ambiante"
+      CURVE 0x0 TQADPCMP_RL_SWORD 140 TQADPCMP_CM_24 /* degC:1:0: */ -40 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 6 -40 100
+    AXIS_PTS_REF TqCmp_tAirStatDif_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tAirStrt "Temperature ambiante estimee au demarrage"
+      SBYTE TQADPCMP_CM_24 /* degC:1:0: */ 1 0 -40 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tCoMesThr_C "Seuil de temperature moteur pour detection de moteur froid"
+      VALUE 0x0 TQADPCMP_RL_SWORD 254 TQADPCMP_CM_24 /* degC:1:0: */ -40 214
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tDeltaCoAirThr_C "Ecart maximum entre les temperatures admission et temperature moteur pour detection de moteur froid"
+      VALUE 0x0 TQADPCMP_RL_SBYTE 140 TQADPCMP_CM_24 /* degC:1:0: */ -40 100
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tOilGBxCnv_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_16 /* deg C:0.25:0: */ 5 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_tiACExtECUOff_C "Delai entre le debrayage du compresseur par la BSI et larret de prise de couple sur larbre moteur."
+      VALUE 0x0 TQADPCMP_RL_UWORD 5 TQADPCMP_CM_18 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiACExtECUOn_C "Delai entre lembrayage du compresseur par la BSI et la prise de couple sur larbre moteur"
+      VALUE 0x0 TQADPCMP_RL_UWORD 5 TQADPCMP_CM_18 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tiACItECUCycX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 140 TQADPCMP_CM_8 /* deg C:1:0: */ 4 -40 100
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_tiACItECUCyc_T "Temporisation de cyclage."
+      CURVE 0x0 TQADPCMP_RL_UWORD 1800 TQADPCMP_CM_19 /* s:1:0: */ 0 1800
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_8 /* deg C:1:0: */ 4 -40 100
+    AXIS_PTS_REF TqCmp_tiACItECUCycX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiACItECUOff_C "Delai entre le debrayage du compresseur et larret effectif de la prise de couple sur larbre moteur."
+      VALUE 0x0 TQADPCMP_RL_UWORD 5 TQADPCMP_CM_18 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiACItECUOn_C "Delai entre lautorisation dembrayage du compresseur et la prise de couple effective sur larbre moteur"
+      VALUE 0x0 TQADPCMP_RL_UWORD 5 TQADPCMP_CM_18 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiAfterAltDftFil_C "Temporisation de maintien du filtre specifique apres confirmation de la disparition du defaut alternateur"
+      VALUE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_18 /* s:0.01:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiAfterAltStrtFil_C "Temporisation de maintien du filtre specifique apres depart"
+      VALUE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_18 /* s:0.01:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiDftAltRv_C "Tempo de confirmation de la non coherence du couple preleve"
+      VALUE 0x0 TQADPCMP_RL_UWORD 10 TQADPCMP_CM_18 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiDlyAltStrt_C "Temporisation dannulation du couple estime alternateur apres depart."
+      VALUE 0x0 TQADPCMP_RL_UWORD 100 TQADPCMP_CM_18 /* s:0.01:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiDlyIdfAlt_C "Tempo de confirmation de la non coherence du couple ALT"
+      VALUE 0x0 TQADPCMP_RL_UWORD 10 TQADPCMP_CM_18 /* s:0.01:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiEngStopThr_C "Temps ecoule minimum depuis la derniere coupure moteur pour prise en compte de la temperature admission lors du demarrage"
+      VALUE 0x0 TQADPCMP_RL_ULONG 86400 TQADPCMP_CM_19 /* s:1:0: */ 0 86400
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiEngStrtMax_C "Seuil de temps moteur demarre mini avant de prendre en compte le modele de Tair"
+      VALUE 0x0 TQADPCMP_RL_UWORD 3600 TQADPCMP_CM_19 /* s:1:0: */ 0 3600
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiMaxACOffDft_C "Delai max entre le debrayage du compresseur par la BSI et larret de prise de couple sur larbre moteur."
+      VALUE 0x0 TQADPCMP_RL_UWORD 5 TQADPCMP_CM_18 /* s:0.01:0: */ 0 5
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiSpdVehThrOff_C "Temporisation pour arret de la prise en compte de la T1 (temperature debitmetre) apres retour sous le seuil de vitesse minimum lors dun roulage en s"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_20 /* s:0.1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiSpdVehThrOn_C "Temporisation pour prise en compte de la T1 (temperature debitmetre) apres depassement du seuil de vitesse minimum lors dun roulage en s"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_20 /* s:0.1:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tiTAirInterX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 500 TQADPCMP_CM_32 /* km/h:1:0: */ 6 0 500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqCmp_tiTAirInterY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 300 TQADPCMP_CM_28 /* g/s:0.0078125:0: */ 6 0 300
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_tiTAirInter_M "Vecteur de DeltaT statique en fonction de la temperature ambiante"
+      MAP 0x0 TQADPCMP_RL_UWORD 2 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 2
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_32 /* km/h:1:0: */ 6 0 500
+    AXIS_PTS_REF TqCmp_tiTAirInterX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_28 /* g/s:0.0078125:0: */ 6 0 300
+    AXIS_PTS_REF TqCmp_tiTAirInterY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tiVldLrn_C "Temps de confirmation pour activer le calcul de Tinter"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 10 TQADPCMP_CM_20 /* s:0.1:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqACItECUBasFil "Couple de base filtre preleve par le compresseur de climatisation (type 3)."
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqACItECUBasLoss "Couple de base preleve par le compresseur de climatisation (type 3). Valeur ne prenant pas en compte le phenomene de cyclage."
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqACItECUBasMem "Couple de base memorise"
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqACItECURaw "Couple preleve total brut"
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqACItECUSelOn_MP "Sur- couple inertiel preleve a lenclenchement par le compresseur de climatisation (type 3)."
+      UWORD TQADPCMP_CM_25 /* :0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqACItECUSelOn_T "Couple a lenclenchement en fonction du regime moteur."
+      CURVE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_10 /* rpm:0.25:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkACItECU_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqACLossMax_C "Couple maximum preleve par le compresseur de climatisation."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqACLossMin_C "Couple minimum preleve par le compresseur de climatisation."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqACLoss_B "Bypass de TqCmp_tqACLoss"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas1Mdl1_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 1 et le fournisseur de type 1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas1Mdl2_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 1 et le fournisseur de type 2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas1Mdl3_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 1 et le fournisseur de type 3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas2Mdl1_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 2 et le fournisseur de type 1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas2Mdl2_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 2 et le fournisseur de type 2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas2Mdl3_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 2 et le fournisseur de type 3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas3Mdl1_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 3 et le fournisseur de type 1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas3Mdl2_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 3 et le fournisseur de type 2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltGapLossClas3Mdl3_M "Cartographie dinterpolation du couple alternateur (cas GAP dont la classe est de type 3 et le fournisseur de type 3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_1 /* A:0.0625:0: */ 10 0 25.4
+    AXIS_PTS_REF TqCmp_iAltX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltItPnd_M "Carto de couple pondere sur le couple HY/STTx (modele interne structure couple)"
+      MAP 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 10 -2000 2000
+    AXIS_PTS_REF TqCmp_tqAltY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqAltLossExt "Couple preleve par tous type d alternateur envoye a la structure couple pondere et filtre"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAltLossGap "Couple non filtre preleve par l alternateur (cas GAP)."
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAltLossItUnlim "Couple preleve par tous type d alternateur calcule par la structure couple pondere et filtre"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqAltLossMax_T "Couple maximum de limitation du couple preleve par lalternateur"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltLossMin_T "Couple minimum de limitation du couple preleve par lalternateur"
+      CURVE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqAltLossRaw "Couple non filtre preleve par lalternateur coordonne en fonction du type d alternateur"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAltLossSTT "Couple non filtre preleve par lalternateur (cas HY/STTx)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAltLossStd "Couple non filtre preleve par lalternateur (cas ICCP)"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAltLossTrvUnlim "Couple preleve par lalternateur transversal coordonne final avant limitation"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqAltLoss_B "Bypass de TqCmp_tqAltLoss"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltPnd_M "Carto de couple pondere sur le couple preleve recu par la structure couple"
+      MAP 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_6 /* N.m:0.0625:0: */ 10 -2000 2000
+    AXIS_PTS_REF TqCmp_tqAltY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltRvStrt_C "Valeur de couple a comparer en cas de defaut (alternateur HY/STTx)"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqAltSel "Couple preleve par lalternateur reversible externe retraite (utilise dans le cas de calcul interne de la structure couple)"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqAltStdLossClas1_M "Cartographie dinterpolation du couple alternateur (cas ICCP dont la classe est de type 1)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_3 /* %:1:0: */ 10 0 100
+    AXIS_PTS_REF TqCmp_rAltCycOpRateX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltStdLossClas2_M "Cartographie dinterpolation du couple alternateur (cas ICCP dont la classe est de type 2)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_3 /* %:1:0: */ 10 0 100
+    AXIS_PTS_REF TqCmp_rAltCycOpRateX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqAltStdLossClas3_M "Cartographie dinterpolation du couple alternateur (cas ICCP dont la classe est de type 3)"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 10 0 8000
+    AXIS_PTS_REF TqCmp_nCkEngX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_3 /* %:1:0: */ 10 0 100
+    AXIS_PTS_REF TqCmp_rAltCycOpRateX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tqAltY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 10 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_tqAuxSumLossCmp_irv_MP "IRV mesure point"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqAuxSumLossEstim_irv_MP "Couple estime preleve par les accessoires"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossClcNeut "Couple prélevé par le convertisseur au neutre"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossClcRaw "Couple générique prélevé par le convertisseur"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossDrv "Couple preleve par le convertisseur en drive."
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqCnvLossMax_T "Couple maximum preleve par le convertisseur"
+      CURVE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_16 /* deg C:0.25:0: */ 5 -50 200
+    AXIS_PTS_REF TqCmp_tOilGBxCnv_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqCnvLossMin_C "Couple minimum preleve par le convertisseur."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqCnvLossRaw "Couple preleve par le convertisseur non filtre"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossRawNew "Couple prélevé par le convertisseur indépendament de la réduction de trainée"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossRawOld "Couple prélevé par le convertisseur fonction de l état de réduction de traînée"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossRed "Couple preleve par le convertisseur en reduction de trainee."
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqCmp_tqCnvLossUnlim "Couple preleve par le convertisseur non filtre apres attenuation"
+      SWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqCnvLoss_B "Bypass de TqCmp_tqCnvLoss"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqGrdFrzAdpAC_C "Seuil de gradient de couple pour figer ladaptation du couple de pertes."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqGrdFrzAdpAlt_C "Seuil de gradient de couple pour figer l adaptation du couple de pertes."
+      VALUE 0x0 TQADPCMP_RL_SWORD 200 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -100 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqGrdFrzAdpCnv_C "Seuil de gradient de couple pour interdire l adaptation des pertes."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqCmp_tqRawACItECUX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 8 0 500
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqCmp_tqStgPmpLnrLoss "Couple non filtre de la compensation DA lineaire"
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqCmp_tqStgPmpLnrLossX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 150 TQADPCMP_CM_5 /* bar:0.25:0: */ 8 0 150
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpLnrLoss_T "Relation pression-couple pour la pompe equipe dun capteur lineaire"
+      CURVE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_5 /* bar:0.25:0: */ 8 0 150
+    AXIS_PTS_REF TqCmp_tqStgPmpLnrLossX_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqStgPmpLossCf "Couple absorbé par la pompe hydraulique, avant variantage."
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpLossMax_C "Couple maximum preleve par le convertisseur"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpLossMin_C "Couple minimum preleve par le convertisseur"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqStgPmpLossRaw "Couple non filtre de la compensation DA"
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpLoss_B "Bypass de TqCmp_tqStgPmpLoss"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqCmp_tqStgPmpThdLoss "Couple non filtre de la compensation DA On Off"
+      UWORD TQADPCMP_CM_21 /* Nm:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpThdLossOff_C "Couple absorbe par la pompe hydraulique a vide"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqStgPmpThdLossOn_C "Couple absorbe par la pompe hydraulique lorsque le mano contact est active."
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossCmpMax_C "Saturation maximale du couple de pertes compense."
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossCmpMin_C "Saturation minimale du couple de pertes compense."
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossCmpWoutCnv_B "Bypass de TqCmp_tqSumLossCmpWoutCnv"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossCmp_B "Bypass de TqCmp_tqSumLossCmp"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossEstimMax_C "Saturation maximale du couple de pertes estimees."
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossEstimMin_C "Saturation minimale du couple de pertes estimees."
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqSumLossEstim_B "Bypass de TqCmp_tqSumLossEstim"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqCmp_tqThdDftAltRv_C "Seuil de couple pour la detection dun defaut de coherence sur la MEL"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilTqACLoss_C "Coefficient de filtrage du couple en cas de demande provenant de lIVC."
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilTqAltLoss_C "Coefficient de filtrage du couple en cas de demande provenant de lIVC."
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqDem_facFilTqStgLoss_C "Coefficient de filtrage du couple DA sur demande IVC"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facCorTqCkOilPmpLoss_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 10000 TQADPCMP_CM_29 /* rpm:1:0: */ 8 0 10000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_facCorTqCkOilPmpLoss_MP "Facteur de correction des pertes dues a la pompe a huile"
+      UWORD TQADPCMP_CM_22 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCorTqCkOilPmpLoss_T "Table de ponderation des pertes pompe a huile"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 8 0 10000
+    AXIS_PTS_REF TqSys_facCorTqCkOilPmpLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_facCorTqCkStrtLoss_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 65535 TQADPCMP_CM_19 /* s:1:0: */ 8 0 65535
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_facCorTqCkStrtLoss_MP "Facteur de correction des pertes apres depart"
+      UWORD TQADPCMP_CM_22 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_facCorTqCkStrtLoss_T "Table de ponderation pertes apres depart"
+      CURVE 0x0 TQADPCMP_RL_UWORD 1 TQADPCMP_CM_22 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_19 /* s:1:0: */ 8 0 65535
+    AXIS_PTS_REF TqSys_facCorTqCkStrtLoss_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_facTCkEngLoss_C "Coeeficient de ponderation pour la prise en compte de la temperature eau et huile"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_9 /* :0.0078125:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_idxPEx_C "Selecteur pour prise en compte de la pression echappement dans le calcul de la delta P"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_idxPmpLoss_C "Selecteur du calcul a utiliser pour les pertes par pompage"
+      VALUE 0x0 TQADPCMP_RL_UBYTE 1 TQADPCMP_CM_2 /* :1:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nStopTqLoss_C "Seuil de régime pour réinitialisation compteur de démarrage"
+      VALUE 0x0 TQADPCMP_RL_UWORD 2500 TQADPCMP_CM_29 /* rpm:1:0: */ 0 2500
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_nStrtTqLoss_C "Seuil de régime pour déclenchement compteur de démarrage"
+      VALUE 0x0 TQADPCMP_RL_UWORD 2500 TQADPCMP_CM_29 /* rpm:1:0: */ 0 2500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_pBoostDelta_MP "Difference de pression entre les collecteurs admission et echappements"
+      SWORD TQADPCMP_CM_33 /* bar:0.0009765625:0: */ 1 0 -10 6
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_pDeltaPmpLossDft_C "Delta de pression utilise pour le calcul des pertes par pompage en cas de defaut"
+      VALUE 0x0 TQADPCMP_RL_SWORD 16 TQADPCMP_CM_33 /* bar:0.0009765625:0: */ -10 6
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_pOilEngLossDft_C "Pression d huile de refuge en cas de defaut"
+      VALUE 0x0 TQADPCMP_RL_UWORD 10 TQADPCMP_CM_34 /* bar:0.0078125:0: */ 0 10
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tEngFricLossDft_C "Temperature moteur (eau ou huile selon calibration) de refuge en cas de defaut"
+      VALUE 0x0 TQADPCMP_RL_SWORD 250 TQADPCMP_CM_24 /* degC:1:0: */ -50 200
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tEngLossSel "Temperature coordonnee avec Teau et Thuile utilisee pour le calcul des pertes"
+      SWORD TQADPCMP_CM_35 /* degC:0.0625:0: */ 1 0 -50 200
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tOilEngLossDft_C "Temperature d huile de refuge en cas de defaut"
+      VALUE 0x0 TQADPCMP_RL_SWORD 250 TQADPCMP_CM_24 /* degC:1:0: */ -50 200
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tiStrtTqLoss_MP "definition of TqSys_tiStrtTqLoss_MP"
+      UWORD TQADPCMP_CM_18 /* s:0.01:0: */ 1 0 0 655
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEngLossAdp_B "Bypass de TqSys_tqCkEngLossAdp"
+      VALUE 0x0 TQADPCMP_RL_SWORD 4000 TQADPCMP_CM_21 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEngLossDecMax_C "Decrement maximum du couple de pertes"
+      VALUE 0x0 TQADPCMP_RL_SWORD 1000 TQADPCMP_CM_36 /* N.m/s:0.5:0: */ -1000 0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC TqSys_tqCkEngLossIncMax_C "Increment maximum du couple de pertes"
+      VALUE 0x0 TQADPCMP_RL_UWORD 1000 TQADPCMP_CM_36 /* N.m/s:0.5:0: */ 0 1000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkEngLossRaw_MP "Point test couple pertes moteur"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkEngLoss_B "Bypass de TqSys_tqCkEngLoss"
+      VALUE 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_21 /* Nm:0.0625:0: */ 0 500
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkFricLoss "Couple pertes frottements"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkFricLossX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 10000 TQADPCMP_CM_29 /* rpm:1:0: */ 16 0 10000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqCkFricLossY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_24 /* degC:1:0: */ 16 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkFricLoss_M "Cartographie couple pertes par frottements fonction de la temperature"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 16 0 10000
+    AXIS_PTS_REF TqSys_tqCkFricLossX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 16 -50 200
+    AXIS_PTS_REF TqSys_tqCkFricLossY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkOilPmpLoss "Point test couple pertes dues a la pompe a huile"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkOilPmpLossX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 10 TQADPCMP_CM_34 /* bar:0.0078125:0: */ 8 0 10
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqCkOilPmpLossY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_24 /* degC:1:0: */ 8 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkOilPmpLoss_M "Cartographie couple pertes par frottements fonction de la temperature"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_34 /* bar:0.0078125:0: */ 8 0 10
+    AXIS_PTS_REF TqSys_tqCkOilPmpLossX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 8 -50 200
+    AXIS_PTS_REF TqSys_tqCkOilPmpLossY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkOilPmpLoss_MP "Point test couple pertes dues a la pompe a huile"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT TqSys_tqCkPmpLoss "Point test offset couple compensation pertes pompage"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -100 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkPmpLossAirLdY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 3 TQADPCMP_CM_37 /* :6.103515625e-005:0: */ 16 0 3
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkPmpLossAirLd_M "Cartographie couple pertes par pompage en fonction du remplissage"
+      MAP 0x0 TQADPCMP_RL_SWORD 600 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -100 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 16 0 10000
+    AXIS_PTS_REF TqSys_tqCkPmpLossX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_37 /* :6.103515625e-005:0: */ 16 0 3
+    AXIS_PTS_REF TqSys_tqCkPmpLossAirLdY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkPmpLossAirLd_MP "Point test couple pertes par pompage en fonction de la charge moteur"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -100 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkPmpLossOfs_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 1000 TQADPCMP_CM_30 /* mbar:1:0: */ 8 500 1500
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_tqCkPmpLossOfs_MP "Point test offset couple compensation pertes pompage"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -100 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC TqSys_tqCkPmpLossOfs_T "Table d offset de couple pertes par pompage"
+      CURVE 0x0 TQADPCMP_RL_SWORD 200 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -100 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_30 /* mbar:1:0: */ 8 500 1500
+    AXIS_PTS_REF TqSys_tqCkPmpLossOfs_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS TqSys_tqCkPmpLossPAirY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 16 TQADPCMP_CM_33 /* bar:0.0009765625:0: */ 16 -10 6
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkPmpLossPAir_M "Cartographie couple pertes par pompage en fonction de la delta P"
+      MAP 0x0 TQADPCMP_RL_SWORD 600 TQADPCMP_CM_6 /* N.m:0.0625:0: */ -100 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_29 /* rpm:1:0: */ 16 0 10000
+    AXIS_PTS_REF TqSys_tqCkPmpLossX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_33 /* bar:0.0009765625:0: */ 16 -10 6
+    AXIS_PTS_REF TqSys_tqCkPmpLossPAirY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkPmpLossPAir_MP "Point test couple pertes par pompage en fonction de la pression"
+      SWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 -100 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkPmpLossX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 10000 TQADPCMP_CM_29 /* rpm:1:0: */ 16 0 10000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT TqSys_tqCkStrtLoss "Point test couple pertes apres depart en fonction de la temperature"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS TqSys_tqCkStrtLossX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_UWORD_AXIS 655 TQADPCMP_CM_20 /* s:0.1:0: */ 8 0 655
+    /end AXIS_PTS
+
+    /begin AXIS_PTS TqSys_tqCkStrtLossY_A "Axis description"
+      0x0 NO_INPUT_QUANTITY TQADPCMP_RL_SWORD_AXIS 250 TQADPCMP_CM_24 /* degC:1:0: */ 8 -50 200
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC TqSys_tqCkStrtLoss_M "Cartographie couple pertes apres depart fonction de la temperature"
+      MAP 0x0 TQADPCMP_RL_UWORD 500 TQADPCMP_CM_6 /* N.m:0.0625:0: */ 0 500
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_20 /* s:0.1:0: */ 8 0 655
+    AXIS_PTS_REF TqSys_tqCkStrtLossX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY TQADPCMP_CM_24 /* degC:1:0: */ 8 -50 200
+    AXIS_PTS_REF TqSys_tqCkStrtLossY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT TqSys_tqCkStrtLoss_MP "Point test couple pertes apres depart en fonction de la temperature"
+      UWORD TQADPCMP_CM_6 /* N.m:0.0625:0: */ 1 0 0 500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT TQADPCMP_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD TQADPCMP_CM_1 "conversion_method"
+
+RAT_FUNC "%.2" "A"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_2 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_3 "conversion_method"
+
+RAT_FUNC "%.0" "%"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_4 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQADPCMP_CV_4
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQADPCMP_CV_4 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQADPCMP_CM_5 "conversion_method"
+
+RAT_FUNC "%.1" "bar"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_6 "conversion_method"
+
+RAT_FUNC "%.2" "N.m"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_7 "conversion_method"
+
+RAT_FUNC "%.0" "km"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_8 "conversion_method"
+
+RAT_FUNC "%.0" "deg C"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_9 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_10 "conversion_method"
+
+RAT_FUNC "%.1" "rpm"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_11 "conversion_method"
+
+RAT_FUNC "%.3" "Nm"
+COEFFS 0 512 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_12 "conversion_method"
+
+RAT_FUNC "%.6" "Nm"
+COEFFS 0 262144 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_13 "conversion_method"
+
+RAT_FUNC "%.6" "-"
+COEFFS 0 262144 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_14 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_15 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF TQADPCMP_CV_15
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB TQADPCMP_CV_15 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "NOMINAL"
+	 1 "FAVORABLE"
+	 2 "DEFAVORABLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD TQADPCMP_CM_16 "conversion_method"
+
+RAT_FUNC "%.1" "deg C"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_17 "conversion_method"
+
+RAT_FUNC "%.1" "degC"
+COEFFS 0 4 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_18 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_19 "conversion_method"
+
+RAT_FUNC "%.0" "s"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_20 "conversion_method"
+
+RAT_FUNC "%.1" "s"
+COEFFS 0 10 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_21 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_22 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_23 "conversion_method"
+
+RAT_FUNC "%.0" "W"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_24 "conversion_method"
+
+RAT_FUNC "%.0" "degC"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_25 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_26 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 256 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_27 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 64 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_28 "conversion_method"
+
+RAT_FUNC "%.3" "g/s"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_29 "conversion_method"
+
+RAT_FUNC "%.0" "rpm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_30 "conversion_method"
+
+RAT_FUNC "%.0" "mbar"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_31 "conversion_method"
+
+RAT_FUNC "%.2" "-"
+COEFFS 0 32 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_32 "conversion_method"
+
+RAT_FUNC "%.0" "km/h"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_33 "conversion_method"
+
+RAT_FUNC "%.4" "bar"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_34 "conversion_method"
+
+RAT_FUNC "%.3" "bar"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_35 "conversion_method"
+
+RAT_FUNC "%.2" "degC"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_36 "conversion_method"
+
+RAT_FUNC "%.1" "N.m/s"
+COEFFS 0 2 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD TQADPCMP_CM_37 "conversion_method"
+
+RAT_FUNC "%.5" "-"
+COEFFS 0 16384 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION TQADPCMP_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	TQADPCMP_ACTIVE_BYP_C
+	TqAdp_bAuthAdpAC_T
+	TqAdp_bAuthAdpTqAccuOn_T
+	TqAdp_bAuthInhSTT_T
+	TqAdp_bCfTEng_C
+	TqAdp_bCluCfSel_C
+	TqAdp_bDragRedCf_C
+	TqAdp_bFrzAdpACOn_B
+	TqAdp_bFrzAdpAltOn_B
+	TqAdp_bFrzAdpCnvOn_B
+	TqAdp_bFrzAdpElProdOn_T
+	TqAdp_bFrzAdpStgPmpOn_B
+	TqAdp_bInhEngStop_B
+	TqAdp_dstVeh_C
+	TqAdp_facFilTqCkIdl_C
+	TqAdp_idxDragRedGain_T
+	TqAdp_idxNeutGain_T
+	TqAdp_idxTEng_A
+	TqAdp_idxTEng_T
+	TqAdp_idxTqAccu_A
+	TqAdp_nCkFil_A
+	TqAdp_nEngMvGrdMax_T
+	TqAdp_nEngMvMax_C
+	TqAdp_nEngMvStabThd_C
+	TqAdp_noAdpLrn_C
+	TqAdp_noKmRst_C
+	TqAdp_noKmThd_C
+	TqAdp_noNbKm_C
+	TqAdp_rCorAdpACNCkFil_T
+	TqAdp_rCorAdpACSpdVeh_T
+	TqAdp_rCorAdpNCkFil_T
+	TqAdp_rEfcACGain_M
+	TqAdp_rEfcDragRedGain1_M
+	TqAdp_rEfcDragRedGain2_M
+	TqAdp_rEfcDragRedGain3_M
+	TqAdp_rEfcNeutGain1_M
+	TqAdp_rEfcNeutGain2_M
+	TqAdp_rEfcNeutGain3_M
+	TqAdp_spdCorLrnSpdVehThd_C
+	TqAdp_spdVehThd_C
+	TqAdp_spdVeh_A
+	TqAdp_stCdnNxtCkg_B
+	TqAdp_stElProd_A
+	TqAdp_tCoMes_A
+	TqAdp_tCoThdInhStop_C
+	TqAdp_tEng_A
+	TqAdp_tiCorLrnSpdVeh_C
+	TqAdp_tiDlyACDeac_C
+	TqAdp_tiDlyAdpLrn_C
+	TqAdp_tiDlyAst_C
+	TqAdp_tiDlyCdn_C
+	TqAdp_tiDlyCorLrnSpdVeh_C
+	TqAdp_tiDlyDirAsiDeac_C
+	TqAdp_tiDlyMonRunCdnNxtCkg_C
+	TqAdp_tiDlyStabTEng_C
+	TqAdp_tiNEngMvStab_C
+	TqAdp_tqACThd_T
+	TqAdp_tqCorAdpTqAccu_T
+	TqAdp_tqCorLrnACMax_C
+	TqAdp_tqCorLrnACMin_C
+	TqAdp_tqCorLrnDecMax_C
+	TqAdp_tqCorLrnDragRedMax_C
+	TqAdp_tqCorLrnDragRedMin_C
+	TqAdp_tqCorLrnIncMax_C
+	TqAdp_tqCorLrnNeutMax_C
+	TqAdp_tqCorLrnNeutMin_C
+	TqAdp_tqCorLrnThdAC_T
+	TqAdp_tqCorLrnThdDragRed_T
+	TqAdp_tqCorLrnThdNeut_T
+	TqAdp_tqDeltaACY_A
+	TqAdp_tqDeltaDragRedY_A
+	TqAdp_tqDeltaNeutY_A
+	TqAdp_tqDeltaTqIdlTqLoss_T
+	TqAdp_tqEfcACX_A
+	TqAdp_tqEfcDragRedX_A
+	TqAdp_tqEfcNeutX_A
+	TqAdp_tqThdCritNxtCkgDragRed_T
+	TqAdp_tqThdCritNxtCkgNeut_T
+	TqAdp_tqThdDragRedAC_T
+	TqAdp_tqThdHysACDeac_C
+	TqAdp_tqThdNeutAC_T
+	TqCmp_bACOffDftSelOn_B
+	TqCmp_bCnvLossNewClc_C
+	TqCmp_bEngStrtReq_B
+	TqCmp_bInhTqTraCdn_C
+	TqCmp_bNCkTypSel_C
+	TqCmp_bSumACLossCmp_C
+	TqCmp_bSumACLossEstim_C
+	TqCmp_bSumAltLossCmp_C
+	TqCmp_bSumAltLossEstim_C
+	TqCmp_bSumAuxLossCmp_C
+	TqCmp_bSumAuxLossEstim_C
+	TqCmp_bSumLossCmpAdp_C
+	TqCmp_bSumLossCmpCnv_C
+	TqCmp_bSumStgPmpLossCmp_C
+	TqCmp_bSumStgPmpLossEstim_C
+	TqCmp_bTAirChk_B
+	TqCmp_ctAltRvDft_C
+	TqCmp_facACFilAcv_T
+	TqCmp_facACItECULd_T
+	TqCmp_facCnvPwrTq_M
+	TqCmp_facCnvTqPwr_M
+	TqCmp_facFilACItECULoss_C
+	TqCmp_facFilACItECUSelOn_C
+	TqCmp_facFilAltCycOpRate_C
+	TqCmp_facFilDftTqAltLoss_C
+	TqCmp_facFilSpdVeh_T
+	TqCmp_facFilStrtTqAltLoss_C
+	TqCmp_facFilTCo_A
+	TqCmp_facFilTCo_T
+	TqCmp_facFilTqACExtECUOff_C
+	TqCmp_facFilTqACLossDown_T
+	TqCmp_facFilTqACLossUp_T
+	TqCmp_facFilTqAltExt_C
+	TqCmp_facFilTqAltLossDown_T
+	TqCmp_facFilTqAltLossUp_T
+	TqCmp_facFilTqCnvLossDown_T
+	TqCmp_facFilTqCnvLossUp_T
+	TqCmp_facFilTqStgLossDown_T
+	TqCmp_facFilTqStgLossUp_T
+	TqCmp_facPndTqAlt_C
+	TqCmp_facStgPmpLnrLossNEng_T
+	TqCmp_facStgPmpLnrLossSpd_T
+	TqCmp_facStgPmpThdLossNEng_T
+	TqCmp_facStgPmpThdLossSpd_T
+	TqCmp_facTqACItECU_C
+	TqCmp_facTqAltSign_C
+	TqCmp_facTqCnvDrvNEng_T
+	TqCmp_facTqCnvDrvRatNCk_T
+	TqCmp_facTqCnvDrvTOilGBx_T
+	TqCmp_facTqCnvLossSpdVeh_T
+	TqCmp_facTqCnvNeut_T
+	TqCmp_facTqCnvRatNCk_M
+	TqCmp_facTqCnvRatNeut_M
+	TqCmp_facTqCnvRedNEng_T
+	TqCmp_facTqCnvRedRatNCk_T
+	TqCmp_facTqCnvRedTOilGBx_T
+	TqCmp_iAltX_A
+	TqCmp_iDftComAltLoss_T
+	TqCmp_iDftElAltLoss_T
+	TqCmp_iDftMecAltLoss_T
+	TqCmp_idxAltClasDft_C
+	TqCmp_idxAltGapClas1_C
+	TqCmp_idxAltGapClas2_C
+	TqCmp_idxAltGapClas3_C
+	TqCmp_idxAltGapMdl1_C
+	TqCmp_idxAltGapMdl2_C
+	TqCmp_idxAltGapMdl3_C
+	TqCmp_idxAltMdlDft_C
+	TqCmp_idxAltStdClas_T
+	TqCmp_idxCnvTyp_C
+	TqCmp_mfMinLrn_C
+	TqCmp_nCkACItECU_A
+	TqCmp_nCkACLoss_A
+	TqCmp_nCkCnvX_A
+	TqCmp_nCkCnv_A
+	TqCmp_nCkEngX_A
+	TqCmp_nCkStgPmp_A
+	TqCmp_pDeltaACflow_A
+	TqCmp_pFlowSatPres_T
+	TqCmp_pMesACItECU_A
+	TqCmp_pStgPmpThd_C
+	TqCmp_pwrACLoss_A
+	TqCmp_pwrACLoss_B
+	TqCmp_pwrThdDiFil_C
+	TqCmp_rAltCycOpRateX_A
+	TqCmp_rDftComAltStdLoss_T
+	TqCmp_rNCkCnvY_A
+	TqCmp_rNCkCnv_A
+	TqCmp_spdVehCnv_A
+	TqCmp_spdVehDftCnv_C
+	TqCmp_spdVehDftStgPmp_C
+	TqCmp_spdVehStgPmp_A
+	TqCmp_spdVehThr_C
+	TqCmp_tAirACItECU_T
+	TqCmp_tAirDft_C
+	TqCmp_tAirEstim_B
+	TqCmp_tAirFlowPres_A
+	TqCmp_tAirMax_C
+	TqCmp_tAirMin_C
+	TqCmp_tAirSelThr_C
+	TqCmp_tAirStatDif_A
+	TqCmp_tAirStatDif_T
+	TqCmp_tCoMesThr_C
+	TqCmp_tDeltaCoAirThr_C
+	TqCmp_tOilGBxCnv_A
+	TqCmp_tiACExtECUOff_C
+	TqCmp_tiACExtECUOn_C
+	TqCmp_tiACItECUCycX_A
+	TqCmp_tiACItECUCyc_T
+	TqCmp_tiACItECUOff_C
+	TqCmp_tiACItECUOn_C
+	TqCmp_tiAfterAltDftFil_C
+	TqCmp_tiAfterAltStrtFil_C
+	TqCmp_tiDftAltRv_C
+	TqCmp_tiDlyAltStrt_C
+	TqCmp_tiDlyIdfAlt_C
+	TqCmp_tiEngStopThr_C
+	TqCmp_tiEngStrtMax_C
+	TqCmp_tiMaxACOffDft_C
+	TqCmp_tiSpdVehThrOff_C
+	TqCmp_tiSpdVehThrOn_C
+	TqCmp_tiTAirInterX_A
+	TqCmp_tiTAirInterY_A
+	TqCmp_tiTAirInter_M
+	TqCmp_tiVldLrn_C
+	TqCmp_tqACItECUSelOn_T
+	TqCmp_tqACLossMax_C
+	TqCmp_tqACLossMin_C
+	TqCmp_tqACLoss_B
+	TqCmp_tqAltGapLossClas1Mdl1_M
+	TqCmp_tqAltGapLossClas1Mdl2_M
+	TqCmp_tqAltGapLossClas1Mdl3_M
+	TqCmp_tqAltGapLossClas2Mdl1_M
+	TqCmp_tqAltGapLossClas2Mdl2_M
+	TqCmp_tqAltGapLossClas2Mdl3_M
+	TqCmp_tqAltGapLossClas3Mdl1_M
+	TqCmp_tqAltGapLossClas3Mdl2_M
+	TqCmp_tqAltGapLossClas3Mdl3_M
+	TqCmp_tqAltItPnd_M
+	TqCmp_tqAltLossMax_T
+	TqCmp_tqAltLossMin_T
+	TqCmp_tqAltLoss_B
+	TqCmp_tqAltPnd_M
+	TqCmp_tqAltRvStrt_C
+	TqCmp_tqAltStdLossClas1_M
+	TqCmp_tqAltStdLossClas2_M
+	TqCmp_tqAltStdLossClas3_M
+	TqCmp_tqAltY_A
+	TqCmp_tqCnvLossMax_T
+	TqCmp_tqCnvLossMin_C
+	TqCmp_tqCnvLoss_B
+	TqCmp_tqGrdFrzAdpAC_C
+	TqCmp_tqGrdFrzAdpAlt_C
+	TqCmp_tqGrdFrzAdpCnv_C
+	TqCmp_tqRawACItECUX_A
+	TqCmp_tqStgPmpLnrLossX_A
+	TqCmp_tqStgPmpLnrLoss_T
+	TqCmp_tqStgPmpLossMax_C
+	TqCmp_tqStgPmpLossMin_C
+	TqCmp_tqStgPmpLoss_B
+	TqCmp_tqStgPmpThdLossOff_C
+	TqCmp_tqStgPmpThdLossOn_C
+	TqCmp_tqSumLossCmpMax_C
+	TqCmp_tqSumLossCmpMin_C
+	TqCmp_tqSumLossCmpWoutCnv_B
+	TqCmp_tqSumLossCmp_B
+	TqCmp_tqSumLossEstimMax_C
+	TqCmp_tqSumLossEstimMin_C
+	TqCmp_tqSumLossEstim_B
+	TqCmp_tqThdDftAltRv_C
+	TqDem_facFilTqACLoss_C
+	TqDem_facFilTqAltLoss_C
+	TqDem_facFilTqStgLoss_C
+	TqSys_facCorTqCkOilPmpLoss_A
+	TqSys_facCorTqCkOilPmpLoss_T
+	TqSys_facCorTqCkStrtLoss_A
+	TqSys_facCorTqCkStrtLoss_T
+	TqSys_facTCkEngLoss_C
+	TqSys_idxPEx_C
+	TqSys_idxPmpLoss_C
+	TqSys_nStopTqLoss_C
+	TqSys_nStrtTqLoss_C
+	TqSys_pDeltaPmpLossDft_C
+	TqSys_pOilEngLossDft_C
+	TqSys_tEngFricLossDft_C
+	TqSys_tOilEngLossDft_C
+	TqSys_tqCkEngLossAdp_B
+	TqSys_tqCkEngLossDecMax_C
+	TqSys_tqCkEngLossIncMax_C
+	TqSys_tqCkEngLoss_B
+	TqSys_tqCkFricLossX_A
+	TqSys_tqCkFricLossY_A
+	TqSys_tqCkFricLoss_M
+	TqSys_tqCkOilPmpLossX_A
+	TqSys_tqCkOilPmpLossY_A
+	TqSys_tqCkOilPmpLoss_M
+	TqSys_tqCkPmpLossAirLdY_A
+	TqSys_tqCkPmpLossAirLd_M
+	TqSys_tqCkPmpLossOfs_A
+	TqSys_tqCkPmpLossOfs_T
+	TqSys_tqCkPmpLossPAirY_A
+	TqSys_tqCkPmpLossPAir_M
+	TqSys_tqCkPmpLossX_A
+	TqSys_tqCkStrtLossX_A
+	TqSys_tqCkStrtLossY_A
+	TqSys_tqCkStrtLoss_M
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	AltCtl_iAltSel
+	AltCtl_idxAltClasSel
+	AltCtl_idxAltMdlSel
+	Ext_rAltStdCycOpSel
+	Stg_bDftStgPmpLnrMes
+	Stg_bDftStgPmpThdMes
+	Stg_bStgPmpThdMesSel
+	Stg_pStgPmpLnrMesSel
+	TqAdpCmp_ModuleVersion_Major_MP
+	TqAdpCmp_ModuleVersion_Minor_MP
+	TqAdpCmp_sNV_Z1_CST_16BIT.TqAdp_prm_tqCorLrnDragRed_NV
+	TqAdpCmp_sNV_Z1_CST_16BIT.TqAdp_prm_tqCorLrnNeut_NV
+	TqAdpCmp_sNV_Z1_CST_16BIT_r.TqAdp_prm_tqCorLrnDragRed_NV
+	TqAdpCmp_sNV_Z1_CST_16BIT_r.TqAdp_prm_tqCorLrnNeut_NV
+	TqAdpCmp_sNV_Z1_CST_32BIT.TqAdp_dstVehHld_NV
+	TqAdpCmp_sNV_Z1_CST_32BIT_r.TqAdp_dstVehHld_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT.TqAdp_ctDst_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT.TqCmp_tAirDifMem_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT.TqCmp_tAirEstimMem_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT_r.TqAdp_ctDst_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT_r.TqCmp_tAirDifMem_NV
+	TqAdpCmp_sNV_Z1_CST_8BIT_r.TqCmp_tAirEstimMem_NV
+	TqAdp_bAcvAdp_MP
+	TqAdp_bAuthAdpGBx
+	TqAdp_bAuthInhEngStop
+	TqAdp_bAuxOff
+	TqAdp_bAvlACExt
+	TqAdp_bAvlACInt
+	TqAdp_bCdn1RstInhSTT_MP
+	TqAdp_bCdn2RstInhSTT_MP
+	TqAdp_bCorLrnAC
+	TqAdp_bCorLrnCdnAC
+	TqAdp_bCorLrnDragRed
+	TqAdp_bCorLrnDragRedAC
+	TqAdp_bCorLrnDragRedCdn
+	TqAdp_bCorLrnIrvAC
+	TqAdp_bCorLrnIrvACPrev
+	TqAdp_bCorLrnNEngMvCdn
+	TqAdp_bCorLrnNEngMvCdn1_MP
+	TqAdp_bCorLrnNEngMvCdn2_MP
+	TqAdp_bCorLrnNEngMvCdn3_MP
+	TqAdp_bCorLrnNeut
+	TqAdp_bCorLrnNeutAC
+	TqAdp_bCorLrnNeutCdn
+	TqAdp_bCorLrnSTT
+	TqAdp_bCorLrnWoutAC
+	TqAdp_bDragRed
+	TqAdp_bFrzAdpACExtECUOnCf
+	TqAdp_bFrzAdpACExtECUOn_irv_MP
+	TqAdp_bFrzAdpACItECUOnCf
+	TqAdp_bFrzAdpACItECUOn_irv_MP
+	TqAdp_bFrzAdpAlt_MP
+	TqAdp_bFrzAdpStgPmpOnCf
+	TqAdp_bMonRunCdnNxtCkgLrn
+	TqAdp_bMonRunORngSTT
+	TqAdp_bNbKm
+	TqAdp_bRstAdpLrn
+	TqAdp_bRstInhSTT_MP
+	TqAdp_bSyntCorLrnCdnAC
+	TqAdp_ctDstClc_MP
+	TqAdp_dstVehHldClc_MP
+	TqAdp_dstVeh_MP
+	TqAdp_facCorLrnIrvAC
+	TqAdp_idxTEng
+	TqAdp_idxTEngRaw
+	TqAdp_nDeltaNEngNTarIdl_MP
+	TqAdp_nEngMvGrdMax_MP
+	TqAdp_nGrdNEng_MP
+	TqAdp_noAdpLrn_MP
+	TqAdp_noAdp_MP
+	TqAdp_prm_tqCorLrnDragRed
+	TqAdp_prm_tqCorLrnDragRedIni
+	TqAdp_prm_tqCorLrnDragRedOn
+	TqAdp_prm_tqCorLrnDragRedPrev
+	TqAdp_prm_tqCorLrnNeut
+	TqAdp_prm_tqCorLrnNeutIni
+	TqAdp_prm_tqCorLrnNeutOn
+	TqAdp_prm_tqCorLrnNeutPrev
+	TqAdp_prm_tqLrnDragRedOn_MP
+	TqAdp_prm_tqLrnNeutOn_MP
+	TqAdp_rCorAdpACNCkFil_MP
+	TqAdp_rCorAdpACSpdVeh_MP
+	TqAdp_rCorAdpNCkFil_MP
+	TqAdp_rEfcACGain_MP
+	TqAdp_rEfcDragRedGain_MP
+	TqAdp_rEfcNeutGain_MP
+	TqAdp_stCdnNxtCkgLrnOn
+	TqAdp_tEng_MP
+	TqAdp_tqCkIdlFil_MP
+	TqAdp_tqCorLrnAC
+	TqAdp_tqCorLrnACCor
+	TqAdp_tqCorLrnDragRedIni1_MP
+	TqAdp_tqCorLrnDragRedIni2_MP
+	TqAdp_tqCorLrnDragRedIni3_MP
+	TqAdp_tqCorLrnDragRedIni4_MP
+	TqAdp_tqCorLrnDragRedIni5_MP
+	TqAdp_tqCorLrnDragRedIni6_MP
+	TqAdp_tqCorLrnDragRedIni7_MP
+	TqAdp_tqCorLrnDragRedIni8_MP
+	TqAdp_tqCorLrnDragRedOn
+	TqAdp_tqCorLrnDragRedSel_MP
+	TqAdp_tqCorLrnIrvAC
+	TqAdp_tqCorLrnIrvACPrev
+	TqAdp_tqCorLrnItpol_MP
+	TqAdp_tqCorLrnNeutIni1_MP
+	TqAdp_tqCorLrnNeutIni2_MP
+	TqAdp_tqCorLrnNeutIni3_MP
+	TqAdp_tqCorLrnNeutIni4_MP
+	TqAdp_tqCorLrnNeutIni5_MP
+	TqAdp_tqCorLrnNeutIni6_MP
+	TqAdp_tqCorLrnNeutIni7_MP
+	TqAdp_tqCorLrnNeutIni8_MP
+	TqAdp_tqCorLrnNeutOn
+	TqAdp_tqCorLrnNeutSel_MP
+	TqAdp_tqDeltaAC_MP
+	TqAdp_tqDeltaDB
+	TqAdp_tqDeltaDragRed_MP
+	TqAdp_tqDeltaNeut_MP
+	TqAdp_tqDeltaTqIdlTqLoss_MP
+	TqAdp_tqEfcAC_MP
+	TqAdp_tqEfcDragRed_MP
+	TqAdp_tqEfcNeut_MP
+	TqAdp_tqEngCor
+	TqAdp_tqLrnAC_MP
+	TqCmp_bACClu
+	TqCmp_bACCluAuthSel
+	TqCmp_bACCluSel
+	TqCmp_bACExtECUOfDftSelOn_irv_MP
+	TqCmp_bACExtECUOffDftSelOnCf
+	TqCmp_bACOnPrem
+	TqCmp_bAdpTAirInter
+	TqCmp_bAltTypDft
+	TqCmp_bCnvLossNewClc
+	TqCmp_bDftAltFilAcv
+	TqCmp_bDftAltTyp_MP
+	TqCmp_bDftIdfAlt
+	TqCmp_bDgo_tqAltRvIt
+	TqCmp_bEngCold
+	TqCmp_bEngStrtReqAlt
+	TqCmp_bFrzAdpAC
+	TqCmp_bSpdVldAdpTAirDsl_MP
+	TqCmp_bStgPmpAvl
+	TqCmp_bStrtAltFilAcv
+	TqCmp_bTqACLossMax
+	TqCmp_bTqAltLossMax
+	TqCmp_bTqAltLossMin
+	TqCmp_bTqAltLossOff
+	TqCmp_facFilTqAltLoss_MP
+	TqCmp_idxFacFilTqAltLoss_MP
+	TqCmp_nCkFil
+	TqCmp_nTrb
+	TqCmp_pACMes
+	TqCmp_pwrAC
+	TqCmp_pwrACExtECULossCf
+	TqCmp_pwrACExtECULoss_irv_MP
+	TqCmp_pwrACItECULossCf
+	TqCmp_pwrACItECULoss_irv_MP
+	TqCmp_pwrACLossFil
+	TqCmp_spdVehCnvSel
+	TqCmp_spdVehStgSel
+	TqCmp_tAirDif
+	TqCmp_tAirDly
+	TqCmp_tAirEstimDsl
+	TqCmp_tAirEstimGsl
+	TqCmp_tAirEstimRaw
+	TqCmp_tAirInter
+	TqCmp_tAirStrt
+	TqCmp_tqACItECUBasFil
+	TqCmp_tqACItECUBasLoss
+	TqCmp_tqACItECUBasMem
+	TqCmp_tqACItECURaw
+	TqCmp_tqACItECUSelOn_MP
+	TqCmp_tqAltLossExt
+	TqCmp_tqAltLossGap
+	TqCmp_tqAltLossItUnlim
+	TqCmp_tqAltLossRaw
+	TqCmp_tqAltLossSTT
+	TqCmp_tqAltLossStd
+	TqCmp_tqAltLossTrvUnlim
+	TqCmp_tqAltSel
+	TqCmp_tqAuxSumLossCmp_irv_MP
+	TqCmp_tqAuxSumLossEstim_irv_MP
+	TqCmp_tqCnvLossClcNeut
+	TqCmp_tqCnvLossClcRaw
+	TqCmp_tqCnvLossDrv
+	TqCmp_tqCnvLossRaw
+	TqCmp_tqCnvLossRawNew
+	TqCmp_tqCnvLossRawOld
+	TqCmp_tqCnvLossRed
+	TqCmp_tqCnvLossUnlim
+	TqCmp_tqStgPmpLnrLoss
+	TqCmp_tqStgPmpLossCf
+	TqCmp_tqStgPmpLossRaw
+	TqCmp_tqStgPmpThdLoss
+	TqSys_facCorTqCkOilPmpLoss_MP
+	TqSys_facCorTqCkStrtLoss_MP
+	TqSys_pBoostDelta_MP
+	TqSys_tEngLossSel
+	TqSys_tiStrtTqLoss_MP
+	TqSys_tqCkEngLossRaw_MP
+	TqSys_tqCkFricLoss
+	TqSys_tqCkOilPmpLoss
+	TqSys_tqCkOilPmpLoss_MP
+	TqSys_tqCkPmpLoss
+	TqSys_tqCkPmpLossAirLd_MP
+	TqSys_tqCkPmpLossOfs_MP
+	TqSys_tqCkPmpLossPAir_MP
+	TqSys_tqCkStrtLoss
+	TqSys_tqCkStrtLoss_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE TqAdpCmp ------------------------------------*/

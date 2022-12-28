@@ -1,0 +1,2181 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : KnkMgrCorRbl                                            */
+/* !Description     : CORRECTION RUMBLE                                       */
+/*                                                                            */
+/* !Module          : KnkMgrCorRbl                                            */
+/*                                                                            */
+/* !File            : KnkMgrCorRbl.a2l                                        */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   File generated on: Mon Mar 03 16:32:53 2014                              */
+/*   Model name       : KnkMgrCorRbl_AUTOCODE.mdl                             */
+/*   Model version    : 1.302                                                 */
+/*   Root subsystem   : /KnkMgrCorRbl                                         */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   P:/ACT_EMS/LOG/REF/SWC_VEMS/EBDT/KnkMgrCorRbl/5-SOFT-LIV/KnkM$*/
+/* $Revision::   1.6                                                         $*/
+/* $Author::   adelvare                               $$Date::   04 Mar 2014 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   KnkMgrCorRbl
+    /*   LongIdentifier */   "KnkMgrCorRbl Software Component"
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   KnkMgrCorRbl_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctIdxETBCyl1_T
+       /*   LongIdentifier */   "Table indicant le nombre de pas sur chaque indice de la séquence du cylindre 1"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl1
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_stKnkETBCyl1_T
+       /*   LongIdentifier */   "Table indiquant le type de phénomène sur le cylindre 1 en mode banc (rien, cliquetis fort, rumble)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl1
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctIdxETBCyl2_T
+       /*   LongIdentifier */   "Table indicant le nombre de pas sur chaque indice de la séquence du cylindre 2"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl2
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_stKnkETBCyl2_T
+       /*   LongIdentifier */   "Table indiquant le type de phénomène sur le cylindre 2 en mode banc (rien, cliquetis fort, rumble)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl2
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctIdxETBCyl3_T
+       /*   LongIdentifier */   "Table indicant le nombre de pas sur chaque indice de la séquence du cylindre 3"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl3
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_stKnkETBCyl3_T
+       /*   LongIdentifier */   "Table indiquant le type de phénomène sur le cylindre 3 en mode banc (rien, cliquetis fort, rumble)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl3
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctIdxETBCyl4_T
+       /*   LongIdentifier */   "Table indicant le nombre de pas sur chaque indice de la séquence du cylindre 4"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl4
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_stKnkETBCyl4_T
+       /*   LongIdentifier */   " Table indiquant le type de phénomène sur le cylindre 4 en mode banc (rien, cliquetis fort, rumble)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   KnkMgt_idxETBCyl4
+          /*   Conversion     */   KnkMgrCorRbl_CM_1
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   15.0
+          AXIS_PTS_REF             KnkMgt_idxBkptETB_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdRblInc_M
+       /*   LongIdentifier */   "Cartographie de l'incrément du compteur périodique de rumble"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdKnkRblInc_M
+       /*   LongIdentifier */   "Cartographie de l'incrément du compteur périodique de rumble dans la fenêtre cliquetis."
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdRblDec_M
+       /*   LongIdentifier */   "Cartographie du décrément du compteur périodique lorsque qu'il n'y a pas de rumble."
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotKnkRblInc_M
+       /*   LongIdentifier */   "Cartographie de l'incrément du compteur lent de rumble dans la fenêtre cliquetis"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotRblInc_M
+       /*   LongIdentifier */   "Cartographie de l'incrément du compteur lent de rumble"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   65535.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdRblInjCutOffThd1_T
+       /*   LongIdentifier */   "Cartographie du seuil sur le compteur périodique de rumble pour la coupure injection dans le cas de rumble proche du PMH"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdRblInjCutOffThd2_T
+       /*   LongIdentifier */   "Cartographie du seuil sur le compteur périodique de rumble pour la coupure injection"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTDCInjCutOffInc_M
+       /*   LongIdentifier */   "Cartographie de l'incrément du nombre de coupures injection nécessaire en présence de rumble"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTDCInjCutOffDec_M
+       /*   LongIdentifier */   "Cartographie du décrément du nombre de coupures injection lorsqu'il n'y a plus de rumble."
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_2
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0.0
+          /*   UpperLimit     */   3.0
+          AXIS_PTS_REF             KnkMgt_rAirLd_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctOccurRblIrvLdLimHiThd_C
+       /*   LongIdentifier */   "Seuil haut (en occurence rumble) d'activation de la limitation de charge réversible/irréversible"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.294967295E+009
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctOccurRbllrvLdLimLoThd_C
+       /*   LongIdentifier */   "Seuil bas (en nombre de coupures injection) de désactivation de la limitation de charge réversible/irréversible"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_ULONG
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   4.294967295E+009
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_nEngNbZoneRbl_A
+       /*   LongIdentifier */   "Table de points d'appuis pour le nombre de zone de fonctionnement en régime moteur pour le rumble"
+       /*   Type           */   VAL_BLK
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+       MATRIX_DIM               3 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_nEngSuperKnkHiThd_C
+       /*   LongIdentifier */   "Seuil haut de régime permettant de considérer le cliquetis fort comme super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_nEngSuperKnkLoThd_C
+       /*   LongIdentifier */   "Seuil bas de régime permettant de considérer le cliquetis fort comme super cliquetis"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_rAirLdNbZoneRbl_A
+       /*   LongIdentifier */   "Table de points d'appuis pour le nombre de zone de fonctionnement en remplissage pour le rumble"
+       /*   Type           */   VAL_BLK
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_2
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   3.0
+       MATRIX_DIM               3 1 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_rLdSuperKnkHiThd_C
+       /*   LongIdentifier */   "Seuil haut en charge moteur pour autoriser le retrait d'avance à faible charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_rLdSuperKnkLoThd_C
+       /*   LongIdentifier */   "Seuil bas en charge moteur pour autoriser le retrait d'avance à faible charge"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_2
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   3.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_tqGlblTqRawSpThd_M
+       /*   LongIdentifier */   "Torque setpoint threshold for the activation of the no action window"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_5
+       /*   LowerLimit     */   -2000.0
+       /*   UpperLimit     */   2000.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   KnkMgrCorRbl_CM_3
+          /*   MaxAxisPoints  */   9
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   8191.875
+          AXIS_PTS_REF             KnkMgt_nEng_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KNKMGRCORRBL_u8Inhib
+       /*   LongIdentifier */   "Inhibition of module KnkMgrCorRbl"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctInjCutOfTmpLimLdHiThd_C
+       /*   LongIdentifier */   "Seuil haut (en nombre de coupures injection) d'activation de la limitation de charge temporaire"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctInjCutOfTmpLimLdLoThd_C
+       /*   LongIdentifier */   "Seuil bas (en nombre de coupures injection) de désactivation de la limitation de charge temporaire"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctInjCutOffVlvPosnHiThd_C
+       /*   LongIdentifier */   "Seuil haut (en nombre de coupures injection) d'activation du décroissement VVT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctInjCutOffVlvPosnLoThd_C
+       /*   LongIdentifier */   "Seuil bas (en nombre de coupures injection) de désactivation du décroissement VVT"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctTotNbCycDecRbl_C
+       /*   LongIdentifier */   "Calibration du nombre de cycle sans rumble à effectuer pour décrémenter de 1 le compteur lent d'occurence rumble"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_idxCritRblThd_C
+       /*   LongIdentifier */   "Seuil critique sur la position du rumble pour abaissement du seuil de coupure injection."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   16.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bIdxMinPosnRblAcv_C
+       /*   LongIdentifier */   "Booléen pour prise en compte de l'index minimum (et non en cours) du rumble pour l'abaissement du seuil pour coupure injection."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bInhIrvLdLimRbl_C
+       /*   LongIdentifier */   "Booléen d'inhibition de la limitation de charge irréversible."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_bRblETB_C
+       /*   LongIdentifier */   "Activation du mode banc permettant la génération de coups de rumbler / cliquetis fort"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_ctPerdRblInjCutOffDec_C
+       /*   LongIdentifier */   "Calibration du nombre d'occurence de rumble à enlever lors de l'activation de la coupure injection."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   256.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_idxMaxETBCyl1_C
+       /*   LongIdentifier */   "Longueur de la séquence du cylindre 1 en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   16.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_idxMaxETBCyl2_C
+       /*   LongIdentifier */   "Longueur de la séquence du cylindre 2 en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   16.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_idxMaxETBCyl3_C
+       /*   LongIdentifier */   "Longueur de la séquence du cylindre 3 en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   16.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   KnkMgt_idxMaxETBCyl4_C
+       /*   LongIdentifier */   "Longueur de la séquence du cylindre 4 en mode banc"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   KnkMgrCorRbl_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_8
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   16.0
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_idxBkptETB_A
+       /*   LongIdentifier */   "Table d'appui pour les indices des séquences en mode banc"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   KnkMgt_idxETBCyl1
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup1D_X_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_1
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   15.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_rAirLd_A
+       /*   LongIdentifier */   "Table de points d'appuis de la charge moteur."
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_2
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0.0
+       /*   UpperLimit     */   3.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   KnkMgt_nEng_A
+       /*   LongIdentifier */   "Table de points d'appuis pour le régime moteur."
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   KnkMgrCorRbl_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   KnkMgrCorRbl_CM_3
+       /*   MaxAxisPoints  */   9
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   8191.875
+    /end AXIS_PTS
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctInjCutOffRbl_prev
+       /*   LongIdentifier     */   "Compteur du nombre de coupures injection pour les quatre cylindres au PMH précédent."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTotRbl_prev
+       /*   LongIdentifier     */   "Compteur du nombre de coup total de rumble au PMH précédent par cylindre"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurKnkRblCyl4_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble dans la fenêtre cliquetis (3 zones de régime, 3 zones de charge) pour le cylindre 4"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurRblCyl4_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble (3 zones de régime, 3 zones de charge) pour le cylindre 4"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurRblCyl3_prev
+       /*   LongIdentifier     */   "Compteur d'occurences rumble (3 zones de régime, 3 zones de charge) pour le cylindre 3"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurKnkRblCyl3_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble dans la fenêtre cliquetis (3 zones de régime, 3 zones de charge) pour le cylindre 3"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurRblCyl2_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble (3 zones de régime, 3 zones de charge) pour le cylindre 2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurKnkRblCyl2_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble dans la fenêtre cliquetis (3 zones de régime, 3 zones de charge) pour le cylindre 2"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurKnkRblCyl1_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble dans la fenêtre cliquetis (3 zones de régime, 3 zones de charge) pour le cylindre 1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctOccurRblCyl1_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur d'occurences rumble (3 zones de régime, 3 zones de charge) pour le cylindre 1"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   65535.0
+       MATRIX_DIM                   3 3 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_tqGlblTqRawSpThd
+       /*   LongIdentifier     */   "Torque setpoint threshold for the activation of the no action window"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   KnkMgrCorRbl_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -2000.0
+       /*   UpperLimit         */   2000.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctPerdRbl
+       /*   LongIdentifier     */   "Compteur à incrément (si rumble) - décrément (si absence de rumble)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxMinPosnRbl
+       /*   LongIdentifier     */   "Plus petit index de la position du rumble lors d'un enchaînement de coup de rumble."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   16.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTDCInjCutOff
+       /*   LongIdentifier     */   "Temporisation en nombre de pmh pour laquelle l'injection du cylindre est coupée."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_11
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTDCInjCutOffCyl_prev
+       /*   LongIdentifier     */   "Valeur prévédente de la temporisation en nombre de pmh pour laquelle l'injection du cylindre est coupée sur le cylindre en cours."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_11
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Knk_rbl_index_cyl
+       /*   LongIdentifier     */   "Index de la table Bruit_instantané_rbl_cyl pour lequel la valeur du bruit instantané dépasse le seuil de détection du rumble pour le cylindre en cours."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   16.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_nbNEngZoneRbl
+       /*   LongIdentifier     */   "Zone de fonctionnement en régime moteur pour le rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   3.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_nbRLdZoneRbl
+       /*   LongIdentifier     */   "Zone de fonctionnement en remplissage pour le rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   1.0
+       /*   UpperLimit         */   3.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctPerdRblCyl_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur à incrément (si rumble) - décrément (si absence de rumble) sur le cylindre en cours."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTotNbCycDecRbl_prev
+       /*   LongIdentifier     */   "Valeur précédente du nombre de cycle sans rumble à effectuer pour décrémenter de 1 le compteur lent d'occurence rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTotNbCycDecRbl
+       /*   LongIdentifier     */   "Nombre de cycle sans rumble à effectuer pour décrémenter de 1 le compteur lent d'occurence rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_stRblCurCyl
+       /*   LongIdentifier     */   "En mode banc, indique pour le cylindre courant le type de phénomène généré : 0=aucun, 1=cliquetis fort, 2=rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   2.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl4Prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur sur l'indice du cylindre 4"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxETBCyl4
+       /*   LongIdentifier     */   " Indice de la séquence du cylindre 4 en mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl4
+       /*   LongIdentifier     */   "Compteur sur l'indice courant du mode banc sur le cylindre 4"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_stRblCyl4
+       /*   LongIdentifier     */   "En mode banc, indique le type de phénomène généré pour le cylindre 4 : 0=aucun, 1=cliquetis fort, 2 = rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   2.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl3Prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur sur l'indice du cylindre 3"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxETBCyl3
+       /*   LongIdentifier     */   "Indice de la séquence du cylindre 3 en mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl3
+       /*   LongIdentifier     */   "Compteur sur l'indice courant du mode banc sur le cylindre 3"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_stRblCyl3
+       /*   LongIdentifier     */   " En mode banc, indique le type de phénomène généré pour le cylindre 3 : 0=aucun, 1=cliquetis fort, 2 = rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   2.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl2Prev
+       /*   LongIdentifier     */   " Valeur précédente du compteur sur l'indice du cylindre 2"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxETBCyl2
+       /*   LongIdentifier     */   "Indice de la séquence du cylindre 2 en mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl2
+       /*   LongIdentifier     */   "Compteur sur l'indice courant du mode banc sur le cylindre 2"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_stRblCyl2
+       /*   LongIdentifier     */   "En mode banc, indique le type de phénomène généré pour le cylindre 2 : 0=aucun, 1=cliquetis fort, 2 = rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   2.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl1Prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur sur l'indice du cylindre 1"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxETBCyl1
+       /*   LongIdentifier     */   "Indice de la séquence du cylindre 1 en mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   15.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctIdxETBCyl1
+       /*   LongIdentifier     */   "Compteur sur l'indice courant du mode banc sur le cylindre 1"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_stRblCyl1
+       /*   LongIdentifier     */   "En mode banc, indique le type de phénomène généré pour le cylindre 1 : 0=aucun, 1=cliquetis fort, 2 = rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   2.0
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctPerdRbl_prev
+       /*   LongIdentifier     */   "Valeur précédente du compteur à incrément (si rumble) - décrément (si absence de rumble)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_idxMinPosnRbl_prev
+       /*   LongIdentifier     */   "Valeur précédente du plus petit index de la position du rumble lors d'un enchaînement de coup de rumble."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_1
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.0
+       /*   UpperLimit         */   16.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_ctTDCInjCutOff_prev
+       /*   LongIdentifier     */   "Valeur prévédente de la temporisation en nombre de pmh pour laquelle l'injection du cylindre est coupée."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_11
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bMonRunORng_RblVlvPosn
+       /*   LongIdentifier     */   "Activation du diagnostic d'occurence rumble trop importante activant le décroissement des VVT"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bMonRunORng_RblTmpLdLim
+       /*   LongIdentifier     */   "Activation du diagnostic d'occurence rumble trop importante activant la limitation de charge temporaire"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bMonRunORng_RblIrvLdLim
+       /*   LongIdentifier     */   "Activation du diagnostic d'occurence rumble trop importante activant la limitation de charge irréversible"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bDgoORng_RblIrvLdLim
+       /*   LongIdentifier     */   "Résultat du diagnostic d'occurence rumble trop importante activant la limitation de charge irréversible"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bDgoORng_RblVlvPosn
+       /*   LongIdentifier     */   "Résultat du diagnostic d'occurence rumble trop importante activant le décroissement des VVT"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bDgoORng_RblTmpLdLim
+       /*   LongIdentifier     */   "Résultat du diagnostic d'occurence rumble trop importante activant la limitation de charge temporaire"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bAcvIrvLdLimRblReq
+       /*   LongIdentifier     */   "Booléen de demande de limitation du remplissage réversible/irréversible"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bAcvTmpLdLimRblReq
+       /*   LongIdentifier     */   "Booléen d'activation de la limitation de charge temporaire"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bAcvVlvPosnRblReq
+       /*   LongIdentifier     */   "Requête du mode VVT décroisées pour correction du rumble."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_prm_bInjCutOffRblCyl
+       /*   LongIdentifier     */   "Vecteur (cylindre en position physique) de requête de coupure injection pour cause de rumble"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bInjCutOffCylReq
+       /*   LongIdentifier     */   "Booléen de requête de coupure injection sur le cylindre en cours."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bRblAcvWin3
+       /*   LongIdentifier     */   "Activation of the occurence count window"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bSuperKnkDet
+       /*   LongIdentifier     */   "Booléen indiquant pour chaque cylindre que le cliquetis fort détecté est considéré comme du super cliquetis."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkRbl_bNEngHiSuperKnk
+       /*   LongIdentifier     */   "booléen indiquant que le régime est suffisament élevé pour considérer le cliquetis fort comme super cliquetis"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bKnkRblDetnCyl
+       /*   LongIdentifier     */   "Booléan indiquant la détection de cliquetis fort considéré comme du rumble sur le cylindre en cours"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bRblDetnCyl
+       /*   LongIdentifier     */   "Indicateur de présence rumble pour le cylindre en cours."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bRblInhWin
+       /*   LongIdentifier     */   "The state of the no action window (1: activated)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_rbl_Cfm
+       /*   LongIdentifier     */   "Présence de rumble confirmée (après mode banc) sur chaque cylindre"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_fort_cliquetis_Cfm
+       /*   LongIdentifier     */   "Présence de fort cliquetis confirmée, en aval du mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_cliquetis_CurCyl
+       /*   LongIdentifier     */   "Indicateur de présence de cliquetis sur le cylindre en cours"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_fort_cliq_CurCyl
+       /*   LongIdentifier     */   "Indicateur de présence de super cliquetis sur le cylindre en cours"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_rbl_CurCyl
+       /*   LongIdentifier     */   "Indicateur de présence de rumble sur le cylindre en cours"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_bInjCutOffRblCurCyl
+       /*   LongIdentifier     */   "Requete de coupure injection sur le cylindre en cours pour le mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_fort_cliquetis_bench
+       /*   LongIdentifier     */   "Indicateur de fort cliquetis issu du mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Detection_rbl_bench
+       /*   LongIdentifier     */   "Indicateur de cliquetis issu du mode banc"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   KnkMgt_prm_bInjCutOffRblCyl_prev
+       /*   LongIdentifier     */   "Vecteur (cylindre en position physique) de requête de coupure injection pour cause de rumble, au pas précédent"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   KnkMgrCorRbl_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       MATRIX_DIM                   1 4 1
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+       READ_WRITE                   
+    /end MEASUREMENT
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_1
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_2
+       /*   LongIdentifier */   "Q = V*16384"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 16384 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_3
+       /*   LongIdentifier */   "Q = V*8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "tr/min"
+       COEFFS                   0 8 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "RPM"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_5
+       /*   LongIdentifier */   "Q = (V+2000)*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "N.m"
+       COEFFS                   0 16 32000 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "su"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "bool"
+       COMPU_TAB_REF            KnkMgrCorRbl_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_8
+       /*   LongIdentifier */   "Q = (V-1)"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 -1 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_9
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_10
+       /*   LongIdentifier */   "Q = V*16"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "N.m"
+       COEFFS                   0 16 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   KnkMgrCorRbl_CM_11
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%12.9"
+       /*   Unit           */   "PMH"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   KnkMgrCorRbl_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   KnkMgrCorRbl
+       /*   LongIdentifier */   "  PTS_DOC_6144313.003"
+
+       /begin DEF_CHARACTERISTIC
+          KNKMGRCORRBL_u8Inhib
+          KnkMgt_bIdxMinPosnRblAcv_C
+          KnkMgt_bInhIrvLdLimRbl_C
+          KnkMgt_bRblETB_C
+          KnkMgt_ctIdxETBCyl1_T
+          KnkMgt_ctIdxETBCyl2_T
+          KnkMgt_ctIdxETBCyl3_T
+          KnkMgt_ctIdxETBCyl4_T
+          KnkMgt_ctInjCutOfTmpLimLdHiThd_C
+          KnkMgt_ctInjCutOfTmpLimLdLoThd_C
+          KnkMgt_ctInjCutOffVlvPosnHiThd_C
+          KnkMgt_ctInjCutOffVlvPosnLoThd_C
+          KnkMgt_ctOccurRblIrvLdLimHiThd_C
+          KnkMgt_ctOccurRbllrvLdLimLoThd_C
+          KnkMgt_ctPerdKnkRblInc_M
+          KnkMgt_ctPerdRblDec_M
+          KnkMgt_ctPerdRblInc_M
+          KnkMgt_ctPerdRblInjCutOffDec_C
+          KnkMgt_ctPerdRblInjCutOffThd1_T
+          KnkMgt_ctPerdRblInjCutOffThd2_T
+          KnkMgt_ctTDCInjCutOffDec_M
+          KnkMgt_ctTDCInjCutOffInc_M
+          KnkMgt_ctTotKnkRblInc_M
+          KnkMgt_ctTotNbCycDecRbl_C
+          KnkMgt_ctTotRblInc_M
+          KnkMgt_idxBkptETB_A
+          KnkMgt_idxCritRblThd_C
+          KnkMgt_idxMaxETBCyl1_C
+          KnkMgt_idxMaxETBCyl2_C
+          KnkMgt_idxMaxETBCyl3_C
+          KnkMgt_idxMaxETBCyl4_C
+          KnkMgt_nEngNbZoneRbl_A
+          KnkMgt_nEngSuperKnkHiThd_C
+          KnkMgt_nEngSuperKnkLoThd_C
+          KnkMgt_nEng_A
+          KnkMgt_rAirLdNbZoneRbl_A
+          KnkMgt_rAirLd_A
+          KnkMgt_rLdSuperKnkHiThd_C
+          KnkMgt_rLdSuperKnkLoThd_C
+          KnkMgt_stKnkETBCyl1_T
+          KnkMgt_stKnkETBCyl2_T
+          KnkMgt_stKnkETBCyl3_T
+          KnkMgt_stKnkETBCyl4_T
+          KnkMgt_tqGlblTqRawSpThd_M
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+          Detection_cliquetis_CurCyl
+          Detection_fort_cliq_CurCyl
+          Detection_fort_cliquetis_Cfm
+          Detection_fort_cliquetis_bench
+          Detection_rbl_Cfm
+          Detection_rbl_CurCyl
+          Detection_rbl_bench
+          KnkMgt_bDgoORng_RblIrvLdLim
+          KnkMgt_bDgoORng_RblTmpLdLim
+          KnkMgt_bDgoORng_RblVlvPosn
+          KnkMgt_bInjCutOffCylReq
+          KnkMgt_bInjCutOffRblCurCyl
+          KnkMgt_bKnkRblDetnCyl
+          KnkMgt_bMonRunORng_RblIrvLdLim
+          KnkMgt_bMonRunORng_RblTmpLdLim
+          KnkMgt_bMonRunORng_RblVlvPosn
+          KnkMgt_bRblAcvWin3
+          KnkMgt_bRblDetnCyl
+          KnkMgt_bRblInhWin
+          KnkMgt_ctIdxETBCyl1
+          KnkMgt_ctIdxETBCyl1Prev
+          KnkMgt_ctIdxETBCyl2
+          KnkMgt_ctIdxETBCyl2Prev
+          KnkMgt_ctIdxETBCyl3
+          KnkMgt_ctIdxETBCyl3Prev
+          KnkMgt_ctIdxETBCyl4
+          KnkMgt_ctIdxETBCyl4Prev
+          KnkMgt_ctInjCutOffRbl_prev
+          KnkMgt_ctOccurKnkRblCyl1_prev
+          KnkMgt_ctOccurKnkRblCyl2_prev
+          KnkMgt_ctOccurKnkRblCyl3_prev
+          KnkMgt_ctOccurKnkRblCyl4_prev
+          KnkMgt_ctOccurRblCyl1_prev
+          KnkMgt_ctOccurRblCyl2_prev
+          KnkMgt_ctOccurRblCyl3_prev
+          KnkMgt_ctOccurRblCyl4_prev
+          KnkMgt_ctPerdRblCyl_prev
+          KnkMgt_ctPerdRbl_prev
+          KnkMgt_ctTDCInjCutOffCyl_prev
+          KnkMgt_ctTDCInjCutOff_prev
+          KnkMgt_ctTotNbCycDecRbl
+          KnkMgt_ctTotNbCycDecRbl_prev
+          KnkMgt_ctTotRbl_prev
+          KnkMgt_idxETBCyl1
+          KnkMgt_idxETBCyl2
+          KnkMgt_idxETBCyl3
+          KnkMgt_idxETBCyl4
+          KnkMgt_idxMinPosnRbl_prev
+          KnkMgt_nbNEngZoneRbl
+          KnkMgt_nbRLdZoneRbl
+          KnkMgt_prm_bInjCutOffRblCyl_prev
+          KnkMgt_stRblCurCyl
+          KnkMgt_stRblCyl1
+          KnkMgt_stRblCyl2
+          KnkMgt_stRblCyl3
+          KnkMgt_stRblCyl4
+          KnkMgt_tqGlblTqRawSpThd
+          KnkRbl_bNEngHiSuperKnk
+          Knk_rbl_index_cyl
+       /end LOC_MEASUREMENT
+
+       /begin OUT_MEASUREMENT
+          KnkMgt_bAcvIrvLdLimRblReq
+          KnkMgt_bAcvTmpLdLimRblReq
+          KnkMgt_bAcvVlvPosnRblReq
+          KnkMgt_bSuperKnkDet
+          KnkMgt_ctPerdRbl
+          KnkMgt_ctTDCInjCutOff
+          KnkMgt_idxMinPosnRbl
+          KnkMgt_prm_bInjCutOffRblCyl
+       /end OUT_MEASUREMENT
+    /end FUNCTION
+ /end MODULE

@@ -1,0 +1,20 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description|MemSec
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|Fonction défaut logiciel|
+Thr_EveRst_ActrTstThr|A|();|SCH.1|THRACTEST|1|V02 NT 09 00783||||0|0|0|0|Evénement reset du calculateur|
+Thr_SdlMid_ActrTstThr|A|();|SCH.2|THRACTEST|1|V02 NT 09 00783||||0|0|0|0|Moniteur moyen de la fonction Thr.|
+THRACTEST_vidDiffPosnClcn|B|();|FCT2.3|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|L’écart de boucle locale (consigne – mesure) est calculé tout au long du test actionneur.|
+THRACTEST_vidDynTst|B|();|FCT1.5|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Fonction du test dynamique. Le test consiste à compter le temps que met le papillon à rejoindre sa consigne.|
+THRACTEST_vidDynTstEna|A|();|FCT1.4|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Fonction qui permet, à chaque changement de consigne, le lancement du test dynamique (compteur). Lorsque la position du papillon est suffisamment proche de sa consigne, on arrête le test.|
+THRACTEST_vidDynTstResClcn|A|();|FCT1.8|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Pendant le test actionneur, si le temps que met le papillon à atteindre sa consigne est supérieur à un seuil, alors le papillon est détecté encrassé, et le bit de résultat Thr_bDynActrTst est alors maintenu à 1.|
+THRACTEST_vidDynTstResInit|A|();|FCT1.6|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Au début de chaque test actionneur, le bit de résultat Thr_bDynActrTst est initialisé à 0.|
+THRACTEST_vidDynTstSpeed|E|();|FCT1.3|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Le test dynamique consiste à vérifier la vitesse de réaction du papillon à un échelon de consigne pour détecter un éventuel encrassement.|
+THRACTEST_vidGapTest|C|();|FCT2.4|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Un temps calibrable est laissé au papillon pour atteindre sa consigne (phase 1), puis si le papillon reste trop distant de sa consigne pendant un temps calibrable, alors on détecte un papillon collé.|
+THRACTEST_vidGapTestMain|D|();|FCT2.1|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Le test écart de boucle consiste à vérifier que le papillon atteint bien sa consigne|
+THRACTEST_vidGapTstEna|A|();|FCT2.2|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Le test écart de boucle est lancé à chaque changement de consigne.|
+THRACTEST_vidGapTstResClcn|B|();|FCT2.7|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|A cours du test actionneur, dès qu’un écart de boucle est détecté, le bit de résultat Thr_bGapActrTst est maintenu à 1.|
+THRACTEST_vidGapTstResInit|A|();|FCT2.5|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Au début de chaque test actionneur, le bit de résultat Thr_bGapActrTst est initialisé à 0.|
+THRACTEST_vidInitDynTst|A|();|FCT1.7|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Fonction de mise à zéro du résultat du test dynamique(Thr_bDynActrTst).|
+THRACTEST_vidInitGapTst|A|();|FCT2.6|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|fonction de mise à zéro de résultat du test écart de boucle (Thr_bGapActrTst).|
+THRACTEST_vidInitOutput|A|();|FCT1.1|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Initialisation des sorties et des tests actionneurs.|
+THRACTEST_vidThrTstSpChart|F|();|FCT1.2|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|Quand un test actionneur papillon est lancé, une consigne spécifique à 5 paliers est appliquée au papillon pendant le test actionneur. Si le test se déroule entièrement, le bit Thr_bTstCmpl passe à 1.|
+THRACTEST_vidUpdateGapTst|A|();|FCT2.8|THRACTEST|0|V02 NT 09 00783||||0|0|0|0|le bit de résultat Thr_bGapActrTst est maintenu à 1|

@@ -1,0 +1,22 @@
+Nom_fonction|Release_fonction|Prototype|Num_stc|Nom_module|Public|Reférence_spec_systéme|Reférence_spec_systéme_1|Reférence_spec_systéme_2|Reférence_spec_systéme_3|Fonction_à_supprimer|Validation|Export_part|Macro|function_description
+IgLim_EveBDC_ShdCor|A|();|SCH.3|KNKSHDCOR|1|V02 NT 08 07294||||0|0|0|0|Interruption PMB
+IgLim_EveCkSnOn_ShdCor|A|();|SCH.2|KNKSHDCOR|1|V02 NT 08 07294||||0|0|0|0|Evénement correspondant au passage à 1 de la variable Moteur_synchronise
+IgLim_EveRst_ShdCor|A|();|SCH.1|KNKSHDCOR|1|V02 NT 08 07294||||0|0|0|0|Evénement reset du calculateur
+KNKSHDCOR_vidComp_corr_dec|B|();|FCT2.7|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Tous les Knk_deg_cor_dec_delay_uacn1 PMH, on décrémente la correction de Knk_deg_cor_dec_uacn0 °Vil.
+KNKSHDCOR_vidCorr_calculate|B|();|FCT1.9|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|La correction d’avance anti-cliquetis est appliquée si dans la fenêtre d’observation, le nombre de « coups de cliquetis » en mode dégradé dépasse un seuil calibrable.
+KNKSHDCOR_vidCorr_dec|A|();|FCT2.6|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Une fois le délai de maintien écoulé, on commence à décrémenter la correction d’avance anti-cliquetis. La décrémentation Knk_deg_cor_dec_uacn0 est alors appliquée avec un délai entre chaque application.
+KNKSHDCOR_vidCorr_enable|A|();|FCT2.3|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Lorsque la correction est de nouveau autorisée (changement de rapport effectué), on filtre celle-ci vers sa dernière valeur avec un filtre de coefficient Knk_deg_cor_in_filt_uacn0.
+KNKSHDCOR_vidCorr_inc|A|();|FCT2.4|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|La correction s’incrémente de la valeur de Knk_deg_cor_inc_uacn0 tous les PMB jusqu’à atteindre Knk_deg_cor_offset_uacn0.
+KNKSHDCOR_vidCorr_init|A|();|FCT2.1|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Lorsque le compteur de "coups de cliquetis" dépasse une valeur calibrable, on active la correction palliative de cliquetis et on remet à zéro des paramètres de la détection.
+KNKSHDCOR_vidCorr_manage|A|();|FCT1.4|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|La correction d’avance anti-cliquetis est décomposée en deux parties : Gestion des fenêtres d'observation des détections dégradées et Gestion de la correction s'il y a eu un nombre de détections dégradées suffisantes lors de l'observation.
+KNKSHDCOR_vidCorr_manager|A|();|FCT1.2|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Si la stratégie de détection palliative de cliquetis est inhibée, la correction palliative n’a pas lieu d’être activée.
+KNKSHDCOR_vidCorrect_palliative|A|();|FCT1.3|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|En cas de sortie de zone critique ou de zone d'autorisation cliquetis, la correction palliative est filtrée vers 0.Lors du retour en zone critique, la correction revient par filtrage à sa valeur lors de la sortie de la zone critique.
+KNKSHDCOR_vidDec_win|B|();|FCT1.7|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|comptage du nombres de "coups de cliquetis" pendant la fenêtre d'observation
+KNKSHDCOR_vidInit|A|();|FCT1.1|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Au Reset du calculateur (EveRst), ainsi qu’a l’activation des combustions (EveRTSn), on réinitialise les variables de la stratégie.
+KNKSHDCOR_vidInit_win|B|();|FCT1.6|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Ouvertire de la fenêtre d'observation suite à une détection palliative du premier coup de cliquetis.
+KNKSHDCOR_vidKnk_count|B|();|FCT1.8|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|A chaque fois que l’on détecte un « coup de cliquetis » de la stratégie palliative, on incrémente le compteur Knk_deg_det_count_uavn1 du cylindre considéré.
+KNKSHDCOR_vidKnk_inc_stop|A|();|FCT2.5|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Une fois la correction d’avance Knk_deg_cor_offset_uacn0 atteinte, on initialise le délai de maintien.
+KNKSHDCOR_vidraz_corr|B|();|FCT1.10|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Dans les cas hors zone critique, il n'est pas nécessaire d'appliquer une correction dégradée. La correction est alors filtrée vers 0. La fenêtre d’observation et le compteur de "coups de cliquetis" sont remis à zéro.
+KNKSHDCOR_vidReset_win|B|();|FCT2.2|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Lorsqu’une fenêtre se termine, on remet à zero le compteur de "coups de cliquetis".
+KNKSHDCOR_vidWin_manage|B|();|FCT1.5|KNKSHDCOR|0|V02 NT 08 07294||||0|0|0|0|Une fois la détection palliative réalisée, on utilise une fenêtre d’observation (en nombre de cycles) pour confirmer ou non la présence de cliquetis.
+SWFAIL_vidSoftwareErrorHook|A|();|1|HEADER|1|NONE||||0|0|0|0|

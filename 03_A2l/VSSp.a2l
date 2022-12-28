@@ -1,0 +1,3186 @@
+/begin MODULE  VSSp "VSSp 12.2"
+
+    /begin CHARACTERISTIC RE_VSSP_002_TEV_B "Bypass of RE_VSSP_002_TEV"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC RE_VSSP_003_TEV_B "Bypass of RE_VSSP_003_TEV"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_aVeh_rAccPTraMaxDVSRegX_A "Axis description"
+      0x0 VSCtl_aVehDVSRegReq VSSp_RL_SWORD_AXIS 20 VSSp_CM_2 /* m/s2:0.0009765625:0: */ 16 -10 10
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_bAcvFilTqWhlPTMinSat "Activation du filtre sur la saturation min couple roue GMP"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_rAccPMaxDVSReg "Activation filtrage position pedale max ACC"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_rAccPMaxVSLim "Activation filtrage position pedale max LVV"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_rAccPMaxVSMax "Activation filtrage position pedale max BVV"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_rAccPMaxVSReg "Activation filtrage position pedale max RVV"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_rAccPTra "Activation filtrage position pedale transmission"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqCkEfcMax "Activation filtrage couple moteur max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqCkEfcMin "Activation filtrage couple moteur min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqEfcTarMax "Activation filtrage couple cible moteur max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqEfcTarMin "Activation filtrage couple cible moteur min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqWhlPTMax "Activation du filtre sur le couple roue GMP max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqWhlPTMin "Activation du filtre sur le couple roue GMP min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqWhlPTPot "Activation filtrage potentiel couple roue"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqWhlPTPotMax "Activation du filtre sur le potentiel couple roue GMP XVV max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAcvFil_tqWhlPTPotMin "Activation du filtre sur le potentiel couple roue GMP XVV min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bAcvTqCkEfcMaxReqSat_C "Activation critere temporel transition consigne couple moteur Max"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvTqWhlPTMaxReqSat_C "Activation critere temporel transition consigne couple roue GMP Max"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bAcvTqWhlPTMinSat_B "Bypass de VSCtl_bAcvTqWhlPTMinSat"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bAntTqWhlPTMaxReq "Demande anticipation couple roue GMP XVV Max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAntTqWhlPTMinReq "Demande anticipation couple roue GMP XVV Min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSdwn_noGearMaxTqN "Autorisation changement rapport descendant rapport max couple negatif"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSdwn_noGearMaxTqP "Autorisation changement rapport descendant rapport max couple positif"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSdwn_noGearMin "Autorisation changement rapport descendant rapport min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSup_noGearMin "Autorisation changement rapport montant rapport min"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSup_noGearMxTqNeg "Autorisation changement rapport montant rapport max couple negatif"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bAuthSup_noGearMxTqPos "Autorisation changement rapport montant rapport max couple positif"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_rAccPMax_pt1 "Effectivite position pedale accelerateur max GMP 1"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_rAccPMax_pt2 "Effectivite position pedale accelerateur max GMP 2"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_rAccPMin_pt1 "Effectivite position pedale accelerateur min GMP 1"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_rAccPMin_pt2 "Effectivite position pedale accelerateur min GMP 2"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqCkEfcMax_B "Bypass de VSCtl_bCtlEfc_tqCkEfcMax"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqCkEfcMin_B "Bypass de VSCtl_bCtlEfc_tqCkEfcMin"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqWhlPTMax_B "Bypass de VSCtl_bCtlEfc_tqWhlPTMax"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqWhlPTMin_B "Bypass de VSCtl_bCtlEfc_tqWhlPTMin"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_tqWhlPT_pt1 "Contrôle couple roue GMP XVV effectif GMP 1"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqWhlPT_pt1_B "Bypass de VSCtl_bCtlEfc_tqWhlPT_pt1"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bCtlEfc_tqWhlPT_pt2 "Contrôle couple roue GMP XVV effectif GMP 2"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqWhlPT_pt2_B "Bypass de VSCtl_bCtlEfc_tqWhlPT_pt2"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bCtlEfc_tqWhlPt_B "Bypass de VSCtl_bCtlEfc_tqWhlPt"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacSdwn_noGearMaxTqN_C "Desactivation du pilotage rapport max en couple roue negatif"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bDeacTqPotMax_noGearMax_C "Desactivation du pilotage rapport max a partir du potentiel de couple max"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_bInhRecup_B "Bypass de VSCtl_bInhRecup"
+      VALUE 0x0 VSSp_RL_UBYTE 1 VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_bTranEnd_tqCkEfcMax "VSCtl_bTranEnd_tqCkEfcMax"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_bTranEnd_tqWhlPTMax "Fin de Transition sur le couple roue GMP Max"
+      UBYTE VSSp_CM_1 /* FT_enumeration1:((0=FALSE)(1=TRUE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_ctDec_rAnt_tqWhlPTMax_C "Valeur de decrement du taux d anticipation couple roue GMP XVV Max"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_3 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_ctDec_rAnt_tqWhlPTMin_C "Valeur de decrement du taux d anticipation couple roue GMP XVV Min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_3 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_ctInc_rAnt_tqWhlPTMax_C "Valeur d increment du taux d anticipation couple roue GMP XVV Max"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_3 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_ctInc_rAnt_tqWhlPTMin_C "Valeur d increment du taux d anticipation couple roue GMP XVV Min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_3 /* :0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_dtqWhlPTPotReq "Variation de VSCtl_tqWhlPTPotReq"
+      SWORD VSSp_CM_4 /* :0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_dtq_tiCfmSdwnTqWhlTqP_Y_A "Variation de VSCtl_tqWhlPTPotReq"
+      0x0 VSCtl_dtqWhlPTPotReq VSSp_RL_SWORD_AXIS 32000 VSSp_CM_4 /* :0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_dtq_tiCfmSupTqWhlTqPosY_A "Variation de VSCtl_tqWhlPTPotReq"
+      0x0 VSCtl_dtqWhlPTPotReq VSSp_RL_SWORD_AXIS 32000 VSSp_CM_4 /* :0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_nEngGear2 "Regime moteur en 2e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear3 "Regime moteur en 3e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear4 "Regime moteur en 4e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear5 "Regime moteur en 5e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear6 "Regime moteur en 6e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear7 "Regime moteur en 7e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_nEngGear8 "Regime moteur en 8e"
+      UWORD VSSp_CM_5 /* rpm:1:0: */ 1 0 0 7500
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_nEng_rAccPEngMax_Y_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 16 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_nEng_rAccPEngMin_Y_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 16 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_nEng_tiCfmGear_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_nEng_tiCfmSdwnTqPos_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_nEng_tiCfmSupTqPos_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_nEng_tqCkEfc_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear2MaxAbsHi_C "Regime roue en 2e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear2MaxAbsLo_C "Regime roue en 2e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear2MaxCtfHi_C "Regime roue en 2e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear2MaxCtfLo_C "Regime roue en 2e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear3MaxAbsHi_C "Regime roue en 3e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear3MaxAbsLo_C "Regime roue en 3e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear3MaxCtfHi_C "Regime roue en 3e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear3MaxCtfLo_C "Regime roue en 3e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear4MaxAbsHi_C "Regime roue en 4e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear4MaxAbsLo_C "Regime roue en 4e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear4MaxCtfHi_C "Regime roue en 4e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear4MaxCtfLo_C "Regime roue en 4e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear5MaxAbsHi_C "Regime roue en 5e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear5MaxAbsLo_C "Regime roue en 5e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear5MaxCtfHi_C "Regime roue en 5e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear5MaxCtfLo_C "Regime roue en 5e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear6MaxAbsHi_C "Regime roue en 6e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear6MaxAbsLo_C "Regime roue en 6e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear6MaxCtfHi_C "Regime roue en 6e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear6MaxCtfLo_C "Regime roue en 6e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear7MaxAbsHi_C "Regime roue en 7e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear7MaxAbsLo_C "Regime roue en 7e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear7MaxCtfHi_C "Regime roue en 7e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear7MaxCtfLo_C "Regime roue en 7e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear8MaxAbsHi_C "Regime roue en 8e absolu seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear8MaxAbsLo_C "Regime roue en 8e absolu seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear8MaxCtfHi_C "Regime roue en 8e de confort seuil haut rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nFrntWhlGear8MaxCtfLo_C "Regime roue en 8e de confort seuil bas rapport max"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_nPrimShaftTar_tqEfcTar_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 7500 VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1NegMinAbsHi_C "Regime roue en 1er absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1NegMinAbsLo_C "Regime roue en 1er absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1NegMinCftHi_C "Regime roue en 1er de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1NegMinCftLo_C "Regime roue en 1er de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1PosMinAbsHi_C "Regime roue en 1er absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1PosMinAbsLo_C "Regime roue en 1er absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1PosMinCftHi_C "Regime roue en 1er de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear1PosMinCftLo_C "Regime roue en 1er de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2NegMinAbsHi_C "Regime roue en 2e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2NegMinAbsLo_C "Regime roue en 2e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2NegMinCftHi_C "Regime roue en 2e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2NegMinCftLo_C "Regime roue en 2e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2PosMinAbsHi_C "Regime roue en 2e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2PosMinAbsLo_C "Regime roue en 2e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2PosMinCftHi_C "Regime roue en 2e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear2PosMinCftLo_C "Regime roue en 2e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3NegMinAbsHi_C "Regime roue en 3e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3NegMinAbsLo_C "Regime roue en 3e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3NegMinCftHi_C "Regime roue en 3e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3NegMinCftLo_C "Regime roue en 3e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3PosMinAbsHi_C "Regime roue en 3e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3PosMinAbsLo_C "Regime roue en 3e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3PosMinCftHi_C "Regime roue en 3e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear3PosMinCftLo_C "Regime roue en 3e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4NegMinAbsHi_C "Regime roue en 4e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4NegMinAbsLo_C "Regime roue en 2e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4NegMinCftHi_C "Regime roue en 4e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4NegMinCftLo_C "Regime roue en 4e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4PosMinAbsHi_C "Regime roue en 4e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4PosMinAbsLo_C "Regime roue en 4e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4PosMinCftHi_C "Regime roue en 4e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear4PosMinCftLo_C "Regime roue en 4e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5NegMinAbsHi_C "Regime roue en 5e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5NegMinAbsLo_C "Regime roue en 5e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5NegMinCftHi_C "Regime roue en 5e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5NegMinCftLo_C "Regime roue en 5e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5PosMinAbsHi_C "Regime roue en 5e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5PosMinAbsLo_C "Regime roue en 5e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5PosMinCftHi_C "Regime roue en 5e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear5PosMinCftLo_C "Regime roue en 5e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6NegMinAbsHi_C "Regime roue en 6e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6NegMinAbsLo_C "Regime roue en 6e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6NegMinCftHi_C "Regime roue en 6e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6NegMinCftLo_C "Regime roue en 6e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6PosMinAbsHi_C "Regime roue en 6e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6PosMinAbsLo_C "Regime roue en 6e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6PosMinCftHi_C "Regime roue en 6e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear6PosMinCftLo_C "Regime roue en 6e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7NegMinAbsHi_C "Regime roue en 7e absolu seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7NegMinAbsLo_C "Regime roue en 7e absolu seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7NegMinCftHi_C "Regime roue en 7e de confort seuil haut rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7NegMinCftLo_C "Regime roue en 7e de confort seuil bas rapport min couple negatif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7PosMinAbsHi_C "Regime roue en 7e absolu seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7PosMinAbsLo_C "Regime roue en 7e absolu seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7PosMinCftHi_C "Regime roue en 7e de confort seuil haut rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_nWhlGear7PosMinCftLo_C "Regime roue en 7e de confort seuil bas rapport min couple positif"
+      VALUE 0x0 VSSp_RL_ULONG 10000 VSSp_CM_6 /* rpm:0.0078125:0: */ 0 10000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_noGearMax "Rapport BV max"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxAL4_C "Rapport BV max possible pour une BV AL4"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxAuto1_C "Rapport BV max possible pour une BV Auto"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxAx6_C "Rapport BV max possible pour une BV Ax6"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxBVM_C "Rapport BV max possible pour une BV BVM"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxDCT_C "Rapport BV max possible pour une BV DCT"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxMAP_C "Rapport BV max possible pour une BV MAP"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxMCP_C "Rapport BV max possible pour une BV MCP"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearMaxPilote1_C "Rapport BV max possible pour une BV Pilotée"
+      VALUE 0x0 VSSp_RL_UBYTE 8 VSSp_CM_8 /* FT_enumeration1:((0=NEUTRE)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=7EME_RAPPORT)(8=8EME_RAPPORT)) */ 0 8
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_noGearMaxTqNegFil "Consigne rapport BV max couple negatif filtre"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMaxTqNegFilRaw "Consigne rapport BV max couple negatif filtre brut"
+      UBYTE VSSp_CM_9 /* FT_enumeration1:((7=RESERVE_7)(12=RESERVE_12)(2=2EME_RAPPORT)(8=RESERVE_8)(13=RESERVE_13)(4=4EME_RAPPORT)(1=1ER_RAPPORT)(9=RESERVE_9)(0=RAPPORT_DE_REPLI_BAS)(6=6EME_RAPPORT)(10=RESERVE_10)(14=RESERVE_14)(3=3EME_RAPPORT)(11=RESERVE_11)(15=RAPPORT_DE_REPLI_HAUT)(5=5EME_RAPPORT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMaxTqNegRaw "Consigne rapport BV max couple negatif brut"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMaxTqPosFil "Consigne rapport BV max couple positif filtre"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMaxTqPosRaw "Consigne rapport BV max couple positif brut"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMinTqPosFil "Consigne rapport BV min couple positif filtre"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearMinTqPosRaw "Consigne rapport BV min couple positif brut"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_noGearReqMax_B "Bypass de VSCtl_noGearReqMax"
+      VALUE 0x0 VSSp_RL_UBYTE 15 VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 0 15
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_noGearReqMin_B "Bypass de VSCtl_noGearReqMin"
+      VALUE 0x0 VSSp_RL_UBYTE 15 VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 0 15
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_noGearTqNegMin "Rapport BV min couple negatif"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_noGearTqPosMin "Rapport BV min couple positif"
+      UBYTE VSSp_CM_7 /* FT_enumeration1:((0=RAPPORT_DE_REPLI_BAS)(1=1ER_RAPPORT)(2=2EME_RAPPORT)(3=3EME_RAPPORT)(4=4EME_RAPPORT)(5=5EME_RAPPORT)(6=6EME_RAPPORT)(7=RESERVE_7)(8=RESERVE_8)(9=RESERVE_9)(10=RESERVE_10)(11=RESERVE_11)(12=RESERVE_12)(13=RESERVE_13)(14=RESERVE_14)(15=RAPPORT_DE_REPLI_HAUT)) */ 1 0 0 15
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngMax_B "Bypass de VSCtl_rAccPEngMax"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngMax_M "Position pedale acceleration moteur XVV max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 16 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkEfcMaxR_rAccPEngMxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 16 0 7500
+    AXIS_PTS_REF VSCtl_nEng_rAccPEngMax_Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngMin_B "Bypass de VSCtl_rAccPEngMin"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngMin_M "Position pedale acceleration moteur XVV min"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 16 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkEfcMinR_rAccPEngMnX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 16 0 7500
+    AXIS_PTS_REF VSCtl_nEng_rAccPEngMin_Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngSatMax_T "Saturation haute de la pedale accelerateur moteur XVV"
+      CURVE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkEfcEr_rAccPEngSatMx_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPEngSatMin_T "Saturation basse de la pedale accelerateur moteur XVV"
+      CURVE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkEfcEr_rAccPEngSatMn_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPMinVSLim_C "Position pedale transmission LVV min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPMinVSMax_C "Position pedale transmission BVV min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTMax_B "Bypass de VSCtl_rAccPPTMax"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTMax_M "Position pedale acceleration GMP XVV max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 13 -4000 11000
+    AXIS_PTS_REF VSCtl_tqWhlPTMaxReq_rAccPMxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_11 /* km/h:0.0078125:0: */ 25 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPPTMax_Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTMin_B "Bypass de VSCtl_rAccPPTMin"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTMin_M "Position pedale acceleration GMP XVV min"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 13 -4000 11000
+    AXIS_PTS_REF VSCtl_tqWhlPTMinReq_rAccPMnX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_11 /* km/h:0.0078125:0: */ 25 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPPTMin_Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTSatMax_T "Saturation haute de la pedale accelerateur GMP XVV"
+      CURVE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tqWhlPTErr_rAccPPTSatMx_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPPTSatMin_T "Saturation basse de la pedale accelerateur GMP XVV"
+      CURVE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tqWhlPTErr_rAccPPTSatMn_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMaxDVSReg "Position pedale accelerateur transmission ACC max"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMaxDVSReg_M "Position pedale transmission ACC max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_aVehDVSRegReq VSSp_CM_2 /* m/s2:0.0009765625:0: */ 16 -10 10
+    AXIS_PTS_REF VSCtl_aVeh_rAccPTraMaxDVSRegX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPTrMxDVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMaxVSLim "Position pedale accelerateur transmission LVV max"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMaxVSLim_M "Position pedale transmission LVV max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSLim VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdVehE_rAccPTrMxVSLimX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPTraMxVSLimY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMaxVSMax "Position pedale accelerateur transmission BVV max"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMaxVSMax_M "Position pedale transmission BVV max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSMax VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdVehE_rAccPTrMxVSMaxX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPTraMxVSMaxY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMaxVSReg "Position pedale accelerateur transmission RVV max"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMaxVSReg_M "Position pedale transmission RVV max"
+      MAP 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVehErrVSReg VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    AXIS_PTS_REF VSCtl_spdVehE_rAccPTrMxVSRegX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_spdVeh VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    AXIS_PTS_REF VSCtl_spdVeh_rAccPTraMxVSRegY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMax_B "Bypass de VSCtl_rAccPTraMax"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMinDVSReg "Position pedale accelerateur transmission ACC min"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMinDVSReg_C "Position pedale transmission ACC min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAccPTraMinVSLim "Position pedale accelerateur transmission LVV min"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_rAccPTraMinVSMax "Position pedale accelerateur transmission BVV min"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_rAccPTraMinVSReg "Position pedale accelerateur transmission RVV min"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMinVSReg_C "Position pedale transmission RVV min"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rAccPTraMin_B "Bypass de VSCtl_rAccPTraMin"
+      VALUE 0x0 VSSp_RL_UWORD 100 VSSp_CM_10 /* %:0.0078125:0: */ 0 100
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_rAnt_tqWhlPTMax "Taux anticipation couple roue GMP XVV Max"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_rAnt_tqWhlPTMin "Taux anticipation couple roue GMP XVV Min"
+      UWORD VSSp_CM_10 /* %:0.0078125:0: */ 1 0 0 100
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear2_C "TCC du 2e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear3_C "TCC du 3e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear4_C "TCC du 4e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear5_C "TCC du 5e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear6_C "TCC du 6e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear7_C "TCC du 7e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_rConvTra_gear8_C "TCC du 8e rapport"
+      VALUE 0x0 VSSp_RL_UWORD 19.9921875 VSSp_CM_3 /* :0.0078125:0: */ 0.0078125 20
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_spdVehE_rAccPTrMxVSLimX_A "Axis description"
+      0x0 VSCtl_spdVehErrVSLim VSSp_RL_SWORD_AXIS 510 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVehE_rAccPTrMxVSMaxX_A "Axis description"
+      0x0 VSCtl_spdVehErrVSMax VSSp_RL_SWORD_AXIS 510 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVehE_rAccPTrMxVSRegX_A "Axis description"
+      0x0 VSCtl_spdVehErrVSReg VSSp_RL_SWORD_AXIS 510 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 -255 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPPTMax_Y_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 25 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPPTMin_Y_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 25 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPTrMxDVSRegY_A "Axis description"
+      0x0 VSCtl_spdVeh VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPTraMxVSLimY_A "Axis description"
+      0x0 VSCtl_spdVeh VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPTraMxVSMaxY_A "Axis description"
+      0x0 VSCtl_spdVeh VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_spdVeh_rAccPTraMxVSRegY_A "Axis description"
+      0x0 VSCtl_spdVeh VSSp_RL_UWORD_AXIS 255 VSSp_CM_11 /* km/h:0.0078125:0: */ 16 0 255
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_stCtl_noGearMax "Mode commande rapport BV max"
+      UBYTE VSSp_CM_12 /* FT_enumeration1:((0=ARRET)(1=MARCHE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_noGearMin "Mode commande rapport BV min"
+      UBYTE VSSp_CM_12 /* FT_enumeration1:((0=ARRET)(1=MARCHE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stCtl_noGear_B "Bypass de VSCtl_stCtl_noGear"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_13 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=DEFAUT)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPDVSReg "Etat position pedale ACC"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPDVSRegPrev "Etat position pedale ACC precedent"
+      UBYTE VSSp_CM_15 /* FT_enumeration1:((1=CONTROLE)(0=ARRET)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPTra "Mode calcul position pedale accelerateur transmission"
+      UBYTE VSSp_CM_16 /* FT_enumeration1:((0=ARRET)(1=ACTIF)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSLim "Etat position pedale LVV"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSLimPrev "Etat position pedale LVV precedent"
+      UBYTE VSSp_CM_15 /* FT_enumeration1:((1=CONTROLE)(0=ARRET)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSMax "Etat position pedale BVV"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSMaxPrev "Etat position pedale BVV precedent"
+      UBYTE VSSp_CM_15 /* FT_enumeration1:((1=CONTROLE)(0=ARRET)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSReg "Etat position pedale RVV"
+      UBYTE VSSp_CM_17 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANSITION)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_rAccPVSRegPrev "Etat position pedale RVV precedent"
+      UBYTE VSSp_CM_18 /* FT_enumeration1:((1=CONTROLE)(2=TRANSITION)(0=ARRET)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqCkEfcMax "Etat de contrôle couple moteur max"
+      UBYTE VSSp_CM_19 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANS_L)(3=TRANS_R)(4=INIT)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqCkEfcMin "Etat de contrôle couple moteur min"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqEfcTarMax "Etat controle couple moteur cible max"
+      UBYTE VSSp_CM_20 /* FT_enumeration1:((0=ARRET)(1=HORS_SIP)(2=SIP)(3=FIN_SIP_HIGH)(4=FIN_SIP_LOW)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqEfcTarMin "Etat controle couple moteur cible min"
+      UBYTE VSSp_CM_20 /* FT_enumeration1:((0=ARRET)(1=HORS_SIP)(2=SIP)(3=FIN_SIP_HIGH)(4=FIN_SIP_LOW)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlMaxPrev "Etat contrôle couple roue max"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlMinPrev "Etat contrôle couple roue min"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlPTMax "Etat de contrôle couple roue GMP Max"
+      UBYTE VSSp_CM_19 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)(2=TRANS_L)(3=TRANS_R)(4=INIT)) */ 1 0 0 4
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlPTMin "Etat de contrôle couple roue GMP Min"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlPTPot "Etat contrôle potentiel couple roue GMP XVV"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlPTPotMax "Etat contrôle potentiel couple roue GMP XVV max"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stCtl_tqWhlPTPotMin "Etat contrôle potentiel couple roue GMP XVV min"
+      UBYTE VSSp_CM_14 /* FT_enumeration1:((0=ARRET)(1=CONTROLE)) */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stGearCtlReq_B "Bypass de VSCtl_stGearCtlReq"
+      VALUE 0x0 VSSp_RL_UBYTE 3 VSSp_CM_21 /* FT_enumeration1:((0=NON_DEMANDE)(1=DEMANDE)(2=DEMANDE_EN_MODE_FULL_PASS)(3=RESERVE)) */ 0 3
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMaxCtl_B "Bypass de VSCtl_stTqPTMaxCtl"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_22 /* FT_enumeration1:((0=INACTIF)(1=ACTIF_EFFECTIF)(2=ACTIF_NON_EFFECTIF)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqPTMaxCtl_pt1 "Effectivite couple GMP XVV max GMP 1"
+      UBYTE VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMaxCtl_pt1_B "Bypass de VSCtl_stTqPTMaxCtl_pt1"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqPTMaxCtl_pt2 "Effectivite couple GMP XVV max GMP 2"
+      UBYTE VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMaxCtl_pt2_B "Bypass de VSCtl_stTqPTMaxCtl_pt2"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMinCtl_B "Bypass de VSCtl_stTqPTMinCtl"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_22 /* FT_enumeration1:((0=INACTIF)(1=ACTIF_EFFECTIF)(2=ACTIF_NON_EFFECTIF)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqPTMinCtl_pt1 "Effectivite couple GMP XVV min GMP 1"
+      UBYTE VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMinCtl_pt1_B "Bypass de VSCtl_stTqPTMinCtl_pt1"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqPTMinCtl_pt2 "Effectivite couple GMP XVV min GMP 2"
+      UBYTE VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqPTMinCtl_pt2_B "Bypass de VSCtl_stTqPTMinCtl_pt2"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqWhlPTCutOffMnRPrev "Etat pilotage couple GMP XVV bande morte precedent"
+      UBYTE VSSp_CM_24 /* FT_enumeration1:((0=ARRET)(1=PILOTAGE_H)(2=PILOTAGE_B)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stTqWhlPTCutOffMxRPrev "Etat pilotage couple GMP XVV bande morte precedent"
+      UBYTE VSSp_CM_24 /* FT_enumeration1:((0=ARRET)(1=PILOTAGE_H)(2=PILOTAGE_B)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_stTqWhlPTCutOffReqPrev "Etat pilotage couple GMP XVV bande morte precedent"
+      UBYTE VSSp_CM_25 /* FT_enumeration1:((0=ARRET)(1=PILOTAGE_HAUT)(2=PILOTAGE_BAS)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqWhlPTCutOffReq_B "Bypass de VSCtl_stTqWhlPTCutOffReq"
+      VALUE 0x0 VSSp_RL_UBYTE 2 VSSp_CM_26 /* FT_enumeration1:((0=ARRET_INDETERMINE)(1=PILOTAGE_HAUT)(2=PILOTAGE_BAS)) */ 0 2
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_stTqWhlPTMinSat "Etat de contrôle de la consigne saturation min du couple roue GMP"
+      UBYTE VSSp_CM_27 /* FT_enumeration1:((0=ARRET)(1=CONTROLE_32)(2=TRANSITION_32)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_stTqWhlPTPotCtlReq_B "Bypass de VSCtl_stTqWhlPTPotCtlReq"
+      VALUE 0x0 VSSp_RL_UBYTE 3 VSSp_CM_28 /* FT_enumeration1:((0=NON_DEMANDE)(1=DEMANDE_MODE_1)(2=DEMANDE_MODE_2)(3=DEMANDE_MODE_3)) */ 0 3
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_st_rAccPCtl_pt1 "Effectivite position pedale accelerateur GMP 1"
+      UBYTE VSSp_CM_23 /* FT_enumeration1:((0=INACTIF)(1=AE)(2=ANE)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_st_rAccPCtl_pt2 "Effectivite position pedale accelerateur GMP 2"
+      UBYTE VSSp_CM_29 /* FT_enumeration1:((1=AE)(2=ANE)(0=INACTIF)) */ 1 0 0 2
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSdwn_noGearMin "Temps autorisation changement rapport descendant rapport min"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSdwn_noGearMxTN2 "Temps autorisation changement rapport descendant rapport max couple negatif 2"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSdwn_noGearMxTqN "Temps autorisation changement rapport descendant rapport max couple negatif 1"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSdwn_noGearMxTqP "Temps autorisation changement rapport descendant rapport max couple positif"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSup_noGearMaxTqN "Temps autorisation changement rapport montant rapport max couple negatif"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSup_noGearMaxTqP "Temps autorisation changement rapport montant rapport max couple positif"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiAuthSup_noGearMin "Temps autorisation changement rapport montant rapport min"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmGearDownPotNeg_T "Temps de confirmation changement de rapport descendant couple negatif"
+      CURVE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tiCfmGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmGearUpPotNeg_T "Temps de confirmation changement de rapport montant couple negatif"
+      CURVE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tiCfmGear_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnIntReq "Temps confirmation min rapport descendant interne XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnReqTqNeg "Temps confirmation min rapport descendant couple negatif XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSdwnReqTqPos "Temps confirmation min rapport descendant couple positif XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnReq_B "Bypass de VSCtl_tiCfmSdwnReq"
+      VALUE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnTqNeg_C "Temps de confirmation retro frein moteur"
+      VALUE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnTqWhlTqPos_M "Temps de confirmation changement de rapport descendant couple positif"
+      MAP 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_tqWhlPTPotReq VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tq_tiCfmSdwnTqWhlTqPosX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_dtqWhlPTPotReq VSSp_CM_4 /* :0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_dtq_tiCfmSdwnTqWhlTqP_Y_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSdwnnEngTqPos_T "Temps de confirmation changement de rapport descendant couple positif"
+      CURVE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tiCfmSdwnTqPos_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCfmSupIntReq "Temps confirmation min rapport montant interne XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupReqTqNeg "Temps confirmation min rapport montant couple negatif XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiCfmSupReqTqPos "Temps confirmation min rapport montant couple positif XVV"
+      UWORD VSSp_CM_30 /* s:0.01:0: */ 1 0 0 16
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupReq_B "Bypass de VSCtl_tiCfmSupReq"
+      VALUE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupTqWhlTqPos_M "Temps de confirmation changement de rapport montant couple positif"
+      MAP 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_tqWhlPTPotReq VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tq_tiCfmSupTqWhlTqPosX_A
+    /end AXIS_DESCR
+    /begin AXIS_DESCR
+      COM_AXIS VSCtl_dtqWhlPTPotReq VSSp_CM_4 /* :0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_dtq_tiCfmSupTqWhlTqPosY_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiCfmSupnEngTqPos_T "Temps de confirmation changement de rapport montant couple positif"
+      CURVE 0x0 VSSp_RL_UWORD 16 VSSp_CM_30 /* s:0.01:0: */ 0 16
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tiCfmSupTqPos_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCutOffMinTqWhl "Temps avant coupure d injection"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCutOffMinTqWhl_C "Temps avant coupure d injection"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiCutOnMinTqWhl "Temps avant fin coupure d injection"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiCutOnMinTqWhl_C "Temps avant fin coupure d injection"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilDw_tiFilMinTqCkMax_C "Valeur du filtrage numerique descendant de la consigne de couple moteur max voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilDw_tiFilMinTqCkMin_C "Valeur du filtrage numerique descendant de la consigne de couple moteur min voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilDw_tiFilMinTqWhlMn_C "Valeur du filtrage numerique descendant de la consigne de couple roue min voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilDw_tiFilMinTqWhlMx_C "Valeur du filtrage numerique descendant de la consigne de couple roue max voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilMinTqCkMax_tqDif_T "Valeur min du filtrage numerique de la consigne de couple roue GMP max"
+      CURVE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkDif_tiFilMinTqMax_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilMinTqCkMin_tqDif_T "Valeur min du filtrage numerique de la consigne de couple roue GMP min"
+      CURVE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    AXIS_PTS_REF VSCtl_tqCkDif_tiFilMinTqMin_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilMinTqWhlMax_tqDif_T "Valeur min du filtrage numerique de la consigne de couple roue GMP max"
+      CURVE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tqWhlDif_tiFilMinTqMax_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilMinTqWhlMin_tqDif_T "Valeur min du filtrage numerique de la consigne de couple roue GMP min"
+      CURVE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    AXIS_PTS_REF VSCtl_tqWhlDif_tiFilMinTqMin_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlTqEfcTarMax "Compteur absolu fin de transition contrôle couple moteur cible max"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlTqEfcTarMin "Compteur absolu fin de transition controle couple moteur cible min"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFilStCtlnoGear "Temps confirmation defaut controle boite"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFilStabDyn_tqCkMax_C "Valeur du filtrage numerique de la consigne couple moteur max (stabilise)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilStabDyn_tqCkMin_C "Valeur du filtrage numerique de la consigne couple moteur min (stabilise)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilStabDyn_tqWhlMax_C "Valeur du filtrage numerique de la consigne couple roue GMP max (stabilise)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilStabDyn_tqWhlMin_C "Valeur du filtrage numerique de la consigne couple roue GMP min (stabilise)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilTranDyn_tqCkMax_C "Valeur du filtrage numerique de la consigne couple moteur max (transitoire)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilTranDyn_tqCkMin_C "Valeur du filtrage numerique de la consigne couple moteur min (transitoire)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilTranDyn_tqWhlMax_C "Valeur du filtrage numerique de la consigne couple roue GMP max (transitoire)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilTranDyn_tqWhlMin_C "Valeur du filtrage numerique de la consigne couple roue GMP min (transitoire)"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilUp_tiFilMinTqCkMax_C "Valeur du filtrage numerique montant de la consigne de couple moteur max voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilUp_tiFilMinTqCkMin_C "Valeur du filtrage numerique montant de la consigne de couple moteur min voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilUp_tiFilMinTqWhlMn_C "Valeur du filtrage numerique montant de la consigne de couple roue min voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFilUp_tiFilMinTqWhlMx_C "Valeur du filtrage numerique montant de la consigne de couple roue max voisinage couple conducteur"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_dtqWhlPTPotReq_C "Valeur du filtrage numerique de la variation de la consigne de potentiel de couple"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPEngMax_C "Valeur du filtrage numerique de la position pedale moteur XVV max"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPEngMin_C "Valeur du filtrage numerique de la position pedale moteur XVV min"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPPTMax_C "Valeur du filtrage numérique de la position pédale accélération GMP XVV max"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPPTMin_C "Valeur du filtrage numerique de la position pedale acceleration GMP XVV min"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPTraMaxDVSReg_C "Valeur du filtrage numerique de la position pedale accelerateur transmission max ACC"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_33 /* :0.001:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPTraMaxVSLim_C "Valeur du filtrage numerique de la position pedale accelerateur transmission max LVV"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_33 /* :0.001:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPTraMaxVSMax_C "Valeur du filtrage numerique de la position pedale accelerateur transmission max BVV"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_33 /* :0.001:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_rAccPTraMaxVSReg_C "Valeur du filtrage numerique de la position pedale accelerateur transmission max RVV"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_33 /* :0.001:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlTqEfcTarMax_C "Duree max de la rampe sur le couple moteur cible max apres SIP"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlTqEfcTarMin_C "Duree max de la rampe sur le couple moteur cible min apres SIP"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_stCtlnoGear_C "Duree max pour la confirmation du défaut de controle boite"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMaxRaw1 "Valeur du filtrage numerique de la consigne de couple moteur max brut 1"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMaxRaw2 "Valeur du filtrage numerique de la consigne de couple moteur max brut 2"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMaxRaw3 "Valeur du filtrage numerique de la consigne de couple moteur max brut 3"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMin "Valeur du filtrage numerique de la consigne de couple moteur min"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMinRaw1 "Valeur du filtrage numerique de la consigne de couple moteur min brut 1"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMinRaw2 "Valeur du filtrage numerique de la consigne de couple moteur min brut 2"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfcMinRaw3 "Valeur du filtrage numerique de la consigne de couple moteur min brut 3"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqCkEfclMax "Valeur du filtrage numerique de la consigne de couple moteur max"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqEfcTarMax_C "Valeur du filtrage numerique de la consigne couple moteur cible max"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqEfcTarMin_C "Valeur du filtrage numerique de la consigne couple moteur cible min"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMax "Valeur du filtrage numerique de la consigne couple roue GMP max"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMaxRaw1 "Valeur du filtrage numerique de la consigne couple roue GMP max brute 1"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMaxRaw2 "Valeur du filtrage numerique de la consigne couple roue GMP max brute 2"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMaxRaw3 "Valeur du filtrage numerique de la consigne couple roue GMP max brute 3"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMin "Valeur du filtrage numerique de la consigne couple roue GMP min"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMinRaw1 "Valeur du filtrage numerique de la consigne couple roue GMP min brute 1"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMinRaw2 "Valeur du filtrage numerique de la consigne couple roue GMP min brute 2"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tiFil_tqWhlMinRaw3 "Valeur du filtrage numerique de la consigne couple roue GMP min brute 3"
+      UWORD VSSp_CM_32 /* :0.0009765625:0: */ 1 0 0 1
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqWhlPTMaxReq_C "Valeur du filtrage numerique de la consigne potentiel couple roue GMP max"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqWhlPTMinReq_C "Valeur du filtrage numerique de la consigne potentiel couple roue GMP min"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqWhlPTMinSat_C "Valeur du filtrage numerique de la consigne de saturation min couple roue GMP"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tiFil_tqWhlPTReq_C "Valeur du filtrage numerique de la consigne de potentiel de couple"
+      VALUE 0x0 VSSp_RL_UWORD 1 VSSp_CM_32 /* :0.0009765625:0: */ 0 1
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFiltqCkEfcMaxReq "Temps de filtrage de la consigne de couple moteur max en transition"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFiltqCkEfcMaxReq_C "Temps de filtrage de la consigne de couple moteur max en transition"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiFiltqWhlPTMaxReq "Temps caracteristique de l’etat de contrôle couple roue GMP max en transition"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiFiltqWhlPTMaxReq_C "Duree maxi de la transition en couple roue GMP max"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiHldWhlPotCtlReq "Temps de gel du mode 2 de contrôle de potentiel de couple"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiHldWhlPotCtlReq_C "Temps de gel du mode 2 de contrôle de potentiel de couple"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiPerCutOffTqWhl "Temps avant cycle coupure d injection"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiPerCutOffTqWhl_C "Temps avant cycle coupure d injection"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tiTqWhlPTMinSatTraMax "Temps caracteristique de l’etat de contrôle de la saturation min du couple roue GMP de desactivation"
+      UWORD VSSp_CM_31 /* :1:0: */ 1 0 0 65535
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tiTqWhlPTMinSatTraMax_C "Temps max de transition de la saturation min couple roue en transition"
+      VALUE 0x0 VSSp_RL_UWORD 65535 VSSp_CM_31 /* :1:0: */ 0 65535
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_tqCkDif_tiFilMinTqMax_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqCkDif_tiFilMinTqMin_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqCkEfcEr_rAccPEngSatMn_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqCkEfcEr_rAccPEngSatMx_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 8 -2000 2000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqCkEfcMaxR_rAccPEngMxX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 16 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxReqCll "Consigne couple moteur max BF"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxReqDly "Consigne couple moteur max retardee"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxReqDly_NV "Consigne couple moteur max retardee"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxReqPrev "Consigne couple moteur max memorisee"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxReqRaw "Consigne couple moteur max brut"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfcMaxReq_B "Bypass de VSCtl_tqCkEfcMaxReq"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear2 "Couple moteur max virtuel en rapport 2"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear3 "Couple moteur max virtuel en rapport 3"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear4 "Couple moteur max virtuel en rapport 4"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear5 "Couple moteur max virtuel en rapport 5"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear6 "Couple moteur max virtuel en rapport 6"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear7 "Couple moteur max virtuel en rapport 7"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMaxVirtGear8 "Couple moteur max virtuel en rapport 8"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfcMax_T "Couple moteur max"
+      CURVE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tqCkEfc_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_tqCkEfcMinR_rAccPEngMnX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 4000 VSSp_CM_34 /* Nm:0.0625:0: */ 16 -2000 2000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinReqPrev "Consigne couple moteur min memorisee"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinReqRaw1 "Consigne couple moteur min brut 1"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinReqRaw2 "Consigne couple moteur min brut 2"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfcMinReq_B "Bypass de VSCtl_tqCkEfcMinReq"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear2 "Couple moteur min virtuel en rapport 2"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear3 "Couple moteur min virtuel en rapport 3"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear4 "Couple moteur min virtuel en rapport 4"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear5 "Couple moteur min virtuel en rapport 5"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear6 "Couple moteur min virtuel en rapport 6"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear7 "Couple moteur min virtuel en rapport 7"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqCkEfcMinVirtGear8 "Couple moteur min virtuel en rapport 8"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfcMin_T "Couple moteur min"
+      CURVE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nEng_tqCkEfc_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfc_bCtlEfcMaxHys_C "Seuil de consigne couple moteur XVV min pour le contrôle effectif du couple moteur XVV min"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqCkEfc_bCtlEfcMinHys_C "Seuil de consigne couple moteur XVV max pour le controle effectif du couple moteur XVV max"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqEfcTarMaxRaw "Couple cible max en SIP brut demandé par la xVV"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqEfcTarMax_B "Bypass de VSCtl_tqEfcTarMax"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqEfcTarMax_T "Couple moteur cible max"
+      CURVE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nPrimShaftTar_tqEfcTar_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqEfcTarMinRaw "Couple cible max en SIP brut demandé par la xVV"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqEfcTarMin_B "Bypass de VSCtl_tqEfcTarMin"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqEfcTarMin_T "Couple moteur cible min"
+      CURVE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /begin AXIS_DESCR
+      COM_AXIS NO_INPUT_QUANTITY VSSp_CM_5 /* rpm:1:0: */ 8 0 7500
+    AXIS_PTS_REF VSCtl_nPrimShaftTar_tqEfcTar_A
+    /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqErrFTra_tqWhlMaxVSCtl_C "Valeur de la variation de la consigne couple roue GMP max en transition rapide"
+      VALUE 0x0 VSSp_RL_UWORD 11000 VSSp_CM_35 /* Nm:0.5:0: */ 0 11000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqErrFTran_tqCkMaxVSCtl_C "Valeur de la variation de la consigne couple moteur max en transition rapide"
+      VALUE 0x0 VSSp_RL_UWORD 2000 VSSp_CM_34 /* Nm:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqErrSTra_tqWhlMaxVSCtl_C "Valeur de la variation de la consigne couple roue GMP max en transition lente"
+      VALUE 0x0 VSSp_RL_UWORD 11000 VSSp_CM_35 /* Nm:0.5:0: */ 0 11000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqErrSTran_tqCkMaxVSCtl_C "Valeur de la variation de la consigne couple moteur max en transition lente"
+      VALUE 0x0 VSSp_RL_UWORD 2000 VSSp_CM_34 /* Nm:0.0625:0: */ 0 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqErrTran_tqMinSat_C "Valeur de la variation de la consigne saturation min couple roue GMP en transition"
+      VALUE 0x0 VSSp_RL_UWORD 16000 VSSp_CM_35 /* Nm:0.5:0: */ 0 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqSIPNegTran_tqEfcTarMax_C "Rampe négative du couple moteur cible max après SIP"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqSIPNegTran_tqEfcTarMin_C "Rampe négative du couple moteur cible min après SIP"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqSIPPosTran_tqEfcTarMax_C "Rampe positive du couple moteur cible max après SIP"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqSIPPosTran_tqEfcTarMin_C "Rampe positive du couple moteur cible min après SIP"
+      VALUE 0x0 VSSp_RL_SWORD 4000 VSSp_CM_34 /* Nm:0.0625:0: */ -2000 2000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqSIPTranMaxSecu "Couple cible max en SIP brut demandé par la xVV"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqSIPTranMinSecu "Couple cible min en SIP demandé par la xVV sécuritaire"
+      SWORD VSSp_CM_34 /* Nm:0.0625:0: */ 1 0 -2000 2000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_tqWhlDif_tiFilMinTqMax_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqWhlDif_tiFilMinTqMin_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_tqWhlErr_gearDownNeg_C "Hysteresis bas sur les seuils de changement de rapport"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlErr_gearDownPos_C "Hysteresis bas sur les seuils de changement de rapport"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlErr_gearUpNeg_C "Hysteresis haut sur les seuils de changement de rapport"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlErr_gearUpPos_C "Hysteresis haut sur les seuils de changement de rapport"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear2 "Couple roue max en rapport 2"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear2Thd "Seuil de couple max rapport 2"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear3 "Couple roue max en rapport 3"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear3Thd "Seuil de couple max rapport 3"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear4 "Couple roue max en rapport 4"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear4Thd "Seuil de couple max rapport 4"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear5 "Couple roue max en rapport 5"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear5Thd "Seuil de couple max rapport 5"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear6 "Couple roue max en rapport 6"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear6Thd "Seuil de couple max rapport 6"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear7 "Couple roue max en rapport 7"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear7Thd "Seuil de couple max rapport 7"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear8 "Couple roue max en rapport 8"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMaxGear8Thd "Seuil de couple max rapport 8"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMaxReqOff_C "VSCtl_tqWhlMaxReqOff_C"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear2 "Couple roue min en rapport 2"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear2Thd "Seuil de couple min rapport 2"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear3 "Couple roue min en rapport 3"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear3Thd "Seuil de couple min rapport 3"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear4 "Couple roue min en rapport 4"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear4Thd "Seuil de couple min rapport 4"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear5 "Couple roue min en rapport 5"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear5Thd "Seuil de couple min rapport 5"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear6 "Couple roue min en rapport 6"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear6Thd "Seuil de couple min rapport 6"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear7 "Couple roue min en rapport 7"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear7Thd "Seuil de couple min rapport 7"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear8 "Couple roue min en rapport 8"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlMinGear8Thd "Seuil de couple min rapport 8"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlMinReqOff_C "VSCtl_tqWhlMinReqOff_C"
+      VALUE 0x0 VSSp_RL_SWORD 32000 VSSp_CM_35 /* Nm:0.5:0: */ -16000 16000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_tqWhlPTErr_rAccPPTSatMn_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tqWhlPTErr_rAccPPTSatMx_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMaxReqCll "Couple roue GMP max en boucle fermee"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -4000 11000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMaxReqDly "Consigne couple roue GMP XVV max retardee"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMaxReqDly_NV "Sauvegarde de VSCtl_tqWhlPTMaxReqDly"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMaxReqRaw "Couple roue GMP max en boucle fermee brut"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -4000 11000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTMaxReq_B "Bypass de VSCtl_tqWhlPTMaxReq"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_tqWhlPTMaxReq_rAccPMxX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 15000 VSSp_CM_35 /* Nm:0.5:0: */ 13 -4000 11000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMinReqRaw1 "Consigne couple roue GMP XVV min brute 1"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -4000 11000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPTMinReqRaw2 "Consigne couple roue GMP XVV min brute 2"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -4000 11000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTMinReq_B "Bypass de VSCtl_tqWhlPTMinReq"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS VSCtl_tqWhlPTMinReq_rAccPMnX_A "Axis description"
+      0x0 NO_INPUT_QUANTITY VSSp_RL_SWORD_AXIS 15000 VSSp_CM_35 /* Nm:0.5:0: */ 13 -4000 11000
+    /end AXIS_PTS
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTMinSat_B "Bypass de VSCtl_tqWhlPTMinSat"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTNotCtlaWideHi_C "Largeur de la bande non pilotable activant la strategie gestion de la bande morte seuil haut"
+      VALUE 0x0 VSSp_RL_UWORD 16000 VSSp_CM_35 /* Nm:0.5:0: */ 0 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTNotCtlaWideLo_C "Largeur de la bande non pilotable activant la strategie gestion de la bande morte seuil bas"
+      VALUE 0x0 VSSp_RL_UWORD 16000 VSSp_CM_35 /* Nm:0.5:0: */ 0 16000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTPotMaxReq_B "Bypass de VSCtl_tqWhlPTPotMaxReq"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTPotMinReq_B "Bypass de VSCtl_tqWhlPTPotMinReq"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC VSCtl_tqWhlPTPotReq_B "Bypass de VSCtl_tqWhlPTPotReq"
+      VALUE 0x0 VSSp_RL_SWORD 15000 VSSp_CM_35 /* Nm:0.5:0: */ -4000 11000
+    /end CHARACTERISTIC
+
+    /begin MEASUREMENT VSCtl_tqWhlPotCoordPosReq "Couple coordonné pour le choix du rapport max couple positif xVV"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMaxIntNegReq "Consigne de potentiel de couple max negatif"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMaxIntPosReq "Consigne de potentiel de couple max positif"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMaxIntReq "Consigne de potentiel de couple max interne"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMinIntNegReq "Consigne de potentiel de couple mn negatif"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMinIntPosReq "Consigne de potentiel de couple min positif"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSCtl_tqWhlPotMinIntReq "Consigne de potentiel de couple min interne"
+      SWORD VSSp_CM_35 /* Nm:0.5:0: */ 1 0 -16000 16000
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin AXIS_PTS VSCtl_tq_tiCfmSdwnTqWhlTqPosX_A "Axis description"
+      0x0 VSCtl_tqWhlPTPotReq VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin AXIS_PTS VSCtl_tq_tiCfmSupTqWhlTqPosX_A "Axis description"
+      0x0 VSCtl_tqWhlPTPotReq VSSp_RL_SWORD_AXIS 32000 VSSp_CM_35 /* Nm:0.5:0: */ 8 -16000 16000
+    /end AXIS_PTS
+
+    /begin MEASUREMENT VSSp_ModuleVersion_Major_MP "VSSp_ModuleVersion_Major_MP"
+      UBYTE VSSp_CM_31 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT VSSp_ModuleVersion_Minor_MP "VSSp_ModuleVersion_Minor_MP"
+      UBYTE VSSp_CM_31 /* :1:0: */ 1 0 0 255
+    ECU_ADDRESS 0x0
+    /end MEASUREMENT
+
+/begin RECORD_LAYOUT VSSp_RL_FLOAT32_IEEE
+FNC_VALUES 1 FLOAT32_IEEE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_FLOAT32_IEEE_AXIS
+AXIS_PTS_X 1 FLOAT32_IEEE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SLONG
+FNC_VALUES 1 SLONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SLONG_AXIS
+AXIS_PTS_X 1 SLONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SWORD
+FNC_VALUES 1 SWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SWORD_AXIS
+AXIS_PTS_X 1 SWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SBYTE
+FNC_VALUES 1 SBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_SBYTE_AXIS
+AXIS_PTS_X 1 SBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_UBYTE
+FNC_VALUES 1 UBYTE ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_UBYTE_AXIS
+AXIS_PTS_X 1 UBYTE INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_ULONG
+FNC_VALUES 1 ULONG ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_ULONG_AXIS
+AXIS_PTS_X 1 ULONG INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_UWORD
+FNC_VALUES 1 UWORD ROW_DIR DIRECT
+/end RECORD_LAYOUT
+
+/begin RECORD_LAYOUT VSSp_RL_UWORD_AXIS
+AXIS_PTS_X 1 UWORD INDEX_INCR DIRECT
+/end RECORD_LAYOUT
+
+/begin COMPU_METHOD VSSp_CM_1 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_1
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_1 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "FALSE"
+	 1 "TRUE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_2 "conversion_method"
+
+RAT_FUNC "%.4" "m/s2"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_3 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_4 "conversion_method"
+
+RAT_FUNC "%.1" "-"
+COEFFS 0 2 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_5 "conversion_method"
+
+RAT_FUNC "%.0" "rpm"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_6 "conversion_method"
+
+RAT_FUNC "%.3" "rpm"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_7 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_7
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_7 "conversion_vtab"
+
+    TAB_VERB 16
+	 0 "RAPPORT_DE_REPLI_BAS"
+	 1 "1ER_RAPPORT"
+	 2 "2EME_RAPPORT"
+	 3 "3EME_RAPPORT"
+	 4 "4EME_RAPPORT"
+	 5 "5EME_RAPPORT"
+	 6 "6EME_RAPPORT"
+	 7 "RESERVE_7"
+	 8 "RESERVE_8"
+	 9 "RESERVE_9"
+	 10 "RESERVE_10"
+	 11 "RESERVE_11"
+	 12 "RESERVE_12"
+	 13 "RESERVE_13"
+	 14 "RESERVE_14"
+	 15 "RAPPORT_DE_REPLI_HAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_8 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_8
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_8 "conversion_vtab"
+
+    TAB_VERB 9
+	 0 "NEUTRE"
+	 1 "1ER_RAPPORT"
+	 2 "2EME_RAPPORT"
+	 3 "3EME_RAPPORT"
+	 4 "4EME_RAPPORT"
+	 5 "5EME_RAPPORT"
+	 6 "6EME_RAPPORT"
+	 7 "7EME_RAPPORT"
+	 8 "8EME_RAPPORT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_9 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_9
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_9 "conversion_vtab"
+
+    TAB_VERB 16
+	 7 "RESERVE_7"
+	 12 "RESERVE_12"
+	 2 "2EME_RAPPORT"
+	 8 "RESERVE_8"
+	 13 "RESERVE_13"
+	 4 "4EME_RAPPORT"
+	 1 "1ER_RAPPORT"
+	 9 "RESERVE_9"
+	 0 "RAPPORT_DE_REPLI_BAS"
+	 6 "6EME_RAPPORT"
+	 10 "RESERVE_10"
+	 14 "RESERVE_14"
+	 3 "3EME_RAPPORT"
+	 11 "RESERVE_11"
+	 15 "RAPPORT_DE_REPLI_HAUT"
+	 5 "5EME_RAPPORT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_10 "conversion_method"
+
+RAT_FUNC "%.3" "%"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_11 "conversion_method"
+
+RAT_FUNC "%.3" "km/h"
+COEFFS 0 128 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_12 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_12
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_12 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "MARCHE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_13 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_13
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_13 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "DEFAUT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_14 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_14
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_14 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "CONTROLE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_15 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_15
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_15 "conversion_vtab"
+
+    TAB_VERB 2
+	 1 "CONTROLE"
+	 0 "ARRET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_16 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_16
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_16 "conversion_vtab"
+
+    TAB_VERB 2
+	 0 "ARRET"
+	 1 "ACTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_17 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_17
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_17 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "TRANSITION"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_18 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_18
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_18 "conversion_vtab"
+
+    TAB_VERB 3
+	 1 "CONTROLE"
+	 2 "TRANSITION"
+	 0 "ARRET"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_19 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_19
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_19 "conversion_vtab"
+
+    TAB_VERB 5
+	 0 "ARRET"
+	 1 "CONTROLE"
+	 2 "TRANS_L"
+	 3 "TRANS_R"
+	 4 "INIT"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_20 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_20
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_20 "conversion_vtab"
+
+    TAB_VERB 5
+	 0 "ARRET"
+	 1 "HORS_SIP"
+	 2 "SIP"
+	 3 "FIN_SIP_HIGH"
+	 4 "FIN_SIP_LOW"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_21 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_21
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_21 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "NON_DEMANDE"
+	 1 "DEMANDE"
+	 2 "DEMANDE_EN_MODE_FULL_PASS"
+	 3 "RESERVE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_22 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_22
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_22 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "INACTIF"
+	 1 "ACTIF_EFFECTIF"
+	 2 "ACTIF_NON_EFFECTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_23 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_23
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_23 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "INACTIF"
+	 1 "AE"
+	 2 "ANE"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_24 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_24
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_24 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "PILOTAGE_H"
+	 2 "PILOTAGE_B"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_25 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_25
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_25 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "PILOTAGE_HAUT"
+	 2 "PILOTAGE_BAS"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_26 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_26
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_26 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET_INDETERMINE"
+	 1 "PILOTAGE_HAUT"
+	 2 "PILOTAGE_BAS"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_27 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_27
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_27 "conversion_vtab"
+
+    TAB_VERB 3
+	 0 "ARRET"
+	 1 "CONTROLE_32"
+	 2 "TRANSITION_32"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_28 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_28
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_28 "conversion_vtab"
+
+    TAB_VERB 4
+	 0 "NON_DEMANDE"
+	 1 "DEMANDE_MODE_1"
+	 2 "DEMANDE_MODE_2"
+	 3 "DEMANDE_MODE_3"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_29 "conversion_method"
+
+TAB_VERB "%30.0" "-"
+COMPU_TAB_REF VSSp_CV_29
+/end COMPU_METHOD
+
+    /begin COMPU_VTAB VSSp_CV_29 "conversion_vtab"
+
+    TAB_VERB 3
+	 1 "AE"
+	 2 "ANE"
+	 0 "INACTIF"
+    /end COMPU_VTAB
+
+/begin COMPU_METHOD VSSp_CM_30 "conversion_method"
+
+RAT_FUNC "%.2" "s"
+COEFFS 0 100 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_31 "conversion_method"
+
+RAT_FUNC "%.0" "-"
+COEFFS 0 1 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_32 "conversion_method"
+
+RAT_FUNC "%.4" "-"
+COEFFS 0 1024 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_33 "conversion_method"
+
+RAT_FUNC "%.3" "-"
+COEFFS 0 1000 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_34 "conversion_method"
+
+RAT_FUNC "%.2" "Nm"
+COEFFS 0 16 0 0 0 1
+/end COMPU_METHOD
+
+/begin COMPU_METHOD VSSp_CM_35 "conversion_method"
+
+RAT_FUNC "%.1" "Nm"
+COEFFS 0 2 0 0 0 1
+/end COMPU_METHOD
+
+/begin FUNCTION VSSp_FCT_High_Level "This is the function description"
+	/begin DEF_CHARACTERISTIC
+	RE_VSSP_002_TEV_B
+	RE_VSSP_003_TEV_B
+	VSCtl_aVeh_rAccPTraMaxDVSRegX_A
+	VSCtl_bAcvTqCkEfcMaxReqSat_C
+	VSCtl_bAcvTqWhlPTMaxReqSat_C
+	VSCtl_bAcvTqWhlPTMinSat_B
+	VSCtl_bCtlEfc_tqCkEfcMax_B
+	VSCtl_bCtlEfc_tqCkEfcMin_B
+	VSCtl_bCtlEfc_tqWhlPTMax_B
+	VSCtl_bCtlEfc_tqWhlPTMin_B
+	VSCtl_bCtlEfc_tqWhlPT_pt1_B
+	VSCtl_bCtlEfc_tqWhlPT_pt2_B
+	VSCtl_bCtlEfc_tqWhlPt_B
+	VSCtl_bDeacSdwn_noGearMaxTqN_C
+	VSCtl_bDeacTqPotMax_noGearMax_C
+	VSCtl_bInhRecup_B
+	VSCtl_ctDec_rAnt_tqWhlPTMax_C
+	VSCtl_ctDec_rAnt_tqWhlPTMin_C
+	VSCtl_ctInc_rAnt_tqWhlPTMax_C
+	VSCtl_ctInc_rAnt_tqWhlPTMin_C
+	VSCtl_dtq_tiCfmSdwnTqWhlTqP_Y_A
+	VSCtl_dtq_tiCfmSupTqWhlTqPosY_A
+	VSCtl_nEng_rAccPEngMax_Y_A
+	VSCtl_nEng_rAccPEngMin_Y_A
+	VSCtl_nEng_tiCfmGear_A
+	VSCtl_nEng_tiCfmSdwnTqPos_A
+	VSCtl_nEng_tiCfmSupTqPos_A
+	VSCtl_nEng_tqCkEfc_A
+	VSCtl_nFrntWhlGear2MaxAbsHi_C
+	VSCtl_nFrntWhlGear2MaxAbsLo_C
+	VSCtl_nFrntWhlGear2MaxCtfHi_C
+	VSCtl_nFrntWhlGear2MaxCtfLo_C
+	VSCtl_nFrntWhlGear3MaxAbsHi_C
+	VSCtl_nFrntWhlGear3MaxAbsLo_C
+	VSCtl_nFrntWhlGear3MaxCtfHi_C
+	VSCtl_nFrntWhlGear3MaxCtfLo_C
+	VSCtl_nFrntWhlGear4MaxAbsHi_C
+	VSCtl_nFrntWhlGear4MaxAbsLo_C
+	VSCtl_nFrntWhlGear4MaxCtfHi_C
+	VSCtl_nFrntWhlGear4MaxCtfLo_C
+	VSCtl_nFrntWhlGear5MaxAbsHi_C
+	VSCtl_nFrntWhlGear5MaxAbsLo_C
+	VSCtl_nFrntWhlGear5MaxCtfHi_C
+	VSCtl_nFrntWhlGear5MaxCtfLo_C
+	VSCtl_nFrntWhlGear6MaxAbsHi_C
+	VSCtl_nFrntWhlGear6MaxAbsLo_C
+	VSCtl_nFrntWhlGear6MaxCtfHi_C
+	VSCtl_nFrntWhlGear6MaxCtfLo_C
+	VSCtl_nFrntWhlGear7MaxAbsHi_C
+	VSCtl_nFrntWhlGear7MaxAbsLo_C
+	VSCtl_nFrntWhlGear7MaxCtfHi_C
+	VSCtl_nFrntWhlGear7MaxCtfLo_C
+	VSCtl_nFrntWhlGear8MaxAbsHi_C
+	VSCtl_nFrntWhlGear8MaxAbsLo_C
+	VSCtl_nFrntWhlGear8MaxCtfHi_C
+	VSCtl_nFrntWhlGear8MaxCtfLo_C
+	VSCtl_nPrimShaftTar_tqEfcTar_A
+	VSCtl_nWhlGear1NegMinAbsHi_C
+	VSCtl_nWhlGear1NegMinAbsLo_C
+	VSCtl_nWhlGear1NegMinCftHi_C
+	VSCtl_nWhlGear1NegMinCftLo_C
+	VSCtl_nWhlGear1PosMinAbsHi_C
+	VSCtl_nWhlGear1PosMinAbsLo_C
+	VSCtl_nWhlGear1PosMinCftHi_C
+	VSCtl_nWhlGear1PosMinCftLo_C
+	VSCtl_nWhlGear2NegMinAbsHi_C
+	VSCtl_nWhlGear2NegMinAbsLo_C
+	VSCtl_nWhlGear2NegMinCftHi_C
+	VSCtl_nWhlGear2NegMinCftLo_C
+	VSCtl_nWhlGear2PosMinAbsHi_C
+	VSCtl_nWhlGear2PosMinAbsLo_C
+	VSCtl_nWhlGear2PosMinCftHi_C
+	VSCtl_nWhlGear2PosMinCftLo_C
+	VSCtl_nWhlGear3NegMinAbsHi_C
+	VSCtl_nWhlGear3NegMinAbsLo_C
+	VSCtl_nWhlGear3NegMinCftHi_C
+	VSCtl_nWhlGear3NegMinCftLo_C
+	VSCtl_nWhlGear3PosMinAbsHi_C
+	VSCtl_nWhlGear3PosMinAbsLo_C
+	VSCtl_nWhlGear3PosMinCftHi_C
+	VSCtl_nWhlGear3PosMinCftLo_C
+	VSCtl_nWhlGear4NegMinAbsHi_C
+	VSCtl_nWhlGear4NegMinAbsLo_C
+	VSCtl_nWhlGear4NegMinCftHi_C
+	VSCtl_nWhlGear4NegMinCftLo_C
+	VSCtl_nWhlGear4PosMinAbsHi_C
+	VSCtl_nWhlGear4PosMinAbsLo_C
+	VSCtl_nWhlGear4PosMinCftHi_C
+	VSCtl_nWhlGear4PosMinCftLo_C
+	VSCtl_nWhlGear5NegMinAbsHi_C
+	VSCtl_nWhlGear5NegMinAbsLo_C
+	VSCtl_nWhlGear5NegMinCftHi_C
+	VSCtl_nWhlGear5NegMinCftLo_C
+	VSCtl_nWhlGear5PosMinAbsHi_C
+	VSCtl_nWhlGear5PosMinAbsLo_C
+	VSCtl_nWhlGear5PosMinCftHi_C
+	VSCtl_nWhlGear5PosMinCftLo_C
+	VSCtl_nWhlGear6NegMinAbsHi_C
+	VSCtl_nWhlGear6NegMinAbsLo_C
+	VSCtl_nWhlGear6NegMinCftHi_C
+	VSCtl_nWhlGear6NegMinCftLo_C
+	VSCtl_nWhlGear6PosMinAbsHi_C
+	VSCtl_nWhlGear6PosMinAbsLo_C
+	VSCtl_nWhlGear6PosMinCftHi_C
+	VSCtl_nWhlGear6PosMinCftLo_C
+	VSCtl_nWhlGear7NegMinAbsHi_C
+	VSCtl_nWhlGear7NegMinAbsLo_C
+	VSCtl_nWhlGear7NegMinCftHi_C
+	VSCtl_nWhlGear7NegMinCftLo_C
+	VSCtl_nWhlGear7PosMinAbsHi_C
+	VSCtl_nWhlGear7PosMinAbsLo_C
+	VSCtl_nWhlGear7PosMinCftHi_C
+	VSCtl_nWhlGear7PosMinCftLo_C
+	VSCtl_noGearMaxAL4_C
+	VSCtl_noGearMaxAuto1_C
+	VSCtl_noGearMaxAx6_C
+	VSCtl_noGearMaxBVM_C
+	VSCtl_noGearMaxDCT_C
+	VSCtl_noGearMaxMAP_C
+	VSCtl_noGearMaxMCP_C
+	VSCtl_noGearMaxPilote1_C
+	VSCtl_noGearReqMax_B
+	VSCtl_noGearReqMin_B
+	VSCtl_rAccPEngMax_B
+	VSCtl_rAccPEngMax_M
+	VSCtl_rAccPEngMin_B
+	VSCtl_rAccPEngMin_M
+	VSCtl_rAccPEngSatMax_T
+	VSCtl_rAccPEngSatMin_T
+	VSCtl_rAccPMinVSLim_C
+	VSCtl_rAccPMinVSMax_C
+	VSCtl_rAccPPTMax_B
+	VSCtl_rAccPPTMax_M
+	VSCtl_rAccPPTMin_B
+	VSCtl_rAccPPTMin_M
+	VSCtl_rAccPPTSatMax_T
+	VSCtl_rAccPPTSatMin_T
+	VSCtl_rAccPTraMaxDVSReg_M
+	VSCtl_rAccPTraMaxVSLim_M
+	VSCtl_rAccPTraMaxVSMax_M
+	VSCtl_rAccPTraMaxVSReg_M
+	VSCtl_rAccPTraMax_B
+	VSCtl_rAccPTraMinDVSReg_C
+	VSCtl_rAccPTraMinVSReg_C
+	VSCtl_rAccPTraMin_B
+	VSCtl_rConvTra_gear2_C
+	VSCtl_rConvTra_gear3_C
+	VSCtl_rConvTra_gear4_C
+	VSCtl_rConvTra_gear5_C
+	VSCtl_rConvTra_gear6_C
+	VSCtl_rConvTra_gear7_C
+	VSCtl_rConvTra_gear8_C
+	VSCtl_spdVehE_rAccPTrMxVSLimX_A
+	VSCtl_spdVehE_rAccPTrMxVSMaxX_A
+	VSCtl_spdVehE_rAccPTrMxVSRegX_A
+	VSCtl_spdVeh_rAccPPTMax_Y_A
+	VSCtl_spdVeh_rAccPPTMin_Y_A
+	VSCtl_spdVeh_rAccPTrMxDVSRegY_A
+	VSCtl_spdVeh_rAccPTraMxVSLimY_A
+	VSCtl_spdVeh_rAccPTraMxVSMaxY_A
+	VSCtl_spdVeh_rAccPTraMxVSRegY_A
+	VSCtl_stCtl_noGear_B
+	VSCtl_stGearCtlReq_B
+	VSCtl_stTqPTMaxCtl_B
+	VSCtl_stTqPTMaxCtl_pt1_B
+	VSCtl_stTqPTMaxCtl_pt2_B
+	VSCtl_stTqPTMinCtl_B
+	VSCtl_stTqPTMinCtl_pt1_B
+	VSCtl_stTqPTMinCtl_pt2_B
+	VSCtl_stTqWhlPTCutOffReq_B
+	VSCtl_stTqWhlPTPotCtlReq_B
+	VSCtl_tiCfmGearDownPotNeg_T
+	VSCtl_tiCfmGearUpPotNeg_T
+	VSCtl_tiCfmSdwnReq_B
+	VSCtl_tiCfmSdwnTqNeg_C
+	VSCtl_tiCfmSdwnTqWhlTqPos_M
+	VSCtl_tiCfmSdwnnEngTqPos_T
+	VSCtl_tiCfmSupReq_B
+	VSCtl_tiCfmSupTqWhlTqPos_M
+	VSCtl_tiCfmSupnEngTqPos_T
+	VSCtl_tiCutOffMinTqWhl_C
+	VSCtl_tiCutOnMinTqWhl_C
+	VSCtl_tiFilDw_tiFilMinTqCkMax_C
+	VSCtl_tiFilDw_tiFilMinTqCkMin_C
+	VSCtl_tiFilDw_tiFilMinTqWhlMn_C
+	VSCtl_tiFilDw_tiFilMinTqWhlMx_C
+	VSCtl_tiFilMinTqCkMax_tqDif_T
+	VSCtl_tiFilMinTqCkMin_tqDif_T
+	VSCtl_tiFilMinTqWhlMax_tqDif_T
+	VSCtl_tiFilMinTqWhlMin_tqDif_T
+	VSCtl_tiFilStabDyn_tqCkMax_C
+	VSCtl_tiFilStabDyn_tqCkMin_C
+	VSCtl_tiFilStabDyn_tqWhlMax_C
+	VSCtl_tiFilStabDyn_tqWhlMin_C
+	VSCtl_tiFilTranDyn_tqCkMax_C
+	VSCtl_tiFilTranDyn_tqCkMin_C
+	VSCtl_tiFilTranDyn_tqWhlMax_C
+	VSCtl_tiFilTranDyn_tqWhlMin_C
+	VSCtl_tiFilUp_tiFilMinTqCkMax_C
+	VSCtl_tiFilUp_tiFilMinTqCkMin_C
+	VSCtl_tiFilUp_tiFilMinTqWhlMn_C
+	VSCtl_tiFilUp_tiFilMinTqWhlMx_C
+	VSCtl_tiFil_dtqWhlPTPotReq_C
+	VSCtl_tiFil_rAccPEngMax_C
+	VSCtl_tiFil_rAccPEngMin_C
+	VSCtl_tiFil_rAccPPTMax_C
+	VSCtl_tiFil_rAccPPTMin_C
+	VSCtl_tiFil_rAccPTraMaxDVSReg_C
+	VSCtl_tiFil_rAccPTraMaxVSLim_C
+	VSCtl_tiFil_rAccPTraMaxVSMax_C
+	VSCtl_tiFil_rAccPTraMaxVSReg_C
+	VSCtl_tiFil_stCtlTqEfcTarMax_C
+	VSCtl_tiFil_stCtlTqEfcTarMin_C
+	VSCtl_tiFil_stCtlnoGear_C
+	VSCtl_tiFil_tqEfcTarMax_C
+	VSCtl_tiFil_tqEfcTarMin_C
+	VSCtl_tiFil_tqWhlPTMaxReq_C
+	VSCtl_tiFil_tqWhlPTMinReq_C
+	VSCtl_tiFil_tqWhlPTMinSat_C
+	VSCtl_tiFil_tqWhlPTReq_C
+	VSCtl_tiFiltqCkEfcMaxReq_C
+	VSCtl_tiFiltqWhlPTMaxReq_C
+	VSCtl_tiHldWhlPotCtlReq_C
+	VSCtl_tiPerCutOffTqWhl_C
+	VSCtl_tiTqWhlPTMinSatTraMax_C
+	VSCtl_tqCkDif_tiFilMinTqMax_A
+	VSCtl_tqCkDif_tiFilMinTqMin_A
+	VSCtl_tqCkEfcEr_rAccPEngSatMn_A
+	VSCtl_tqCkEfcEr_rAccPEngSatMx_A
+	VSCtl_tqCkEfcMaxR_rAccPEngMxX_A
+	VSCtl_tqCkEfcMaxReq_B
+	VSCtl_tqCkEfcMax_T
+	VSCtl_tqCkEfcMinR_rAccPEngMnX_A
+	VSCtl_tqCkEfcMinReq_B
+	VSCtl_tqCkEfcMin_T
+	VSCtl_tqCkEfc_bCtlEfcMaxHys_C
+	VSCtl_tqCkEfc_bCtlEfcMinHys_C
+	VSCtl_tqEfcTarMax_B
+	VSCtl_tqEfcTarMax_T
+	VSCtl_tqEfcTarMin_B
+	VSCtl_tqEfcTarMin_T
+	VSCtl_tqErrFTra_tqWhlMaxVSCtl_C
+	VSCtl_tqErrFTran_tqCkMaxVSCtl_C
+	VSCtl_tqErrSTra_tqWhlMaxVSCtl_C
+	VSCtl_tqErrSTran_tqCkMaxVSCtl_C
+	VSCtl_tqErrTran_tqMinSat_C
+	VSCtl_tqSIPNegTran_tqEfcTarMax_C
+	VSCtl_tqSIPNegTran_tqEfcTarMin_C
+	VSCtl_tqSIPPosTran_tqEfcTarMax_C
+	VSCtl_tqSIPPosTran_tqEfcTarMin_C
+	VSCtl_tqWhlDif_tiFilMinTqMax_A
+	VSCtl_tqWhlDif_tiFilMinTqMin_A
+	VSCtl_tqWhlErr_gearDownNeg_C
+	VSCtl_tqWhlErr_gearDownPos_C
+	VSCtl_tqWhlErr_gearUpNeg_C
+	VSCtl_tqWhlErr_gearUpPos_C
+	VSCtl_tqWhlMaxReqOff_C
+	VSCtl_tqWhlMinReqOff_C
+	VSCtl_tqWhlPTErr_rAccPPTSatMn_A
+	VSCtl_tqWhlPTErr_rAccPPTSatMx_A
+	VSCtl_tqWhlPTMaxReq_B
+	VSCtl_tqWhlPTMaxReq_rAccPMxX_A
+	VSCtl_tqWhlPTMinReq_B
+	VSCtl_tqWhlPTMinReq_rAccPMnX_A
+	VSCtl_tqWhlPTMinSat_B
+	VSCtl_tqWhlPTNotCtlaWideHi_C
+	VSCtl_tqWhlPTNotCtlaWideLo_C
+	VSCtl_tqWhlPTPotMaxReq_B
+	VSCtl_tqWhlPTPotMinReq_B
+	VSCtl_tqWhlPTPotReq_B
+	VSCtl_tq_tiCfmSdwnTqWhlTqPosX_A
+	VSCtl_tq_tiCfmSupTqWhlTqPosX_A
+	/end DEF_CHARACTERISTIC
+	/begin LOC_MEASUREMENT
+	VSCtl_bAcvFilTqWhlPTMinSat
+	VSCtl_bAcvFil_rAccPMaxDVSReg
+	VSCtl_bAcvFil_rAccPMaxVSLim
+	VSCtl_bAcvFil_rAccPMaxVSMax
+	VSCtl_bAcvFil_rAccPMaxVSReg
+	VSCtl_bAcvFil_rAccPTra
+	VSCtl_bAcvFil_tqCkEfcMax
+	VSCtl_bAcvFil_tqCkEfcMin
+	VSCtl_bAcvFil_tqEfcTarMax
+	VSCtl_bAcvFil_tqEfcTarMin
+	VSCtl_bAcvFil_tqWhlPTMax
+	VSCtl_bAcvFil_tqWhlPTMin
+	VSCtl_bAcvFil_tqWhlPTPot
+	VSCtl_bAcvFil_tqWhlPTPotMax
+	VSCtl_bAcvFil_tqWhlPTPotMin
+	VSCtl_bAntTqWhlPTMaxReq
+	VSCtl_bAntTqWhlPTMinReq
+	VSCtl_bAuthSdwn_noGearMaxTqN
+	VSCtl_bAuthSdwn_noGearMaxTqP
+	VSCtl_bAuthSdwn_noGearMin
+	VSCtl_bAuthSup_noGearMin
+	VSCtl_bAuthSup_noGearMxTqNeg
+	VSCtl_bAuthSup_noGearMxTqPos
+	VSCtl_bCtlEfc_rAccPMax_pt1
+	VSCtl_bCtlEfc_rAccPMax_pt2
+	VSCtl_bCtlEfc_rAccPMin_pt1
+	VSCtl_bCtlEfc_rAccPMin_pt2
+	VSCtl_bCtlEfc_tqWhlPT_pt1
+	VSCtl_bCtlEfc_tqWhlPT_pt2
+	VSCtl_bTranEnd_tqCkEfcMax
+	VSCtl_bTranEnd_tqWhlPTMax
+	VSCtl_dtqWhlPTPotReq
+	VSCtl_nEngGear2
+	VSCtl_nEngGear3
+	VSCtl_nEngGear4
+	VSCtl_nEngGear5
+	VSCtl_nEngGear6
+	VSCtl_nEngGear7
+	VSCtl_nEngGear8
+	VSCtl_noGearMax
+	VSCtl_noGearMaxTqNegFil
+	VSCtl_noGearMaxTqNegFilRaw
+	VSCtl_noGearMaxTqNegRaw
+	VSCtl_noGearMaxTqPosFil
+	VSCtl_noGearMaxTqPosRaw
+	VSCtl_noGearMinTqPosFil
+	VSCtl_noGearMinTqPosRaw
+	VSCtl_noGearTqNegMin
+	VSCtl_noGearTqPosMin
+	VSCtl_rAccPTraMaxDVSReg
+	VSCtl_rAccPTraMaxVSLim
+	VSCtl_rAccPTraMaxVSMax
+	VSCtl_rAccPTraMaxVSReg
+	VSCtl_rAccPTraMinDVSReg
+	VSCtl_rAccPTraMinVSLim
+	VSCtl_rAccPTraMinVSMax
+	VSCtl_rAccPTraMinVSReg
+	VSCtl_rAnt_tqWhlPTMax
+	VSCtl_rAnt_tqWhlPTMin
+	VSCtl_stCtl_noGearMax
+	VSCtl_stCtl_noGearMin
+	VSCtl_stCtl_rAccPDVSReg
+	VSCtl_stCtl_rAccPDVSRegPrev
+	VSCtl_stCtl_rAccPTra
+	VSCtl_stCtl_rAccPVSLim
+	VSCtl_stCtl_rAccPVSLimPrev
+	VSCtl_stCtl_rAccPVSMax
+	VSCtl_stCtl_rAccPVSMaxPrev
+	VSCtl_stCtl_rAccPVSReg
+	VSCtl_stCtl_rAccPVSRegPrev
+	VSCtl_stCtl_tqCkEfcMax
+	VSCtl_stCtl_tqCkEfcMin
+	VSCtl_stCtl_tqEfcTarMax
+	VSCtl_stCtl_tqEfcTarMin
+	VSCtl_stCtl_tqWhlMaxPrev
+	VSCtl_stCtl_tqWhlMinPrev
+	VSCtl_stCtl_tqWhlPTMax
+	VSCtl_stCtl_tqWhlPTMin
+	VSCtl_stCtl_tqWhlPTPot
+	VSCtl_stCtl_tqWhlPTPotMax
+	VSCtl_stCtl_tqWhlPTPotMin
+	VSCtl_stTqPTMaxCtl_pt1
+	VSCtl_stTqPTMaxCtl_pt2
+	VSCtl_stTqPTMinCtl_pt1
+	VSCtl_stTqPTMinCtl_pt2
+	VSCtl_stTqWhlPTCutOffMnRPrev
+	VSCtl_stTqWhlPTCutOffMxRPrev
+	VSCtl_stTqWhlPTCutOffReqPrev
+	VSCtl_stTqWhlPTMinSat
+	VSCtl_st_rAccPCtl_pt1
+	VSCtl_st_rAccPCtl_pt2
+	VSCtl_tiAuthSdwn_noGearMin
+	VSCtl_tiAuthSdwn_noGearMxTN2
+	VSCtl_tiAuthSdwn_noGearMxTqN
+	VSCtl_tiAuthSdwn_noGearMxTqP
+	VSCtl_tiAuthSup_noGearMaxTqN
+	VSCtl_tiAuthSup_noGearMaxTqP
+	VSCtl_tiAuthSup_noGearMin
+	VSCtl_tiCfmSdwnIntReq
+	VSCtl_tiCfmSdwnReqTqNeg
+	VSCtl_tiCfmSdwnReqTqPos
+	VSCtl_tiCfmSupIntReq
+	VSCtl_tiCfmSupReqTqNeg
+	VSCtl_tiCfmSupReqTqPos
+	VSCtl_tiCutOffMinTqWhl
+	VSCtl_tiCutOnMinTqWhl
+	VSCtl_tiFilStCtlTqEfcTarMax
+	VSCtl_tiFilStCtlTqEfcTarMin
+	VSCtl_tiFilStCtlnoGear
+	VSCtl_tiFil_tqCkEfcMaxRaw1
+	VSCtl_tiFil_tqCkEfcMaxRaw2
+	VSCtl_tiFil_tqCkEfcMaxRaw3
+	VSCtl_tiFil_tqCkEfcMin
+	VSCtl_tiFil_tqCkEfcMinRaw1
+	VSCtl_tiFil_tqCkEfcMinRaw2
+	VSCtl_tiFil_tqCkEfcMinRaw3
+	VSCtl_tiFil_tqCkEfclMax
+	VSCtl_tiFil_tqWhlMax
+	VSCtl_tiFil_tqWhlMaxRaw1
+	VSCtl_tiFil_tqWhlMaxRaw2
+	VSCtl_tiFil_tqWhlMaxRaw3
+	VSCtl_tiFil_tqWhlMin
+	VSCtl_tiFil_tqWhlMinRaw1
+	VSCtl_tiFil_tqWhlMinRaw2
+	VSCtl_tiFil_tqWhlMinRaw3
+	VSCtl_tiFiltqCkEfcMaxReq
+	VSCtl_tiFiltqWhlPTMaxReq
+	VSCtl_tiHldWhlPotCtlReq
+	VSCtl_tiPerCutOffTqWhl
+	VSCtl_tiTqWhlPTMinSatTraMax
+	VSCtl_tqCkEfcMaxReqCll
+	VSCtl_tqCkEfcMaxReqDly
+	VSCtl_tqCkEfcMaxReqDly_NV
+	VSCtl_tqCkEfcMaxReqPrev
+	VSCtl_tqCkEfcMaxReqRaw
+	VSCtl_tqCkEfcMaxVirtGear2
+	VSCtl_tqCkEfcMaxVirtGear3
+	VSCtl_tqCkEfcMaxVirtGear4
+	VSCtl_tqCkEfcMaxVirtGear5
+	VSCtl_tqCkEfcMaxVirtGear6
+	VSCtl_tqCkEfcMaxVirtGear7
+	VSCtl_tqCkEfcMaxVirtGear8
+	VSCtl_tqCkEfcMinReqPrev
+	VSCtl_tqCkEfcMinReqRaw1
+	VSCtl_tqCkEfcMinReqRaw2
+	VSCtl_tqCkEfcMinVirtGear2
+	VSCtl_tqCkEfcMinVirtGear3
+	VSCtl_tqCkEfcMinVirtGear4
+	VSCtl_tqCkEfcMinVirtGear5
+	VSCtl_tqCkEfcMinVirtGear6
+	VSCtl_tqCkEfcMinVirtGear7
+	VSCtl_tqCkEfcMinVirtGear8
+	VSCtl_tqEfcTarMaxRaw
+	VSCtl_tqEfcTarMinRaw
+	VSCtl_tqSIPTranMaxSecu
+	VSCtl_tqSIPTranMinSecu
+	VSCtl_tqWhlMaxGear2
+	VSCtl_tqWhlMaxGear2Thd
+	VSCtl_tqWhlMaxGear3
+	VSCtl_tqWhlMaxGear3Thd
+	VSCtl_tqWhlMaxGear4
+	VSCtl_tqWhlMaxGear4Thd
+	VSCtl_tqWhlMaxGear5
+	VSCtl_tqWhlMaxGear5Thd
+	VSCtl_tqWhlMaxGear6
+	VSCtl_tqWhlMaxGear6Thd
+	VSCtl_tqWhlMaxGear7
+	VSCtl_tqWhlMaxGear7Thd
+	VSCtl_tqWhlMaxGear8
+	VSCtl_tqWhlMaxGear8Thd
+	VSCtl_tqWhlMinGear2
+	VSCtl_tqWhlMinGear2Thd
+	VSCtl_tqWhlMinGear3
+	VSCtl_tqWhlMinGear3Thd
+	VSCtl_tqWhlMinGear4
+	VSCtl_tqWhlMinGear4Thd
+	VSCtl_tqWhlMinGear5
+	VSCtl_tqWhlMinGear5Thd
+	VSCtl_tqWhlMinGear6
+	VSCtl_tqWhlMinGear6Thd
+	VSCtl_tqWhlMinGear7
+	VSCtl_tqWhlMinGear7Thd
+	VSCtl_tqWhlMinGear8
+	VSCtl_tqWhlMinGear8Thd
+	VSCtl_tqWhlPTMaxReqCll
+	VSCtl_tqWhlPTMaxReqDly
+	VSCtl_tqWhlPTMaxReqDly_NV
+	VSCtl_tqWhlPTMaxReqRaw
+	VSCtl_tqWhlPTMinReqRaw1
+	VSCtl_tqWhlPTMinReqRaw2
+	VSCtl_tqWhlPotCoordPosReq
+	VSCtl_tqWhlPotMaxIntNegReq
+	VSCtl_tqWhlPotMaxIntPosReq
+	VSCtl_tqWhlPotMaxIntReq
+	VSCtl_tqWhlPotMinIntNegReq
+	VSCtl_tqWhlPotMinIntPosReq
+	VSCtl_tqWhlPotMinIntReq
+	VSSp_ModuleVersion_Major_MP
+	VSSp_ModuleVersion_Minor_MP
+	/end LOC_MEASUREMENT
+
+/end FUNCTION
+/end MODULE
+
+
+/* ------------------------------ END OF MODULE VSSp ------------------------------------*/

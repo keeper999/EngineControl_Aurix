@@ -1,0 +1,3918 @@
+/******************************************************************************/
+/*                                                                            */
+/* !Layer           : SWC                                                     */
+/*                                                                            */
+/* !Component       : CatAcvDiagT                                             */
+/* !Description     : CatAcvDiagT software component                          */
+/*                                                                            */
+/* !Module          : CatAcvDiagT.a2l                                         */
+/* !Description     : CatAcvDiagT software component ASAP2 file               */
+/*                                                                            */
+/* !File            : CatAcvDiagT.a2l                                         */
+/*                                                                            */
+/* !Vendor          : Valeo                                                   */
+/*                                                                            */
+/* Coding language  : ASAP2 1.51                                              */
+/*                                                                            */
+/* COPYRIGHT 2008 VALEO                                                       */
+/* all rights reserved                                                        */
+/*                                                                            */
+/******************************************************************************/
+/* Autocoding Information                                                     */
+/*   Tool             : RTW-EC 7.5  (R2010a)  25-Jan-2010                     */
+/*   ASAP2 toolbox    : version 006                                           */
+/*   Model name       : CatAcvDiagT_AUTOSAR.mdl                               */
+/*   Root subsystem   : /CatAcvDiagT                                          */
+/******************************************************************************/
+/* PVCS Information                                                           */
+/* $Archive::   I:/PROJETS/LIBPSA/LOG/REF/SWC_PSA/3.1/CATMON/CATACVDIAGT/CatA$*/
+/* $Revision::   1.13                                                        $*/
+/* $Author::   etsasson                               $$Date::   08 Nov 2013 $*/
+/******************************************************************************/
+
+
+ /begin MODULE
+    /*   Name           */   CatAcvDiagT
+    /*   LongIdentifier */   "CatAcvDiagT Software Component"
+
+    /begin MOD_PAR
+       /*   Comment          */   ""
+    /end MOD_PAR
+
+    /begin MOD_COMMON
+       /*   Comment                */   ""
+       BYTE_ORDER                       MSB_FIRST
+    /end MOD_COMMON
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_SWORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Scalar_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_SLONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup1D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       FNC_VALUES           1 UBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_UBYTE
+       AXIS_PTS_X           1 UBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_BYTE
+       FNC_VALUES           1 SBYTE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_BYTE
+       AXIS_PTS_X           1 SBYTE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_UWORD
+       FNC_VALUES           1 UWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_UWORD
+       AXIS_PTS_X           1 UWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_WORD
+       FNC_VALUES           1 SWORD COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_WORD
+       AXIS_PTS_X           1 SWORD INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_ULONG
+       FNC_VALUES           1 ULONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_ULONG
+       AXIS_PTS_X           1 ULONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_LONG
+       FNC_VALUES           1 SLONG COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_LONG
+       AXIS_PTS_X           1 SLONG INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_FLOAT32_IEEE
+       FNC_VALUES           1 FLOAT32_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_FLOAT32_IEEE
+       AXIS_PTS_X           1 FLOAT32_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_FLOAT64_IEEE
+       FNC_VALUES           1 FLOAT64_IEEE COLUMN_DIR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin RECORD_LAYOUT
+       /*   Name       */   CatAcvDiagT_RL_Lookup2D_X_FLOAT64_IEEE
+       AXIS_PTS_X           1 FLOAT64_IEEE INDEX_INCR DIRECT
+    /end RECORD_LAYOUT
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rO2StgEstimCorIndex_M
+       /*   LongIdentifier */   "Carto indexée de la correction du seuil OBD d'OSC en fonction de l'estimation débit d'air et du lambda"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   199.21875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   1000.0
+          AXIS_PTS_REF             OxC_tOxC_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bAirLdNAuth_M
+       /*   LongIdentifier */   "Table indexée en charge/régime"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_5
+          /*   MaxAxisPoints  */   15
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   1.999969E+002
+          AXIS_PTS_REF             OxC_bAirLdNAuthColInput_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_6
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   7500.0
+          AXIS_PTS_REF             OxC_bAirLdNAuthRowInput_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bAirMfTAuth_M
+       /*   LongIdentifier */   "Table indexée en température catalyseur/débit moteur"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_4
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   1000.0
+          AXIS_PTS_REF             OxC_tOxC_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tAirMnfMesHiThdGas_C
+       /*   LongIdentifier */   "Température d'air maximale pour activer la stratégie (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tAirMnfMesHiThd_C
+       /*   LongIdentifier */   "Température d'air maximale pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tAirMnfMesLoThdGas_C
+       /*   LongIdentifier */   "Température d'air minimale pour activer la stratégie (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tAirMnfMesLoThd_C
+       /*   LongIdentifier */   "Température d'air minimale pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   200.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tCoMesHiThdGas_C
+       /*   LongIdentifier */   "Température d'eau maximale pour activer la stratégie (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tCoMesHiThd_C
+       /*   LongIdentifier */   "Température d'eau maximale pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tCoMesLoThdGas_C
+       /*   LongIdentifier */   "Température d'eau minimale pour activer la stratégie (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tCoMesLoThd_C
+       /*   LongIdentifier */   "Température d'eau minimale pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -40.0
+       /*   UpperLimit     */   214.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tOxCDeltaMaxThd_C
+       /*   LongIdentifier */   "Seuil sur la température catalyseur permettant d’évaluer la condition de stabilité de type « tunnel »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tOxCUsMesDeltaMaxGas_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur la température catalyseur pour le diag cata intrusif  (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -55.0
+       /*   UpperLimit     */   1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tOxCUsMesDeltaMax_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur la température catalyseur pour le diag cata intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   LowerLimit     */   -55.0
+       /*   UpperLimit     */   1000.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_nCkDeltaMaxGas_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur le régime moteur pour le diag cata intrusif  (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_nCkDeltaMax_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur le régime moteur pour le diag cata intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_7
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_nEngDeltaMaxThd_C
+       /*   LongIdentifier */   "Seuil sur le régime moteur permettant d’avaluer la condition de stabilité de type « tunnel » du régime moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_6
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_lamFbFilDeltaMaxThd_C
+       /*   LongIdentifier */   "Seuil sur la correction de régulation de richesse permettant d’évaluer la condition de stabilité de type « tunnel »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_8
+       /*   LowerLimit     */   -0.25
+       /*   UpperLimit     */   0.24999
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rlamFilThrHiThd_C
+       /*   LongIdentifier */   "Seuil supérieur du correcteur brut de la régulation de richesse pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_9
+       /*   LowerLimit     */   -0.25
+       /*   UpperLimit     */   2.4999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rlamFilThrLoThd_C
+       /*   LongIdentifier */   "Seuil inférieur du correcteur brut de la régulation de richesse pour activer la stratégie"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_SWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_9
+       /*   LowerLimit     */   -0.25
+       /*   UpperLimit     */   2.4999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_tiItrsvSenO2DsDiag_C
+       /*   LongIdentifier */   "Délai maximale entre l'application du créneau et la détection de sonde aval bloquée pauvre"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_tiItrsvWaitSenO2DsDiag_C
+       /*   LongIdentifier */   "Délai d'attente du résultat du diagnostic sonde aval intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mfAirDeltaMaxGas_C
+       /*   LongIdentifier */   "Seuil sur le débit moteur permettant d’évaluer la condition de stabilité de type « filtrage » en mode gaz"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mfAirDeltaMaxThd_C
+       /*   LongIdentifier */   "Seuil sur le débit moteur permettant d’évaluer la condition de stabilité de type « tunnel »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mfAirDeltaMax_C
+       /*   LongIdentifier */   "Seuil sur le débit moteur permettant d’évaluer la condition de stabilité de type « filtrage »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiAcvReqDlySdlCord_C
+       /*   LongIdentifier */   "Temporisation permettant de prendre en compte la différence de cadencement entre le diagnostic catalyseur intrusif et FARSp"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.55
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiPha1MaxDlyProtGas_C
+       /*   LongIdentifier */   "Temporisation limitant la durée de la 1ère phase du diagnostic, protégeant notamment le catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiPha1MaxDlyProt_C
+       /*   LongIdentifier */   "Temporisation limitant la durée de la 1ère phase du diagnostic, protégeant notamment le catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiPha2ChgMaxDly_C
+       /*   LongIdentifier */   "Temporisation permettant de sécuriser la sortie de CAT_DIAG_INTRU_SWITCH_LAMBDA"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrIniMonORngIntrGas_C
+       /*   LongIdentifier */   "Délai minimum entre deux diagnostics intrusifs du catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrIniMonORngIntr_C
+       /*   LongIdentifier */   "Délai minimum entre deux diagnostics intrusifs du catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrMinMonORngIntrIni_C
+       /*   LongIdentifier */   "Seuil minimale dans l'état catalyseur prêt avant désactivation du créneau de richesse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrScdnGas_T
+       /*   LongIdentifier */   "Temporisation précédant le 2ème créneau de richesse, assurant de toujours effectuer la 2ème phase du diagnostic dans les mêmes conditions (pour application gaz)"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrScdn_T
+       /*   LongIdentifier */   "Temporisation précédant le 2ème créneau de richesse, assurant de toujours effectuer la 2ème phase du diagnostic dans les mêmes conditions"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ldEstimDeltaMaxGas_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur la charge appliquée au moteur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ldEstimDeltaMax_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur la charge appliquée au moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.9999694824218750E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rAirLdDeltaMaxThd_C
+       /*   LongIdentifier */   "Seuil sur la charge moteur permettant d’évaluer la condition de stabilité de type « tunnel » de la charge moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_5
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.999969E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_rMixtSenO2DsDiagLean_C
+       /*   LongIdentifier */   "Valeur du créneau pauvre de richesse lors d'un diagnostic sonde aval intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_rMixtSenO2DsDiagRich_C
+       /*   LongIdentifier */   "Valeur du créneau rich de richesse lors d'un diagnostic sonde aval intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_11
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rMixtPha1Gas_C
+       /*   LongIdentifier */   "Offset à appliquer à la richesse lors de la première phase du diagnostic intrusif du catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rMixtPha1_C
+       /*   LongIdentifier */   "Offset à appliquer à la richesse lors de la première phase du diagnostic intrusif du catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rMixtPha2Gas_C
+       /*   LongIdentifier */   "Offset à appliquer à la richesse lors de la deuxième phase du diagnostic intrusif du catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rMixtPha2_C
+       /*   LongIdentifier */   "Offset à appliquer à la richesse lors de la deuxième phase du diagnostic intrusif du catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rMixtReqMonIntr_B
+       /*   LongIdentifier */   "Valeur de richesse requise pour les créneaux lors d'un diagnostic catalyseur intrusif(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_12
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7.3498878479003906E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgMaxGas_C
+       /*   LongIdentifier */   "Niveau d'OSC maxi permettant d'arrêter le créneau de richesse et conclure que l'état du catalyseur est bon (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgMax_C
+       /*   LongIdentifier */   "Niveau d'OSC maxi permettant d'arrêter le créneau de richesse et conclure que l'état du catalyseur est bon"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgMinPlausGas_C
+       /*   LongIdentifier */   "Seuil OBD corrigé minimum possible, compte tenu de la dynamique des gaz à l'échappement (plausibilité) (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgMinPlaus_C
+       /*   LongIdentifier */   "Seuil OBD corrigé minimum possible, compte tenu de la dynamique des gaz à l'échappement (plausibilité)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgMvEstim_B
+       /*   LongIdentifier */   "OSC moyen estimé du catalyseur(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgThdGas_C
+       /*   LongIdentifier */   "Seuil OBD d'OSC corrigé en débit, richesse et température (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_mO2StgThd_C
+       /*   LongIdentifier */   "Seuil OBD d'OSC corrigé en débit, richesse et température"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_13
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1023.984375
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_uThdItrsvSenO2DsDiagLean_C
+       /*   LongIdentifier */   "Seuil de tension pour le diagnostic sonde aval intrusif pauvre"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_14
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.9951171875000000E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_uThdItrsvSenO2DsDiagRich_C
+       /*   LongIdentifier */   "Seuil de tension pour le diagnostic sonde aval intrusif rich"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_14
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.9951171875000000E+000
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rFbLsclDeltaMaxGas_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur le lambda feedback pour le diag cata intrusif (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_8
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.9999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rFbLsclDeltaMax_C
+       /*   LongIdentifier */   "Intervalle de stabilité sur le lambda feedback pour le diag cata intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   4.9999237060546869E-001
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CatMon_tiInhDiagIntr_C
+       /*   LongIdentifier */   "Temporisation inhibant les diagnostics catalyseur après une transision essence/gaz"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   6.5535E+002
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiAcvCdnDlyOn_C
+       /*   LongIdentifier */   "Temporisation (TurnOn) sur la condition zone d'activation du diagnostic intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiAcvRunDlyOff_C
+       /*   LongIdentifier */   "Temporisation permettant de s’assurer du rebouclage de la régulation de richesse après motifs diagnostic catalyseur."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiLamRegStab_T
+       /*   LongIdentifier */   "Temporisation minimale au bout de laquelle les conditions de stabilité sur la correction de régulation de richesse moyennée doivent être calculées."
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_tiLamRegStabInput_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiRlamFiLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre du correcteur brut de la régulation de richesse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   LsMon_stItrsvSenO2DsDiag_B
+       /*   LongIdentifier */   "Etat de l'automate de gestion du créneau de richesse du diagnostic sonde aval intrusif(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_17
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ctMaxMonORngIntrGas_C
+       /*   LongIdentifier */   "Nombre maximum de diagnostics catalyseur intrusifs à effectuer (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ctMaxMonORngIntr_C
+       /*   LongIdentifier */   "Nombre maximum de diagnostics catalyseur intrusifs à effectuer"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ctMinMonORngIntrGas_C
+       /*   LongIdentifier */   "Nombre minimum de diagnostics catalyseur intrusifs à effectuer (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_ctMinMonORngIntr_C
+       /*   LongIdentifier */   "Nombre minimum de diagnostics catalyseur intrusifs à effectuer"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_18
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   255.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_idxRlamSpAcv_C
+       /*   LongIdentifier */   "Index permettant la sélection du booléen de prise en compte de la consigne de richesse requise par le diagnostic catalyseur intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_18
+       /*   LowerLimit     */   1.0
+       /*   UpperLimit     */   20.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CATACVDIAGT_ACTIVE_BYP_C
+       /*   LongIdentifier */   "Bypass du module"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CatMon_bDgoORngIntr_B
+       /*   LongIdentifier */   "Defaut unitaire du diagnostic catalyseur intrusif(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CatMon_bInhDiagPresScav_C
+       /*   LongIdentifier */   "Calibration inhibant la prise en compte du balayage pour inhiber les diagnostics OBD"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CatMon_bMonRunORngIntr_B
+       /*   LongIdentifier */   "Diagnostic intrusif du catalyseur actif(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   CatMon_bMonWaitORngIntr_B
+       /*   LongIdentifier */   "Diagnostic intrusif du catalyseur en attente(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bAcvFbL_rMonItrv_C
+       /*   LongIdentifier */   "Booléen d'activation de la prise en compte du Lambda Feedback au début du calcul de l'OSC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bDiagUnlimInhGas_C
+       /*   LongIdentifier */   "Booléen d'inhibition du diagnostic catalyseur intrusif en continu (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bDiagUnlimInh_C
+       /*   LongIdentifier */   "Booléen d'inhibition du diagnostic catalyseur intrusif en continu"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bIdcInhChknEng_C
+       /*   LongIdentifier */   "Calibration permettant de resetter les conditions de stabilité du régime moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bIdcInhChkrAirLd_C
+       /*   LongIdentifier */   "Calibration permettant de resetter les conditions de stabilité de la charge moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhAFACdn_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition sur l’adaptation AFA à « Vrai » (condition d’autorisation)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhBlbyCdn_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition d’autorisation sur le débit de blow-by à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhDeltaAirLd_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la charge moteur de type tunnel à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhDeltaMfAir_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur le débit moteur de type tunnel à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhDeltaNEng_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur le régime moteur de type tunnel à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhDeltaRLamFil_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la correction de régulation de richesse moyennée de type tunnel à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhDeltaTOxC_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la température catalyseur de type tunnel à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhFilAirLd_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la charge moteur de type « filtrage » à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhFilMfAir_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur le débit moteur de type « filtrage » à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhFilNEng_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur le régime moteur de type « filtrage » à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhFilRlamFilOxC_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la correction de régulation de richesse moyennée de type « filtrage » à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bInhFilTOxC_C
+       /*   LongIdentifier */   "Calibration permettant de forcer la condition de stabilité sur la température catalyseur de type « filtrage » à « Vrai »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bItpolClc_C
+       /*   LongIdentifier */   "Calibration permettant de choisir le type de méthode de calcul du correctif OSC"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bLsUsProp_C
+       /*   LongIdentifier */   "Booléen indiquant le type de sonde lambda amont utilisée (1=proportionnelle, 0=on/off)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bMonEnaORngIntr_B
+       /*   LongIdentifier */   "Booléen indiquant si les conditions de stabilité pour le diagnostic sont vérifiées(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bMonEndORngIntr_B
+       /*   LongIdentifier */   "Indicateur de fin de diagnostic intrusif du catalyseur(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bMonORngIntrAcvCdn_B
+       /*   LongIdentifier */   "Booléen indiquant si les conditions d'activation pour le diagnostic sont vérifiées(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bMonRunORngIntr_B
+       /*   LongIdentifier */   "Demande d'activation des créneaux de richesse pour le diagnostic intrusif du catalyseur(Bypass)."
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bRlamAdpReq_B
+       /*   LongIdentifier */   "Bypass: Demande d''adaptation de la correction de la régulation de richesse moyennée"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_bRlamFiLpfRst_C
+       /*   LongIdentifier */   "Reset du filtre du correcteur brut de la régulation de richesse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Oxc_stMonItrsvAcvTunRst_C
+       /*   LongIdentifier */   "Calibration permettant de by-passer reset des stabilités de type tunnel"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_BOOLEAN
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_Boolean
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rOpCanPurgReqThd_C
+       /*   LongIdentifier */   "Seuil sur la condition de stabilité de la purge canister"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_20
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   0.99609
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiAirLdDlyOn_C
+       /*   LongIdentifier */   "Temporisation (TurnOn) sur la condition de stabilité de la charge moteur pour autorisation diag intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiAirLdLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre sur la charge moteur (condition de stabilité)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiCanPurgCls_T
+       /*   LongIdentifier */   "Temporisation permettant de s’affranchir des effets de la purge canister"
+       /*   Type           */   CURVE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_tiCanPurgClsInput_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiCylNotCutOffDlyOn_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité sur le nombre de cylindres coupés"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlyStabMfAir_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité de type « tunnel » du débit moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlyStabNEng_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité de type « tunnel » du régime moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlyStabOxCT_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité de type « tunnel » de la température catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlyStabRatAirLd_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité de type « tunnel » de la charge moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlyStablamFbFil_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité de type « tunnel » de la correction de régulation de richesse"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiMfAirDlyOn_C
+       /*   LongIdentifier */   "Temporisation sur la condition de stabilité du débit moteur de type « filtrage »"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiMfAirLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre sur le débit moteur (condition de stabilité de type « filtrage »)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiNEngDlyOn_C
+       /*   LongIdentifier */   "Temporisation (TurnOn) sur la condition de stabilité du régime moteur pour autorisation diag intrusi"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiNEngLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre sur le régime moteur (condition de stabilité)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiOxCTDlyOn_C
+       /*   LongIdentifier */   "Temporisation (TurnOn) sur la condition de stabilité de la température catalyseur modélisée pour autorisation diag intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiOxCTLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre sur la température catalyseur modélisée (condition de stabilité)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiRlamDlyOn_C
+       /*   LongIdentifier */   "Temporisation (TurnOn) sur la condition de stabilité de la richesse pour autorisation diag intrusif"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiRlamLpfTau_C
+       /*   LongIdentifier */   "Constante de temps du filtre sur la richesse (condition de stabilité)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiStabCdnDlyOn_C
+       /*   LongIdentifier */   "Temporisation sur la condition globale sur la stabilité moteur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrMonStabFastCdnGas_C
+       /*   LongIdentifier */   "Temporisation pour les conditions de stabilité sur les dérivées du régime, de la charge, et du Lambda feedback (conditions rapides) nécessaires au diagnostic du catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   51.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrMonStabFastCdn_C
+       /*   LongIdentifier */   "Temporisation pour les conditions de stabilité sur les dérivées du régime, de la charge, et du Lambda feedback (conditions rapides) nécessaires au diagnostic du catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   51.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrMonStabSlowCdnGas_C
+       /*   LongIdentifier */   "Temporisation pour les conditions de stabilité Lambda_closed_loop et Engine_runnig_state (conditions lentes) nécessaires au diagnostic du catalyseur (pour application gaz)"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   51.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTmrMonStabSlowCdn_C
+       /*   LongIdentifier */   "Temporisation pour les conditions de stabilité Lambda_closed_loop et Engine_runnig_state (conditions lentes) nécessaires au diagnostic du catalyseur"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   51.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiTranModDlyOn_C
+       /*   LongIdentifier */   "Temporisation sur l’absence de transition de mode"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   Oxc_tiStabRstOff_C
+       /*   LongIdentifier */   "Temporisation sur reset sur les conditions de stabilité de type tunnel"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_21
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   50.0
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_tiDlySdlCord_C
+       /*   LongIdentifier */   "Turn off delay pour la variable OxC_bAcvMonItrsv"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_10
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   2.55
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rO2StgEstimCorInterpGas_M
+       /*   LongIdentifier */   "Carto interpolée de la correction du seuil OBD d'OSC en fonction de l'estimation débit d'air et du lambda (mode gaz)"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   199.21875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   1000.0
+          AXIS_PTS_REF             OxC_tOxC_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rO2StgEstimCorInterp_M
+       /*   LongIdentifier */   "Carto interpolée de la correction du seuil OBD d'OSC en fonction de l'estimation débit d'air et du lambda"
+       /*   Type           */   MAP
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_1
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   199.21875
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_2
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   -50.0
+          /*   UpperLimit     */   1000.0
+          AXIS_PTS_REF             OxC_tOxC_A
+       /end AXIS_DESCR
+
+       /begin AXIS_DESCR
+          /*   Attribute      */   COM_AXIS
+          /*   InputQuantity  */   NO_INPUT_QUANTITY
+          /*   Conversion     */   CatAcvDiagT_CM_3
+          /*   MaxAxisPoints  */   16
+          /*   LowerLimit     */   0
+          /*   UpperLimit     */   300.0
+          AXIS_PTS_REF             OxC_mfDsThr_A
+       /end AXIS_DESCR
+    /end CHARACTERISTIC
+
+    /begin CHARACTERISTIC
+       /*   Name           */   OxC_rO2_mfDsThr_C
+       /*   LongIdentifier */   "Proportion d'oxygène dans l'air d'admission"
+       /*   Type           */   VALUE
+       /*   Address        */   0x0
+       /*   Deposit        */   CatAcvDiagT_RL_Scalar_UBYTE
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_22
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   99.609375
+    /end CHARACTERISTIC
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_tOxC_A
+       /*   LongIdentifier */   "Table de points d'appui en température catalyseur pour la correction du seuil d'OSC"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_X_WORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_2
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   -50.0
+       /*   UpperLimit     */   1000.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_mfDsThr_A
+       /*   LongIdentifier */   "Table de points d'appui en débit d'air estimé"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_bAirLdNAuthColInput_A
+       /*   LongIdentifier */   "Table de point d'appui (charge moteur) pour OxC_bAirLdNAuth_M"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_5
+       /*   MaxAxisPoints  */   15
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   1.999969E+002
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_bAirLdNAuthRowInput_A
+       /*   LongIdentifier */   "Table de point d'appui (régime moteur) pour OxC_bAirLdNAuth_M"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup2D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_6
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   7500.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_tiLamRegStabInput_A
+       /*   LongIdentifier */   "Table d'appui (débit moteur) pour OxC_tiLamRegStab_T"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end AXIS_PTS
+
+    /begin AXIS_PTS
+       /*   Name           */   OxC_tiCanPurgClsInput_A
+       /*   LongIdentifier */   "Table d'appui (débit moteur) pour OxC_tiCanPurgCls_T"
+       /*   Address        */   0x0
+       /*   InputQuantity  */   NO_INPUT_QUANTITY
+       /*   Deposit        */   CatAcvDiagT_RL_Lookup1D_X_UWORD
+       /*   MaxDiff        */   0
+       /*   Conversion     */   CatAcvDiagT_CM_3
+       /*   MaxAxisPoints  */   16
+       /*   LowerLimit     */   0
+       /*   UpperLimit     */   300.0
+    /end AXIS_PTS
+
+  /begin MEASUREMENT 
+     /* Name                   */      CatAcvDiagT_ModuleVersion_Major_MP 
+     /* Long identifier        */      "Major version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatAcvDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      CatAcvDiagT_ModuleVersion_Minor_MP 
+     /* Long identifier        */      "Minor version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatAcvDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+  /begin MEASUREMENT 
+     /* Name                   */      CatAcvDiagT_ModuleVersion_Patch_MP 
+     /* Long identifier        */      "Patch version number" 
+     /* Data type              */      UBYTE 
+     /* Conversion method      */      CatAcvDiagT_CM_Version 
+     /* Resolution (Not used)  */      0 
+     /* Accuracy (Not used)    */      0 
+     /* Lower limit            */      0 
+     /* Upper limit            */      255 
+     ECU_ADDRESS                       0x0 
+  /end MEASUREMENT 
+
+ 
+    /begin MEASUREMENT
+       /*   Name               */   AFReg_rFbLsclFilFil
+       /*   LongIdentifier     */   "Valeur filtrée de Lambda_feedback (doublon pour diagnostic catalyseur intrusif)"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   2.4999237060546881E-001
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mfAirMesThrEstimFil
+       /*   LongIdentifier     */   "Débit moteur calculé en g/sec (intégration diagnostic catalyseur intrusif) filtré"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_23
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   300.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Ext_tOxCEstimFil
+       /*   LongIdentifier     */   "Température du catalyseur filtrée pour l'activation du diag cata intrusif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -50.0
+       /*   UpperLimit         */   1000.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Engine_load_filt
+       /*   LongIdentifier     */   "Charge moteur (remplissage) filtrée pour l'activation du diag cata actif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.9999694824218750E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Ext_nEngFil
+       /*   LongIdentifier     */   "Régime moteur (au PMH et au PMB) filtrée pour l'activation du diag cata ctif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7500.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rMixtPha1Tmp
+       /*   LongIdentifier     */   "Offset à appliquer à la richesse lors de la première phase du diagnostic intrusif du catalyseur (variable intermédiaire)"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7.3498878479003906E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rMixtPha2Tmp
+       /*   LongIdentifier     */   "Offset à appliquer à la richesse lors de la deuxième phase du diagnostic intrusif du catalyseur (variable intermédiaire)"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7.3498878479003906E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   LsMon_rMixtItrsvSenO2DsDiagTmp
+       /*   LongIdentifier     */   "Valeur du créneau de richesse lors d'un diagnostic sonde aval intrusif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_25
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7.3498878479003906E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   LsMon_uThdItrsvSenO2DsDiagTmp
+       /*   LongIdentifier     */   "Seuil de tension pour le diagnostic sonde aval intrusif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_26
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   4.9951171875000000E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rFbL_rMonItrv
+       /*   LongIdentifier     */   "Correction de richesse utilisée au début du calcul de l'OSC"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   2.4999992370605469E+001
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rO2StgEstimCor
+       /*   LongIdentifier     */   "Correctif OSC en fonction du débit d'air et de la température catalyseur"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_24
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   199.21875
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgSumEstim_IRV_MP
+       /*   LongIdentifier     */   "Somme des estimation d'OSC du catalyseur pemettant de faire une moyenne (IRV_MP)."
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.7108863984375000E+007
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgTotEstim_IRV_MP
+       /*   LongIdentifier     */   "OSC estimé du catalyseur, intégration de l'OSC instantané (IRV_MP)."
+       /*   Datatype           */   ULONG
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrIniMonORngIntrTmp
+       /*   LongIdentifier     */   "Temporisation entre deux diagnostics intrusifs du catalyseur successifs (variable intermédiaire)"
+       /*   Datatype           */   SLONG
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tOxCMaxPrev
+       /*   LongIdentifier     */   "Température catalyseur maximum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -50.0
+       /*   UpperLimit         */   1000.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tOxCMinPrev
+       /*   LongIdentifier     */   "Température catalyseur minimum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -50.0
+       /*   UpperLimit         */   1000.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tOxCMax
+       /*   LongIdentifier     */   "Température catalyseur maximum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -50.0
+       /*   UpperLimit         */   1000.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tOxCMin
+       /*   LongIdentifier     */   "Température catalyseur minimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_2
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -50.0
+       /*   UpperLimit         */   1000.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_nEngMaxPrev
+       /*   LongIdentifier     */   "Régime moteur maximum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7500.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_nEngMinPrev
+       /*   LongIdentifier     */   "Régime moteur minimum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7500.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_nEngMax
+       /*   LongIdentifier     */   "Régime moteur maximum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7500.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_nEngMin
+       /*   LongIdentifier     */   "Régime moteur minimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_6
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   7500.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rlamFilMaxPrev
+       /*   LongIdentifier     */   "Correction de régulation de richesse moyennée maximum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   0.24999
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rlamFilMinPrev
+       /*   LongIdentifier     */   "Correction de régulation de richesse moyennée minimum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   0.24999
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rlamFilMax
+       /*   LongIdentifier     */   "Correction de régulation de richesse moyennée maximum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   0.24999
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rlamFilMin
+       /*   LongIdentifier     */   "Correction de régulation de richesse moyennée minimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   0.24999
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   Lambda_feedback_filt
+       /*   LongIdentifier     */   "Correcteur de richesse de la régulation de richesse filtrée"
+       /*   Datatype           */   SWORD
+       /*   Conversion         */   CatAcvDiagT_CM_8
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   -0.25
+       /*   UpperLimit         */   2.4999237060546881E-001
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mfAirThrMaxPrev
+       /*   LongIdentifier     */   "Débit moteur maximum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   300.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mfAirThrMinPrev
+       /*   LongIdentifier     */   "Débit moteur minimum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   300.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mfAirThrMax
+       /*   LongIdentifier     */   "Débit moteur maximum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   300.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mfAirThrMin
+       /*   LongIdentifier     */   "Débit moteur manimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_3
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   300.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiPha1MaxDlyProtTmp
+       /*   LongIdentifier     */   "Temporisation limitant la durée de la 1ère phase du diagnostic, protégeant notamment le catalyseur (variable intermédiaire)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrScdnMonORngIntrIni
+       /*   LongIdentifier     */   "NS: Variable de sortie de la table OxC_tiTmrScdn_T"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrScdnMonORngIntr_IRV_MP
+       /*   LongIdentifier     */   "Temporisation fonction du débit d'air entre le basculement des 2 sondes et l'application du 2nd créneau (IRV_MP)."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrIniMonORngIntr_IRV_MP
+       /*   LongIdentifier     */   "Temporisation entre deux diagnostics intrusifs du catalyseur successifs (IRV_MP)."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiDlyMaxProt_rMixtPha1
+       /*   LongIdentifier     */   "Temporisation maximale entre l'application du 1er créneau et le basculement des 2 sondes lambda (IRV_MP)."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   LsMon_tiItrsvSenO2DsDiag_IRV_MP
+       /*   LongIdentifier     */   "Temporisation maximale entre l'application du créneau et la détection de sonde aval bloquée pauvre (IRV_MP)."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   LsMon_tiItrsvWaitSenO2DsDiag
+       /*   LongIdentifier     */   "Temporisation d'attente du résultat du diagnostic de la sonde aval intrusif"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rAirLdMaxPrev
+       /*   LongIdentifier     */   "Charge moteur maximum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.999969E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rAirLdMinPrev
+       /*   LongIdentifier     */   "Charge moteur minimum (pas précédent) pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.999969E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rAirLdMax
+       /*   LongIdentifier     */   "Charge moteur maximum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.999969E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rAirLdMin
+       /*   LongIdentifier     */   "Charge moteur minimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_5
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.999969E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgMinPlausTmp
+       /*   LongIdentifier     */   "Seuil OBD corrigé minimum possible, compte tenu de la dynamique des gaz à l'échappement (plausibilité) (variable intermédiaire)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgMaxTmp
+       /*   LongIdentifier     */   "Niveau d'OSC maxi permettant d'arrêter le créneau de richesse et conclure que l'état du catalyseur est bon (variable intermédiaire)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgThdTmp
+       /*   LongIdentifier     */   "Seuil OBD d'OSC corrigé en débit, richesse et température (variable intermédiaire)"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_mO2StgEstim
+       /*   LongIdentifier     */   "OSC instantané du catalyseur"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_13
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1023.984375
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrMonStabFastCdn_IRV_MP
+       /*   LongIdentifier     */   "Variable de temporisation pour les conditions de stabilité sur les dérivées du régime, de la charge, et du Lambda feedback (conditions rapides) nécessaires au diagnostic du catalyseur (IRV_MP)."
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   51.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   CatMon_tiInhDiagIntr
+       /*   LongIdentifier     */   "Temporisation inhibant les diagnostics catalyseur après une transision essence/gaz"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_16
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_ctMaxMonORngIntrTmp
+       /*   LongIdentifier     */   "Nombre maximum de diagnostics catalyseur intrusifs à effectuer (variable intermédiaire)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_ctMinMonORngIntrTmp
+       /*   LongIdentifier     */   "Nombre minimum de diagnostics catalyseur intrusifs à effectuer (variable intermédiaire)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_ctMonORngIntr_IRV_MP
+       /*   LongIdentifier     */   "Compteur de diagnostics catalyseur intrusifs réalisés (IRV_MP)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   255.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_stMonIntrAcv_IRV_MP
+       /*   LongIdentifier     */   "Automate de gestion de l'activation du diagnostic catalyseur intrusif (IRV_MP)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   128.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_stMonIntrRun_IRV_MP
+       /*   LongIdentifier     */   "Etat de l'automate de gestion des différentes étapes du diagnostic intrusif du catalyseur (IRV_MP)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_18
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   128.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bIdcInhChkTOxC
+       /*   LongIdentifier     */   "Reset des conditions de stabilité portant sur la température catalyseur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bIdcInhChkMfAir
+       /*   LongIdentifier     */   "Reset des conditions de stabilité portant sur le débit moteur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabTranMod
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la transition de mode"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabnoCylCutOff
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la coupure injection"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabCanPurg
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la purge canister"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabRlamFilOxC
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la correction de régulation de richesse moyennée globale"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bIdcInhChkrLamFil
+       /*   LongIdentifier     */   "Reset des conditions de stabilité portant sur la correction de la régulation de richesse moyennée"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabRlam
+       /*   LongIdentifier     */   "Sous-condition de stabilité de la correction de régiulation de richesse moyennée (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabDeltaMaxRlam
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la correction de régulation de richesse moyennée (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilRlam
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité de la correction de régulation de richesse moyennée (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilRlamCdn
+       /*   LongIdentifier     */   "Reset du filtre de la condition de stabilité de la correction de régulation de richesse moyennée (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabFilRlam
+       /*   LongIdentifier     */   "Condition de stabilité de la correction de régiulation de richesse moyennée (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabMfAir
+       /*   LongIdentifier     */   "Sous-condition de stabilité portant sur le débit moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabMfAirThr
+       /*   LongIdentifier     */   "Sous-condition de stabilité du débit moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabDeltaMaxMfAir
+       /*   LongIdentifier     */   "Condition de stabilité portant sur le débit moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilMfAir
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité du débit moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilMfAirCdn
+       /*   LongIdentifier     */   "Reset du filtre de la condition de stabilité du débit moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabFilMfAir
+       /*   LongIdentifier     */   "Condition de stabilité du débit moteur (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bDetStabOxCT
+       /*   LongIdentifier     */   "Sous-condition de stabilité portant sur la température catalyseur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabDeltaMaxOxCT
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la température catalyseur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilOxCT
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité de la température catalyseur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilOxCTCdn
+       /*   LongIdentifier     */   "Reset du filtre de la condition de stabilité de la température catalyseur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabFilOxCT
+       /*   LongIdentifier     */   "Condition de stabilité de la température catalyseur (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabAirLd
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la charge moteur globale"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabRatAirLdCor
+       /*   LongIdentifier     */   "Sous-condition de stabilité de la charge moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabDeltaMaxAirLd
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la charge moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilAirLd
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité de la charge moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilAirLdCdn
+       /*   LongIdentifier     */   "Reset du filtre de la condition de stabilité de la charge moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabFilAirLd
+       /*   LongIdentifier     */   "Condition de stabilité portant sur la charge moteur (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bDetStabNEng
+       /*   LongIdentifier     */   "Sous-condition de stabilité portant sur le régime moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabDeltaMaxNEng
+       /*   LongIdentifier     */   "Condition de stabilité portant sur le régime moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilNEng
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité du régime moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFilNEngCdn
+       /*   LongIdentifier     */   "Reset du filtre de la condition de stabilité du régime moteur (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRstFiltNEng
+       /*   LongIdentifier     */   "Sous-Reset du filtre de la condition de stabilité du régime moteur (filtre) par la condition tunnel"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bStabFilNEng
+       /*   LongIdentifier     */   "Condition de stabilité portant sur le régime moteur (filtre)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bAirMfTAuth
+       /*   LongIdentifier     */   "Booléen indiquant que la condition d'activation sur température cata / débit est OK"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bAirLdNAuth
+       /*   LongIdentifier     */   "Booléen indiquant que la condition d'activation sur régime/charge est OK"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bRlamFilOxCCdn
+       /*   LongIdentifier     */   "Condition d'autorisation portant sur la correction de la régulation de richesse moyennée"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bAcvCalcmO2Stg
+       /*   LongIdentifier     */   "Booléen d'activation du calcul de la masse stockée dans le catalyseur"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bDiagUnlimInhTmp
+       /*   LongIdentifier     */   "Booléen d'inhibition du diagnostic catalyseur intrusif en continu (variable intermédiaire)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bEndInt
+       /*   LongIdentifier     */   "Booléen indiquant la fin de l'intégration de l'OSC"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bAcvMonItrsv
+       /*   LongIdentifier     */   "Booléen de prise en compte de la consigne de richesse du diagnostic catalyseur intrusif par FARSp"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_bMonORngIntrStabCdn_IRV_MP
+       /*   LongIdentifier     */   "Booléen indiquant si les conditions de stabilité pour le diagnostic sont vérifiées (IRV_MP)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntRlamFilPrev
+       /*   LongIdentifier     */   "Compteur de temps (pas précédent) pour évaluation de la stabilité de la correction de régulation de richesse moyennée (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntRlamFil
+       /*   LongIdentifier     */   "Compteur de temps pour évaluation de la stabilité de la correction de régulation de richesse moyennée (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntMfAirThrPrev
+       /*   LongIdentifier     */   "Compteur de temps (pas précédent) pour évaluation de la stabilité du débit moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabMfAirThr
+       /*   LongIdentifier     */   "Compteur de temps pour évaluation de la stabilité du débit moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntOxCPrev
+       /*   LongIdentifier     */   "Compteur de temps (pas précédent) pour évaluation de la stabilité de la température catalyseur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabOxCT
+       /*   LongIdentifier     */   "Compteur de temps pour évaluation de la stabilité de la température catalyseur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabRatAirLdPrev
+       /*   LongIdentifier     */   "Compteur de temps (pas précédent) pour évaluation de la stabilité de la charge moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabRatAirLd
+       /*   LongIdentifier     */   "Température catalyseur minimum pour évaluation de la stabilité (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabNEngPrev
+       /*   LongIdentifier     */   "Compteur de temps (pas précédent) pour évaluation de la stabilité du régime moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiCntStabNEng
+       /*   LongIdentifier     */   "Compteur de temps pour évaluation de la stabilité du régime moteur (tunnel)"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   50.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrMonStabSlowCdn_IRV_MP
+       /*   LongIdentifier     */   "Variable de temporisation pour les conditions de stabilité Lambda_closed_loop et Engine_runnig_state (conditions lentes) nécessaires au diagnostic du catalyseur (IRV_MP)."
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_21
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   51.0
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rFbLsclFil_rMonItrsvStrt
+       /*   LongIdentifier     */   "Richesse calculée à partir du lambda feedback filtré au début du calcul de l'OSC"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.75
+       /*   UpperLimit         */   1.2499923706054690E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_rFbLsclFil_ItrsvSenO2Strt
+       /*   LongIdentifier     */   "Richesse calculée à partir du lambda feedback filtré au début du diag sonde intrusif"
+       /*   Datatype           */   FLOAT32_IEEE
+       /*   Conversion         */   CatAcvDiagT_CM_17
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0.75
+       /*   UpperLimit         */   1.2499923706054690E+000
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiTmrMinMonORngIntr
+       /*   LongIdentifier     */   "Temporisation minimale dans l'état catalyseur prêt avant désactivation du créneau de richesse"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   OxC_tiPha2ChgDly
+       /*   LongIdentifier     */   "Temporisation permettant de sécuriser la sortie de CAT_DIAG_INTRU_SWITCH_LAMBDA"
+       /*   Datatype           */   UWORD
+       /*   Conversion         */   CatAcvDiagT_CM_10
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   6.5535E+002
+       ECU_ADDRESS                  0x0
+    /end MEASUREMENT
+
+    /begin MEASUREMENT
+       /*   Name               */   First_diag_Sen02
+       /*   LongIdentifier     */   "Booléen indiquant la première activation du diag sonde aval intrusif"
+       /*   Datatype           */   UBYTE
+       /*   Conversion         */   CatAcvDiagT_CM_Boolean
+       /*   Resolution         */   0
+       /*   Accuracy           */   0
+       /*   LowerLimit         */   0
+       /*   UpperLimit         */   1.0
+       ECU_ADDRESS                  0x0
+       BIT_MASK                     0x01
+    /end MEASUREMENT
+
+  /begin COMPU_METHOD
+    /* Name of CompuMethod    */      CatAcvDiagT_CM_Version
+    /* Long identifier        */      "Q = V"
+    /* Conversion Type        */      RAT_FUNC
+    /* Format                 */      "%0.6"
+    /* Units                  */      "-"
+    /* Coefficients           */      COEFFS 0 1.000000000 0.000000000 0 0 1.000000000
+  /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_1
+       /*   LongIdentifier */   "Q = V*1.28"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 1.28 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_2
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "°C"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_3
+       /*   LongIdentifier */   "Q = V*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "g/s"
+       COEFFS                   0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_4
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "bool"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_5
+       /*   LongIdentifier */   "Q = V*327.68"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 327.68 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_6
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "rpm"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_7
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "tr/min"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_8
+       /*   LongIdentifier */   "Q = V*131072"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   ""
+       COEFFS                   0 131072 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_9
+       /*   LongIdentifier */   "Q = V*131072"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 131072 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_10
+       /*   LongIdentifier */   "Q = V*100"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 100 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_11
+       /*   LongIdentifier */   "Q = V*8916.46258503"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s.u."
+       COEFFS                   0 8916.46258503 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_12
+       /*   LongIdentifier */   "Q = V*8916.46258503"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   ""
+       COEFFS                   0 8916.46258503 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_13
+       /*   LongIdentifier */   "Q = V*64"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "mg"
+       COEFFS                   0 64 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_14
+       /*   LongIdentifier */   "Q = V*204.8"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "V"
+       COEFFS                   0 204.8 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_15
+       /*   LongIdentifier */   "Q = V*131072"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "su"
+       COEFFS                   0 131072 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_16
+       /*   LongIdentifier */   "Q = V*25"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 25 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_17
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   ""
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_18
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "-"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_Boolean
+       /*   LongIdentifier */   "Boolean"
+       /*   ConversionType */   TAB_VERB
+       /*   Format         */   "%0.0"
+       /*   Unit           */   "-"
+       COMPU_TAB_REF            CatAcvDiagT_CV_Boolean
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_20
+       /*   LongIdentifier */   "Q = V*256"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "su"
+       COEFFS                   0 256 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_21
+       /*   LongIdentifier */   "Q = V*5"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s"
+       COEFFS                   0 5 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_22
+       /*   LongIdentifier */   "Q = V*2.56"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 2.56 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_23
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "g/s"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_24
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "%"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_25
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "s.u."
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_METHOD
+       /*   Name           */   CatAcvDiagT_CM_26
+       /*   LongIdentifier */   "Q = V"
+       /*   ConversionType */   RAT_FUNC
+       /*   Format         */   "%0.6"
+       /*   Unit           */   "V"
+       COEFFS                   0 1 0 0 0 1
+    /end COMPU_METHOD
+
+    /begin COMPU_VTAB
+       /*   Name             */   CatAcvDiagT_CV_Boolean
+       /*   LongIdentifier   */   "Boolean values"
+       /*   ConversionType   */   TAB_VERB
+       /*   NumberValuePairs */   2
+       /*   Pair1            */   1 "TRUE"
+       /*   Pair2            */   0 "FALSE"
+    /end COMPU_VTAB
+
+    /begin FUNCTION
+       /*   Name           */   CatAcvDiagT_FCT_CatAcvDiagT
+       /*   LongIdentifier */   "CHARACTERISTIC and MEASUREMENT of CatAcvDiagT Software Component"
+
+       /begin DEF_CHARACTERISTIC
+          CATACVDIAGT_ACTIVE_BYP_C
+          CatMon_bDgoORngIntr_B
+          CatMon_bInhDiagPresScav_C
+          CatMon_bMonRunORngIntr_B
+          CatMon_bMonWaitORngIntr_B
+          CatMon_tiInhDiagIntr_C
+          LsMon_rMixtSenO2DsDiagLean_C
+          LsMon_rMixtSenO2DsDiagRich_C
+          LsMon_stItrsvSenO2DsDiag_B
+          LsMon_tiItrsvSenO2DsDiag_C
+          LsMon_tiItrsvWaitSenO2DsDiag_C
+          LsMon_uThdItrsvSenO2DsDiagLean_C
+          LsMon_uThdItrsvSenO2DsDiagRich_C
+          OxC_bAcvFbL_rMonItrv_C
+          OxC_bAirLdNAuthColInput_A
+          OxC_bAirLdNAuthRowInput_A
+          OxC_bAirLdNAuth_M
+          OxC_bAirMfTAuth_M
+          OxC_bDiagUnlimInhGas_C
+          OxC_bDiagUnlimInh_C
+          OxC_bIdcInhChknEng_C
+          OxC_bIdcInhChkrAirLd_C
+          OxC_bInhAFACdn_C
+          OxC_bInhBlbyCdn_C
+          OxC_bInhDeltaAirLd_C
+          OxC_bInhDeltaMfAir_C
+          OxC_bInhDeltaNEng_C
+          OxC_bInhDeltaRLamFil_C
+          OxC_bInhDeltaTOxC_C
+          OxC_bInhFilAirLd_C
+          OxC_bInhFilMfAir_C
+          OxC_bInhFilNEng_C
+          OxC_bInhFilRlamFilOxC_C
+          OxC_bInhFilTOxC_C
+          OxC_bItpolClc_C
+          OxC_bLsUsProp_C
+          OxC_bMonEnaORngIntr_B
+          OxC_bMonEndORngIntr_B
+          OxC_bMonORngIntrAcvCdn_B
+          OxC_bMonRunORngIntr_B
+          OxC_bRlamAdpReq_B
+          OxC_bRlamFiLpfRst_C
+          OxC_ctMaxMonORngIntrGas_C
+          OxC_ctMaxMonORngIntr_C
+          OxC_ctMinMonORngIntrGas_C
+          OxC_ctMinMonORngIntr_C
+          OxC_idxRlamSpAcv_C
+          OxC_lamFbFilDeltaMaxThd_C
+          OxC_ldEstimDeltaMaxGas_C
+          OxC_ldEstimDeltaMax_C
+          OxC_mO2StgMaxGas_C
+          OxC_mO2StgMax_C
+          OxC_mO2StgMinPlausGas_C
+          OxC_mO2StgMinPlaus_C
+          OxC_mO2StgMvEstim_B
+          OxC_mO2StgThdGas_C
+          OxC_mO2StgThd_C
+          OxC_mfAirDeltaMaxGas_C
+          OxC_mfAirDeltaMaxThd_C
+          OxC_mfAirDeltaMax_C
+          OxC_mfDsThr_A
+          OxC_nCkDeltaMaxGas_C
+          OxC_nCkDeltaMax_C
+          OxC_nEngDeltaMaxThd_C
+          OxC_rAirLdDeltaMaxThd_C
+          OxC_rFbLsclDeltaMaxGas_C
+          OxC_rFbLsclDeltaMax_C
+          OxC_rMixtPha1Gas_C
+          OxC_rMixtPha1_C
+          OxC_rMixtPha2Gas_C
+          OxC_rMixtPha2_C
+          OxC_rMixtReqMonIntr_B
+          OxC_rO2StgEstimCorIndex_M
+          OxC_rO2StgEstimCorInterpGas_M
+          OxC_rO2StgEstimCorInterp_M
+          OxC_rO2_mfDsThr_C
+          OxC_rOpCanPurgReqThd_C
+          OxC_rlamFilThrHiThd_C
+          OxC_rlamFilThrLoThd_C
+          OxC_tAirMnfMesHiThdGas_C
+          OxC_tAirMnfMesHiThd_C
+          OxC_tAirMnfMesLoThdGas_C
+          OxC_tAirMnfMesLoThd_C
+          OxC_tCoMesHiThdGas_C
+          OxC_tCoMesHiThd_C
+          OxC_tCoMesLoThdGas_C
+          OxC_tCoMesLoThd_C
+          OxC_tOxCDeltaMaxThd_C
+          OxC_tOxCUsMesDeltaMaxGas_C
+          OxC_tOxCUsMesDeltaMax_C
+          OxC_tOxC_A
+          OxC_tiAcvCdnDlyOn_C
+          OxC_tiAcvReqDlySdlCord_C
+          OxC_tiAcvRunDlyOff_C
+          OxC_tiAirLdDlyOn_C
+          OxC_tiAirLdLpfTau_C
+          OxC_tiCanPurgClsInput_A
+          OxC_tiCanPurgCls_T
+          OxC_tiCylNotCutOffDlyOn_C
+          OxC_tiDlySdlCord_C
+          OxC_tiDlyStabMfAir_C
+          OxC_tiDlyStabNEng_C
+          OxC_tiDlyStabOxCT_C
+          OxC_tiDlyStabRatAirLd_C
+          OxC_tiDlyStablamFbFil_C
+          OxC_tiLamRegStabInput_A
+          OxC_tiLamRegStab_T
+          OxC_tiMfAirDlyOn_C
+          OxC_tiMfAirLpfTau_C
+          OxC_tiNEngDlyOn_C
+          OxC_tiNEngLpfTau_C
+          OxC_tiOxCTDlyOn_C
+          OxC_tiOxCTLpfTau_C
+          OxC_tiPha1MaxDlyProtGas_C
+          OxC_tiPha1MaxDlyProt_C
+          OxC_tiPha2ChgMaxDly_C
+          OxC_tiRlamDlyOn_C
+          OxC_tiRlamFiLpfTau_C
+          OxC_tiRlamLpfTau_C
+          OxC_tiStabCdnDlyOn_C
+          OxC_tiTmrIniMonORngIntrGas_C
+          OxC_tiTmrIniMonORngIntr_C
+          OxC_tiTmrMinMonORngIntrIni_C
+          OxC_tiTmrMonStabFastCdnGas_C
+          OxC_tiTmrMonStabFastCdn_C
+          OxC_tiTmrMonStabSlowCdnGas_C
+          OxC_tiTmrMonStabSlowCdn_C
+          OxC_tiTmrScdnGas_T
+          OxC_tiTmrScdn_T
+          OxC_tiTranModDlyOn_C
+          Oxc_stMonItrsvAcvTunRst_C
+          Oxc_tiStabRstOff_C
+       /end DEF_CHARACTERISTIC
+
+       /begin LOC_MEASUREMENT
+      CatAcvDiagT_ModuleVersion_Major_MP 
+      CatAcvDiagT_ModuleVersion_Minor_MP 
+      CatAcvDiagT_ModuleVersion_Patch_MP 
+          AFReg_rFbLsclFilFil
+          CatMon_tiInhDiagIntr
+          Engine_load_filt
+          Ext_nEngFil
+          Ext_tOxCEstimFil
+          First_diag_Sen02
+          Lambda_feedback_filt
+          LsMon_rMixtItrsvSenO2DsDiagTmp
+          LsMon_tiItrsvSenO2DsDiag_IRV_MP
+          LsMon_tiItrsvWaitSenO2DsDiag
+          LsMon_uThdItrsvSenO2DsDiagTmp
+          OxC_bAcvCalcmO2Stg
+          OxC_bAcvMonItrsv
+          OxC_bAirLdNAuth
+          OxC_bAirMfTAuth
+          OxC_bDetStabNEng
+          OxC_bDetStabOxCT
+          OxC_bDiagUnlimInhTmp
+          OxC_bEndInt
+          OxC_bIdcInhChkMfAir
+          OxC_bIdcInhChkTOxC
+          OxC_bIdcInhChkrLamFil
+          OxC_bMonORngIntrStabCdn_IRV_MP
+          OxC_bRlamFilOxCCdn
+          OxC_bRstFilAirLd
+          OxC_bRstFilAirLdCdn
+          OxC_bRstFilMfAir
+          OxC_bRstFilMfAirCdn
+          OxC_bRstFilNEng
+          OxC_bRstFilNEngCdn
+          OxC_bRstFilOxCT
+          OxC_bRstFilOxCTCdn
+          OxC_bRstFilRlam
+          OxC_bRstFilRlamCdn
+          OxC_bRstFiltNEng
+          OxC_bStabAirLd
+          OxC_bStabCanPurg
+          OxC_bStabDeltaMaxAirLd
+          OxC_bStabDeltaMaxMfAir
+          OxC_bStabDeltaMaxNEng
+          OxC_bStabDeltaMaxOxCT
+          OxC_bStabDeltaMaxRlam
+          OxC_bStabFilAirLd
+          OxC_bStabFilMfAir
+          OxC_bStabFilNEng
+          OxC_bStabFilOxCT
+          OxC_bStabFilRlam
+          OxC_bStabMfAir
+          OxC_bStabMfAirThr
+          OxC_bStabRatAirLdCor
+          OxC_bStabRlam
+          OxC_bStabRlamFilOxC
+          OxC_bStabTranMod
+          OxC_bStabnoCylCutOff
+          OxC_ctMaxMonORngIntrTmp
+          OxC_ctMinMonORngIntrTmp
+          OxC_ctMonORngIntr_IRV_MP
+          OxC_mO2StgEstim
+          OxC_mO2StgMaxTmp
+          OxC_mO2StgMinPlausTmp
+          OxC_mO2StgSumEstim_IRV_MP
+          OxC_mO2StgThdTmp
+          OxC_mO2StgTotEstim_IRV_MP
+          OxC_mfAirMesThrEstimFil
+          OxC_mfAirThrMax
+          OxC_mfAirThrMaxPrev
+          OxC_mfAirThrMin
+          OxC_mfAirThrMinPrev
+          OxC_nEngMax
+          OxC_nEngMaxPrev
+          OxC_nEngMin
+          OxC_nEngMinPrev
+          OxC_rAirLdMax
+          OxC_rAirLdMaxPrev
+          OxC_rAirLdMin
+          OxC_rAirLdMinPrev
+          OxC_rFbL_rMonItrv
+          OxC_rFbLsclFil_ItrsvSenO2Strt
+          OxC_rFbLsclFil_rMonItrsvStrt
+          OxC_rMixtPha1Tmp
+          OxC_rMixtPha2Tmp
+          OxC_rO2StgEstimCor
+          OxC_rlamFilMax
+          OxC_rlamFilMaxPrev
+          OxC_rlamFilMin
+          OxC_rlamFilMinPrev
+          OxC_stMonIntrAcv_IRV_MP
+          OxC_stMonIntrRun_IRV_MP
+          OxC_tOxCMax
+          OxC_tOxCMaxPrev
+          OxC_tOxCMin
+          OxC_tOxCMinPrev
+          OxC_tiCntMfAirThrPrev
+          OxC_tiCntOxCPrev
+          OxC_tiCntRlamFil
+          OxC_tiCntRlamFilPrev
+          OxC_tiCntStabMfAirThr
+          OxC_tiCntStabNEng
+          OxC_tiCntStabNEngPrev
+          OxC_tiCntStabOxCT
+          OxC_tiCntStabRatAirLd
+          OxC_tiCntStabRatAirLdPrev
+          OxC_tiDlyMaxProt_rMixtPha1
+          OxC_tiPha1MaxDlyProtTmp
+          OxC_tiPha2ChgDly
+          OxC_tiTmrIniMonORngIntrTmp
+          OxC_tiTmrIniMonORngIntr_IRV_MP
+          OxC_tiTmrMinMonORngIntr
+          OxC_tiTmrMonStabFastCdn_IRV_MP
+          OxC_tiTmrMonStabSlowCdn_IRV_MP
+          OxC_tiTmrScdnMonORngIntrIni
+          OxC_tiTmrScdnMonORngIntr_IRV_MP
+       /end LOC_MEASUREMENT
+    /end FUNCTION
+ /end MODULE
